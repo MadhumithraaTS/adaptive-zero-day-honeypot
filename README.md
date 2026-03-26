@@ -108,7 +108,7 @@ Internet/External Attackers
              ▼
 ┌─────────────────────────┐      ┌──────────────────────────┐
 │  Security Enforcement    │      │   Analyst Dashboard / UI  │
-│  • IDS (Detection)       │◄─────│  • Live Attack Visual.    │
+│  • IDS (Detection)       │----->│  • Live Attack Visual.    │
 │  • IPS (Blocking)        │      │  • Threat Intelligence    │
 │  • Firewall Rules        │      │  • Rule Monitoring        │
 └─────────────────────────┘      │  • Alerts & Reports       │
