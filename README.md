@@ -132,23 +132,6 @@ Internet/External Attackers
 | `/api/analyze`   | POST   | Trigger ML analysis pipeline     |
 | `/api/rules`     | POST   | Export generated detection rules |
 
----
-
-## Tech Stack
-
-| Layer                     | Technology                              |
-|---------------------------|-----------------------------------------|
-| Honeypot                  | Cowrie (SSH/Telnet medium-interaction)  |
-| Backend                   | Node.js + Express (async event-driven)  |
-| Database                  | MongoDB (NoSQL document store)          |
-| Machine Learning          | Python, scikit-learn (clustering/anomaly detection) |
-| Rule Generation           | Custom engine → Snort/Suricata syntax   |
-| Frontend Dashboard        | React.js                                |
-| Containerization          | Docker                                  |
-| Integration               | RESTful APIs (IDS / Firewall / SIEM)    |
-
----
-
 ## Implementation – Phase 1
 
 Phase 1 focuses on **honeypot deployment, attack simulation, data collection, and session reconstruction**.
