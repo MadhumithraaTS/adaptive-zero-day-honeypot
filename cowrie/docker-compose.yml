@@ -1,0 +1,9 @@
+services:
+  cowrie:
+    image: cowrie/cowrie:latest
+    container_name: cowrie-project
+
+    restart: unless-stopped
+
+    ports:
+      - "2223:2222"
