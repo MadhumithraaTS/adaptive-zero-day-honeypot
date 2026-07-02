@@ -28,3 +28,7 @@ models/*
 
 # Jupyter checkpoints
 .ipynb_checkpoints/
+
+# Cowrie runtime logs
+cowrie/logs/*
+!cowrie/logs/.gitkeep
