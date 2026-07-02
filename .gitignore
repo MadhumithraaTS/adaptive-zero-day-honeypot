@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+
+# Logs (keep directory, ignore contents)
+logs/*
+!logs/.gitkeep
+
+# Datasets (keep directory, ignore contents)
+dataset/*
+!dataset/.gitkeep
+
+# Trained models
+models/*
+!models/.gitkeep
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
