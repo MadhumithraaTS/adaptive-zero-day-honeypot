@@ -1,0 +1,4 @@
+session_id,login_attempts,commands_executed,unique_commands,wget_curl_chmod_usage,shell_spawn,session_duration,failed_commands,downloads
+348396594da0,3,5,5,0,1,11.031373,0,0
+050612014ecb,3,5,5,0,1,9.839213,0,0
+145df0711e2d,3,3,3,0,1,7.11115,0,0

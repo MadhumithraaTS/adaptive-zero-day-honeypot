@@ -1,0 +1,4 @@
+login_attempts,commands_executed,unique_commands,wget_curl_chmod_usage,shell_spawn,session_duration,failed_commands,downloads
+0.0,1.0,1.0,0,1,1.0,0.0,0.0
+0.0,1.0,1.0,0,1,0.6958948508796567,0.0,0.0
+0.0,0.0,0.0,0,1,0.0,0.0,0.0
