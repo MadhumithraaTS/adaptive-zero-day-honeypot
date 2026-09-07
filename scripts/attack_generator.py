@@ -10,36 +10,61 @@ def load_profiles(config_path):
         data = json.load(f)
     return data['profiles']
 
-def simulate_attack(host, port, username, password, profile):
+def simulate_attack(host, port, username, password, profile, max_retries=3):
     print(f"Simulating attack with profile: {profile['name']}")
     
-    client = paramiko.SSHClient()
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    
-    try:
-        # Cowrie accepts any password
-        client.connect(hostname=host, port=port, username=username, password=password, timeout=10)
+    for attempt in range(1, max_retries + 1):
+        client = paramiko.SSHClient()
+        client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         
-        # Use invoke_shell to create an interactive terminal session
-        # This prevents Cowrie from closing the channel immediately (which causes the 0s)
-        channel = client.invoke_shell()
-        
-        for cmd in profile['commands']:
-            print(f"[{profile['name']}] Executing: {cmd}")
-            channel.send(cmd + "\n")
+        channel = None
+        try:
+            # Cowrie accepts any password; allow higher banner_timeout and auth_timeout
+            client.connect(
+                hostname=host, 
+                port=port, 
+                username=username, 
+                password=password, 
+                timeout=15, 
+                banner_timeout=20,
+                auth_timeout=15
+            )
             
-            # Wait based on delay range
-            delay = random.uniform(profile['delay_range'][0], profile['delay_range'][1])
-            time.sleep(delay)
+            # Interactive shell
+            channel = client.invoke_shell()
+            time.sleep(0.5)
             
-            # Read whatever output is available to clear buffer
-            if channel.recv_ready():
-                channel.recv(1024)
+            for cmd in profile['commands']:
+                print(f"[{profile['name']}] Executing: {cmd}")
+                channel.send(cmd + "\n")
+                
+                # Wait based on delay range
+                delay = random.uniform(profile['delay_range'][0], profile['delay_range'][1])
+                time.sleep(delay)
+                
+                # Clear buffer
+                if channel.recv_ready():
+                    channel.recv(2048)
+                    
+            # Graceful session exit
+            channel.send("exit\n")
+            time.sleep(0.5)
+            return True
             
-    except Exception as e:
-        print(f"Failed to connect or execute: {e}")
-    finally:
-        client.close()
+        except Exception as e:
+            if attempt < max_retries:
+                wait_time = attempt * 2
+                print(f"Connection attempt {attempt} failed ({e}). Retrying in {wait_time}s...")
+                time.sleep(wait_time)
+            else:
+                print(f"Failed to connect or execute after {max_retries} attempts: {e}")
+                return False
+        finally:
+            if channel:
+                try: channel.close()
+                except Exception: pass
+            try: client.close()
+            except Exception: pass
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Automated Attack Generator for Honeypot')
@@ -60,4 +85,4 @@ if __name__ == '__main__':
         
         print(f"--- Session {i+1}/{args.sessions} ---")
         simulate_attack(args.host, args.port, user, password, profile)
-        time.sleep(1)
+        time.sleep(1.5)

@@ -12,15 +12,20 @@ def collect_logs(container_name, dest_path):
     # If the user doesn't have passwordless sudo, a python subprocess will block if it prompts for password.
     # So we'll try docker first. We'll use sudo if docker fails. 
     try:
-        subprocess.run(['sudo', '-n', 'docker', 'cp', source_path, dest_path], check=True)
-        print("Successfully collected logs.")
-    except subprocess.CalledProcessError:
-        print("Failed to run docker command without password. Trying standard docker command...")
+        # Try standard docker cp first
+        subprocess.run(['docker', 'cp', source_path, dest_path], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        print("Successfully collected logs via docker cp.")
+    except (subprocess.CalledProcessError, FileNotFoundError):
         try:
-            subprocess.run(['docker', 'cp', source_path, dest_path], check=True)
-            print("Successfully collected logs.")
-        except subprocess.CalledProcessError as e:
-            print(f"Error collecting logs: {e}")
+            # Fallback to sudo docker cp on Linux systems where non-root lacks docker socket access
+            subprocess.run(['sudo', '-n', 'docker', 'cp', source_path, dest_path], check=True)
+            print("Successfully collected logs via sudo docker cp.")
+        except Exception as e:
+            print(f"Warning: Could not copy logs from Docker container '{container_name}'.")
+            if os.path.exists(dest_path):
+                print(f"Proceeding with existing log file at {dest_path}")
+            else:
+                print(f"Error details: {e}")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Collect Cowrie Logs')
