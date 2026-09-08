@@ -222,7 +222,7 @@ def extract_features(input_file, output_file, details_output=None):
             session_duration = 0.0
 
         dur = round(session_duration, 6)
-        proto = encode_proto(protocol_str)
+        proto = protocol_str.lower()
         service = SERVICE_MAP.get(dst_port, f"port_{dst_port}" if dst_port else "ssh")
 
         dbytes = tty_size_bytes

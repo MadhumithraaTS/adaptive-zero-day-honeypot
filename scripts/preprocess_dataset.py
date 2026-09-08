@@ -36,6 +36,18 @@ def preprocess(input_file, output_file, mapping_file='data/processed/session_map
         return
         
     # 1. Save Session Mapping (Metadata Lookup)
+    # -------------------------------------------------
+    # Encode categorical columns (proto and service) using LabelEncoder
+    from sklearn.preprocessing import LabelEncoder
+    categorical_cols = [c for c in FEATURE_COLS if c in ('proto', 'service')]
+    encoders = {}
+    for cat_col in categorical_cols:
+        le = LabelEncoder()
+        # Fit on the column values (including possible unseen values) and transform
+        df[cat_col] = le.fit_transform(df[cat_col].astype(str))
+        encoders[cat_col] = le
+    # -------------------------------------------------
+    # Continue with mapping extraction as before
     mapping_cols = ['session_id', 'src_ip', 'src_port', 'auth_success']
     available_mapping_cols = [c for c in mapping_cols if c in df.columns]
     mapping_df = df[available_mapping_cols].copy()
