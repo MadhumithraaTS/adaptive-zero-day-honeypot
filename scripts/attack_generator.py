@@ -21,13 +21,18 @@ def simulate_attack(host, port, username, password, profile, max_retries=3):
         try:
             # Cowrie accepts any password; allow higher banner_timeout and auth_timeout
             client.connect(
-                hostname=host, 
-                port=port, 
-                username=username, 
-                password=password, 
-                timeout=15, 
+                hostname=host,
+                port=port,
+                username=username,
+                password=password,
+                timeout=15,
                 banner_timeout=20,
-                auth_timeout=15
+                auth_timeout=15,
+                look_for_keys=False,   # Don't try SSH key auth before password
+                allow_agent=False,     # Don't try SSH agent auth
+                disabled_algorithms={  # Force legacy algos compatible with Cowrie
+                    "pubkeys": ["rsa-sha2-256", "rsa-sha2-512"],
+                }
             )
             
             # Interactive shell

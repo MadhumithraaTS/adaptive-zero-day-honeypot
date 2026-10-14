@@ -1,0 +1,17 @@
+metric,value
+total_samples,1800.0
+n_clusters,3.0
+cluster_0_count,485.0
+cluster_0_pct,26.94
+cluster_1_count,694.0
+cluster_1_pct,38.56
+cluster_2_count,621.0
+cluster_2_pct,34.5
+confidence_mean,0.939491
+confidence_min,0.446264
+confidence_max,0.953571
+ARI,0.00077439
+NMI,0.06014146
+silhouette_score,0.345719
+davies_bouldin_index,1.297119
+calinski_harabasz_index,1075.93
