@@ -1,5 +1,6 @@
 import sys
 import os
+import argparse
 import pandas as pd
 import numpy as np
 from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score
@@ -12,13 +13,21 @@ print(f"[DEBUG] sys.path[0:5]: {sys.path[:5]}")
 from ml.cowrie_dec_integration_skeleton.ml.cowrie_dec.inference import predict
 
 
-CSV_PATH = (
-    sys.argv[1]
-    if len(sys.argv) > 1
-    else "behavior_features.csv"
+parser = argparse.ArgumentParser(description="Run offline Cowrie DEC clustering")
+parser.add_argument(
+    "input",
+    nargs="?",
+    default="behavior_features.csv",
+    help="Path to the behavior-features CSV"
 )
+parser.add_argument(
+    "--output",
+    default="dec_results.csv",
+    help="Path to save cluster assignments and confidence scores"
+)
+args = parser.parse_args()
 
-df = pd.read_csv(CSV_PATH)
+df = pd.read_csv(args.input)
 
 clusters, confidence, probabilities = predict(df)
 
@@ -54,6 +63,7 @@ out["dec_confidence"] = confidence
 for i in range(probabilities.shape[1]):
     out[f"cluster_{i}_prob"] = probabilities[:, i]
 
-out.to_csv("dec_results.csv", index=False)
+os.makedirs(os.path.dirname(args.output) or ".", exist_ok=True)
+out.to_csv(args.output, index=False)
 
-print("\nSaved: dec_results.csv")
+print(f"\nSaved: {args.output}")

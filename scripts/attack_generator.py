@@ -77,16 +77,24 @@ if __name__ == '__main__':
     parser.add_argument('--host', type=str, default='127.0.0.1', help='Honeypot host')
     parser.add_argument('--port', type=int, default=2223, help='Honeypot SSH port')
     parser.add_argument('--sessions', type=int, default=5, help='Number of attack sessions to simulate')
+    parser.add_argument('--username', type=str, help='Use this username for every session instead of random credentials')
+    parser.add_argument('--password', type=str, help='Use this password for every session instead of random credentials')
     
     args = parser.parse_args()
+
+    if (args.username is None) != (args.password is None):
+        parser.error('--username and --password must be provided together')
     
     profiles = load_profiles(args.config)
     
     for i in range(args.sessions):
         profile = random.choice(profiles)
-        # Random username and password
-        user = random.choice(['root', 'admin', 'user', 'guest'])
-        password = random.choice(['123456', 'password', 'admin', 'root', '1234'])
+        if args.username is None:
+            user = random.choice(['root', 'admin', 'user', 'guest'])
+            password = random.choice(['123456', 'password', 'admin', 'root', '1234'])
+        else:
+            user = args.username
+            password = args.password
         
         print(f"--- Session {i+1}/{args.sessions} ---")
         simulate_attack(args.host, args.port, user, password, profile)

@@ -3,13 +3,13 @@ import os
 import sys
 import argparse
 
-def run_step(step_name, command):
+def run_step(step_name, command, python_executable=None):
     print(f"\n{'='*60}")
     print(f"Running step: {step_name}")
     print(f"{'='*60}")
     try:
-        # Use sys.executable to ensure we use the active Python environment
-        subprocess.run([sys.executable, *command], check=True)
+        # Use the active environment unless a step needs a different runtime.
+        subprocess.run([python_executable or sys.executable, *command], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error running {step_name}: {e}")
         sys.exit(1)
@@ -19,8 +19,19 @@ def main():
     parser.add_argument('--sessions', type=int, default=1800, help='Number of attack sessions to simulate')
     parser.add_argument('--skip-attack', action='store_true', help='Skip synthetic attack simulation')
     parser.add_argument('--skip-collect', action='store_true', help='Skip Docker log collection')
+    parser.add_argument('--attack-username', help='Use this SSH username for simulated sessions')
+    parser.add_argument('--attack-password', help='Use this SSH password for simulated sessions')
+    parser.add_argument(
+        '--cluster-python',
+        help='Python executable to use for DEC clustering (defaults to the active environment)'
+    )
     
     args = parser.parse_args()
+
+    if (args.attack_username is None) != (args.attack_password is None):
+        parser.error('--attack-username and --attack-password must be provided together')
+    if args.cluster_python and not os.path.isfile(args.cluster_python):
+        parser.error(f'--cluster-python does not point to a file: {args.cluster_python}')
     
     print("Starting Adaptive Zero-Day Honeypot Data & ML Preprocessing Pipeline...")
     
@@ -32,7 +43,13 @@ def main():
     
     # 1. Attack Generator (Simulation)
     if not args.skip_attack:
-        run_step("Attack Automation", ["scripts/attack_generator.py", "--sessions", str(args.sessions)])
+        attack_command = ["scripts/attack_generator.py", "--sessions", str(args.sessions)]
+        if args.attack_username is not None:
+            attack_command.extend([
+                "--username", args.attack_username,
+                "--password", args.attack_password
+            ])
+        run_step("Attack Automation", attack_command)
     else:
         print("\nSkipping Attack Simulation (--skip-attack set)")
         
@@ -61,6 +78,13 @@ def main():
         "--mapping", "data/processed/session_mapping.csv",
         "--scaler", "models/scaler.joblib"
     ])
+
+    # 6. DEC Clustering
+    run_step("DEC Clustering", [
+        "ml/cowrie_dec_integration_skeleton/scripts/run_dec_evaluation.py",
+        "data/parsed/behavior_features.csv",
+        "--output", "data/processed/dec_results.csv"
+    ], python_executable=args.cluster_python)
         
     print(f"\n{'='*60}")
     print(" Pipeline completed successfully!")
@@ -69,8 +93,8 @@ def main():
     print("  • Session Mapping:       data/processed/session_mapping.csv")
     print("  • Fitted Scaler:         models/scaler.joblib")
     print("  • Session Sequences:     data/parsed/session_details.json")
+    print("  • DEC Cluster Results:   data/processed/dec_results.csv")
     print(f"{'='*60}\n")
 
 if __name__ == '__main__':
     main()
-
