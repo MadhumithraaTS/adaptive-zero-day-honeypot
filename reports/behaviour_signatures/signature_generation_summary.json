@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-15T13:47:10.237546+00:00",
+  "signature_count": 3,
+  "low_confidence_signatures": 0,
+  "output_files": {
+    "json": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\behaviour_signatures\\behaviour_signatures.json",
+    "csv": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\behaviour_signatures\\behaviour_signatures.csv",
+    "report": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\behaviour_signatures\\signature_generation_report.md",
+    "summary": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\behaviour_signatures\\signature_generation_summary.json"
+  },
+  "status": "success",
+  "warnings": [],
+  "session_count": 54,
+  "patterns_examined": 3,
+  "records_skipped": 0,
+  "output_dir": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\behaviour_signatures"
+}

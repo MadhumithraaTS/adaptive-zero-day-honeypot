@@ -1,0 +1,35 @@
+--- Session 1/5 ---
+Simulating attack with profile: script_kiddie
+[script_kiddie] Executing: whoami
+[script_kiddie] Executing: uname -a
+[script_kiddie] Executing: pwd
+[script_kiddie] Executing: ls -la
+[script_kiddie] Executing: cat /etc/passwd
+--- Session 2/5 ---
+Simulating attack with profile: script_kiddie
+[script_kiddie] Executing: whoami
+[script_kiddie] Executing: uname -a
+[script_kiddie] Executing: pwd
+[script_kiddie] Executing: ls -la
+[script_kiddie] Executing: cat /etc/passwd
+--- Session 3/5 ---
+Simulating attack with profile: script_kiddie
+[script_kiddie] Executing: whoami
+[script_kiddie] Executing: uname -a
+[script_kiddie] Executing: pwd
+[script_kiddie] Executing: ls -la
+[script_kiddie] Executing: cat /etc/passwd
+--- Session 4/5 ---
+Simulating attack with profile: script_kiddie
+[script_kiddie] Executing: whoami
+[script_kiddie] Executing: uname -a
+[script_kiddie] Executing: pwd
+[script_kiddie] Executing: ls -la
+[script_kiddie] Executing: cat /etc/passwd
+--- Session 5/5 ---
+Simulating attack with profile: script_kiddie
+[script_kiddie] Executing: whoami
+[script_kiddie] Executing: uname -a
+[script_kiddie] Executing: pwd
+[script_kiddie] Executing: ls -la
+[script_kiddie] Executing: cat /etc/passwd

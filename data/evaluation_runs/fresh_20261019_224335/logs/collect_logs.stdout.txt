@@ -1,0 +1,2 @@
+Collecting logs from cowrie-project:/cowrie/cowrie-git/var/log/cowrie/cowrie.json to data\evaluation_runs\fresh_20261019_224335\raw\cowrie.json
+Successfully collected logs via docker cp.

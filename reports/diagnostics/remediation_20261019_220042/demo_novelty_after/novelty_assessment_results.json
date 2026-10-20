@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "results": [
+    {
+      "session_id": "032b5c63590e",
+      "assessment_category": "Potentially Novel",
+      "closest_signature_id": "sig-47521826f16efd4b",
+      "score": 0.468638,
+      "distance": 0.531362,
+      "evidence": "Comparable numerical features: sjit, sbytes, tcprtt, synack, djit, dinpkt, dur, dload; Observed command categories: evasion, file_system, file_transfer, networking, persistence, reconnaissance; Signature command categories: reconnaissance, file_system, privilege_escalation, credential_attack, file_transfer, networking; Session auth_success=1",
+      "reason": "The session had comparable evidence (8 compatible feature comparisons) but no signature exceeded the configured known threshold 0.70.",
+      "best_signature_label": "Mixed/Unclassified",
+      "second_score": 0.234098,
+      "comparable_feature_count": 8,
+      "contradictory_evidence": []
+    },
+    {
+      "session_id": "38c4aaeaa418",
+      "assessment_category": "Potentially Novel",
+      "closest_signature_id": "sig-47521826f16efd4b",
+      "score": 0.623254,
+      "distance": 0.376746,
+      "evidence": "Comparable numerical features: sjit, sbytes, tcprtt, synack, djit, dinpkt, dur, dload; Observed command categories: file_system, file_transfer, networking, privilege_escalation, reconnaissance; Signature command categories: reconnaissance, file_system, privilege_escalation, credential_attack, file_transfer, networking; Session auth_success=1",
+      "reason": "The session had comparable evidence (8 compatible feature comparisons) but no signature exceeded the configured known threshold 0.70.",
+      "best_signature_label": "Mixed/Unclassified",
+      "second_score": 0.228318,
+      "comparable_feature_count": 8,
+      "contradictory_evidence": []
+    },
+    {
+      "session_id": "5eb1bc4dfe00",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-47521826f16efd4b",
+      "score": 0.851224,
+      "distance": 0.148776,
+      "evidence": "Comparable numerical features: sjit, sbytes, tcprtt, synack, djit, dinpkt, dur, dload; Observed command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Signature command categories: reconnaissance, file_system, privilege_escalation, credential_attack, file_transfer, networking; Session auth_success=1",
+      "reason": "The session matched the closest signature sig-47521826f16efd4b with a similarity score of 0.851, above the configured known threshold 0.70.",
+      "best_signature_label": "Mixed/Unclassified",
+      "second_score": 0.226296,
+      "comparable_feature_count": 8,
+      "contradictory_evidence": []
+    },
+    {
+      "session_id": "6a0b14ea5061",
+      "assessment_category": "Potentially Novel",
+      "closest_signature_id": "sig-47521826f16efd4b",
+      "score": 0.62977,
+      "distance": 0.37023,
+      "evidence": "Comparable numerical features: sjit, sbytes, tcprtt, synack, djit, dinpkt, dur, dload; Observed command categories: file_system, file_transfer, networking, reconnaissance; Signature command categories: reconnaissance, file_system, privilege_escalation, credential_attack, file_transfer, networking; Session auth_success=1",
+      "reason": "The session had comparable evidence (8 compatible feature comparisons) but no signature exceeded the configured known threshold 0.70.",
+      "best_signature_label": "Mixed/Unclassified",
+      "second_score": 0.238049,
+      "comparable_feature_count": 8,
+      "contradictory_evidence": []
+    },
+    {
+      "session_id": "8bc90eb81f6a",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-47521826f16efd4b",
+      "score": 0.710246,
+      "distance": 0.289754,
+      "evidence": "Comparable numerical features: sjit, sbytes, tcprtt, synack, djit, dinpkt, dur, dload; Observed command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Signature command categories: reconnaissance, file_system, privilege_escalation, credential_attack, file_transfer, networking; Session auth_success=1",
+      "reason": "The session matched the closest signature sig-47521826f16efd4b with a similarity score of 0.710, above the configured known threshold 0.70.",
+      "best_signature_label": "Mixed/Unclassified",
+      "second_score": 0.15,
+      "comparable_feature_count": 8,
+      "contradictory_evidence": []
+    },
+    {
+      "session_id": "9f8ad86494f3",
+      "assessment_category": "Potentially Novel",
+      "closest_signature_id": "sig-47521826f16efd4b",
+      "score": 0.527622,
+      "distance": 0.472378,
+      "evidence": "Comparable numerical features: sjit, sbytes, tcprtt, synack, djit, dinpkt, dur, dload; Observed command categories: file_system, file_transfer, networking, privilege_escalation, reconnaissance; Signature command categories: reconnaissance, file_system, privilege_escalation, credential_attack, file_transfer, networking; Session auth_success=1",
+      "reason": "The session had comparable evidence (8 compatible feature comparisons) but no signature exceeded the configured known threshold 0.70.",
+      "best_signature_label": "Mixed/Unclassified",
+      "second_score": 0.194562,
+      "comparable_feature_count": 8,
+      "contradictory_evidence": []
+    },
+    {
+      "session_id": "cdc335727814",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-47521826f16efd4b",
+      "score": 0.801457,
+      "distance": 0.198543,
+      "evidence": "Comparable numerical features: sjit, sbytes, tcprtt, synack, djit, dinpkt, dur, dload; Observed command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Signature command categories: reconnaissance, file_system, privilege_escalation, credential_attack, file_transfer, networking; Session auth_success=1",
+      "reason": "The session matched the closest signature sig-47521826f16efd4b with a similarity score of 0.801, above the configured known threshold 0.70.",
+      "best_signature_label": "Mixed/Unclassified",
+      "second_score": 0.158404,
+      "comparable_feature_count": 8,
+      "contradictory_evidence": []
+    },
+    {
+      "session_id": "e8368cd0690d",
+      "assessment_category": "Potentially Novel",
+      "closest_signature_id": "sig-47521826f16efd4b",
+      "score": 0.586483,
+      "distance": 0.413517,
+      "evidence": "Comparable numerical features: sjit, sbytes, tcprtt, synack, djit, dinpkt, dur, dload; Observed command categories: file_system, file_transfer, networking, reconnaissance; Signature command categories: reconnaissance, file_system, privilege_escalation, credential_attack, file_transfer, networking; Session auth_success=1",
+      "reason": "The session had comparable evidence (8 compatible feature comparisons) but no signature exceeded the configured known threshold 0.70.",
+      "best_signature_label": "Mixed/Unclassified",
+      "second_score": 0.303081,
+      "comparable_feature_count": 8,
+      "contradictory_evidence": []
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+NOVELTY ASSESSMENT
+Sessions assessed: 5
+Input sessions: 5
+Output directory: data\evaluation_runs\fresh_20261019_224335\novelty
+Status: success
+Warnings: 0

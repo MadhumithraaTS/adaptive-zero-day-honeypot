@@ -1,0 +1,203 @@
+{
+  "t0_utc": "2026-10-19T17:13:41.213397Z",
+  "known_set_sizes": {
+    "git_HEAD_baseline_54": 54,
+    "baseline_backup": 54,
+    "working_tree_data_parsed": 5,
+    "demo_20261019_213439": 8,
+    "fresh_20261019_210649_snapshot": 54,
+    "reference_catalogue": 43
+  },
+  "known_union_size": 62,
+  "snapshot_session_count": 13,
+  "snapshot_previously_known_count": 8,
+  "new_session_count": 5,
+  "new_session_ids": [
+    "458003a74c58",
+    "50ce19c43b81",
+    "68c0f1a58402",
+    "860e0bc4a018",
+    "e22808051703"
+  ],
+  "new_session_overlap_with_known_sets": {
+    "git_HEAD_baseline_54": 0,
+    "baseline_backup": 0,
+    "working_tree_data_parsed": 0,
+    "demo_20261019_213439": 0,
+    "fresh_20261019_210649_snapshot": 0,
+    "reference_catalogue": 0
+  },
+  "new_sessions": {
+    "458003a74c58": {
+      "start_utc": "2026-10-19T17:14:35.719067Z",
+      "end_utc": "2026-10-19T17:14:46.606091Z",
+      "login_success": true,
+      "commands": [
+        "whoami",
+        "uname -a",
+        "pwd",
+        "ls -la",
+        "cat /etc/passwd",
+        "exit"
+      ],
+      "closed": true
+    },
+    "50ce19c43b81": {
+      "start_utc": "2026-10-19T17:13:56.625806Z",
+      "end_utc": "2026-10-19T17:14:07.137722Z",
+      "login_success": true,
+      "commands": [
+        "whoami",
+        "uname -a",
+        "pwd",
+        "ls -la",
+        "cat /etc/passwd",
+        "exit"
+      ],
+      "closed": true
+    },
+    "68c0f1a58402": {
+      "start_utc": "2026-10-19T17:14:22.960921Z",
+      "end_utc": "2026-10-19T17:14:34.892048Z",
+      "login_success": true,
+      "commands": [
+        "whoami",
+        "uname -a",
+        "pwd",
+        "ls -la",
+        "cat /etc/passwd",
+        "exit"
+      ],
+      "closed": true
+    },
+    "860e0bc4a018": {
+      "start_utc": "2026-10-19T17:13:42.033282Z",
+      "end_utc": "2026-10-19T17:13:55.033252Z",
+      "login_success": true,
+      "commands": [
+        "whoami",
+        "uname -a",
+        "pwd",
+        "ls -la",
+        "cat /etc/passwd",
+        "exit"
+      ],
+      "closed": true
+    },
+    "e22808051703": {
+      "start_utc": "2026-10-19T17:14:08.731534Z",
+      "end_utc": "2026-10-19T17:14:21.388896Z",
+      "login_success": true,
+      "commands": [
+        "whoami",
+        "uname -a",
+        "pwd",
+        "ls -la",
+        "cat /etc/passwd",
+        "exit"
+      ],
+      "closed": true
+    }
+  },
+  "dec_cluster_counts_new": {
+    "1": 5
+  },
+  "dec_confidence_new": {
+    "min": 0.92415756,
+    "mean": 0.927843824,
+    "max": 0.9345654
+  },
+  "dec_per_session": {
+    "860e0bc4a018": {
+      "cluster": "1",
+      "confidence": "0.9345654",
+      "probs": [
+        "0.04111546",
+        "0.9345654",
+        "0.024319082"
+      ]
+    },
+    "50ce19c43b81": {
+      "cluster": "1",
+      "confidence": "0.9287661",
+      "probs": [
+        "0.04486441",
+        "0.9287661",
+        "0.026369559"
+      ]
+    },
+    "e22808051703": {
+      "cluster": "1",
+      "confidence": "0.92415756",
+      "probs": [
+        "0.047649268",
+        "0.92415756",
+        "0.028193146"
+      ]
+    },
+    "68c0f1a58402": {
+      "cluster": "1",
+      "confidence": "0.9256732",
+      "probs": [
+        "0.046820495",
+        "0.9256732",
+        "0.027506286"
+      ]
+    },
+    "458003a74c58": {
+      "cluster": "1",
+      "confidence": "0.92605686",
+      "probs": [
+        "0.046560656",
+        "0.92605686",
+        "0.02738251"
+      ]
+    }
+  },
+  "dec_cluster_counts_full_snapshot": {
+    "1": 13
+  },
+  "novelty_category_counts": {
+    "Known-like": 5
+  },
+  "novelty_per_session": {
+    "458003a74c58": {
+      "category": "Known-like",
+      "closest": "sig-47521826f16efd4b",
+      "score": "0.798658",
+      "second": "0.18094"
+    },
+    "50ce19c43b81": {
+      "category": "Known-like",
+      "closest": "sig-47521826f16efd4b",
+      "score": "0.78442",
+      "second": "0.225689"
+    },
+    "68c0f1a58402": {
+      "category": "Known-like",
+      "closest": "sig-47521826f16efd4b",
+      "score": "0.819806",
+      "second": "0.171269"
+    },
+    "860e0bc4a018": {
+      "category": "Known-like",
+      "closest": "sig-47521826f16efd4b",
+      "score": "0.728341",
+      "second": "0.15"
+    },
+    "e22808051703": {
+      "category": "Known-like",
+      "closest": "sig-47521826f16efd4b",
+      "score": "0.836283",
+      "second": "0.177241"
+    }
+  },
+  "novelty_evaluation_mode": "independent",
+  "novelty_reference_session_id_count": 43,
+  "novelty_overlapping_session_count": 0,
+  "novelty_warnings": [],
+  "problems": [
+    "fresh DEC row for 458003a74c58 differs from pipeline DEC row"
+  ],
+  "verdict": "FAIL"
+}

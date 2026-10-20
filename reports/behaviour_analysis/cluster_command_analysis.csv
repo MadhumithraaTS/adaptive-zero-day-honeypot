@@ -1,0 +1,8 @@
+cluster_id,command_or_category,frequency,sessions_containing,percentage_of_sessions
+0,file_system,1,1,100.0
+1,reconnaissance,31,7,23.3333
+1,file_system,16,7,23.3333
+1,privilege_escalation,9,7,23.3333
+1,credential_attack,5,5,16.6667
+1,file_transfer,4,2,6.6667
+1,networking,2,2,6.6667

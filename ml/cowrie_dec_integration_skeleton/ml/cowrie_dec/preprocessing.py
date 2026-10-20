@@ -69,7 +69,7 @@ def preprocess(df, config, scaler, medians):
     Order:
       1. select saved feature order
       2. categorical encoding using SAVED mappings (if configured)
-      3. fill missing values using saved medians
+      3. treat +/-inf as missing and fill using saved medians
       4. log1p designated features
       5. apply saved StandardScaler
     """
@@ -87,6 +87,9 @@ def preprocess(df, config, scaler, medians):
 
     X = _encode_categorical_consistently(X, config)
 
+    # Training treated +/-inf as missing before median imputation.
+    X = X.mask(X.isin([np.inf, -np.inf]))
+
     # Fill missing values using the exact medians saved at training time.
     for feature in features:
         if feature in medians:
@@ -95,6 +98,14 @@ def preprocess(df, config, scaler, medians):
     # Convert to numeric after categorical mapping.
     for feature in features:
         X[feature] = pd.to_numeric(X[feature], errors="coerce")
+        # Text such as "inf" only becomes infinite here; impute it as training did.
+        infinite = np.isinf(X[feature])
+        if infinite.any() and feature in medians:
+            X.loc[infinite, feature] = medians[feature]
+
+    if np.isinf(X.to_numpy(dtype=float)).any():
+        bad = X.columns[np.isinf(X.to_numpy(dtype=float)).any(axis=0)].tolist()
+        raise ValueError(f"Infinite values without a saved median remain in: {bad}")
 
     if X.isna().any().any():
         bad = X.columns[X.isna().any()].tolist()

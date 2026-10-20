@@ -1,0 +1,5 @@
+{
+  "scaler_names_match_config": true,
+  "train_agreement": 0.3211111111111111,
+  "train_max_conf_diff": 0.48510142907867426
+}

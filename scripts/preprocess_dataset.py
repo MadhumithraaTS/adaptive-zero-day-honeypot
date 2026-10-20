@@ -15,6 +15,10 @@ except ImportError:
 
 from sklearn.preprocessing import MinMaxScaler
 
+# NOTE: the MinMaxScaler fitted here only produces the auxiliary model_input.csv.
+# DEC inference does not use it; DEC loads its own saved StandardScaler from
+# ml/cowrie_dec_integration_skeleton/ml/cowrie_dec/artifacts/scaler.joblib.
+
 # Feature columns matching UNSW-NB15 benchmark for DEC model evaluation.
 FEATURE_COLS = [
     'dur', 'proto', 'service', 'spkts', 'dpkts', 'sbytes', 'dbytes',
@@ -74,13 +78,13 @@ def preprocess(input_file, output_file, mapping_file='data/processed/session_map
     os.makedirs(os.path.dirname(scaler_path), exist_ok=True)
     
     if fit_scaler or not os.path.exists(scaler_path):
-        print("Fitting and saving new MinMaxScaler...")
+        print("Fitting auxiliary MinMaxScaler (not used by DEC; DEC uses its saved StandardScaler)...")
         scaler = MinMaxScaler()
         normalized_data = scaler.fit_transform(feature_df)
         save_model(scaler, scaler_path)
-        print(f"Saved scaler to {scaler_path}")
+        print(f"Saved auxiliary MinMaxScaler to {scaler_path}")
     else:
-        print(f"Loading existing scaler from {scaler_path}...")
+        print(f"Loading existing auxiliary MinMaxScaler from {scaler_path}...")
         scaler = load_model(scaler_path)
         normalized_data = scaler.transform(feature_df)
 
@@ -99,11 +103,11 @@ def preprocess(input_file, output_file, mapping_file='data/processed/session_map
     print(f"Dataset shape: {normalized_df.shape}")
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Preprocess Dataset and Persist Scaler')
+    parser = argparse.ArgumentParser(description='Build auxiliary MinMax-scaled model_input.csv (not part of DEC inference)')
     parser.add_argument('--input', type=str, default='data/parsed/behavior_features.csv', help='Path to features CSV')
     parser.add_argument('--output', type=str, default='data/processed/model_input.csv', help='Path to save final ML-ready CSV')
     parser.add_argument('--mapping', type=str, default='data/processed/session_mapping.csv', help='Path to save session mapping CSV')
-    parser.add_argument('--scaler', type=str, default='models/scaler.joblib', help='Path to save/load MinMaxScaler')
+    parser.add_argument('--scaler', type=str, default='models/scaler.joblib', help='Path to save/load the auxiliary MinMaxScaler (not the DEC StandardScaler)')
     parser.add_argument('--no-fit', action='store_true', help='Use existing scaler without refitting')
     
     args = parser.parse_args()

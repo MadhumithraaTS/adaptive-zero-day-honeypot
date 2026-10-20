@@ -4,6 +4,8 @@ import argparse
 from datetime import datetime
 import os
 import math
+import sys
+import tempfile
 
 RECON_KEYWORDS = ['whoami', 'uname', 'id', 'pwd', 'ls', 'cat /etc/passwd', 'cat /etc/issue', 'hostname', 'w', 'ps', 'ifconfig', 'ip a']
 PRIV_ESC_KEYWORDS = ['sudo', 'su', '/etc/shadow', 'id_rsa', 'chmod 777', 'chmod +s', 'crontab']
@@ -27,6 +29,96 @@ DPKT_EVENT_IDS = {
 }
 
 
+OUTPUT_COLUMNS = [
+    'session_id', 'src_ip', 'src_port',
+    'dur', 'proto', 'service', 'spkts', 'dpkts', 'sbytes', 'dbytes', 'rate',
+    'sttl', 'dttl', 'sload', 'dload', 'sinpkt', 'dinpkt', 'sjit', 'djit',
+    'tcprtt', 'synack', 'ackdat', 'ct_srv_src', 'ct_state_ttl', 'ct_dst_ltm',
+    'ct_src_ltm', 'ct_srv_dst',
+    'attack_cat', 'label',
+]
+
+
+class FeatureExtractionError(Exception):
+    """Raised when parsed sessions cannot be turned into valid, non-empty feature outputs."""
+
+
+def _load_sessions(input_file):
+    if not os.path.isfile(input_file):
+        raise FeatureExtractionError(f"{input_file} does not exist.")
+    try:
+        with open(input_file, 'r') as f:
+            sessions = json.load(f)
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise FeatureExtractionError(f"Could not read sessions from {input_file}: {exc}") from exc
+    if not isinstance(sessions, dict):
+        raise FeatureExtractionError(f"{input_file} must contain an object keyed by session ID.")
+    if not sessions:
+        raise FeatureExtractionError(f"{input_file} contains no sessions.")
+    for session_id, events in sessions.items():
+        if not isinstance(events, list) or not events:
+            raise FeatureExtractionError(f"Session {session_id!r} in {input_file} has no event list.")
+        if not all(isinstance(event, dict) for event in events):
+            raise FeatureExtractionError(f"Session {session_id!r} in {input_file} contains a non-object event.")
+    return sessions
+
+
+def _temporary_path(destination):
+    directory = os.path.dirname(destination) or "."
+    os.makedirs(directory, exist_ok=True)
+    descriptor, temporary = tempfile.mkstemp(prefix=f".{os.path.basename(destination)}.", suffix=".tmp", dir=directory)
+    os.close(descriptor)
+    return temporary
+
+
+def _write_outputs(features_list, output_file, session_details, details_output):
+    # Write both files to temporary paths first so a failed write never leaves a stale or partial pair.
+    temporaries = []
+    try:
+        csv_temporary = _temporary_path(output_file)
+        temporaries.append(csv_temporary)
+        with open(csv_temporary, 'w', newline='') as f:
+            dict_writer = csv.DictWriter(f, fieldnames=features_list[0].keys())
+            dict_writer.writeheader()
+            dict_writer.writerows(features_list)
+        if details_output:
+            details_temporary = _temporary_path(details_output)
+            temporaries.append(details_temporary)
+            with open(details_temporary, 'w') as f:
+                json.dump(session_details, f, indent=4)
+        os.replace(csv_temporary, output_file)
+        if details_output:
+            os.replace(details_temporary, details_output)
+    except OSError as exc:
+        raise FeatureExtractionError(f"Could not write feature outputs: {exc}") from exc
+    finally:
+        for temporary in temporaries:
+            if os.path.exists(temporary):
+                os.remove(temporary)
+
+
+def _validate_outputs(output_file, details_output, session_ids):
+    try:
+        with open(output_file, 'r', newline='') as f:
+            reader = csv.DictReader(f)
+            header = reader.fieldnames
+            csv_ids = [row['session_id'] for row in reader]
+    except (OSError, csv.Error, KeyError) as exc:
+        raise FeatureExtractionError(f"Written feature CSV {output_file} could not be read back: {exc}") from exc
+    if header != OUTPUT_COLUMNS:
+        raise FeatureExtractionError(f"Written feature CSV {output_file} has unexpected columns: {header}")
+    if sorted(csv_ids) != sorted(session_ids):
+        raise FeatureExtractionError(f"Written feature CSV {output_file} does not contain the {len(session_ids)} extracted sessions.")
+    if details_output:
+        try:
+            with open(details_output, 'r') as f:
+                details = json.load(f)
+        except (OSError, ValueError) as exc:
+            raise FeatureExtractionError(f"Written details {details_output} could not be read back: {exc}") from exc
+        if not isinstance(details, dict) or sorted(details) != sorted(session_ids):
+            raise FeatureExtractionError(f"Written details {details_output} do not match the extracted sessions.")
+
+
 def encode_proto(proto_str: str) -> int:
     return PROTO_MAP.get(proto_str.lower(), 0) if proto_str else 0
 
@@ -40,12 +132,7 @@ def calculate_std_dev(values):
 
 
 def extract_features(input_file, output_file, details_output=None):
-    if not os.path.exists(input_file):
-        print(f"Error: {input_file} does not exist.")
-        return
-
-    with open(input_file, 'r') as f:
-        sessions = json.load(f)
+    sessions = _load_sessions(input_file)
 
     features_list = []
     session_details = {}
@@ -332,22 +419,15 @@ def extract_features(input_file, output_file, details_output=None):
 
     print(f"Extracted 24 UNSW-NB15 features + ground-truth labels for {len(features_list)} sessions.")
 
-    if features_list:
-        os.makedirs(os.path.dirname(output_file), exist_ok=True)
-        keys = features_list[0].keys()
-        with open(output_file, 'w', newline='') as f:
-            dict_writer = csv.DictWriter(f, fieldnames=keys)
-            dict_writer.writeheader()
-            dict_writer.writerows(features_list)
-        print(f"Saved 24-feature dataset + labels to {output_file}")
+    if not features_list:
+        raise FeatureExtractionError("No features extracted.")
 
-        if details_output:
-            os.makedirs(os.path.dirname(details_output), exist_ok=True)
-            with open(details_output, 'w') as f:
-                json.dump(session_details, f, indent=4)
-            print(f"Saved session sequence details to {details_output}")
-    else:
-        print("No features extracted.")
+    _write_outputs(features_list, output_file, session_details, details_output)
+    _validate_outputs(output_file, details_output, list(session_details))
+    print(f"Saved 24-feature dataset + labels to {output_file}")
+    if details_output:
+        print(f"Saved session sequence details to {details_output}")
+    return len(features_list)
 
 
 if __name__ == '__main__':
@@ -360,4 +440,11 @@ if __name__ == '__main__':
                         help='Path to save raw sequence details')
 
     args = parser.parse_args()
-    extract_features(args.input, args.output, args.details)
+    try:
+        extract_features(args.input, args.output, args.details)
+    except FeatureExtractionError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        for path in (args.output, args.details):
+            if path and os.path.exists(path):
+                print(f"Error: existing {path} was not updated by this run.", file=sys.stderr)
+        sys.exit(1)

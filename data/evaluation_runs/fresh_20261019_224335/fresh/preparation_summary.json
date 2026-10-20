@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "status": "success",
+  "baseline_session_count": 62,
+  "snapshot_session_count": 13,
+  "new_session_count": 5,
+  "excluded_historical_session_count": 8,
+  "required_dec_features": [
+    "dur",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "sload",
+    "dload",
+    "sinpkt",
+    "dinpkt",
+    "sjit",
+    "djit",
+    "tcprtt",
+    "synack",
+    "ackdat",
+    "ct_srv_src",
+    "ct_src_ltm"
+  ],
+  "output_paths": {
+    "session_details_json": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\data\\evaluation_runs\\fresh_20261019_224335\\fresh\\fresh_session_details.json",
+    "features_csv": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\data\\evaluation_runs\\fresh_20261019_224335\\fresh\\fresh_behavior_features.csv",
+    "summary_json": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\data\\evaluation_runs\\fresh_20261019_224335\\fresh\\preparation_summary.json"
+  }
+}

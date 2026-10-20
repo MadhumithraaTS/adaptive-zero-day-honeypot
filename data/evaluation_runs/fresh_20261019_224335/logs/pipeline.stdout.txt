@@ -1,0 +1,55 @@
+Parsing logs from data\evaluation_runs\fresh_20261019_224335\raw\cowrie.json...
+Parsed 13 unique sessions.
+Saved parsed sessions to data\evaluation_runs\fresh_20261019_224335\pipeline\parsed\sessions.json
+Extracted 24 UNSW-NB15 features + ground-truth labels for 13 sessions.
+Saved 24-feature dataset + labels to data\evaluation_runs\fresh_20261019_224335\pipeline\parsed\behavior_features.csv
+Saved session sequence details to data\evaluation_runs\fresh_20261019_224335\pipeline\parsed\session_details.json
+[DEBUG] REPO_ROOT: C:\AMRITA\Final_Year_Project_zero_day_27\adaptive-zero-day-honeypot
+[DEBUG] sys.path[0:5]: ['C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\ml\\cowrie_dec_integration_skeleton\\scripts', 'C:\\Program Files\\Python311\\python311.zip', 'C:\\Program Files\\Python311\\DLLs', 'C:\\Program Files\\Python311\\Lib', 'C:\\Program Files\\Python311']
+
+======================================
+COWRIE DEC OFFLINE SANITY CHECK
+======================================
+Samples: 13
+Clusters: [1]
+
+Cluster distribution:
+Cluster 1: 13 (100.00%)
+
+Confidence:
+Mean: 0.9162646532058716
+Min : 0.812254011631012
+Max : 0.9464942216873169
+
+ARI/NMI: omitted (labels not verified; pass --labels-verified to report them)
+
+Saved: data\evaluation_runs\fresh_20261019_224335\pipeline\processed\dec_results.csv
+Starting Adaptive Zero-Day Honeypot Data & ML Preprocessing Pipeline...
+DEC interpreter: C:\AMRITA\Final_Year_Project_zero_day_27\adaptive-zero-day-honeypot\ml\cowrie_dec_integration_skeleton\.venv-dec-smoke\Scripts\python.exe
+
+Skipping Attack Simulation (--skip-attack set)
+
+Skipping Log Collection (parsing data\evaluation_runs\fresh_20261019_224335\raw\cowrie.json)
+
+============================================================
+Running step: Log Parsing
+============================================================
+
+============================================================
+Running step: Feature Extraction
+============================================================
+
+Skipping auxiliary MinMax preprocessing (--skip-preprocess set)
+
+============================================================
+Running step: DEC Clustering
+============================================================
+
+============================================================
+ Pipeline completed successfully!
+ Outputs Generated:
+  • Session Sequences:     data\evaluation_runs\fresh_20261019_224335\pipeline\parsed\session_details.json
+  • DEC Feature Input:     data\evaluation_runs\fresh_20261019_224335\pipeline\parsed\behavior_features.csv
+  • DEC Cluster Results:   data\evaluation_runs\fresh_20261019_224335\pipeline\processed\dec_results.csv
+============================================================
+

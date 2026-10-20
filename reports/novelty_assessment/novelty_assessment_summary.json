@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-15T13:54:09.096318+00:00",
+  "results_count": 54,
+  "category_counts": {
+    "Known-like": 54
+  },
+  "output_files": {
+    "csv": "reports\\novelty_assessment\\novelty_assessment_results.csv",
+    "json": "reports\\novelty_assessment\\novelty_assessment_results.json",
+    "report": "reports\\novelty_assessment\\novelty_assessment_report.md",
+    "summary": "reports\\novelty_assessment\\novelty_assessment_summary.json"
+  },
+  "status": "success",
+  "input_session_count": 54,
+  "processed_session_count": 54,
+  "thresholds": {
+    "known_threshold": 0.7,
+    "ambiguous_margin": 0.05,
+    "min_compatible_features": 1,
+    "borderline_score": 0.6
+  },
+  "held_out_ratio": 0.0,
+  "random_seed": 42,
+  "evaluation_mode": "in-sample",
+  "warnings": [
+    "The novelty assessment is in-sample because no held-out split was applied; it should not be interpreted as independent generalization performance."
+  ]
+}

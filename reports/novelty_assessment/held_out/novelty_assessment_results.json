@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "results": [
+    {
+      "session_id": "4d2398ddaebd",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-80f49f344b21151c",
+      "score": 0.78576,
+      "distance": 0.21424,
+      "evidence": "Comparable numerical features: ackdat, ct_dst_ltm, ct_src_ltm, ct_srv_dst, ct_srv_src, ct_state_ttl, dbytes, dinpkt; Session auth_success=0",
+      "reason": "The session matched the closest signature sig-80f49f344b21151c with a similarity score of 0.786, above the configured known threshold 0.70.",
+      "best_signature_label": "Credential-attack behaviour",
+      "second_score": 0.650799,
+      "comparable_feature_count": 24
+    },
+    {
+      "session_id": "51fb60d24936",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-80f49f344b21151c",
+      "score": 0.77961,
+      "distance": 0.22039,
+      "evidence": "Comparable numerical features: ackdat, ct_dst_ltm, ct_src_ltm, ct_srv_dst, ct_srv_src, ct_state_ttl, dbytes, dinpkt; Session auth_success=0",
+      "reason": "The session matched the closest signature sig-80f49f344b21151c with a similarity score of 0.780, above the configured known threshold 0.70.",
+      "best_signature_label": "Credential-attack behaviour",
+      "second_score": 0.650946,
+      "comparable_feature_count": 24
+    },
+    {
+      "session_id": "61c8acc77ac0",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-80f49f344b21151c",
+      "score": 0.792669,
+      "distance": 0.207331,
+      "evidence": "Comparable numerical features: ackdat, ct_dst_ltm, ct_src_ltm, ct_srv_dst, ct_srv_src, ct_state_ttl, dbytes, dinpkt; Session auth_success=0",
+      "reason": "The session matched the closest signature sig-80f49f344b21151c with a similarity score of 0.793, above the configured known threshold 0.70.",
+      "best_signature_label": "Credential-attack behaviour",
+      "second_score": 0.650828,
+      "comparable_feature_count": 24
+    },
+    {
+      "session_id": "735512cb6ad6",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-80f49f344b21151c",
+      "score": 0.790621,
+      "distance": 0.209379,
+      "evidence": "Comparable numerical features: ackdat, ct_dst_ltm, ct_src_ltm, ct_srv_dst, ct_srv_src, ct_state_ttl, dbytes, dinpkt; Session auth_success=0",
+      "reason": "The session matched the closest signature sig-80f49f344b21151c with a similarity score of 0.791, above the configured known threshold 0.70.",
+      "best_signature_label": "Credential-attack behaviour",
+      "second_score": 0.65082,
+      "comparable_feature_count": 24
+    },
+    {
+      "session_id": "76bbeca4b01a",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-80f49f344b21151c",
+      "score": 0.799103,
+      "distance": 0.200897,
+      "evidence": "Comparable numerical features: ackdat, ct_dst_ltm, ct_src_ltm, ct_srv_dst, ct_srv_src, ct_state_ttl, dbytes, dinpkt; Session auth_success=0",
+      "reason": "The session matched the closest signature sig-80f49f344b21151c with a similarity score of 0.799, above the configured known threshold 0.70.",
+      "best_signature_label": "Credential-attack behaviour",
+      "second_score": 0.650856,
+      "comparable_feature_count": 24
+    },
+    {
+      "session_id": "9a4ec106110f",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-80f49f344b21151c",
+      "score": 0.795187,
+      "distance": 0.204813,
+      "evidence": "Comparable numerical features: ackdat, ct_dst_ltm, ct_src_ltm, ct_srv_dst, ct_srv_src, ct_state_ttl, dbytes, dinpkt; Session auth_success=0",
+      "reason": "The session matched the closest signature sig-80f49f344b21151c with a similarity score of 0.795, above the configured known threshold 0.70.",
+      "best_signature_label": "Credential-attack behaviour",
+      "second_score": 0.65088,
+      "comparable_feature_count": 24
+    },
+    {
+      "session_id": "a38c819b1e32",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-80f49f344b21151c",
+      "score": 0.795594,
+      "distance": 0.204406,
+      "evidence": "Comparable numerical features: ackdat, ct_dst_ltm, ct_src_ltm, ct_srv_dst, ct_srv_src, ct_state_ttl, dbytes, dinpkt; Session auth_success=0",
+      "reason": "The session matched the closest signature sig-80f49f344b21151c with a similarity score of 0.796, above the configured known threshold 0.70.",
+      "best_signature_label": "Credential-attack behaviour",
+      "second_score": 0.650878,
+      "comparable_feature_count": 24
+    },
+    {
+      "session_id": "a4c62363d8d6",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-a9ba70ab199a9fc1",
+      "score": 0.845505,
+      "distance": 0.154495,
+      "evidence": "Comparable numerical features: ackdat, ct_dst_ltm, ct_src_ltm, ct_srv_dst, ct_srv_src, ct_state_ttl, dbytes, dinpkt; Observed command categories: file_system, file_transfer, networking, privilege_escalation, reconnaissance; Signature command categories: reconnaissance, file_system, privilege_escalation, credential_attack, file_transfer, networking; Session auth_success=1",
+      "reason": "The session matched the closest signature sig-a9ba70ab199a9fc1 with a similarity score of 0.846, above the configured known threshold 0.70.",
+      "best_signature_label": "Mixed/Unclassified",
+      "second_score": 0.664782,
+      "comparable_feature_count": 24
+    },
+    {
+      "session_id": "bdf3eea00cb2",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-80f49f344b21151c",
+      "score": 0.777651,
+      "distance": 0.222349,
+      "evidence": "Comparable numerical features: ackdat, ct_dst_ltm, ct_src_ltm, ct_srv_dst, ct_srv_src, ct_state_ttl, dbytes, dinpkt; Session auth_success=0",
+      "reason": "The session matched the closest signature sig-80f49f344b21151c with a similarity score of 0.778, above the configured known threshold 0.70.",
+      "best_signature_label": "Credential-attack behaviour",
+      "second_score": 0.650765,
+      "comparable_feature_count": 24
+    },
+    {
+      "session_id": "ccba58b29c45",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-80f49f344b21151c",
+      "score": 0.7125,
+      "distance": 0.2875,
+      "evidence": "Comparable numerical features: ackdat, ct_dst_ltm, ct_src_ltm, ct_srv_dst, ct_srv_src, ct_state_ttl, dbytes, dinpkt; Session auth_success=0",
+      "reason": "The session matched the closest signature sig-80f49f344b21151c with a similarity score of 0.713, above the configured known threshold 0.70.",
+      "best_signature_label": "Credential-attack behaviour",
+      "second_score": 0.651451,
+      "comparable_feature_count": 24
+    },
+    {
+      "session_id": "e422abb51310",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-80f49f344b21151c",
+      "score": 0.790332,
+      "distance": 0.209668,
+      "evidence": "Comparable numerical features: ackdat, ct_dst_ltm, ct_src_ltm, ct_srv_dst, ct_srv_src, ct_state_ttl, dbytes, dinpkt; Session auth_success=0",
+      "reason": "The session matched the closest signature sig-80f49f344b21151c with a similarity score of 0.790, above the configured known threshold 0.70.",
+      "best_signature_label": "Credential-attack behaviour",
+      "second_score": 0.650818,
+      "comparable_feature_count": 24
+    }
+  ]
+}

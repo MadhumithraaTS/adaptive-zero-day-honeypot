@@ -1,0 +1,6 @@
+Fresh-session evaluation inputs prepared.
+Baseline sessions: 62
+Snapshot sessions: 13
+New sessions: 5
+Excluded historical sessions: 8
+Summary: C:\AMRITA\Final_Year_Project_zero_day_27\adaptive-zero-day-honeypot\data\evaluation_runs\fresh_20261019_224335\fresh\preparation_summary.json

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "description": "Defence rule-proposal policy. Blocking requires behavioural evidence; DEC cluster and novelty category are context only.",
+  "require_successful_login_for_block": true,
+  "min_distinct_indicators_for_block": 2,
+  "flag_potentially_novel_for_review": true,
+  "protected_networks": [
+    "127.0.0.0/8",
+    "::1/128",
+    "169.254.0.0/16",
+    "fe80::/10",
+    "172.19.0.0/16"
+  ],
+  "protected_networks_note": "172.19.0.0/16 is the cowrie_default Docker network; on Docker Desktop every connection to the honeypot appears to come from its gateway 172.19.0.1, so blocking it would block all access."
+}

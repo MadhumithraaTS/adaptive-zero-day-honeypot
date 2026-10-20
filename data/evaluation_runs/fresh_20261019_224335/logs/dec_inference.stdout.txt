@@ -1,0 +1,20 @@
+[DEBUG] REPO_ROOT: C:\AMRITA\Final_Year_Project_zero_day_27\adaptive-zero-day-honeypot
+[DEBUG] sys.path[0:5]: ['C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\ml\\cowrie_dec_integration_skeleton\\scripts', 'C:\\Program Files\\Python311\\python311.zip', 'C:\\Program Files\\Python311\\DLLs', 'C:\\Program Files\\Python311\\Lib', 'C:\\Program Files\\Python311']
+
+======================================
+COWRIE DEC OFFLINE SANITY CHECK
+======================================
+Samples: 5
+Clusters: [1]
+
+Cluster distribution:
+Cluster 1: 5 (100.00%)
+
+Confidence:
+Mean: 0.9278438687324524
+Min : 0.9241575598716736
+Max : 0.9345654249191284
+
+ARI/NMI: omitted (labels not verified; pass --labels-verified to report them)
+
+Saved: data\evaluation_runs\fresh_20261019_224335\dec\dec_results.csv

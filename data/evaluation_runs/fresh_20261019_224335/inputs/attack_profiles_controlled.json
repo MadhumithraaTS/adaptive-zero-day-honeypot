@@ -1,0 +1,18 @@
+{
+  "profiles": [
+    {
+      "name": "script_kiddie",
+      "commands": [
+        "whoami",
+        "uname -a",
+        "pwd",
+        "ls -la",
+        "cat /etc/passwd"
+      ],
+      "delay_range": [
+        1,
+        3
+      ]
+    }
+  ]
+}
