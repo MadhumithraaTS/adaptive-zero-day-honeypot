@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 
 # 🛡️ AI-Driven Adaptive Honeypot Platform
 ### Zero-Day Attack Intelligence & Automated Defense
@@ -35,7 +35,9 @@
 - [Project Roadmap](#-project-roadmap)
 - [Novelty & Differentiation](#-novelty--differentiation)
 - [Advantages & Limitations](#-advantages--limitations)
-- [Team](#-team)
+- [Prerequisites](#-prerequisites)
+- [Contributing](#-contributing)
+- [License](#-license)
 - [References](#-references)
 
 ---
@@ -364,19 +366,51 @@ python scripts/pipeline.py
 
 ---
 
-## 👩‍💻 Team
+## 🧰 Prerequisites
 
-| S.No | Register Number | Name |
-|:---:|---|---|
-| 1 | CB.SC.U4CSE23404 | Amritha S Nidhi |
-| 2 | CB.SC.U4CSE23405 | Anaswara K |
-| 3 | CB.SC.U4CSE23429 | Madhumithraa T S |
-| 4 | CB.SC.U4CSE23435 | Mayuka Sri K |
-| 5 | CB.SC.U4CSE23457 | Vrithika K M |
+Before running this project, ensure the following are installed on your system:
 
-**Faculty Guide:** Dr. Harini N, Associate Professor, Department of Computer Science & Engineering
-**Institution:** Amrita Vishwa Vidyapeetham, Coimbatore
-**Course:** 23CSE399 — Project Phase 1
+| Requirement | Version | Notes |
+|---|---|---|
+| Python | 3.10+ | Core runtime |
+| pip | Latest | Package manager |
+| Git | Any | For cloning the repo |
+| Cowrie | Latest | SSH/Telnet honeypot ([setup guide](https://cowrie.readthedocs.io)) |
+| Hydra | Any | Optional — for attack simulation |
+| Nmap | Any | Optional — for port scanning tests |
+| MongoDB | 6.0+ | Optional — for production log storage |
+
+> **Note:** Cowrie must be deployed on a **Linux** system (VM or container). All Python scripts run cross-platform.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! To contribute:
+
+1. **Fork** this repository
+2. **Create** a feature branch
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Commit** your changes with a descriptive message
+   ```bash
+   git commit -m "feat: add your feature description"
+   ```
+4. **Push** to your fork and open a **Pull Request**
+
+Please ensure your code:
+- Follows the existing script structure and naming conventions
+- Includes comments for non-obvious logic
+- Does not commit raw log files or credentials
+
+---
+
+## 📄 License
+
+This project is released under the [MIT License](LICENSE).
+
+You are free to use, modify, and distribute this software. Attribution is appreciated but not required.
 
 ---
 
@@ -389,13 +423,3 @@ python scripts/pipeline.py
 5. Ahmed, M., et al. (2016). *A Survey of Anomaly Detection Techniques in Financial Domain*. Future Generation Computer Systems.
 6. Roesch, M. (1999). *Snort — Lightweight Intrusion Detection for Networks*. USENIX LISA.
 7. Sicari, S., et al. (2015). *Security, Privacy and Trust in Internet of Things: The Road Ahead*. Computer Networks.
-
----
-
-<div align="center">
-
-**Made with ❤️ at Amrita Vishwa Vidyapeetham**
-
-*Bridging the gap between attack discovery and automated defense.*
-
-</div>
