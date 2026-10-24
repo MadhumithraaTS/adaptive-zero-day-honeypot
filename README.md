@@ -37,7 +37,6 @@
 - [Advantages & Limitations](#-advantages--limitations)
 - [Prerequisites](#-prerequisites)
 - [Contributing](#-contributing)
-- [License](#-license)
 - [References](#-references)
 
 ---
@@ -403,14 +402,6 @@ Please ensure your code:
 - Follows the existing script structure and naming conventions
 - Includes comments for non-obvious logic
 - Does not commit raw log files or credentials
-
----
-
-## 📄 License
-
-This project is released under the [MIT License](LICENSE).
-
-You are free to use, modify, and distribute this software. Attribution is appreciated but not required.
 
 ---
 
