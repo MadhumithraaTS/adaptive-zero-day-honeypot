@@ -36,6 +36,7 @@
 - [Novelty & Differentiation](#-novelty--differentiation)
 - [Advantages & Limitations](#-advantages--limitations)
 - [Prerequisites](#-prerequisites)
+- [Installation & Setup](#-installation--setup)
 - [Contributing](#-contributing)
 - [References](#-references)
 
@@ -263,24 +264,9 @@ Phase 1 establishes the **foundational data collection infrastructure** — hone
 
 > **Observed Attacker IPs:** `172.20.10.3`, `172.20.10.4`, `172.20.10.5`
 
-### Getting Started
+### Installation & Setup
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/MadhumithraaTS/adaptive-zero-day-honeypot.git
-cd adaptive-zero-day-honeypot
-
-# 2. Create and activate virtual environment
-python -m venv .venv
-source .venv/bin/activate        # Linux/macOS
-.venv\Scripts\activate           # Windows
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Run the data pipeline
-python scripts/pipeline.py
-```
+> See the dedicated [Installation & Setup](#-installation--setup) section below for the full setup guide.
 
 ---
 
@@ -367,19 +353,116 @@ python scripts/pipeline.py
 
 ## 🧰 Prerequisites
 
-Before running this project, ensure the following are installed on your system:
+### System Requirements
 
-| Requirement | Version | Notes |
+| Component | Requirement |
+|---|---|
+| **OS (Honeypot)** | Linux (Ubuntu 20.04+ recommended) — VM or Docker container |
+| **OS (Scripts)** | Linux, macOS, or Windows (cross-platform) |
+| **RAM** | 2 GB minimum, 4 GB recommended |
+| **Disk** | 5 GB free for logs and model artifacts |
+| **Python** | 3.10 or higher |
+
+### Required Software
+
+| Tool | Version | Purpose | Install |
+|---|---|---|---|
+| Python | 3.10+ | Core runtime | [python.org](https://python.org) |
+| pip | Latest | Package manager | Bundled with Python |
+| Git | Any | Version control | [git-scm.com](https://git-scm.com) |
+| Cowrie | Latest | SSH/Telnet honeypot | [cowrie.readthedocs.io](https://cowrie.readthedocs.io) |
+
+### Optional Tools (Attack Simulation & Storage)
+
+| Tool | Version | Purpose | Install |
+|---|---|---|---|
+| Hydra | Any | Brute-force attack simulation | `sudo apt install hydra` |
+| Nmap | 7.0+ | Port scanning and fingerprinting | `sudo apt install nmap` |
+| MongoDB | 6.0+ | Production log storage | [mongodb.com](https://www.mongodb.com/try/download/community) |
+
+> ⚠️ **Important:** Cowrie **must** run on a Linux host. All Python analysis scripts are cross-platform and can be run on any OS.
+
+---
+
+## 🚀 Installation & Setup
+
+### Step 1 — Clone the Repository
+
+```bash
+git clone https://github.com/MadhumithraaTS/adaptive-zero-day-honeypot.git
+cd adaptive-zero-day-honeypot
+```
+
+### Step 2 — Set Up the Python Environment
+
+```bash
+# Create a virtual environment
+python -m venv .venv
+
+# Activate it
+source .venv/bin/activate       # Linux / macOS
+.venv\Scripts\activate          # Windows (PowerShell)
+```
+
+### Step 3 — Install Dependencies
+
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+<details>
+<summary>📦 What gets installed?</summary>
+
+| Package | Version | Role |
 |---|---|---|
-| Python | 3.10+ | Core runtime |
-| pip | Latest | Package manager |
-| Git | Any | For cloning the repo |
-| Cowrie | Latest | SSH/Telnet honeypot ([setup guide](https://cowrie.readthedocs.io)) |
-| Hydra | Any | Optional — for attack simulation |
-| Nmap | Any | Optional — for port scanning tests |
-| MongoDB | 6.0+ | Optional — for production log storage |
+| `paramiko` | 3.4.0 | SSH protocol layer |
+| `pandas` | 3.0.5 | Data processing and feature tables |
+| `scikit-learn` | 1.9.0 | ML clustering and anomaly detection |
+| `joblib` | 1.3.2 | Model serialization and parallel jobs |
+| `tensorflow-cpu` | ≥ 2.13.0 | Deep learning (Autoencoder) |
 
-> **Note:** Cowrie must be deployed on a **Linux** system (VM or container). All Python scripts run cross-platform.
+</details>
+
+### Step 4 — Configure Cowrie Honeypot
+
+Cowrie must be set up separately on a Linux machine. Follow the [official Cowrie documentation](https://cowrie.readthedocs.io/en/latest/INSTALL.html) to:
+
+1. Install Cowrie and its dependencies
+2. Configure it to listen on port `2222` (or redirect port `22` via `iptables`)
+3. Point its log output to `data/raw/cowrie.json` in this repository
+
+```bash
+# Example: symlink Cowrie's JSON log into this repo
+ln -s /home/cowrie/cowrie/var/log/cowrie/cowrie.json \
+      /path/to/adaptive-zero-day-honeypot/data/raw/cowrie.json
+```
+
+### Step 5 — Run the Pipeline
+
+```bash
+# Parse raw honeypot logs into structured format
+python scripts/parse_logs.py
+
+# Extract behavioral features from parsed sessions
+python scripts/extract_features.py
+
+# Run the full end-to-end pipeline
+python scripts/pipeline.py
+```
+
+### Step 6 — (Optional) Simulate Attacks for Testing
+
+If you don't have live honeypot data yet, generate a synthetic dataset:
+
+```bash
+# Generate a realistic synthetic attack dataset
+python scripts/generate_dataset.py
+
+# Or run a controlled brute-force simulation (requires Hydra)
+bash -c "hydra -l root -P /usr/share/wordlists/rockyou.txt \
+         ssh://127.0.0.1:2222 -t 4"
+```
 
 ---
 
