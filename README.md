@@ -36,7 +36,7 @@
 - [Novelty & Differentiation](#-novelty--differentiation)
 - [Advantages & Limitations](#-advantages--limitations)
 - [Prerequisites](#-prerequisites)
-- [Installation & Setup](#-installation--setup)
+- [Installation & Setup](INSTALLATION.md)
 - [Contributing](#-contributing)
 - [References](#-references)
 
@@ -266,7 +266,7 @@ Phase 1 establishes the **foundational data collection infrastructure** — hone
 
 ### Installation & Setup
 
-> See the dedicated [Installation & Setup](#-installation--setup) section below for the full setup guide.
+> 📄 See the full **[INSTALLATION.md](INSTALLATION.md)** for a complete step-by-step setup guide — including Docker/Cowrie configuration, pipeline options, DEC interpreter setup, and result interpretation.
 
 ---
 
