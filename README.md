@@ -242,6 +242,7 @@ adaptive-zero-day-honeypot/
 │   └── dec_batch_probe.py                      # Batch probe utility for DEC cluster sanity checks
 │
 ├── docs/                                       # Project documentation and research artefacts
+│   ├── testing.md                              # Comprehensive test suite audit, runner guide & coverage matrix
 │   ├── final_technical_report.md               # Full technical report covering all project phases
 │   ├── report_evidence_map.md                  # Maps report claims to output files and evidence
 │   ├── final_demo_checklist.md                 # End-to-end demo verification checklist

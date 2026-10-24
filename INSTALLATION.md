@@ -1,4 +1,4 @@
-﻿# 🚀 Installation & Setup Guide
+# 🚀 Installation & Setup Guide
 
 > Complete guide to set up, configure, and run the **AI-Driven Adaptive Honeypot Platform** from scratch.
 
@@ -20,6 +20,7 @@
 - [Interpreting Results](#-interpreting-results)
 - [Connect to the Honeypot Manually](#-connect-to-the-honeypot-manually)
 - [Stop the Honeypot](#-stop-the-honeypot)
+- [Running Automated Tests](#-running-automated-tests)
 - [Troubleshooting](#-troubleshooting)
 
 ---
@@ -312,6 +313,28 @@ ssh root@localhost -p 2223
 ```bash
 docker compose -f cowrie/docker-compose.yml down
 ```
+
+---
+
+## 🧪 Running Automated Tests
+
+The repository includes a regression and validation test suite of 130 tests covering log ingestion, feature extraction, novelty scoring, clustering, and pipeline safety. All tests run offline without requiring a live honeypot.
+
+```bash
+# Install pytest in your virtual environment
+pip install pytest
+
+# Run the core offline test suite
+pytest tests/test_behaviour_pattern_analysis.py `
+       tests/test_behaviour_signature_generation.py `
+       tests/test_collect_logs.py `
+       tests/test_dec_preprocessing.py `
+       tests/test_log_processing.py `
+       tests/test_novelty_assessment.py `
+       tests/test_prepare_fresh_evaluation.py -v
+```
+
+For full details on test coverage, dual-interpreter requirements, and audited results, see [`docs/testing.md`](docs/testing.md).
 
 ---
 
