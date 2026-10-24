@@ -172,39 +172,89 @@ Internet / External Attackers
 ```
 adaptive-zero-day-honeypot/
 │
-├── cowrie/                               # Cowrie honeypot config and logs
-├── configs/                              # Environment and service configuration files
+├── configs/                                    # Runtime configuration files
+│   ├── attack_profiles.json                    # Attack scenario profiles used by the generator
+│   └── defence_policy.json                     # Defence response policy definitions
 │
-├── scripts/                              # Core pipeline scripts
-│   ├── pipeline.py                       # End-to-end orchestration pipeline
-│   ├── collect_logs.py                   # Honeypot log ingestion
-│   ├── parse_logs.py                     # Raw log parsing → structured format
-│   ├── generate_dataset.py               # Synthetic + real dataset generation
-│   ├── extract_features.py               # Behavioral feature extraction
-│   ├── preprocess_dataset.py             # Data cleaning and normalization
-│   ├── behaviour_pattern_analysis.py     # Clustering and pattern detection
-│   ├── behaviour_signature_generation.py # IDS rule generation from clusters
-│   ├── novelty_assessment.py             # Zero-day novelty scoring
-│   ├── attack_generator.py               # Controlled attack simulation
-│   └── prepare_fresh_evaluation.py       # Evaluation and benchmarking
+├── cowrie/                                     # Cowrie honeypot container setup
+│   └── docker-compose.yml                      # Docker Compose file to launch the Cowrie container
 │
-├── data/
-│   ├── raw/                              # Raw Cowrie JSON logs
-│   ├── parsed/                           # Structured session/feature data
-│   └── processed/                        # ML-ready model input files
+├── data/                                       # All data produced and consumed by the pipeline
+│   ├── raw/                                    # Raw Cowrie JSON event logs (cowrie.json)
+│   ├── parsed/                                 # Structured session and feature data
+│   ├── processed/                              # Preprocessed ML-ready input files
+│   ├── evaluation_runs/                        # Archived outputs from evaluation experiments
+│   └── fresh_evaluation/                       # Outputs from fresh (non-baseline) pipeline runs
 │
-├── ml/                                   # ML model integration modules
-├── models/                               # Trained model artifacts
-├── model_selection/                      # Model comparison experiments
-├── notebooks/                            # Exploratory analysis notebooks
-├── dataset/                              # Curated training/evaluation datasets
-├── logs/                                 # Pipeline execution logs
-├── reports/                              # Generated analysis reports
-├── tests/                                # Unit and integration tests
-├── docs/                                 # Extended documentation
+├── ml/                                         # Machine learning integration modules
+│   └── cowrie_dec_integration_skeleton/        # DEC (Deep Embedded Clustering) integration package
+│       ├── ml/cowrie_dec/                      # DEC model, autoencoder, and scaler logic
+│       └── scripts/
+│           └── run_dec_evaluation.py           # Entry point: runs DEC inference on a feature CSV
 │
-├── requirements.txt                      # Python dependencies
-└── README.md
+├── model_selection/                            # Model comparison and hyperparameter tuning experiments
+│   ├── USNW-NB15.ipynb                         # Baseline experiments on the UNSW-NB15 benchmark dataset
+│   ├── cowrie_dataset.ipynb                    # Dataset exploration and modelling on Cowrie telemetry
+│   ├── cowrie_tuned.ipynb                      # Tuned DEC / Autoencoder experiments on Cowrie data
+│   ├── dl_models.ipynb                         # Comparison of deep learning model architectures
+│   ├── dl_tuned.ipynb                          # Hyperparameter-tuned deep learning experiments
+│   ├── DEC_tuning_results.csv                  # DEC hyperparameter search results
+│   ├── VAE_GMM_tuning_results.csv              # VAE + GMM tuning results
+│   ├── autoencoder_kmeans_tuning_results.csv   # Autoencoder + K-Means tuning results
+│   ├── DL_Models_Final_Comparison.csv          # Final cross-model performance comparison
+│   ├── cowrie_autoencoder.keras                # Trained autoencoder model (Cowrie data)
+│   ├── cowrie_dec_model.keras                  # Trained DEC model (Cowrie data)
+│   └── cowrie_encoder.keras                    # Trained encoder for latent space extraction
+│
+├── models/                                     # Production model artifacts used by the live pipeline
+│   └── scaler.joblib                           # Fitted MinMaxScaler for feature normalisation
+│
+├── reports/                                    # Auto-generated analysis output reports
+│   ├── behaviour_analysis/                     # Clustering and behavioural pattern reports
+│   ├── behaviour_signatures/                   # Generated behavioural signature files
+│   ├── diagnostics/                            # Pipeline diagnostic and sanity-check reports
+│   └── novelty_assessment/                     # Per-session novelty scoring reports
+│
+├── scripts/                                    # Core pipeline scripts
+│   ├── pipeline.py                             # End-to-end orchestrator: attack → collect → parse → cluster
+│   ├── attack_generator.py                     # Generates structured SSH attack sessions against Cowrie
+│   ├── collect_logs.py                         # Copies Cowrie JSON logs out of the Docker container
+│   ├── parse_logs.py                           # Parses raw Cowrie JSON into structured session records
+│   ├── extract_features.py                     # Derives numerical behavioural features from sessions
+│   ├── preprocess_dataset.py                   # Builds auxiliary MinMax-scaled model_input.csv
+│   ├── generate_dataset.py                     # Generates synthetic labelled attack datasets for training
+│   ├── behaviour_pattern_analysis.py           # Unsupervised clustering and pattern detection
+│   ├── behaviour_signature_generation.py       # Converts clusters into behavioural signature files
+│   ├── novelty_assessment.py                   # Scores sessions for novelty against the signature catalogue
+│   └── prepare_fresh_evaluation.py             # Isolates new sessions from baseline for clean evaluation
+│
+├── tests/                                      # Automated test suite (11 test files)
+│   ├── test_pipeline_safety.py                 # Pipeline overwrite-protection and flag safety tests
+│   ├── test_log_processing.py                  # Log collection and parsing unit tests
+│   ├── test_behaviour_pattern_analysis.py      # Clustering logic unit tests
+│   ├── test_behaviour_signature_generation.py  # Signature generation unit tests
+│   ├── test_novelty_assessment.py              # Novelty scoring unit and integration tests
+│   ├── test_collect_logs.py                    # Log collection tests
+│   ├── test_dec_preprocessing.py               # DEC input preprocessing tests
+│   ├── test_dec_reproducibility.py             # DEC determinism and reproducibility tests
+│   ├── test_dec_runner.py                      # DEC inference runner tests
+│   ├── test_prepare_fresh_evaluation.py        # Fresh evaluation isolation tests
+│   └── dec_batch_probe.py                      # Batch probe utility for DEC cluster sanity checks
+│
+├── docs/                                       # Project documentation and research artefacts
+│   ├── final_technical_report.md               # Full technical report covering all project phases
+│   ├── report_evidence_map.md                  # Maps report claims to output files and evidence
+│   ├── final_demo_checklist.md                 # End-to-end demo verification checklist
+│   ├── setup_guide.md                          # Legacy setup guide (superseded by INSTALLATION.md)
+│   ├── report.pdf                              # Project report (PDF)
+│   └── presentation.pdf                        # Project presentation slides (PDF)
+│
+├── logs/                                       # Pipeline execution logs
+│
+├── INSTALLATION.md                             # Step-by-step installation and setup guide
+├── README.md                                   # Project overview and documentation
+├── requirements.txt                            # Python package dependencies
+└── .gitignore                                  # Git ignore rules
 ```
 
 ---
