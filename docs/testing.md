@@ -198,17 +198,20 @@ Ten tests were skipped due to explicit `@pytest.mark.skipif` decorators:
 - **5 tests in `test_dec_reproducibility.py`:** Skipped with reason `"DEC interpreter not present"`. Reproducibility probe requires `.venv-dec-smoke`.
 - **1 test in `test_pipeline_safety.py` (`test_pipeline_with_output_dir_leaves_baseline_models_and_artifacts_untouched`):** Skipped with reason `"DEC interpreter or demo log not present"`.
 
-### Failed Tests Analysis & Root Causes (3 Failed)
+### Failed Tests Analysis & Root Causes
 
-To ensure scientific honesty and complete audit clarity, the 3 failures are documented below with their precise technical causes:
+During the initial baseline audit, 3 tests failed. Following investigation and resolution of the environment dependency, **1 test has been fully resolved and now passes**:
 
-1. **`test_dec_runner.py::test_dec_runner_help_loads_with_tensorflow_before_sklearn`**
-   - **Error:** `ModuleNotFoundError: No module named 'tensorflow.keras'`
-   - **Root Cause:** The test executes `run_dec_evaluation.py --help` using `sys.executable` (the active `.venv`). In TensorFlow 2.12 / newer Keras configurations under Python 3.11, `tensorflow.keras` is decoupled from standalone `keras`. The script is intended to execute under the dedicated DEC interpreter.
-2. **`test_pipeline_safety.py::test_pipeline_refuses_to_overwrite_existing_outputs`**
+1. **`test_dec_runner.py::test_dec_runner_help_loads_with_tensorflow_before_sklearn`** — ✅ **RESOLVED (NOW PASSING)**
+   - **Initial Error:** `ModuleNotFoundError: No module named 'tensorflow.keras'`
+   - **Root Cause:** On Windows x64, the `tensorflow==2.12.0` package is a lightweight wrapper that declares `Requires: tensorflow-intel`. The `tensorflow-intel` package containing the actual compiled C++ kernels, Python modules, `tensorflow/__init__.py`, and `tensorflow.keras` was missing in `.venv`, leaving `tensorflow` as an empty namespace package.
+   - **Resolution:** Installed `tensorflow-intel==2.12.0` in `.venv`. The test now passes completely with exit code 0.
+
+2. **`test_pipeline_safety.py::test_pipeline_refuses_to_overwrite_existing_outputs`** — ❌ **UNRESOLVED**
    - **Error:** `AssertionError: assert 'refusing to overwrite' in ... pipeline.py: error: DEC interpreter not found at ...\.venv-dec-smoke\Scripts\python.exe; pass --cluster-python`
    - **Root Cause:** When `pipeline.py` starts, its argument parser validates the presence of the default DEC interpreter path (`DEFAULT_DEC_PYTHON`). Because `.venv-dec-smoke` is absent in the test environment, the CLI parser aborts with exit code 2 *before* checking whether the output directory already contains files.
-3. **`test_pipeline_safety.py::test_parse_failure_stops_pipeline_before_later_steps`**
+
+3. **`test_pipeline_safety.py::test_parse_failure_stops_pipeline_before_later_steps`** — ❌ **UNRESOLVED**
    - **Error:** `AssertionError: assert 2 == 1`
    - **Root Cause:** Same underlying cause as failure #2: the missing default DEC interpreter triggers an argument parsing exit (code 2) before the pipeline reaches the log parsing stage (which would have returned exit code 1).
 
