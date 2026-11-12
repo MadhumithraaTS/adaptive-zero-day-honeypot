@@ -100,7 +100,7 @@ ATTACK_PROFILES = [
     }
 ]
 
-def generate_synthetic_sessions(num_sessions=1800, output_sessions='data/parsed/sessions.json'):
+def generate_synthetic_sessions(num_sessions=10, output_sessions='data/parsed/sessions.json'):
     print(f"Generating {num_sessions} synthetic honeypot sessions...")
     
     sessions = {}
@@ -275,7 +275,7 @@ def generate_synthetic_sessions(num_sessions=1800, output_sessions='data/parsed/
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Generate synthetic dataset of honeypot sessions")
-    parser.add_argument("--sessions", type=int, default=1800, help="Number of sessions to generate (default: 1800)")
+    parser.add_argument("--sessions", type=int, default=200, help="Number of sessions to generate (default: 200)")
     parser.add_argument("--output", type=str, default="data/parsed/sessions.json", help="Output path for sessions.json")
     
     args = parser.parse_args()
