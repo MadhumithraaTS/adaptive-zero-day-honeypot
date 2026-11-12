@@ -1,0 +1,40 @@
+{
+  "cowrie_events": 9886,
+  "malformed_lines": [],
+  "events_without_session": 0,
+  "cowrie_sessions": 900,
+  "manifest_attempts": 900,
+  "interactions": 600,
+  "unmatched": [],
+  "interactions_not_clean": [],
+  "terminations": {
+    "clean_exit": 600
+  },
+  "profiles": {
+    "data_exfiltration": 600
+  },
+  "roles": {
+    "failed_guess": 300,
+    "logged_in": 600
+  },
+  "src_ips": {
+    "172.22.0.2": 9886
+  },
+  "eventid_counts": {
+    "cowrie.session.connect": 900,
+    "cowrie.client.version": 900,
+    "cowrie.client.kex": 900,
+    "cowrie.login.failed": 300,
+    "cowrie.session.closed": 900,
+    "cowrie.login.success": 600,
+    "cowrie.client.size": 600,
+    "cowrie.session.params": 600,
+    "cowrie.command.input": 3586,
+    "cowrie.log.closed": 600
+  },
+  "download_or_upload_events": 0,
+  "time_range": [
+    "2026-11-11T09:46:45.482439Z",
+    "2026-11-11T12:47:17.713758Z"
+  ]
+}

@@ -1,0 +1,345 @@
+[
+    {
+        "Id": "54b551d98e1a582ae0b50d84cea44020ad6ad5ad638d46c6f35cb8011a3d5a51",
+        "Created": "2026-11-11T16:59:13.604772377Z",
+        "Path": "/cowrie/cowrie-env/bin/twistd",
+        "Args": [
+            "-n",
+            "--pidfile=",
+            "portforward",
+            "--port=tcp:2222:interface=172.21.0.2",
+            "--host=cowrie",
+            "--dest_port=2222"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 5462,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-11T16:59:16.172162889Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a",
+        "ResolvConfPath": "/var/lib/docker/containers/54b551d98e1a582ae0b50d84cea44020ad6ad5ad638d46c6f35cb8011a3d5a51/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/54b551d98e1a582ae0b50d84cea44020ad6ad5ad638d46c6f35cb8011a3d5a51/hostname",
+        "HostsPath": "/var/lib/docker/containers/54b551d98e1a582ae0b50d84cea44020ad6ad5ad638d46c6f35cb8011a3d5a51/hosts",
+        "LogPath": "/var/lib/docker/containers/54b551d98e1a582ae0b50d84cea44020ad6ad5ad638d46c6f35cb8011a3d5a51/54b551d98e1a582ae0b50d84cea44020ad6ad5ad638d46c6f35cb8011a3d5a51-json.log",
+        "Name": "/cowrie-ssh-relay",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "cowrie_cowrie_internal",
+            "PortBindings": {
+                "2222/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "2223"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": [
+                "ALL"
+            ],
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": true,
+            "SecurityOpt": [
+                "no-new-privileges:true"
+            ],
+            "Tmpfs": {
+                "/tmp": ""
+            },
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Sysctls": {
+                "net.ipv4.conf.all.forwarding": "0",
+                "net.ipv4.conf.default.forwarding": "0",
+                "net.ipv4.ip_forward": "0"
+            },
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 134217728,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 268435456,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": 64,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "volume",
+                    "Source": "fba87a593a5f610544b165caac1e1f1a706443986bf54938555159c95f442fcc",
+                    "Target": "/cowrie/cowrie-git/var"
+                },
+                {
+                    "Type": "volume",
+                    "Source": "4492a68c886ee680203e4ab2fac0ef0d90687de876367d5c334d756a0c409194",
+                    "Target": "/cowrie/cowrie-git/etc"
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": null,
+            "Name": ""
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "fba87a593a5f610544b165caac1e1f1a706443986bf54938555159c95f442fcc",
+                "Source": "/var/lib/docker/volumes/fba87a593a5f610544b165caac1e1f1a706443986bf54938555159c95f442fcc/_data",
+                "Destination": "/cowrie/cowrie-git/var",
+                "Driver": "local",
+                "Mode": "z",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "volume",
+                "Name": "4492a68c886ee680203e4ab2fac0ef0d90687de876367d5c334d756a0c409194",
+                "Source": "/var/lib/docker/volumes/4492a68c886ee680203e4ab2fac0ef0d90687de876367d5c334d756a0c409194/_data",
+                "Destination": "/cowrie/cowrie-git/etc",
+                "Driver": "local",
+                "Mode": "z",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "54b551d98e1a",
+            "Domainname": "",
+            "User": "cowrie",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "2222/tcp": {},
+                "2223/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/cowrie/cowrie-env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt",
+                "LANG=C.UTF-8",
+                "COWRIE_GROUP=cowrie",
+                "COWRIE_USER=cowrie",
+                "COWRIE_HOME=/cowrie",
+                "PYTHONPATH=/cowrie/cowrie-git/src",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Cmd": [
+                "-n",
+                "--pidfile=",
+                "portforward",
+                "--port=tcp:2222:interface=172.21.0.2",
+                "--host=cowrie",
+                "--dest_port=2222"
+            ],
+            "Image": "cowrie/cowrie@sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a",
+            "Volumes": {
+                "/cowrie/cowrie-git/etc": {},
+                "/cowrie/cowrie-git/var": {}
+            },
+            "WorkingDir": "/cowrie/cowrie-git",
+            "Entrypoint": [
+                "/cowrie/cowrie-env/bin/twistd"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "74517ecc722be0ea28b012571efed9ea9210b6552851f97b0c2da90d5ad52f97",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "cowrie",
+                "com.docker.compose.project.config_files": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\docker-compose.yml",
+                "com.docker.compose.project.working_dir": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie",
+                "com.docker.compose.replace": "cowrie-ssh-relay",
+                "com.docker.compose.service": "ssh-relay",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.authors": "Michel Oosterhof \u003cmichel@oosterhof.net\u003e",
+                "org.opencontainers.image.base.name": "gcr.io/distroless/python3-debian13",
+                "org.opencontainers.image.created": "2026-04-08T01:45:21.658Z",
+                "org.opencontainers.image.description": "Cowrie SSH/Telnet Honeypot https://docs.cowrie.org/",
+                "org.opencontainers.image.documentation": "https://docs.cowrie.org",
+                "org.opencontainers.image.licenses": "NOASSERTION",
+                "org.opencontainers.image.revision": "cd0770d3df5088553fec2d7ee9002eb03f5ac087",
+                "org.opencontainers.image.source": "https://github.com/cowrie/cowrie",
+                "org.opencontainers.image.title": "cowrie",
+                "org.opencontainers.image.url": "https://github.com/cowrie/cowrie",
+                "org.opencontainers.image.vendor": "Cowrie",
+                "org.opencontainers.image.version": "main"
+            },
+            "StopTimeout": 1
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "7d748c65f4077da02ab0d8f368b70b30c29fb88508eebf39178778060c4e11f3",
+            "SandboxKey": "/var/run/docker/netns/7d748c65f407",
+            "Ports": {
+                "2222/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "2223"
+                    }
+                ]
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "cowrie_cowrie_internal": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "cowrie-ssh-relay",
+                        "ssh-relay"
+                    ],
+                    "MacAddress": "96:7a:08:24:ed:40",
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "8de3b00259f200437a0ee94062c03f2016cd4a3859431b4c9abb9d2fc95d7c73",
+                    "EndpointID": "9227d23abdd781965525ab6360bf01fed25c38bd2d74925cf375eaccc02a6fa2",
+                    "Gateway": "",
+                    "IPAddress": "172.22.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "cowrie-ssh-relay",
+                        "ssh-relay",
+                        "54b551d98e1a"
+                    ]
+                },
+                "cowrie_relay_frontend": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "cowrie-ssh-relay",
+                        "ssh-relay"
+                    ],
+                    "MacAddress": "2e:ad:a3:60:ad:6d",
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "c94e904b8861044c20d38d6d17802c677c309d4d9fd4a07d53a3707f979c5849",
+                    "EndpointID": "85a47ab71c3c719652f9934742a7bb745979fb0d36e4554124f3523688e79a45",
+                    "Gateway": "172.21.0.1",
+                    "IPAddress": "172.21.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "cowrie-ssh-relay",
+                        "ssh-relay",
+                        "54b551d98e1a"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:ef74a16b44aa3bcbc2aa1e1cf23879070c07b59bfe2d109a5eb1d3cadee55250",
+            "size": 10365,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

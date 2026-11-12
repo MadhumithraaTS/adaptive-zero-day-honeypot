@@ -1,0 +1,92 @@
+{
+ "evidence_config_digest": "95183d7fef3be9d7",
+ "attribution_config_digest": "9353fbddbfbe3abaff2be71626454c19505df4e6d5bb8a7257bb8397b6611ea0",
+ "policy_digest": "92e334285fb50a0ea5640a6fc0ad54c07b0e4ff114c91ce2401a0c3ce3680712",
+ "configuration_checks": {
+  "policy_pins_attribution_digest": true,
+  "evidence_relays_cover_attribution_relays": true,
+  "evidence_internal_networks_equal_explicit_config": true,
+  "evidence_auth_rule_approved": true
+ },
+ "deterministic_second_pass": {
+  "train": true,
+  "validation": true
+ },
+ "tiers": {
+  "train": {
+   "abstain": 1817,
+   "record": 754,
+   "review": 619
+  },
+  "validation": {
+   "review": 238,
+   "abstain": 706,
+   "record": 313
+  }
+ },
+ "proposals": {
+  "train": 0,
+  "validation": 0
+ },
+ "audit_checkpoints": {
+  "train": {
+   "run_id": "task24-train",
+   "entries": 3190,
+   "last_hash": "c7f61ac19a53321459443e53cac5bf0bf8319a1c19db7a036ca59b4a85c20a01"
+  },
+  "validation": {
+   "run_id": "task24-validation",
+   "entries": 1257,
+   "last_hash": "41f82c42a22c22169ebc6bd2b10cc92208ad78991a1a45066c7c7fbbef347a42"
+  }
+ },
+ "test_like_paths_opened": [
+  "c:/amrita/final_year_project_zero_day_27/adaptive-zero-day-honeypot/reports/threat_assessment_implementation_20261111/source_attribution_tests.csv"
+ ]
+}
+     split         unit    tier  sessions  benign  botnet  brute_force  lateral_movement  privilege_escalation  reconnaissance
+     train all_sessions abstain      1817     302     197          947               102                    86             183
+     train all_sessions  record       754     561       0           71                 3                     0             119
+     train all_sessions  review       619       0     195            0               189                   175              60
+     train all_sessions propose         0       0       0            0                 0                     0               0
+validation all_sessions abstain       706     126      65          368                40                    30              77
+validation all_sessions  record       313     229       0           30                 1                     0              53
+validation all_sessions  review       238       0      71            0                77                    69              21
+validation all_sessions propose         0       0       0            0                 0                     0               0
+                                                                    scenario                                state                                            tier  passed
+                                     external client (documentation address)                         attributable                                         propose    True
+                                                        lab relay 172.22.0.2           unattributed:trusted_proxy                                          review    True
+                                     Cowrie container 172.22.0.1 (protected)                            protected                                          review    True
+                                       relay frontend 172.21.0.2 (protected)                            protected                                          review    True
+                                        legacy docker 172.19.0.1 (protected)                            protected                                          review    True
+                                              loopback 127.0.0.1 (protected)                            protected                                          review    True
+                     NAT/shared source (config variant with 198.51.100.0/24)                        shared_source                                          review    True
+untrusted forwarded header (x_forwarded_for=203.0.113.50 on a relay session)           unattributed:trusted_proxy                                          review    True
+                                                      missing source address               unattributed:no_source                                          review    True
+                                            incorrect evidence config digest                         attributable                                          review    True
+                                              missing evidence config digest                         attributable                                         abstain    True
+                         Dataset V2 train: all sessions (lab relay topology) {"unattributed:trusted_proxy": 3190} {"abstain": 1817, "record": 754, "review": 619}    True
+                    Dataset V2 validation: all sessions (lab relay topology) {"unattributed:trusted_proxy": 1257}  {"review": 238, "abstain": 706, "record": 313}    True
+     split                                        test  passed
+     train      verify persisted chain with checkpoint    True
+     train every entry execution_status = not_executed    True
+     train   proposals have inverse + pending approval    True
+     train                         tamper: modify_tier    True
+     train                       tamper: modify_source    True
+     train                        tamper: delete_entry    True
+     train                             tamper: reorder    True
+     train                    tamper: insert_duplicate    True
+     train                       tamper: truncate_tail    True
+     train           tamper: recompute_hash_after_edit    True
+     train                       tamper: mark_executed    True
+validation      verify persisted chain with checkpoint    True
+validation every entry execution_status = not_executed    True
+validation   proposals have inverse + pending approval    True
+validation                         tamper: modify_tier    True
+validation                       tamper: modify_source    True
+validation                        tamper: delete_entry    True
+validation                             tamper: reorder    True
+validation                    tamper: insert_duplicate    True
+validation                       tamper: truncate_tail    True
+validation           tamper: recompute_hash_after_edit    True
+validation                       tamper: mark_executed    True

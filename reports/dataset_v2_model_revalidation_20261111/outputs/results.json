@@ -1,0 +1,4530 @@
+{
+  "k_selection": {
+    "rule": "Training data only. Range 2-8 (existing K=3; upper end covers the six generator categories plus a failed-login mode without using labels). Rule fixed before running: among K with mean pairwise seed ARI >= 0.8 and every cluster >= 1% of training rows, take the highest mean input-space silhouette over 5 seeds; any K within 0.01 of the best -> the smallest such K. If no K qualifies, keep the existing K=3.",
+    "selected_k": 7,
+    "existing_k": 3,
+    "k_runs": [
+      3,
+      7
+    ],
+    "summary": [
+      {
+        "k": 2,
+        "silhouette_input": 0.589261,
+        "silhouette_input_sd": 0.011393,
+        "silhouette_latent": 0.716482,
+        "davies_bouldin_input": 0.870188,
+        "calinski_harabasz_input": 2745.425626,
+        "min_cluster_share": 0.37837,
+        "seed_stability_mean_pairwise_ari": 0.895559
+      },
+      {
+        "k": 3,
+        "silhouette_input": 0.589877,
+        "silhouette_input_sd": 0.019731,
+        "silhouette_latent": 0.669559,
+        "davies_bouldin_input": 1.436124,
+        "calinski_harabasz_input": 2196.205278,
+        "min_cluster_share": 0.121944,
+        "seed_stability_mean_pairwise_ari": 0.829504
+      },
+      {
+        "k": 4,
+        "silhouette_input": 0.567703,
+        "silhouette_input_sd": 0.017262,
+        "silhouette_latent": 0.6527,
+        "davies_bouldin_input": 1.741289,
+        "calinski_harabasz_input": 1751.639514,
+        "min_cluster_share": 0.046082,
+        "seed_stability_mean_pairwise_ari": 0.82857
+      },
+      {
+        "k": 5,
+        "silhouette_input": 0.580986,
+        "silhouette_input_sd": 0.023294,
+        "silhouette_latent": 0.664041,
+        "davies_bouldin_input": 1.554164,
+        "calinski_harabasz_input": 1638.350068,
+        "min_cluster_share": 0.034169,
+        "seed_stability_mean_pairwise_ari": 0.785207
+      },
+      {
+        "k": 6,
+        "silhouette_input": 0.588369,
+        "silhouette_input_sd": 0.035639,
+        "silhouette_latent": 0.664873,
+        "davies_bouldin_input": 1.526603,
+        "calinski_harabasz_input": 1556.253616,
+        "min_cluster_share": 0.026646,
+        "seed_stability_mean_pairwise_ari": 0.816527
+      },
+      {
+        "k": 7,
+        "silhouette_input": 0.60523,
+        "silhouette_input_sd": 0.017995,
+        "silhouette_latent": 0.670085,
+        "davies_bouldin_input": 1.531676,
+        "calinski_harabasz_input": 1503.067622,
+        "min_cluster_share": 0.025705,
+        "seed_stability_mean_pairwise_ari": 0.893311
+      },
+      {
+        "k": 8,
+        "silhouette_input": 0.604397,
+        "silhouette_input_sd": 0.016675,
+        "silhouette_latent": 0.669158,
+        "davies_bouldin_input": 1.59239,
+        "calinski_harabasz_input": 1443.010585,
+        "min_cluster_share": 0.019436,
+        "seed_stability_mean_pairwise_ari": 0.906642
+      }
+    ]
+  },
+  "reproducibility_primary": {
+    "ae_kmeans_val_identical": true,
+    "dec_q_val_identical": true,
+    "dec_q_train_identical": true,
+    "max_abs_q_diff": 0.0,
+    "recon_identical": true
+  },
+  "models": {
+    "baseline_kmeans_inputs_k3": {
+      "train": {
+        "input_space": {
+          "occupied_clusters": 3,
+          "silhouette": 0.619191,
+          "davies_bouldin": 1.12934,
+          "calinski_harabasz": 2627.659784
+        },
+        "cluster_sizes": [
+          1740,
+          1051,
+          399
+        ],
+        "posthoc": {
+          "all_rows": {
+            "ari": 0.124521,
+            "nmi": 0.095695,
+            "ari_ci95_interaction_bootstrap": [
+              0.099615,
+              0.147987
+            ]
+          },
+          "logged_in_one_per_interaction": {
+            "ari": 0.022646,
+            "nmi": 0.092568,
+            "ari_ci95_bootstrap": [
+              0.013199,
+              0.03452
+            ]
+          },
+          "ari_vs_login_success": 0.773494
+        }
+      },
+      "validation": {
+        "input_space": {
+          "occupied_clusters": 3,
+          "silhouette": 0.619898,
+          "davies_bouldin": 1.099154,
+          "calinski_harabasz": 1137.458121
+        },
+        "cluster_sizes": [
+          675,
+          409,
+          173
+        ],
+        "posthoc": {
+          "all_rows": {
+            "ari": 0.118978,
+            "nmi": 0.095876,
+            "ari_ci95_interaction_bootstrap": [
+              0.080871,
+              0.162115
+            ]
+          },
+          "logged_in_one_per_interaction": {
+            "ari": 0.015112,
+            "nmi": 0.089998,
+            "ari_ci95_bootstrap": [
+              0.003564,
+              0.033399
+            ]
+          },
+          "ari_vs_login_success": 0.764279
+        }
+      }
+    },
+    "ae_kmeans_k3": {
+      "k": 3,
+      "seed": 42,
+      "train": {
+        "input_space": {
+          "occupied_clusters": 3,
+          "silhouette": 0.572172,
+          "davies_bouldin": 1.788523,
+          "calinski_harabasz": 1865.465563
+        },
+        "latent_space": {
+          "occupied_clusters": 3,
+          "silhouette": 0.696771,
+          "davies_bouldin": 0.787813,
+          "calinski_harabasz": 10649.694105
+        },
+        "cluster_sizes": [
+          841,
+          1858,
+          491
+        ],
+        "cluster_shares": [
+          0.2636,
+          0.5824,
+          0.1539
+        ],
+        "reconstruction_mse": {
+          "mean": 0.044535,
+          "median": 0.000171
+        },
+        "posthoc": {
+          "all_rows": {
+            "ari": 0.184231,
+            "nmi": 0.143375,
+            "ari_ci95_interaction_bootstrap": [
+              0.152628,
+              0.21534
+            ]
+          },
+          "logged_in_one_per_interaction": {
+            "ari": 0.11268,
+            "nmi": 0.214497,
+            "ari_ci95_bootstrap": [
+              0.09666,
+              0.131018
+            ]
+          },
+          "ari_vs_login_success": 0.638167
+        },
+        "distances": {
+          "note": "K-Means has no probabilistic confidence; distances to centres in the latent space are reported instead (not a confidence)",
+          "to_assigned_centre_median": 0.239488,
+          "to_assigned_centre_p95": 3.75009,
+          "margin_second_minus_first_median": 7.726251,
+          "margin_p05": 0.802734
+        }
+      },
+      "validation": {
+        "input_space": {
+          "occupied_clusters": 3,
+          "silhouette": 0.566685,
+          "davies_bouldin": 1.695295,
+          "calinski_harabasz": 800.992716
+        },
+        "latent_space": {
+          "occupied_clusters": 3,
+          "silhouette": 0.693775,
+          "davies_bouldin": 0.782835,
+          "calinski_harabasz": 4353.031086
+        },
+        "cluster_sizes": [
+          345,
+          724,
+          188
+        ],
+        "cluster_shares": [
+          0.2745,
+          0.576,
+          0.1496
+        ],
+        "reconstruction_mse": {
+          "mean": 0.046771,
+          "median": 0.000171
+        },
+        "posthoc": {
+          "all_rows": {
+            "ari": 0.182613,
+            "nmi": 0.145906,
+            "ari_ci95_interaction_bootstrap": [
+              0.123129,
+              0.243314
+            ]
+          },
+          "logged_in_one_per_interaction": {
+            "ari": 0.111289,
+            "nmi": 0.221247,
+            "ari_ci95_bootstrap": [
+              0.086617,
+              0.144886
+            ]
+          },
+          "ari_vs_login_success": 0.633735
+        },
+        "distances": {
+          "note": "K-Means has no probabilistic confidence; distances to centres in the latent space are reported instead (not a confidence)",
+          "to_assigned_centre_median": 0.239488,
+          "to_assigned_centre_p95": 3.625262,
+          "margin_second_minus_first_median": 7.726251,
+          "margin_p05": 0.744124
+        }
+      },
+      "train_vs_validation": {
+        "max_abs_cluster_share_diff": 0.0109,
+        "silhouette_input_diff": -0.005486
+      },
+      "stability": {
+        "pairwise_ari_train": [
+          0.822237,
+          0.791761,
+          0.843124,
+          0.838061,
+          0.84,
+          0.890616,
+          0.853295,
+          0.788484,
+          0.808657,
+          0.818805
+        ],
+        "pairwise_ari_validation": [
+          0.833206,
+          0.765761,
+          0.882978,
+          0.859112,
+          0.819465,
+          0.906117,
+          0.87864,
+          0.780183,
+          0.784341,
+          0.863763
+        ],
+        "mean_pairwise_ari_train": 0.829504,
+        "mean_pairwise_ari_validation": 0.837357,
+        "min_pairwise_ari_validation": 0.765761,
+        "aligned_agreement_vs_seed42_validation": [
+          0.873508,
+          0.79634,
+          0.915672,
+          0.902148
+        ],
+        "validation_silhouette_input_by_seed": [
+          0.566685,
+          0.610629,
+          0.586985,
+          0.60071,
+          0.572324
+        ],
+        "validation_ari_vs_attack_cat_by_seed": [
+          0.182613,
+          0.187163,
+          0.189744,
+          0.182809,
+          0.191148
+        ],
+        "cluster_sizes_validation_by_seed": [
+          [
+            345,
+            724,
+            188
+          ],
+          [
+            727,
+            366,
+            164
+          ],
+          [
+            228,
+            741,
+            288
+          ],
+          [
+            347,
+            724,
+            186
+          ],
+          [
+            296,
+            728,
+            233
+          ]
+        ]
+      },
+      "leakage_diagnostics": {
+        "train": {
+          "cluster_vs_login_success_cramers_v": 0.898725,
+          "eta2_feature_by_cluster": {
+            "login_success": 0.807707,
+            "session_duration_s": 0.922557,
+            "input_line_count": 0.877248,
+            "shell_operator_lines": 0.37674,
+            "time_to_first_input_s": 0.429678,
+            "inter_input_mean_s": 0.018343,
+            "inter_input_std_s": 0.027958,
+            "tty_output_bytes": 0.854274
+          },
+          "per_cluster": {
+            "0": {
+              "n": 841,
+              "share": 0.263636,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.045184,
+              "find_sessions": 5,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 11.4,
+                "input_line_count": 5.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.306039,
+                "inter_input_mean_s": 1.81722,
+                "inter_input_std_s": 0.947822,
+                "tty_output_bytes": 1194.0
+              },
+              "category_share": {
+                "benign": 0.4376,
+                "lateral_movement": 0.1581,
+                "botnet": 0.1403,
+                "reconnaissance": 0.1367,
+                "privilege_escalation": 0.0904,
+                "brute_force": 0.0369
+              }
+            },
+            "1": {
+              "n": 1858,
+              "share": 0.582445,
+              "failed_login_share": 0.90958,
+              "no_input_share": 0.962863,
+              "any_imputed_share": 0.997309,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 0.0,
+                "session_duration_s": 1.1,
+                "input_line_count": 0.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.220535,
+                "inter_input_mean_s": 1.777467,
+                "inter_input_std_s": 0.7413,
+                "tty_output_bytes": 0.0
+              },
+              "category_share": {
+                "brute_force": 0.5285,
+                "benign": 0.1636,
+                "botnet": 0.106,
+                "reconnaissance": 0.0996,
+                "lateral_movement": 0.056,
+                "privilege_escalation": 0.0463
+              }
+            },
+            "2": {
+              "n": 491,
+              "share": 0.153918,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.014257,
+              "find_sessions": 25,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 15.8,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 3.103,
+                "inter_input_mean_s": 1.926554,
+                "inter_input_std_s": 1.044971,
+                "tty_output_bytes": 1310.0
+              },
+              "category_share": {
+                "benign": 0.389,
+                "privilege_escalation": 0.2016,
+                "botnet": 0.1568,
+                "reconnaissance": 0.1263,
+                "lateral_movement": 0.1161,
+                "brute_force": 0.0102
+              }
+            }
+          },
+          "imputed_rows_vs_cluster_ari": 0.795776,
+          "failed_login_rows_in_single_cluster_share": 1.0
+        },
+        "validation": {
+          "cluster_vs_login_success_cramers_v": 0.897845,
+          "eta2_feature_by_cluster": {
+            "login_success": 0.806126,
+            "session_duration_s": 0.92981,
+            "input_line_count": 0.887443,
+            "shell_operator_lines": 0.410838,
+            "time_to_first_input_s": 0.367495,
+            "inter_input_mean_s": 0.070505,
+            "inter_input_std_s": 0.082924,
+            "tty_output_bytes": 0.85444
+          },
+          "per_cluster": {
+            "0": {
+              "n": 345,
+              "share": 0.274463,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.037681,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 11.2,
+                "input_line_count": 5.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.216017,
+                "inter_input_mean_s": 1.781272,
+                "inter_input_std_s": 0.943218,
+                "tty_output_bytes": 1226.0
+              },
+              "category_share": {
+                "benign": 0.4348,
+                "lateral_movement": 0.1768,
+                "reconnaissance": 0.1333,
+                "botnet": 0.1246,
+                "privilege_escalation": 0.0986,
+                "brute_force": 0.0319
+              }
+            },
+            "1": {
+              "n": 724,
+              "share": 0.575975,
+              "failed_login_share": 0.907459,
+              "no_input_share": 0.964088,
+              "any_imputed_share": 0.997238,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 0.0,
+                "session_duration_s": 1.1,
+                "input_line_count": 0.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.192289,
+                "inter_input_mean_s": 1.374136,
+                "inter_input_std_s": 0.611564,
+                "tty_output_bytes": 0.0
+              },
+              "category_share": {
+                "brute_force": 0.5304,
+                "benign": 0.174,
+                "reconnaissance": 0.1091,
+                "botnet": 0.0898,
+                "lateral_movement": 0.0552,
+                "privilege_escalation": 0.0414
+              }
+            },
+            "2": {
+              "n": 188,
+              "share": 0.149562,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.015957,
+              "find_sessions": 9,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 17.0,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 2.754805,
+                "inter_input_mean_s": 2.160717,
+                "inter_input_std_s": 1.249645,
+                "tty_output_bytes": 1494.5
+              },
+              "category_share": {
+                "benign": 0.4202,
+                "privilege_escalation": 0.1862,
+                "botnet": 0.1489,
+                "reconnaissance": 0.1383,
+                "lateral_movement": 0.0904,
+                "brute_force": 0.016
+              }
+            }
+          },
+          "imputed_rows_vs_cluster_ari": 0.797253,
+          "failed_login_rows_in_single_cluster_share": 1.0
+        },
+        "single_feature_reproduces_cluster_ba_validation": {
+          "login_success": 0.63582,
+          "session_duration_s": 0.738183,
+          "input_line_count": 0.708011,
+          "shell_operator_lines": 0.494568,
+          "time_to_first_input_s": 0.790265,
+          "inter_input_mean_s": 0.658993,
+          "inter_input_std_s": 0.674143,
+          "tty_output_bytes": 0.655118
+        }
+      },
+      "contingency_validation_all_rows": {
+        "0": {
+          "benign": 150,
+          "botnet": 43,
+          "brute_force": 11,
+          "lateral_movement": 61,
+          "privilege_escalation": 34,
+          "reconnaissance": 46
+        },
+        "1": {
+          "benign": 126,
+          "botnet": 65,
+          "brute_force": 384,
+          "lateral_movement": 40,
+          "privilege_escalation": 30,
+          "reconnaissance": 79
+        },
+        "2": {
+          "benign": 79,
+          "botnet": 28,
+          "brute_force": 3,
+          "lateral_movement": 17,
+          "privilege_escalation": 35,
+          "reconnaissance": 26
+        }
+      },
+      "contingency_validation_logged_in": {
+        "0": {
+          "benign": 150,
+          "botnet": 43,
+          "brute_force": 11,
+          "lateral_movement": 61,
+          "privilege_escalation": 34,
+          "reconnaissance": 46
+        },
+        "1": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 65,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 2
+        },
+        "2": {
+          "benign": 79,
+          "botnet": 28,
+          "brute_force": 3,
+          "lateral_movement": 17,
+          "privilege_escalation": 35,
+          "reconnaissance": 26
+        }
+      },
+      "contingency_validation_failed_rows": {
+        "0": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "1": {
+          "benign": 126,
+          "botnet": 65,
+          "brute_force": 319,
+          "lateral_movement": 40,
+          "privilege_escalation": 30,
+          "reconnaissance": 77
+        },
+        "2": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        }
+      },
+      "contingency_train_logged_in": {
+        "0": {
+          "benign": 368,
+          "botnet": 118,
+          "brute_force": 31,
+          "lateral_movement": 133,
+          "privilege_escalation": 76,
+          "reconnaissance": 115
+        },
+        "1": {
+          "benign": 2,
+          "botnet": 0,
+          "brute_force": 162,
+          "lateral_movement": 2,
+          "privilege_escalation": 0,
+          "reconnaissance": 2
+        },
+        "2": {
+          "benign": 191,
+          "botnet": 77,
+          "brute_force": 5,
+          "lateral_movement": 57,
+          "privilege_escalation": 99,
+          "reconnaissance": 62
+        }
+      },
+      "find_sessions_validation": {
+        "find_clusters": {
+          "2": 9
+        },
+        "pe_non_find_logged_in_clusters": {
+          "0": 34,
+          "2": 26
+        }
+      },
+      "training": {
+        "ae_loss_first": 0.944851,
+        "ae_loss_last": 0.044886,
+        "ae_val_loss_last": 0.054678,
+        "ae_seconds": 7.145896,
+        "kmeans_inertia": 11994.552734,
+        "kmeans_seconds": 0.089885
+      }
+    },
+    "dec_k3": {
+      "k": 3,
+      "seed": 42,
+      "train": {
+        "input_space": {
+          "occupied_clusters": 3,
+          "silhouette": 0.568195,
+          "davies_bouldin": 1.774158,
+          "calinski_harabasz": 1900.853792
+        },
+        "latent_space": {
+          "occupied_clusters": 3,
+          "silhouette": 0.853353,
+          "davies_bouldin": 0.308377,
+          "calinski_harabasz": 57665.173537
+        },
+        "cluster_sizes": [
+          730,
+          1838,
+          622
+        ],
+        "cluster_shares": [
+          0.2288,
+          0.5762,
+          0.195
+        ],
+        "reconstruction_mse": {
+          "mean": 0.044535,
+          "median": 0.000171
+        },
+        "posthoc": {
+          "all_rows": {
+            "ari": 0.178001,
+            "nmi": 0.137367,
+            "ari_ci95_interaction_bootstrap": [
+              0.146817,
+              0.207909
+            ]
+          },
+          "logged_in_one_per_interaction": {
+            "ari": 0.096812,
+            "nmi": 0.208092,
+            "ari_ci95_bootstrap": [
+              0.08311,
+              0.111979
+            ]
+          },
+          "ari_vs_login_success": 0.644617
+        },
+        "confidence": {
+          "mean": 0.939957,
+          "median": 0.982909,
+          "min": 0.467122,
+          "p05": 0.728642,
+          "share_below_0.7": 0.043887,
+          "share_below_0.9": 0.140439,
+          "min_top1_top2_gap": 0.011957,
+          "by_category_mean": {
+            "benign": 0.925092,
+            "botnet": 0.933914,
+            "brute_force": 0.969168,
+            "lateral_movement": 0.917968,
+            "privilege_escalation": 0.912907,
+            "reconnaissance": 0.937151
+          }
+        }
+      },
+      "validation": {
+        "input_space": {
+          "occupied_clusters": 3,
+          "silhouette": 0.564251,
+          "davies_bouldin": 1.716625,
+          "calinski_harabasz": 810.207827
+        },
+        "latent_space": {
+          "occupied_clusters": 3,
+          "silhouette": 0.842115,
+          "davies_bouldin": 0.326664,
+          "calinski_harabasz": 22131.80967
+        },
+        "cluster_sizes": [
+          297,
+          718,
+          242
+        ],
+        "cluster_shares": [
+          0.2363,
+          0.5712,
+          0.1925
+        ],
+        "reconstruction_mse": {
+          "mean": 0.046771,
+          "median": 0.000171
+        },
+        "posthoc": {
+          "all_rows": {
+            "ari": 0.177503,
+            "nmi": 0.13831,
+            "ari_ci95_interaction_bootstrap": [
+              0.119152,
+              0.241583
+            ]
+          },
+          "logged_in_one_per_interaction": {
+            "ari": 0.095621,
+            "nmi": 0.208606,
+            "ari_ci95_bootstrap": [
+              0.074638,
+              0.126906
+            ]
+          },
+          "ari_vs_login_success": 0.633136
+        },
+        "confidence": {
+          "mean": 0.935687,
+          "median": 0.982909,
+          "min": 0.472532,
+          "p05": 0.687424,
+          "share_below_0.7": 0.054893,
+          "share_below_0.9": 0.148767,
+          "min_top1_top2_gap": 0.007812,
+          "by_category_mean": {
+            "benign": 0.912714,
+            "botnet": 0.920106,
+            "brute_force": 0.96909,
+            "lateral_movement": 0.925556,
+            "privilege_escalation": 0.916413,
+            "reconnaissance": 0.936243
+          }
+        }
+      },
+      "train_vs_validation": {
+        "max_abs_cluster_share_diff": 0.0075,
+        "silhouette_input_diff": -0.003944
+      },
+      "stability": {
+        "pairwise_ari_train": [
+          0.803816,
+          0.768371,
+          0.814476,
+          0.840769,
+          0.815337,
+          0.906986,
+          0.83056,
+          0.782817,
+          0.767158,
+          0.802214
+        ],
+        "pairwise_ari_validation": [
+          0.802984,
+          0.747834,
+          0.81795,
+          0.846761,
+          0.802556,
+          0.90216,
+          0.829563,
+          0.771032,
+          0.746041,
+          0.800816
+        ],
+        "mean_pairwise_ari_train": 0.81325,
+        "mean_pairwise_ari_validation": 0.80677,
+        "min_pairwise_ari_validation": 0.746041,
+        "aligned_agreement_vs_seed42_validation": [
+          0.848846,
+          0.797932,
+          0.882259,
+          0.881464
+        ],
+        "validation_silhouette_input_by_seed": [
+          0.564251,
+          0.604943,
+          0.588789,
+          0.597071,
+          0.576275
+        ],
+        "validation_ari_vs_attack_cat_by_seed": [
+          0.177503,
+          0.162874,
+          0.142009,
+          0.156801,
+          0.179431
+        ],
+        "cluster_sizes_validation_by_seed": [
+          [
+            297,
+            718,
+            242
+          ],
+          [
+            707,
+            317,
+            233
+          ],
+          [
+            283,
+            691,
+            283
+          ],
+          [
+            317,
+            702,
+            238
+          ],
+          [
+            270,
+            717,
+            270
+          ]
+        ],
+        "converged_by_seed": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "iterations_by_seed": [
+          500,
+          500,
+          500,
+          500,
+          500
+        ],
+        "confidence_mean_validation_by_seed": [
+          0.935687,
+          0.9275,
+          0.936416,
+          0.937924,
+          0.936643
+        ],
+        "confidence_min_validation_by_seed": [
+          0.472532,
+          0.45585,
+          0.416126,
+          0.460567,
+          0.483948
+        ]
+      },
+      "leakage_diagnostics": {
+        "train": {
+          "cluster_vs_login_success_cramers_v": 0.91036,
+          "eta2_feature_by_cluster": {
+            "login_success": 0.828756,
+            "session_duration_s": 0.926567,
+            "input_line_count": 0.868016,
+            "shell_operator_lines": 0.391552,
+            "time_to_first_input_s": 0.420708,
+            "inter_input_mean_s": 0.019342,
+            "inter_input_std_s": 0.028397,
+            "tty_output_bytes": 0.86849
+          },
+          "per_cluster": {
+            "0": {
+              "n": 730,
+              "share": 0.22884,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.00137,
+              "any_imputed_share": 0.071233,
+              "find_sessions": 4,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 11.0,
+                "input_line_count": 5.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.180944,
+                "inter_input_mean_s": 1.789144,
+                "inter_input_std_s": 0.931945,
+                "tty_output_bytes": 1173.5
+              },
+              "category_share": {
+                "benign": 0.4288,
+                "lateral_movement": 0.163,
+                "reconnaissance": 0.1452,
+                "botnet": 0.126,
+                "privilege_escalation": 0.0767,
+                "brute_force": 0.0603
+              }
+            },
+            "1": {
+              "n": 1838,
+              "share": 0.576176,
+              "failed_login_share": 0.919478,
+              "no_input_share": 0.972797,
+              "any_imputed_share": 1.0,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 0.0,
+                "session_duration_s": 1.1,
+                "input_line_count": 0.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.192691,
+                "inter_input_mean_s": null,
+                "inter_input_std_s": null,
+                "tty_output_bytes": 0.0
+              },
+              "category_share": {
+                "brute_force": 0.5267,
+                "benign": 0.1643,
+                "botnet": 0.1072,
+                "reconnaissance": 0.0996,
+                "lateral_movement": 0.0555,
+                "privilege_escalation": 0.0468
+              }
+            },
+            "2": {
+              "n": 622,
+              "share": 0.194984,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.012862,
+              "find_sessions": 26,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 15.0,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 2.75525,
+                "inter_input_mean_s": 1.931862,
+                "inter_input_std_s": 1.039828,
+                "tty_output_bytes": 1264.0
+              },
+              "category_share": {
+                "benign": 0.3987,
+                "privilege_escalation": 0.1913,
+                "botnet": 0.1656,
+                "lateral_movement": 0.1174,
+                "reconnaissance": 0.1174,
+                "brute_force": 0.0096
+              }
+            }
+          },
+          "imputed_rows_vs_cluster_ari": 0.778229,
+          "failed_login_rows_in_single_cluster_share": 1.0
+        },
+        "validation": {
+          "cluster_vs_login_success_cramers_v": 0.906649,
+          "eta2_feature_by_cluster": {
+            "login_success": 0.822012,
+            "session_duration_s": 0.93018,
+            "input_line_count": 0.876664,
+            "shell_operator_lines": 0.416081,
+            "time_to_first_input_s": 0.402723,
+            "inter_input_mean_s": 0.054515,
+            "inter_input_std_s": 0.069061,
+            "tty_output_bytes": 0.865454
+          },
+          "per_cluster": {
+            "0": {
+              "n": 297,
+              "share": 0.236277,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.003367,
+              "any_imputed_share": 0.057239,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 11.0,
+                "input_line_count": 5.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.120783,
+                "inter_input_mean_s": 1.788909,
+                "inter_input_std_s": 0.914619,
+                "tty_output_bytes": 1209.0
+              },
+              "category_share": {
+                "benign": 0.4242,
+                "lateral_movement": 0.1684,
+                "reconnaissance": 0.1414,
+                "botnet": 0.1246,
+                "privilege_escalation": 0.0909,
+                "brute_force": 0.0505
+              }
+            },
+            "1": {
+              "n": 718,
+              "share": 0.571201,
+              "failed_login_share": 0.915042,
+              "no_input_share": 0.970752,
+              "any_imputed_share": 1.0,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 0.0,
+                "session_duration_s": 1.1,
+                "input_line_count": 0.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.158861,
+                "inter_input_mean_s": null,
+                "inter_input_std_s": null,
+                "tty_output_bytes": 0.0
+              },
+              "category_share": {
+                "brute_force": 0.5292,
+                "benign": 0.1755,
+                "reconnaissance": 0.1072,
+                "botnet": 0.0905,
+                "lateral_movement": 0.0557,
+                "privilege_escalation": 0.0418
+              }
+            },
+            "2": {
+              "n": 242,
+              "share": 0.192522,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.012397,
+              "find_sessions": 9,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 16.05,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 2.550574,
+                "inter_input_mean_s": 2.067354,
+                "inter_input_std_s": 1.170275,
+                "tty_output_bytes": 1376.5
+              },
+              "category_share": {
+                "benign": 0.4256,
+                "privilege_escalation": 0.1736,
+                "botnet": 0.1405,
+                "reconnaissance": 0.1322,
+                "lateral_movement": 0.1157,
+                "brute_force": 0.0124
+              }
+            }
+          },
+          "imputed_rows_vs_cluster_ari": 0.781118,
+          "failed_login_rows_in_single_cluster_share": 1.0
+        },
+        "single_feature_reproduces_cluster_ba_validation": {
+          "login_success": 0.638347,
+          "session_duration_s": 0.784165,
+          "input_line_count": 0.697429,
+          "shell_operator_lines": 0.563361,
+          "time_to_first_input_s": 0.855418,
+          "inter_input_mean_s": 0.695898,
+          "inter_input_std_s": 0.652944,
+          "tty_output_bytes": 0.649602
+        }
+      },
+      "contingency_validation_all_rows": {
+        "0": {
+          "benign": 126,
+          "botnet": 37,
+          "brute_force": 15,
+          "lateral_movement": 50,
+          "privilege_escalation": 27,
+          "reconnaissance": 42
+        },
+        "1": {
+          "benign": 126,
+          "botnet": 65,
+          "brute_force": 380,
+          "lateral_movement": 40,
+          "privilege_escalation": 30,
+          "reconnaissance": 77
+        },
+        "2": {
+          "benign": 103,
+          "botnet": 34,
+          "brute_force": 3,
+          "lateral_movement": 28,
+          "privilege_escalation": 42,
+          "reconnaissance": 32
+        }
+      },
+      "contingency_validation_logged_in": {
+        "0": {
+          "benign": 126,
+          "botnet": 37,
+          "brute_force": 15,
+          "lateral_movement": 50,
+          "privilege_escalation": 27,
+          "reconnaissance": 42
+        },
+        "1": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 61,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "2": {
+          "benign": 103,
+          "botnet": 34,
+          "brute_force": 3,
+          "lateral_movement": 28,
+          "privilege_escalation": 42,
+          "reconnaissance": 32
+        }
+      },
+      "contingency_validation_failed_rows": {
+        "0": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "1": {
+          "benign": 126,
+          "botnet": 65,
+          "brute_force": 319,
+          "lateral_movement": 40,
+          "privilege_escalation": 30,
+          "reconnaissance": 77
+        },
+        "2": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        }
+      },
+      "contingency_train_logged_in": {
+        "0": {
+          "benign": 313,
+          "botnet": 92,
+          "brute_force": 44,
+          "lateral_movement": 119,
+          "privilege_escalation": 56,
+          "reconnaissance": 106
+        },
+        "1": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 148,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "2": {
+          "benign": 248,
+          "botnet": 103,
+          "brute_force": 6,
+          "lateral_movement": 73,
+          "privilege_escalation": 119,
+          "reconnaissance": 73
+        }
+      },
+      "find_sessions_validation": {
+        "find_clusters": {
+          "2": 9
+        },
+        "pe_non_find_logged_in_clusters": {
+          "2": 33,
+          "0": 27
+        }
+      },
+      "training": {
+        "iterations": 500,
+        "converged": false,
+        "tolerance": 0.001,
+        "label_change_checks": [
+          {
+            "iteration": 50,
+            "label_change": 0.010031
+          },
+          {
+            "iteration": 100,
+            "label_change": 0.00627
+          },
+          {
+            "iteration": 150,
+            "label_change": 0.005643
+          },
+          {
+            "iteration": 200,
+            "label_change": 0.005329
+          },
+          {
+            "iteration": 250,
+            "label_change": 0.005016
+          },
+          {
+            "iteration": 300,
+            "label_change": 0.002508
+          },
+          {
+            "iteration": 350,
+            "label_change": 0.004389
+          },
+          {
+            "iteration": 400,
+            "label_change": 0.005643
+          },
+          {
+            "iteration": 450,
+            "label_change": 0.007524
+          }
+        ],
+        "kl_first": 0.060262,
+        "kl_last": 0.032159,
+        "kl_min": 0.032159,
+        "seconds": 5.914557
+      }
+    },
+    "baseline_kmeans_inputs_k7": {
+      "train": {
+        "input_space": {
+          "occupied_clusters": 7,
+          "silhouette": 0.649778,
+          "davies_bouldin": 1.090584,
+          "calinski_harabasz": 2052.589755
+        },
+        "cluster_sizes": [
+          1690,
+          288,
+          328,
+          362,
+          208,
+          96,
+          218
+        ],
+        "posthoc": {
+          "all_rows": {
+            "ari": 0.137067,
+            "nmi": 0.16603,
+            "ari_ci95_interaction_bootstrap": [
+              0.108944,
+              0.162912
+            ]
+          },
+          "logged_in_one_per_interaction": {
+            "ari": 0.133863,
+            "nmi": 0.22276,
+            "ari_ci95_bootstrap": [
+              0.116741,
+              0.160003
+            ]
+          },
+          "ari_vs_login_success": 0.640945
+        }
+      },
+      "validation": {
+        "input_space": {
+          "occupied_clusters": 7,
+          "silhouette": 0.636141,
+          "davies_bouldin": 1.162,
+          "calinski_harabasz": 827.90207
+        },
+        "cluster_sizes": [
+          657,
+          123,
+          129,
+          144,
+          86,
+          49,
+          69
+        ],
+        "posthoc": {
+          "all_rows": {
+            "ari": 0.133922,
+            "nmi": 0.160067,
+            "ari_ci95_interaction_bootstrap": [
+              0.084153,
+              0.181506
+            ]
+          },
+          "logged_in_one_per_interaction": {
+            "ari": 0.125611,
+            "nmi": 0.208369,
+            "ari_ci95_bootstrap": [
+              0.098793,
+              0.168251
+            ]
+          },
+          "ari_vs_login_success": 0.629084
+        }
+      }
+    },
+    "ae_kmeans_k7": {
+      "k": 7,
+      "seed": 42,
+      "train": {
+        "input_space": {
+          "occupied_clusters": 7,
+          "silhouette": 0.579586,
+          "davies_bouldin": 1.814388,
+          "calinski_harabasz": 1197.66259
+        },
+        "latent_space": {
+          "occupied_clusters": 7,
+          "silhouette": 0.665124,
+          "davies_bouldin": 0.953457,
+          "calinski_harabasz": 7632.499729
+        },
+        "cluster_sizes": [
+          1690,
+          215,
+          185,
+          291,
+          117,
+          340,
+          352
+        ],
+        "cluster_shares": [
+          0.5298,
+          0.0674,
+          0.058,
+          0.0912,
+          0.0367,
+          0.1066,
+          0.1103
+        ],
+        "reconstruction_mse": {
+          "mean": 0.044535,
+          "median": 0.000171
+        },
+        "posthoc": {
+          "all_rows": {
+            "ari": 0.132463,
+            "nmi": 0.14593,
+            "ari_ci95_interaction_bootstrap": [
+              0.10522,
+              0.15729
+            ]
+          },
+          "logged_in_one_per_interaction": {
+            "ari": 0.108062,
+            "nmi": 0.182977,
+            "ari_ci95_bootstrap": [
+              0.095107,
+              0.128825
+            ]
+          },
+          "ari_vs_login_success": 0.640307
+        },
+        "distances": {
+          "note": "K-Means has no probabilistic confidence; distances to centres in the latent space are reported instead (not a confidence)",
+          "to_assigned_centre_median": 0.020515,
+          "to_assigned_centre_p95": 2.732815,
+          "margin_second_minus_first_median": 2.673985,
+          "margin_p05": 0.330132
+        }
+      },
+      "validation": {
+        "input_space": {
+          "occupied_clusters": 7,
+          "silhouette": 0.583499,
+          "davies_bouldin": 1.729955,
+          "calinski_harabasz": 543.673638
+        },
+        "latent_space": {
+          "occupied_clusters": 7,
+          "silhouette": 0.660813,
+          "davies_bouldin": 0.947942,
+          "calinski_harabasz": 3109.108265
+        },
+        "cluster_sizes": [
+          657,
+          106,
+          75,
+          106,
+          36,
+          141,
+          136
+        ],
+        "cluster_shares": [
+          0.5227,
+          0.0843,
+          0.0597,
+          0.0843,
+          0.0286,
+          0.1122,
+          0.1082
+        ],
+        "reconstruction_mse": {
+          "mean": 0.046771,
+          "median": 0.000171
+        },
+        "posthoc": {
+          "all_rows": {
+            "ari": 0.130257,
+            "nmi": 0.145843,
+            "ari_ci95_interaction_bootstrap": [
+              0.0816,
+              0.178365
+            ]
+          },
+          "logged_in_one_per_interaction": {
+            "ari": 0.105994,
+            "nmi": 0.180732,
+            "ari_ci95_bootstrap": [
+              0.077882,
+              0.145126
+            ]
+          },
+          "ari_vs_login_success": 0.629978
+        },
+        "distances": {
+          "note": "K-Means has no probabilistic confidence; distances to centres in the latent space are reported instead (not a confidence)",
+          "to_assigned_centre_median": 0.020515,
+          "to_assigned_centre_p95": 2.598822,
+          "margin_second_minus_first_median": 2.673985,
+          "margin_p05": 0.268606
+        }
+      },
+      "train_vs_validation": {
+        "max_abs_cluster_share_diff": 0.0169,
+        "silhouette_input_diff": 0.003912
+      },
+      "stability": {
+        "pairwise_ari_train": [
+          0.88656,
+          0.893677,
+          0.898057,
+          0.897285,
+          0.897934,
+          0.897737,
+          0.904093,
+          0.878282,
+          0.894335,
+          0.885153
+        ],
+        "pairwise_ari_validation": [
+          0.881274,
+          0.887062,
+          0.891362,
+          0.891138,
+          0.890301,
+          0.891123,
+          0.897775,
+          0.867301,
+          0.88644,
+          0.880457
+        ],
+        "mean_pairwise_ari_train": 0.893311,
+        "mean_pairwise_ari_validation": 0.886423,
+        "min_pairwise_ari_validation": 0.867301,
+        "aligned_agreement_vs_seed42_validation": [
+          0.771679,
+          0.75895,
+          0.792363,
+          0.797136
+        ],
+        "validation_silhouette_input_by_seed": [
+          0.583499,
+          0.606398,
+          0.603734,
+          0.592472,
+          0.590186
+        ],
+        "validation_ari_vs_attack_cat_by_seed": [
+          0.130257,
+          0.135986,
+          0.132763,
+          0.131786,
+          0.133252
+        ],
+        "cluster_sizes_validation_by_seed": [
+          [
+            657,
+            106,
+            75,
+            106,
+            36,
+            141,
+            136
+          ],
+          [
+            84,
+            657,
+            70,
+            107,
+            42,
+            124,
+            173
+          ],
+          [
+            141,
+            657,
+            127,
+            103,
+            70,
+            54,
+            105
+          ],
+          [
+            658,
+            149,
+            45,
+            190,
+            106,
+            70,
+            39
+          ],
+          [
+            166,
+            657,
+            155,
+            66,
+            34,
+            101,
+            78
+          ]
+        ]
+      },
+      "leakage_diagnostics": {
+        "train": {
+          "cluster_vs_login_success_cramers_v": 1.0,
+          "eta2_feature_by_cluster": {
+            "login_success": 1.0,
+            "session_duration_s": 0.950974,
+            "input_line_count": 0.890269,
+            "shell_operator_lines": 0.489237,
+            "time_to_first_input_s": 0.537096,
+            "inter_input_mean_s": 0.339908,
+            "inter_input_std_s": 0.359184,
+            "tty_output_bytes": 0.977545
+          },
+          "per_cluster": {
+            "0": {
+              "n": 1690,
+              "share": 0.529781,
+              "failed_login_share": 1.0,
+              "no_input_share": 1.0,
+              "any_imputed_share": 1.0,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 0.0,
+                "session_duration_s": 1.1,
+                "input_line_count": 0.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": null,
+                "inter_input_mean_s": null,
+                "inter_input_std_s": null,
+                "tty_output_bytes": 0.0
+              },
+              "category_share": {
+                "brute_force": 0.4852,
+                "benign": 0.1787,
+                "botnet": 0.1166,
+                "reconnaissance": 0.1083,
+                "lateral_movement": 0.0604,
+                "privilege_escalation": 0.0509
+              }
+            },
+            "1": {
+              "n": 215,
+              "share": 0.067398,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.0,
+              "find_sessions": 4,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 18.7,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.849619,
+                "inter_input_mean_s": 2.869609,
+                "inter_input_std_s": 1.961237,
+                "tty_output_bytes": 1591.0
+              },
+              "category_share": {
+                "benign": 0.3907,
+                "botnet": 0.2,
+                "reconnaissance": 0.1953,
+                "privilege_escalation": 0.1349,
+                "lateral_movement": 0.0791
+              }
+            },
+            "2": {
+              "n": 185,
+              "share": 0.057994,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.535135,
+              "any_imputed_share": 0.935135,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 2.5,
+                "input_line_count": 0.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.224803,
+                "inter_input_mean_s": 1.723931,
+                "inter_input_std_s": 0.79587,
+                "tty_output_bytes": 315.0
+              },
+              "category_share": {
+                "brute_force": 0.9081,
+                "benign": 0.0378,
+                "lateral_movement": 0.027,
+                "reconnaissance": 0.027
+              }
+            },
+            "3": {
+              "n": 291,
+              "share": 0.091223,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.024055,
+              "find_sessions": 3,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 13.8,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 2.987718,
+                "inter_input_mean_s": 1.655352,
+                "inter_input_std_s": 0.799483,
+                "tty_output_bytes": 1248.0
+              },
+              "category_share": {
+                "benign": 0.4261,
+                "privilege_escalation": 0.1718,
+                "botnet": 0.1546,
+                "lateral_movement": 0.1237,
+                "reconnaissance": 0.1065,
+                "brute_force": 0.0172
+              }
+            },
+            "4": {
+              "n": 117,
+              "share": 0.036677,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.0,
+              "find_sessions": 20,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 22.0,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 5.554066,
+                "inter_input_mean_s": 2.247907,
+                "inter_input_std_s": 1.448641,
+                "tty_output_bytes": 1461.0
+              },
+              "category_share": {
+                "benign": 0.3504,
+                "privilege_escalation": 0.3248,
+                "botnet": 0.1197,
+                "lateral_movement": 0.1111,
+                "reconnaissance": 0.094
+              }
+            },
+            "5": {
+              "n": 340,
+              "share": 0.106583,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.002941,
+              "find_sessions": 3,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 11.0,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 1.365198,
+                "inter_input_mean_s": 1.574872,
+                "inter_input_std_s": 0.75753,
+                "tty_output_bytes": 1188.0
+              },
+              "category_share": {
+                "benign": 0.4353,
+                "botnet": 0.1706,
+                "lateral_movement": 0.1559,
+                "privilege_escalation": 0.1324,
+                "reconnaissance": 0.1029,
+                "brute_force": 0.0029
+              }
+            },
+            "6": {
+              "n": 352,
+              "share": 0.110345,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.076705,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 10.1,
+                "input_line_count": 5.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.084921,
+                "inter_input_mean_s": 1.905387,
+                "inter_input_std_s": 0.977485,
+                "tty_output_bytes": 1112.0
+              },
+              "category_share": {
+                "benign": 0.446,
+                "lateral_movement": 0.1932,
+                "reconnaissance": 0.1562,
+                "botnet": 0.0994,
+                "brute_force": 0.0682,
+                "privilege_escalation": 0.0369
+              }
+            }
+          },
+          "imputed_rows_vs_cluster_ari": 0.60206,
+          "failed_login_rows_in_single_cluster_share": 1.0
+        },
+        "validation": {
+          "cluster_vs_login_success_cramers_v": 1.0,
+          "eta2_feature_by_cluster": {
+            "login_success": 1.0,
+            "session_duration_s": 0.955543,
+            "input_line_count": 0.893821,
+            "shell_operator_lines": 0.501511,
+            "time_to_first_input_s": 0.481143,
+            "inter_input_mean_s": 0.448923,
+            "inter_input_std_s": 0.466148,
+            "tty_output_bytes": 0.976281
+          },
+          "per_cluster": {
+            "0": {
+              "n": 657,
+              "share": 0.522673,
+              "failed_login_share": 1.0,
+              "no_input_share": 1.0,
+              "any_imputed_share": 1.0,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 0.0,
+                "session_duration_s": 1.1,
+                "input_line_count": 0.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": null,
+                "inter_input_mean_s": null,
+                "inter_input_std_s": null,
+                "tty_output_bytes": 0.0
+              },
+              "category_share": {
+                "brute_force": 0.4855,
+                "benign": 0.1918,
+                "reconnaissance": 0.1172,
+                "botnet": 0.0989,
+                "lateral_movement": 0.0609,
+                "privilege_escalation": 0.0457
+              }
+            },
+            "1": {
+              "n": 106,
+              "share": 0.084328,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.0,
+              "find_sessions": 1,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 18.7,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.75442,
+                "inter_input_mean_s": 3.031564,
+                "inter_input_std_s": 2.142097,
+                "tty_output_bytes": 1282.5
+              },
+              "category_share": {
+                "benign": 0.3774,
+                "botnet": 0.1698,
+                "reconnaissance": 0.1698,
+                "lateral_movement": 0.1509,
+                "privilege_escalation": 0.1321
+              }
+            },
+            "2": {
+              "n": 75,
+              "share": 0.059666,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.546667,
+              "any_imputed_share": 0.906667,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 2.6,
+                "input_line_count": 0.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.192289,
+                "inter_input_mean_s": 1.7337,
+                "inter_input_std_s": 0.659597,
+                "tty_output_bytes": 315.0
+              },
+              "category_share": {
+                "brute_force": 0.9067,
+                "lateral_movement": 0.04,
+                "reconnaissance": 0.0267,
+                "benign": 0.0267
+              }
+            },
+            "3": {
+              "n": 106,
+              "share": 0.084328,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.028302,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 14.85,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 2.754805,
+                "inter_input_mean_s": 1.700923,
+                "inter_input_std_s": 0.913928,
+                "tty_output_bytes": 1336.0
+              },
+              "category_share": {
+                "benign": 0.434,
+                "botnet": 0.1792,
+                "privilege_escalation": 0.1509,
+                "reconnaissance": 0.1226,
+                "lateral_movement": 0.0849,
+                "brute_force": 0.0283
+              }
+            },
+            "4": {
+              "n": 36,
+              "share": 0.02864,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.0,
+              "find_sessions": 8,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 22.2,
+                "input_line_count": 7.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 4.71,
+                "inter_input_mean_s": 2.381665,
+                "inter_input_std_s": 1.780479,
+                "tty_output_bytes": 1664.5
+              },
+              "category_share": {
+                "benign": 0.3889,
+                "privilege_escalation": 0.3333,
+                "reconnaissance": 0.1389,
+                "lateral_movement": 0.0833,
+                "botnet": 0.0556
+              }
+            },
+            "5": {
+              "n": 141,
+              "share": 0.112172,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.014184,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 10.6,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 1.396035,
+                "inter_input_mean_s": 1.506855,
+                "inter_input_std_s": 0.694326,
+                "tty_output_bytes": 1276.0
+              },
+              "category_share": {
+                "benign": 0.4752,
+                "privilege_escalation": 0.1489,
+                "lateral_movement": 0.1277,
+                "reconnaissance": 0.1206,
+                "botnet": 0.1135,
+                "brute_force": 0.0142
+              }
+            },
+            "6": {
+              "n": 136,
+              "share": 0.108194,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.058824,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 10.55,
+                "input_line_count": 5.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.006433,
+                "inter_input_mean_s": 1.842632,
+                "inter_input_std_s": 0.960319,
+                "tty_output_bytes": 1196.5
+              },
+              "category_share": {
+                "benign": 0.4412,
+                "lateral_movement": 0.2132,
+                "reconnaissance": 0.1397,
+                "botnet": 0.1176,
+                "privilege_escalation": 0.0441,
+                "brute_force": 0.0441
+              }
+            }
+          },
+          "imputed_rows_vs_cluster_ari": 0.595327,
+          "failed_login_rows_in_single_cluster_share": 1.0
+        },
+        "single_feature_reproduces_cluster_ba_validation": {
+          "login_success": 0.285714,
+          "session_duration_s": 0.479433,
+          "input_line_count": 0.346917,
+          "shell_operator_lines": 0.282675,
+          "time_to_first_input_s": 0.442147,
+          "inter_input_mean_s": 0.393052,
+          "inter_input_std_s": 0.399252,
+          "tty_output_bytes": 0.422286
+        }
+      },
+      "contingency_validation_all_rows": {
+        "0": {
+          "benign": 126,
+          "botnet": 65,
+          "brute_force": 319,
+          "lateral_movement": 40,
+          "privilege_escalation": 30,
+          "reconnaissance": 77
+        },
+        "1": {
+          "benign": 40,
+          "botnet": 18,
+          "brute_force": 0,
+          "lateral_movement": 16,
+          "privilege_escalation": 14,
+          "reconnaissance": 18
+        },
+        "2": {
+          "benign": 2,
+          "botnet": 0,
+          "brute_force": 68,
+          "lateral_movement": 3,
+          "privilege_escalation": 0,
+          "reconnaissance": 2
+        },
+        "3": {
+          "benign": 46,
+          "botnet": 19,
+          "brute_force": 3,
+          "lateral_movement": 9,
+          "privilege_escalation": 16,
+          "reconnaissance": 13
+        },
+        "4": {
+          "benign": 14,
+          "botnet": 2,
+          "brute_force": 0,
+          "lateral_movement": 3,
+          "privilege_escalation": 12,
+          "reconnaissance": 5
+        },
+        "5": {
+          "benign": 67,
+          "botnet": 16,
+          "brute_force": 2,
+          "lateral_movement": 18,
+          "privilege_escalation": 21,
+          "reconnaissance": 17
+        },
+        "6": {
+          "benign": 60,
+          "botnet": 16,
+          "brute_force": 6,
+          "lateral_movement": 29,
+          "privilege_escalation": 6,
+          "reconnaissance": 19
+        }
+      },
+      "contingency_validation_logged_in": {
+        "0": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "1": {
+          "benign": 40,
+          "botnet": 18,
+          "brute_force": 0,
+          "lateral_movement": 16,
+          "privilege_escalation": 14,
+          "reconnaissance": 18
+        },
+        "2": {
+          "benign": 2,
+          "botnet": 0,
+          "brute_force": 68,
+          "lateral_movement": 3,
+          "privilege_escalation": 0,
+          "reconnaissance": 2
+        },
+        "3": {
+          "benign": 46,
+          "botnet": 19,
+          "brute_force": 3,
+          "lateral_movement": 9,
+          "privilege_escalation": 16,
+          "reconnaissance": 13
+        },
+        "4": {
+          "benign": 14,
+          "botnet": 2,
+          "brute_force": 0,
+          "lateral_movement": 3,
+          "privilege_escalation": 12,
+          "reconnaissance": 5
+        },
+        "5": {
+          "benign": 67,
+          "botnet": 16,
+          "brute_force": 2,
+          "lateral_movement": 18,
+          "privilege_escalation": 21,
+          "reconnaissance": 17
+        },
+        "6": {
+          "benign": 60,
+          "botnet": 16,
+          "brute_force": 6,
+          "lateral_movement": 29,
+          "privilege_escalation": 6,
+          "reconnaissance": 19
+        }
+      },
+      "contingency_validation_failed_rows": {
+        "0": {
+          "benign": 126,
+          "botnet": 65,
+          "brute_force": 319,
+          "lateral_movement": 40,
+          "privilege_escalation": 30,
+          "reconnaissance": 77
+        },
+        "1": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "2": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "3": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "4": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "5": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "6": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        }
+      },
+      "contingency_train_logged_in": {
+        "0": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "1": {
+          "benign": 84,
+          "botnet": 43,
+          "brute_force": 0,
+          "lateral_movement": 17,
+          "privilege_escalation": 29,
+          "reconnaissance": 42
+        },
+        "2": {
+          "benign": 7,
+          "botnet": 0,
+          "brute_force": 168,
+          "lateral_movement": 5,
+          "privilege_escalation": 0,
+          "reconnaissance": 5
+        },
+        "3": {
+          "benign": 124,
+          "botnet": 45,
+          "brute_force": 5,
+          "lateral_movement": 36,
+          "privilege_escalation": 50,
+          "reconnaissance": 31
+        },
+        "4": {
+          "benign": 41,
+          "botnet": 14,
+          "brute_force": 0,
+          "lateral_movement": 13,
+          "privilege_escalation": 38,
+          "reconnaissance": 11
+        },
+        "5": {
+          "benign": 148,
+          "botnet": 58,
+          "brute_force": 1,
+          "lateral_movement": 53,
+          "privilege_escalation": 45,
+          "reconnaissance": 35
+        },
+        "6": {
+          "benign": 157,
+          "botnet": 35,
+          "brute_force": 24,
+          "lateral_movement": 68,
+          "privilege_escalation": 13,
+          "reconnaissance": 55
+        }
+      },
+      "find_sessions_validation": {
+        "find_clusters": {
+          "4": 8,
+          "1": 1
+        },
+        "pe_non_find_logged_in_clusters": {
+          "5": 21,
+          "3": 16,
+          "1": 13,
+          "6": 6,
+          "4": 4
+        }
+      },
+      "training": {
+        "ae_loss_first": 0.944851,
+        "ae_loss_last": 0.044886,
+        "ae_val_loss_last": 0.054678,
+        "ae_seconds": 6.961421,
+        "kmeans_inertia": 5989.142578,
+        "kmeans_seconds": 0.171978
+      }
+    },
+    "dec_k7": {
+      "k": 7,
+      "seed": 42,
+      "train": {
+        "input_space": {
+          "occupied_clusters": 7,
+          "silhouette": 0.577362,
+          "davies_bouldin": 2.027274,
+          "calinski_harabasz": 1146.52824
+        },
+        "latent_space": {
+          "occupied_clusters": 7,
+          "silhouette": 0.777169,
+          "davies_bouldin": 0.511612,
+          "calinski_harabasz": 19438.603048
+        },
+        "cluster_sizes": [
+          1690,
+          207,
+          180,
+          305,
+          210,
+          277,
+          321
+        ],
+        "cluster_shares": [
+          0.5298,
+          0.0649,
+          0.0564,
+          0.0956,
+          0.0658,
+          0.0868,
+          0.1006
+        ],
+        "reconstruction_mse": {
+          "mean": 0.044535,
+          "median": 0.000171
+        },
+        "posthoc": {
+          "all_rows": {
+            "ari": 0.133752,
+            "nmi": 0.153066,
+            "ari_ci95_interaction_bootstrap": [
+              0.107618,
+              0.15929
+            ]
+          },
+          "logged_in_one_per_interaction": {
+            "ari": 0.114895,
+            "nmi": 0.196561,
+            "ari_ci95_bootstrap": [
+              0.099976,
+              0.137368
+            ]
+          },
+          "ari_vs_login_success": 0.635172
+        },
+        "confidence": {
+          "mean": 0.801953,
+          "median": 0.916522,
+          "min": 0.279714,
+          "p05": 0.425837,
+          "share_below_0.7": 0.212853,
+          "share_below_0.9": 0.465831,
+          "min_top1_top2_gap": 0.001102,
+          "by_category_mean": {
+            "benign": 0.747734,
+            "botnet": 0.774353,
+            "brute_force": 0.896136,
+            "lateral_movement": 0.743368,
+            "privilege_escalation": 0.754997,
+            "reconnaissance": 0.777676
+          }
+        }
+      },
+      "validation": {
+        "input_space": {
+          "occupied_clusters": 7,
+          "silhouette": 0.581779,
+          "davies_bouldin": 1.82958,
+          "calinski_harabasz": 526.166443
+        },
+        "latent_space": {
+          "occupied_clusters": 7,
+          "silhouette": 0.761878,
+          "davies_bouldin": 0.543102,
+          "calinski_harabasz": 7733.157797
+        },
+        "cluster_sizes": [
+          657,
+          92,
+          71,
+          123,
+          64,
+          114,
+          136
+        ],
+        "cluster_shares": [
+          0.5227,
+          0.0732,
+          0.0565,
+          0.0979,
+          0.0509,
+          0.0907,
+          0.1082
+        ],
+        "reconstruction_mse": {
+          "mean": 0.046771,
+          "median": 0.000171
+        },
+        "posthoc": {
+          "all_rows": {
+            "ari": 0.130378,
+            "nmi": 0.151819,
+            "ari_ci95_interaction_bootstrap": [
+              0.08099,
+              0.178223
+            ]
+          },
+          "logged_in_one_per_interaction": {
+            "ari": 0.106258,
+            "nmi": 0.191965,
+            "ari_ci95_bootstrap": [
+              0.079665,
+              0.150381
+            ]
+          },
+          "ari_vs_login_success": 0.625487
+        },
+        "confidence": {
+          "mean": 0.792358,
+          "median": 0.916522,
+          "min": 0.29404,
+          "p05": 0.41802,
+          "share_below_0.7": 0.245823,
+          "share_below_0.9": 0.473349,
+          "min_top1_top2_gap": 0.000543,
+          "by_category_mean": {
+            "benign": 0.733313,
+            "botnet": 0.758154,
+            "brute_force": 0.897485,
+            "lateral_movement": 0.726214,
+            "privilege_escalation": 0.742099,
+            "reconnaissance": 0.76953
+          }
+        }
+      },
+      "train_vs_validation": {
+        "max_abs_cluster_share_diff": 0.0149,
+        "silhouette_input_diff": 0.004418
+      },
+      "stability": {
+        "pairwise_ari_train": [
+          0.893,
+          0.896239,
+          0.901202,
+          0.903345,
+          0.900453,
+          0.909779,
+          0.901871,
+          0.884679,
+          0.903251,
+          0.893367
+        ],
+        "pairwise_ari_validation": [
+          0.890879,
+          0.892074,
+          0.896648,
+          0.901734,
+          0.896966,
+          0.904233,
+          0.896825,
+          0.877879,
+          0.897492,
+          0.88372
+        ],
+        "mean_pairwise_ari_train": 0.898719,
+        "mean_pairwise_ari_validation": 0.893845,
+        "min_pairwise_ari_validation": 0.877879,
+        "aligned_agreement_vs_seed42_validation": [
+          0.778043,
+          0.764519,
+          0.792363,
+          0.789181
+        ],
+        "validation_silhouette_input_by_seed": [
+          0.581779,
+          0.603736,
+          0.60872,
+          0.574,
+          0.593437
+        ],
+        "validation_ari_vs_attack_cat_by_seed": [
+          0.130378,
+          0.134146,
+          0.134639,
+          0.129464,
+          0.134567
+        ],
+        "cluster_sizes_validation_by_seed": [
+          [
+            657,
+            92,
+            71,
+            123,
+            64,
+            114,
+            136
+          ],
+          [
+            77,
+            657,
+            79,
+            89,
+            80,
+            126,
+            149
+          ],
+          [
+            81,
+            657,
+            122,
+            113,
+            119,
+            82,
+            83
+          ],
+          [
+            657,
+            105,
+            88,
+            187,
+            60,
+            67,
+            93
+          ],
+          [
+            143,
+            657,
+            136,
+            84,
+            63,
+            92,
+            82
+          ]
+        ],
+        "converged_by_seed": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "iterations_by_seed": [
+          500,
+          500,
+          500,
+          500,
+          500
+        ],
+        "confidence_mean_validation_by_seed": [
+          0.792358,
+          0.757368,
+          0.789458,
+          0.767408,
+          0.782228
+        ],
+        "confidence_min_validation_by_seed": [
+          0.29404,
+          0.235721,
+          0.250836,
+          0.31492,
+          0.285222
+        ]
+      },
+      "leakage_diagnostics": {
+        "train": {
+          "cluster_vs_login_success_cramers_v": 1.0,
+          "eta2_feature_by_cluster": {
+            "login_success": 1.0,
+            "session_duration_s": 0.949387,
+            "input_line_count": 0.889515,
+            "shell_operator_lines": 0.490226,
+            "time_to_first_input_s": 0.527732,
+            "inter_input_mean_s": 0.29923,
+            "inter_input_std_s": 0.334954,
+            "tty_output_bytes": 0.978289
+          },
+          "per_cluster": {
+            "0": {
+              "n": 1690,
+              "share": 0.529781,
+              "failed_login_share": 1.0,
+              "no_input_share": 1.0,
+              "any_imputed_share": 1.0,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 0.0,
+                "session_duration_s": 1.1,
+                "input_line_count": 0.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": null,
+                "inter_input_mean_s": null,
+                "inter_input_std_s": null,
+                "tty_output_bytes": 0.0
+              },
+              "category_share": {
+                "brute_force": 0.4852,
+                "benign": 0.1787,
+                "botnet": 0.1166,
+                "reconnaissance": 0.1083,
+                "lateral_movement": 0.0604,
+                "privilege_escalation": 0.0509
+              }
+            },
+            "1": {
+              "n": 207,
+              "share": 0.06489,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.0,
+              "find_sessions": 3,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 17.6,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.559734,
+                "inter_input_mean_s": 2.895266,
+                "inter_input_std_s": 2.023981,
+                "tty_output_bytes": 1638.0
+              },
+              "category_share": {
+                "benign": 0.3961,
+                "reconnaissance": 0.2512,
+                "botnet": 0.1643,
+                "privilege_escalation": 0.1014,
+                "lateral_movement": 0.087
+              }
+            },
+            "2": {
+              "n": 180,
+              "share": 0.056426,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.55,
+              "any_imputed_share": 0.977778,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 2.4,
+                "input_line_count": 0.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.406922,
+                "inter_input_mean_s": 1.831002,
+                "inter_input_std_s": 0.63847,
+                "tty_output_bytes": 315.0
+              },
+              "category_share": {
+                "brute_force": 0.9611,
+                "lateral_movement": 0.0333,
+                "reconnaissance": 0.0056
+              }
+            },
+            "3": {
+              "n": 305,
+              "share": 0.095611,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.016393,
+              "find_sessions": 3,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 13.8,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 2.431231,
+                "inter_input_mean_s": 1.719013,
+                "inter_input_std_s": 0.889202,
+                "tty_output_bytes": 1237.0
+              },
+              "category_share": {
+                "benign": 0.4262,
+                "privilege_escalation": 0.1967,
+                "botnet": 0.1705,
+                "lateral_movement": 0.1016,
+                "reconnaissance": 0.0918,
+                "brute_force": 0.0131
+              }
+            },
+            "4": {
+              "n": 210,
+              "share": 0.065831,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.009524,
+              "find_sessions": 23,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 18.75,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 4.692479,
+                "inter_input_mean_s": 2.003824,
+                "inter_input_std_s": 1.207677,
+                "tty_output_bytes": 1363.5
+              },
+              "category_share": {
+                "benign": 0.381,
+                "privilege_escalation": 0.2333,
+                "lateral_movement": 0.1524,
+                "botnet": 0.1286,
+                "reconnaissance": 0.1,
+                "brute_force": 0.0048
+              }
+            },
+            "5": {
+              "n": 277,
+              "share": 0.086834,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.01083,
+              "find_sessions": 1,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 10.6,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 1.364759,
+                "inter_input_mean_s": 1.532228,
+                "inter_input_std_s": 0.72147,
+                "tty_output_bytes": 1134.0
+              },
+              "category_share": {
+                "benign": 0.444,
+                "botnet": 0.1733,
+                "lateral_movement": 0.1697,
+                "privilege_escalation": 0.1083,
+                "reconnaissance": 0.0975,
+                "brute_force": 0.0072
+              }
+            },
+            "6": {
+              "n": 321,
+              "share": 0.100627,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.068536,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 10.0,
+                "input_line_count": 5.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.011673,
+                "inter_input_mean_s": 1.823566,
+                "inter_input_std_s": 0.904881,
+                "tty_output_bytes": 1187.0
+              },
+              "category_share": {
+                "benign": 0.4548,
+                "lateral_movement": 0.1807,
+                "reconnaissance": 0.1558,
+                "botnet": 0.1059,
+                "brute_force": 0.0561,
+                "privilege_escalation": 0.0467
+              }
+            }
+          },
+          "imputed_rows_vs_cluster_ari": 0.599502,
+          "failed_login_rows_in_single_cluster_share": 1.0
+        },
+        "validation": {
+          "cluster_vs_login_success_cramers_v": 1.0,
+          "eta2_feature_by_cluster": {
+            "login_success": 1.0,
+            "session_duration_s": 0.953648,
+            "input_line_count": 0.893817,
+            "shell_operator_lines": 0.525603,
+            "time_to_first_input_s": 0.483157,
+            "inter_input_mean_s": 0.402818,
+            "inter_input_std_s": 0.431229,
+            "tty_output_bytes": 0.977699
+          },
+          "per_cluster": {
+            "0": {
+              "n": 657,
+              "share": 0.522673,
+              "failed_login_share": 1.0,
+              "no_input_share": 1.0,
+              "any_imputed_share": 1.0,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 0.0,
+                "session_duration_s": 1.1,
+                "input_line_count": 0.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": null,
+                "inter_input_mean_s": null,
+                "inter_input_std_s": null,
+                "tty_output_bytes": 0.0
+              },
+              "category_share": {
+                "brute_force": 0.4855,
+                "benign": 0.1918,
+                "reconnaissance": 0.1172,
+                "botnet": 0.0989,
+                "lateral_movement": 0.0609,
+                "privilege_escalation": 0.0457
+              }
+            },
+            "1": {
+              "n": 92,
+              "share": 0.07319,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.0,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 18.3,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.595975,
+                "inter_input_mean_s": 3.031564,
+                "inter_input_std_s": 2.123849,
+                "tty_output_bytes": 1429.5
+              },
+              "category_share": {
+                "benign": 0.4348,
+                "reconnaissance": 0.2065,
+                "botnet": 0.1413,
+                "lateral_movement": 0.1087,
+                "privilege_escalation": 0.1087
+              }
+            },
+            "2": {
+              "n": 71,
+              "share": 0.056484,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.577465,
+              "any_imputed_share": 0.971831,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 2.4,
+                "input_line_count": 0.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 1.296886,
+                "inter_input_mean_s": 1.896695,
+                "inter_input_std_s": 1.017057,
+                "tty_output_bytes": 315.0
+              },
+              "category_share": {
+                "brute_force": 0.9718,
+                "lateral_movement": 0.0282
+              }
+            },
+            "3": {
+              "n": 123,
+              "share": 0.097852,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.01626,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 14.8,
+                "input_line_count": 6.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 2.493809,
+                "inter_input_mean_s": 1.780419,
+                "inter_input_std_s": 0.903349,
+                "tty_output_bytes": 1308.0
+              },
+              "category_share": {
+                "benign": 0.3984,
+                "botnet": 0.1789,
+                "privilege_escalation": 0.1707,
+                "reconnaissance": 0.122,
+                "lateral_movement": 0.1138,
+                "brute_force": 0.0163
+              }
+            },
+            "4": {
+              "n": 64,
+              "share": 0.050915,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.015625,
+              "find_sessions": 9,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 20.8,
+                "input_line_count": 7.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 3.954668,
+                "inter_input_mean_s": 2.32708,
+                "inter_input_std_s": 1.560613,
+                "tty_output_bytes": 1502.0
+              },
+              "category_share": {
+                "benign": 0.4219,
+                "privilege_escalation": 0.25,
+                "lateral_movement": 0.125,
+                "reconnaissance": 0.1094,
+                "botnet": 0.0781,
+                "brute_force": 0.0156
+              }
+            },
+            "5": {
+              "n": 114,
+              "share": 0.090692,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.017544,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 10.4,
+                "input_line_count": 5.0,
+                "shell_operator_lines": 1.0,
+                "time_to_first_input_s": 1.295415,
+                "inter_input_mean_s": 1.510118,
+                "inter_input_std_s": 0.677458,
+                "tty_output_bytes": 1126.5
+              },
+              "category_share": {
+                "benign": 0.4825,
+                "lateral_movement": 0.1491,
+                "privilege_escalation": 0.1316,
+                "botnet": 0.1228,
+                "reconnaissance": 0.0965,
+                "brute_force": 0.0175
+              }
+            },
+            "6": {
+              "n": 136,
+              "share": 0.108194,
+              "failed_login_share": 0.0,
+              "no_input_share": 0.0,
+              "any_imputed_share": 0.051471,
+              "find_sessions": 0,
+              "median_raw": {
+                "login_success": 1.0,
+                "session_duration_s": 10.5,
+                "input_line_count": 5.0,
+                "shell_operator_lines": 0.0,
+                "time_to_first_input_s": 0.946539,
+                "inter_input_mean_s": 1.781504,
+                "inter_input_std_s": 0.940386,
+                "tty_output_bytes": 1367.0
+              },
+              "category_share": {
+                "benign": 0.4265,
+                "lateral_movement": 0.1985,
+                "reconnaissance": 0.1618,
+                "botnet": 0.125,
+                "privilege_escalation": 0.0515,
+                "brute_force": 0.0368
+              }
+            }
+          },
+          "imputed_rows_vs_cluster_ari": 0.593525,
+          "failed_login_rows_in_single_cluster_share": 1.0
+        },
+        "single_feature_reproduces_cluster_ba_validation": {
+          "login_success": 0.285714,
+          "session_duration_s": 0.475348,
+          "input_line_count": 0.358244,
+          "shell_operator_lines": 0.282738,
+          "time_to_first_input_s": 0.4608,
+          "inter_input_mean_s": 0.390509,
+          "inter_input_std_s": 0.401099,
+          "tty_output_bytes": 0.446931
+        }
+      },
+      "contingency_validation_all_rows": {
+        "0": {
+          "benign": 126,
+          "botnet": 65,
+          "brute_force": 319,
+          "lateral_movement": 40,
+          "privilege_escalation": 30,
+          "reconnaissance": 77
+        },
+        "1": {
+          "benign": 40,
+          "botnet": 13,
+          "brute_force": 0,
+          "lateral_movement": 10,
+          "privilege_escalation": 10,
+          "reconnaissance": 19
+        },
+        "2": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 69,
+          "lateral_movement": 2,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "3": {
+          "benign": 49,
+          "botnet": 22,
+          "brute_force": 2,
+          "lateral_movement": 14,
+          "privilege_escalation": 21,
+          "reconnaissance": 15
+        },
+        "4": {
+          "benign": 27,
+          "botnet": 5,
+          "brute_force": 1,
+          "lateral_movement": 8,
+          "privilege_escalation": 16,
+          "reconnaissance": 7
+        },
+        "5": {
+          "benign": 55,
+          "botnet": 14,
+          "brute_force": 2,
+          "lateral_movement": 17,
+          "privilege_escalation": 15,
+          "reconnaissance": 11
+        },
+        "6": {
+          "benign": 58,
+          "botnet": 17,
+          "brute_force": 5,
+          "lateral_movement": 27,
+          "privilege_escalation": 7,
+          "reconnaissance": 22
+        }
+      },
+      "contingency_validation_logged_in": {
+        "0": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "1": {
+          "benign": 40,
+          "botnet": 13,
+          "brute_force": 0,
+          "lateral_movement": 10,
+          "privilege_escalation": 10,
+          "reconnaissance": 19
+        },
+        "2": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 69,
+          "lateral_movement": 2,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "3": {
+          "benign": 49,
+          "botnet": 22,
+          "brute_force": 2,
+          "lateral_movement": 14,
+          "privilege_escalation": 21,
+          "reconnaissance": 15
+        },
+        "4": {
+          "benign": 27,
+          "botnet": 5,
+          "brute_force": 1,
+          "lateral_movement": 8,
+          "privilege_escalation": 16,
+          "reconnaissance": 7
+        },
+        "5": {
+          "benign": 55,
+          "botnet": 14,
+          "brute_force": 2,
+          "lateral_movement": 17,
+          "privilege_escalation": 15,
+          "reconnaissance": 11
+        },
+        "6": {
+          "benign": 58,
+          "botnet": 17,
+          "brute_force": 5,
+          "lateral_movement": 27,
+          "privilege_escalation": 7,
+          "reconnaissance": 22
+        }
+      },
+      "contingency_validation_failed_rows": {
+        "0": {
+          "benign": 126,
+          "botnet": 65,
+          "brute_force": 319,
+          "lateral_movement": 40,
+          "privilege_escalation": 30,
+          "reconnaissance": 77
+        },
+        "1": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "2": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "3": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "4": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "5": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "6": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        }
+      },
+      "contingency_train_logged_in": {
+        "0": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        },
+        "1": {
+          "benign": 82,
+          "botnet": 34,
+          "brute_force": 0,
+          "lateral_movement": 18,
+          "privilege_escalation": 21,
+          "reconnaissance": 52
+        },
+        "2": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 173,
+          "lateral_movement": 6,
+          "privilege_escalation": 0,
+          "reconnaissance": 1
+        },
+        "3": {
+          "benign": 130,
+          "botnet": 52,
+          "brute_force": 4,
+          "lateral_movement": 31,
+          "privilege_escalation": 60,
+          "reconnaissance": 28
+        },
+        "4": {
+          "benign": 80,
+          "botnet": 27,
+          "brute_force": 1,
+          "lateral_movement": 32,
+          "privilege_escalation": 49,
+          "reconnaissance": 21
+        },
+        "5": {
+          "benign": 123,
+          "botnet": 48,
+          "brute_force": 2,
+          "lateral_movement": 47,
+          "privilege_escalation": 30,
+          "reconnaissance": 27
+        },
+        "6": {
+          "benign": 146,
+          "botnet": 34,
+          "brute_force": 18,
+          "lateral_movement": 58,
+          "privilege_escalation": 15,
+          "reconnaissance": 50
+        }
+      },
+      "find_sessions_validation": {
+        "find_clusters": {
+          "4": 9
+        },
+        "pe_non_find_logged_in_clusters": {
+          "3": 21,
+          "5": 15,
+          "1": 10,
+          "4": 7,
+          "6": 7
+        }
+      },
+      "training": {
+        "iterations": 500,
+        "converged": false,
+        "tolerance": 0.001,
+        "label_change_checks": [
+          {
+            "iteration": 50,
+            "label_change": 0.019436
+          },
+          {
+            "iteration": 100,
+            "label_change": 0.015047
+          },
+          {
+            "iteration": 150,
+            "label_change": 0.013166
+          },
+          {
+            "iteration": 200,
+            "label_change": 0.008777
+          },
+          {
+            "iteration": 250,
+            "label_change": 0.009718
+          },
+          {
+            "iteration": 300,
+            "label_change": 0.010345
+          },
+          {
+            "iteration": 350,
+            "label_change": 0.00721
+          },
+          {
+            "iteration": 400,
+            "label_change": 0.00815
+          },
+          {
+            "iteration": 450,
+            "label_change": 0.009718
+          }
+        ],
+        "kl_first": 0.120421,
+        "kl_last": 0.104174,
+        "kl_min": 0.086439,
+        "seconds": 6.333919
+      }
+    }
+  },
+  "find_sensitivity": {
+    "note": "Diagnostic retrain (K, seed, hyperparameters unchanged) with the 30 training sessions containing `find / -name id_rsa` removed; dataset files unchanged.",
+    "train_rows": 3160,
+    "find_sessions_removed": 30,
+    "ae_kmeans_validation_ari_full_vs_nofind": 0.980992,
+    "dec_validation_ari_full_vs_nofind": 0.96898,
+    "ae_kmeans_validation_ari_full_vs_nofind_excluding_find_rows": 0.980967,
+    "dec_validation_ari_full_vs_nofind_excluding_find_rows": 0.969082,
+    "seed_variation_reference_mean_pairwise_ari_validation": {
+      "ae_kmeans": 0.886423,
+      "dec": 0.893845
+    },
+    "nofind_validation_silhouette_input": {
+      "ae_kmeans": 0.5848,
+      "dec": 0.578217
+    },
+    "full_validation_silhouette_input_excluding_find_rows": {
+      "ae_kmeans": 0.590612,
+      "dec": 0.589531
+    }
+  },
+  "saved_models": {
+    "directory": "models\\dataset_v2_revalidation_20261111",
+    "checks": {
+      "dec_k3_reload_identical": true,
+      "dec_k3_end_to_end_raw_assignments_identical": true,
+      "dec_k3_end_to_end_max_conf_diff": 0.0,
+      "ae_kmeans_k3_reload_latent_identical": true,
+      "ae_kmeans_k3_reload_assignments_identical": true,
+      "dec_k7_reload_identical": true,
+      "dec_k7_end_to_end_raw_assignments_identical": true,
+      "dec_k7_end_to_end_max_conf_diff": 0.0,
+      "ae_kmeans_k7_reload_latent_identical": true,
+      "ae_kmeans_k7_reload_assignments_identical": true
+    }
+  },
+  "runtime_seconds": {
+    "k3_seed42": {
+      "ae": 7.145896,
+      "kmeans": 0.089885,
+      "dec": 5.914557,
+      "total": 15.288962
+    },
+    "k3_seed43": {
+      "ae": 7.171569,
+      "kmeans": 0.130397,
+      "dec": 6.112622,
+      "total": 15.398721
+    },
+    "k3_seed44": {
+      "ae": 6.639315,
+      "kmeans": 0.106376,
+      "dec": 5.85501,
+      "total": 14.566644
+    },
+    "k3_seed45": {
+      "ae": 6.854563,
+      "kmeans": 0.086372,
+      "dec": 5.89888,
+      "total": 14.786745
+    },
+    "k3_seed46": {
+      "ae": 7.129547,
+      "kmeans": 0.089549,
+      "dec": 5.882505,
+      "total": 15.206592
+    },
+    "k7_seed42": {
+      "ae": 6.961421,
+      "kmeans": 0.171978,
+      "dec": 6.333919,
+      "total": 15.491915
+    },
+    "k7_seed43": {
+      "ae": 7.054914,
+      "kmeans": 0.20552,
+      "dec": 6.237828,
+      "total": 15.591595
+    },
+    "k7_seed44": {
+      "ae": 6.632327,
+      "kmeans": 0.180559,
+      "dec": 6.431391,
+      "total": 15.288845
+    },
+    "k7_seed45": {
+      "ae": 7.299347,
+      "kmeans": 0.205341,
+      "dec": 6.243032,
+      "total": 15.940149
+    },
+    "k7_seed46": {
+      "ae": 6.784364,
+      "kmeans": 0.165994,
+      "dec": 6.774105,
+      "total": 15.853165
+    }
+  },
+  "training_logs_primary": {
+    "k3": {
+      "ae_loss": [
+        0.944851,
+        0.824823,
+        0.695886,
+        0.558279,
+        0.42918,
+        0.332765,
+        0.273649,
+        0.237841,
+        0.206291,
+        0.173962,
+        0.143256,
+        0.118583,
+        0.100325,
+        0.084862,
+        0.071528,
+        0.062012,
+        0.055565,
+        0.051026,
+        0.047656,
+        0.044886
+      ],
+      "ae_val_loss": [
+        0.950611,
+        0.817027,
+        0.675897,
+        0.535796,
+        0.420699,
+        0.34364,
+        0.299038,
+        0.263284,
+        0.22539,
+        0.18622,
+        0.152341,
+        0.128,
+        0.108802,
+        0.091949,
+        0.078904,
+        0.070253,
+        0.064505,
+        0.060431,
+        0.057232,
+        0.054678
+      ],
+      "dec_kl": [
+        0.060262,
+        0.057793,
+        0.056707,
+        0.056129,
+        0.055384,
+        0.054367,
+        0.053238,
+        0.052173,
+        0.051266,
+        0.050505,
+        0.049802,
+        0.04907,
+        0.048277,
+        0.047452,
+        0.046651,
+        0.045917,
+        0.045259,
+        0.044654,
+        0.044063,
+        0.04346,
+        0.042848,
+        0.042249,
+        0.04169,
+        0.041179,
+        0.040705,
+        0.040245,
+        0.039787,
+        0.039329,
+        0.038885,
+        0.038471,
+        0.038087,
+        0.037725,
+        0.037373,
+        0.037025,
+        0.036685,
+        0.03636,
+        0.036057,
+        0.035771,
+        0.035495,
+        0.035224,
+        0.034959,
+        0.034703,
+        0.034462,
+        0.034233,
+        0.034012,
+        0.033796,
+        0.033585,
+        0.03338,
+        0.033185,
+        0.032999,
+        0.050194,
+        0.049601,
+        0.048989,
+        0.048606,
+        0.048431,
+        0.048247,
+        0.047898,
+        0.047434,
+        0.047013,
+        0.046729,
+        0.046535,
+        0.046312,
+        0.045999,
+        0.04564,
+        0.045321,
+        0.045085,
+        0.044891,
+        0.044671,
+        0.044403,
+        0.044125,
+        0.043887,
+        0.043698,
+        0.043527,
+        0.043337,
+        0.043127,
+        0.042925,
+        0.042751,
+        0.0426,
+        0.042446,
+        0.042277,
+        0.042105,
+        0.041948,
+        0.04181,
+        0.041679,
+        0.041541,
+        0.041398,
+        0.041261,
+        0.041136,
+        0.041018,
+        0.040899,
+        0.040776,
+        0.040655,
+        0.040542,
+        0.040435,
+        0.040329,
+        0.040221,
+        0.040114,
+        0.040012,
+        0.039914,
+        0.039818,
+        0.046009,
+        0.045727,
+        0.045465,
+        0.045346,
+        0.045295,
+        0.045175,
+        0.04497,
+        0.044784,
+        0.044687,
+        0.044637,
+        0.044549,
+        0.044405,
+        0.044262,
+        0.044167,
+        0.044101,
+        0.044013,
+        0.043888,
+        0.043759,
+        0.043661,
+        0.043587,
+        0.043508,
+        0.043409,
+        0.043309,
+        0.043226,
+        0.043156,
+        0.043079,
+        0.04299,
+        0.042902,
+        0.042825,
+        0.042756,
+        0.042683,
+        0.042603,
+        0.042524,
+        0.042452,
+        0.042385,
+        0.042315,
+        0.042242,
+        0.042171,
+        0.042104,
+        0.042039,
+        0.041972,
+        0.041904,
+        0.041837,
+        0.041774,
+        0.041712,
+        0.041648,
+        0.041584,
+        0.041521,
+        0.04146,
+        0.0414,
+        0.044197,
+        0.04401,
+        0.043861,
+        0.043803,
+        0.043749,
+        0.043628,
+        0.043486,
+        0.043399,
+        0.043361,
+        0.043305,
+        0.043209,
+        0.043113,
+        0.043051,
+        0.043003,
+        0.04293,
+        0.042833,
+        0.042744,
+        0.042679,
+        0.042618,
+        0.042542,
+        0.04246,
+        0.042391,
+        0.042334,
+        0.042272,
+        0.0422,
+        0.04213,
+        0.042069,
+        0.042011,
+        0.041946,
+        0.041877,
+        0.041813,
+        0.041755,
+        0.041696,
+        0.041634,
+        0.041573,
+        0.041517,
+        0.041462,
+        0.041406,
+        0.041349,
+        0.041294,
+        0.041241,
+        0.041188,
+        0.041133,
+        0.041079,
+        0.041027,
+        0.040976,
+        0.040924,
+        0.040872,
+        0.040822,
+        0.040772,
+        0.042889,
+        0.042757,
+        0.04265,
+        0.042594,
+        0.042524,
+        0.042414,
+        0.042315,
+        0.042262,
+        0.04222,
+        0.042151,
+        0.042072,
+        0.042016,
+        0.041971,
+        0.041908,
+        0.041829,
+        0.041758,
+        0.041702,
+        0.041642,
+        0.041574,
+        0.041509,
+        0.041456,
+        0.041406,
+        0.041347,
+        0.041288,
+        0.041235,
+        0.041184,
+        0.041127,
+        0.041068,
+        0.041013,
+        0.040962,
+        0.040908,
+        0.040854,
+        0.040803,
+        0.040754,
+        0.040704,
+        0.040653,
+        0.040604,
+        0.040556,
+        0.040507,
+        0.040458,
+        0.040409,
+        0.040362,
+        0.040315,
+        0.040267,
+        0.040221,
+        0.040175,
+        0.040129,
+        0.040082,
+        0.040037,
+        0.039992,
+        0.041802,
+        0.041683,
+        0.041597,
+        0.04155,
+        0.041472,
+        0.041369,
+        0.041301,
+        0.041266,
+        0.041212,
+        0.041137,
+        0.041081,
+        0.041039,
+        0.04098,
+        0.040905,
+        0.040846,
+        0.040799,
+        0.040743,
+        0.04068,
+        0.040629,
+        0.040585,
+        0.040532,
+        0.040476,
+        0.040427,
+        0.040381,
+        0.040328,
+        0.040275,
+        0.040227,
+        0.040181,
+        0.040132,
+        0.040083,
+        0.040039,
+        0.039995,
+        0.039948,
+        0.039903,
+        0.039859,
+        0.039815,
+        0.039769,
+        0.039724,
+        0.039681,
+        0.039637,
+        0.039593,
+        0.03955,
+        0.039509,
+        0.039466,
+        0.039424,
+        0.039382,
+        0.03934,
+        0.039298,
+        0.039256,
+        0.039215,
+        0.040769,
+        0.040656,
+        0.040585,
+        0.04054,
+        0.040453,
+        0.040361,
+        0.040316,
+        0.040275,
+        0.040203,
+        0.040138,
+        0.040095,
+        0.040039,
+        0.039966,
+        0.039906,
+        0.039859,
+        0.0398,
+        0.039737,
+        0.039688,
+        0.039641,
+        0.039582,
+        0.039524,
+        0.039474,
+        0.039418,
+        0.039359,
+        0.039305,
+        0.039255,
+        0.039202,
+        0.039147,
+        0.039097,
+        0.039046,
+        0.03899,
+        0.038936,
+        0.038883,
+        0.038829,
+        0.038774,
+        0.038723,
+        0.03867,
+        0.038616,
+        0.038563,
+        0.038509,
+        0.038454,
+        0.038398,
+        0.038342,
+        0.038286,
+        0.038228,
+        0.03817,
+        0.038112,
+        0.038055,
+        0.037997,
+        0.03794,
+        0.039654,
+        0.03952,
+        0.039441,
+        0.039378,
+        0.039259,
+        0.039155,
+        0.0391,
+        0.039026,
+        0.038926,
+        0.038856,
+        0.038796,
+        0.038708,
+        0.038623,
+        0.038561,
+        0.038487,
+        0.0384,
+        0.03833,
+        0.038264,
+        0.038185,
+        0.03811,
+        0.038045,
+        0.037973,
+        0.037896,
+        0.037828,
+        0.03776,
+        0.037683,
+        0.037611,
+        0.037542,
+        0.037468,
+        0.037392,
+        0.037323,
+        0.037251,
+        0.037177,
+        0.037106,
+        0.037036,
+        0.036964,
+        0.036893,
+        0.036823,
+        0.036753,
+        0.036682,
+        0.036613,
+        0.036544,
+        0.036474,
+        0.036406,
+        0.03634,
+        0.036275,
+        0.03621,
+        0.036146,
+        0.036081,
+        0.036018,
+        0.038089,
+        0.037913,
+        0.03783,
+        0.037735,
+        0.037567,
+        0.037462,
+        0.037399,
+        0.037277,
+        0.037167,
+        0.037103,
+        0.037005,
+        0.03689,
+        0.036814,
+        0.03673,
+        0.036618,
+        0.036531,
+        0.036453,
+        0.036352,
+        0.036261,
+        0.036185,
+        0.036095,
+        0.036005,
+        0.03593,
+        0.035847,
+        0.03576,
+        0.035684,
+        0.035605,
+        0.035521,
+        0.035445,
+        0.035373,
+        0.035296,
+        0.035223,
+        0.035155,
+        0.035081,
+        0.035011,
+        0.034945,
+        0.034876,
+        0.034807,
+        0.034741,
+        0.034674,
+        0.034608,
+        0.034544,
+        0.03448,
+        0.034416,
+        0.034355,
+        0.034294,
+        0.034232,
+        0.034172,
+        0.034112,
+        0.034052,
+        0.036308,
+        0.036101,
+        0.036017,
+        0.035912,
+        0.035719,
+        0.03562,
+        0.035548,
+        0.035398,
+        0.035291,
+        0.035223,
+        0.035096,
+        0.034987,
+        0.034923,
+        0.034816,
+        0.034708,
+        0.034633,
+        0.034533,
+        0.034429,
+        0.034358,
+        0.034277,
+        0.034188,
+        0.034121,
+        0.034048,
+        0.033963,
+        0.033893,
+        0.033821,
+        0.033738,
+        0.033668,
+        0.033598,
+        0.03352,
+        0.033449,
+        0.03338,
+        0.033306,
+        0.033237,
+        0.03317,
+        0.033099,
+        0.033031,
+        0.032963,
+        0.032892,
+        0.032824,
+        0.032758,
+        0.032689,
+        0.032622,
+        0.032557,
+        0.03249,
+        0.032424,
+        0.032358,
+        0.032292,
+        0.032225,
+        0.032159
+      ],
+      "dec_label_changes": [
+        {
+          "iteration": 50,
+          "label_change": 0.010031
+        },
+        {
+          "iteration": 100,
+          "label_change": 0.00627
+        },
+        {
+          "iteration": 150,
+          "label_change": 0.005643
+        },
+        {
+          "iteration": 200,
+          "label_change": 0.005329
+        },
+        {
+          "iteration": 250,
+          "label_change": 0.005016
+        },
+        {
+          "iteration": 300,
+          "label_change": 0.002508
+        },
+        {
+          "iteration": 350,
+          "label_change": 0.004389
+        },
+        {
+          "iteration": 400,
+          "label_change": 0.005643
+        },
+        {
+          "iteration": 450,
+          "label_change": 0.007524
+        }
+      ]
+    },
+    "k7": {
+      "ae_loss": [
+        0.944851,
+        0.824823,
+        0.695886,
+        0.558279,
+        0.42918,
+        0.332765,
+        0.273649,
+        0.237841,
+        0.206291,
+        0.173962,
+        0.143256,
+        0.118583,
+        0.100325,
+        0.084862,
+        0.071528,
+        0.062012,
+        0.055565,
+        0.051026,
+        0.047656,
+        0.044886
+      ],
+      "ae_val_loss": [
+        0.950611,
+        0.817027,
+        0.675897,
+        0.535796,
+        0.420699,
+        0.34364,
+        0.299038,
+        0.263284,
+        0.22539,
+        0.18622,
+        0.152341,
+        0.128,
+        0.108802,
+        0.091949,
+        0.078904,
+        0.070253,
+        0.064505,
+        0.060431,
+        0.057232,
+        0.054678
+      ],
+      "dec_kl": [
+        0.120421,
+        0.116893,
+        0.115231,
+        0.113729,
+        0.112083,
+        0.110535,
+        0.109249,
+        0.108163,
+        0.107104,
+        0.105975,
+        0.10482,
+        0.103742,
+        0.102795,
+        0.101952,
+        0.10114,
+        0.100322,
+        0.099519,
+        0.098778,
+        0.098116,
+        0.097509,
+        0.096917,
+        0.096326,
+        0.095756,
+        0.095229,
+        0.094744,
+        0.094274,
+        0.093802,
+        0.093337,
+        0.092895,
+        0.092482,
+        0.092089,
+        0.091702,
+        0.091322,
+        0.090956,
+        0.090612,
+        0.090281,
+        0.089955,
+        0.089632,
+        0.089323,
+        0.089028,
+        0.088745,
+        0.088465,
+        0.088188,
+        0.08792,
+        0.087662,
+        0.087408,
+        0.087155,
+        0.086908,
+        0.08667,
+        0.086439,
+        0.117732,
+        0.11682,
+        0.116122,
+        0.115863,
+        0.115573,
+        0.11497,
+        0.114337,
+        0.113993,
+        0.113824,
+        0.113496,
+        0.112976,
+        0.112508,
+        0.112224,
+        0.111975,
+        0.111607,
+        0.111196,
+        0.110898,
+        0.110698,
+        0.110459,
+        0.11014,
+        0.109837,
+        0.109607,
+        0.109388,
+        0.109115,
+        0.108825,
+        0.108582,
+        0.108376,
+        0.108147,
+        0.107891,
+        0.107653,
+        0.107448,
+        0.107243,
+        0.107016,
+        0.106795,
+        0.106598,
+        0.106408,
+        0.106206,
+        0.105999,
+        0.105807,
+        0.105625,
+        0.105438,
+        0.105245,
+        0.105062,
+        0.104889,
+        0.104715,
+        0.104537,
+        0.104363,
+        0.104197,
+        0.10403,
+        0.103862,
+        0.116229,
+        0.115611,
+        0.115174,
+        0.115076,
+        0.11486,
+        0.114412,
+        0.114093,
+        0.114029,
+        0.113921,
+        0.113613,
+        0.113314,
+        0.113168,
+        0.113026,
+        0.112761,
+        0.112495,
+        0.112348,
+        0.112233,
+        0.112038,
+        0.111818,
+        0.111659,
+        0.111521,
+        0.111327,
+        0.11111,
+        0.110938,
+        0.110792,
+        0.110617,
+        0.110427,
+        0.110266,
+        0.110123,
+        0.109957,
+        0.109778,
+        0.109617,
+        0.109469,
+        0.109308,
+        0.10914,
+        0.108987,
+        0.108843,
+        0.108692,
+        0.108536,
+        0.108389,
+        0.108249,
+        0.108102,
+        0.107954,
+        0.107814,
+        0.107679,
+        0.107539,
+        0.1074,
+        0.107265,
+        0.107131,
+        0.106995,
+        0.115361,
+        0.114853,
+        0.114643,
+        0.114592,
+        0.114287,
+        0.113916,
+        0.113803,
+        0.11376,
+        0.113527,
+        0.113263,
+        0.113152,
+        0.113045,
+        0.112809,
+        0.112587,
+        0.112481,
+        0.112368,
+        0.112174,
+        0.112,
+        0.111887,
+        0.111746,
+        0.111553,
+        0.111389,
+        0.111267,
+        0.111124,
+        0.110959,
+        0.110824,
+        0.110709,
+        0.110569,
+        0.110416,
+        0.110285,
+        0.11016,
+        0.110019,
+        0.109876,
+        0.109751,
+        0.109626,
+        0.109489,
+        0.109357,
+        0.109234,
+        0.109107,
+        0.108973,
+        0.108846,
+        0.108724,
+        0.108598,
+        0.10847,
+        0.108348,
+        0.108227,
+        0.108103,
+        0.10798,
+        0.10786,
+        0.107741,
+        0.114575,
+        0.114194,
+        0.114004,
+        0.113939,
+        0.113685,
+        0.113405,
+        0.11332,
+        0.113232,
+        0.113001,
+        0.11281,
+        0.112719,
+        0.112566,
+        0.112351,
+        0.112212,
+        0.112117,
+        0.111959,
+        0.111786,
+        0.111667,
+        0.111538,
+        0.111365,
+        0.111211,
+        0.111093,
+        0.110956,
+        0.110805,
+        0.11068,
+        0.110564,
+        0.110424,
+        0.110286,
+        0.110166,
+        0.11004,
+        0.109905,
+        0.10978,
+        0.109663,
+        0.109537,
+        0.109409,
+        0.109291,
+        0.109171,
+        0.109044,
+        0.108923,
+        0.108807,
+        0.108686,
+        0.108564,
+        0.108447,
+        0.10833,
+        0.10821,
+        0.108093,
+        0.107979,
+        0.107863,
+        0.107748,
+        0.107636,
+        0.11363,
+        0.11328,
+        0.113157,
+        0.113092,
+        0.112823,
+        0.112617,
+        0.112575,
+        0.11243,
+        0.112201,
+        0.112088,
+        0.111991,
+        0.111794,
+        0.111632,
+        0.11155,
+        0.111415,
+        0.111243,
+        0.111129,
+        0.111016,
+        0.110853,
+        0.110712,
+        0.110608,
+        0.110477,
+        0.110337,
+        0.110228,
+        0.110115,
+        0.109978,
+        0.109855,
+        0.109746,
+        0.109621,
+        0.109497,
+        0.109388,
+        0.109273,
+        0.109149,
+        0.109035,
+        0.108924,
+        0.108806,
+        0.108691,
+        0.108583,
+        0.108472,
+        0.108359,
+        0.108252,
+        0.108145,
+        0.108034,
+        0.107926,
+        0.107821,
+        0.107714,
+        0.107608,
+        0.107504,
+        0.107398,
+        0.107293,
+        0.112734,
+        0.112428,
+        0.112363,
+        0.112268,
+        0.112005,
+        0.111884,
+        0.111834,
+        0.11163,
+        0.111455,
+        0.111382,
+        0.111228,
+        0.111048,
+        0.11096,
+        0.110851,
+        0.110685,
+        0.110569,
+        0.110465,
+        0.110309,
+        0.110177,
+        0.110078,
+        0.109947,
+        0.109816,
+        0.109715,
+        0.109596,
+        0.109464,
+        0.109355,
+        0.109246,
+        0.109121,
+        0.10901,
+        0.108904,
+        0.108785,
+        0.108671,
+        0.108566,
+        0.108452,
+        0.10834,
+        0.108236,
+        0.108128,
+        0.108017,
+        0.107912,
+        0.107806,
+        0.107698,
+        0.107595,
+        0.107492,
+        0.107387,
+        0.107285,
+        0.107183,
+        0.107079,
+        0.106976,
+        0.106875,
+        0.106772,
+        0.111805,
+        0.111536,
+        0.11145,
+        0.111354,
+        0.111122,
+        0.111013,
+        0.11093,
+        0.110732,
+        0.110595,
+        0.110504,
+        0.110331,
+        0.110191,
+        0.110103,
+        0.109957,
+        0.109815,
+        0.109714,
+        0.109577,
+        0.109435,
+        0.10933,
+        0.109206,
+        0.10907,
+        0.108961,
+        0.108841,
+        0.108707,
+        0.108593,
+        0.108475,
+        0.108346,
+        0.108232,
+        0.108118,
+        0.107994,
+        0.10788,
+        0.107767,
+        0.107647,
+        0.107534,
+        0.107423,
+        0.107306,
+        0.107194,
+        0.107085,
+        0.106972,
+        0.106862,
+        0.106755,
+        0.106645,
+        0.106537,
+        0.106431,
+        0.106324,
+        0.106219,
+        0.106115,
+        0.10601,
+        0.105907,
+        0.105806,
+        0.110827,
+        0.110567,
+        0.110521,
+        0.110366,
+        0.110143,
+        0.11008,
+        0.109933,
+        0.109734,
+        0.109651,
+        0.109507,
+        0.109331,
+        0.109245,
+        0.109113,
+        0.108956,
+        0.10886,
+        0.108729,
+        0.108584,
+        0.108485,
+        0.108359,
+        0.108225,
+        0.108123,
+        0.107999,
+        0.107871,
+        0.107767,
+        0.107647,
+        0.107526,
+        0.107422,
+        0.107303,
+        0.107187,
+        0.107082,
+        0.106967,
+        0.106856,
+        0.106752,
+        0.106641,
+        0.106532,
+        0.106428,
+        0.106318,
+        0.106211,
+        0.106108,
+        0.106,
+        0.105897,
+        0.105794,
+        0.10569,
+        0.105589,
+        0.105488,
+        0.105386,
+        0.105288,
+        0.105188,
+        0.105089,
+        0.104991,
+        0.109933,
+        0.109703,
+        0.109637,
+        0.109479,
+        0.109293,
+        0.109221,
+        0.109059,
+        0.108907,
+        0.10882,
+        0.108656,
+        0.108525,
+        0.108431,
+        0.108277,
+        0.108159,
+        0.108051,
+        0.107907,
+        0.1078,
+        0.107686,
+        0.107554,
+        0.107451,
+        0.107333,
+        0.107209,
+        0.107105,
+        0.106986,
+        0.10687,
+        0.106764,
+        0.106645,
+        0.106532,
+        0.106424,
+        0.106305,
+        0.106195,
+        0.106084,
+        0.105969,
+        0.105862,
+        0.105751,
+        0.10564,
+        0.105534,
+        0.105424,
+        0.105316,
+        0.105211,
+        0.105103,
+        0.104998,
+        0.104893,
+        0.104788,
+        0.104685,
+        0.104581,
+        0.104478,
+        0.104377,
+        0.104275,
+        0.104174
+      ],
+      "dec_label_changes": [
+        {
+          "iteration": 50,
+          "label_change": 0.019436
+        },
+        {
+          "iteration": 100,
+          "label_change": 0.015047
+        },
+        {
+          "iteration": 150,
+          "label_change": 0.013166
+        },
+        {
+          "iteration": 200,
+          "label_change": 0.008777
+        },
+        {
+          "iteration": 250,
+          "label_change": 0.009718
+        },
+        {
+          "iteration": 300,
+          "label_change": 0.010345
+        },
+        {
+          "iteration": 350,
+          "label_change": 0.00721
+        },
+        {
+          "iteration": 400,
+          "label_change": 0.00815
+        },
+        {
+          "iteration": 450,
+          "label_change": 0.009718
+        }
+      ]
+    }
+  },
+  "environment": {
+    "python": "3.11.4",
+    "tensorflow": "2.21.0",
+    "keras": "3.15.1",
+    "scikit_learn": "1.9.0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "interpreter": "ml/cowrie_dec_integration_skeleton/.venv-dec-smoke"
+  },
+  "hyperparameters_existing": {
+    "latent_dim": 4,
+    "n_clusters": 3,
+    "alpha": 1.0,
+    "encoder": [
+      32,
+      16
+    ],
+    "decoder": [
+      16,
+      32
+    ],
+    "activation": "relu",
+    "ae_optimizer": "Adam",
+    "ae_learning_rate": 0.001,
+    "ae_loss": "mse",
+    "ae_epochs": 20,
+    "ae_batch_size": 256,
+    "ae_validation_split": 0.1,
+    "kmeans_n_init": 20,
+    "kmeans_random_state": 42,
+    "dec_optimizer": "Adam",
+    "dec_learning_rate": 0.001,
+    "dec_loss": "kld",
+    "dec_maxiter": 500,
+    "dec_update_interval": 50,
+    "dec_tol": 0.001,
+    "predict_batch_size": 256,
+    "seed": 42,
+    "tf_op_determinism": true
+  },
+  "inputs": {
+    "frozen_config_sha256": "8ae17612eabbbc46240aa1011aff8d6e3617df85380b3daa523201675fc3c288",
+    "dataset_SHA256SUMS_sha256": "05e9d8381f89fa6bb7bb091cb1a49b6656123b3f01d3d6f12ac5d2bd503b9940",
+    "train_rows": 3190,
+    "validation_rows": 1257,
+    "features": [
+      "login_success",
+      "session_duration_s",
+      "input_line_count",
+      "shell_operator_lines",
+      "time_to_first_input_s",
+      "inter_input_mean_s",
+      "inter_input_std_s",
+      "tty_output_bytes"
+    ]
+  },
+  "test_like_paths_opened": [],
+  "wall_seconds": 288.668152
+}

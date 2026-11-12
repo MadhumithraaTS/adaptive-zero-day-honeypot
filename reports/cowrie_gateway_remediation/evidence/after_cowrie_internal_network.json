@@ -1,0 +1,66 @@
+[
+    {
+        "Name": "cowrie_cowrie_internal",
+        "Id": "8de3b00259f200437a0ee94062c03f2016cd4a3859431b4c9abb9d2fc95d7c73",
+        "Created": "2026-11-10T12:25:04.564555737Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.22.0.0/16",
+                    "IPRange": "",
+                    "Gateway": ""
+                }
+            ]
+        },
+        "Internal": true,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+            "com.docker.network.bridge.gateway_mode_ipv4": "isolated",
+            "com.docker.network.enable_ipv4": "true",
+            "com.docker.network.enable_ipv6": "false"
+        },
+        "Labels": {
+            "com.docker.compose.config-hash": "fef5eaa84594f3ec3ed2b87bbc9dcaf4ada93a5bb9d03e56c3a62617ffd785b2",
+            "com.docker.compose.network": "cowrie_internal",
+            "com.docker.compose.project": "cowrie",
+            "com.docker.compose.version": "2.40.3"
+        },
+        "Containers": {
+            "2a3c9e98967e6971ed9fbfe95f4544f633ff66fb3993ac515238d915b5e15336": {
+                "Name": "cowrie-project",
+                "EndpointID": "3126e9e268c32c9cf4cfb9d198be5f6ca18a23effd655a3fc1c566c12b58e420",
+                "MacAddress": "8e:b2:73:1a:dc:2d",
+                "IPv4Address": "172.22.0.1/16",
+                "IPv6Address": ""
+            },
+            "884f35bbb3079ed96d6892dfd66da3964f3d69c21a8f05e8b1cf367c1b1de200": {
+                "Name": "cowrie-ssh-relay",
+                "EndpointID": "82a8ddbd08053a070791aefd4319800dc75ae7fed124ca59f79d74fa8beeb4de",
+                "MacAddress": "c2:a4:73:09:36:78",
+                "IPv4Address": "172.22.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.22.0.0/16": {
+                        "IPsInUse": 4,
+                        "DynamicIPsAvailable": 65532
+                    }
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,15 @@
+# Limitations
+
+1. **The relay is trusted.** Attribution is only as good as the relay process and its key. Anyone who controls the relay container, or the host bind mount holding the private key, can sign false mappings. Signatures protect the records after they are written, not the relay itself. The key is a host file, not an HSM, and has no rotation process yet; its validity window ends 2026-12-11.
+2. **Demo path only.** Sessions on the published path (127.0.0.1:2223) arrive through the Docker Desktop proxy (peer 172.21.0.1) and are never attributable by design. Real-client attribution therefore exists only on the isolated demo network.
+3. **The record log is not tamper-proof against deletion of its tail.** The chain detects modification, insertion, reordering and gaps. It cannot detect the most recent records being truncated cleanly, with no gap: a session whose record was removed that way becomes `mapping_missing`, which is fail-safe. No external chain-head anchor exists yet.
+4. **The time constraints rely on the Docker Desktop VM clock.** Relay and Cowrie share it, and the 2 s skew is generous compared with the observed differences of about 1–11 ms. Port reuse within 2 s on the same relay upstream tuple is reported as ambiguous, not resolved.
+5. **Close correlation needs the Cowrie session ID.** Cowrie's close event has no `src_port`. Sessions that are still open are attributed with `close_check: session_open`.
+6. **The behavioural evidence for relay sessions is unchanged.** `authentication_status` remains `indeterminate:shared_source` for all relay sessions, because the AUTH rules aggregate per `src_ip` (the relay). Gate 4 is met by the existing "command input recorded" basis. This is the unchanged Task 22/24 behaviour; changing it would require modifying behavioural evidence, which this task forbids.
+7. **No file-download telemetry in the demo.** Cowrie is isolated and `files.example` does not resolve, so the `wget` produced no `file_download` event. The findings rest on command input alone (S2/E2 and S3/E2), and download success is not claimed.
+8. **Gate 5 for the control client.** `enforcement_excluded` is not counted as attributable, so S5 fails gates 5 and 6. This is conservative and intentional; the review reason lists both gates.
+9. **The demo client accepts the Cowrie host key without pinning.** This is a lab tool and is documented in the client.
+10. **Inherited image volumes.** The image declares VOLUMEs, so each client gets anonymous `etc`/`var` volumes. They hold no relay key or records.
+11. **Forwarding in Cowrie's namespace.** Cowrie's namespace still has `ip_forward=1` (pre-existing, single interface, internal network). It was not changed, because Cowrie must not be modified in this task.
+12. **The record log grows without bound** and has no rotation yet; rotation would need a signed hand-off record.
+13. **Correlation runs offline over captured files.** There is no streaming or live integration yet; that belongs with the future enforcement controller.

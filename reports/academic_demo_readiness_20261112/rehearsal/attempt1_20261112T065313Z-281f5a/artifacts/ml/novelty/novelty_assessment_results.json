@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "results": [
+    {
+      "session_id": "0ce16882846d",
+      "assessment_category": "Known-like",
+      "closest_signature_id": "sig-4e22763125d03876",
+      "score": 0.785887,
+      "distance": 0.214113,
+      "evidence": "Comparable numerical features: synack, tcprtt, sload, sbytes, djit, sjit, dinpkt, dur; Observed command categories: file_system, file_transfer, networking, reconnaissance; Signature command categories: reconnaissance, file_system, file_transfer, networking, credential_attack, privilege_escalation, evasion, persistence; Session auth_success=1",
+      "reason": "The session matched the closest signature sig-4e22763125d03876 with a similarity score of 0.786, above the configured known threshold 0.70.",
+      "best_signature_label": "Mixed/Unclassified",
+      "second_score": null,
+      "comparable_feature_count": 8,
+      "contradictory_evidence": []
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "schema": "signed-attribution-result-1",
+  "result_id": "DEMO-20261112T065445Z-ad9e34",
+  "issued_utc": "2026-11-12T06:54:44.056643Z",
+  "not_after_utc": "2026-11-12T07:54:44.056643Z",
+  "evaluation_time_utc": "2026-11-12T06:54:45.056643Z",
+  "attribution_config": {
+    "schema": "threat-attribution-config-3",
+    "config_version": "3.0.0-DEMO",
+    "digest": "364709125e31333607e956e1e2f35a2b4427c6b8cb9af513be001cdde32037eb"
+  },
+  "relay_log": {
+    "public_key_sha256": "73e369aea0fa61c5abe2556183fecfc769a77148f76f82e60eea0ce16fab3dec",
+    "verification": "chain and signatures verify",
+    "intact": true,
+    "record_count": 3,
+    "chain_head": "7e18176e0b3f1cdae4b7d0ca4160563ceba453ec6473196584bbbfbb7d924f5d",
+    "gaps": [],
+    "rejected_lines": 0,
+    "tail": {
+      "last_seq": 3,
+      "status": "unattested"
+    },
+    "checkpoints": []
+  },
+  "cowrie_input": {
+    "n_events": 14,
+    "first_utc": "2026-11-12T06:54:15.076643Z",
+    "last_utc": "2026-11-12T06:54:24.076643Z",
+    "sha256": "e09a6fcba599b31d70fc7d93601a9df6b3f573de07c5609358c958070fd64259"
+  },
+  "sessions": [
+    {
+      "cowrie_session_id": "00bae095780a",
+      "decision": "attributable_via_proxy_mapping",
+      "reason": "exactly one verified demo-listener relay record matches tuple, time and close",
+      "client": {
+        "ip": "10.250.25.3",
+        "port": 34619,
+        "role": "test_client"
+      },
+      "relay_listener": {
+        "ip": "10.250.25.2",
+        "port": 2222,
+        "name": "demo",
+        "mode": "demo",
+        "accepted_local": "10.250.25.2:2222"
+      },
+      "relay_to_cowrie": {
+        "src_ip": "172.22.0.2",
+        "src_port": 54847,
+        "dst_ip": "172.22.0.1",
+        "dst_port": 2222
+      },
+      "timestamps": {
+        "relay_accepted_utc": "2026-11-12T06:54:15.056643Z",
+        "relay_upstream_connected_utc": "2026-11-12T06:54:15.066643Z",
+        "cowrie_connect_utc": "2026-11-12T06:54:15.076643Z",
+        "relay_closed_utc": "2026-11-12T06:54:24.066643Z",
+        "cowrie_closed_utc": "2026-11-12T06:54:24.076643Z"
+      },
+      "relay_records": {
+        "connection_id": "5eb68270-9b61-48f5-b40c-85cd8233dedb",
+        "open": {
+          "seq": 2,
+          "record_hash": "f2c935ec2ac798ee20df932deb6a163844d8ff1ab61bd40c5676984f865e24a2"
+        },
+        "close": {
+          "seq": 3,
+          "record_hash": "7e18176e0b3f1cdae4b7d0ca4160563ceba453ec6473196584bbbfbb7d924f5d"
+        }
+      },
+      "close_check": "consistent",
+      "authentication": {
+        "state": "login_success_observed",
+        "reason": "exactly one cowrie.login.success correlated by session ID, source, sensor and time",
+        "login_success_utc": "2026-11-12T06:54:15.556643Z",
+        "username": "demo",
+        "sensor": "SYNTHETIC-DEMO",
+        "n_login_success": 1,
+        "n_login_failed": 0
+      }
+    }
+  ],
+  "signer": {
+    "key_id": "fa80abf479c6763c",
+    "public_key_sha256": "fa80abf479c6763cbbea2e08f1492d49107cce93ab37902b15bbfadbe32e387b"
+  },
+  "result_hash": "75c8537f3504999513520b6bf26f8560aa7773827e5973b3974239dab766b6f5",
+  "signature": "ef73e2c89632aeb82b9591645c77c1e96e32b67861cfb8e1098419015a834e805f4448612f836e6a562954d6c2f0260b24c542bd975f66bce68f92f0b0613b0c"
+}

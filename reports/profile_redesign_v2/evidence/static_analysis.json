@@ -1,0 +1,1582 @@
+{
+  "compat": {
+    "version": "2.2.0-compat",
+    "overlap": {
+      "command_names_per_category": {
+        "benign": [
+          "cat",
+          "clear",
+          "date",
+          "df",
+          "du",
+          "free",
+          "journalctl",
+          "ls",
+          "pwd",
+          "service",
+          "systemctl",
+          "tail",
+          "uptime",
+          "w",
+          "who"
+        ],
+        "reconnaissance": [
+          "cat",
+          "hostname",
+          "id",
+          "ifconfig",
+          "ip",
+          "ls",
+          "lscpu",
+          "nproc",
+          "ps",
+          "pwd",
+          "ss",
+          "uname",
+          "whoami"
+        ],
+        "brute_force": [
+          "echo",
+          "uname",
+          "whoami"
+        ],
+        "botnet": [
+          "./b.sh",
+          "./malware.sh",
+          "./payload",
+          "./update.sh",
+          "cd",
+          "chmod",
+          "curl",
+          "enable",
+          "history",
+          "rm",
+          "sh",
+          "shell",
+          "system",
+          "unset",
+          "wget"
+        ],
+        "privilege_escalation": [
+          "cat",
+          "crontab",
+          "find",
+          "id",
+          "ls",
+          "pwd",
+          "sudo",
+          "whoami"
+        ],
+        "lateral_movement": [
+          "arp",
+          "cat",
+          "hostname",
+          "ip",
+          "ls",
+          "nc",
+          "nmap",
+          "ping",
+          "whoami"
+        ],
+        "exfiltration": [
+          "curl",
+          "du",
+          "find",
+          "id",
+          "ls",
+          "rm",
+          "tar"
+        ]
+      },
+      "unique_names_per_category": {
+        "benign": [
+          "clear",
+          "date",
+          "df",
+          "free",
+          "journalctl",
+          "service",
+          "systemctl",
+          "tail",
+          "uptime",
+          "w",
+          "who"
+        ],
+        "reconnaissance": [
+          "ifconfig",
+          "lscpu",
+          "nproc",
+          "ps",
+          "ss"
+        ],
+        "brute_force": [
+          "echo"
+        ],
+        "botnet": [
+          "./b.sh",
+          "./malware.sh",
+          "./payload",
+          "./update.sh",
+          "cd",
+          "chmod",
+          "enable",
+          "history",
+          "sh",
+          "shell",
+          "system",
+          "unset",
+          "wget"
+        ],
+        "privilege_escalation": [
+          "crontab",
+          "sudo"
+        ],
+        "lateral_movement": [
+          "arp",
+          "nc",
+          "nmap",
+          "ping"
+        ],
+        "exfiltration": [
+          "tar"
+        ]
+      },
+      "shared_names": [
+        "cat",
+        "curl",
+        "du",
+        "find",
+        "hostname",
+        "id",
+        "ip",
+        "ls",
+        "pwd",
+        "rm",
+        "uname",
+        "whoami"
+      ],
+      "share_of_names_unique": {
+        "benign": 0.7333333333333333,
+        "reconnaissance": 0.38461538461538464,
+        "brute_force": 0.3333333333333333,
+        "botnet": 0.8666666666666667,
+        "privilege_escalation": 0.25,
+        "lateral_movement": 0.4444444444444444,
+        "exfiltration": 0.14285714285714285
+      },
+      "jaccard": {
+        "benign|botnet": 0.0,
+        "benign|brute_force": 0.0,
+        "benign|exfiltration": 0.1,
+        "benign|lateral_movement": 0.09090909090909091,
+        "benign|privilege_escalation": 0.15,
+        "benign|reconnaissance": 0.12,
+        "botnet|brute_force": 0.0,
+        "botnet|exfiltration": 0.1,
+        "botnet|lateral_movement": 0.0,
+        "botnet|privilege_escalation": 0.0,
+        "botnet|reconnaissance": 0.0,
+        "brute_force|exfiltration": 0.0,
+        "brute_force|lateral_movement": 0.09090909090909091,
+        "brute_force|privilege_escalation": 0.1,
+        "brute_force|reconnaissance": 0.14285714285714285,
+        "exfiltration|lateral_movement": 0.06666666666666667,
+        "exfiltration|privilege_escalation": 0.25,
+        "exfiltration|reconnaissance": 0.1111111111111111,
+        "lateral_movement|privilege_escalation": 0.21428571428571427,
+        "lateral_movement|reconnaissance": 0.29411764705882354,
+        "privilege_escalation|reconnaissance": 0.3125
+      },
+      "sampled_sequences_shared_across_categories": 0.0,
+      "sampled_name_sets_shared_across_categories": 0.0,
+      "first_command_majority_category_share": 0.8087142857142857,
+      "first_command_by_category": {
+        "w": {
+          "benign": 554
+        },
+        "uptime": {
+          "benign": 583
+        },
+        "clear": {
+          "benign": 88
+        },
+        "who": {
+          "benign": 530
+        },
+        "date": {
+          "benign": 91
+        },
+        "pwd": {
+          "benign": 81,
+          "reconnaissance": 118,
+          "privilege_escalation": 154
+        },
+        "ls": {
+          "benign": 73,
+          "reconnaissance": 201,
+          "privilege_escalation": 144,
+          "exfiltration": 96
+        },
+        "whoami": {
+          "reconnaissance": 872,
+          "brute_force": 289,
+          "privilege_escalation": 848,
+          "lateral_movement": 119
+        },
+        "id": {
+          "reconnaissance": 809,
+          "privilege_escalation": 854,
+          "exfiltration": 101
+        },
+        "echo": {
+          "brute_force": 312
+        },
+        "uname": {
+          "brute_force": 333
+        },
+        "<none>": {
+          "brute_force": 1066
+        },
+        "cd": {
+          "botnet": 1694
+        },
+        "system": {
+          "botnet": 115
+        },
+        "enable": {
+          "botnet": 88
+        },
+        "shell": {
+          "botnet": 103
+        },
+        "cat": {
+          "lateral_movement": 599
+        },
+        "arp": {
+          "lateral_movement": 588
+        },
+        "ip": {
+          "lateral_movement": 569
+        },
+        "hostname": {
+          "lateral_movement": 125
+        },
+        "find": {
+          "exfiltration": 1803
+        }
+      },
+      "name_to_categories": {
+        "./b.sh": [
+          "botnet"
+        ],
+        "./malware.sh": [
+          "botnet"
+        ],
+        "./payload": [
+          "botnet"
+        ],
+        "./update.sh": [
+          "botnet"
+        ],
+        "arp": [
+          "lateral_movement"
+        ],
+        "cat": [
+          "benign",
+          "lateral_movement",
+          "privilege_escalation",
+          "reconnaissance"
+        ],
+        "cd": [
+          "botnet"
+        ],
+        "chmod": [
+          "botnet"
+        ],
+        "clear": [
+          "benign"
+        ],
+        "crontab": [
+          "privilege_escalation"
+        ],
+        "curl": [
+          "botnet",
+          "exfiltration"
+        ],
+        "date": [
+          "benign"
+        ],
+        "df": [
+          "benign"
+        ],
+        "du": [
+          "benign",
+          "exfiltration"
+        ],
+        "echo": [
+          "brute_force"
+        ],
+        "enable": [
+          "botnet"
+        ],
+        "find": [
+          "exfiltration",
+          "privilege_escalation"
+        ],
+        "free": [
+          "benign"
+        ],
+        "history": [
+          "botnet"
+        ],
+        "hostname": [
+          "lateral_movement",
+          "reconnaissance"
+        ],
+        "id": [
+          "exfiltration",
+          "privilege_escalation",
+          "reconnaissance"
+        ],
+        "ifconfig": [
+          "reconnaissance"
+        ],
+        "ip": [
+          "lateral_movement",
+          "reconnaissance"
+        ],
+        "journalctl": [
+          "benign"
+        ],
+        "ls": [
+          "benign",
+          "exfiltration",
+          "lateral_movement",
+          "privilege_escalation",
+          "reconnaissance"
+        ],
+        "lscpu": [
+          "reconnaissance"
+        ],
+        "nc": [
+          "lateral_movement"
+        ],
+        "nmap": [
+          "lateral_movement"
+        ],
+        "nproc": [
+          "reconnaissance"
+        ],
+        "ping": [
+          "lateral_movement"
+        ],
+        "ps": [
+          "reconnaissance"
+        ],
+        "pwd": [
+          "benign",
+          "privilege_escalation",
+          "reconnaissance"
+        ],
+        "rm": [
+          "botnet",
+          "exfiltration"
+        ],
+        "service": [
+          "benign"
+        ],
+        "sh": [
+          "botnet"
+        ],
+        "shell": [
+          "botnet"
+        ],
+        "ss": [
+          "reconnaissance"
+        ],
+        "sudo": [
+          "privilege_escalation"
+        ],
+        "system": [
+          "botnet"
+        ],
+        "systemctl": [
+          "benign"
+        ],
+        "tail": [
+          "benign"
+        ],
+        "tar": [
+          "exfiltration"
+        ],
+        "uname": [
+          "brute_force",
+          "reconnaissance"
+        ],
+        "unset": [
+          "botnet"
+        ],
+        "uptime": [
+          "benign"
+        ],
+        "w": [
+          "benign"
+        ],
+        "wget": [
+          "botnet"
+        ],
+        "who": [
+          "benign"
+        ],
+        "whoami": [
+          "brute_force",
+          "lateral_movement",
+          "privilege_escalation",
+          "reconnaissance"
+        ]
+      }
+    },
+    "planned_feature_proxies": {
+      "benign": {
+        "input_line_count": {
+          "min": 2,
+          "median": 5.0,
+          "max": 8,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_bytes_total": {
+          "min": 6,
+          "median": 51.0,
+          "max": 107,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_line_max_bytes": {
+          "min": 5,
+          "median": 19.0,
+          "max": 26,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "unique_command_names": {
+          "min": 2,
+          "median": 5.0,
+          "max": 8,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "shell_operator_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0,
+          "share_nonzero": 0.0,
+          "missing_share": 0.0
+        },
+        "download_command_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0,
+          "share_nonzero": 0.0,
+          "missing_share": 0.0
+        }
+      },
+      "reconnaissance": {
+        "input_line_count": {
+          "min": 2,
+          "median": 6.0,
+          "max": 9,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_bytes_total": {
+          "min": 10,
+          "median": 45.0,
+          "max": 77,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_line_max_bytes": {
+          "min": 8,
+          "median": 14.0,
+          "max": 15,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "unique_command_names": {
+          "min": 2,
+          "median": 6.0,
+          "max": 9,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "shell_operator_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0,
+          "share_nonzero": 0.0,
+          "missing_share": 0.0
+        },
+        "download_command_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0,
+          "share_nonzero": 0.0,
+          "missing_share": 0.0
+        }
+      },
+      "brute_force": {
+        "input_line_count": {
+          "min": 0,
+          "median": 0.0,
+          "max": 1,
+          "share_nonzero": 0.467,
+          "missing_share": 0.0
+        },
+        "input_bytes_total": {
+          "min": 0,
+          "median": 0.0,
+          "max": 8,
+          "share_nonzero": 0.467,
+          "missing_share": 0.0
+        },
+        "input_line_max_bytes": {
+          "min": 6,
+          "median": 7.0,
+          "max": 8,
+          "share_nonzero": 0.467,
+          "missing_share": 0.533
+        },
+        "unique_command_names": {
+          "min": 0,
+          "median": 0.0,
+          "max": 1,
+          "share_nonzero": 0.467,
+          "missing_share": 0.0
+        },
+        "shell_operator_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0,
+          "share_nonzero": 0.0,
+          "missing_share": 0.0
+        },
+        "download_command_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0,
+          "share_nonzero": 0.0,
+          "missing_share": 0.0
+        }
+      },
+      "botnet": {
+        "input_line_count": {
+          "min": 4,
+          "median": 6.0,
+          "max": 8,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_bytes_total": {
+          "min": 57,
+          "median": 91.0,
+          "max": 127,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_line_max_bytes": {
+          "min": 30,
+          "median": 36.0,
+          "max": 42,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "unique_command_names": {
+          "min": 4,
+          "median": 6.0,
+          "max": 8,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "shell_operator_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0,
+          "share_nonzero": 0.0,
+          "missing_share": 0.0
+        },
+        "download_command_lines": {
+          "min": 1,
+          "median": 1.0,
+          "max": 1,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        }
+      },
+      "privilege_escalation": {
+        "input_line_count": {
+          "min": 2,
+          "median": 6.0,
+          "max": 8,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_bytes_total": {
+          "min": 9,
+          "median": 81.0,
+          "max": 128,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_line_max_bytes": {
+          "min": 7,
+          "median": 38.0,
+          "max": 38,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "unique_command_names": {
+          "min": 2,
+          "median": 5.0,
+          "max": 7,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "shell_operator_lines": {
+          "min": 0,
+          "median": 1.0,
+          "max": 2,
+          "share_nonzero": 0.8605,
+          "missing_share": 0.0
+        },
+        "download_command_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0,
+          "share_nonzero": 0.0,
+          "missing_share": 0.0
+        }
+      },
+      "lateral_movement": {
+        "input_line_count": {
+          "min": 1,
+          "median": 4.0,
+          "max": 6,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_bytes_total": {
+          "min": 6,
+          "median": 62.0,
+          "max": 103,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_line_max_bytes": {
+          "min": 6,
+          "median": 21.0,
+          "max": 23,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "unique_command_names": {
+          "min": 1,
+          "median": 3.0,
+          "max": 6,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "shell_operator_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0,
+          "share_nonzero": 0.0,
+          "missing_share": 0.0
+        },
+        "download_command_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0,
+          "share_nonzero": 0.0,
+          "missing_share": 0.0
+        }
+      },
+      "exfiltration": {
+        "input_line_count": {
+          "min": 2,
+          "median": 5.0,
+          "max": 6,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_bytes_total": {
+          "min": 56,
+          "median": 125.0,
+          "max": 168,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_line_max_bytes": {
+          "min": 32,
+          "median": 42.0,
+          "max": 45,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "unique_command_names": {
+          "min": 2,
+          "median": 4.0,
+          "max": 6,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "shell_operator_lines": {
+          "min": 1,
+          "median": 1.0,
+          "max": 1,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "download_command_lines": {
+          "min": 0,
+          "median": 1.0,
+          "max": 1,
+          "share_nonzero": 0.8025,
+          "missing_share": 0.0
+        }
+      }
+    },
+    "compatibility_class_counts": {
+      "expected_returns": 43,
+      "confirmed_returns": 59,
+      "unsupported_command_not_found": 6,
+      "static_output": 2,
+      "network_dependent_fails_in_isolation": 40
+    },
+    "blocking_commands": [],
+    "has_delay_range": true
+  },
+  "revised": {
+    "version": "2.3.0-revised",
+    "overlap": {
+      "command_names_per_category": {
+        "benign": [
+          "cat",
+          "clear",
+          "curl",
+          "date",
+          "df",
+          "du",
+          "free",
+          "hostname",
+          "id",
+          "journalctl",
+          "ls",
+          "ps",
+          "pwd",
+          "service",
+          "systemctl",
+          "tail",
+          "uname",
+          "uptime",
+          "w",
+          "who"
+        ],
+        "reconnaissance": [
+          "cat",
+          "curl",
+          "df",
+          "free",
+          "groups",
+          "hostname",
+          "id",
+          "ifconfig",
+          "ip",
+          "ls",
+          "lscpu",
+          "netstat",
+          "nproc",
+          "ps",
+          "pwd",
+          "ss",
+          "uname",
+          "w",
+          "wget",
+          "whoami"
+        ],
+        "brute_force": [
+          "echo",
+          "uname",
+          "whoami"
+        ],
+        "botnet": [
+          "./b.sh",
+          "./malware.sh",
+          "./payload",
+          "./update.sh",
+          "cat",
+          "cd",
+          "chmod",
+          "curl",
+          "enable",
+          "history",
+          "id",
+          "rm",
+          "sh",
+          "shell",
+          "system",
+          "uname",
+          "unset",
+          "w",
+          "wget"
+        ],
+        "privilege_escalation": [
+          "cat",
+          "crontab",
+          "find",
+          "groups",
+          "id",
+          "ls",
+          "pwd",
+          "sudo",
+          "uname",
+          "w",
+          "whoami"
+        ],
+        "lateral_movement": [
+          "arp",
+          "cat",
+          "hostname",
+          "id",
+          "ip",
+          "ls",
+          "nc",
+          "netstat",
+          "nmap",
+          "ping",
+          "ss",
+          "w",
+          "whoami"
+        ],
+        "exfiltration": [
+          "curl",
+          "df",
+          "du",
+          "find",
+          "id",
+          "ls",
+          "rm",
+          "tar",
+          "whoami"
+        ]
+      },
+      "unique_names_per_category": {
+        "benign": [
+          "clear",
+          "date",
+          "journalctl",
+          "service",
+          "systemctl",
+          "tail",
+          "uptime",
+          "who"
+        ],
+        "reconnaissance": [
+          "ifconfig",
+          "lscpu",
+          "nproc"
+        ],
+        "brute_force": [
+          "echo"
+        ],
+        "botnet": [
+          "./b.sh",
+          "./malware.sh",
+          "./payload",
+          "./update.sh",
+          "cd",
+          "chmod",
+          "enable",
+          "history",
+          "sh",
+          "shell",
+          "system",
+          "unset"
+        ],
+        "privilege_escalation": [
+          "crontab",
+          "sudo"
+        ],
+        "lateral_movement": [
+          "arp",
+          "nc",
+          "nmap",
+          "ping"
+        ],
+        "exfiltration": [
+          "tar"
+        ]
+      },
+      "shared_names": [
+        "cat",
+        "curl",
+        "df",
+        "du",
+        "find",
+        "free",
+        "groups",
+        "hostname",
+        "id",
+        "ip",
+        "ls",
+        "netstat",
+        "ps",
+        "pwd",
+        "rm",
+        "ss",
+        "uname",
+        "w",
+        "wget",
+        "whoami"
+      ],
+      "share_of_names_unique": {
+        "benign": 0.4,
+        "reconnaissance": 0.15,
+        "brute_force": 0.3333333333333333,
+        "botnet": 0.631578947368421,
+        "privilege_escalation": 0.18181818181818182,
+        "lateral_movement": 0.3076923076923077,
+        "exfiltration": 0.1111111111111111
+      },
+      "jaccard": {
+        "benign|botnet": 0.14705882352941177,
+        "benign|brute_force": 0.045454545454545456,
+        "benign|exfiltration": 0.20833333333333334,
+        "benign|lateral_movement": 0.17857142857142858,
+        "benign|privilege_escalation": 0.24,
+        "benign|reconnaissance": 0.3793103448275862,
+        "botnet|brute_force": 0.047619047619047616,
+        "botnet|exfiltration": 0.12,
+        "botnet|lateral_movement": 0.10344827586206896,
+        "botnet|privilege_escalation": 0.15384615384615385,
+        "botnet|reconnaissance": 0.18181818181818182,
+        "brute_force|exfiltration": 0.09090909090909091,
+        "brute_force|lateral_movement": 0.06666666666666667,
+        "brute_force|privilege_escalation": 0.16666666666666666,
+        "brute_force|reconnaissance": 0.09523809523809523,
+        "exfiltration|lateral_movement": 0.15789473684210525,
+        "exfiltration|privilege_escalation": 0.25,
+        "exfiltration|reconnaissance": 0.20833333333333334,
+        "lateral_movement|privilege_escalation": 0.2631578947368421,
+        "lateral_movement|reconnaissance": 0.375,
+        "privilege_escalation|reconnaissance": 0.34782608695652173
+      },
+      "sampled_sequences_shared_across_categories": 0.0,
+      "sampled_name_sets_shared_across_categories": 0.036071428571428574,
+      "first_command_majority_category_share": 0.7081428571428572,
+      "first_command_by_category": {
+        "w": {
+          "benign": 552,
+          "reconnaissance": 421,
+          "botnet": 50,
+          "privilege_escalation": 96
+        },
+        "uptime": {
+          "benign": 575
+        },
+        "pwd": {
+          "benign": 59,
+          "reconnaissance": 107,
+          "privilege_escalation": 123
+        },
+        "who": {
+          "benign": 544
+        },
+        "clear": {
+          "benign": 60
+        },
+        "ls": {
+          "benign": 72,
+          "reconnaissance": 203,
+          "privilege_escalation": 89,
+          "exfiltration": 689
+        },
+        "date": {
+          "benign": 58
+        },
+        "id": {
+          "benign": 80,
+          "reconnaissance": 412,
+          "botnet": 54,
+          "privilege_escalation": 546,
+          "lateral_movement": 67,
+          "exfiltration": 106
+        },
+        "whoami": {
+          "reconnaissance": 432,
+          "brute_force": 289,
+          "privilege_escalation": 553,
+          "lateral_movement": 83,
+          "exfiltration": 116
+        },
+        "groups": {
+          "reconnaissance": 425,
+          "privilege_escalation": 593
+        },
+        "echo": {
+          "brute_force": 312
+        },
+        "uname": {
+          "brute_force": 333,
+          "botnet": 1142
+        },
+        "<none>": {
+          "brute_force": 1066
+        },
+        "cat": {
+          "botnet": 592,
+          "lateral_movement": 872
+        },
+        "system": {
+          "botnet": 49
+        },
+        "shell": {
+          "botnet": 49
+        },
+        "enable": {
+          "botnet": 64
+        },
+        "ip": {
+          "lateral_movement": 437
+        },
+        "arp": {
+          "lateral_movement": 467
+        },
+        "hostname": {
+          "lateral_movement": 74
+        },
+        "find": {
+          "exfiltration": 1089
+        }
+      },
+      "name_to_categories": {
+        "./b.sh": [
+          "botnet"
+        ],
+        "./malware.sh": [
+          "botnet"
+        ],
+        "./payload": [
+          "botnet"
+        ],
+        "./update.sh": [
+          "botnet"
+        ],
+        "arp": [
+          "lateral_movement"
+        ],
+        "cat": [
+          "benign",
+          "botnet",
+          "lateral_movement",
+          "privilege_escalation",
+          "reconnaissance"
+        ],
+        "cd": [
+          "botnet"
+        ],
+        "chmod": [
+          "botnet"
+        ],
+        "clear": [
+          "benign"
+        ],
+        "crontab": [
+          "privilege_escalation"
+        ],
+        "curl": [
+          "benign",
+          "botnet",
+          "exfiltration",
+          "reconnaissance"
+        ],
+        "date": [
+          "benign"
+        ],
+        "df": [
+          "benign",
+          "exfiltration",
+          "reconnaissance"
+        ],
+        "du": [
+          "benign",
+          "exfiltration"
+        ],
+        "echo": [
+          "brute_force"
+        ],
+        "enable": [
+          "botnet"
+        ],
+        "find": [
+          "exfiltration",
+          "privilege_escalation"
+        ],
+        "free": [
+          "benign",
+          "reconnaissance"
+        ],
+        "groups": [
+          "privilege_escalation",
+          "reconnaissance"
+        ],
+        "history": [
+          "botnet"
+        ],
+        "hostname": [
+          "benign",
+          "lateral_movement",
+          "reconnaissance"
+        ],
+        "id": [
+          "benign",
+          "botnet",
+          "exfiltration",
+          "lateral_movement",
+          "privilege_escalation",
+          "reconnaissance"
+        ],
+        "ifconfig": [
+          "reconnaissance"
+        ],
+        "ip": [
+          "lateral_movement",
+          "reconnaissance"
+        ],
+        "journalctl": [
+          "benign"
+        ],
+        "ls": [
+          "benign",
+          "exfiltration",
+          "lateral_movement",
+          "privilege_escalation",
+          "reconnaissance"
+        ],
+        "lscpu": [
+          "reconnaissance"
+        ],
+        "nc": [
+          "lateral_movement"
+        ],
+        "netstat": [
+          "lateral_movement",
+          "reconnaissance"
+        ],
+        "nmap": [
+          "lateral_movement"
+        ],
+        "nproc": [
+          "reconnaissance"
+        ],
+        "ping": [
+          "lateral_movement"
+        ],
+        "ps": [
+          "benign",
+          "reconnaissance"
+        ],
+        "pwd": [
+          "benign",
+          "privilege_escalation",
+          "reconnaissance"
+        ],
+        "rm": [
+          "botnet",
+          "exfiltration"
+        ],
+        "service": [
+          "benign"
+        ],
+        "sh": [
+          "botnet"
+        ],
+        "shell": [
+          "botnet"
+        ],
+        "ss": [
+          "lateral_movement",
+          "reconnaissance"
+        ],
+        "sudo": [
+          "privilege_escalation"
+        ],
+        "system": [
+          "botnet"
+        ],
+        "systemctl": [
+          "benign"
+        ],
+        "tail": [
+          "benign"
+        ],
+        "tar": [
+          "exfiltration"
+        ],
+        "uname": [
+          "benign",
+          "botnet",
+          "brute_force",
+          "privilege_escalation",
+          "reconnaissance"
+        ],
+        "unset": [
+          "botnet"
+        ],
+        "uptime": [
+          "benign"
+        ],
+        "w": [
+          "benign",
+          "botnet",
+          "lateral_movement",
+          "privilege_escalation",
+          "reconnaissance"
+        ],
+        "wget": [
+          "botnet",
+          "reconnaissance"
+        ],
+        "who": [
+          "benign"
+        ],
+        "whoami": [
+          "brute_force",
+          "exfiltration",
+          "lateral_movement",
+          "privilege_escalation",
+          "reconnaissance"
+        ]
+      }
+    },
+    "planned_feature_proxies": {
+      "benign": {
+        "input_line_count": {
+          "min": 2,
+          "median": 5.0,
+          "max": 9,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_bytes_total": {
+          "min": 6,
+          "median": 59.0,
+          "max": 136,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_line_max_bytes": {
+          "min": 5,
+          "median": 25.0,
+          "max": 32,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "unique_command_names": {
+          "min": 2,
+          "median": 5.0,
+          "max": 9,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "shell_operator_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 2,
+          "share_nonzero": 0.4765,
+          "missing_share": 0.0
+        },
+        "download_command_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 1,
+          "share_nonzero": 0.135,
+          "missing_share": 0.0
+        }
+      },
+      "reconnaissance": {
+        "input_line_count": {
+          "min": 2,
+          "median": 6.0,
+          "max": 10,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_bytes_total": {
+          "min": 10,
+          "median": 62.0,
+          "max": 146,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_line_max_bytes": {
+          "min": 8,
+          "median": 20.0,
+          "max": 36,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "unique_command_names": {
+          "min": 2,
+          "median": 5.0,
+          "max": 10,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "shell_operator_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 1,
+          "share_nonzero": 0.2485,
+          "missing_share": 0.0
+        },
+        "download_command_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 1,
+          "share_nonzero": 0.299,
+          "missing_share": 0.0
+        }
+      },
+      "brute_force": {
+        "input_line_count": {
+          "min": 0,
+          "median": 0.0,
+          "max": 1,
+          "share_nonzero": 0.467,
+          "missing_share": 0.0
+        },
+        "input_bytes_total": {
+          "min": 0,
+          "median": 0.0,
+          "max": 8,
+          "share_nonzero": 0.467,
+          "missing_share": 0.0
+        },
+        "input_line_max_bytes": {
+          "min": 6,
+          "median": 7.0,
+          "max": 8,
+          "share_nonzero": 0.467,
+          "missing_share": 0.533
+        },
+        "unique_command_names": {
+          "min": 0,
+          "median": 0.0,
+          "max": 1,
+          "share_nonzero": 0.467,
+          "missing_share": 0.0
+        },
+        "shell_operator_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0,
+          "share_nonzero": 0.0,
+          "missing_share": 0.0
+        },
+        "download_command_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0,
+          "share_nonzero": 0.0,
+          "missing_share": 0.0
+        }
+      },
+      "botnet": {
+        "input_line_count": {
+          "min": 5,
+          "median": 7.0,
+          "max": 9,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_bytes_total": {
+          "min": 67,
+          "median": 111.0,
+          "max": 162,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_line_max_bytes": {
+          "min": 30,
+          "median": 39.0,
+          "max": 56,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "unique_command_names": {
+          "min": 5,
+          "median": 7.0,
+          "max": 9,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "shell_operator_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 1,
+          "share_nonzero": 0.4935,
+          "missing_share": 0.0
+        },
+        "download_command_lines": {
+          "min": 1,
+          "median": 1.0,
+          "max": 1,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        }
+      },
+      "privilege_escalation": {
+        "input_line_count": {
+          "min": 2,
+          "median": 6.0,
+          "max": 9,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_bytes_total": {
+          "min": 9,
+          "median": 84.0,
+          "max": 149,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_line_max_bytes": {
+          "min": 7,
+          "median": 37.0,
+          "max": 38,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "unique_command_names": {
+          "min": 2,
+          "median": 5.0,
+          "max": 8,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "shell_operator_lines": {
+          "min": 0,
+          "median": 1.0,
+          "max": 2,
+          "share_nonzero": 0.84,
+          "missing_share": 0.0
+        },
+        "download_command_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0,
+          "share_nonzero": 0.0,
+          "missing_share": 0.0
+        }
+      },
+      "lateral_movement": {
+        "input_line_count": {
+          "min": 1,
+          "median": 5.0,
+          "max": 7,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_bytes_total": {
+          "min": 7,
+          "median": 72.0,
+          "max": 131,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_line_max_bytes": {
+          "min": 6,
+          "median": 23.0,
+          "max": 30,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "unique_command_names": {
+          "min": 1,
+          "median": 4.0,
+          "max": 7,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "shell_operator_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 2,
+          "share_nonzero": 0.4315,
+          "missing_share": 0.0
+        },
+        "download_command_lines": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0,
+          "share_nonzero": 0.0,
+          "missing_share": 0.0
+        }
+      },
+      "exfiltration": {
+        "input_line_count": {
+          "min": 2,
+          "median": 5.0,
+          "max": 7,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_bytes_total": {
+          "min": 36,
+          "median": 119.0,
+          "max": 181,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "input_line_max_bytes": {
+          "min": 24,
+          "median": 42.0,
+          "max": 48,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "unique_command_names": {
+          "min": 2,
+          "median": 5.0,
+          "max": 7,
+          "share_nonzero": 1.0,
+          "missing_share": 0.0
+        },
+        "shell_operator_lines": {
+          "min": 0,
+          "median": 1.0,
+          "max": 1,
+          "share_nonzero": 0.655,
+          "missing_share": 0.0
+        },
+        "download_command_lines": {
+          "min": 0,
+          "median": 1.0,
+          "max": 1,
+          "share_nonzero": 0.797,
+          "missing_share": 0.0
+        }
+      }
+    },
+    "compatibility_class_counts": {
+      "expected_returns": 69,
+      "network_dependent_fails_in_isolation": 70,
+      "confirmed_returns": 73,
+      "unsupported_command_not_found": 7,
+      "static_output": 2
+    },
+    "blocking_commands": [],
+    "has_delay_range": false
+  }
+}

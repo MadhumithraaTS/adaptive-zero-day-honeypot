@@ -1,0 +1,76 @@
+# Checkpoint-witness architecture: compose OVERLAY (Task 28A). NOT APPLIED.
+#
+# Validate only:  docker compose -f docker-compose.yml -f docker-compose.witness-mock.yml config --quiet
+# It adds NEW services under the `witness-mock` profile and new named volumes. It does not override any existing
+# service: the running ssh-relay, Cowrie and demo clients are untouched. Applying it, switching the live relay to the
+# witnessed relay, rotating the relay key and moving records to `cowrie_relay_records` are migration step M7 (not run).
+# All services here are TEST/LOCAL MOCK until D0 is resolved; production start is refused by cowrie/witness/service_guard.py.
+
+x-witness-hardening: &witness_hardening
+  image: cowrie/cowrie@sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a
+  pull_policy: never
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+  read_only: true
+  tmpfs: ["/tmp"]
+  restart: "no"
+  pids_limit: 32
+  mem_limit: 128m
+  environment:
+    PYTHONPATH: /opt/project
+    PYTHONDONTWRITEBYTECODE: "1"
+  entrypoint: ["/cowrie/cowrie-env/bin/python3"]
+
+services:
+  relay-witnessed:                       # future replacement of ssh-relay (M7); holds P1' only
+    <<: *witness_hardening
+    container_name: cowrie-relay-witnessed-mock
+    profiles: ["witness-mock"]
+    network_mode: none                   # mock profile: no listener is reachable from any network
+    command: ["/opt/project/cowrie/witness/witness_service.py", "--mode", "mock"]
+    volumes:
+      - ../client_attribution:/opt/project/client_attribution:ro
+      - ./attributing_relay/relay_gate.py:/opt/project/cowrie/attributing_relay/relay_gate.py:ro
+      - ./attributing_relay/witnessed_relay.py:/opt/project/cowrie/attributing_relay/witnessed_relay.py:ro
+      - ./witness:/opt/project/cowrie/witness:ro
+      - ../configs/witness:/opt/project/configs/witness:ro
+      - cowrie_relay_records:/var/relay_records              # D14: relay records on a Docker named volume
+      - cowrie_witness_socket:/run/witness
+
+  log-witness:                           # holds P3 only; no network; reads relay records read-only
+    <<: *witness_hardening
+    container_name: cowrie-log-witness-mock
+    profiles: ["witness-mock"]
+    network_mode: none
+    command: ["/opt/project/cowrie/witness/witness_service.py", "--mode", "mock"]
+    volumes:
+      - ../client_attribution:/opt/project/client_attribution:ro
+      - ./witness:/opt/project/cowrie/witness:ro
+      - ../configs/witness:/opt/project/configs/witness:ro
+      - cowrie_relay_records:/var/relay_records:ro
+      - cowrie_witness_socket:/run/witness
+      - cowrie_checkpoint_store:/var/checkpoints
+      - cowrie_replication_status:/run/replication:ro
+
+  replicator:                            # holds C1 only; reads the store read-only; egress only in production
+    <<: *witness_hardening
+    container_name: cowrie-replicator-mock
+    profiles: ["witness-mock"]
+    network_mode: none                   # mock: no egress at all; production egress network is created at M7
+    command: ["/opt/project/cowrie/witness/replicator_service.py", "--mode", "mock"]
+    volumes:
+      - ../client_attribution:/opt/project/client_attribution:ro
+      - ./witness:/opt/project/cowrie/witness:ro
+      - ../configs/witness:/opt/project/configs/witness:ro
+      - cowrie_checkpoint_store:/var/checkpoints:ro
+      - cowrie_replication_status:/run/replication
+
+volumes:
+  cowrie_relay_records:
+    name: cowrie_relay_records
+  cowrie_witness_socket:
+    name: cowrie_witness_socket
+  cowrie_checkpoint_store:
+    name: cowrie_checkpoint_store
+  cowrie_replication_status:
+    name: cowrie_replication_status

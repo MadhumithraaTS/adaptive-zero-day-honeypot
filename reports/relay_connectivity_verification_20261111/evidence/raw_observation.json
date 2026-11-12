@@ -1,0 +1,228 @@
+{
+  "diagnostic_only": true,
+  "purpose": "Task 25C-4 hardened-relay connectivity check; NOT attribution evidence",
+  "cowrie_log_lines_before": 21852,
+  "before": {
+    "relay": [
+      {
+        "table": "/proc/net/tcp",
+        "local": "127.0.0.11:34069",
+        "remote": "0.0.0.0:0",
+        "state": "LISTEN",
+        "inode": "1659944"
+      },
+      {
+        "table": "/proc/net/tcp",
+        "local": "172.21.0.2:2222",
+        "remote": "0.0.0.0:0",
+        "state": "LISTEN",
+        "inode": "1658981"
+      }
+    ],
+    "cowrie": [
+      {
+        "table": "/proc/net/tcp",
+        "local": "0.0.0.0:2222",
+        "remote": "0.0.0.0:0",
+        "state": "LISTEN",
+        "inode": "261087"
+      },
+      {
+        "table": "/proc/net/tcp",
+        "local": "127.0.0.11:33177",
+        "remote": "0.0.0.0:0",
+        "state": "LISTEN",
+        "inode": "266917"
+      }
+    ],
+    "relay_forwarding": {
+      "/proc/sys/net/ipv4/ip_forward": "0",
+      "/proc/sys/net/ipv4/conf/all/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/default/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/eth0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/eth1/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/lo/forwarding": "0"
+    }
+  },
+  "client": {
+    "connected_utc": "2026-11-11T17:03:25.110247Z",
+    "client_local": "127.0.0.1:49278",
+    "client_peer": "127.0.0.1:2223",
+    "banner": "SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u3",
+    "closed_utc": "2026-11-11T17:03:28.269786Z"
+  },
+  "during": [
+    {
+      "sampled_utc": "2026-11-11T17:03:26.161417Z",
+      "relay": [
+        {
+          "table": "/proc/net/tcp",
+          "local": "127.0.0.11:34069",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "1659944"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "172.21.0.2:2222",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "1658981"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "172.22.0.2:56300",
+          "remote": "172.22.0.1:2222",
+          "state": "ESTABLISHED",
+          "inode": "1659256"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "172.21.0.2:2222",
+          "remote": "172.21.0.1:43062",
+          "state": "ESTABLISHED",
+          "inode": "1659255"
+        }
+      ],
+      "cowrie": [
+        {
+          "table": "/proc/net/tcp",
+          "local": "0.0.0.0:2222",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "261087"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "127.0.0.11:33177",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "266917"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "172.22.0.1:2222",
+          "remote": "172.22.0.2:56300",
+          "state": "ESTABLISHED",
+          "inode": "1654378"
+        }
+      ]
+    },
+    {
+      "sampled_utc": "2026-11-11T17:03:27.242695Z",
+      "relay": [
+        {
+          "table": "/proc/net/tcp",
+          "local": "127.0.0.11:34069",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "1659944"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "172.21.0.2:2222",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "1658981"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "172.22.0.2:56300",
+          "remote": "172.22.0.1:2222",
+          "state": "ESTABLISHED",
+          "inode": "1659256"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "172.21.0.2:2222",
+          "remote": "172.21.0.1:43062",
+          "state": "ESTABLISHED",
+          "inode": "1659255"
+        }
+      ],
+      "cowrie": [
+        {
+          "table": "/proc/net/tcp",
+          "local": "0.0.0.0:2222",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "261087"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "127.0.0.11:33177",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "266917"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "172.22.0.1:2222",
+          "remote": "172.22.0.2:56300",
+          "state": "ESTABLISHED",
+          "inode": "1654378"
+        }
+      ]
+    }
+  ],
+  "cowrie_log_lines_after": 21854,
+  "after": {
+    "relay": [
+      {
+        "table": "/proc/net/tcp",
+        "local": "127.0.0.11:34069",
+        "remote": "0.0.0.0:0",
+        "state": "LISTEN",
+        "inode": "1659944"
+      },
+      {
+        "table": "/proc/net/tcp",
+        "local": "172.21.0.2:2222",
+        "remote": "0.0.0.0:0",
+        "state": "LISTEN",
+        "inode": "1658981"
+      },
+      {
+        "table": "/proc/net/tcp",
+        "local": "172.22.0.2:56300",
+        "remote": "172.22.0.1:2222",
+        "state": "TIME_WAIT",
+        "inode": "0"
+      }
+    ],
+    "relay_forwarding": {
+      "/proc/sys/net/ipv4/ip_forward": "0",
+      "/proc/sys/net/ipv4/conf/all/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/default/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/eth0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/eth1/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/lo/forwarding": "0"
+    }
+  },
+  "cowrie_new_events": [
+    {
+      "eventid": "cowrie.session.connect",
+      "src_ip": "172.22.0.2",
+      "src_port": 56300,
+      "dst_ip": "172.22.0.1",
+      "dst_port": 2222,
+      "session": "b806554e19b9",
+      "protocol": "ssh",
+      "message": "New connection: 172.22.0.2:56300 (172.22.0.1:2222) [session: b806554e19b9]",
+      "sensor": "0bec5a78b1cb",
+      "uuid": "bafc61de-32ec-11f1-a37e-46de337b5ff9",
+      "timestamp": "2026-11-11T17:03:25.165789Z"
+    },
+    {
+      "eventid": "cowrie.session.closed",
+      "duration": "3.1",
+      "message": "Connection lost after 3.1 seconds",
+      "sensor": "0bec5a78b1cb",
+      "uuid": "bafc61de-32ec-11f1-a37e-46de337b5ff9",
+      "timestamp": "2026-11-11T17:03:28.291911Z",
+      "src_ip": "172.22.0.2",
+      "session": "b806554e19b9",
+      "protocol": "ssh"
+    }
+  ]
+}

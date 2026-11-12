@@ -1,0 +1,58 @@
+{
+  "schema": "response-proposal-1",
+  "proposal_id": "prop-task26c-isolated-000001",
+  "created_utc": "2026-11-12T07:20:37.297549Z",
+  "expires_utc": "2026-11-12T07:50:37.297549Z",
+  "session_ref": "b64ca738a754",
+  "assessment_audit": {
+    "record_id": "task26c-isolated-000001",
+    "record_hash": "cddfaf321bf3c527e22002d066455eb12715e1fe39c63e3c4ec9376ad89d125f"
+  },
+  "attribution": {
+    "state": "attributable_via_proxy_mapping",
+    "result_id": "DEMO-20261112T072037Z-d187b6",
+    "result_hash": "b90531666cc19f6456233d8abec789ee8bc193144150b9333f37fdfc6f280a45",
+    "connection_id": "a39ed494-bdc1-4ba0-a531-d063958d757f",
+    "client_ip": "10.250.25.3"
+  },
+  "source_proposal": {
+    "execution": "not_executed",
+    "inverse": {
+      "subject": "10.250.25.3",
+      "type": "unblock_source_ip"
+    },
+    "manual_approval": "pending",
+    "mode": "dry_run",
+    "relay_connection_id": "a39ed494-bdc1-4ba0-a531-d063958d757f",
+    "scope": "this sensor only",
+    "subject": "10.250.25.3",
+    "subject_basis": "attributable_via_proxy_mapping",
+    "ttl_seconds": 86400,
+    "type": "block_source_ip"
+  },
+  "action": {
+    "type": "restrict_new_connections",
+    "target": "10.250.25.3/32",
+    "listener": "demo",
+    "max_ttl_seconds": 900
+  },
+  "fingerprints": {
+    "response_policy": "93927810348272c34a665ba50b51825da139720d2b9f468d9feef5bfa79a495c",
+    "address_safety": "278563bd94d1900014cbdfaa2ef76708ffeb755c687f2f10a51640872c0dbc70",
+    "defence_policy": "88748e1bf305e18ff5228652016b198fc42b20471782a1199cde94a4925e3c42",
+    "attribution_config": "32d0deded621cbed14616366ca792116fbb917ecaf5ee8243e1d618eb68dfdcf"
+  },
+  "findings": [
+    {
+      "interpretation": "download attempt",
+      "severity": "S2",
+      "evidence_level": "E2"
+    },
+    {
+      "interpretation": "download-and-execute attempt",
+      "severity": "S3",
+      "evidence_level": "E2"
+    }
+  ],
+  "proposal_hash": "34d4271bcc243edd489ed551037c1d2999d68a05eb35c42c1808a59fd56eb334"
+}

@@ -1,0 +1,35 @@
+split,set,interpretation,sessions,interactions,n_benign,n_botnet,n_brute_force,n_lateral_movement,n_privilege_escalation,n_reconnaissance
+train,logged_in_one_per_interaction,Command execution,31,31,2,0,28,1,0,0
+train,logged_in_one_per_interaction,Command execution / privilege escalation,120,120,0,0,34,4,58,24
+train,logged_in_one_per_interaction,Credential-attack behaviour,14,14,0,0,0,14,0,0
+train,logged_in_one_per_interaction,Download or payload retrieval,270,270,23,195,0,21,0,31
+train,logged_in_one_per_interaction,Insufficient Evidence,104,104,5,0,99,0,0,0
+train,logged_in_one_per_interaction,Mixed/Unclassified,662,662,339,0,0,138,91,94
+train,logged_in_one_per_interaction,Persistence-related activity,113,113,87,0,0,0,26,0
+train,logged_in_one_per_interaction,Reconnaissance,186,186,105,0,37,14,0,30
+train,failed_guess_sessions,Credential-attack behaviour,1690,944,302,197,820,102,86,183
+train,all_sessions,Command execution,31,31,2,0,28,1,0,0
+train,all_sessions,Command execution / privilege escalation,120,120,0,0,34,4,58,24
+train,all_sessions,Credential-attack behaviour,1704,949,302,197,820,116,86,183
+train,all_sessions,Download or payload retrieval,270,270,23,195,0,21,0,31
+train,all_sessions,Insufficient Evidence,104,104,5,0,99,0,0,0
+train,all_sessions,Mixed/Unclassified,662,662,339,0,0,138,91,94
+train,all_sessions,Persistence-related activity,113,113,87,0,0,0,26,0
+train,all_sessions,Reconnaissance,186,186,105,0,37,14,0,30
+validation,logged_in_one_per_interaction,Command execution,8,8,0,0,8,0,0,0
+validation,logged_in_one_per_interaction,Command execution / privilege escalation,46,46,0,0,16,2,20,8
+validation,logged_in_one_per_interaction,Credential-attack behaviour,2,2,0,0,0,2,0,0
+validation,logged_in_one_per_interaction,Download or payload retrieval,99,99,10,71,0,4,0,14
+validation,logged_in_one_per_interaction,Insufficient Evidence,42,42,1,0,41,0,0,0
+validation,logged_in_one_per_interaction,Mixed/Unclassified,296,296,149,0,0,63,45,39
+validation,logged_in_one_per_interaction,Persistence-related activity,35,35,31,0,0,0,4,0
+validation,logged_in_one_per_interaction,Reconnaissance,72,72,38,0,14,7,0,13
+validation,failed_guess_sessions,Credential-attack behaviour,657,370,126,65,319,40,30,77
+validation,all_sessions,Command execution,8,8,0,0,8,0,0,0
+validation,all_sessions,Command execution / privilege escalation,46,46,0,0,16,2,20,8
+validation,all_sessions,Credential-attack behaviour,659,372,126,65,319,42,30,77
+validation,all_sessions,Download or payload retrieval,99,99,10,71,0,4,0,14
+validation,all_sessions,Insufficient Evidence,42,42,1,0,41,0,0,0
+validation,all_sessions,Mixed/Unclassified,296,296,149,0,0,63,45,39
+validation,all_sessions,Persistence-related activity,35,35,31,0,0,0,4,0
+validation,all_sessions,Reconnaissance,72,72,38,0,14,7,0,13

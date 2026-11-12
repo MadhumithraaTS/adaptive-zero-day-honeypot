@@ -1,0 +1,81 @@
+{
+  "extractor": "scripts/extract_features_v2.py",
+  "feature_spec_version": "2.0.0-draft.3",
+  "spec_sha256": "9401b355a1bfc48a14da32efba9ad4d5992f55233da3437a0715690d76f8fb1a",
+  "inputs": [
+    {
+      "path": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\client_attribution_implementation_20261111\\evidence\\cowrie_events_after_baseline.jsonl",
+      "sha256": "5230c905fc4d440dd6185188702394946166c48647d350be33d7607b95d7d5f8",
+      "bytes": 12341
+    }
+  ],
+  "events_read": 34,
+  "sessions": 0,
+  "sessions_with_warnings": 0,
+  "duplicate_records_removed": 0,
+  "file_level_warnings": [],
+  "session_warning_counts": {},
+  "nan_counts": {
+    "login_success": 0,
+    "login_failed_count": 0,
+    "session_duration_s": 0,
+    "input_line_count": 0,
+    "input_bytes_total": 0,
+    "input_line_max_bytes": 0,
+    "unique_command_names": 0,
+    "shell_operator_lines": 0,
+    "download_command_lines": 0,
+    "time_to_first_input_s": 0,
+    "inter_input_mean_s": 0,
+    "inter_input_std_s": 0,
+    "tty_output_bytes": 0
+  },
+  "model_feature_dtypes": {
+    "login_success": "int8",
+    "login_failed_count": "int32",
+    "session_duration_s": "float64",
+    "input_line_count": "int32",
+    "input_bytes_total": "int64",
+    "input_line_max_bytes": "float64",
+    "unique_command_names": "int32",
+    "shell_operator_lines": "int32",
+    "download_command_lines": "int32",
+    "time_to_first_input_s": "float64",
+    "inter_input_mean_s": "float64",
+    "inter_input_std_s": "float64",
+    "tty_output_bytes": "float64"
+  },
+  "model_feature_status": {
+    "login_success": "core",
+    "login_failed_count": "conditional",
+    "session_duration_s": "conditional",
+    "input_line_count": "core",
+    "input_bytes_total": "core",
+    "input_line_max_bytes": "core",
+    "unique_command_names": "core",
+    "shell_operator_lines": "conditional",
+    "download_command_lines": "conditional",
+    "time_to_first_input_s": "conditional",
+    "inter_input_mean_s": "conditional",
+    "inter_input_std_s": "conditional",
+    "tty_output_bytes": "core"
+  },
+  "missing_value_encoding": "'NaN' in CSV",
+  "outputs": [
+    "model_features.csv",
+    "session_metadata.csv",
+    "extraction_summary.json"
+  ],
+  "session_exclusions": {
+    "exclusions_version": "1.0.0",
+    "exclusions_digest": "8136184b44e897c428758ae9f2c1a20097e2a102e126d511fefa2ad05e373540",
+    "excluded_session_count": 7,
+    "sessions_excluded": [
+      "3eede5e19e25",
+      "4542a85f37ec",
+      "9441bcce555c",
+      "acc2bad4a442",
+      "d588636ce120"
+    ]
+  }
+}

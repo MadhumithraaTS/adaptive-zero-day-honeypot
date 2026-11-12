@@ -1,0 +1,87 @@
+{
+  "schema": "demo-feedback-record-1",
+  "label": "SIMULATED (dry-run demonstration)",
+  "session_id": "42ee73a7cbbd",
+  "threat_assessment": {
+    "tier": "propose",
+    "tier_reason": "all proposal conditions met; manual approval required",
+    "gates_all_true": true,
+    "assessment_record": {
+      "record_id": "task26c-isolated-000001",
+      "record_hash": "a1ce3cd55b7b7b50cc26cf23724a7d705205ef67342366923ac1303ab0b6831b"
+    },
+    "signed_result_id": "DEMO-20261112T073151Z-ba1005",
+    "signed_result_hash": "6d449820a76b143af58c27da434c33b3c71b46ec908d50743363eee2b31b90d8"
+  },
+  "proposal": {
+    "proposal_id": "prop-task26c-isolated-000001",
+    "proposal_hash": "7b1c83073507a883a701f673327a9c43d5d5c6da072a2110602238109b1d0648",
+    "action": {
+      "type": "restrict_new_connections",
+      "target": "10.250.25.3/32",
+      "listener": "demo",
+      "max_ttl_seconds": 900
+    },
+    "source_proposal_type": "block_source_ip"
+  },
+  "approval": {
+    "decision": "approve",
+    "approval_id": "appr-65ee4e38-c3a9-4f69-b0ff-01cc34a51ae2",
+    "approval_hash": "ab7977c30e2883f8750f12f10678883cc8313ff149a8feef23abc5ff8cf01393",
+    "approver_key_id": "e8ac9dc6430f0301",
+    "rule_id": "rule-37638088-5d5f-4211-b761-3f17cbecdf7b",
+    "ttl_seconds": 600,
+    "audit_record_hash": "5e139b41b9066234eb274cb8af1a6b37198f021160c066cc8411a930227c00e3"
+  },
+  "simulated_response": {
+    "event": "simulated",
+    "enforced": false,
+    "note": "dry-run: no rule staged, relay not contacted",
+    "audit_record_hash": "03bf32236d7d49ee0485cd47fe0e53c70ccf257826166ae4ac9ef2f3c58f1b3e"
+  },
+  "operator_verification": {
+    "outcome": "dry_run_confirmed_no_effect",
+    "verification_id": "v-20261112T073151Z-ba1005",
+    "audit_record_hash": "0f845962933937ee3c3e36bf895a4ef36ee80b7f694954b5d367953b5e92ebd7"
+  },
+  "simulated_rollback": {
+    "event": "rollback_verified",
+    "audit_record_hash": "461fbb6c35392492a9c77abf74bc3af9a8fd0f16c854ab90febd2d21c2521a20"
+  },
+  "final_state": "rolled_back",
+  "response_success": true,
+  "rejected_operations": 11,
+  "enforcement_calls": [],
+  "feedback_core_sha256": "e794b3679d0b5cdb4bcb4029cac3ac918c838bd3e7a2eab00c88e17693f1bf2a",
+  "annotation": {
+    "record_hash": "faa3721337e9cb86473166ecfc876949dcbaa541ebbbd27e0c4769626b33cd45",
+    "label": "true_positive",
+    "operator": "DEMO REVIEWER"
+  },
+  "response_audit_checkpoint": {
+    "entries": 19,
+    "last_hash": "faa3721337e9cb86473166ecfc876949dcbaa541ebbbd27e0c4769626b33cd45"
+  },
+  "metrics": {
+    "proposals": 1,
+    "final_states": {
+      "rolled_back": 1
+    },
+    "response_success": 1,
+    "response_failure": 0,
+    "labels": {
+      "true_positive": 1
+    },
+    "rejected_operations": 11,
+    "note": "dry-run metrics; no real response was executed"
+  },
+  "review_queue": [
+    {
+      "proposal_id": "prop-task26c-isolated-000001",
+      "final_state": "rolled_back",
+      "reasons": [
+        "11 rejected operation(s)"
+      ]
+    }
+  ]
+}

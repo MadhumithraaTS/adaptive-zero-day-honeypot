@@ -1,0 +1,7 @@
+split,signature,label,dec_cluster,closest_sessions,known_like_sessions,known_like_logged_in_interactions,known_like_benign,known_like_botnet,known_like_brute_force,known_like_lateral_movement,known_like_privilege_escalation,known_like_reconnaissance
+train,sig-ceb071c58646821e,Mixed/Unclassified,0,689,139,139,64,11,0,35,6,23
+train,sig-9bdd6f77af7fb40f,Credential-attack behaviour,1,1690,1689,0,301,197,820,102,86,183
+train,sig-5bf9142552bb3532,Mixed/Unclassified,2,811,344,344,129,76,0,30,69,40
+validation,sig-ceb071c58646821e,Mixed/Unclassified,0,281,55,55,22,2,0,24,1,6
+validation,sig-9bdd6f77af7fb40f,Credential-attack behaviour,1,657,656,0,126,65,318,40,30,77
+validation,sig-5bf9142552bb3532,Mixed/Unclassified,2,319,138,138,53,25,0,8,34,18

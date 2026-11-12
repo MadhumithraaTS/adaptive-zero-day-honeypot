@@ -17,7 +17,7 @@ def _write_json_atomic(output_file, payload):
         os.makedirs(directory, exist_ok=True)
         descriptor, temporary = tempfile.mkstemp(prefix=f".{os.path.basename(output_file)}.", suffix=".tmp", dir=directory)
         os.close(descriptor)
-        with open(temporary, 'w') as f:
+        with open(temporary, 'w', encoding='utf-8') as f:
             json.dump(payload, f, indent=4)
         os.replace(temporary, output_file)
         temporary = None
@@ -35,8 +35,18 @@ def parse_logs(input_file, output_file):
     sessions = {}
     print(f"Parsing logs from {input_file}...")
     try:
-        with open(input_file, 'r') as f:
-            for line_number, line in enumerate(f, start=1):
+        # Cowrie writes UTF-8 JSON lines. Decode each line strictly, independent of the OS default
+        # encoding, so invalid bytes stop the parse instead of being silently replaced or misread.
+        with open(input_file, 'rb') as f:
+            for line_number, raw_line in enumerate(f, start=1):
+                try:
+                    line = raw_line.decode('utf-8')
+                except UnicodeDecodeError as exc:
+                    raise LogParseError(
+                        f"Line {line_number} of {input_file} is not valid UTF-8 (byte 0x{raw_line[exc.start]:02x} "
+                        f"at column {exc.start + 1}). The raw log was not changed; inspect that line, since Cowrie "
+                        f"itself writes UTF-8."
+                    ) from exc
                 if not line.strip():
                     continue
 
@@ -57,7 +67,7 @@ def parse_logs(input_file, output_file):
                     sessions[session_id] = []
 
                 sessions[session_id].append(event)
-    except (OSError, UnicodeDecodeError) as exc:
+    except OSError as exc:
         raise LogParseError(f"Could not read {input_file}: {exc}") from exc
 
     if not sessions:
@@ -69,7 +79,7 @@ def parse_logs(input_file, output_file):
 
     # Confirm the written file is a readable sessions object with the expected count.
     try:
-        with open(output_file, 'r') as f:
+        with open(output_file, 'r', encoding='utf-8') as f:
             written = json.load(f)
     except (OSError, ValueError) as exc:
         raise LogParseError(f"Written output {output_file} could not be read back: {exc}") from exc

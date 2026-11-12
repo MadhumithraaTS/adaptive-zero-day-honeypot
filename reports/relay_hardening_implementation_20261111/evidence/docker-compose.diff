@@ -1,0 +1,17 @@
+--- cowrie/backups/pre_relay_hardening_20261111T165756Z/docker-compose.yml	2026-11-11 22:27:56.217896300 +0530
++++ cowrie/docker-compose.yml	2026-11-11 22:28:47.106354200 +0530
+@@ -31,7 +31,13 @@
+     pids_limit: 64
+     mem_limit: 128m
+     entrypoint: ["/cowrie/cowrie-env/bin/twistd"]
+-    command: ["-n", "--pidfile=", "portforward", "--port=tcp:2222", "--host=cowrie", "--dest_port=2222"]
++    # Explicit bind: the forwarder listens only on the published-path address (was 0.0.0.0:2222; Task 25C-1/25C-3).
++    command: ["-n", "--pidfile=", "portforward", "--port=tcp:2222:interface=172.21.0.2", "--host=cowrie", "--dest_port=2222"]
++    # Application-level TCP proxy only: kernel IP forwarding is not needed (was 1; Task 25C-1/25C-3).
++    sysctls:
++      net.ipv4.ip_forward: "0"
++      net.ipv4.conf.all.forwarding: "0"
++      net.ipv4.conf.default.forwarding: "0"
+     ports:
+       - "127.0.0.1:2223:2222"
+     networks: [cowrie_internal, relay_frontend]

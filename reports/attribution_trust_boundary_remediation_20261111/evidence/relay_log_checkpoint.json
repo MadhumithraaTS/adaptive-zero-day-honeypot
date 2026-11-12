@@ -1,0 +1,12 @@
+{
+  "attested_utc": "2026-11-11T17:30:00.000000Z",
+  "checkpoint_hash": "142af3e3b212a45f6f108e391359828c1aa666e3266b3658d0297f1e482ad85a",
+  "checkpoint_id": "5ca012f6-9d3a-46b8-9c26-8cc3cca15e54",
+  "log_id": "cowrie-ssh-relay/relay_mapping.jsonl",
+  "record_hash": "cbca971154842681cb8a98d12e691428795be243aa2b5bf7f131eb1b4467ba40",
+  "record_written_utc": "2026-11-11T17:19:54.388687Z",
+  "schema": "relay-log-checkpoint-1",
+  "seq": 11,
+  "signature": "659060df082e59d4177e640d6872d806537cc2ddea99ae65786e19db03e124666e37abef3739401017bfe1087dec8b3c6ae27f85e68f6342bc29b19aadc7630e",
+  "witness_key_id": "a21a42ccae35cb24"
+}

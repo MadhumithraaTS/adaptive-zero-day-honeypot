@@ -1,0 +1,62 @@
+{
+  "schema_version": "2.0",
+  "policy_name": "cowrie-defence-policy",
+  "policy_version": "2.1.0",
+  "created": "2026-11-11",
+  "supersedes_for_assessment": "configs/defence_policy_v2.json (2.0.0, preserved unchanged) and configs/defence_policy.json (1.0, unchanged)",
+  "enforcement": "disabled",
+  "manual_approval_required": true,
+  "description": "Policy-eligibility rules for threat_assessment. Produces tiers and PROPOSED actions only; nothing is executed.",
+  "required_behavioural_evidence_catalogue": "v2-evidence-1.1",
+  "attribution_config": {
+    "path": "configs/threat_attribution_v2.json",
+    "config_version": "2.0.0",
+    "sha256_digest": "612d6360125ef6af6afeb589609bd5149a5a8c480d052b4f3a5352e1b4d17ea1"
+  },
+  "tiers": [
+    "abstain",
+    "record",
+    "review",
+    "propose"
+  ],
+  "proposal_conditions": {
+    "min_finding_severity": "S2",
+    "min_interpretation_evidence_level": "E2",
+    "min_distinct_action_indicators": 2,
+    "require_successful_login": true,
+    "require_attributable_source": true,
+    "exclude_protected_and_shared_sources": true,
+    "require_verified_configuration_digests": true,
+    "require_no_processing_errors": true
+  },
+  "never_sufficient": [
+    "caveat indicators (EMU-1, ART-1, SEQ-1, TIME-0)",
+    "statistical novelty",
+    "single failed login (AUTH-0)",
+    "below-threshold authentication failures",
+    "context indicators"
+  ],
+  "proposed_action": {
+    "type": "block_source_ip",
+    "scope": "this sensor only",
+    "mode": "dry_run",
+    "ttl_seconds": 86400,
+    "inverse": "unblock_source_ip"
+  },
+  "protected_networks": [
+    "127.0.0.0/8",
+    "::1/128",
+    "169.254.0.0/16",
+    "fe80::/10",
+    "172.19.0.0/16",
+    "172.21.0.0/16",
+    "172.22.0.0/16",
+    "10.250.25.1/32",
+    "10.250.25.2/32"
+  ],
+  "protected_networks_note": "Verified 2026-11-11 by read-only docker network inspect; v1 listed only 172.19.0.0/16 (stale for the current relay topology).",
+  "enforcement_excluded_sources": [
+    "10.250.25.4/32"
+  ],
+  "enforcement_allowlist_note": "Future enforcement (not in this version) may target only 10.250.25.3/32. Proposal conditions are identical to 2.0.0."
+}

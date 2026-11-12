@@ -1,0 +1,126 @@
+{
+  "config_name": "cowrie_novelty_baseline",
+  "config_version": "1.0.0-provisional",
+  "status": "provisional - not frozen; freeze needs approval",
+  "date": "2026-11-11",
+  "task": "Task 18",
+  "relation_to_clustering_config": {
+    "path": "configs/model_features_v2_frozen.json",
+    "config_version": "1.1.0",
+    "sha256": "18a4ab2be8d0d71148212e3306c9cf318075eac63c999e24cefb39564c84d299",
+    "note": "separate configuration; the frozen 8-feature clustering configuration is not modified"
+  },
+  "population": "logged-in Cowrie sessions (login_success = 1)",
+  "features": [
+    "session_duration_s",
+    "input_line_count",
+    "shell_operator_lines",
+    "time_to_first_input_s",
+    "inter_input_mean_s",
+    "inter_input_std_s",
+    "tty_output_bytes"
+  ],
+  "excluded_from_frozen_inputs": {
+    "login_success": "constant in the logged-in population"
+  },
+  "preprocessing": {
+    "imputation": "median of non-missing logged-in training values",
+    "medians": {
+      "session_duration_s": 12.2,
+      "input_line_count": 5.0,
+      "shell_operator_lines": 0.0,
+      "time_to_first_input_s": 1.663026,
+      "inter_input_mean_s": 1.844205,
+      "inter_input_std_s": 0.984698,
+      "tty_output_bytes": 1114.0
+    },
+    "log1p": [
+      "session_duration_s",
+      "time_to_first_input_s",
+      "inter_input_mean_s",
+      "inter_input_std_s",
+      "tty_output_bytes"
+    ],
+    "scaler": "StandardScaler on logged-in training data",
+    "scaler_mean": {
+      "session_duration_s": 2.469272,
+      "input_line_count": 5.010667,
+      "shell_operator_lines": 0.471333,
+      "time_to_first_input_s": 1.039617,
+      "inter_input_mean_s": 1.073039,
+      "inter_input_std_s": 0.728188,
+      "tty_output_bytes": 7.201698
+    },
+    "scaler_scale": {
+      "session_duration_s": 0.590829,
+      "input_line_count": 2.222885,
+      "shell_operator_lines": 0.584105,
+      "time_to_first_input_s": 0.42932,
+      "inter_input_mean_s": 0.249638,
+      "inter_input_std_s": 0.338294,
+      "tty_output_bytes": 0.936964
+    },
+    "missingness_indicators": false
+  },
+  "methods": {
+    "A_ae_reconstruction": "AE reconstruction MSE (scaled space)",
+    "B_latent_knn": "mean distance to 5 nearest training points, AE latent (4-d)",
+    "C_input_knn": "mean distance to 5 nearest training points, scaled input space (7-d)"
+  },
+  "k_nn": 5,
+  "autoencoder": {
+    "latent_dim": 4,
+    "encoder": [
+      32,
+      16
+    ],
+    "decoder": [
+      16,
+      32
+    ],
+    "activation": "relu",
+    "ae_learning_rate": 0.001,
+    "ae_loss": "mse",
+    "ae_epochs": 20,
+    "ae_batch_size": 256,
+    "ae_validation_split": 0.1,
+    "predict_batch_size": 256,
+    "seed": 42,
+    "architecture": {
+      "encoder": [
+        32,
+        16,
+        4
+      ],
+      "decoder": [
+        16,
+        32,
+        7
+      ]
+    }
+  },
+  "threshold_rule": "99% quantile of the method's training scores (kNN: leave-one-out); fixed before running",
+  "thresholds_seed42": {
+    "A_ae_reconstruction": 1.171445,
+    "B_latent_knn": 0.72919,
+    "C_input_knn": 1.692104
+  },
+  "artefacts": {
+    "directory": "models/cowrie_novelty_baseline_20261111"
+  },
+  "training_data": {
+    "dataset": "reports/dataset_v2_training_validation_20261110",
+    "split": "train",
+    "rows": 1500,
+    "dataset_SHA256SUMS_sha256": "05e9d8381f89fa6bb7bb091cb1a49b6656123b3f01d3d6f12ac5d2bd503b9940"
+  },
+  "held_out_experiment": "data_exfiltration is absent from training and validation; the sealed test set has not been accessed.",
+  "artefact_sha256": {
+    "autoencoder.weights.h5": "51d20fd84febbd06fffa8cfabf48f4dce23e1a4dcb8b47e4a7e23a55e4985e0c",
+    "config.json": "6dac714375abe2dcdd4818c4c82706548e4c128a9b7d73d0c6e7e96e897cceb0",
+    "medians.joblib": "04291d5b34d6aea25bf9e3eb55a09de2bd7fa56f2d0aeb0eacc7b6fd9df03048",
+    "reference_latent_train.npy": "ec173402b0413fea585c3244820e992e2a2ab16d0b1f7a8fa26d3c0a6ee474a9",
+    "reference_scaled_train.npy": "51d7eaa8030f64f01d1b9c3c4f859f840b19aca8faa579f8c7763d64cfcd4535",
+    "scaler.joblib": "a57f6992d71f7d0238cfd70aa0b23d3b2bfad5866ce07b25c3f39ab571b3da7b"
+  }
+}

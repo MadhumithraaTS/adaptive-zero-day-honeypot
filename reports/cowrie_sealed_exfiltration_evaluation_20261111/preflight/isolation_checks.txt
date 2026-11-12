@@ -1,0 +1,7 @@
+192.168.65.3 111 OSError OSError
+192.168.65.254 80 OSError OSError
+1.1.1.1 53 OSError OSError
+192.0.2.77 80 OSError OSError
+198.51.100.88 80 OSError OSError
+routes [['eth0', '000016AC']]
+relay resolves cowrie 172.22.0.1

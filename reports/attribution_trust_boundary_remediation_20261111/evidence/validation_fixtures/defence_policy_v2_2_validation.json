@@ -1,0 +1,53 @@
+{
+  "address_safety_config": {
+    "config_version": "1.0.0",
+    "path": "configs/address_safety_v1.json",
+    "sha256_digest": "657aa680f6cda894f36b177566ce5d0a21374b123b1d8c67ce806a9bf40096c2"
+  },
+  "attribution_config": {
+    "config_version": "3.0.0-validation",
+    "path": "validation fixture",
+    "sha256_digest": "a89621dc856ea56635018f013a5b420f5f7ed481563c6b05d76f4cb5c04a58e0"
+  },
+  "created": "2026-11-11",
+  "description": "Policy-eligibility rules for threat_assessment. Produces tiers and PROPOSED actions only; nothing is executed.",
+  "enforcement": "disabled",
+  "manual_approval_required": true,
+  "never_sufficient": [
+    "caveat indicators (EMU-1, ART-1, SEQ-1, TIME-0)",
+    "statistical novelty",
+    "single failed login (AUTH-0)",
+    "below-threshold authentication failures",
+    "context indicators"
+  ],
+  "policy_name": "cowrie-defence-policy",
+  "policy_version": "2.2.0-validation",
+  "proposal_conditions": {
+    "exclude_protected_and_shared_sources": true,
+    "min_distinct_action_indicators": 2,
+    "min_finding_severity": "S2",
+    "min_interpretation_evidence_level": "E2",
+    "require_attributable_source": true,
+    "require_authentication_event": true,
+    "require_no_processing_errors": true,
+    "require_successful_login": true,
+    "require_verified_configuration_digests": true
+  },
+  "proposal_conditions_note": "Identical to 2.0.0 plus require_authentication_event: successful login must rest on a cowrie.login.success event (direct: evidence authentication_status; relay: session-ID correlation in a verified signed attribution result). Command input alone never counts (F-2).",
+  "proposed_action": {
+    "inverse": "unblock_source_ip",
+    "mode": "dry_run",
+    "scope": "this sensor only",
+    "ttl_seconds": 86400,
+    "type": "block_source_ip"
+  },
+  "required_behavioural_evidence_catalogue": "v2-evidence-1.1",
+  "schema_version": "2.1",
+  "supersedes_for_assessment": "configs/defence_policy_v2_1.json (2.1.0) and configs/defence_policy_v2.json (2.0.0), both preserved unchanged",
+  "tiers": [
+    "abstain",
+    "record",
+    "review",
+    "propose"
+  ]
+}

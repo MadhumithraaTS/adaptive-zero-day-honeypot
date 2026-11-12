@@ -1,0 +1,33 @@
+DIAGNOSTIC OBSERVATION - Task 25A - NOT ATTRIBUTION EVIDENCE
+==============================================================
+Method: kernel TCP table (/proc/net/tcp, /proc/net/tcp6) read inside the running relay container with
+`docker exec cowrie-ssh-relay python3 -c <read-only parser>` while the single connection was open.
+The relay was not instrumented, replaced, restarted or reconfigured.
+Raw data: evidence/raw_observation.json (sha256 in SHA256SUMS).
+
+Relay implementation (unchanged): twistd -n portforward --port=tcp:2222 --host=cowrie --dest_port=2222
+Socket-accept location: the portforward plugin's TCP listener on 0.0.0.0:2222 inside the relay container (observed
+as the only LISTEN socket besides Docker DNS; Twisted internals not inspected). Its accepted socket is the one shown below;
+/proc/net/tcp reports the same local/remote pair that getpeername()/getsockname() would return for it.
+
+Client side (host, the one controlled connection)
+  connected_utc      2026-11-11T16:37:33.861183Z
+  client local       127.0.0.1:57328
+  client peer        127.0.0.1:2223          (published endpoint)
+  bytes sent         0 (banner read only)
+  banner received    SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u3
+  closed_utc         2026-11-11T16:37:38.575698Z
+
+Relay TCP table BEFORE the connection: LISTEN 0.0.0.0:2222, LISTEN 127.0.0.11:43835 (Docker DNS); no connections.
+
+Relay TCP table DURING the connection (two identical samples):
+  ACCEPTED SOCKET   local 172.21.0.2:2222   <-  peer 172.21.0.1:43452   ESTABLISHED
+  OUTBOUND SOCKET   local 172.22.0.2:53490  ->  peer 172.22.0.1:2222    ESTABLISHED
+
+Interpretation of the accepted socket's peer
+  observed socket peer   172.21.0.1:43452
+  172.21.0.1 = gateway of cowrie_relay_frontend (subnet 172.21.0.0/16, gw 172.21.0.1; docker network inspect)
+  peer port 43452 != client port 57328  -> a NEW connection originated by Docker Desktop's port proxy
+  actual originating client 127.0.0.1:57328 is NOT visible at the relay
+
+Finding: the relay receives a Docker Desktop gateway/proxy address (172.21.0.1), not the originating client address.

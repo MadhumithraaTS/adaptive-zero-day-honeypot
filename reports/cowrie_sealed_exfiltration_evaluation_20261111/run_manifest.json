@@ -1,0 +1,302 @@
+{
+  "task": "Task 19B - one-time sealed test evaluation of the frozen Cowrie novelty baseline",
+  "single_approved_evaluation": true,
+  "statement": "This was the single approved evaluation of the sealed data_exfiltration test run. The test run was generated once, sealed by hash before extraction, extracted once (plus one identical determinism repeat), scored once (lock file evidence/SCORING_DONE.lock), and not rerun.",
+  "freeze_verification": {
+    "checks": {
+      "novelty_config_hash": true,
+      "novelty_config_hash_matches_task19a_SHA256SUMS": true,
+      "clustering_configs_unchanged": true,
+      "novelty_config_records_v1_1_0": true,
+      "model_files_match_artifact_sha256": true,
+      "model_files_match_config_artefact_sha256": true,
+      "task19a_audit_all_pass": true,
+      "features_exact_order": true,
+      "medians_equal_audited_training_medians": true,
+      "scaler_training_only": true,
+      "scaler_params_equal_config": true,
+      "no_missingness_indicators": true,
+      "thresholds_equal_expected": true,
+      "predict_batch_size_256": true,
+      "k_nn_5": true,
+      "method_C_primary_A_B_secondary_documented": true
+    },
+    "all_pass": true,
+    "pre_registration": {
+      "primary_method": "C_input_knn",
+      "secondary_methods": [
+        "A_ae_reconstruction",
+        "B_latent_knn"
+      ],
+      "source": "reports/cowrie_novelty_baseline_20261111/report.md status section (Task 19A); the frozen novelty configuration has no primary field and is not modified",
+      "thresholds": {
+        "A_ae_reconstruction": 1.171445,
+        "B_latent_knn": 0.72919,
+        "C_input_knn": 1.692104
+      },
+      "inference_batch_size": 256,
+      "validation_reference_flag_rates": {
+        "A_ae_reconstruction": 0.006667,
+        "B_latent_knn": 0.005,
+        "C_input_knn": 0.006667
+      }
+    },
+    "hashes": {
+      "configs/cowrie_novelty_baseline_v1.json": "bd3a399ede44d17d31eca47d8c5aa506c2b5423c58c22db066d7c6af158ef6f3",
+      "configs/model_features_v2_frozen_v1.1.0.json": "18a4ab2be8d0d71148212e3306c9cf318075eac63c999e24cefb39564c84d299",
+      "configs/model_features_v2_frozen.json": "8ae17612eabbbc46240aa1011aff8d6e3617df85380b3daa523201675fc3c288",
+      "configs/feature_spec_v2.json": "9401b355a1bfc48a14da32efba9ad4d5992f55233da3437a0715690d76f8fb1a",
+      "configs/feature_spec_v2_draft4.json": "7f444dd1b335865ee37c0ecc25905e474c39c71aeba04e6931d4af51380aeadf",
+      "scripts/extract_features_v2.py": "c0fdc684483e9953db2b6240994daa2b712d9782275eeebff9a38d57344cd5f2",
+      "dataset_builder/generate_labelled_traffic.py": "f8c55f9d9631913598676e12cd6b24a9fa7f8707229d01fe0c512d6e578e1fa4",
+      "dataset_builder/profiles_v2_revised.json": "79d47ac48e1f4c242ffcb851c567da884df21d039cc11917dc5bf3dea761fe62",
+      "models/cowrie_novelty_baseline_20261111/autoencoder.weights.h5": "51d20fd84febbd06fffa8cfabf48f4dce23e1a4dcb8b47e4a7e23a55e4985e0c",
+      "models/cowrie_novelty_baseline_20261111/config.json": "6dac714375abe2dcdd4818c4c82706548e4c128a9b7d73d0c6e7e96e897cceb0",
+      "models/cowrie_novelty_baseline_20261111/medians.joblib": "04291d5b34d6aea25bf9e3eb55a09de2bd7fa56f2d0aeb0eacc7b6fd9df03048",
+      "models/cowrie_novelty_baseline_20261111/reference_latent_train.npy": "ec173402b0413fea585c3244820e992e2a2ab16d0b1f7a8fa26d3c0a6ee474a9",
+      "models/cowrie_novelty_baseline_20261111/reference_scaled_train.npy": "51d7eaa8030f64f01d1b9c3c4f859f840b19aca8faa579f8c7763d64cfcd4535",
+      "models/cowrie_novelty_baseline_20261111/scaler.joblib": "a57f6992d71f7d0238cfd70aa0b23d3b2bfad5866ce07b25c3f39ab571b3da7b"
+    },
+    "versions": {
+      "novelty_config": "1.0.0-provisional",
+      "clustering_config_used_by_baseline": "1.1.0",
+      "feature_spec_extractor_contract": "2.0.0-draft.3",
+      "feature_spec_eligibility": "2.0.0-draft.4",
+      "generator": "2.1"
+    }
+  },
+  "approved_design": {
+    "decided": "2026-11-11 (user answers)",
+    "interactions": 600,
+    "composition": "data_exfiltration only (single-profile config)",
+    "placeholders": "disjoint documentation-only IPs and .example domains; {dir} unchanged",
+    "planning_seed": 14103,
+    "pacing_seed": 9403,
+    "speed": 1,
+    "generator": "2.1 (unchanged)",
+    "config": {
+      "path": "reports/cowrie_sealed_exfiltration_evaluation_20261111/config/profiles_v2_sealed_exfiltration.json",
+      "sha256": "a6522877bda709cf8a80de440665bb45203e9b3cdcd4763abadb4ebcbc7f966a",
+      "derivation": {
+        "written": "reports\\cowrie_sealed_exfiltration_evaluation_20261111\\config\\profiles_v2_sealed_exfiltration.json",
+        "sha256": "a6522877bda709cf8a80de440665bb45203e9b3cdcd4763abadb4ebcbc7f966a",
+        "old_pools": {
+          "ip": [
+            "192.0.2.10",
+            "198.51.100.20",
+            "203.0.113.30",
+            "192.0.2.40"
+          ],
+          "domain": [
+            "files.example",
+            "mirror.example",
+            "pkg-repo.example"
+          ]
+        },
+        "new_pools": {
+          "ip": [
+            "192.0.2.77",
+            "198.51.100.88",
+            "203.0.113.99",
+            "192.0.2.150"
+          ],
+          "domain": [
+            "archive.example",
+            "backup-store.example",
+            "upload-node.example"
+          ]
+        },
+        "occurrences_in_train_validation_commands": {
+          "192.0.2.77": 0,
+          "198.51.100.88": 0,
+          "203.0.113.99": 0,
+          "192.0.2.150": 0,
+          "archive.example": 0,
+          "backup-store.example": 0,
+          "upload-node.example": 0
+        },
+        "exfiltration_profile_identical_to_revised": true,
+        "train_validation_commands_checked": 10595
+      }
+    }
+  },
+  "preflight": {
+    "checked_utc.txt": "2026-11-11T09:42:46Z\n",
+    "containers.txt": "/cowrie-project id=0bec5a78b1cb running img=sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a restarts=0 ro=true capdrop=[ALL] secopt=[no-new-privileges:true]\n/cowrie-ssh-relay id=8d3bafb35f38 running img=sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a restarts=0 ro=true capdrop=[ALL] secopt=[no-new-privileges:true]\ninternal=true opts={\"com.docker.network.bridge.gateway_mode_ipv4\":\"isolated\",\"com.docker.network.enable_ipv4\":\"true\",\"com.docker.network.enable_ipv6\":\"false\"}\n2222/tcp -> 127.0.0.1:2223\n",
+    "input_hashes.txt": "f8c55f9d9631913598676e12cd6b24a9fa7f8707229d01fe0c512d6e578e1fa4 *dataset_builder/generate_labelled_traffic.py\nc0fdc684483e9953db2b6240994daa2b712d9782275eeebff9a38d57344cd5f2 *scripts/extract_features_v2.py\n9401b355a1bfc48a14da32efba9ad4d5992f55233da3437a0715690d76f8fb1a *configs/feature_spec_v2.json\na6522877bda709cf8a80de440665bb45203e9b3cdcd4763abadb4ebcbc7f966a *reports/cowrie_sealed_exfiltration_evaluation_20261111/config/profiles_v2_sealed_exfiltration.json\ncd84da489d29840d1f7c81465359b023caa139ad908e37b0c3e622f47f32e9f5 *cowrie/docker-compose.yml\n46d68fb536f006093fcc1f3e0b6314fe60bf0826d8113201d13de9f859bd0649 *cowrie/userdb.txt\n",
+    "isolation_checks.txt": "192.168.65.3 111 OSError OSError\n192.168.65.254 80 OSError OSError\n1.1.1.1 53 OSError OSError\n192.0.2.77 80 OSError OSError\n198.51.100.88 80 OSError OSError\nroutes [['eth0', '000016AC']]\nrelay resolves cowrie 172.22.0.1\n",
+    "seed_reuse_grep.txt": "",
+    "test_suite.txt": "\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n306 passed, 5 warnings in 192.24s (0:03:12)\n"
+  },
+  "generation": {
+    "command": ".venv/Scripts/python.exe -W ignore dataset_builder/generate_labelled_traffic.py --config reports/cowrie_sealed_exfiltration_evaluation_20261111/config/profiles_v2_sealed_exfiltration.json --include-held-out --host 127.0.0.1 --port 2223 --sessions 600 --seed 14103 --pacing-seed 9403 --speed 1 --output-dir reports/cowrie_sealed_exfiltration_evaluation_20261111/runs/test --runs-root reports --container cowrie-project",
+    "console_head": "split=test start_utc=2026-11-11T09:46:43Z cowrie_lines_before=11964 sha256_before=9a7e15f7ec4af975314bb5b7fb155050d35940d1ada88f0edebedfbcf11652ed",
+    "console_tail": [
+      "exit=0 end_utc=2026-11-11T12:47:19Z cowrie_lines_after=21850 sha256_after=3919d3e25131e8b8a2ab7901420f0699a50da1b2d370539e007c9af18731167f",
+      "prefix_sha256(first 11964 lines of after)=9a7e15f7ec4af975314bb5b7fb155050d35940d1ada88f0edebedfbcf11652ed",
+      "slice_lines=9886 slice_sha256=5235d7c81edd1e7568c78e2087e90db9817739a2a665a812de9cbb5b8ba08a4d"
+    ],
+    "run_meta": {
+      "generated_at": "2026-11-11T09:46:45.169569Z",
+      "host": "127.0.0.1",
+      "port": 2223,
+      "sessions_requested": 600,
+      "seed": 14103,
+      "config_version": "2.3.0-revised+sealed-exfiltration-test",
+      "include_held_out": true,
+      "container": "cowrie-project",
+      "log_baseline_lines": 11964,
+      "speed": 1.0,
+      "generator_version": "2.1",
+      "config_path": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\cowrie_sealed_exfiltration_evaluation_20261111\\config\\profiles_v2_sealed_exfiltration.json",
+      "pacing_seed": 9403,
+      "pacing_seed_source": "explicit --pacing-seed",
+      "pacing_seed_reuse": {
+        "runs_root": "reports",
+        "reused_by": [],
+        "allowed": false
+      },
+      "terminal_output_file": "terminal_output.jsonl (diagnostic only; not a feature source)",
+      "output_capture_chars": 2048,
+      "output_redact_min_length": 4,
+      "output_redaction_policy": "whole-token session passwords, only in a step whose sent command contains them; never the trailing prompt; never the initial wait",
+      "output_decoding": "incremental UTF-8; invalid bytes rendered as \\xNN and counted",
+      "pacing_policy": {
+        "think_median_s": 1.5,
+        "think_sigma": 0.75,
+        "think_min_s": 0.2,
+        "think_max_s": 15.0,
+        "auth_gap_min_s": 0.2,
+        "auth_gap_max_s": 0.8,
+        "speed": 1.0,
+        "think_distribution": "lognormal(ln(median), sigma) clipped to [min, max], / speed",
+        "auth_gap_distribution": "uniform(min, max) / speed"
+      },
+      "readiness_policy": {
+        "prompt_timeout_s": 20.0,
+        "exit_timeout_s": 5.0,
+        "poll_interval_s": 0.05,
+        "on_timeout": "terminate_session",
+        "prompt_regex": "[^\\s@]+@[^\\s:]+:[^\\r\\n]*[#$] $",
+        "readiness_condition": "terminal output (control sequences and CR removed) ends with the prompt"
+      },
+      "profile_delay_range": "ignored: pacing is category-independent (PacingPolicy)",
+      "inter_session_delay_s": 0.8
+    }
+  },
+  "sealed_raw_hashes": {
+    "reports/cowrie_sealed_exfiltration_evaluation_20261111/raw/test/cowrie_before.json": "9a7e15f7ec4af975314bb5b7fb155050d35940d1ada88f0edebedfbcf11652ed",
+    "reports/cowrie_sealed_exfiltration_evaluation_20261111/raw/test/cowrie_after.json": "3919d3e25131e8b8a2ab7901420f0699a50da1b2d370539e007c9af18731167f",
+    "reports/cowrie_sealed_exfiltration_evaluation_20261111/raw/test/cowrie_slice.json": "5235d7c81edd1e7568c78e2087e90db9817739a2a665a812de9cbb5b8ba08a4d",
+    "reports/cowrie_sealed_exfiltration_evaluation_20261111/runs/test/manifest.jsonl": "974861c71fd584dd1b799e80ff62a14b8c64545bd46208ebc7720e5da7362c8d",
+    "reports/cowrie_sealed_exfiltration_evaluation_20261111/runs/test/run_meta.json": "93475ec559def5a2c604ecf4367b5aad9ac642083bcd4dae3636b5696697731a",
+    "reports/cowrie_sealed_exfiltration_evaluation_20261111/runs/test/terminal_output.jsonl": "107031b41bf1af89d0e0d5192dbafb6c5351effdb95e5537fd2a7f60bacc6c28",
+    "reports/cowrie_sealed_exfiltration_evaluation_20261111/logs/generator_console_test.txt": "eca21c6fcc5bc725fb1e1c6c6d3f6f23e79536ce99b5bdb9a165c6f40ad0b5df"
+  },
+  "reconciliation": {
+    "cowrie_events": 9886,
+    "malformed_lines": [],
+    "events_without_session": 0,
+    "cowrie_sessions": 900,
+    "manifest_attempts": 900,
+    "interactions": 600,
+    "unmatched": [],
+    "interactions_not_clean": [],
+    "terminations": {
+      "clean_exit": 600
+    },
+    "profiles": {
+      "data_exfiltration": 600
+    },
+    "roles": {
+      "failed_guess": 300,
+      "logged_in": 600
+    },
+    "src_ips": {
+      "172.22.0.2": 9886
+    },
+    "download_or_upload_events": 0,
+    "time_range": [
+      "2026-11-11T09:46:45.482439Z",
+      "2026-11-11T12:47:17.713758Z"
+    ]
+  },
+  "sealed_extraction": {
+    "sealed_utc": "2026-11-11T15:07:09Z",
+    "raw_evidence_unchanged_since_generation": {
+      "reports/cowrie_sealed_exfiltration_evaluation_20261111/raw/test/cowrie_before.json": true,
+      "reports/cowrie_sealed_exfiltration_evaluation_20261111/raw/test/cowrie_after.json": true,
+      "reports/cowrie_sealed_exfiltration_evaluation_20261111/raw/test/cowrie_slice.json": true,
+      "reports/cowrie_sealed_exfiltration_evaluation_20261111/runs/test/manifest.jsonl": true,
+      "reports/cowrie_sealed_exfiltration_evaluation_20261111/runs/test/run_meta.json": true,
+      "reports/cowrie_sealed_exfiltration_evaluation_20261111/runs/test/terminal_output.jsonl": true,
+      "reports/cowrie_sealed_exfiltration_evaluation_20261111/logs/generator_console_test.txt": true
+    },
+    "deterministic_two_runs": true,
+    "outputs_sha256": {
+      "model_features.csv": "8dbfdfa4b2ff4b39e2133cf07c411570c3e2b4e781d8f82ac28bce39fe866283",
+      "session_metadata.csv": "fc461b401d07f6aed85283ba23376682704ce3f49bea696b6a8b5a9d75ca02e1"
+    },
+    "extraction_summary_sha256": "49c8d95bfc1aca33857aec303148deeae1d05c01646f14fe5293cc5152a7d537",
+    "labels_sha256": "8c3761a6db25ee0fa413efaadeae2a664e100959f615ab62638343a63bd06709",
+    "reconciliation_sha256": "076a73cd4eff43cf0a4dd5c5f511b724a6e409bb6724fe702f74da27b70a0464",
+    "columns_exactly_spec_13": true,
+    "rows": 900,
+    "sessions_in_summary": 900,
+    "file_level_warnings": [],
+    "every_feature_row_labelled": true,
+    "note": "feature values were not read or summarised before the one-time scoring step"
+  },
+  "preregistered_classification_rules": {
+    "path": "evidence/preregistered_classification_rules.json",
+    "sha256": "cb599d219554f2536d1581c0b0b646f62c97b3bd70d565086f84e6371dc33c06",
+    "hashed_at": "2026-11-11T09:49:24Z"
+  },
+  "scoring": {
+    "scoring_started_utc": "2026-11-11T15:16:13Z",
+    "scoring_finished_utc": "2026-11-11T15:16:14Z",
+    "single_approved_evaluation": true,
+    "pipeline_selfcheck_on_published_validation": {
+      "A_ae_reconstruction": {
+        "scores_equal_at_stored_precision": true,
+        "flags_equal": true
+      },
+      "B_latent_knn": {
+        "scores_equal_at_stored_precision": true,
+        "flags_equal": true
+      },
+      "C_input_knn": {
+        "scores_equal_at_stored_precision": true,
+        "flags_equal": true
+      }
+    },
+    "test_rows_total": 900,
+    "scored_logged_in": 600,
+    "not_scored_failed_login_rows": 300,
+    "flagged": {
+      "A_ae_reconstruction": 5,
+      "B_latent_knn": 13,
+      "C_input_knn": 26
+    },
+    "thresholds": {
+      "A_ae_reconstruction": 1.171445,
+      "B_latent_knn": 0.72919,
+      "C_input_knn": 1.692104
+    },
+    "inference_batch_size": 256,
+    "outputs_sha256": {
+      "evidence/test_scores_core.csv": "006c13e8fc9ba9491e2a8114f26094713165055e9007d95b8e3e07e58e369f59",
+      "evidence/test_score_internals.npz": "b9381c573873418d164026ab98718002489b563857138fb3f63769502c083b44"
+    }
+  },
+  "deliverable_sha256": {
+    "test_feature_summary.csv": "3fedf41b27554975a1af1885d7319e89167a188e8c0cbe2a1ea058b67951feca",
+    "test_scores.csv": "c3ab02e8ee22c72a6099ac2de71ae2957aff1d1141fc0faf425f64f3c35e25a8",
+    "flagged_session_analysis.csv": "5821369231be15375492dad787ac5c684217623cc6200c942d5e5f18430a63e7",
+    "method_comparison.csv": "cc7284f18af29328f7001f59c202e91841cffbbbd30d8a406a62a5cb22f1c210"
+  },
+  "figures_sha256": {
+    "feature_distributions_validation_vs_test.png": "ab73500e78d870a6c386e46d3cd67629777b67ee9ab68c2797c3789a7e38390d",
+    "score_distributions_validation_vs_test.png": "cc28ceac8a42bd19a76e95b871b817d3d3478cdaf5276603af808c966804016e"
+  }
+}

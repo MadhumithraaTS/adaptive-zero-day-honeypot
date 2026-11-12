@@ -1,0 +1,471 @@
+{
+  "scope": "validation split only (270 sessions); test split not loaded",
+  "n_validation": 270,
+  "ae_kmeans_inventory": {
+    "saved_aggregate_metrics": {
+      "models/dec_15_feature_v1/metrics_validation.json": {
+        "validation_input_space": {
+          "occupied_clusters": 3,
+          "silhouette": 0.4146488308906555,
+          "davies_bouldin": 1.1333455709081068,
+          "calinski_harabasz": 204.17130043094744
+        },
+        "validation_latent_space": {
+          "occupied_clusters": 3,
+          "silhouette": 0.5078640580177307,
+          "davies_bouldin": 0.8199426262634151,
+          "calinski_harabasz": 412.57876197233185
+        },
+        "validation_clusters": {
+          "0": 119,
+          "1": 110,
+          "2": 41
+        },
+        "ari_vs_attack_cat": 0.1535478374276878,
+        "nmi_vs_attack_cat": 0.2949363126246702
+      },
+      "models/dec_15_feature_v2_deterministic/metrics_validation.json": "identical aggregate values (v2 run, single-threaded K-Means)",
+      "aggregate_values_identical_v1_v2": true
+    },
+    "not_saved": [
+      "pre-DEC encoder weights (DEC refinement overwrites the encoder; only the refined DEC encoder is saved)",
+      "K-Means centres fitted on the pre-DEC latent space",
+      "per-session validation cluster assignments",
+      "per-session validation embeddings",
+      "any probability or confidence output (K-Means gives hard assignments; none was defined or saved)"
+    ],
+    "not_applicable_older_artifacts": {
+      "model_selection/cowrie_encoder.keras": "17 inputs (with ct_*), 2-d latent, trained on all 1,800 rows incl. validation",
+      "model_selection/cowrie_autoencoder.keras": "17 inputs, 2-d latent",
+      "model_selection/dec_artifacts/encoder.weights.h5": "24 inputs (UNSW-NB15 notebook)",
+      "model_selection/checkpoints/kmeans_best.pkl": "KMeans with 24 inputs (UNSW-NB15 notebook)"
+    },
+    "artifact_sha256": {
+      "models/dec_15_feature_v1/metrics_validation.json": "61a8f402bc650151053ec1d23d2e78e1a3272846c7592a5a81a4924af144c5ef",
+      "models/dec_15_feature_v2_deterministic/metrics_validation.json": "30d75668bf4b272d77a0d03b5adf314385d28ecec418b34136dcbf74bc5a82f2"
+    }
+  },
+  "no_command_group": {
+    "definition": "spkts == 0 (client sent no data packets after the handshake)",
+    "n": 119,
+    "same_rows_have_zero": {
+      "spkts": true,
+      "sbytes": true,
+      "sload": true,
+      "ackdat": true
+    },
+    "by_generator_category": {
+      "zero_day_buffer_overflow": 33,
+      "brute_force_only": 33,
+      "reconnaissance": 16,
+      "zero_day_covert_tunnel": 9,
+      "botnet_malware_download": 8,
+      "zero_day_obfuscated_memory_attack": 7,
+      "evasion_anti_forensics": 7,
+      "privilege_escalation": 6
+    },
+    "share_of_each_category": {
+      "botnet_malware_download": 0.229,
+      "brute_force_only": 1.0,
+      "evasion_anti_forensics": 0.206,
+      "privilege_escalation": 0.188,
+      "reconnaissance": 0.4,
+      "zero_day_buffer_overflow": 1.0,
+      "zero_day_covert_tunnel": 0.31,
+      "zero_day_obfuscated_memory_attack": 0.206
+    },
+    "cluster_size_119_in_saved_aggregates": {
+      "ae_kmeans": {
+        "0": 119,
+        "1": 110,
+        "2": 41
+      },
+      "dec_v2": {
+        "0": 119,
+        "1": 97,
+        "2": 54
+      }
+    }
+  },
+  "input_space_outliers": {
+    "measure": "largest |z| across the 15 scaled inputs (log1p + train-fitted StandardScaler)",
+    "sessions_max_abs_z_above_3": 7,
+    "sessions_max_abs_z_above_4": 3,
+    "top_sessions": [
+      {
+        "session_id": "d1326edfd88e",
+        "attack_cat": "privilege_escalation",
+        "max_abs_z": 4.71,
+        "feature": "dpkts",
+        "raw_value": 9.0,
+        "train_median": 5.0
+      },
+      {
+        "session_id": "336ce1f7947e",
+        "attack_cat": "privilege_escalation",
+        "max_abs_z": 4.06,
+        "feature": "sjit",
+        "raw_value": 2.922387,
+        "train_median": 0.0
+      },
+      {
+        "session_id": "14369b7c6cbf",
+        "attack_cat": "privilege_escalation",
+        "max_abs_z": 4.06,
+        "feature": "sjit",
+        "raw_value": 2.916136,
+        "train_median": 0.0
+      },
+      {
+        "session_id": "01665a597ddc",
+        "attack_cat": "reconnaissance",
+        "max_abs_z": 3.77,
+        "feature": "sjit",
+        "raw_value": 2.590371,
+        "train_median": 0.0
+      },
+      {
+        "session_id": "a12b6d99db0c",
+        "attack_cat": "privilege_escalation",
+        "max_abs_z": 3.5,
+        "feature": "sinpkt",
+        "raw_value": 8.387435,
+        "train_median": 0.0
+      },
+      {
+        "session_id": "3cbbf1a3bff7",
+        "attack_cat": "reconnaissance",
+        "max_abs_z": 3.26,
+        "feature": "spkts",
+        "raw_value": 9.0,
+        "train_median": 1.0
+      },
+      {
+        "session_id": "794e710f5a0b",
+        "attack_cat": "reconnaissance",
+        "max_abs_z": 3.26,
+        "feature": "spkts",
+        "raw_value": 9.0,
+        "train_median": 1.0
+      },
+      {
+        "session_id": "35a9f664aa81",
+        "attack_cat": "privilege_escalation",
+        "max_abs_z": 2.91,
+        "feature": "sjit",
+        "raw_value": 1.7779,
+        "train_median": 0.0
+      }
+    ],
+    "outliers_by_category_above_3": {
+      "privilege_escalation": 4,
+      "reconnaissance": 3
+    }
+  },
+  "generator_artefacts": {
+    "exact_value_lookup": {
+      "dur": {
+        "val_exact_value_seen_in_train": 0.419,
+        "val_value_unique_to_one_train_category": 0.252,
+        "lookup_category_correct_share_of_val": 0.078
+      },
+      "spkts": {
+        "val_exact_value_seen_in_train": 1.0,
+        "val_value_unique_to_one_train_category": 0.041,
+        "lookup_category_correct_share_of_val": 0.041
+      },
+      "dpkts": {
+        "val_exact_value_seen_in_train": 0.996,
+        "val_value_unique_to_one_train_category": 0.0,
+        "lookup_category_correct_share_of_val": 0.0
+      },
+      "sbytes": {
+        "val_exact_value_seen_in_train": 0.996,
+        "val_value_unique_to_one_train_category": 0.126,
+        "lookup_category_correct_share_of_val": 0.119
+      },
+      "dbytes": {
+        "val_exact_value_seen_in_train": 0.556,
+        "val_value_unique_to_one_train_category": 0.219,
+        "lookup_category_correct_share_of_val": 0.126
+      },
+      "rate": {
+        "val_exact_value_seen_in_train": 0.337,
+        "val_value_unique_to_one_train_category": 0.0,
+        "lookup_category_correct_share_of_val": 0.0
+      },
+      "sload": {
+        "val_exact_value_seen_in_train": 0.467,
+        "val_value_unique_to_one_train_category": 0.026,
+        "lookup_category_correct_share_of_val": 0.026
+      },
+      "dload": {
+        "val_exact_value_seen_in_train": 0.337,
+        "val_value_unique_to_one_train_category": 0.0,
+        "lookup_category_correct_share_of_val": 0.0
+      },
+      "sinpkt": {
+        "val_exact_value_seen_in_train": 0.556,
+        "val_value_unique_to_one_train_category": 0.0,
+        "lookup_category_correct_share_of_val": 0.0
+      },
+      "dinpkt": {
+        "val_exact_value_seen_in_train": 0.233,
+        "val_value_unique_to_one_train_category": 0.104,
+        "lookup_category_correct_share_of_val": 0.03
+      },
+      "sjit": {
+        "val_exact_value_seen_in_train": 0.737,
+        "val_value_unique_to_one_train_category": 0.0,
+        "lookup_category_correct_share_of_val": 0.0
+      },
+      "djit": {
+        "val_exact_value_seen_in_train": 0.026,
+        "val_value_unique_to_one_train_category": 0.026,
+        "lookup_category_correct_share_of_val": 0.011
+      },
+      "tcprtt": {
+        "val_exact_value_seen_in_train": 0.981,
+        "val_value_unique_to_one_train_category": 0.004,
+        "lookup_category_correct_share_of_val": 0.0
+      },
+      "synack": {
+        "val_exact_value_seen_in_train": 0.981,
+        "val_value_unique_to_one_train_category": 0.004,
+        "lookup_category_correct_share_of_val": 0.0
+      },
+      "ackdat": {
+        "val_exact_value_seen_in_train": 0.441,
+        "val_value_unique_to_one_train_category": 0.0,
+        "lookup_category_correct_share_of_val": 0.0
+      }
+    },
+    "synack_over_tcprtt": {
+      "min": 0.44999999999999996,
+      "max": 0.45000000000000007
+    },
+    "tcprtt_minus_synack_minus_ackdat_max_abs": 17.313218000000003,
+    "dpkts_distinct_values": [
+      4,
+      5,
+      6,
+      7,
+      9
+    ],
+    "dpkts_by_category": {
+      "4": {
+        "botnet_malware_download": 8,
+        "brute_force_only": 33,
+        "evasion_anti_forensics": 7,
+        "privilege_escalation": 6,
+        "reconnaissance": 16,
+        "zero_day_buffer_overflow": 5,
+        "zero_day_covert_tunnel": 9,
+        "zero_day_obfuscated_memory_attack": 7
+      },
+      "5": {
+        "botnet_malware_download": 18,
+        "brute_force_only": 0,
+        "evasion_anti_forensics": 18,
+        "privilege_escalation": 12,
+        "reconnaissance": 16,
+        "zero_day_buffer_overflow": 0,
+        "zero_day_covert_tunnel": 20,
+        "zero_day_obfuscated_memory_attack": 26
+      },
+      "6": {
+        "botnet_malware_download": 9,
+        "brute_force_only": 0,
+        "evasion_anti_forensics": 7,
+        "privilege_escalation": 10,
+        "reconnaissance": 6,
+        "zero_day_buffer_overflow": 28,
+        "zero_day_covert_tunnel": 0,
+        "zero_day_obfuscated_memory_attack": 1
+      },
+      "7": {
+        "botnet_malware_download": 0,
+        "brute_force_only": 0,
+        "evasion_anti_forensics": 2,
+        "privilege_escalation": 3,
+        "reconnaissance": 2,
+        "zero_day_buffer_overflow": 0,
+        "zero_day_covert_tunnel": 0,
+        "zero_day_obfuscated_memory_attack": 0
+      },
+      "9": {
+        "botnet_malware_download": 0,
+        "brute_force_only": 0,
+        "evasion_anti_forensics": 0,
+        "privilege_escalation": 1,
+        "reconnaissance": 0,
+        "zero_day_buffer_overflow": 0,
+        "zero_day_covert_tunnel": 0,
+        "zero_day_obfuscated_memory_attack": 0
+      }
+    },
+    "spkts_distinct_values": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "category_medians_validation": {
+    "botnet_malware_download": {
+      "dur": 1.924,
+      "spkts": 3.0,
+      "dpkts": 5.0,
+      "sbytes": 39.0,
+      "dbytes": 616.0,
+      "rate": 217.4548,
+      "tcprtt": 0.076
+    },
+    "brute_force_only": {
+      "dur": 0.227,
+      "spkts": 0.0,
+      "dpkts": 4.0,
+      "sbytes": 0.0,
+      "dbytes": 0.0,
+      "rate": 0.0,
+      "tcprtt": 0.072
+    },
+    "evasion_anti_forensics": {
+      "dur": 3.5765,
+      "spkts": 3.0,
+      "dpkts": 5.0,
+      "sbytes": 41.0,
+      "dbytes": 924.5,
+      "rate": 254.108,
+      "tcprtt": 0.077
+    },
+    "privilege_escalation": {
+      "dur": 11.662,
+      "spkts": 2.0,
+      "dpkts": 5.0,
+      "sbytes": 33.5,
+      "dbytes": 1887.5,
+      "rate": 151.5554,
+      "tcprtt": 0.0745
+    },
+    "reconnaissance": {
+      "dur": 6.2255,
+      "spkts": 2.0,
+      "dpkts": 5.0,
+      "sbytes": 18.5,
+      "dbytes": 823.0,
+      "rate": 83.7413,
+      "tcprtt": 0.073
+    },
+    "zero_day_buffer_overflow": {
+      "dur": 0.347,
+      "spkts": 0.0,
+      "dpkts": 6.0,
+      "sbytes": 0.0,
+      "dbytes": 58.0,
+      "rate": 151.8438,
+      "tcprtt": 0.079
+    },
+    "zero_day_covert_tunnel": {
+      "dur": 8.058,
+      "spkts": 1.0,
+      "dpkts": 5.0,
+      "sbytes": 49.0,
+      "dbytes": 180.0,
+      "rate": 24.0086,
+      "tcprtt": 0.068
+    },
+    "zero_day_obfuscated_memory_attack": {
+      "dur": 0.4915,
+      "spkts": 2.0,
+      "dpkts": 5.0,
+      "sbytes": 64.0,
+      "dbytes": 2604.5,
+      "rate": 5036.5861,
+      "tcprtt": 0.0705
+    }
+  },
+  "dec_v2_research_comparison": {
+    "clusters": {
+      "0": 119,
+      "1": 97,
+      "2": 54
+    },
+    "cluster_equal_to_no_command_group": {
+      "0": true,
+      "1": false,
+      "2": false
+    },
+    "per_session_input_silhouette": {
+      "negative": 11,
+      "below_0.1": 28,
+      "by_cluster_mean": {
+        "0": 0.556,
+        "1": 0.304,
+        "2": 0.217
+      }
+    },
+    "confidence_below_0.7": 10,
+    "top1_top2_gap_below_0.2": 5,
+    "negative_silhouette_by_category": {
+      "privilege_escalation": 4,
+      "zero_day_covert_tunnel": 4,
+      "reconnaissance": 2,
+      "evasion_anti_forensics": 1
+    },
+    "contingency_category_by_cluster": {
+      "botnet_malware_download": {
+        "0": 8,
+        "1": 27,
+        "2": 0
+      },
+      "brute_force_only": {
+        "0": 33,
+        "1": 0,
+        "2": 0
+      },
+      "evasion_anti_forensics": {
+        "0": 7,
+        "1": 26,
+        "2": 1
+      },
+      "privilege_escalation": {
+        "0": 6,
+        "1": 3,
+        "2": 23
+      },
+      "reconnaissance": {
+        "0": 16,
+        "1": 2,
+        "2": 22
+      },
+      "zero_day_buffer_overflow": {
+        "0": 33,
+        "1": 0,
+        "2": 0
+      },
+      "zero_day_covert_tunnel": {
+        "0": 9,
+        "1": 12,
+        "2": 8
+      },
+      "zero_day_obfuscated_memory_attack": {
+        "0": 7,
+        "1": 27,
+        "2": 0
+      }
+    },
+    "note": "DEC is the research comparison, not the primary model; these numbers say nothing per-session about AE+K-Means."
+  },
+  "figures": {
+    "13_no_command_share_by_category.png": "119 validation sessions send no data (spkts, sbytes, sload and ackdat all 0). Every saved model has a validation cluster of exactly that size; the group mixes all 8 generator categories, so any cluster that captures it cannot separate those categories.",
+    "13_input_outliers.png": "7 validation sessions have at least one input more than 3 training SDs from the training mean; these are the sessions most likely to sit far from any centre, whatever the model.",
+    "13_exact_value_lookup.png": "For each input, the share of validation sessions whose exact value was seen in only one training category, and how often that lookup names the right generator category. High shares would indicate a generator fingerprint like the removed ct_* features."
+  }
+}

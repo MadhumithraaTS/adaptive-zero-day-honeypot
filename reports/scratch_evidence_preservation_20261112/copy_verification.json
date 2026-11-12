@@ -1,0 +1,62 @@
+[
+  {
+    "filename": "attackA_resigned_with_attacker_key_0.json",
+    "source": "cowrie/assessment_work/input/attackA_resigned_with_attacker_key_0.json",
+    "destination": "reports/attribution_trust_boundary_remediation_20261111/evidence/attack_inputs/attackA_resigned_with_attacker_key_0.json",
+    "bytes_source": 10265,
+    "bytes_destination": 10265,
+    "sha256_source": "5f479c09bd361db816eba0bd66d96c34926dc43dc6b6787add7d021c3ad2be27",
+    "sha256_destination": "5f479c09bd361db816eba0bd66d96c34926dc43dc6b6787add7d021c3ad2be27",
+    "verified": true
+  },
+  {
+    "filename": "attackA_signed_then_altered_0.json",
+    "source": "cowrie/assessment_work/input/attackA_signed_then_altered_0.json",
+    "destination": "reports/attribution_trust_boundary_remediation_20261111/evidence/attack_inputs/attackA_signed_then_altered_0.json",
+    "bytes_source": 10265,
+    "bytes_destination": 10265,
+    "sha256_source": "318af8367db131eb47592136a855a7bdb59f931294982734e603372df546d051",
+    "sha256_destination": "318af8367db131eb47592136a855a7bdb59f931294982734e603372df546d051",
+    "verified": true
+  },
+  {
+    "filename": "attackA_unsigned_S5_to_test_client_0.json",
+    "source": "cowrie/assessment_work/input/attackA_unsigned_S5_to_test_client_0.json",
+    "destination": "reports/attribution_trust_boundary_remediation_20261111/evidence/attack_inputs/attackA_unsigned_S5_to_test_client_0.json",
+    "bytes_source": 6944,
+    "bytes_destination": 6944,
+    "sha256_source": "13902d7bcada9aae4a8cee412e864d012e28338ebd7952a19047e4289a264b9b",
+    "sha256_destination": "13902d7bcada9aae4a8cee412e864d012e28338ebd7952a19047e4289a264b9b",
+    "verified": true
+  },
+  {
+    "filename": "attackB_signed_then_altered_0.json",
+    "source": "cowrie/assessment_work/input/attackB_signed_then_altered_0.json",
+    "destination": "reports/attribution_trust_boundary_remediation_20261111/evidence/attack_inputs/attackB_signed_then_altered_0.json",
+    "bytes_source": 10268,
+    "bytes_destination": 10268,
+    "sha256_source": "274751589194142f97c4ae82f12363f72bf0f381390dae02d37bd18ce5e1a6ff",
+    "sha256_destination": "274751589194142f97c4ae82f12363f72bf0f381390dae02d37bd18ce5e1a6ff",
+    "verified": true
+  },
+  {
+    "filename": "attackB_unsigned_S4_to_unregistered_0.json",
+    "source": "cowrie/assessment_work/input/attackB_unsigned_S4_to_unregistered_0.json",
+    "destination": "reports/attribution_trust_boundary_remediation_20261111/evidence/attack_inputs/attackB_unsigned_S4_to_unregistered_0.json",
+    "bytes_source": 6942,
+    "bytes_destination": 6942,
+    "sha256_source": "e802e9ad663161c13963a69508e87c96de2e9b66f87d5b3c689e7c72248f2f74",
+    "sha256_destination": "e802e9ad663161c13963a69508e87c96de2e9b66f87d5b3c689e7c72248f2f74",
+    "verified": true
+  },
+  {
+    "filename": "genuine_plus_forged_1.json",
+    "source": "cowrie/assessment_work/input/genuine_plus_forged_1.json",
+    "destination": "reports/attribution_trust_boundary_remediation_20261111/evidence/attack_inputs/genuine_plus_forged_1.json",
+    "bytes_source": 6944,
+    "bytes_destination": 6944,
+    "sha256_source": "13902d7bcada9aae4a8cee412e864d012e28338ebd7952a19047e4289a264b9b",
+    "sha256_destination": "13902d7bcada9aae4a8cee412e864d012e28338ebd7952a19047e4289a264b9b",
+    "verified": true
+  }
+]

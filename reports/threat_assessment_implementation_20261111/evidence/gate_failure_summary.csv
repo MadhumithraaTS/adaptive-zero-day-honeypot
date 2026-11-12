@@ -1,0 +1,25 @@
+split,gate,review_sessions_failing,review_sessions,all_sessions_failing
+train,1_severity_S2_or_higher,0.0,619.0,2571
+train,2_interpretation_E2_or_higher_on_an_S2plus_finding,291.0,619.0,2862
+train,3_two_distinct_action_indicators,291.0,619.0,2862
+train,4_successful_login,0.0,619.0,1789
+train,5_attributable_source,619.0,619.0,3190
+train,6_not_protected_or_shared,0.0,619.0,0
+train,7_verified_configuration_digests,0.0,619.0,0
+train,8_no_processing_errors,0.0,619.0,0
+train,attribution states (all sessions),,,"{""unattributed:trusted_proxy"": 3190}"
+train,novelty-flagged sessions by tier,,,{}
+train,ART-1 sessions by tier,,,"{""review"": 30}"
+train,benign sessions above record,,,0
+validation,1_severity_S2_or_higher,0.0,238.0,1019
+validation,2_interpretation_E2_or_higher_on_an_S2plus_finding,114.0,238.0,1133
+validation,3_two_distinct_action_indicators,114.0,238.0,1133
+validation,4_successful_login,0.0,238.0,698
+validation,5_attributable_source,238.0,238.0,1257
+validation,6_not_protected_or_shared,0.0,238.0,0
+validation,7_verified_configuration_digests,0.0,238.0,0
+validation,8_no_processing_errors,0.0,238.0,0
+validation,attribution states (all sessions),,,"{""unattributed:trusted_proxy"": 1257}"
+validation,novelty-flagged sessions by tier,,,"{""review"": 2, ""record"": 2}"
+validation,ART-1 sessions by tier,,,"{""review"": 9}"
+validation,benign sessions above record,,,0

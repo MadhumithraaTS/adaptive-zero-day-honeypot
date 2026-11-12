@@ -1,0 +1,12 @@
+--- cowrie/backups/pre_gateway_remediation_20261110/docker-compose.yml	2026-11-10 17:54:32.558807700 +0530
++++ cowrie/docker-compose.yml	2026-11-10 17:54:46.787006900 +0530
+@@ -40,4 +40,9 @@
+ networks:
+   cowrie_internal:
+     internal: true
++    # No gateway address on the bridge, so Cowrie cannot reach Docker Desktop VM services (rpcbind 111, statd)
++    # via 172.22.0.1. Relay <-> Cowrie traffic is bridged at layer 2 and is unaffected.
++    # Engine >= 28 only; requires internal: true. See reports/cowrie_gateway_remediation/report.md.
++    driver_opts:
++      com.docker.network.bridge.gateway_mode_ipv4: isolated
+   relay_frontend: {}

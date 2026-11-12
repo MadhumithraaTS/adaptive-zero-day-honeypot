@@ -1,0 +1,30 @@
+﻿# host IPv4 interfaces and routes (read-only) 2026-11-11T16:45:36Z
+
+InterfaceAlias                     IPAddress       PrefixLength
+--------------                     ---------       ------------
+vEthernet (WSL (Hyper-V firewall)) 172.27.0.1                20
+Ethernet                           192.168.56.1              24
+Local Area Connection* 2           169.254.166.215           16
+Local Area Connection* 1           169.254.126.215           16
+Wi-Fi                              172.20.10.5               28
+Local Area Connection              169.254.85.209            16
+Loopback Pseudo-Interface 1        127.0.0.1                  8
+
+
+
+0.0.0.0/0
+127.0.0.0/8
+127.0.0.1/32
+127.255.255.255/32
+172.20.10.0/28
+172.20.10.15/32
+172.20.10.5/32
+172.27.0.0/20
+172.27.0.1/32
+172.27.15.255/32
+192.168.56.0/24
+192.168.56.1/32
+192.168.56.255/32
+224.0.0.0/4
+255.255.255.255/32
+

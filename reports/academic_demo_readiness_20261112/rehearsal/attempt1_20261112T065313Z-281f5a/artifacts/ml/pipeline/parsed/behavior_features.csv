@@ -1,0 +1,2 @@
+session_id,src_ip,src_port,dur,proto,service,spkts,dpkts,sbytes,dbytes,rate,sttl,dttl,sload,dload,sinpkt,dinpkt,sjit,djit,tcprtt,synack,ackdat,ct_srv_src,ct_state_ttl,ct_dst_ltm,ct_src_ltm,ct_srv_dst,attack_cat,label
+0ce16882846d,172.22.0.2,47020,9.0,ssh,ssh,5,7,69,838,100.7778,64,64,61.3333,744.8889,1.5,1.493333,0.0,2.490636,0.08,0.036,2.5,1,1,1,1,1,normal,0

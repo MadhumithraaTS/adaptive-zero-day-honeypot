@@ -1,0 +1,12 @@
+uid=0
+nsenter=/usr/bin/nsenter
+iptables-nft-save=
+iptables-legacy-save=
+iptables-save=
+ip6tables-nft-save=
+ip6tables-save=
+nft=
+ip=/sbin/ip
+dockerd=165
+pid=2837 netns=net:[4026532405] cmd=/cowrie/cowrie-env/bin/python3 /cowrie/cowrie-env/bin/twistd -n --umask=0022 --pidfile= cowrie 
+pid=2890 netns=net:[4026532546] cmd=/cowrie/cowrie-env/bin/python3 /cowrie/cowrie-env/bin/twistd -n --pidfile= portforward --port=tcp:2222 --host=cowrie --dest_port=2222 

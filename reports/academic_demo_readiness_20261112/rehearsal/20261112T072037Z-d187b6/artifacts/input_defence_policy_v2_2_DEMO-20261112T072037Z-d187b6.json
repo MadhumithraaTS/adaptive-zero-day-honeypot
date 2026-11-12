@@ -1,0 +1,43 @@
+{
+  "schema_version": "2.1",
+  "policy_name": "cowrie-defence-policy",
+  "policy_version": "2.2.0-DEMO",
+  "note": "DEMO ONLY - ephemeral in-memory key, not production trust",
+  "enforcement": "disabled",
+  "manual_approval_required": true,
+  "required_behavioural_evidence_catalogue": "v2-evidence-1.1",
+  "attribution_config": {
+    "path": "DEMO",
+    "config_version": "3.0.0-DEMO",
+    "sha256_digest": "32d0deded621cbed14616366ca792116fbb917ecaf5ee8243e1d618eb68dfdcf"
+  },
+  "address_safety_config": {
+    "path": "../../work/input/address_safety_DEMO-20261112T072037Z-d187b6.json",
+    "config_version": "1.0.0-DEMO",
+    "sha256_digest": "278563bd94d1900014cbdfaa2ef76708ffeb755c687f2f10a51640872c0dbc70"
+  },
+  "tiers": [
+    "abstain",
+    "record",
+    "review",
+    "propose"
+  ],
+  "proposal_conditions": {
+    "min_finding_severity": "S2",
+    "min_interpretation_evidence_level": "E2",
+    "min_distinct_action_indicators": 2,
+    "require_successful_login": true,
+    "require_attributable_source": true,
+    "exclude_protected_and_shared_sources": true,
+    "require_verified_configuration_digests": true,
+    "require_no_processing_errors": true,
+    "require_authentication_event": true
+  },
+  "proposed_action": {
+    "type": "block_source_ip",
+    "scope": "this sensor only",
+    "mode": "dry_run",
+    "ttl_seconds": 86400,
+    "inverse": "unblock_source_ip"
+  }
+}

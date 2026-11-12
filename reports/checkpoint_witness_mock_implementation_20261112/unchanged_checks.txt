@@ -1,0 +1,37 @@
+## gates/severity/audit + assessment (unchanged)
+  ../../threat_assessment/audit.py: OK
+  ../../threat_assessment/severity.py: OK
+  ../../threat_assessment/assessment.py: OK
+  ../../threat_assessment/attribution.py: OK
+## behavioural_evidence
+9
+## live relay, configs, compose (Task 26D manifest)
+  ../../configs/threat_attribution_v3.json: OK
+  ../../configs/defence_policy_v2_2.json: OK
+  ../../configs/address_safety_v1.json: OK
+  ../../cowrie/docker-compose.yml: OK
+  ../../cowrie/attributing_relay/relay_config.json: OK
+  ../../cowrie/attributing_relay/relay_mapping_ed25519.pub.pem: OK
+  ../../cowrie/attributing_relay/attributing_relay.py: OK
+## dynamic_response (27B manifest)
+13
+## intentionally modified (vs 26D-1 / 26C manifests)
+  ../../threat_assessment/config.py: FAILED
+  ../../threat_assessment/signed_attribution.py: FAILED
+  sha256sum: WARNING: 2 computed checksums did NOT match
+  ../../client_attribution/checkpoints.py: FAILED
+  ../../client_attribution/result.py: FAILED
+  sha256sum: WARNING: 2 computed checksums did NOT match
+## relay key (metadata only)
+cowrie/attributing_relay/secrets/relay_mapping_ed25519.pem size=119 mtime=2026-11-11 22:42:34.222620100 +0530
+## volumes / containers / firewall
+  no witness volumes created
+cowrie-demo-test-client Up 3 hours
+cowrie-demo-control-client Up 3 hours
+cowrie-ssh-relay Up 3 hours
+cowrie-project Up 31 hours
+relay restarts=0 started=2026-11-11T17:16:39.998671742Z
+rules mentioning demo client IPs (any table):
+(end)
+nft ruleset lines mentioning 10.250.25.3/.4: 0
+bridge rules count total filter: 51

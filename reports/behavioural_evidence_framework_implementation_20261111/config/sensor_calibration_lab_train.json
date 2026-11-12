@@ -1,0 +1,11 @@
+{
+  "schema": "sensor-calibration-1",
+  "sensor": "cowrie-project (lab, image bf371c37)",
+  "version": "train-20261110",
+  "slow_threshold_s": 5.0,
+  "slow_commands": [
+    "find / -name id_rsa 2>/dev/null"
+  ],
+  "inter_input_gap_reference_p99_s": 9.81708,
+  "source": "Dataset V2 TRAIN split only: manifest command_log wait_s >= 5 s; Cowrie command.input gap p99"
+}

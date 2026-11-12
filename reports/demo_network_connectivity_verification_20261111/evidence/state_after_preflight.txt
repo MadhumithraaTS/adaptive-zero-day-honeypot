@@ -1,0 +1,24 @@
+# state after preflight (nothing created) 2026-11-11T16:45:40Z
+/cowrie-ssh-relay id=8d3bafb35f38 started=2026-11-10T12:30:31.406935186Z restarts=0 nets=cowrie_cowrie_internal=172.22.0.2 cowrie_relay_frontend=172.21.0.2 
+/cowrie-project id=0bec5a78b1cb started=2026-11-10T12:30:30.630598884Z restarts=0 nets=cowrie_cowrie_internal=172.22.0.1 
+bridge aa247d88ef47
+cowrie_cowrie_internal 8de3b00259f2
+cowrie_default 29dbe112c59e
+cowrie_relay_frontend c94e904b8861
+et-ai_default ace391997e9b
+host bd88fc39a1bc
+none a4d2039ab024
+rezumy_default e0f9fc878c71
+charming_sammet
+cowrie-honeypot
+cowrie-project
+cowrie-ssh-relay
+datacenter_kb_postgres
+distracted_chatterjee
+distracted_gates
+interesting_bhabha
+nice_gould
+rezumy-postgres
+cd84da489d29840d1f7c81465359b023caa139ad908e37b0c3e622f47f32e9f5 *cowrie/docker-compose.yml
+46109a31e91161bc9c02163ee5cd72169a4e73ed95b636b02fc2a72fdb53fac0 *configs/threat_attribution_v1.json
+24fd8cf49f6823ff2e188b9d01fab092bc42464e8c26bfb39acd869f22494cd4 *configs/defence_policy_v2.json

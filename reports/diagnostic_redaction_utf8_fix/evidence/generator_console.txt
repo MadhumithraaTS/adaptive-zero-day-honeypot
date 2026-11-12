@@ -1,0 +1,11 @@
+===== benign_admin 11:06:23
+Cowrie log baseline: 506 existing lines (this run's events come after).
+[1/1] benign_admin           ok
+Done. 1/1 sessions completed cleanly.
+Manifest: reports/diagnostic_redaction_utf8_fix/runs/benign_admin\manifest.jsonl
+===== botnet 11:06:37
+Cowrie log baseline: 520 existing lines (this run's events come after).
+[1/1] botnet                 ok
+Done. 1/1 sessions completed cleanly.
+Manifest: reports/diagnostic_redaction_utf8_fix/runs/botnet\manifest.jsonl
+===== done 11:06:53

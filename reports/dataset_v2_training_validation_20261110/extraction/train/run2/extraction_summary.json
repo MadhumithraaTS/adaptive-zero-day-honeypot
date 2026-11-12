@@ -1,0 +1,69 @@
+{
+  "extractor": "scripts/extract_features_v2.py",
+  "feature_spec_version": "2.0.0-draft.3",
+  "spec_sha256": "9401b355a1bfc48a14da32efba9ad4d5992f55233da3437a0715690d76f8fb1a",
+  "inputs": [
+    {
+      "path": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\dataset_v2_training_validation_20261110\\raw\\train\\cowrie_slice.json",
+      "sha256": "60c3852745b6f183fb391b4cfe772bd374412104941f576d405c547a3fb7014c",
+      "bytes": 14258746
+    }
+  ],
+  "events_read": 29955,
+  "sessions": 3190,
+  "sessions_with_warnings": 0,
+  "duplicate_records_removed": 0,
+  "file_level_warnings": [],
+  "session_warning_counts": {},
+  "nan_counts": {
+    "login_success": 0,
+    "login_failed_count": 0,
+    "session_duration_s": 0,
+    "input_line_count": 0,
+    "input_bytes_total": 0,
+    "input_line_max_bytes": 1789,
+    "unique_command_names": 0,
+    "shell_operator_lines": 0,
+    "download_command_lines": 0,
+    "time_to_first_input_s": 1789,
+    "inter_input_mean_s": 1888,
+    "inter_input_std_s": 1898,
+    "tty_output_bytes": 0
+  },
+  "model_feature_dtypes": {
+    "login_success": "int8",
+    "login_failed_count": "int32",
+    "session_duration_s": "float64",
+    "input_line_count": "int32",
+    "input_bytes_total": "int64",
+    "input_line_max_bytes": "float64",
+    "unique_command_names": "int32",
+    "shell_operator_lines": "int32",
+    "download_command_lines": "int32",
+    "time_to_first_input_s": "float64",
+    "inter_input_mean_s": "float64",
+    "inter_input_std_s": "float64",
+    "tty_output_bytes": "float64"
+  },
+  "model_feature_status": {
+    "login_success": "core",
+    "login_failed_count": "conditional",
+    "session_duration_s": "conditional",
+    "input_line_count": "core",
+    "input_bytes_total": "core",
+    "input_line_max_bytes": "core",
+    "unique_command_names": "core",
+    "shell_operator_lines": "conditional",
+    "download_command_lines": "conditional",
+    "time_to_first_input_s": "conditional",
+    "inter_input_mean_s": "conditional",
+    "inter_input_std_s": "conditional",
+    "tty_output_bytes": "core"
+  },
+  "missing_value_encoding": "'NaN' in CSV",
+  "outputs": [
+    "model_features.csv",
+    "session_metadata.csv",
+    "extraction_summary.json"
+  ]
+}

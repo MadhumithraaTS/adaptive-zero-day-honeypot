@@ -1,0 +1,16 @@
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+540 passed, 3 warnings in 115.67s (0:01:55)
+test_collect_logs: 11 passed in 0.51s
+test_log_processing: 20 passed in 4.22s
+test_pipeline_safety: 13 passed in 23.46s
+test_dec_runner: 5 passed, 1 warning in 65.47s (0:01:05)
+test_dec_preprocessing: 10 passed, 3 warnings in 2.59s
+test_behaviour_pattern_analysis: 7 passed, 1 warning in 1.65s
+test_behaviour_signature_generation: 16 passed, 1 warning in 2.15s
+test_novelty_assessment: 31 passed, 1 warning in 3.06s
+test_extract_features_v2: 43 passed in 1.46s
+test_behavioural_evidence: 80 passed in 0.38s
+test_threat_assessment: 61 passed in 0.70s
+test_trust_boundary: 98 passed in 1.35s
+test_dynamic_response: 105 passed in 1.36s

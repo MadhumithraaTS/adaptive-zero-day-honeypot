@@ -1,0 +1,55 @@
+split,indicator,kind,unit,sessions,of,rate_benign,rate_botnet,rate_brute_force,rate_lateral_movement,rate_privilege_escalation,rate_reconnaissance
+train,AUTH-0,context,all sessions,1690,3190,0.3499,0.5026,0.8055,0.3469,0.3295,0.5055
+train,AUTH-1,action,all sessions,0,3190,0.0,0.0,0.0,0.0,0.0,0.0
+train,AUTH-2,action,all sessions,0,3190,0.0,0.0,0.0,0.0,0.0,0.0
+train,SHELL-1,context,logged-in,1401,1500,1.0,1.0,0.5,1.0,1.0,1.0
+train,DISC-1,context,logged-in,1299,1500,1.0,0.759,0.3586,0.8594,1.0,1.0
+train,PRIV-1,action,logged-in,175,1500,0.0,0.0,0.0,0.0,1.0,0.0
+train,PRIV-2,context,logged-in,0,1500,0.0,0.0,0.0,0.0,0.0,0.0
+train,CRED-1,action,logged-in,311,1500,0.0,0.0,0.0,0.9271,0.76,0.0
+train,FILE-1,context,logged-in,30,1500,0.0,0.0,0.0,0.0,0.1714,0.0
+train,FILE-2,context,logged-in,171,1500,0.3048,0.0,0.0,0.0,0.0,0.0
+train,XFER-1,action,logged-in,255,1500,0.0,1.0,0.0,0.0,0.0,0.3352
+train,XFER-1-OK,action,logged-in,0,1500,0.0,0.0,0.0,0.0,0.0,0.0
+train,XFER-2,action,logged-in,0,1500,0.0,0.0,0.0,0.0,0.0,0.0
+train,XFER-2-OK,action,logged-in,0,1500,0.0,0.0,0.0,0.0,0.0,0.0
+train,EXEC-1,action,logged-in,195,1500,0.0,1.0,0.0,0.0,0.0,0.0
+train,STAGE-1,action,logged-in,0,1500,0.0,0.0,0.0,0.0,0.0,0.0
+train,EVADE-1,action,logged-in,51,1500,0.0,0.2615,0.0,0.0,0.0,0.0
+train,PERS-0,context,logged-in,418,1500,0.5936,0.0,0.0,0.0,0.4857,0.0
+train,PERS-1,action,logged-in,0,1500,0.0,0.0,0.0,0.0,0.0,0.0
+train,NET-0,context,logged-in,147,1500,0.1426,0.0,0.0,0.349,0.0,0.0
+train,NET-1,action,logged-in,120,1500,0.0,0.0,0.0,0.625,0.0,0.0
+train,CHAIN-1,context,logged-in,543,1500,0.4742,0.4667,0.0,0.4427,0.3257,0.2458
+train,REDIR-1,context,logged-in,0,1500,0.0,0.0,0.0,0.0,0.0,0.0
+train,EMU-1,caveat,logged-in,428,1500,0.3405,0.7179,0.0,0.5052,0.0,0.0
+train,ART-1,caveat,logged-in,30,1500,0.0,0.0,0.0,0.0,0.1714,0.0
+train,SEQ-1,caveat,logged-in,1401,1500,1.0,1.0,0.5,1.0,1.0,1.0
+train,TIME-0,caveat,logged-in,62,1500,0.0321,0.0359,0.0,0.0208,0.1657,0.0223
+validation,AUTH-0,context,all sessions,657,1257,0.3549,0.4779,0.8015,0.339,0.303,0.5099
+validation,AUTH-1,action,all sessions,0,1257,0.0,0.0,0.0,0.0,0.0,0.0
+validation,AUTH-2,action,all sessions,0,1257,0.0,0.0,0.0,0.0,0.0,0.0
+validation,SHELL-1,context,logged-in,559,600,1.0,1.0,0.481,1.0,1.0,1.0
+validation,DISC-1,context,logged-in,521,600,1.0,0.7746,0.3797,0.8205,1.0,1.0
+validation,PRIV-1,action,logged-in,69,600,0.0,0.0,0.0,0.0,1.0,0.0
+validation,PRIV-2,context,logged-in,0,600,0.0,0.0,0.0,0.0,0.0,0.0
+validation,CRED-1,action,logged-in,124,600,0.0,0.0,0.0,0.9103,0.7681,0.0
+validation,FILE-1,context,logged-in,9,600,0.0,0.0,0.0,0.0,0.1304,0.0
+validation,FILE-2,context,logged-in,81,600,0.3537,0.0,0.0,0.0,0.0,0.0
+validation,XFER-1,action,logged-in,92,600,0.0,1.0,0.0,0.0,0.0,0.2838
+validation,XFER-1-OK,action,logged-in,0,600,0.0,0.0,0.0,0.0,0.0,0.0
+validation,XFER-2,action,logged-in,0,600,0.0,0.0,0.0,0.0,0.0,0.0
+validation,XFER-2-OK,action,logged-in,0,600,0.0,0.0,0.0,0.0,0.0,0.0
+validation,EXEC-1,action,logged-in,71,600,0.0,1.0,0.0,0.0,0.0,0.0
+validation,STAGE-1,action,logged-in,0,600,0.0,0.0,0.0,0.0,0.0,0.0
+validation,EVADE-1,action,logged-in,21,600,0.0,0.2958,0.0,0.0,0.0,0.0
+validation,PERS-0,context,logged-in,181,600,0.6332,0.0,0.0,0.0,0.5217,0.0
+validation,PERS-1,action,logged-in,0,600,0.0,0.0,0.0,0.0,0.0,0.0
+validation,NET-0,context,logged-in,74,600,0.1965,0.0,0.0,0.3718,0.0,0.0
+validation,NET-1,action,logged-in,49,600,0.0,0.0,0.0,0.6282,0.0,0.0
+validation,CHAIN-1,context,logged-in,221,600,0.5197,0.4366,0.0,0.3974,0.2899,0.2703
+validation,REDIR-1,context,logged-in,0,600,0.0,0.0,0.0,0.0,0.0,0.0
+validation,EMU-1,caveat,logged-in,164,600,0.3144,0.6479,0.0,0.5897,0.0,0.0
+validation,ART-1,caveat,logged-in,9,600,0.0,0.0,0.0,0.0,0.1304,0.0
+validation,SEQ-1,caveat,logged-in,50,600,0.0349,0.0141,0.481,0.0385,0.0,0.0
+validation,TIME-0,caveat,logged-in,22,600,0.0218,0.0423,0.0,0.0513,0.1304,0.0135

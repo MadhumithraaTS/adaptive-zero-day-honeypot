@@ -1,0 +1,237 @@
+[
+  {
+    "profile": "benign_admin",
+    "sessions_planned": 3,
+    "sessions_logged_in": 3,
+    "login_attempts": 5,
+    "login_success": 3,
+    "login_failed": 2,
+    "commands_planned": 18,
+    "commands_sent": 18,
+    "commands_recorded": 18,
+    "prompt_returned": 18,
+    "timeouts": 0,
+    "commands_not_sent": 0,
+    "clean_exits": 3,
+    "unexpected_disconnects": 0,
+    "duration_s": [
+      13.3,
+      15.8,
+      9.6
+    ],
+    "guess_duration_s": [
+      1.1,
+      1.1
+    ],
+    "tty_output_bytes": [
+      916,
+      1089,
+      867
+    ],
+    "download_events": [],
+    "command_failed_events": 1
+  },
+  {
+    "profile": "reconnaissance",
+    "sessions_planned": 3,
+    "sessions_logged_in": 3,
+    "login_attempts": 6,
+    "login_success": 3,
+    "login_failed": 3,
+    "commands_planned": 23,
+    "commands_sent": 23,
+    "commands_recorded": 23,
+    "prompt_returned": 23,
+    "timeouts": 0,
+    "commands_not_sent": 0,
+    "clean_exits": 3,
+    "unexpected_disconnects": 0,
+    "duration_s": [
+      12.1,
+      12.7,
+      23.1
+    ],
+    "guess_duration_s": [
+      1.1,
+      1.1,
+      1.0
+    ],
+    "tty_output_bytes": [
+      2043,
+      1637,
+      4341
+    ],
+    "download_events": [],
+    "command_failed_events": 0
+  },
+  {
+    "profile": "brute_force",
+    "sessions_planned": 3,
+    "sessions_logged_in": 3,
+    "login_attempts": 15,
+    "login_success": 3,
+    "login_failed": 12,
+    "commands_planned": 2,
+    "commands_sent": 2,
+    "commands_recorded": 2,
+    "prompt_returned": 2,
+    "timeouts": 0,
+    "commands_not_sent": 0,
+    "clean_exits": 3,
+    "unexpected_disconnects": 0,
+    "duration_s": [
+      9.0,
+      7.4,
+      1.0
+    ],
+    "guess_duration_s": [
+      1.1,
+      1.0,
+      1.1,
+      1.1,
+      1.1,
+      1.1,
+      1.0,
+      1.1,
+      1.0,
+      1.1,
+      1.0,
+      1.1
+    ],
+    "tty_output_bytes": [
+      421,
+      417,
+      315
+    ],
+    "download_events": [],
+    "command_failed_events": 0
+  },
+  {
+    "profile": "botnet",
+    "sessions_planned": 3,
+    "sessions_logged_in": 3,
+    "login_attempts": 6,
+    "login_success": 3,
+    "login_failed": 3,
+    "commands_planned": 20,
+    "commands_sent": 20,
+    "commands_recorded": 20,
+    "prompt_returned": 20,
+    "timeouts": 0,
+    "commands_not_sent": 0,
+    "clean_exits": 3,
+    "unexpected_disconnects": 0,
+    "duration_s": [
+      12.3,
+      16.4,
+      19.3
+    ],
+    "guess_duration_s": [
+      1.0,
+      1.1,
+      1.1
+    ],
+    "tty_output_bytes": [
+      961,
+      2999,
+      930
+    ],
+    "download_events": [],
+    "command_failed_events": 0
+  },
+  {
+    "profile": "privilege_escalation",
+    "sessions_planned": 3,
+    "sessions_logged_in": 3,
+    "login_attempts": 5,
+    "login_success": 3,
+    "login_failed": 2,
+    "commands_planned": 19,
+    "commands_sent": 19,
+    "commands_recorded": 19,
+    "prompt_returned": 19,
+    "timeouts": 0,
+    "commands_not_sent": 0,
+    "clean_exits": 3,
+    "unexpected_disconnects": 0,
+    "duration_s": [
+      9.0,
+      29.5,
+      13.4
+    ],
+    "guess_duration_s": [
+      1.1,
+      1.0
+    ],
+    "tty_output_bytes": [
+      678,
+      666,
+      875
+    ],
+    "download_events": [],
+    "command_failed_events": 0
+  },
+  {
+    "profile": "lateral_movement",
+    "sessions_planned": 3,
+    "sessions_logged_in": 3,
+    "login_attempts": 4,
+    "login_success": 3,
+    "login_failed": 1,
+    "commands_planned": 14,
+    "commands_sent": 14,
+    "commands_recorded": 14,
+    "prompt_returned": 14,
+    "timeouts": 0,
+    "commands_not_sent": 0,
+    "clean_exits": 3,
+    "unexpected_disconnects": 0,
+    "duration_s": [
+      18.3,
+      11.1,
+      9.9
+    ],
+    "guess_duration_s": [
+      1.0
+    ],
+    "tty_output_bytes": [
+      994,
+      814,
+      811
+    ],
+    "download_events": [],
+    "command_failed_events": 3
+  },
+  {
+    "profile": "data_exfiltration",
+    "sessions_planned": 3,
+    "sessions_logged_in": 3,
+    "login_attempts": 5,
+    "login_success": 3,
+    "login_failed": 2,
+    "commands_planned": 14,
+    "commands_sent": 14,
+    "commands_recorded": 14,
+    "prompt_returned": 14,
+    "timeouts": 0,
+    "commands_not_sent": 0,
+    "clean_exits": 3,
+    "unexpected_disconnects": 0,
+    "duration_s": [
+      13.0,
+      11.3,
+      9.9
+    ],
+    "guess_duration_s": [
+      1.1,
+      1.0
+    ],
+    "tty_output_bytes": [
+      827,
+      853,
+      1059
+    ],
+    "download_events": [],
+    "command_failed_events": 0
+  }
+]

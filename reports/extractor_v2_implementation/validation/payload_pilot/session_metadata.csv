@@ -1,0 +1,6 @@
+row,session_ref,feature_spec_version,extraction_status,warnings,unknown_command_events,url_download_events,download_failed_events,redirect_write_events,scp_stdin_events,event_count,session_closed_observed,timestamp_order_mismatch
+0,3786adc92ee7,2.0.0-draft.3,ok,,0,0,0,0,0,5,1,0
+1,5f8f7af3f320,2.0.0-draft.3,ok_with_warnings,reserved_test_marker_present,1,0,0,0,0,11,1,0
+2,852266ae5622,2.0.0-draft.3,ok_with_warnings,reserved_test_marker_present,1,0,0,1,0,14,1,0
+3,ac9ae6e306b6,2.0.0-draft.3,ok_with_warnings,reserved_test_marker_present,1,0,0,0,0,11,1,0
+4,c65bb1153ddd,2.0.0-draft.3,ok,,0,0,0,0,0,5,1,0

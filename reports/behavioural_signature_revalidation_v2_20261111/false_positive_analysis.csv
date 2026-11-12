@@ -1,0 +1,15 @@
+evidence,label_or_outcome,sessions,share_of_benign_logged_in,attack_implying_label,share_of_benign_failed,share_of_category_logged_in
+E2 interpretation of benign logged-in validation sessions,Mixed/Unclassified,149,0.6507,False,,
+E2 interpretation of benign logged-in validation sessions,Reconnaissance,38,0.1659,True,,
+E2 interpretation of benign logged-in validation sessions,Persistence-related activity,31,0.1354,True,,
+E2 interpretation of benign logged-in validation sessions,Download or payload retrieval,10,0.0437,True,,
+E2 interpretation of benign logged-in validation sessions,Insufficient Evidence,1,0.0044,False,,
+E2 interpretation of benign FAILED-GUESS validation sessions,Credential-attack behaviour,126,,True,1.0,
+E3 'Potentially Novel' on KNOWN-category logged-in validation sessions,benign,47,,novelty claim on a trained category,,0.2052
+E3 'Potentially Novel' on KNOWN-category logged-in validation sessions,botnet,6,,novelty claim on a trained category,,0.0845
+E3 'Potentially Novel' on KNOWN-category logged-in validation sessions,brute_force,79,,novelty claim on a trained category,,1.0
+E3 'Potentially Novel' on KNOWN-category logged-in validation sessions,lateral_movement,10,,novelty claim on a trained category,,0.1282
+E3 'Potentially Novel' on KNOWN-category logged-in validation sessions,privilege_escalation,9,,novelty claim on a trained category,,0.1304
+E3 'Potentially Novel' on KNOWN-category logged-in validation sessions,reconnaissance,13,,novelty claim on a trained category,,0.1757
+E3 assessment of the 9 validation slow-find (Cowrie 11-12 s execution) sessions,"{""Potentially Novel"": 9}",9,,novelty driven by Cowrie timing,,
+E3 assessment of the other privilege-escalation logged-in sessions,"{""Known-like"": 35, ""Ambiguous"": 25}",60,,reference,,

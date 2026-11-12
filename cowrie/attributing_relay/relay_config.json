@@ -1,0 +1,14 @@
+{
+  "schema": "attributing-relay-config-1",
+  "version": "1.0.0",
+  "backend_host": "cowrie",
+  "backend_port": 2222,
+  "listeners": [
+    {"name": "published", "mode": "published", "bind": "172.21.0.2", "port": 2222,
+     "note": "Docker Desktop published path (127.0.0.1:2223); peer is the Docker proxy 172.21.0.1, never attributable"},
+    {"name": "demo", "mode": "demo", "bind": "10.250.25.2", "port": 2222,
+     "note": "isolated demo ingress (cowrie_demo_ingress 10.250.25.0/28); peer is the client container"}
+  ],
+  "signing_key_path": "/run/relay/relay_mapping_ed25519.pem",
+  "record_log_path": "/var/relay_records/relay_mapping.jsonl"
+}

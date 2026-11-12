@@ -1,0 +1,3 @@
+volume fba87a593a5f610544b165caac1e1f1a706443986bf54938555159c95f442fcc /cowrie/cowrie-git/var
+volume 4492a68c886ee680203e4ab2fac0ef0d90687de876367d5c334d756a0c409194 /cowrie/cowrie-git/etc
+

@@ -1,0 +1,671 @@
+{
+  "spec_name": "cowrie_session_features",
+  "spec_version": "2.0.0-draft.4",
+  "status": "draft - eligibility revision; formulas identical to 2.0.0-draft.3, which scripts/extract_features_v2.py implements and loads from configs/feature_spec_v2.json",
+  "created": "2026-11-10",
+  "documentation": "docs/feature_specification_v2.md",
+  "evidence": "reports/common_feature_specification_v2/report.md",
+  "amendments": [
+    {
+      "revision": "2.0.0-draft.4",
+      "date": "2026-11-11",
+      "task": "17 (eligibility decisions from Tasks 15-16)",
+      "changes": [
+        "active=false (with inactive_since reason) for login_failed_count, download_command_lines, unique_command_names, input_line_max_bytes, input_bytes_total. Definitions, formulas, dtypes and output columns unchanged.",
+        "Active (model input) features, in specification order: login_success, session_duration_s, input_line_count, shell_operator_lines, time_to_first_input_s, inter_input_mean_s, inter_input_std_s, tty_output_bytes.",
+        "model_input_configuration added: configs/model_features_v2_frozen.json is authoritative.",
+        "Written as a new file (configs/feature_spec_v2_draft4.json) because the unchanged extractor requires draft.3 at configs/feature_spec_v2.json; that file is kept byte-identical."
+      ]
+    },
+    {
+      "revision": "2.0.0-draft.3",
+      "date": "2026-11-10",
+      "task": "8 profile compatibility",
+      "changes": [
+        "Descriptive coverage only: provenance class file_event_network_download_failed and descriptive field download_failed_events for cowrie.session.file_download.failed (observed in the 2026-11-10 smoke test; emitted by Cowrie's wget.py and curl.py error handlers).",
+        "url_download_events clarified: counts successful downloads (cowrie.session.file_download with 'url') only; failed attempts and local redirect writes are separate.",
+        "forbidden_inputs extended with the generator's diagnostic terminal output and per-command manifest fields.",
+        "No model feature added, removed or redefined; the 13 model features and their statuses are unchanged."
+      ]
+    },
+    {
+      "revision": "2.0.0-draft.2",
+      "date": "2026-11-10",
+      "task": "5A final review",
+      "changes": [
+        "Conditional count clarified: draft.1 marked 5 individual features as conditional or leakage-checked (earlier summaries said 'four', which was a miscount). draft.2 has 7 conditional features in 4 groups and 6 core features.",
+        "time_to_first_input_s added to the generator leakage review (group C2): reliable event provenance, but the value can reflect generator or profile timing.",
+        "session_duration_s added to the generator leakage review (group C3): command behaviour, blocking emulated commands and timeout handling can create category fingerprints.",
+        "inter_input_mean_s and inter_input_std_s defined explicitly as intervals between recorded command.input events, not necessarily client typing intervals.",
+        "Recorded-input naming kept unchanged; no feature renamed.",
+        "conditional_groups added: risk tested, evidence to retain, failure action, exclusion mechanism.",
+        "Every feature now separates event_provenance, availability, statistical_leakage_risk and deployment_domain_compatibility.",
+        "feature 'role' replaced by 'status' (core | conditional) and 'conditional_group'; 'provenance' renamed 'event_provenance'; versioning_policy added."
+      ]
+    },
+    {
+      "revision": "2.0.0-draft (draft.1)",
+      "date": "2026-11-10",
+      "task": "5 initial specification",
+      "changes": [
+        "initial draft"
+      ]
+    }
+  ],
+  "versioning_policy": {
+    "deactivate_feature": "Set the feature's 'active' to false with a dated reason and bump the pre-release/patch revision. Formulas and the output schema do not change; the extractor still computes and writes the column, and only the model input list (features with active = true) changes. No re-extraction is needed.",
+    "change_formula_or_add_feature": "Bump the minor version (2.1.0) and re-extract every dataset that uses the specification.",
+    "change_source_event_unit_or_provenance": "Bump the major version (3.0.0); results are not comparable across major versions.",
+    "regenerate_data_instead": "If a conditional feature fails because of a generator artefact (not because the feature is meaningless), the specification is unchanged; the generator is fixed and the data regenerated, then the check is repeated."
+  },
+  "scope": {
+    "unit": "one Cowrie SSH session (one cowrie.session.connect / session id)",
+    "telemetry_source": "Cowrie JSON event log (cowrie.json) only; no TTY recordings, no manifest, no network capture",
+    "cowrie_build": "cowrie/cowrie@sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a (2.9.17.dev1+gcd0770d3d)",
+    "in_scope": "observable printable command behaviour, authentication outcome, session timing, server terminal output volume",
+    "out_of_scope": [
+      "binary or non-ASCII payload content (Cowrie strips non-ASCII bytes from logged input)",
+      "per-attacker or cross-session behaviour (all lab sessions share one relay source IP)",
+      "client-specific interpretation of input features (command.input mixes client and Cowrie-executed lines)"
+    ]
+  },
+  "assessment_dimensions": {
+    "event_provenance": "Which party produced the events the feature is computed from (client, Cowrie, mixed). Established from Cowrie JSON semantics and the manifest-alignment audit.",
+    "availability": "Whether the source events exist in a given telemetry source (synthetic V1, real Cowrie).",
+    "statistical_leakage_risk": "Whether the feature's values in generated training data could reveal the generation profile/category for reasons other than behaviour (generator parameters, templates, constants). Tested by checks L1-L7 on training data only.",
+    "deployment_domain_compatibility": "Whether the feature's distribution in the isolated lab is expected to resemble real deployment telemetry with the same definition (generator speed, relay, blocked egress, one attempt per connection)."
+  },
+  "conventions": {
+    "input_lines": "cowrie.command.input events of the session, ordered by timestamp then log order, excluding lines whose stripped text is exactly 'exit' or 'logout'. These are RECORDED lines: they can include lines Cowrie executes itself and can miss client lines; they are not verified client typing.",
+    "line_bytes": "len(input.encode('utf-8')) of the logged text, i.e. after Cowrie's own sanitisation",
+    "command_name": "first whitespace-separated token of the stripped input line; lines that are empty after stripping are ignored",
+    "missing": "NaN in the output; the extractor never imputes. Imputation is a pipeline decision fitted on training data only.",
+    "structural_zero": "0 is used only where the quantity provably cannot occur (e.g. no input lines in a session without a successful login)",
+    "timestamps": "ISO-8601 'timestamp' field of each event, parsed as UTC; events sorted by (timestamp, log line order)",
+    "naming": "Feature names keep the 'input_' / 'inter_input_' wording for recorded command lines; no name implies verified client provenance."
+  },
+  "provenance_classes": {
+    "connection": "session.connect, client.version, client.kex, session.closed: lifecycle; mixed client and server timing",
+    "authentication": "login.success, login.failed: client credentials judged by Cowrie",
+    "recorded_command_line": "command.input: client-typed lines PLUS lines Cowrie executes itself (scripts run by sh/bash, downloaded files); client lines can also be missing (session closed while a command was blocking). Not client-specific.",
+    "first_recorded_command_line": "the first command.input of a session: always client-originated (Cowrie executes nothing before the first client line; 1,498/1,498 aligned live sessions)",
+    "server_emulation": "command.failed (one per ';'-separated part; reflects Cowrie's command coverage), session.params, client.size",
+    "server_terminal_output": "log.closed.size: bytes Cowrie wrote to the terminal, including the echo of typed input",
+    "file_event_network_download": "session.file_download with 'url': a download that Cowrie completed and stored",
+    "file_event_network_download_failed": "session.file_download.failed with 'url': Cowrie's emulated wget/curl attempted the URL and failed (DNS failure, unreachable network, refused connection); no file was obtained. In the isolated lab every external download attempt ends here or produces no file event at all.",
+    "file_event_local_redirect": "session.file_download with 'destfile' and no 'url' (shell redirect saved by Cowrie; no network)",
+    "file_event_scp_stdin": "session.file_download with realm='scp': client lines consumed as scp input, NOT logged as command.input"
+  },
+  "conditional_groups": {
+    "C1_auth_collinearity": {
+      "features": [
+        "login_failed_count"
+      ],
+      "leakage_risk_tested": "Redundancy and generator artefact: the lab generator opens one connection per attempt, so the value is 0 or 1 and almost equals 1 - login_success; per-profile 'failed_attempts' settings then appear as session counts, not as this feature.",
+      "evidence_to_retain": "On training data: (a) |Spearman correlation| with login_success < 0.95; (b) L1 and L2 pass; (c) at least one non-lab or pilot sample shows the within-session retry semantics the feature is meant to capture.",
+      "on_failure": "Mark inactive; keep as a descriptive column.",
+      "exclusion_mechanism": "deactivate (patch revision); no re-extraction"
+    },
+    "C2_generator_timing": {
+      "features": [
+        "time_to_first_input_s",
+        "inter_input_mean_s",
+        "inter_input_std_s"
+      ],
+      "leakage_risk_tested": "Profile-specific pacing: profiles_v2*.json give each profile its own delay_range; the generator waits a fixed 0.5/--speed after opening the shell (generate_labelled_traffic.py line 160); --speed rescales all delays. Event provenance of time_to_first_input_s is reliable (client-sent first line), but its value can still be a generator constant or profile parameter. The inter-input features are intervals between recorded command.input events and include Cowrie-executed lines (millisecond gaps) and gaps across lost lines.",
+      "evidence_to_retain": "(a) Generation metadata shows one category-independent pacing distribution and a fixed --speed for all runs, with wait-for-prompt sending; (b) on training data, L1 and L2 pass (proposed: eta^2 < 0.8, train-range rule and exact-value lookup below agreed thresholds); (c) time_to_first_input_s is not near-constant (coefficient of variation reported) - a near-constant value carries only generator information; (d) L6 reports the share of sessions with Cowrie-executed or missing lines per category, and it is not category-dependent.",
+      "on_failure": "If (a) fails: fix the generator and regenerate; the specification is unchanged. If (b)-(d) fail with fair generation: mark the failing feature inactive.",
+      "exclusion_mechanism": "deactivate (patch revision) or regenerate data; no specification regeneration"
+    },
+    "C3_session_lifecycle": {
+      "features": [
+        "session_duration_s"
+      ],
+      "leakage_risk_tested": "Category fingerprints from (i) profile-specific command counts multiplied by pacing; (ii) blocking emulated commands (curl/wget/scp) whose run time depends on the lab network (blocked egress) rather than the client; (iii) timeout handling - Cowrie authentication_timeout 120 s and idle_timeout 180 s (cowrie.cfg.dist), and the pre-fix generator's unclosed failed logins (~120 s).",
+      "evidence_to_retain": "On training data: (a) no pre-fix generated sessions included; (b) L1 and L2 pass; (c) the share of sessions within 1 s of 120 s or 180 s is reported per category and is not category-dependent; (d) duration is not mostly explained by category after accounting for input_line_count (reported, e.g. per-category residual summary).",
+      "on_failure": "If caused by generator pacing or timeout artefacts: fix the generator and regenerate. Otherwise mark inactive.",
+      "exclusion_mechanism": "deactivate (patch revision) or regenerate data; no specification regeneration"
+    },
+    "C4_profile_template_content": {
+      "features": [
+        "shell_operator_lines",
+        "download_command_lines"
+      ],
+      "leakage_risk_tested": "Fixed command templates: a category whose template always (or never) contains pipes, redirections or download commands is revealed by these counts (e.g. download commands only in botnet/exfiltration profiles).",
+      "evidence_to_retain": "On training data: (a) L2 eta^2 and exact-value lookup below agreed thresholds; (b) non-zero values occur in at least two categories, including at least one benign profile where realistic; (c) values vary within categories.",
+      "on_failure": "Broaden and overlap the profile vocabularies and regenerate; if still failing, mark inactive.",
+      "exclusion_mechanism": "deactivate (patch revision) or regenerate data; no specification regeneration"
+    }
+  },
+  "features": [
+    {
+      "name": "login_success",
+      "status": "core",
+      "active": true,
+      "definition": "Whether the session authenticated successfully",
+      "source_events": [
+        "cowrie.login.success"
+      ],
+      "formula": "1 if any cowrie.login.success event else 0",
+      "dtype": "int8",
+      "unit": "indicator",
+      "missing_policy": "never missing",
+      "event_provenance": "authentication (client credentials judged by Cowrie)",
+      "availability": {
+        "synthetic_v1": "no (raw events not retained)",
+        "real_cowrie": "yes"
+      },
+      "statistical_leakage_risk": {
+        "level": "low-medium",
+        "note": "Profiles differ in failed-login share via generator settings; checked by L1/L2."
+      },
+      "deployment_domain_compatibility": {
+        "level": "high",
+        "note": "Same event and meaning in lab and deployment."
+      },
+      "validation": "value in {0,1}; if 1 then at most one login.success event"
+    },
+    {
+      "name": "login_failed_count",
+      "status": "conditional",
+      "conditional_group": "C1_auth_collinearity",
+      "active": false,
+      "definition": "Number of rejected authentication attempts within the session",
+      "source_events": [
+        "cowrie.login.failed"
+      ],
+      "formula": "count(cowrie.login.failed)",
+      "dtype": "int32",
+      "unit": "attempts",
+      "missing_policy": "never missing (0 is a true count)",
+      "event_provenance": "authentication",
+      "availability": {
+        "synthetic_v1": "no",
+        "real_cowrie": "yes"
+      },
+      "statistical_leakage_risk": {
+        "level": "medium",
+        "note": "Near-collinear with login_success in generated data; see C1."
+      },
+      "deployment_domain_compatibility": {
+        "level": "low",
+        "note": "Lab: 0 or 1 per session (one attempt per connection). Real clients may retry within one connection."
+      },
+      "validation": ">= 0; flag sessions with login_failed_count = 0 and login_success = 0 (no auth event)",
+      "inactive_since": {
+        "revision": "2.0.0-draft.4",
+        "date": "2026-11-11",
+        "reason": "C1 fails: equals 1 - login_success in every Dataset V2 row (Spearman -1.0); no within-session retries (Task 15, Task 16)."
+      }
+    },
+    {
+      "name": "session_duration_s",
+      "status": "conditional",
+      "conditional_group": "C3_session_lifecycle",
+      "active": true,
+      "definition": "Session length reported by Cowrie",
+      "source_events": [
+        "cowrie.session.closed"
+      ],
+      "formula": "float(session.closed.duration)",
+      "dtype": "float64",
+      "unit": "seconds",
+      "missing_policy": "NaN if no cowrie.session.closed (session cut by log rotation or still open)",
+      "event_provenance": "connection (client and server lifecycle; termination cause not distinguishable)",
+      "availability": {
+        "synthetic_v1": "no",
+        "real_cowrie": "yes (4,357 of 4,357 unique sessions in train_v1 + eval_v1)"
+      },
+      "statistical_leakage_risk": {
+        "level": "medium-high",
+        "note": "Command counts x pacing, blocking emulated commands, timeouts; see C3."
+      },
+      "deployment_domain_compatibility": {
+        "level": "low-medium",
+        "note": "Lab duration scales with --speed and blocked egress; deployment durations include human/bot pacing and real timeouts."
+      },
+      "validation": ">= 0; approximately last event time - connect time (tolerance 1 s)"
+    },
+    {
+      "name": "input_line_count",
+      "status": "core",
+      "active": true,
+      "definition": "Number of recorded command lines (see conventions.input_lines)",
+      "source_events": [
+        "cowrie.command.input"
+      ],
+      "formula": "count(input_lines)",
+      "dtype": "int32",
+      "unit": "lines",
+      "missing_policy": "never missing; 0 is a true count",
+      "event_provenance": "recorded_command_line (mixed client and Cowrie-executed; client lines can be missing)",
+      "availability": {
+        "synthetic_v1": "no",
+        "real_cowrie": "yes"
+      },
+      "statistical_leakage_risk": {
+        "level": "medium",
+        "note": "Template length per profile; checked by L1/L2 like every feature."
+      },
+      "deployment_domain_compatibility": {
+        "level": "medium",
+        "note": "Same definition; lab loses lines when sending does not wait for the prompt."
+      },
+      "validation": ">= 0; 0 when login_success = 0"
+    },
+    {
+      "name": "input_bytes_total",
+      "status": "core",
+      "active": false,
+      "definition": "Total UTF-8 bytes of recorded command lines",
+      "source_events": [
+        "cowrie.command.input"
+      ],
+      "formula": "sum(line_bytes over input_lines)",
+      "dtype": "int64",
+      "unit": "bytes",
+      "missing_policy": "never missing; 0 when input_line_count = 0",
+      "event_provenance": "recorded_command_line (mixed)",
+      "availability": {
+        "synthetic_v1": "no",
+        "real_cowrie": "yes"
+      },
+      "statistical_leakage_risk": {
+        "level": "medium",
+        "note": "Fixed command strings per profile; L2 exact-value lookup."
+      },
+      "deployment_domain_compatibility": {
+        "level": "medium",
+        "note": "Same definition; vocabulary differs from real attackers."
+      },
+      "validation": ">= input_line_count (each non-empty line has >= 1 byte); all bytes ASCII for this Cowrie build (flag otherwise)",
+      "inactive_since": {
+        "revision": "2.0.0-draft.4",
+        "date": "2026-11-11",
+        "reason": "Conditional at the Task 16 freeze; user decision 2026-11-11 (Task 17 approval): inactive. Its information beyond input_line_count is command length, the same template-length mechanism as input_line_max_bytes."
+      }
+    },
+    {
+      "name": "input_line_max_bytes",
+      "status": "core",
+      "active": false,
+      "definition": "Length of the longest recorded command line",
+      "source_events": [
+        "cowrie.command.input"
+      ],
+      "formula": "max(line_bytes over input_lines)",
+      "dtype": "float64",
+      "unit": "bytes",
+      "missing_policy": "NaN when input_line_count = 0 (no line exists)",
+      "event_provenance": "recorded_command_line (mixed); a Cowrie-executed script line can be the longest (5,605-char HTML line in train_v1)",
+      "availability": {
+        "synthetic_v1": "no",
+        "real_cowrie": "yes"
+      },
+      "statistical_leakage_risk": {
+        "level": "medium",
+        "note": "A single long template line can identify a profile; L2."
+      },
+      "deployment_domain_compatibility": {
+        "level": "medium",
+        "note": "Same definition; printable payload lengths only."
+      },
+      "validation": "<= input_bytes_total",
+      "inactive_since": {
+        "revision": "2.0.0-draft.4",
+        "date": "2026-11-11",
+        "reason": "Strongest command-length template fingerprint: L1 (botnet outside every other range 53%) and L2 lookup 0.71 fail (Task 15, Task 16)."
+      }
+    },
+    {
+      "name": "unique_command_names",
+      "status": "core",
+      "active": false,
+      "definition": "Number of distinct command names among recorded lines",
+      "source_events": [
+        "cowrie.command.input"
+      ],
+      "formula": "len({command_name(line) for line in input_lines})",
+      "dtype": "int32",
+      "unit": "commands",
+      "missing_policy": "never missing; 0 when input_line_count = 0",
+      "event_provenance": "recorded_command_line (mixed)",
+      "availability": {
+        "synthetic_v1": "no",
+        "real_cowrie": "yes"
+      },
+      "statistical_leakage_risk": {
+        "level": "medium",
+        "note": "Template vocabulary size; L2."
+      },
+      "deployment_domain_compatibility": {
+        "level": "medium",
+        "note": "Same definition."
+      },
+      "validation": "<= input_line_count",
+      "inactive_since": {
+        "revision": "2.0.0-draft.4",
+        "date": "2026-11-11",
+        "reason": "Deactivated member of the redundant pair with input_line_count (Spearman 0.91); its additional information is template repetition structure (Task 16)."
+      }
+    },
+    {
+      "name": "shell_operator_lines",
+      "status": "conditional",
+      "conditional_group": "C4_profile_template_content",
+      "active": true,
+      "definition": "Recorded lines that use a pipe, command separator, redirection or substitution",
+      "source_events": [
+        "cowrie.command.input"
+      ],
+      "formula": "count(line for line in input_lines if any(op in line for op in ['|', ';', '&&', '>', '<', '`', '$(']))",
+      "dtype": "int32",
+      "unit": "lines",
+      "missing_policy": "never missing; 0 when input_line_count = 0",
+      "event_provenance": "recorded_command_line (mixed)",
+      "availability": {
+        "synthetic_v1": "no",
+        "real_cowrie": "yes"
+      },
+      "statistical_leakage_risk": {
+        "level": "medium-high",
+        "note": "Template content; see C4."
+      },
+      "deployment_domain_compatibility": {
+        "level": "medium",
+        "note": "Same definition."
+      },
+      "validation": "<= input_line_count"
+    },
+    {
+      "name": "download_command_lines",
+      "status": "conditional",
+      "conditional_group": "C4_profile_template_content",
+      "active": false,
+      "definition": "Recorded lines whose command name is a file-transfer client, regardless of network outcome",
+      "source_events": [
+        "cowrie.command.input"
+      ],
+      "formula": "count(line for line in input_lines if command_name(line) in {'wget','curl','tftp','ftp','ftpget','scp'})",
+      "dtype": "int32",
+      "unit": "lines",
+      "missing_policy": "never missing",
+      "event_provenance": "recorded_command_line (mixed)",
+      "availability": {
+        "synthetic_v1": "no",
+        "real_cowrie": "yes"
+      },
+      "statistical_leakage_risk": {
+        "level": "high",
+        "note": "Download commands appear only in some profiles; see C4."
+      },
+      "deployment_domain_compatibility": {
+        "level": "high",
+        "note": "Counts attempts, which are observable whether or not egress is allowed."
+      },
+      "validation": "<= input_line_count",
+      "inactive_since": {
+        "revision": "2.0.0-draft.4",
+        "date": "2026-11-11",
+        "reason": "L1/C4 fail after the Task 12 vocabulary redesign: constant 1 in every botnet session; C4 handling 'if still failing -> inactive' (Task 15, Task 16)."
+      }
+    },
+    {
+      "name": "time_to_first_input_s",
+      "status": "conditional",
+      "conditional_group": "C2_generator_timing",
+      "active": true,
+      "definition": "Delay between successful login and the first recorded command line",
+      "source_events": [
+        "cowrie.login.success",
+        "cowrie.command.input"
+      ],
+      "formula": "timestamp(first input_line) - timestamp(first login.success)",
+      "dtype": "float64",
+      "unit": "seconds",
+      "missing_policy": "NaN when login_success = 0 or input_line_count = 0",
+      "event_provenance": "first_recorded_command_line (client-originated in all 1,498 audited sessions; reliable)",
+      "availability": {
+        "synthetic_v1": "no (V1 'ackdat' used a different origin and generated offsets)",
+        "real_cowrie": "yes"
+      },
+      "statistical_leakage_risk": {
+        "level": "medium",
+        "note": "Reliable provenance does not prevent leakage: the value can be a generator constant (fixed 0.5/--speed wait) or a profile parameter; see C2."
+      },
+      "deployment_domain_compatibility": {
+        "level": "low",
+        "note": "Lab value is set by the generator's wait and --speed; deployment reflects human or bot behaviour."
+      },
+      "validation": ">= 0 (flag negative values as clock/order errors)"
+    },
+    {
+      "name": "inter_input_mean_s",
+      "status": "conditional",
+      "conditional_group": "C2_generator_timing",
+      "active": true,
+      "definition": "Mean interval between consecutive RECORDED command.input events (not necessarily client typing intervals)",
+      "source_events": [
+        "cowrie.command.input"
+      ],
+      "formula": "mean(diff(timestamps of input_lines))",
+      "dtype": "float64",
+      "unit": "seconds",
+      "missing_policy": "NaN when input_line_count < 2",
+      "event_provenance": "recorded_command_line (mixed): intervals between recorded events; Cowrie-executed lines add millisecond gaps and lost client lines merge gaps",
+      "availability": {
+        "synthetic_v1": "no",
+        "real_cowrie": "yes"
+      },
+      "statistical_leakage_risk": {
+        "level": "high",
+        "note": "Encodes per-profile delay_range unless generation pacing is category-independent; see C2."
+      },
+      "deployment_domain_compatibility": {
+        "level": "low",
+        "note": "Lab pacing is synthetic and scaled by --speed."
+      },
+      "validation": "gaps computed after sorting by timestamp; flag sessions whose log order and timestamp order disagree (2 such sessions in train_v1)"
+    },
+    {
+      "name": "inter_input_std_s",
+      "status": "conditional",
+      "conditional_group": "C2_generator_timing",
+      "active": true,
+      "definition": "Population standard deviation of intervals between consecutive RECORDED command.input events (not necessarily client typing intervals)",
+      "source_events": [
+        "cowrie.command.input"
+      ],
+      "formula": "pstdev(diff(timestamps of input_lines))",
+      "dtype": "float64",
+      "unit": "seconds",
+      "missing_policy": "NaN when input_line_count < 3 (fewer than two gaps)",
+      "event_provenance": "recorded_command_line (mixed): intervals between recorded events, as inter_input_mean_s",
+      "availability": {
+        "synthetic_v1": "no",
+        "real_cowrie": "yes"
+      },
+      "statistical_leakage_risk": {
+        "level": "high",
+        "note": "As inter_input_mean_s; see C2."
+      },
+      "deployment_domain_compatibility": {
+        "level": "low",
+        "note": "As inter_input_mean_s."
+      },
+      "validation": ">= 0"
+    },
+    {
+      "name": "tty_output_bytes",
+      "status": "core",
+      "active": true,
+      "definition": "Bytes Cowrie wrote to the session's terminal",
+      "source_events": [
+        "cowrie.log.closed"
+      ],
+      "formula": "sum(log.closed.size)",
+      "dtype": "float64",
+      "unit": "bytes",
+      "missing_policy": "0 when login_success = 0 (no terminal channel exists: structural zero); NaN when login_success = 1 and no log.closed event",
+      "event_provenance": "server_terminal_output (includes echo of typed input; confirmed equal to TTY output bytes in the 2026-11-10 pilot)",
+      "availability": {
+        "synthetic_v1": "no (V1 'dbytes' was a per-category random draw)",
+        "real_cowrie": "yes"
+      },
+      "statistical_leakage_risk": {
+        "level": "medium",
+        "note": "Depends on Cowrie's responses to template commands; L2."
+      },
+      "deployment_domain_compatibility": {
+        "level": "high",
+        "note": "Same Cowrie build and definition in lab and deployment."
+      },
+      "validation": ">= 0; expected >= input_bytes_total because typed input is echoed; flag otherwise (the only 2 live exceptions are sessions where Cowrie executed a downloaded file, whose lines are not echoed)"
+    }
+  ],
+  "feature_counts": {
+    "model_features": 13,
+    "core": [
+      "login_success",
+      "input_line_count",
+      "input_bytes_total",
+      "input_line_max_bytes",
+      "unique_command_names",
+      "tty_output_bytes"
+    ],
+    "conditional": [
+      "login_failed_count",
+      "session_duration_s",
+      "time_to_first_input_s",
+      "inter_input_mean_s",
+      "inter_input_std_s",
+      "shell_operator_lines",
+      "download_command_lines"
+    ],
+    "conditional_groups": 4,
+    "note": "Core features still pass the general checks L1-L7; 'conditional' marks features with a specific identified risk that needs explicit evidence to retain.",
+    "active_model_inputs": 8,
+    "inactive": [
+      "download_command_lines",
+      "input_bytes_total",
+      "input_line_max_bytes",
+      "login_failed_count",
+      "unique_command_names"
+    ]
+  },
+  "descriptive_fields": [
+    {
+      "name": "unknown_command_events",
+      "formula": "count(cowrie.command.failed)",
+      "reason_not_model": "one event per ';' part and per Cowrie-executed line; measures Cowrie's emulation coverage more than behaviour",
+      "missing_policy": "never missing"
+    },
+    {
+      "name": "url_download_events",
+      "formula": "count(cowrie.session.file_download with 'url')",
+      "reason_not_model": "successful downloads only; constant 0 expected in the isolated lab (egress blocked); live deployments differ",
+      "missing_policy": "never missing"
+    },
+    {
+      "name": "download_failed_events",
+      "formula": "count(cowrie.session.file_download.failed)",
+      "reason_not_model": "failed download attempts; in the isolated lab their occurrence depends on Cowrie's per-command error handling (wget/curl differ) and on blocked egress, so it is lab-specific",
+      "missing_policy": "never missing"
+    },
+    {
+      "name": "redirect_write_events",
+      "formula": "count(session.file_download with 'destfile' and no 'url')",
+      "reason_not_model": "a Cowrie bookkeeping record of a redirect; overlaps shell_operator_lines",
+      "missing_policy": "never missing"
+    },
+    {
+      "name": "scp_stdin_events",
+      "formula": "count(session.file_download with realm == 'scp')",
+      "reason_not_model": "client lines swallowed by emulated scp; reported to quantify input loss",
+      "missing_policy": "never missing"
+    },
+    {
+      "name": "event_count",
+      "formula": "count(all events of the session)",
+      "reason_not_model": "dominated by fixed protocol events; redundant",
+      "missing_policy": "never missing"
+    },
+    {
+      "name": "session_closed_observed",
+      "formula": "1 if cowrie.session.closed present else 0",
+      "reason_not_model": "data-quality flag",
+      "missing_policy": "never missing"
+    },
+    {
+      "name": "timestamp_order_mismatch",
+      "formula": "1 if command.input log order differs from timestamp order",
+      "reason_not_model": "data-quality flag",
+      "missing_policy": "never missing"
+    }
+  ],
+  "excluded_v1_features": {
+    "spkts": "replaced by input_line_count (V1 omitted failed commands in synthetic data)",
+    "sbytes": "replaced by input_bytes_total",
+    "dbytes": "replaced by tty_output_bytes (V1 synthetic value was injected)",
+    "dpkts": "count of mixed server/protocol events; baselines differ between generator and Cowrie (4/5 vs 3/6)",
+    "rate": "(sbytes + dbytes) / dur mixes client input, server output and an artefact-prone duration",
+    "sload": "derived ratio of input bytes to a duration that includes authentication and idle time",
+    "dload": "derived from the V1 injected dbytes",
+    "sinpkt": "replaced by inter_input_mean_s",
+    "sjit": "replaced by inter_input_std_s",
+    "dinpkt": "gaps between mixed protocol/server events",
+    "djit": "as dinpkt",
+    "tcprtt": "SSH handshake time of the lab path (loopback + relay hop), not attacker behaviour",
+    "synack": "defined as 0.45 * tcprtt; not a measurement",
+    "ackdat": "replaced by time_to_first_input_s (origin = login.success)",
+    "ct_srv_src": "collection-size / source-IP count; label leakage in V1, file size in the lab",
+    "ct_src_ltm": "as ct_srv_src",
+    "ct_dst_ltm": "constant / file size",
+    "ct_srv_dst": "constant / file size",
+    "proto": "constant",
+    "service": "constant",
+    "sttl": "constant",
+    "dttl": "constant",
+    "ct_state_ttl": "constant"
+  },
+  "forbidden_inputs": [
+    "attack_cat",
+    "label",
+    "profile",
+    "any manifest field",
+    "src_ip",
+    "src_port",
+    "dst_ip",
+    "dst_port",
+    "username",
+    "password",
+    "session id",
+    "sensor",
+    "uuid",
+    "hassh",
+    "client version string",
+    "reserved test markers (e.g. lines starting with 'PILOT_')",
+    "generator diagnostic terminal output (terminal_output.jsonl)",
+    "generator manifest per-command fields (command_log, auth_log, termination, think_time_s, prompt_match, output_*)"
+  ],
+  "model_input_configuration": {
+    "authoritative": "configs/model_features_v2_frozen.json",
+    "sha256": "8ae17612eabbbc46240aa1011aff8d6e3617df85380b3daa523201675fc3c288",
+    "model_input_features": [
+      "login_success",
+      "session_duration_s",
+      "input_line_count",
+      "shell_operator_lines",
+      "time_to_first_input_s",
+      "inter_input_mean_s",
+      "inter_input_std_s",
+      "tty_output_bytes"
+    ],
+    "note": "The frozen configuration is the authoritative model-input list and order. Its record still shows input_bytes_total as 'conditional' (its state at the Task 16 freeze; the file is frozen and was not edited); the approved 2026-11-11 decision makes it inactive here. The model-input list is identical either way."
+  },
+  "extraction_compatibility": {
+    "extractor": "scripts/extract_features_v2.py implements 2.0.0-draft.3 and loads configs/feature_spec_v2.json",
+    "draft3_file_sha256": "9401b355a1bfc48a14da32efba9ad4d5992f55233da3437a0715690d76f8fb1a",
+    "consequence": "All 13 columns are still extracted; datasets extracted under draft.3 are valid under draft.4 without re-extraction."
+  }
+}

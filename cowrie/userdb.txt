@@ -1,0 +1,5 @@
+scan:x:!123456
+scan:x:!password
+scan:x:!admin
+scan:x:!root
+*:x:*

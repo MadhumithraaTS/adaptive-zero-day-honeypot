@@ -1,0 +1,56 @@
+{
+ "counts": {
+  "sessions": 1498,
+  "client_lines": 7604,
+  "manifest_lines_missing_from_input": 771,
+  "sessions_with_missing_client_lines": 262
+ },
+ "first_input_class": {
+  "client": 1498
+ },
+ "scp_sessions": 0,
+ "gap_s_min_median_max": {
+  "client": [
+   -0.2584,
+   0.3614,
+   13.4804
+  ],
+  "not_in_manifest": null
+ },
+ "client_gaps_below_0.01s": 36,
+ "not_in_manifest_gaps_above_0.01s": 0,
+ "missing_by_first_token": [
+  [
+   "exit",
+   230
+  ],
+  [
+   "chmod",
+   153
+  ],
+  [
+   "rm",
+   78
+  ],
+  [
+   "sh",
+   68
+  ],
+  [
+   "nmap",
+   44
+  ],
+  [
+   "enable",
+   28
+  ],
+  [
+   "shell",
+   28
+  ],
+  [
+   "system",
+   27
+  ]
+ ]
+}

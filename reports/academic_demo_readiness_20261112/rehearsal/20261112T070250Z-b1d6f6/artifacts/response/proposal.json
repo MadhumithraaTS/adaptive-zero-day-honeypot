@@ -1,0 +1,58 @@
+{
+  "schema": "response-proposal-1",
+  "proposal_id": "prop-task26c-isolated-000001",
+  "created_utc": "2026-11-12T07:02:50.045229Z",
+  "expires_utc": "2026-11-12T07:32:50.045229Z",
+  "session_ref": "1c2fbcf7f547",
+  "assessment_audit": {
+    "record_id": "task26c-isolated-000001",
+    "record_hash": "07879e10d45499cc62d35410c834421b80fe6068d203eef709e4fa0425a7a5a4"
+  },
+  "attribution": {
+    "state": "attributable_via_proxy_mapping",
+    "result_id": "DEMO-20261112T070250Z-b1d6f6",
+    "result_hash": "0de1d2d6df2505416c1c97262ad34216f51dcc6ee4a1156a45dc397785e37f77",
+    "connection_id": "b79d4b9e-d339-4891-920c-4b4776b1e51b",
+    "client_ip": "10.250.25.3"
+  },
+  "source_proposal": {
+    "execution": "not_executed",
+    "inverse": {
+      "subject": "10.250.25.3",
+      "type": "unblock_source_ip"
+    },
+    "manual_approval": "pending",
+    "mode": "dry_run",
+    "relay_connection_id": "b79d4b9e-d339-4891-920c-4b4776b1e51b",
+    "scope": "this sensor only",
+    "subject": "10.250.25.3",
+    "subject_basis": "attributable_via_proxy_mapping",
+    "ttl_seconds": 86400,
+    "type": "block_source_ip"
+  },
+  "action": {
+    "type": "restrict_new_connections",
+    "target": "10.250.25.3/32",
+    "listener": "demo",
+    "max_ttl_seconds": 900
+  },
+  "fingerprints": {
+    "response_policy": "6b6f80aaeec16bc75fa29a16f1f927a019c024c06f965acc6c79755bc587db94",
+    "address_safety": "278563bd94d1900014cbdfaa2ef76708ffeb755c687f2f10a51640872c0dbc70",
+    "defence_policy": "06adfdf0a860fb2effa5dfc3544606f1799c4d8ebb4a3a5e372cb06d28af734d",
+    "attribution_config": "b7941806ccc77497e92907b08310aabac0ca9fb81eee961487aa24e6192ce2a5"
+  },
+  "findings": [
+    {
+      "interpretation": "download attempt",
+      "severity": "S2",
+      "evidence_level": "E2"
+    },
+    {
+      "interpretation": "download-and-execute attempt",
+      "severity": "S3",
+      "evidence_level": "E2"
+    }
+  ],
+  "proposal_hash": "e75d1adf8e3fd699696060e0509c8cd03c715c208d3fe48ea6955d0e338ff05c"
+}

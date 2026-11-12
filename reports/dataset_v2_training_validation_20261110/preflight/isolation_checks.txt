@@ -1,0 +1,23 @@
+== VM local addrs / routes
+127.0.0.1 172.17.0.1 172.18.0.1 172.19.0.1 172.20.0.1 172.21.0.1 192.168.65.3 192.168.65.6 
+eth0 00000000;lo 0000007F;docker0 000011AC;br-e0f9fc878c71 000012AC;br-29dbe112c59e 000013AC;br-ace391997e9b 000014AC;br-c94e904b8861 000015AC;eth0 0041A8C0;eth0 0141A8C0;services1 0741A8C0;
+== from cowrie
+routes: [['eth0', '000016AC', '00000000', '0001']]
+192.168.65.3:111 [VM rpcbind] -> OSError: [Errno 101] Network is unreachable
+192.168.65.3:32775 [VM rpc.statd] -> OSError: [Errno 101] Network is unreachable
+172.21.0.1:111 [frontend bridge] -> OSError: [Errno 101] Network is unreachable
+172.17.0.1:111 [docker0] -> OSError: [Errno 101] Network is unreachable
+192.168.65.254:80 [Docker Desktop host] -> OSError: [Errno 101] Network is unreachable
+1.1.1.1:53 [external] -> OSError: [Errno 101] Network is unreachable
+8.8.8.8:443 [external] -> OSError: [Errno 101] Network is unreachable
+example.com DNS fail: [Errno -3] Temporary failure in name resolution
+host.docker.internal DNS fail: [Errno -3] Temporary failure in name resolution
+== relay -> cowrie
+relay resolves cowrie -> 172.22.0.1
+banner b'SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u3\r\n'
+== relay egress (documented limitation)
+relay routes: [['eth1', '00000000', '010015AC'], ['eth1', '000015AC', '00000000'], ['eth0', '000016AC', '00000000']]
+== host exposure
+172.27.0.1:2223 refused/unreachable
+192.168.56.1:2223 refused/unreachable
+172.20.10.5:2223 refused/unreachable

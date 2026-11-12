@@ -1,0 +1,30 @@
+{
+  "schema": "response-approval-1",
+  "approval_id": "appr-8d60b02b-c260-49d5-bcc9-08eae6cb13e4",
+  "proposal_id": "prop-task26c-isolated-000001",
+  "proposal_hash": "0d2f1e150bfe7a588bcf1bd0e93be37e7ef60ade063d02274f84cd1c00e14eeb",
+  "decision": "approve",
+  "reason": "",
+  "approver": {
+    "name": "DEMO APPROVER (ephemeral)",
+    "key_id": "942c8e0ed1e403eb"
+  },
+  "decided_utc": "2026-11-12T06:53:14.279705Z",
+  "rule": {
+    "rule_id": "rule-575757e6-fc33-4e19-8bd4-c09145706224",
+    "action": "restrict_new_connections",
+    "target": "10.250.25.3/32",
+    "listener": "demo",
+    "ttl_seconds": 600,
+    "created_utc": "2026-11-12T06:53:14.279705Z",
+    "expires_utc": "2026-11-12T07:03:14.279705Z",
+    "fingerprints": {
+      "response_policy": "480409e9363cc65214d1b33f7c03bb5447acc97e316410f6158f95c627d19c14",
+      "address_safety": "278563bd94d1900014cbdfaa2ef76708ffeb755c687f2f10a51640872c0dbc70",
+      "defence_policy": "4cc3209a7003ada9b312da9945385e86a0f69630d3b416bbe53ccb53659051f4",
+      "attribution_config": "aebbb520f56412d8374bdffc25fe8946f1422da8518db57ef4a071693fca88c4"
+    }
+  },
+  "approval_hash": "28e20e154971f99da2966a266ddb92d00679b17c714c4ce9b5a7e881a7c5c68f",
+  "signature": "43477bababad3f0ec095bce22d584315eec633cc8607f0f0bf388209a571636345b796d6f6efae84c2f80a33a2ef8bb35292215fbc513ae0589b60a9d4671304"
+}

@@ -1,0 +1,8 @@
+2026-11-11T05:10:44Z
+rotation-trigger banner b'SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u3\r\n'
+.gitignore 0 0 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+cowrie.json 630 2 7fa4aa9167ff20b6568898d6b32c151401afb5b6f4effb8f084af19e560dfca3
+cowrie.json.2026-10-24 19465252 40190 d88daba6eba0757d7f104ffce97772f2234d0b18873bc737121aeccd27b36974
+cowrie.json.2026-11-10 14722474 30924 d014d44501c11c9bbef79b7cf6ee7014e83f5e1c1ee894896004a0206d17fe18
+{"eventid":"cowrie.session.connect","src_ip":"172.22.0.2","src_port":50010,"dst_ip":"172.22.0.1","dst_port":2222,"session":"9985cff5a074","protocol":"ssh","message":"New connection: 172.22.0.2:50010 (172.22.0.1:2222) [session: 9985cff5a074]","sensor":"0bec5a78b1cb","uuid":"bafc61de-32ec-11f1-a37e-46de337b5ff9","timestamp":"2026-11-11T05:10:44.385662Z"}
+{"eventid":"cowrie.session.closed","duration"

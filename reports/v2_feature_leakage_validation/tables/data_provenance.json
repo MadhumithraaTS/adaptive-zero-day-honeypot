@@ -1,0 +1,51 @@
+{
+  "training_log": "dataset_builder\\runs\\train_v1\\raw\\cowrie_thisrun.json",
+  "labels": "dataset_builder\\runs\\train_v2_corrected\\label_assignments.csv",
+  "extracted_sessions": 3199,
+  "label_rows": 3125,
+  "extracted_not_in_labels": 74,
+  "extracted_not_in_labels_note": "train_v1 raw slice includes eval_v1 sessions after its baseline; excluded",
+  "labels_not_extracted": 0,
+  "excluded_inconsistent": 2,
+  "analysed_sessions": 3123,
+  "interactions": 1500,
+  "logged_in_sessions": 1498,
+  "failed_only_sessions": 1625,
+  "sessions_per_interaction": {
+    "3": 126,
+    "1": 634,
+    "2": 532,
+    "6": 69,
+    "5": 77,
+    "4": 62
+  },
+  "logged_in_sessions_per_interaction": {
+    "1": 1498
+  },
+  "conflicting_labels_per_session": 0,
+  "conflicting_categories_per_interaction": 0,
+  "category_counts_all": {
+    "brute_force": 1047,
+    "benign": 770,
+    "botnet": 374,
+    "reconnaissance": 371,
+    "privilege_escalation": 287,
+    "lateral_movement": 274
+  },
+  "category_counts_logged_in": {
+    "benign": 535,
+    "brute_force": 208,
+    "lateral_movement": 195,
+    "privilege_escalation": 192,
+    "botnet": 187,
+    "reconnaissance": 181
+  },
+  "interactions_per_category": {
+    "benign": 535,
+    "botnet": 189,
+    "brute_force": 208,
+    "lateral_movement": 195,
+    "privilege_escalation": 192,
+    "reconnaissance": 181
+  }
+}

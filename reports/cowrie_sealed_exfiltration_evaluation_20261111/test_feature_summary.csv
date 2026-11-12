@@ -1,0 +1,8 @@
+feature,test_n,test_missing,test_median,test_q1,test_q3,test_min,test_max,validation_median,validation_q1,validation_q3,validation_missing,train_median_used_for_imputation,ks_D_test_vs_validation,ks_p,test_share_above_validation_p99
+session_duration_s,600,0,15.25,10.7,21.6,2.6,38.8,12.6,8.475,16.625,0,12.2,0.218333,6.15836e-13,0.045
+input_line_count,600,0,5,4,6,2,7,6,4,7,0,5,0.186667,1.4983e-09,0
+shell_operator_lines,600,0,1,0,1,0,1,0,0,1,0,0,0.245,3.25829e-16,0
+time_to_first_input_s,600,0,1.65172,1.00279,2.68112,0.293739,14.388,1.62022,1.0071,2.50886,41,1.66303,0.0609213,0.220606,0.00833333
+inter_input_mean_s,600,0,2.55507,1.68258,4.51433,0.487759,13.1411,1.91008,1.50515,2.44439,79,1.84421,0.321811,4.58033e-26,0.211667
+inter_input_std_s,595,5,1.55053,0.792535,4.82805,0.0600146,12.7201,1.02112,0.658826,1.62785,81,0.984698,0.350684,8.71385e-31,0.289076
+tty_output_bytes,600,0,942,850,1081.25,597,1702,1168.5,766.25,2297.75,0,1114,0.343333,9.51031e-32,0

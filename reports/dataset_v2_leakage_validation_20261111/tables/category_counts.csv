@@ -1,0 +1,13 @@
+split,category,interactions,session_rows,logged_in_rows,failed_guess_rows,interaction_share,row_share
+train,benign,561,863,561,302,0.374,0.2705
+train,botnet,195,392,195,197,0.13,0.1229
+train,brute_force,198,1018,198,820,0.132,0.3191
+train,lateral_movement,192,294,192,102,0.128,0.0922
+train,privilege_escalation,175,261,175,86,0.1167,0.0818
+train,reconnaissance,179,362,179,183,0.1193,0.1135
+validation,benign,229,355,229,126,0.3817,0.2824
+validation,botnet,71,136,71,65,0.1183,0.1082
+validation,brute_force,79,398,79,319,0.1317,0.3166
+validation,lateral_movement,78,118,78,40,0.13,0.0939
+validation,privilege_escalation,69,99,69,30,0.115,0.0788
+validation,reconnaissance,74,151,74,77,0.1233,0.1201

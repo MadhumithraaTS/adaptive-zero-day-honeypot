@@ -1,0 +1,25 @@
+## compose valid + assessment mounts
+VALID
+        source: C:\AMRITA\Final_Year_Project_zero_day_27\adaptive-zero-day-honeypot\cowrie\assessment_work\input
+        target: /work/input
+        read_only: true
+        source: C:\AMRITA\Final_Year_Project_zero_day_27\adaptive-zero-day-honeypot\cowrie\assessment_work\output
+        target: /work/output
+## inside the assessment container
+{"/work/input": {"exists": true, "entries": [], "writable": false}, "/work/output": {"exists": true, "entries": [], "writable": true}}
+## preserved evidence
+attackA_resigned_with_attacker_key_0.json: OK
+attackA_signed_then_altered_0.json: OK
+attackA_unsigned_S5_to_test_client_0.json: OK
+attackB_signed_then_altered_0.json: OK
+attackB_unsigned_S4_to_unregistered_0.json: OK
+genuine_plus_forged_1.json: OK
+## Task 26C manifest (existing evidence untouched)
+103
+../../threat_assessment/config.py: FAILED
+../../threat_assessment/signed_attribution.py: FAILED
+../../tests/test_trust_boundary.py: FAILED
+sha256sum: WARNING: 3 computed checksums did NOT match
+## compose file unchanged
+5d94ba5f9035c2df2cf53e4e108a7d382807de274f9fd2e6fe8fc1279805345f *cowrie/docker-compose.yml
+5d94ba5f9035c2df2cf53e4e108a7d382807de274f9fd2e6fe8fc1279805345f *../../cowrie/docker-compose.yml

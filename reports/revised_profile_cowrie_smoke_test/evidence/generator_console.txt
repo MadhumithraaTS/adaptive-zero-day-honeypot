@@ -1,0 +1,92 @@
+===== benign_admin 2026-11-10T12:11:03Z
+$ .venv/Scripts/python.exe -W ignore dataset_builder/generate_labelled_traffic.py --config reports/revised_profile_cowrie_smoke_test/configs/benign_admin.json --host 127.0.0.1 --port 2223 --sessions 3 --seed 2 --pacing-seed 9301 --output-dir reports/revised_profile_cowrie_smoke_test/runs/benign_admin --runs-root reports/revised_profile_cowrie_smoke_test/runs --container cowrie-project 
+Cowrie log baseline: 535 existing lines (this run's events come after).
+Writing manifest to reports/revised_profile_cowrie_smoke_test/runs/benign_admin\manifest.jsonl
+Target: 3 sessions across 1 profiles -> 127.0.0.1:2223
+[1/3] benign_admin           ok
+[2/3] benign_admin           ok
+[3/3] benign_admin           ok
+
+Done. 3/3 sessions completed cleanly.
+Manifest: reports/revised_profile_cowrie_smoke_test/runs/benign_admin\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+exit=0
+===== reconnaissance 2026-11-10T12:11:49Z
+$ .venv/Scripts/python.exe -W ignore dataset_builder/generate_labelled_traffic.py --config reports/revised_profile_cowrie_smoke_test/configs/reconnaissance.json --host 127.0.0.1 --port 2223 --sessions 3 --seed 6 --pacing-seed 9302 --output-dir reports/revised_profile_cowrie_smoke_test/runs/reconnaissance --runs-root reports/revised_profile_cowrie_smoke_test/runs --container cowrie-project 
+Cowrie log baseline: 591 existing lines (this run's events come after).
+Writing manifest to reports/revised_profile_cowrie_smoke_test/runs/reconnaissance\manifest.jsonl
+Target: 3 sessions across 1 profiles -> 127.0.0.1:2223
+[1/3] reconnaissance         ok
+[2/3] reconnaissance         ok
+[3/3] reconnaissance         ok
+
+Done. 3/3 sessions completed cleanly.
+Manifest: reports/revised_profile_cowrie_smoke_test/runs/reconnaissance\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+exit=0
+===== brute_force 2026-11-10T12:12:45Z
+$ .venv/Scripts/python.exe -W ignore dataset_builder/generate_labelled_traffic.py --config reports/revised_profile_cowrie_smoke_test/configs/brute_force.json --host 127.0.0.1 --port 2223 --sessions 3 --seed 1 --pacing-seed 9303 --output-dir reports/revised_profile_cowrie_smoke_test/runs/brute_force --runs-root reports/revised_profile_cowrie_smoke_test/runs --container cowrie-project 
+Cowrie log baseline: 656 existing lines (this run's events come after).
+Writing manifest to reports/revised_profile_cowrie_smoke_test/runs/brute_force\manifest.jsonl
+Target: 3 sessions across 1 profiles -> 127.0.0.1:2223
+[1/3] brute_force            ok
+[2/3] brute_force            ok
+[3/3] brute_force            ok
+
+Done. 3/3 sessions completed cleanly.
+Manifest: reports/revised_profile_cowrie_smoke_test/runs/brute_force\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+exit=0
+===== botnet 2026-11-10T12:13:25Z
+$ .venv/Scripts/python.exe -W ignore dataset_builder/generate_labelled_traffic.py --config reports/revised_profile_cowrie_smoke_test/configs/botnet.json --host 127.0.0.1 --port 2223 --sessions 3 --seed 1 --pacing-seed 9304 --output-dir reports/revised_profile_cowrie_smoke_test/runs/botnet --runs-root reports/revised_profile_cowrie_smoke_test/runs --container cowrie-project 
+Cowrie log baseline: 745 existing lines (this run's events come after).
+Writing manifest to reports/revised_profile_cowrie_smoke_test/runs/botnet\manifest.jsonl
+Target: 3 sessions across 1 profiles -> 127.0.0.1:2223
+[1/3] botnet                 ok
+[2/3] botnet                 ok
+[3/3] botnet                 ok
+
+Done. 3/3 sessions completed cleanly.
+Manifest: reports/revised_profile_cowrie_smoke_test/runs/botnet\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+exit=0
+===== privilege_escalation 2026-11-10T12:14:21Z
+$ .venv/Scripts/python.exe -W ignore dataset_builder/generate_labelled_traffic.py --config reports/revised_profile_cowrie_smoke_test/configs/privilege_escalation.json --host 127.0.0.1 --port 2223 --sessions 3 --seed 2 --pacing-seed 9305 --output-dir reports/revised_profile_cowrie_smoke_test/runs/privilege_escalation --runs-root reports/revised_profile_cowrie_smoke_test/runs --container cowrie-project 
+Cowrie log baseline: 807 existing lines (this run's events come after).
+Writing manifest to reports/revised_profile_cowrie_smoke_test/runs/privilege_escalation\manifest.jsonl
+Target: 3 sessions across 1 profiles -> 127.0.0.1:2223
+[1/3] privilege_escalation   ok
+[2/3] privilege_escalation   ok
+[3/3] privilege_escalation   ok
+
+Done. 3/3 sessions completed cleanly.
+Manifest: reports/revised_profile_cowrie_smoke_test/runs/privilege_escalation\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+exit=0
+===== lateral_movement 2026-11-10T12:15:20Z
+$ .venv/Scripts/python.exe -W ignore dataset_builder/generate_labelled_traffic.py --config reports/revised_profile_cowrie_smoke_test/configs/lateral_movement.json --host 127.0.0.1 --port 2223 --sessions 3 --seed 8 --pacing-seed 9306 --output-dir reports/revised_profile_cowrie_smoke_test/runs/lateral_movement --runs-root reports/revised_profile_cowrie_smoke_test/runs --container cowrie-project 
+Cowrie log baseline: 863 existing lines (this run's events come after).
+Writing manifest to reports/revised_profile_cowrie_smoke_test/runs/lateral_movement\manifest.jsonl
+Target: 3 sessions across 1 profiles -> 127.0.0.1:2223
+[1/3] lateral_movement       ok
+[2/3] lateral_movement       ok
+[3/3] lateral_movement       ok
+
+Done. 3/3 sessions completed cleanly.
+Manifest: reports/revised_profile_cowrie_smoke_test/runs/lateral_movement\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+exit=0
+===== data_exfiltration 2026-11-10T12:16:04Z
+$ .venv/Scripts/python.exe -W ignore dataset_builder/generate_labelled_traffic.py --config reports/revised_profile_cowrie_smoke_test/configs/data_exfiltration.json --host 127.0.0.1 --port 2223 --sessions 3 --seed 1 --pacing-seed 9307 --output-dir reports/revised_profile_cowrie_smoke_test/runs/data_exfiltration --runs-root reports/revised_profile_cowrie_smoke_test/runs --container cowrie-project --include-held-out
+Cowrie log baseline: 912 existing lines (this run's events come after).
+Writing manifest to reports/revised_profile_cowrie_smoke_test/runs/data_exfiltration\manifest.jsonl
+Target: 3 sessions across 1 profiles -> 127.0.0.1:2223
+[1/3] data_exfiltration      ok
+[2/3] data_exfiltration      ok
+[3/3] data_exfiltration      ok
+
+Done. 3/3 sessions completed cleanly.
+Manifest: reports/revised_profile_cowrie_smoke_test/runs/data_exfiltration\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+exit=0
+===== done 2026-11-10T12:16:45Z

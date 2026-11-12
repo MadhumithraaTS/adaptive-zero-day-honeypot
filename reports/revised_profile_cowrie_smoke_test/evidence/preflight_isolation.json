@@ -1,0 +1,26 @@
+{
+  "checked_at_utc": "2026-11-10T11:56:09Z / 11:57:19Z",
+  "containers": {
+    "cowrie-project": {"status": "Up", "image": "sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a", "started": "2026-11-10T09:03:25.090958612Z", "restarts": 0, "read_only_rootfs": true, "cap_drop": ["ALL"], "security_opt": ["no-new-privileges:true"], "networks": {"cowrie_cowrie_internal": "172.22.0.3"}, "published_ports": "none"},
+    "cowrie-ssh-relay": {"status": "Up", "image": "sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a", "started": "2026-11-10T09:03:25.094574169Z", "restarts": 0, "read_only_rootfs": true, "cap_drop": ["ALL"], "security_opt": ["no-new-privileges:true"], "networks": {"cowrie_cowrie_internal": "172.22.0.2", "cowrie_relay_frontend": "172.21.0.2"}, "published_ports": "2222/tcp -> 127.0.0.1:2223"}
+  },
+  "network_cowrie_cowrie_internal": {"internal": true, "subnet": "172.22.0.0/16", "ipam_gateway": "172.22.0.1", "created": "2026-11-10T08:23:45Z"},
+  "docker_host": {"os": "Docker Desktop (containerized)", "kernel": "6.18.58.1-microsoft-standard-WSL2", "server": "29.1.2"},
+  "probes_from_cowrie": {
+    "1.1.1.1:53": "Network is unreachable", "8.8.8.8:443": "Network is unreachable", "185.220.101.5:80": "Network is unreachable",
+    "192.168.65.254:80": "Network is unreachable", "172.19.0.1:80": "Network is unreachable", "192.0.2.5:22": "Network is unreachable",
+    "dns example.com / files.example / host.docker.internal": "Temporary failure in name resolution",
+    "routing_table": "only 172.22.0.0/16 on eth0, no default route",
+    "172.22.0.1 (internal-network bridge address)": {
+      "tcp_open": [111],
+      "tcp_refused": [21, 22, 23, 25, 53, 80, 443, 445, 2222, 2223, 2375, 2376, 3306, 5000, 5432, 6379, 8000, 8080, 8443, 9000, 9090, 10250, 11434],
+      "udp_53": "timeout"
+    }
+  },
+  "host_exposure": {"172.27.0.1:2223": "refused/unreachable", "192.168.56.1:2223": "refused/unreachable", "172.20.10.5:2223": "refused/unreachable"},
+  "cowrie_log_baseline": {"lines": 535, "bytes": 256858, "sha256": "c5c114dc4f0b33998a03bc48a26065a01e54ca5c17f9bd37d3b05dc7ffed752a", "last_event_utc": "2026-11-10T11:06:52.587501Z (task 10A session close)"},
+  "config_hashes": {"cowrie/docker-compose.yml": "67aa9e6b1af883a17e378524abaf18caabd228076d43b21f8db1b7bbad835f12 (unchanged since task 12 snapshot)",
+                    "dataset_builder/generate_labelled_traffic.py": "f8c55f9d9631913598676e12cd6b24a9fa7f8707229d01fe0c512d6e578e1fa4 (unchanged)",
+                    "dataset_builder/profiles_v2_revised.json": "79d47ac48e1f4c242ffcb851c567da884df21d039cc11917dc5bf3dea761fe62"},
+  "verdict": "FAIL: a host-side service (TCP 111, rpcbind port) on the Docker VM's bridge address 172.22.0.1 accepts connections from inside Cowrie. No smoke-test traffic was generated."
+}

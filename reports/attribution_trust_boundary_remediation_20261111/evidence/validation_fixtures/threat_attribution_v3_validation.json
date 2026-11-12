@@ -1,0 +1,72 @@
+{
+  "address_safety": {
+    "config_version": "1.0.0",
+    "path": "configs/address_safety_v1.json",
+    "sha256_digest": "657aa680f6cda894f36b177566ce5d0a21374b123b1d8c67ce806a9bf40096c2"
+  },
+  "attribution_result": {
+    "key_validity": {
+      "not_after": "2026-11-12T00:00:00Z",
+      "not_before": "2026-11-11T00:00:00Z"
+    },
+    "max_validity_seconds": 3600,
+    "public_key_path": null,
+    "public_key_sha256": "a21a42ccae35cb245727057b4a2466a6e3cb458da1addff8517ca3b049a05c94",
+    "schema": "signed-attribution-result-1",
+    "status": "provisioned",
+    "status_note": "VALIDATION FIXTURE ONLY: ephemeral key generated in memory by validate_remediation.py.",
+    "verifier": "threat_assessment.signed_attribution"
+  },
+  "config_version": "3.0.0-validation",
+  "created": "2026-11-11",
+  "deployment": "cowrie lab (Docker Desktop): cowrie-project + attributing cowrie-ssh-relay + isolated demo ingress cowrie_demo_ingress",
+  "excluded_diagnostic_sessions": [
+    "99732d516898",
+    "b806554e19b9"
+  ],
+  "internal_cidrs": [
+    "172.21.0.0/16",
+    "172.22.0.0/16"
+  ],
+  "internal_cidrs_note": "Unchanged from v1 (must equal the unchanged behavioural_evidence configuration).",
+  "proxy_client_mapping": {
+    "client_registry": {
+      "10.250.25.3": {
+        "container": "cowrie-demo-test-client",
+        "mac": "02:fa:19:00:00:03",
+        "role": "test_client"
+      },
+      "10.250.25.4": {
+        "container": "cowrie-demo-control-client",
+        "mac": "02:fa:19:00:00:04",
+        "role": "control_client"
+      }
+    },
+    "correlation_skew_seconds": 2,
+    "demo_listeners": [
+      "10.250.25.2:2222"
+    ],
+    "key_validity": {
+      "not_after": "2026-12-11T00:00:00Z",
+      "not_before": "2026-11-11T00:00:00Z"
+    },
+    "max_record_age_seconds": 86400,
+    "public_key_path": "cowrie/attributing_relay/relay_mapping_ed25519.pub.pem",
+    "public_key_sha256": "a52b8c522a4bb0916536af2bf7d4f2f92f0cea47fe49553665e2a5b0a0d272bf",
+    "record_log": "cowrie/attributing_relay/records/relay_mapping.jsonl",
+    "relay_upstream_addresses": [
+      "172.22.0.2"
+    ],
+    "verifier": "client_attribution"
+  },
+  "relay_addresses": [
+    "172.22.0.2"
+  ],
+  "schema": "threat-attribution-config-3",
+  "source_field": "src_ip",
+  "source_field_note": "Only the Cowrie-observed TCP peer (src_ip) is used. Relay sessions are attributed only from signed attribution results verified by threat_assessment with the pinned result key.",
+  "supersedes_for_assessment": "configs/threat_attribution_v2.json (2.0.0, preserved unchanged; its unsigned mapping is withdrawn, F-1)",
+  "trusted_proxy_cidrs": [
+    "172.22.0.2/32"
+  ]
+}

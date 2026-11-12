@@ -1,0 +1,48 @@
+{
+  "train_think_p95": 5.19855,
+  "train_think_p99": 8.672055000000015,
+  "overall_share_max_think_gt_train_p99": 0.04833333333333333,
+  "A_ae_reconstruction": {
+    "flagged": 4,
+    "flagged_with_max_think_gt_train_p99": 2,
+    "flagged_with_max_think_gt_train_p95": 2,
+    "flagged_first_think_median": 5.7661,
+    "all_first_think_median": 1.4937,
+    "flagged_categories": {
+      "lateral_movement": 2,
+      "benign": 1,
+      "brute_force": 1
+    },
+    "spearman_score_vs_max_think": 0.15145374702494807,
+    "spearman_score_vs_first_think": 0.010391475955990279,
+    "top5pct_share_max_think_gt_p99": 0.16666666666666666
+  },
+  "B_latent_knn": {
+    "flagged": 3,
+    "flagged_with_max_think_gt_train_p99": 0,
+    "flagged_with_max_think_gt_train_p95": 1,
+    "flagged_first_think_median": 2.949,
+    "all_first_think_median": 1.4937,
+    "flagged_categories": {
+      "benign": 2,
+      "reconnaissance": 1
+    },
+    "spearman_score_vs_max_think": 0.1112306026131235,
+    "spearman_score_vs_first_think": 0.014364414577381319,
+    "top5pct_share_max_think_gt_p99": 0.1
+  },
+  "C_input_knn": {
+    "flagged": 4,
+    "flagged_with_max_think_gt_train_p99": 2,
+    "flagged_with_max_think_gt_train_p95": 4,
+    "flagged_first_think_median": 3.448,
+    "all_first_think_median": 1.4937,
+    "flagged_categories": {
+      "benign": 2,
+      "lateral_movement": 2
+    },
+    "spearman_score_vs_max_think": 0.36979534990826884,
+    "spearman_score_vs_first_think": 0.0832745646085129,
+    "top5pct_share_max_think_gt_p99": 0.23333333333333334
+  }
+}

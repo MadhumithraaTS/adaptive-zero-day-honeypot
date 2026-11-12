@@ -1,0 +1,18 @@
+﻿C:\AMRITA\Final_Year_Project_zero_day_27\adaptive-zero-day-honeypot\cowrie\backups\pre_isolation_20261110\var\lib\cowrie\ssh_host_rsa_key BUILTIN\Administrators:(I)(F)
+                                                                                                                                          NT AUTHORITY\SYSTEM:(I)(F)
+                                                                                                                                          BUILTIN\Users:(I)(RX)
+                                                                                                                                          NT AUTHORITY\Authenticated Users:(I)(M)
+
+Successfully processed 1 files; Failed processing 0 files
+C:\AMRITA\Final_Year_Project_zero_day_27\adaptive-zero-day-honeypot\cowrie\backups\pre_isolation_20261110\var\lib\cowrie\ssh_host_ecdsa_key BUILTIN\Administrators:(I)(F)
+                                                                                                                                            NT AUTHORITY\SYSTEM:(I)(F)
+                                                                                                                                            BUILTIN\Users:(I)(RX)
+                                                                                                                                            NT AUTHORITY\Authenticated Users:(I)(M)
+
+Successfully processed 1 files; Failed processing 0 files
+C:\AMRITA\Final_Year_Project_zero_day_27\adaptive-zero-day-honeypot\cowrie\backups\pre_isolation_20261110\var\lib\cowrie\ssh_host_ed25519_key BUILTIN\Administrators:(I)(F)
+                                                                                                                                              NT AUTHORITY\SYSTEM:(I)(F)
+                                                                                                                                              BUILTIN\Users:(I)(RX)
+                                                                                                                                              NT AUTHORITY\Authenticated Users:(I)(M)
+
+Successfully processed 1 files; Failed processing 0 files

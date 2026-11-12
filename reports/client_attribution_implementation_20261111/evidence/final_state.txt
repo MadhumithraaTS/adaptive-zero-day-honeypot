@@ -1,0 +1,16 @@
+2026-11-11T17:27:34Z
+rules mentioning demo client IPs (any table):
+(end)
+nft ruleset lines mentioning 10.250.25.3/.4: 0
+bridge rules count total filter: 51
+3ef34cbf70f0 cowrie-demo-test-client Up 9 minutes
+e55ae1ef6455 cowrie-demo-control-client Up 9 minutes
+a5e156cbca02 cowrie-ssh-relay Up 10 minutes
+0bec5a78b1cb cowrie-project Up 29 hours
+cowrie 0bec5a78b1cb354c89d4528a432cef9f70f9b46ce71b2f722aac680258bb4503 started 2026-11-10T12:30:30.630598884Z restarts=0
+relay a5e156cbca02ff9b42ddd8a5b40db1a75225848d4cc82dfd65f6289df7b934ad started 2026-11-11T17:16:39.998671742Z restarts=0
+83148fab7e8a8678a898b2c5283e26eceb9a3cd27ea676e76e6acd71f0f46b30 *cowrie/docker-compose.yml
+58253ae7623fb11d85bafde16b73f6a9983a5b14a224d00c97107d3646dad602 *cowrie/attributing_relay/attributing_relay.py
+b5738c06bb1d2fa0fe939c3b5784134f4a35552615bc4307e617ce3f78b41e10 *cowrie/attributing_relay/demo_client.py
+401773deb4eefb9b5bce64116c58bed99e23b82d95a370b880a2a8122820a117 *cowrie/attributing_relay/relay_config.json
+ec26c9fcca74befc2858e51a396a0a4b9cdfb8d663b5acd456f13eba7256231f *cowrie/attributing_relay/relay_mapping_ed25519.pub.pem

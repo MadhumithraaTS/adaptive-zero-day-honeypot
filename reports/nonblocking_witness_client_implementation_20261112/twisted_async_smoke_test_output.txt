@@ -1,0 +1,31 @@
+{
+ "label": "TEST/LOCAL MOCK async smoke test (network none, ephemeral keys)",
+ "a_t0": 1794427246.2568214,
+ "a_ticks_during_pending_window": 70,
+ "a_max_tick_gap_s": 0.021,
+ "a_slow_client": {
+  "echo": "slow",
+  "latency": 1.52
+ },
+ "b_concurrent_clients": {
+  "c1": true,
+  "c2": true,
+  "c3": true
+ },
+ "b_records_in_order": true,
+ "b_checkpoint_chain_ok": true,
+ "b_max_outstanding": 1,
+ "c_t0": 1794427251.766815,
+ "c_halted": true,
+ "c_cause": "heartbeat_missing",
+ "c_halt_after_s": 2.002,
+ "c_listener_2301": "ConnectionRefusedError",
+ "c_listener_2302": "ConnectionRefusedError",
+ "c_open_sessions_after_halt": {
+  "c1": "aborted (ConnectionResetError)",
+  "c2": "aborted (ConnectionResetError)",
+  "c3": "aborted (ConnectionResetError)"
+ },
+ "c_sessions_left": 0,
+ "relay_start_confirmed_before_listen": true
+}

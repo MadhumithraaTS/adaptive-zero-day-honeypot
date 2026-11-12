@@ -1,0 +1,94 @@
+2026-11-11T17:18:50Z
+dockerd pid=165
+=== pid 7081: /cowrie/cowrie-env/bin/python3 /opt/relay/attributing_relay.py --confi
+  ip_forward=0
+  conf/all/forwarding=0
+  conf/default/forwarding=0
+  conf/all/arp_ignore=1
+  conf/all/arp_announce=2
+  conf/all/rp_filter=2
+  -- addrs
+  1: lo    inet 127.0.0.1/8 scope host lo\       valid_lft forever preferred_lft forever
+  2: eth0    inet 10.250.25.2/28 brd 10.250.25.15 scope global eth0\       valid_lft forever preferred_lft forever
+  3: eth1    inet 172.21.0.2/16 brd 172.21.255.255 scope global eth1\       valid_lft forever preferred_lft forever
+  4: eth2    inet 172.22.0.2/16 brd 172.22.255.255 scope global eth2\       valid_lft forever preferred_lft forever
+  -- routes
+  default via 172.21.0.1 dev eth1 
+  10.250.25.0/28 dev eth0 proto kernel scope link src 10.250.25.2 
+  172.21.0.0/16 dev eth1 proto kernel scope link src 172.21.0.2 
+  172.22.0.0/16 dev eth2 proto kernel scope link src 172.22.0.2 
+  -- ipv6 global addrs: 0
+  -- listening tcp (local hex addr:port)
+awk: cannot open /proc/net/tcp (No such file or directory)
+=== pid 7425: /cowrie/cowrie-env/bin/python3 -c import signal, sys; signal.signal(si
+  ip_forward=0
+  conf/all/forwarding=0
+  conf/default/forwarding=0
+  conf/all/arp_ignore=0
+  conf/all/arp_announce=0
+  conf/all/rp_filter=2
+  -- addrs
+  1: lo    inet 127.0.0.1/8 scope host lo\       valid_lft forever preferred_lft forever
+  2: eth0    inet 10.250.25.4/28 brd 10.250.25.15 scope global eth0\       valid_lft forever preferred_lft forever
+  -- routes
+  10.250.25.0/28 dev eth0 proto kernel scope link src 10.250.25.4 
+  -- ipv6 global addrs: 0
+  -- listening tcp (local hex addr:port)
+awk: cannot open /proc/net/tcp (No such file or directory)
+=== pid 7426: /cowrie/cowrie-env/bin/python3 -c import signal, sys; signal.signal(si
+  ip_forward=0
+  conf/all/forwarding=0
+  conf/default/forwarding=0
+  conf/all/arp_ignore=0
+  conf/all/arp_announce=0
+  conf/all/rp_filter=2
+  -- addrs
+  1: lo    inet 127.0.0.1/8 scope host lo\       valid_lft forever preferred_lft forever
+  2: eth0    inet 10.250.25.3/28 brd 10.250.25.15 scope global eth0\       valid_lft forever preferred_lft forever
+  -- routes
+  10.250.25.0/28 dev eth0 proto kernel scope link src 10.250.25.3 
+  -- ipv6 global addrs: 0
+  -- listening tcp (local hex addr:port)
+awk: cannot open /proc/net/tcp (No such file or directory)
+=== bridge br-1b475c1cf6e9
+36: br-1b475c1cf6e9: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default \    link/ether 06:09:64:16:54:24 brd ff:ff:ff:ff:ff:ff
+=== filter rules mentioning demo bridge/subnet
+-A DOCKER-FORWARD -i br-1b475c1cf6e9 -o br-1b475c1cf6e9 -j ACCEPT
+-A DOCKER-INTERNAL ! -s 10.250.25.0/28 -o br-1b475c1cf6e9 -j DROP
+-A DOCKER-INTERNAL ! -d 10.250.25.0/28 -i br-1b475c1cf6e9 -j DROP
+=== DOCKER-INTERNAL
+-N DOCKER-INTERNAL
+-A DOCKER-INTERNAL ! -s 10.250.25.0/28 -o br-1b475c1cf6e9 -j DROP
+-A DOCKER-INTERNAL ! -d 10.250.25.0/28 -i br-1b475c1cf6e9 -j DROP
+-A DOCKER-INTERNAL ! -s 172.22.0.0/16 -o br-8de3b00259f2 -j DROP
+-A DOCKER-INTERNAL ! -d 172.22.0.0/16 -i br-8de3b00259f2 -j DROP
+=== nat rules mentioning demo
+  (none)
+=== host routes to demo
+  (none)
+=== bridge-nf-call-iptables=1
+
+##### after client sysctl fix
+=== pid 2837: /cowrie/cowrie-env/bin/python3 /cowrie/cowrie-env/bin/twistd
+  fwd=1 all=1 default=1 routes: 172.22.0.0/16 dev eth0 proto kernel scope link src 172.22.0.1 ;
+  LISTEN v4:
+    raw 00000000:08AE
+    raw 0B00007F:8199
+  LISTEN v6 count: 0
+=== pid 7081: /cowrie/cowrie-env/bin/python3 /opt/relay/attributing_relay.
+  fwd=0 all=0 default=0 routes: default via 172.21.0.1 dev eth1 ;10.250.25.0/28 dev eth0 proto kernel scope link src 10.250.25.2 ;172.21.0.0/16 dev eth1 proto kernel scope link src 172.21.0.2 ;172.22.0.0/16 dev eth2 proto kernel scope link src 172.22.0.2 ;
+  LISTEN v4:
+    raw 0B00007F:912B
+    raw 0219FA0A:08AE
+    raw 020015AC:08AE
+  LISTEN v6 count: 0
+=== pid 7425: /cowrie/cowrie-env/bin/python3 -c import signal, sys; signal
+  fwd=0 all=0 default=0 routes: 10.250.25.0/28 dev eth0 proto kernel scope link src 10.250.25.4 ;
+  LISTEN v4:
+    raw 0B00007F:9969
+  LISTEN v6 count: 0
+=== pid 7426: /cowrie/cowrie-env/bin/python3 -c import signal, sys; signal
+  fwd=0 all=0 default=0 routes: 10.250.25.0/28 dev eth0 proto kernel scope link src 10.250.25.3 ;
+  LISTEN v4:
+    raw 0B00007F:80D5
+  LISTEN v6 count: 0

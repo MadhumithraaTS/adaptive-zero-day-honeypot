@@ -1,0 +1,88 @@
+{
+  "version": "2.3.0-revised",
+  "description": "Revised V2 profiles (2026-11-10, task 12): shared command families across categories to reduce template fingerprints found by reports/v2_feature_leakage_validation/report.md, keeping each category's distinct behaviour. Cowrie-compatible (no ssh/scp, wget only to .example names). No per-profile timing: generator 2.1 uses one category-independent PacingPolicy. Design: docs/profile_redesign_v2.md.",
+  "placeholders": {
+    "ip": [
+      "192.0.2.10",
+      "198.51.100.20",
+      "203.0.113.30",
+      "192.0.2.40"
+    ],
+    "lan_ip": [
+      "192.0.2.5",
+      "192.0.2.12",
+      "198.51.100.10",
+      "203.0.113.8"
+    ],
+    "domain": [
+      "files.example",
+      "mirror.example",
+      "pkg-repo.example"
+    ],
+    "bin": [
+      "b.sh",
+      "malware.sh",
+      "update.sh",
+      "payload"
+    ],
+    "user": [
+      "support",
+      "sysbackup",
+      "ftpuser"
+    ],
+    "dir": [
+      "/tmp",
+      "/var/tmp",
+      "/dev/shm"
+    ]
+  },
+  "profiles": [
+    {
+      "name": "brute_force",
+      "attack_cat": "brute_force",
+      "label": 1,
+      "held_out": false,
+      "description": "Credential guessing with several failed logins, then a short check or disconnect.",
+      "credentials": {
+        "usernames": [
+          "root",
+          "admin",
+          "pi",
+          "oracle"
+        ],
+        "passwords": [
+          "admin",
+          "raspberry",
+          "oracle",
+          "12345678"
+        ],
+        "failed_attempts": [
+          3,
+          5
+        ]
+      },
+      "steps": [
+        {
+          "p": 0.5,
+          "cmd": [
+            "uname -a",
+            "whoami",
+            "echo ok"
+          ]
+        }
+      ],
+      "noise_pool": [],
+      "noise_count": [
+        0,
+        0
+      ],
+      "redesign_notes": [
+        "unchanged: brute force stays authentication-oriented (3-5 rejected guesses, then an optional short check); commands are not added to balance features"
+      ]
+    }
+  ],
+  "derived_from": {
+    "file": "dataset_builder/profiles_v2_compat.json",
+    "version": "2.2.0-compat"
+  }
+}

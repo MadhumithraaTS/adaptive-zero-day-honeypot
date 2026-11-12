@@ -1,0 +1,130 @@
+{
+  "features": [
+    "session_duration_s",
+    "input_line_count",
+    "shell_operator_lines",
+    "time_to_first_input_s",
+    "inter_input_mean_s",
+    "inter_input_std_s",
+    "tty_output_bytes"
+  ],
+  "log1p_features": [
+    "session_duration_s",
+    "time_to_first_input_s",
+    "inter_input_mean_s",
+    "inter_input_std_s",
+    "tty_output_bytes"
+  ],
+  "medians_logged_in_train": {
+    "session_duration_s": 12.2,
+    "input_line_count": 5.0,
+    "shell_operator_lines": 0.0,
+    "time_to_first_input_s": 1.663026,
+    "inter_input_mean_s": 1.844205,
+    "inter_input_std_s": 0.984698,
+    "tty_output_bytes": 1114.0
+  },
+  "train_valid_counts": {
+    "session_duration_s": 1500,
+    "input_line_count": 1500,
+    "shell_operator_lines": 1500,
+    "time_to_first_input_s": 1401,
+    "inter_input_mean_s": 1302,
+    "inter_input_std_s": 1292,
+    "tty_output_bytes": 1500
+  },
+  "scaler_mean": {
+    "session_duration_s": 2.469272,
+    "input_line_count": 5.010667,
+    "shell_operator_lines": 0.471333,
+    "time_to_first_input_s": 1.039617,
+    "inter_input_mean_s": 1.073039,
+    "inter_input_std_s": 0.728188,
+    "tty_output_bytes": 7.201698
+  },
+  "scaler_scale": {
+    "session_duration_s": 0.590829,
+    "input_line_count": 2.222885,
+    "shell_operator_lines": 0.584105,
+    "time_to_first_input_s": 0.42932,
+    "inter_input_mean_s": 0.249638,
+    "inter_input_std_s": 0.338294,
+    "tty_output_bytes": 0.936964
+  },
+  "imputed_counts": {
+    "train": {
+      "session_duration_s": 0,
+      "input_line_count": 0,
+      "shell_operator_lines": 0,
+      "time_to_first_input_s": 99,
+      "inter_input_mean_s": 198,
+      "inter_input_std_s": 208,
+      "tty_output_bytes": 0
+    },
+    "validation": {
+      "session_duration_s": 0,
+      "input_line_count": 0,
+      "shell_operator_lines": 0,
+      "time_to_first_input_s": 41,
+      "inter_input_mean_s": 79,
+      "inter_input_std_s": 81,
+      "tty_output_bytes": 0
+    }
+  },
+  "imputed_by_category_train": {
+    "time_to_first_input_s": {
+      "benign": 0,
+      "botnet": 0,
+      "brute_force": 99,
+      "lateral_movement": 0,
+      "privilege_escalation": 0,
+      "reconnaissance": 0
+    },
+    "inter_input_mean_s": {
+      "benign": 0,
+      "botnet": 0,
+      "brute_force": 198,
+      "lateral_movement": 0,
+      "privilege_escalation": 0,
+      "reconnaissance": 0
+    },
+    "inter_input_std_s": {
+      "benign": 6,
+      "botnet": 0,
+      "brute_force": 198,
+      "lateral_movement": 4,
+      "privilege_escalation": 0,
+      "reconnaissance": 0
+    }
+  },
+  "imputation_reason": {
+    "time_to_first_input_s": "no input line (brute-force logins without a command)",
+    "inter_input_mean_s": "fewer than 2 input lines",
+    "inter_input_std_s": "fewer than 3 input lines"
+  },
+  "imputed_rows_by_input_line_count_train": {
+    "0": 99,
+    "1": 99,
+    "2": 10
+  },
+  "largest_identical_vector_group_train": 3,
+  "distinct_vectors_train": 1469,
+  "validation_scaled_mean": {
+    "session_duration_s": 0.032587,
+    "input_line_count": 0.054434,
+    "shell_operator_lines": 0.017691,
+    "time_to_first_input_s": -0.09219,
+    "inter_input_mean_s": 0.06186,
+    "inter_input_std_s": 0.059908,
+    "tty_output_bytes": 0.03805
+  },
+  "validation_scaled_sd": {
+    "session_duration_s": 0.990868,
+    "input_line_count": 1.009044,
+    "shell_operator_lines": 1.012359,
+    "time_to_first_input_s": 0.915117,
+    "inter_input_mean_s": 0.957508,
+    "inter_input_std_s": 0.99183,
+    "tty_output_bytes": 1.015422
+  }
+}

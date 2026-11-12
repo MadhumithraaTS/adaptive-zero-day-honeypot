@@ -1,0 +1,14 @@
+﻿C:\AMRITA\Final_Year_Project_zero_day_27\adaptive-zero-day-honeypot\cowrie\assessment_work\input BUILTIN\Administrators:(I)(OI)(CI)(F)
+                                                                                                 NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+                                                                                                 BUILTIN\Users:(I)(OI)(CI)(RX)
+                                                                                                 NT AUTHORITY\Authenticated Users:(I)(M)
+                                                                                                 NT AUTHORITY\Authenticated Users:(I)(OI)(CI)(IO)(M)
+
+Successfully processed 1 files; Failed processing 0 files
+C:\AMRITA\Final_Year_Project_zero_day_27\adaptive-zero-day-honeypot\cowrie\assessment_work\output BUILTIN\Administrators:(I)(OI)(CI)(F)
+                                                                                                  NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+                                                                                                  BUILTIN\Users:(I)(OI)(CI)(RX)
+                                                                                                  NT AUTHORITY\Authenticated Users:(I)(M)
+                                                                                                  NT AUTHORITY\Authenticated Users:(I)(OI)(CI)(IO)(M)
+
+Successfully processed 1 files; Failed processing 0 files

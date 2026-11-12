@@ -1,0 +1,8 @@
+## threat-assessment container probe 2026-11-11T18:29:45Z
+{"/run/relay/relay_mapping_ed25519.pem": "absent", "/run/relay": "absent", "/var/relay_records": "absent", "/var/run/docker.sock": "absent", "/run/docker.sock": "absent", "/run/secrets": "absent", "/opt/relay": "absent", "project_private_keys": [], "interfaces": ["lo"], "uid": 999}
+## relay container: mounts, networks, sees policy/assessment code?
+/run/relay/relay_mapping_ed25519.pem rw=false; /var/relay_records rw=true; /cowrie/cowrie-git/etc rw=true; /cowrie/cowrie-git/var rw=true; /opt/relay/attributing_relay.py rw=false; /opt/relay/relay_config.json rw=false; 
+cowrie_cowrie_internal 172.22.0.2; cowrie_demo_ingress 10.250.25.2; cowrie_relay_frontend 172.21.0.2; 
+{'/opt/project': False, '/opt/project/configs': False, '/work': False, '/var/run/docker.sock': False, '/opt/relay/relay_config.json': True}
+## relay key ACL / in-container mode
+0o444 not writable

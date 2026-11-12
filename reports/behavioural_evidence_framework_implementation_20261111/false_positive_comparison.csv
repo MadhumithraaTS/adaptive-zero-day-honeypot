@@ -1,0 +1,6 @@
+measure,denominator,legacy_task20,design_prototype_task21,implementation_primary,implementation_lab_plan,implementation_oracle_auth
+benign logged-in sessions with an attack-implying interpretation,229,79.0,45,0,0,
+benign failed-guess sessions labelled credential attack,126,126.0,0,0,0,0.0
+benign 'network probing' from curl -I,229,,45,0,0,
+sessions claiming a successful download (legacy label 'Download or payload retrieval' vs observed_success),600,99.0,0,0,0,
+slow-find sessions treated as novel/behavioural (legacy matcher E3 'Potentially Novel' vs ART-1 caveat changing output),9,9.0,0,0,0,

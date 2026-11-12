@@ -1,0 +1,3 @@
+row,session_ref,feature_spec_version,extraction_status,warnings,unknown_command_events,url_download_events,download_failed_events,redirect_write_events,scp_stdin_events,event_count,session_closed_observed,timestamp_order_mismatch
+0,8e394a6d867c,2.0.0-draft.3,ok,,1,0,0,0,0,15,1,0
+1,a8bece43a6c7,2.0.0-draft.3,ok,,0,0,0,0,0,14,1,0

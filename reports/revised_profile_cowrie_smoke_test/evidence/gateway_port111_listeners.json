@@ -1,0 +1,38 @@
+{
+  "source": "read-only /proc reads from the docker-desktop WSL distribution (root), 2026-11-10 ~12:00 UTC; no packets sent",
+  "engine_network_namespace": "net:[4026532223] (dockerd pid 165, rpcbind pid 100, rpc.statd pid 102, rpc.idmapd pid 128, containerd)",
+  "wsl_default_namespace": "net:[4026531833] (docker-desktop and Ubuntu-22.04 shells; only lo + eth0 172.27.4.167/20; no port-111 listener)",
+  "processes": {
+    "rpcbind": {"pid": 100, "exe": "/usr/sbin/rpcbind", "cmdline": "/sbin/rpcbind -f", "uid": 100, "parent": "pid 59 '/initd services' (Docker Desktop VM init, docker-desktop.iso)"},
+    "rpc.statd": {"pid": 102, "exe": "/usr/sbin/rpc.statd", "cmdline": "/sbin/rpc.statd -d -F", "uid": 0, "parent": "pid 59"},
+    "rpc.idmapd": {"pid": 128, "exe": "/usr/sbin/rpc.idmapd", "cmdline": "/usr/sbin/rpc.idmapd -f -p /run/rpc_pipefs", "uid": 0, "parent": "pid 59", "sockets": "none in /proc/net tables"},
+    "dockerd": {"pid": 165, "cmdline": "/usr/local/bin/dockerd --config-file /run/config/docker/daemon.json ... --host-gateway-ip 192.168.65.254"}
+  },
+  "listening_sockets_in_engine_namespace": [
+    {"proto": "tcp",  "local": "0.0.0.0:111",    "inode": 1258,  "owner": "rpcbind"},
+    {"proto": "tcp6", "local": "[::]:111",       "inode": 1260,  "owner": "rpcbind"},
+    {"proto": "udp",  "local": "0.0.0.0:111",    "inode": 1257,  "owner": "rpcbind"},
+    {"proto": "udp6", "local": "[::]:111",       "inode": 1259,  "owner": "rpcbind"},
+    {"proto": "tcp",  "local": "0.0.0.0:32775",  "inode": 1267,  "owner": "rpc.statd"},
+    {"proto": "tcp6", "local": "[::]:34279",     "inode": 1271,  "owner": "rpc.statd"},
+    {"proto": "udp",  "local": "0.0.0.0:51113",  "inode": 1265,  "owner": "rpc.statd"},
+    {"proto": "udp6", "local": "[::]:37837",     "inode": 1269,  "owner": "rpc.statd"},
+    {"proto": "udp",  "local": "127.0.0.1:662",  "inode": 15378, "owner": "rpc.statd"},
+    {"proto": "tcp",  "local": "127.0.0.1:2223", "inode": 13940, "owner": "dockerd (published port of cowrie-ssh-relay)"}
+  ],
+  "local_ipv4_addresses_in_engine_namespace": ["127.0.0.1", "172.17.0.1", "172.18.0.1", "172.19.0.1", "172.20.0.1", "172.21.0.1", "172.22.0.1", "192.168.65.3", "192.168.65.6"],
+  "bridges": {"br-72ab93e8020b": {"network": "cowrie_cowrie_internal", "address": "172.22.0.1", "mac": "0e:b4:01:56:10:3b", "ports": ["veth6da2d2e", "veth87d86fb"]},
+              "br-c94e904b8861": {"network": "cowrie_relay_frontend", "address": "172.21.0.1"},
+              "br-29dbe112c59e": {"network": "cowrie_default (unused)", "address": "172.19.0.1"},
+              "br-ace391997e9b": {"network": "et-ai_default", "address": "172.20.0.1"},
+              "br-e0f9fc878c71": {"network": "rezumy_default", "address": "172.18.0.1"}},
+  "cowrie_container_view": {"arp_172.22.0.1": "0e:b4:01:56:10:3b (= br-72ab93e8020b)", "ipv6": "loopback only", "docker_inspect_Gateway": "invalid IP (empty)"},
+  "firewall": {"filter_INPUT_policy": "ACCEPT", "filter_INPUT_rules": 0, "DOCKER-INTERNAL": "FORWARD only: drops traffic leaving/entering br-72ab93e8020b for addresses outside 172.22.0.0/16"},
+  "cowrie_application_controls": {
+    "core/network.py BLOCKED_IPS": "includes 172.16.0.0/12 (and 10/8, 192.168/16, 127/8, 169.254/16, 0/8, multicast, reserved)",
+    "communication_allowed() used by": ["nc", "wget", "curl", "ftpget"],
+    "ssh_forwarding": "forwarding=true, forward_redirect=false, forward_tunnel=false -> FakeForwardingChannel (logs, never connects)",
+    "enabled_output_plugins": ["output_jsonlog"],
+    "backend": "shell"
+  }
+}

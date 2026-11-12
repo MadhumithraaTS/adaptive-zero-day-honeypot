@@ -1,0 +1,6 @@
+case,attribution_state,tier,failed_gates,proposal_subject
+verified mapping,attributable_via_proxy_mapping,propose,,10.250.25.3
+no mapping supplied,unattributed:mapping_unavailable,review,5_attributable_source,
+mapping digest from another config,unattributed:mapping_unavailable,review,"5_attributable_source,7_verified_configuration_digests",
+mapping from tampered log,unattributed:mapping_untrusted,review,5_attributable_source,
+mapping evaluated after expiry,unattributed:mapping_expired,review,5_attributable_source,

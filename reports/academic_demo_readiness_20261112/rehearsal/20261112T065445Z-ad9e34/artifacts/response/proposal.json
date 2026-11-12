@@ -1,0 +1,58 @@
+{
+  "schema": "response-proposal-1",
+  "proposal_id": "prop-task26c-isolated-000001",
+  "created_utc": "2026-11-12T06:54:45.056643Z",
+  "expires_utc": "2026-11-12T07:24:45.056643Z",
+  "session_ref": "00bae095780a",
+  "assessment_audit": {
+    "record_id": "task26c-isolated-000001",
+    "record_hash": "e5adf50728e5f1a7a4482a02281e2183bfe8b221d79479728050d252b0b28048"
+  },
+  "attribution": {
+    "state": "attributable_via_proxy_mapping",
+    "result_id": "DEMO-20261112T065445Z-ad9e34",
+    "result_hash": "75c8537f3504999513520b6bf26f8560aa7773827e5973b3974239dab766b6f5",
+    "connection_id": "5eb68270-9b61-48f5-b40c-85cd8233dedb",
+    "client_ip": "10.250.25.3"
+  },
+  "source_proposal": {
+    "execution": "not_executed",
+    "inverse": {
+      "subject": "10.250.25.3",
+      "type": "unblock_source_ip"
+    },
+    "manual_approval": "pending",
+    "mode": "dry_run",
+    "relay_connection_id": "5eb68270-9b61-48f5-b40c-85cd8233dedb",
+    "scope": "this sensor only",
+    "subject": "10.250.25.3",
+    "subject_basis": "attributable_via_proxy_mapping",
+    "ttl_seconds": 86400,
+    "type": "block_source_ip"
+  },
+  "action": {
+    "type": "restrict_new_connections",
+    "target": "10.250.25.3/32",
+    "listener": "demo",
+    "max_ttl_seconds": 900
+  },
+  "fingerprints": {
+    "response_policy": "c91559a6624d5c81cd429866de849a9872d78180ce5f55c90bab5e6ab0373c37",
+    "address_safety": "278563bd94d1900014cbdfaa2ef76708ffeb755c687f2f10a51640872c0dbc70",
+    "defence_policy": "cabd565e7c76eb63e4256b7b2f7ea6d87975c5670fca84cec93e0ecd58216d40",
+    "attribution_config": "364709125e31333607e956e1e2f35a2b4427c6b8cb9af513be001cdde32037eb"
+  },
+  "findings": [
+    {
+      "interpretation": "download attempt",
+      "severity": "S2",
+      "evidence_level": "E2"
+    },
+    {
+      "interpretation": "download-and-execute attempt",
+      "severity": "S3",
+      "evidence_level": "E2"
+    }
+  ],
+  "proposal_hash": "576e72b76e4fa1844926ebd2d5757504f86df2b493a39a58eabd22948bab9951"
+}

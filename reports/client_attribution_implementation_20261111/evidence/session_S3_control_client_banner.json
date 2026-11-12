@@ -1,0 +1,1 @@
+{"mode": "banner", "connected": true, "authenticated": false, "lines_sent": [], "output_bytes": 0, "error": null, "started_unix": 1794417558.0113454, "client_local": "10.250.25.4:52586", "banner": "SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u3", "finished_unix": 1794417559.0249963}

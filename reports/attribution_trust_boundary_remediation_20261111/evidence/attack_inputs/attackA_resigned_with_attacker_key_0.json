@@ -1,0 +1,294 @@
+{
+  "attribution_config": {
+    "config_version": "3.0.0-validation",
+    "digest": "a89621dc856ea56635018f013a5b420f5f7ed481563c6b05d76f4cb5c04a58e0",
+    "schema": "threat-attribution-config-3"
+  },
+  "cowrie_input": {
+    "first_utc": "2026-11-11T17:19:01.638459Z",
+    "last_utc": "2026-11-11T17:19:54.396942Z",
+    "n_events": 34,
+    "sha256": "337c16cfbcbee90f5b78b0484061c3a5b70ced6ad5acc8a15e8facaa7e41dc80"
+  },
+  "evaluation_time_utc": "2026-11-11T17:30:00.000000Z",
+  "issued_utc": "2026-11-11T17:30:00.000000Z",
+  "not_after_utc": "2026-11-11T18:30:00.000000Z",
+  "relay_log": {
+    "chain_head": "cbca971154842681cb8a98d12e691428795be243aa2b5bf7f131eb1b4467ba40",
+    "checkpoints": [
+      {
+        "seq": 11,
+        "status": "consistent"
+      }
+    ],
+    "gaps": [],
+    "intact": true,
+    "public_key_sha256": "a52b8c522a4bb0916536af2bf7d4f2f92f0cea47fe49553665e2a5b0a0d272bf",
+    "record_count": 11,
+    "rejected_lines": 0,
+    "tail": {
+      "checkpoint_seq": 11,
+      "last_seq": 11,
+      "status": "attested"
+    },
+    "verification": "chain and signatures verify"
+  },
+  "result_hash": "94ea547c397967c22b3a7db323dba1e386a701c56a97008e9c8d76f38a33af73",
+  "result_id": "task26c-validation-genuine",
+  "schema": "signed-attribution-result-1",
+  "sessions": [
+    {
+      "authentication": {
+        "login_success_utc": "2026-11-11T17:19:28.648479Z",
+        "n_login_failed": 0,
+        "n_login_success": 1,
+        "reason": "exactly one cowrie.login.success correlated by session ID, source, sensor and time",
+        "sensor": "0bec5a78b1cb",
+        "state": "login_success_observed",
+        "username": "demo"
+      },
+      "client": {
+        "ip": "10.250.25.3",
+        "port": 42370,
+        "role": "test_client"
+      },
+      "close_check": "consistent",
+      "cowrie_session_id": "3eede5e19e25",
+      "decision": "attributable_via_proxy_mapping",
+      "reason": "exactly one verified demo-listener relay record matches tuple, time and close",
+      "relay_listener": {
+        "accepted_local": "10.250.25.2:2222",
+        "ip": "10.250.25.2",
+        "mode": "demo",
+        "name": "demo",
+        "port": 2222
+      },
+      "relay_records": {
+        "close": {
+          "record_hash": "98b7a1cd1eef8d61e95215afe635c6adfa514687fae7fb88140ab5fb7c2d56ff",
+          "seq": 9
+        },
+        "connection_id": "cbc790bd-c8a5-4a76-98a1-b2d679b4d773",
+        "open": {
+          "record_hash": "7730fc4d0a2654da526468a205bc5a169c2bcfad3cf6909d8772c953980e38f8",
+          "seq": 8
+        }
+      },
+      "relay_to_cowrie": {
+        "dst_ip": "172.22.0.1",
+        "dst_port": 2222,
+        "src_ip": "172.22.0.2",
+        "src_port": 59090
+      },
+      "timestamps": {
+        "cowrie_closed_utc": "2026-11-11T17:19:37.839892Z",
+        "cowrie_connect_utc": "2026-11-11T17:19:28.191662Z",
+        "relay_accepted_utc": "2026-11-11T17:19:28.188322Z",
+        "relay_closed_utc": "2026-11-11T17:19:37.829584Z",
+        "relay_upstream_connected_utc": "2026-11-11T17:19:28.190665Z"
+      }
+    },
+    {
+      "authentication": {
+        "login_success_utc": "2026-11-11T17:19:45.563217Z",
+        "n_login_failed": 0,
+        "n_login_success": 1,
+        "reason": "exactly one cowrie.login.success correlated by session ID, source, sensor and time",
+        "sensor": "0bec5a78b1cb",
+        "state": "login_success_observed",
+        "username": "demo"
+      },
+      "client": {
+        "ip": "10.250.25.3",
+        "port": 46198,
+        "role": "test_client"
+      },
+      "close_check": "consistent",
+      "cowrie_session_id": "4542a85f37ec",
+      "decision": "attributable_via_proxy_mapping",
+      "reason": "exactly one verified demo-listener relay record matches tuple, time and close",
+      "relay_listener": {
+        "accepted_local": "10.250.25.2:2222",
+        "ip": "10.250.25.2",
+        "mode": "demo",
+        "name": "demo",
+        "port": 2222
+      },
+      "relay_records": {
+        "close": {
+          "record_hash": "cbca971154842681cb8a98d12e691428795be243aa2b5bf7f131eb1b4467ba40",
+          "seq": 11
+        },
+        "connection_id": "c324cdb6-7a3d-447a-abae-4400ad999cf8",
+        "open": {
+          "record_hash": "cad8fffd4628e9d435b8bff49555a1fc9c0d8b75280838f5574214fc046d4c5c",
+          "seq": 10
+        }
+      },
+      "relay_to_cowrie": {
+        "dst_ip": "172.22.0.1",
+        "dst_port": 2222,
+        "src_ip": "172.22.0.2",
+        "src_port": 34988
+      },
+      "timestamps": {
+        "cowrie_closed_utc": "2026-11-11T17:19:54.396942Z",
+        "cowrie_connect_utc": "2026-11-11T17:19:45.529669Z",
+        "relay_accepted_utc": "2026-11-11T17:19:45.524561Z",
+        "relay_closed_utc": "2026-11-11T17:19:54.388634Z",
+        "relay_upstream_connected_utc": "2026-11-11T17:19:45.527763Z"
+      }
+    },
+    {
+      "authentication": {
+        "login_success_utc": null,
+        "n_login_failed": 0,
+        "n_login_success": 0,
+        "reason": "no cowrie.login.success under this session ID",
+        "sensor": null,
+        "state": "indeterminate:no_login_success_event",
+        "username": null
+      },
+      "client": null,
+      "close_check": null,
+      "cowrie_session_id": "9441bcce555c",
+      "decision": "unattributed:published_listener",
+      "reason": "accepted on a non-demo listener (proxy peer)",
+      "relay_listener": {
+        "accepted_local": "172.21.0.2:2222",
+        "ip": "172.21.0.2",
+        "mode": "published",
+        "name": "published",
+        "port": 2222
+      },
+      "relay_records": {
+        "close": null,
+        "connection_id": "767fb7ef-69df-4ccf-b990-b63f6dde7dcd",
+        "open": {
+          "record_hash": "95d8b215b3d5e67ee78559e6af9b21a02332e3c948fc6b8a912cd462812ea04e",
+          "seq": 2
+        }
+      },
+      "relay_to_cowrie": {
+        "dst_ip": "172.22.0.1",
+        "dst_port": 2222,
+        "src_ip": "172.22.0.2",
+        "src_port": 41994
+      },
+      "timestamps": {
+        "cowrie_closed_utc": "2026-11-11T17:19:02.657885Z",
+        "cowrie_connect_utc": "2026-11-11T17:19:01.638459Z",
+        "relay_accepted_utc": "2026-11-11T17:19:01.622957Z",
+        "relay_closed_utc": null,
+        "relay_upstream_connected_utc": "2026-11-11T17:19:01.633093Z"
+      }
+    },
+    {
+      "authentication": {
+        "login_success_utc": null,
+        "n_login_failed": 0,
+        "n_login_success": 0,
+        "reason": "no cowrie.login.success under this session ID",
+        "sensor": null,
+        "state": "indeterminate:no_login_success_event",
+        "username": null
+      },
+      "client": {
+        "ip": "10.250.25.3",
+        "port": 38204,
+        "role": "test_client"
+      },
+      "close_check": "consistent",
+      "cowrie_session_id": "acc2bad4a442",
+      "decision": "attributable_via_proxy_mapping",
+      "reason": "exactly one verified demo-listener relay record matches tuple, time and close",
+      "relay_listener": {
+        "accepted_local": "10.250.25.2:2222",
+        "ip": "10.250.25.2",
+        "mode": "demo",
+        "name": "demo",
+        "port": 2222
+      },
+      "relay_records": {
+        "close": {
+          "record_hash": "f2819d9f9b822e01b05c37d5a61b8749a009177ec8720d83ef4b06dfe1b35d3f",
+          "seq": 5
+        },
+        "connection_id": "9319b4d8-e367-41c9-904a-eaa8fdd68e40",
+        "open": {
+          "record_hash": "276ea8fefd2eeeb2b566f309d7ce8c0889c56e17dacd6334fbebc564483a35e6",
+          "seq": 4
+        }
+      },
+      "relay_to_cowrie": {
+        "dst_ip": "172.22.0.1",
+        "dst_port": 2222,
+        "src_ip": "172.22.0.2",
+        "src_port": 44200
+      },
+      "timestamps": {
+        "cowrie_closed_utc": "2026-11-11T17:19:14.660258Z",
+        "cowrie_connect_utc": "2026-11-11T17:19:13.639874Z",
+        "relay_accepted_utc": "2026-11-11T17:19:13.636144Z",
+        "relay_closed_utc": "2026-11-11T17:19:14.652510Z",
+        "relay_upstream_connected_utc": "2026-11-11T17:19:13.639042Z"
+      }
+    },
+    {
+      "authentication": {
+        "login_success_utc": null,
+        "n_login_failed": 0,
+        "n_login_success": 0,
+        "reason": "no cowrie.login.success under this session ID",
+        "sensor": null,
+        "state": "indeterminate:no_login_success_event",
+        "username": null
+      },
+      "client": {
+        "ip": "10.250.25.4",
+        "port": 52586,
+        "role": "control_client"
+      },
+      "close_check": "consistent",
+      "cowrie_session_id": "d588636ce120",
+      "decision": "attributable_via_proxy_mapping",
+      "reason": "exactly one verified demo-listener relay record matches tuple, time and close",
+      "relay_listener": {
+        "accepted_local": "10.250.25.2:2222",
+        "ip": "10.250.25.2",
+        "mode": "demo",
+        "name": "demo",
+        "port": 2222
+      },
+      "relay_records": {
+        "close": {
+          "record_hash": "75441c2347612f620e1dbf24ee1902f332796a31fee56607b389d5140e9d44b0",
+          "seq": 7
+        },
+        "connection_id": "a3f2c6f8-ed34-49e1-a0c8-1cff30fcf7f5",
+        "open": {
+          "record_hash": "90511b82138fbb7b8a930c8b942d5109ba79538ef62be848ccc65507770bf8d1",
+          "seq": 6
+        }
+      },
+      "relay_to_cowrie": {
+        "dst_ip": "172.22.0.1",
+        "dst_port": 2222,
+        "src_ip": "172.22.0.2",
+        "src_port": 34936
+      },
+      "timestamps": {
+        "cowrie_closed_utc": "2026-11-11T17:19:19.032570Z",
+        "cowrie_connect_utc": "2026-11-11T17:19:18.021067Z",
+        "relay_accepted_utc": "2026-11-11T17:19:18.014626Z",
+        "relay_closed_utc": "2026-11-11T17:19:19.025872Z",
+        "relay_upstream_connected_utc": "2026-11-11T17:19:18.017951Z"
+      }
+    }
+  ],
+  "signature": "dd85b2583bdf218751a2e80a523a339dc35ee676da0b2e97abc2d9be84cb8f95d84bb5c824c75ac1d87dee4b951db95c7a0cd1d7e5e162fa092e5908f8667807",
+  "signer": {
+    "key_id": "0c3fb78146e2d48b",
+    "public_key_sha256": "0c3fb78146e2d48b9ae3e9bf30c0ba04b35fbcd0180d952bd86a81560831a430"
+  }
+}

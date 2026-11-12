@@ -1,0 +1,2 @@
+session_id,src_ip,src_port,dur,proto,service,spkts,dpkts,sbytes,dbytes,rate,sttl,dttl,sload,dload,sinpkt,dinpkt,sjit,djit,tcprtt,synack,ackdat,ct_srv_src,ct_state_ttl,ct_dst_ltm,ct_src_ltm,ct_srv_dst,attack_cat,label,dec_cluster,dec_confidence,cluster_0_prob,cluster_1_prob,cluster_2_prob
+42ee73a7cbbd,172.22.0.2,50408,10.600798,ssh,ssh,5,7,69,820,83.8616,64,64,52.0716,618.8213,1.488142,1.753388,0.131427,2.496127,0.085923,0.038665,4.233363,1,1,1,1,1,normal,0,1,0.92395765,0.046643812,0.92395765,0.02939851

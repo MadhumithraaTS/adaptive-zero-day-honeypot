@@ -1,0 +1,12 @@
+2026-11-11T17:40:11Z
+rules mentioning demo client IPs (any table):
+(end)
+nft ruleset lines mentioning 10.250.25.3/.4: 0
+bridge rules count total filter: 51
+3ef34cbf70f0 cowrie-demo-test-client Up 22 minutes
+e55ae1ef6455 cowrie-demo-control-client Up 22 minutes
+a5e156cbca02 cowrie-ssh-relay Up 23 minutes
+0bec5a78b1cb cowrie-project Up 29 hours
+cowrie 0bec5a78b1cb354c89d4528a432cef9f70f9b46ce71b2f722aac680258bb4503 started 2026-11-10T12:30:30.630598884Z restarts=0
+relay a5e156cbca02ff9b42ddd8a5b40db1a75225848d4cc82dfd65f6289df7b934ad started 2026-11-11T17:16:39.998671742Z restarts=0
+relay records: 11 sha 496b5a0f2ba76781

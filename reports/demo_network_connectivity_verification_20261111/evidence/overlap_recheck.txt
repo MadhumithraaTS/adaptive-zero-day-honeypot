@@ -1,0 +1,42 @@
+ok      172.17.0.0/16        docker bridge
+ok      172.22.0.0/16        docker cowrie_cowrie_internal
+ok      172.19.0.0/16        docker cowrie_default
+ok      172.21.0.0/16        docker cowrie_relay_frontend
+ok      172.20.0.0/16        docker et-ai_default
+ok      172.18.0.0/16        docker rezumy_default
+ok      127.0.0.0/8          host route 127.0.0.0/8
+ok      127.0.0.1/32         host route 127.0.0.1/32
+ok      127.255.255.255/32   host route 127.255.255.255/32
+ok      172.20.10.0/28       host route 172.20.10.0/28
+ok      172.20.10.15/32      host route 172.20.10.15/32
+ok      172.20.10.5/32       host route 172.20.10.5/32
+ok      172.27.0.0/20        host route 172.27.0.0/20
+ok      172.27.0.1/32        host route 172.27.0.1/32
+ok      172.27.15.255/32     host route 172.27.15.255/32
+ok      192.168.56.0/24      host route 192.168.56.0/24
+ok      192.168.56.1/32      host route 192.168.56.1/32
+ok      192.168.56.255/32    host route 192.168.56.255/32
+ok      224.0.0.0/4          host route 224.0.0.0/4
+ok      255.255.255.255/32   host route 255.255.255.255/32
+ok      127.0.0.0/8          attribution protected_cidrs 127.0.0.0/8
+ok      ::1/128              attribution protected_cidrs ::1/128
+ok      169.254.0.0/16       attribution protected_cidrs 169.254.0.0/16
+ok      fe80::/10            attribution protected_cidrs fe80::/10
+ok      172.19.0.0/16        attribution protected_cidrs 172.19.0.0/16
+ok      172.21.0.0/16        attribution protected_cidrs 172.21.0.0/16
+ok      172.22.0.0/16        attribution protected_cidrs 172.22.0.0/16
+ok      172.21.0.0/16        attribution internal_cidrs 172.21.0.0/16
+ok      172.22.0.0/16        attribution internal_cidrs 172.22.0.0/16
+ok      172.22.0.2/32        attribution trusted_proxy_cidrs 172.22.0.2/32
+ok      127.0.0.0/8          policy v2 protected 127.0.0.0/8
+ok      ::1/128              policy v2 protected ::1/128
+ok      169.254.0.0/16       policy v2 protected 169.254.0.0/16
+ok      fe80::/10            policy v2 protected fe80::/10
+ok      172.19.0.0/16        policy v2 protected 172.19.0.0/16
+ok      172.21.0.0/16        policy v2 protected 172.21.0.0/16
+ok      172.22.0.0/16        policy v2 protected 172.22.0.0/16
+ok      192.168.65.0/24      Docker Desktop VM 192.168.65.0/24
+ok      172.16.0.0/12        Docker default pool 172.16/12
+ok      192.168.0.0/16       Docker default pool 192.168/16
+default route 0.0.0.0/0 excluded (matches everything by definition)
+RESULT: no overlap

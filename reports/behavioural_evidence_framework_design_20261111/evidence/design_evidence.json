@@ -1,0 +1,155 @@
+{
+  "inputs_verified": true,
+  "slow_commands_calibrated_from_train": [
+    "find / -name id_rsa 2>/dev/null"
+  ],
+  "checks": {
+    "train": {
+      "benign_failed_login_sessions": 302,
+      "benign_failed_sessions_with_AUTH-1_repeated_failures": 0,
+      "benign_failed_sessions_labelled_credential_attack_by_old_rule": 302,
+      "max_failed_logins_from_one_interaction_by_category": {
+        "benign": 1,
+        "botnet": 2,
+        "brute_force": 5,
+        "lateral_movement": 1,
+        "privilege_escalation": 1,
+        "reconnaissance": 2
+      },
+      "AUTH-1_fires_by_category_sessions": {
+        "benign": 0.0,
+        "botnet": 0.0,
+        "brute_force": 1.0,
+        "lateral_movement": 0.0,
+        "privilege_escalation": 0.0,
+        "reconnaissance": 0.0
+      },
+      "lab_distinct_src_ips": 1,
+      "lab_sessions_per_src_ip": {
+        "172.22.0.2": 3190
+      },
+      "old_credential_attack_lines_not_supported_by_token_indicators": 551,
+      "examples": [
+        "service ssh status",
+        "ps aux | grep sshd",
+        "systemctl status ssh",
+        "cat /etc/passwd | grep sh",
+        "cat /etc/passwd | grep sh",
+        "ps aux | grep sshd",
+        "systemctl status ssh",
+        "cat /etc/passwd | grep sh"
+      ],
+      "download_attempt_sessions": 255,
+      "download_success_events": 0,
+      "upload_attempt_sessions": 0,
+      "upload_success_events": 0,
+      "slow_find_sessions_ART-1": 30,
+      "slow_find_sessions_by_category": {
+        "privilege_escalation": 30
+      },
+      "emulator_unknown_command_sessions_EMU-1": 428,
+      "emulator_unknown_command_names": {
+        "systemctl": 106,
+        "journalctl": 98,
+        "nmap": 81,
+        "shell": 43,
+        "system": 34,
+        "./b.sh": 32,
+        "arp": 25,
+        "./update.sh": 24,
+        "./malware.sh": 23,
+        "./payload": 23
+      },
+      "repeated_sequence_SEQ-1_by_category": "n/a (reference split)"
+    },
+    "validation": {
+      "benign_failed_login_sessions": 126,
+      "benign_failed_sessions_with_AUTH-1_repeated_failures": 0,
+      "benign_failed_sessions_labelled_credential_attack_by_old_rule": 126,
+      "max_failed_logins_from_one_interaction_by_category": {
+        "benign": 1,
+        "botnet": 2,
+        "brute_force": 5,
+        "lateral_movement": 1,
+        "privilege_escalation": 1,
+        "reconnaissance": 2
+      },
+      "AUTH-1_fires_by_category_sessions": {
+        "benign": 0.0,
+        "botnet": 0.0,
+        "brute_force": 1.0,
+        "lateral_movement": 0.0,
+        "privilege_escalation": 0.0,
+        "reconnaissance": 0.0
+      },
+      "lab_distinct_src_ips": 1,
+      "lab_sessions_per_src_ip": {
+        "172.22.0.2": 1257
+      },
+      "old_credential_attack_lines_not_supported_by_token_indicators": 240,
+      "examples": [
+        "cat /etc/passwd",
+        "ps aux | grep sshd",
+        "service ssh status",
+        "service ssh status",
+        "ps aux | grep sshd",
+        "service ssh status",
+        "ps aux | grep sshd",
+        "ps aux | grep sshd"
+      ],
+      "download_attempt_sessions": 92,
+      "download_success_events": 0,
+      "upload_attempt_sessions": 0,
+      "upload_success_events": 0,
+      "slow_find_sessions_ART-1": 9,
+      "slow_find_sessions_by_category": {
+        "privilege_escalation": 9
+      },
+      "emulator_unknown_command_sessions_EMU-1": 164,
+      "emulator_unknown_command_names": {
+        "systemctl": 42,
+        "journalctl": 42,
+        "nmap": 34,
+        "arp": 18,
+        "shell": 15,
+        "./payload": 13,
+        "./update.sh": 11,
+        "system": 10,
+        "./malware.sh": 7,
+        "./b.sh": 6
+      },
+      "repeated_sequence_SEQ-1_by_category": {
+        "brute_force": 38,
+        "benign": 8,
+        "lateral_movement": 3,
+        "botnet": 1
+      }
+    },
+    "find_artefact_independence_train_pe": {
+      "pe_logged_in": 175,
+      "pe_with_ART-1": 30,
+      "indicator_rates_with_vs_without_ART-1": {
+        "PRIV-1": [
+          1.0,
+          1.0
+        ],
+        "CRED-1": [
+          1.0,
+          0.71
+        ],
+        "FILE-1": [
+          1.0,
+          0.0
+        ],
+        "DISC-1": [
+          1.0,
+          1.0
+        ]
+      },
+      "note": "ART-1 sessions differ in CRED-1/FILE-1 by construction (find -name id_rsa is itself the slow command); no indicator uses timing"
+    }
+  },
+  "test_like_paths_opened": [
+    "c:/amrita/final_year_project_zero_day_27/adaptive-zero-day-honeypot/reports/dataset_v2_training_validation_20261110/preflight/test_suite.txt"
+  ]
+}

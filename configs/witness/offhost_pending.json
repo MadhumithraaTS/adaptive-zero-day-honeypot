@@ -1,0 +1,20 @@
+{
+  "schema": "offhost-trust-config-1",
+  "config_version": "0.1.0-placeholder",
+  "status": "PLACEHOLDER - D0 not resolved: repositories not created, administrators not provisioned",
+  "trust_anchor_repository": "https://github.com/PLACEHOLDER/honeypot-trust-anchor.git",
+  "witness_log_repository": "https://github.com/PLACEHOLDER/honeypot-witness-log.git",
+  "administrators": {"A": "ADMIN_A_PENDING", "B": "ADMIN_B_PENDING"},
+  "replication_credential": "NOT_CONFIGURED",
+  "trust_anchor_fingerprint": "PENDING_PROVISIONING",
+  "parameters": {
+    "ack_timeout_seconds": 2,
+    "heartbeat_interval_seconds": 60,
+    "max_replication_lag_seconds": 900,
+    "replication_status_stale_seconds": 120,
+    "monitor_freshness_seconds": 1200,
+    "checkpoint_max_age_seconds": 120,
+    "clock_skew_seconds": 5
+  },
+  "note": "Every service refuses PRODUCTION startup while any value above contains PLACEHOLDER, PENDING or NOT_CONFIGURED. These URLs are never contacted. Local development uses TEST/LOCAL MOCK repositories only."
+}

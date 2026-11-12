@@ -1,0 +1,98 @@
+{
+  "isolation": {
+    "in_container": true,
+    "uid": 999,
+    "forbidden_paths_reachable": [],
+    "private_key_files_readable": [],
+    "network_interfaces": [
+      "lo"
+    ],
+    "scan_roots": [
+      "/opt/project",
+      "/work/input"
+    ],
+    "ok": true
+  },
+  "attribution_config": "a89621dc856ea56635018f013a5b420f5f7ed481563c6b05d76f4cb5c04a58e0",
+  "attribution_schema": "threat-attribution-config-3",
+  "policy": "2.2.0-validation",
+  "policy_schema": "2.1",
+  "result_key_status": "provisioned",
+  "audit_chain": {
+    "ok": true,
+    "index": null,
+    "reason": "chain intact",
+    "entries": 5,
+    "last_hash": "73539c195f094ee23dee927b09379356e3331d911d62d6d528a03807847fa9f5"
+  },
+  "sessions": {
+    "9441bcce555c": {
+      "tier": "abstain",
+      "attribution": "unattributed:published_listener",
+      "failed_gates": [
+        "1_severity_S2_or_higher",
+        "2_interpretation_E2_or_higher_on_an_S2plus_finding",
+        "3_two_distinct_action_indicators",
+        "4_successful_login",
+        "5_attributable_source"
+      ],
+      "login_basis": null,
+      "subject": null
+    },
+    "acc2bad4a442": {
+      "tier": "abstain",
+      "attribution": "attributable_via_proxy_mapping",
+      "failed_gates": [
+        "1_severity_S2_or_higher",
+        "2_interpretation_E2_or_higher_on_an_S2plus_finding",
+        "3_two_distinct_action_indicators",
+        "4_successful_login",
+        "5_attributable_source"
+      ],
+      "login_basis": null,
+      "subject": null
+    },
+    "d588636ce120": {
+      "tier": "abstain",
+      "attribution": "enforcement_excluded",
+      "failed_gates": [
+        "1_severity_S2_or_higher",
+        "2_interpretation_E2_or_higher_on_an_S2plus_finding",
+        "3_two_distinct_action_indicators",
+        "4_successful_login",
+        "5_attributable_source",
+        "6_not_protected_or_shared"
+      ],
+      "login_basis": null,
+      "subject": null
+    },
+    "3eede5e19e25": {
+      "tier": "propose",
+      "attribution": "attributable_via_proxy_mapping",
+      "failed_gates": [],
+      "login_basis": "cowrie.login.success at 2026-11-11T17:19:28.648479Z correlated by session ID (signed result task26c-validation-genuine)",
+      "subject": "10.250.25.3"
+    },
+    "4542a85f37ec": {
+      "tier": "review",
+      "attribution": "enforcement_excluded",
+      "failed_gates": [
+        "5_attributable_source",
+        "6_not_protected_or_shared"
+      ],
+      "login_basis": "cowrie.login.success at 2026-11-11T17:19:45.563217Z correlated by session ID (signed result task26c-validation-genuine)",
+      "subject": null
+    }
+  },
+  "attribution_results": {
+    "accepted": [
+      {
+        "result_id": "task26c-validation-genuine",
+        "result_hash": "9d21cc5296355971c1581b786346059cf8dbc92c23e7eed2460d27b2fff17e68",
+        "issued_utc": "2026-11-11T17:30:00.000000Z"
+      }
+    ],
+    "rejected": [],
+    "conflicts": []
+  }
+}

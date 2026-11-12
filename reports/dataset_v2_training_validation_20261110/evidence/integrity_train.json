@@ -1,0 +1,87 @@
+{
+  "splits": {
+    "train": {
+      "raw_slice": {
+        "path": "raw/train/cowrie_slice.json",
+        "sha256": "60c3852745b6f183fb391b4cfe772bd374412104941f576d405c547a3fb7014c",
+        "lines": 29955
+      },
+      "outputs_sha256": {
+        "model_features.csv": "c0be0ef9e7822ab0f59b707be941b40f0e2c02a55248e54da550c02d5ef3f69f",
+        "session_metadata.csv": "b06bd56a6e4f4c4fbda01d22a594734114969efa68e3a1a068edfa089a04b5c7"
+      },
+      "summary_sha256": "fdb077cc15adf2b92c0b82773ea485bcf00f9574ecec6f08d4f71965cb77ee35",
+      "deterministic": true,
+      "rows": 3190,
+      "columns_exactly_spec_features": true,
+      "sessions_in_summary": 3190,
+      "events_read": 29955,
+      "file_level_warnings": [],
+      "session_warning_counts": {},
+      "nan_counts": {
+        "login_success": 0,
+        "login_failed_count": 0,
+        "session_duration_s": 0,
+        "input_line_count": 0,
+        "input_bytes_total": 0,
+        "input_line_max_bytes": 1789,
+        "unique_command_names": 0,
+        "shell_operator_lines": 0,
+        "download_command_lines": 0,
+        "time_to_first_input_s": 1789,
+        "inter_input_mean_s": 1888,
+        "inter_input_std_s": 1898,
+        "tty_output_bytes": 0
+      },
+      "duplicate_records_removed": 0,
+      "extraction_status": {
+        "ok": 3190
+      },
+      "metadata_rows_without_label": 0,
+      "labels_without_feature_row": 0,
+      "roles": {
+        "failed_guess": 1690,
+        "logged_in": 1500
+      },
+      "attack_cat_rows": {
+        "brute_force": 1018,
+        "botnet": 392,
+        "reconnaissance": 362,
+        "benign": 863,
+        "lateral_movement": 294,
+        "privilege_escalation": 261
+      },
+      "held_out_rows": 0,
+      "label_mismatch": 0,
+      "forbidden_like_columns": [],
+      "missing_value_rule_violations": {},
+      "reconciliation_unmatched": 0,
+      "interactions_not_ok": 0,
+      "malformed_lines": 0,
+      "events_without_session": 0,
+      "timestamp_order_mismatch_sessions": 0,
+      "descriptive_totals": {
+        "unknown_command_events": 489,
+        "url_download_events": 0,
+        "download_failed_events": 0,
+        "redirect_write_events": 0,
+        "scp_stdin_events": 0
+      }
+    }
+  },
+  "model_features_expected": [
+    "login_success",
+    "login_failed_count",
+    "session_duration_s",
+    "input_line_count",
+    "input_bytes_total",
+    "input_line_max_bytes",
+    "unique_command_names",
+    "shell_operator_lines",
+    "download_command_lines",
+    "time_to_first_input_s",
+    "inter_input_mean_s",
+    "inter_input_std_s",
+    "tty_output_bytes"
+  ]
+}

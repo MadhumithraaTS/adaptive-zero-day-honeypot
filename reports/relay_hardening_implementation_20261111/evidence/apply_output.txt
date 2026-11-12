@@ -1,0 +1,4 @@
+ Container cowrie-ssh-relay  Recreate
+ Container cowrie-ssh-relay  Recreated
+ Container cowrie-ssh-relay  Starting
+ Container cowrie-ssh-relay  Started

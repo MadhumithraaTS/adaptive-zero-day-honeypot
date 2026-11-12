@@ -1,0 +1,50 @@
+[
+ {
+  "session": "5f8f7af3f320",
+  "input": "PILOT_A_30457e89 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefg",
+  "exact_match_tty": true,
+  "normalised_match_tty": true
+ },
+ {
+  "session": "5f8f7af3f320",
+  "input": "exit",
+  "exact_match_tty": true,
+  "normalised_match_tty": true
+ },
+ {
+  "session": "ac9ae6e306b6",
+  "input": "PILOT_B_30457e89     END",
+  "exact_match_tty": false,
+  "normalised_match_tty": true
+ },
+ {
+  "session": "ac9ae6e306b6",
+  "input": "exit",
+  "exact_match_tty": true,
+  "normalised_match_tty": true
+ },
+ {
+  "session": "852266ae5622",
+  "input": "echo PILOT_C_30457e89_line_from_script > /tmp/pilo",
+  "exact_match_tty": true,
+  "normalised_match_tty": true
+ },
+ {
+  "session": "852266ae5622",
+  "input": "sh /tmp/pilot_c.sh",
+  "exact_match_tty": true,
+  "normalised_match_tty": true
+ },
+ {
+  "session": "852266ae5622",
+  "input": "PILOT_C_30457e89_line_from_script",
+  "exact_match_tty": false,
+  "normalised_match_tty": false
+ },
+ {
+  "session": "852266ae5622",
+  "input": "exit",
+  "exact_match_tty": true,
+  "normalised_match_tty": true
+ }
+]

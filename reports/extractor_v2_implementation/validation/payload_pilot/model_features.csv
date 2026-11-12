@@ -1,0 +1,6 @@
+login_success,login_failed_count,session_duration_s,input_line_count,input_bytes_total,input_line_max_bytes,unique_command_names,shell_operator_lines,download_command_lines,time_to_first_input_s,inter_input_mean_s,inter_input_std_s,tty_output_bytes
+0,1,1.1,0,0,NaN,0,0,0,NaN,NaN,NaN,0.0
+1,0,4.7,1,277,277.0,1,0,0,1.110823,NaN,NaN,654.0
+1,0,6.2,3,107,56.0,3,1,0,1.121859,0.7505425,0.7477904999999999,502.0
+1,0,4.6,1,24,24.0,1,0,0,1.084809,NaN,NaN,401.0
+0,1,120.0,0,0,NaN,0,0,0,NaN,NaN,NaN,0.0

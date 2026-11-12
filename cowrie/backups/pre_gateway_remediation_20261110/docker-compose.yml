@@ -1,0 +1,43 @@
+# Isolated Cowrie lab (2026-11-10). The previous file is kept in backups/pre_isolation_20261110/.
+# - cowrie: attached only to an internal network, so it has no route to the internet, the host or other networks.
+# - ssh-relay: the same pinned image running Twisted's port forwarder; the only way in, published on 127.0.0.1 only.
+# Both images are pinned by digest and never pulled. See reports/cowrie_security_isolation_audit/report.md.
+
+x-cowrie-image: &cowrie_image cowrie/cowrie@sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a
+
+x-hardening: &hardening
+  pull_policy: never
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+  read_only: true
+  tmpfs: ["/tmp"]
+  restart: unless-stopped
+
+services:
+  cowrie:
+    <<: *hardening
+    image: *cowrie_image
+    container_name: cowrie-project
+    pids_limit: 256
+    mem_limit: 512m
+    volumes:
+      - ./userdb.txt:/cowrie/cowrie-git/etc/userdb.txt:ro
+    networks: [cowrie_internal]
+
+  ssh-relay:
+    <<: *hardening
+    image: *cowrie_image
+    container_name: cowrie-ssh-relay
+    pids_limit: 64
+    mem_limit: 128m
+    entrypoint: ["/cowrie/cowrie-env/bin/twistd"]
+    command: ["-n", "--pidfile=", "portforward", "--port=tcp:2222", "--host=cowrie", "--dest_port=2222"]
+    ports:
+      - "127.0.0.1:2223:2222"
+    networks: [cowrie_internal, relay_frontend]
+    depends_on: [cowrie]
+
+networks:
+  cowrie_internal:
+    internal: true
+  relay_frontend: {}

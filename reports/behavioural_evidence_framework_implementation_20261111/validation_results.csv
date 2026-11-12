@@ -1,0 +1,26 @@
+check,description,split,passed,measured,detail
+V1,no benign single failed login is a credential-attack interpretation (primary),train,True,0 of 302 benign failed-guess sessions,
+V1,no benign single failed login is a credential-attack interpretation (oracle_auth),train,True,0 of 302 benign failed-guess sessions,
+V2,every matched token is a whole parsed token of its source line,train,True,0 violations,
+V2b,legacy 'credential_attack' substring lines that the token matcher does not treat as credential/transfer,train,True,551 of 825 lines,"descriptive (e.g. `service ssh status`, `cat /etc/passwd | grep sh`)"
+V3,`curl -I` never establishes 'network probing attempt',train,True,80 sessions with curl -I; 0 interpreted as probing from it,benign 'network probing attempt': 0
+V4,slow `find` (ART-1) is a caveat: interpretations and levels identical with and without calibration,train,True,30 ART-1 sessions; identical=True,
+V5,no download/upload success without the Cowrie event,train,True,"attempt sessions XFER-1 255, XFER-2 0; observed_success {}; download events 0, upload events 0",
+V6,context/caveat-only sessions produce no interpretation; every interpretation's required indicators are present action indicators,train,True,"2571 context/caveat-only sessions, 0 interpretations; 0 rule violations",
+V7,repeated-failure rules abstain when the only source is the lab relay,train,True,3190 of 3190 authenticated/failed sessions indeterminate,
+V7b,oracle-source diagnostic: AUTH-1 fires only where >= 3 failures exist in 300 s from one (synthetic) source,train,True,"{""brute_force"": 1018}",diagnostic of rule mechanics with interaction IDs as source key; brute force is the only profile configured with >= 3 failures
+V8,multiple interpretations can coexist in one session,train,True,437 sessions with >= 2 interpretations,"[[[""download attempt"", ""download-and-execute attempt""], 144], [[""credential-material access attempt"", ""privilege-context reconnaissance attempt""], 133], [[""credential-material access attempt"", ""network probing attempt""], 109]]"
+V1,no benign single failed login is a credential-attack interpretation (primary),validation,True,0 of 126 benign failed-guess sessions,
+V1,no benign single failed login is a credential-attack interpretation (oracle_auth),validation,True,0 of 126 benign failed-guess sessions,
+V2,every matched token is a whole parsed token of its source line,validation,True,0 violations,
+V2b,legacy 'credential_attack' substring lines that the token matcher does not treat as credential/transfer,validation,True,240 of 361 lines,"descriptive (e.g. `service ssh status`, `cat /etc/passwd | grep sh`)"
+V3,`curl -I` never establishes 'network probing attempt',validation,True,45 sessions with curl -I; 0 interpreted as probing from it,benign 'network probing attempt': 0
+V4,slow `find` (ART-1) is a caveat: interpretations and levels identical with and without calibration,validation,True,9 ART-1 sessions; identical=True,
+V5,no download/upload success without the Cowrie event,validation,True,"attempt sessions XFER-1 92, XFER-2 0; observed_success {}; download events 0, upload events 0",
+V6,context/caveat-only sessions produce no interpretation; every interpretation's required indicators are present action indicators,validation,True,"1019 context/caveat-only sessions, 0 interpretations; 0 rule violations",
+V7,repeated-failure rules abstain when the only source is the lab relay,validation,True,1257 of 1257 authenticated/failed sessions indeterminate,
+V7b,oracle-source diagnostic: AUTH-1 fires only where >= 3 failures exist in 300 s from one (synthetic) source,validation,True,"{""brute_force"": 398}",diagnostic of rule mechanics with interaction IDs as source key; brute force is the only profile configured with >= 3 failures
+V8,multiple interpretations can coexist in one session,validation,True,167 sessions with >= 2 interpretations,"[[[""credential-material access attempt"", ""privilege-context reconnaissance attempt""], 53], [[""download attempt"", ""download-and-execute attempt""], 50], [[""credential-material access attempt"", ""network probing attempt""], 43]]"
+V9,evidence levels and records are deterministic under input re-ordering,train,True,sha 048e3101f83dc344,
+V9,evidence levels and records are deterministic under input re-ordering,validation,True,sha 832b68c6282ef2d3,
+V11,statistical novelty is a separate field and does not change behavioural output,validation,True,600 sessions carry novelty metadata,

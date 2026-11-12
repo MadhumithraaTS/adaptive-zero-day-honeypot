@@ -1,0 +1,378 @@
+{
+  "schema_version": "1",
+  "created": "2026-11-08",
+  "shape": {
+    "n_rows": 1800,
+    "n_cols": 29,
+    "memory_mb": 0.95,
+    "sampled": false,
+    "sample_rows": null
+  },
+  "target": {
+    "name": "attack_cat",
+    "task": "multiclass",
+    "n_classes": 8,
+    "class_balance": {
+      "reconnaissance": 0.1467,
+      "botnet_malware_download": 0.13,
+      "zero_day_obfuscated_memory_attack": 0.1272,
+      "evasion_anti_forensics": 0.1267,
+      "brute_force_only": 0.1233,
+      "zero_day_buffer_overflow": 0.1206,
+      "privilege_escalation": 0.1183,
+      "zero_day_covert_tunnel": 0.1072
+    },
+    "minority_frac": 0.1072
+  },
+  "columns": {
+    "session_id": {
+      "kind": "id",
+      "missing_frac": 0.0,
+      "n_unique": 1800,
+      "unique_frac": 1.0
+    },
+    "src_ip": {
+      "kind": "categorical",
+      "missing_frac": 0.0,
+      "n_unique": 13,
+      "unique_frac": 0.0072,
+      "n_levels": 13,
+      "top": {
+        "185.220.101.5": 0.1689,
+        "91.240.118.50": 0.1272,
+        "103.251.167.20": 0.1206,
+        "198.51.100.99": 0.1072,
+        "193.27.228.11": 0.0861
+      }
+    },
+    "src_port": {
+      "kind": "id",
+      "missing_frac": 0.0,
+      "n_unique": 1750,
+      "unique_frac": 0.9722
+    },
+    "dur": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 1257,
+      "unique_frac": 0.6983,
+      "min": 0.076,
+      "median": 0.5995,
+      "max": 27.53,
+      "skew": 1.4743,
+      "outlier_frac": 0.0617
+    },
+    "proto": {
+      "kind": "categorical",
+      "missing_frac": 0.0,
+      "n_unique": 1,
+      "unique_frac": 0.0006,
+      "n_levels": 1,
+      "top": {
+        "ssh": 1.0
+      }
+    },
+    "service": {
+      "kind": "categorical",
+      "missing_frac": 0.0,
+      "n_unique": 1,
+      "unique_frac": 0.0006,
+      "n_levels": 1,
+      "top": {
+        "ssh": 1.0
+      }
+    },
+    "spkts": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 11,
+      "unique_frac": 0.0061,
+      "min": 0.0,
+      "median": 1.0,
+      "max": 10.0,
+      "skew": 1.3324,
+      "outlier_frac": 0.0283
+    },
+    "dpkts": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 6,
+      "unique_frac": 0.0033,
+      "min": 4.0,
+      "median": 5.0,
+      "max": 9.0,
+      "skew": 0.6345,
+      "outlier_frac": 0.0
+    },
+    "sbytes": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 76,
+      "unique_frac": 0.0422,
+      "min": 0.0,
+      "median": 22.0,
+      "max": 98.0,
+      "skew": 0.4479,
+      "outlier_frac": 0.0
+    },
+    "dbytes": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 950,
+      "unique_frac": 0.5278,
+      "min": 0.0,
+      "median": 344.5,
+      "max": 4988.0,
+      "skew": 1.3007,
+      "outlier_frac": 0.0283
+    },
+    "rate": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 1179,
+      "unique_frac": 0.655,
+      "min": 0.0,
+      "median": 99.7799,
+      "max": 14019.6078,
+      "skew": 3.3862,
+      "outlier_frac": 0.1089
+    },
+    "sttl": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 1,
+      "unique_frac": 0.0006,
+      "min": 64.0,
+      "median": 64.0,
+      "max": 64.0,
+      "skew": 0.0,
+      "outlier_frac": 0.0
+    },
+    "dttl": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 1,
+      "unique_frac": 0.0006,
+      "min": 64.0,
+      "median": 64.0,
+      "max": 64.0,
+      "skew": 0.0,
+      "outlier_frac": 0.0
+    },
+    "sload": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 983,
+      "unique_frac": 0.5461,
+      "min": 0.0,
+      "median": 20.4587,
+      "max": 1656.9579,
+      "skew": 2.8509,
+      "outlier_frac": 0.1283
+    },
+    "dload": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 1179,
+      "unique_frac": 0.655,
+      "min": 0.0,
+      "median": 737.5586,
+      "max": 110722.6891,
+      "skew": 3.4039,
+      "outlier_frac": 0.1083
+    },
+    "sinpkt": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 809,
+      "unique_frac": 0.4494,
+      "min": 0.0,
+      "median": 0.0,
+      "max": 12.1631,
+      "skew": 2.7242,
+      "outlier_frac": 0.1
+    },
+    "dinpkt": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 1450,
+      "unique_frac": 0.8056,
+      "min": 0.028,
+      "median": 0.1531,
+      "max": 6.8773,
+      "skew": 1.5139,
+      "outlier_frac": 0.0511
+    },
+    "sjit": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 507,
+      "unique_frac": 0.2817,
+      "min": 0.0,
+      "median": 0.0,
+      "max": 6.6282,
+      "skew": 4.6727,
+      "outlier_frac": 0.1822
+    },
+    "djit": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 1772,
+      "unique_frac": 0.9844,
+      "min": 0.0026,
+      "median": 0.1472,
+      "max": 13.5134,
+      "skew": 1.6357,
+      "outlier_frac": 0.0689
+    },
+    "tcprtt": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 114,
+      "unique_frac": 0.0633,
+      "min": 0.015,
+      "median": 0.073,
+      "max": 0.13,
+      "skew": 0.0065,
+      "outlier_frac": 0.0
+    },
+    "synack": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 114,
+      "unique_frac": 0.0633,
+      "min": 0.0067,
+      "median": 0.0328,
+      "max": 0.0585,
+      "skew": 0.0065,
+      "outlier_frac": 0.0
+    },
+    "ackdat": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 1015,
+      "unique_frac": 0.5639,
+      "min": 0.0,
+      "median": 0.2066,
+      "max": 17.3396,
+      "skew": 2.4738,
+      "outlier_frac": 0.1278
+    },
+    "ct_srv_src": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 13,
+      "unique_frac": 0.0072,
+      "min": 63.0,
+      "median": 193.0,
+      "max": 304.0,
+      "skew": 0.0842,
+      "outlier_frac": 0.0
+    },
+    "ct_state_ttl": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 1,
+      "unique_frac": 0.0006,
+      "min": 1.0,
+      "median": 1.0,
+      "max": 1.0,
+      "skew": 0.0,
+      "outlier_frac": 0.0
+    },
+    "ct_dst_ltm": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 1,
+      "unique_frac": 0.0006,
+      "min": 1800.0,
+      "median": 1800.0,
+      "max": 1800.0,
+      "skew": 0.0,
+      "outlier_frac": 0.0
+    },
+    "ct_src_ltm": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 13,
+      "unique_frac": 0.0072,
+      "min": 63.0,
+      "median": 193.0,
+      "max": 304.0,
+      "skew": 0.0842,
+      "outlier_frac": 0.0
+    },
+    "ct_srv_dst": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 1,
+      "unique_frac": 0.0006,
+      "min": 1800.0,
+      "median": 1800.0,
+      "max": 1800.0,
+      "skew": 0.0,
+      "outlier_frac": 0.0
+    },
+    "attack_cat": {
+      "kind": "categorical",
+      "missing_frac": 0.0,
+      "n_unique": 8,
+      "unique_frac": 0.0044,
+      "n_levels": 8,
+      "top": {
+        "reconnaissance": 0.1467,
+        "botnet_malware_download": 0.13,
+        "zero_day_obfuscated_memory_attack": 0.1272,
+        "evasion_anti_forensics": 0.1267,
+        "brute_force_only": 0.1233
+      }
+    },
+    "label": {
+      "kind": "numeric",
+      "missing_frac": 0.0,
+      "n_unique": 2,
+      "unique_frac": 0.0011,
+      "min": 0.0,
+      "median": 1.0,
+      "max": 1.0,
+      "skew": -1.9992,
+      "outlier_frac": 0.0
+    }
+  },
+  "duplicates": {
+    "exact_row_frac": 0.0
+  },
+  "constant_columns": [
+    "proto",
+    "service",
+    "sttl",
+    "dttl",
+    "ct_state_ttl",
+    "ct_dst_ltm",
+    "ct_srv_dst"
+  ],
+  "high_cardinality_categoricals": [],
+  "datetime_columns": [],
+  "time_col": null,
+  "group_col": null,
+  "entity_candidates": [
+    "session_id"
+  ],
+  "leakage_suspects": [
+    {
+      "column": "label",
+      "reason": "name suggests post-outcome information"
+    }
+  ],
+  "traits": {
+    "n_rows": 1800,
+    "n_features": 28,
+    "task": "multiclass",
+    "minority_frac": 0.1072,
+    "has_datetime": false,
+    "has_groups": false,
+    "small_data": true,
+    "imbalanced": false,
+    "high_card_categoricals": []
+  }
+}

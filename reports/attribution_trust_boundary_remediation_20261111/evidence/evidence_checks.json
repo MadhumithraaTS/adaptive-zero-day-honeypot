@@ -1,0 +1,102 @@
+{
+  "behavioural_evidence_vs_task22": {
+    "checked": 9,
+    "mismatched": []
+  },
+  "threat_assessment_vs_task24": {
+    "__init__.py": false,
+    "assessment.py": false,
+    "attribution.py": false,
+    "audit.py": true,
+    "config.py": false,
+    "errors.py": true,
+    "severity.py": true
+  },
+  "task26A_artefacts_now": {
+    "client_attribution/__init__.py": false,
+    "client_attribution/correlate.py": false,
+    "client_attribution/records.py": false,
+    "threat_assessment/__init__.py": false,
+    "threat_assessment/assessment.py": false,
+    "threat_assessment/attribution.py": false,
+    "threat_assessment/config.py": false,
+    "tests/test_client_attribution.py": false,
+    "configs/threat_attribution_v2.json": true,
+    "configs/defence_policy_v2_1.json": true,
+    "configs/threat_attribution_v1.json": true,
+    "configs/defence_policy_v2.json": true,
+    "cowrie/docker-compose.yml": false,
+    "cowrie/attributing_relay/attributing_relay.py": true,
+    "cowrie/attributing_relay/demo_client.py": true,
+    "cowrie/attributing_relay/relay_config.json": true,
+    "cowrie/attributing_relay/relay_mapping_ed25519.pub.pem": true,
+    "cowrie/attributing_relay/records/relay_mapping.jsonl": true
+  },
+  "extractor_on_demo_log": {
+    "events_read": 34,
+    "sessions_output": 0,
+    "session_exclusions": {
+      "exclusions_version": "1.0.0",
+      "exclusions_digest": "8136184b44e897c428758ae9f2c1a20097e2a102e126d511fefa2ad05e373540",
+      "excluded_session_count": 7,
+      "sessions_excluded": [
+        "3eede5e19e25",
+        "4542a85f37ec",
+        "9441bcce555c",
+        "acc2bad4a442",
+        "d588636ce120"
+      ]
+    }
+  },
+  "session_exclusions_config": {
+    "version": "1.0.0",
+    "digest": "8136184b44e897c428758ae9f2c1a20097e2a102e126d511fefa2ad05e373540",
+    "ids": [
+      "3eede5e19e25",
+      "4542a85f37ec",
+      "9441bcce555c",
+      "99732d516898",
+      "acc2bad4a442",
+      "b806554e19b9",
+      "d588636ce120"
+    ],
+    "categories": {
+      "99732d516898": "diagnostic",
+      "b806554e19b9": "diagnostic",
+      "9441bcce555c": "demo",
+      "acc2bad4a442": "demo",
+      "d588636ce120": "demo",
+      "3eede5e19e25": "demo",
+      "4542a85f37ec": "demo"
+    }
+  },
+  "acl": {
+    "secrets": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\attributing_relay\\secrets MADHUMITHRAA\\madhu:(OI)(CI)(RX)",
+    "secrets/relay_mapping_ed25519.pem": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\attributing_relay\\secrets\\relay_mapping_ed25519.pem MADHUMITHRAA\\madhu:(R)",
+    "records": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\attributing_relay\\records MADHUMITHRAA\\madhu:(OI)(CI)(M)",
+    "records/relay_mapping.jsonl": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\attributing_relay\\records\\relay_mapping.jsonl MADHUMITHRAA\\madhu:(M)"
+  },
+  "relay_key_check": "a52b8c522a4bb0916536af2bf7d4f2f92f0cea47fe49553665e2a5b0a0d272bf 0o444 False",
+  "containers": [
+    "3ef34cbf70f0 cowrie-demo-test-client Up About an hour",
+    "e55ae1ef6455 cowrie-demo-control-client Up About an hour",
+    "a5e156cbca02 cowrie-ssh-relay Up About an hour",
+    "0bec5a78b1cb cowrie-project Up 30 hours",
+    "626b1fcc7687 cowrie-honeypot Exited (255) 3 months ago"
+  ],
+  "cowrie": "0bec5a78b1cb354c89d4528a432cef9f70f9b46ce71b2f722aac680258bb4503 2026-11-10T12:30:30.630598884Z restarts=0",
+  "relay": "a5e156cbca02ff9b42ddd8a5b40db1a75225848d4cc82dfd65f6289df7b934ad 2026-11-11T17:16:39.998671742Z restarts=0",
+  "relay_mounts": "/opt/relay/attributing_relay.py rw=false; /opt/relay/relay_config.json rw=false; /run/relay/relay_mapping_ed25519.pem rw=false; /var/relay_records rw=true; /cowrie/cowrie-git/etc rw=true; /cowrie/cowrie-git/var rw=true;",
+  "relay_records": {
+    "lines": 11,
+    "sha256": "496b5a0f2ba76781508bfd73d8714853838d4dcf3a4fed5755ec25a1be3d26ee",
+    "equals_26A_copy": true
+  },
+  "firewall": [
+    "rules mentioning demo client IPs (any table):",
+    "(end)",
+    "nft ruleset lines mentioning 10.250.25.3/.4: 0",
+    "bridge rules count total filter: 51"
+  ],
+  "wsl_volume_access_from_host_account": true
+}

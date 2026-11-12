@@ -1,0 +1,9 @@
+removed copies absent: {'var/lib/cowrie/ssh_host_rsa_key': True, 'var/lib/cowrie/ssh_host_ecdsa_key': True, 'var/lib/cowrie/ssh_host_ed25519_key': True}
+files now: 1846 (before 1849; expected 1846)
+private-key headers remaining in backup: []
+non-key files preserved byte-identical: True | missing: [] | unexpected: []
+public keys kept: ['var/lib/cowrie/ssh_host_rsa_key.pub', 'var/lib/cowrie/ssh_host_ecdsa_key.pub', 'var/lib/cowrie/ssh_host_ed25519_key.pub']
+live rsa: unchanged=True mode=0o644 uid=999 mtime_unchanged=True
+live ecdsa: unchanged=True mode=0o644 uid=999 mtime_unchanged=True
+live ed25519: unchanged=True mode=0o644 uid=999 mtime_unchanged=True
+cowrie container: 0bec5a78b1cb354c89d4528a432cef9f70f9b46ce71b2f722aac680258bb4503 2026-11-10T12:30:30.630598884Z restarts=0

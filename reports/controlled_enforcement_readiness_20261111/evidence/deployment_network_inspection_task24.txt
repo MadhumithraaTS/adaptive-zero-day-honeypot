@@ -1,0 +1,24 @@
+# read-only network inspection 2026-11-11T16:16:04Z
+bridge bridge aa247d88ef47
+cowrie_cowrie_internal bridge 8de3b00259f2
+cowrie_default bridge 29dbe112c59e
+cowrie_relay_frontend bridge c94e904b8861
+et-ai_default bridge ace391997e9b
+host host bd88fc39a1bc
+none null a4d2039ab024
+rezumy_default bridge e0f9fc878c71
+== cowrie_cowrie_internal
+subnet=172.22.0.0/16 gw=invalid IP internal=true opts={"com.docker.network.bridge.gateway_mode_ipv4":"isolated","com.docker.network.enable_ipv4":"true","com.docker.network.enable_ipv6":"false"}
+cowrie-project 172.22.0.1/16
+cowrie-ssh-relay 172.22.0.2/16
+
+== cowrie_default
+subnet=172.19.0.0/16 gw=172.19.0.1 internal=false opts={"com.docker.network.enable_ipv4":"true","com.docker.network.enable_ipv6":"false"}
+
+== cowrie_relay_frontend
+subnet=172.21.0.0/16 gw=172.21.0.1 internal=false opts={"com.docker.network.enable_ipv4":"true","com.docker.network.enable_ipv6":"false"}
+cowrie-ssh-relay 172.21.0.2/16
+
+2222/tcp -> 127.0.0.1:2223
+/cowrie-project cowrie_cowrie_internal=172.22.0.1 
+/cowrie-ssh-relay cowrie_cowrie_internal=172.22.0.2 cowrie_relay_frontend=172.21.0.2 

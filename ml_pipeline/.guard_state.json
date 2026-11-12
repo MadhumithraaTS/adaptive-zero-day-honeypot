@@ -1,0 +1,8 @@
+{
+  "test_fingerprint": "fce7678e81e9f4fc8000d0ec899d680ad91f3ac6926bca4e9d686ab0380b7a20",
+  "n_test": 270,
+  "test_touches": 0,
+  "duplicates_dropped": 0,
+  "split": "stratified",
+  "created": "2026-11-08"
+}

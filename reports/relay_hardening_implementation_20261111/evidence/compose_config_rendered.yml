@@ -1,0 +1,84 @@
+name: cowrie
+services:
+  cowrie:
+    cap_drop:
+      - ALL
+    container_name: cowrie-project
+    image: cowrie/cowrie@sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a
+    mem_limit: "536870912"
+    networks:
+      cowrie_internal: null
+    pids_limit: 256
+    pull_policy: never
+    read_only: true
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp
+    volumes:
+      - type: bind
+        source: C:\AMRITA\Final_Year_Project_zero_day_27\adaptive-zero-day-honeypot\cowrie\userdb.txt
+        target: /cowrie/cowrie-git/etc/userdb.txt
+        read_only: true
+        bind:
+          create_host_path: true
+  ssh-relay:
+    cap_drop:
+      - ALL
+    command:
+      - -n
+      - --pidfile=
+      - portforward
+      - --port=tcp:2222:interface=172.21.0.2
+      - --host=cowrie
+      - --dest_port=2222
+    container_name: cowrie-ssh-relay
+    depends_on:
+      cowrie:
+        condition: service_started
+        required: true
+    entrypoint:
+      - /cowrie/cowrie-env/bin/twistd
+    image: cowrie/cowrie@sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a
+    mem_limit: "134217728"
+    networks:
+      cowrie_internal: null
+      relay_frontend: null
+    pids_limit: 64
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 2222
+        published: "2223"
+        protocol: tcp
+    pull_policy: never
+    read_only: true
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    sysctls:
+      net.ipv4.conf.all.forwarding: "0"
+      net.ipv4.conf.default.forwarding: "0"
+      net.ipv4.ip_forward: "0"
+    tmpfs:
+      - /tmp
+networks:
+  cowrie_internal:
+    name: cowrie_cowrie_internal
+    driver_opts:
+      com.docker.network.bridge.gateway_mode_ipv4: isolated
+    internal: true
+  relay_frontend:
+    name: cowrie_relay_frontend
+x-cowrie-image: cowrie/cowrie@sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a
+x-hardening:
+  cap_drop:
+    - ALL
+  pull_policy: never
+  read_only: true
+  restart: unless-stopped
+  security_opt:
+    - no-new-privileges:true
+  tmpfs:
+    - /tmp

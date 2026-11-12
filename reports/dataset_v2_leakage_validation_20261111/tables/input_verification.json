@@ -1,0 +1,67 @@
+{
+  "dataset_files_hash_checked": 60,
+  "hash_mismatches": [],
+  "input_hashes": {
+    "profiles_v2_revised.json": "79d47ac48e1f4c242ffcb851c567da884df21d039cc11917dc5bf3dea761fe62",
+    "feature_spec_v2.json": "9401b355a1bfc48a14da32efba9ad4d5992f55233da3437a0715690d76f8fb1a",
+    "extract_features_v2.py": "c0fdc684483e9953db2b6240994daa2b712d9782275eeebff9a38d57344cd5f2",
+    "dataset_SHA256SUMS": "05e9d8381f89fa6bb7bb091cb1a49b6656123b3f01d3d6f12ac5d2bd503b9940"
+  },
+  "spec_version": "2.0.0-draft.3",
+  "model_feature_columns_equal_spec": {
+    "train": true,
+    "validation": true
+  },
+  "descriptive_metadata_separate": {
+    "train": true,
+    "validation": true
+  },
+  "categories": {
+    "train": [
+      "benign",
+      "botnet",
+      "brute_force",
+      "lateral_movement",
+      "privilege_escalation",
+      "reconnaissance"
+    ],
+    "validation": [
+      "benign",
+      "botnet",
+      "brute_force",
+      "lateral_movement",
+      "privilege_escalation",
+      "reconnaissance"
+    ]
+  },
+  "n_categories": {
+    "train": 6,
+    "validation": 6
+  },
+  "exfiltration_rows": {
+    "train": 0,
+    "validation": 0
+  },
+  "held_out_rows": {
+    "train": 0,
+    "validation": 0
+  },
+  "rows": {
+    "train": 3190,
+    "validation": 1257
+  },
+  "feature_rows": {
+    "train": 3190,
+    "validation": 1257
+  },
+  "interactions": {
+    "train": 1500,
+    "validation": 600
+  },
+  "shared_interaction_ids": 0,
+  "shared_session_refs": 0,
+  "logged_in_per_interaction_max": {
+    "train": 1,
+    "validation": 1
+  }
+}

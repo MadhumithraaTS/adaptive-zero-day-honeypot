@@ -1,0 +1,27 @@
+split,interpretation,unit,sessions,interactions,n_benign,n_botnet,n_brute_force,n_lateral_movement,n_privilege_escalation,n_reconnaissance
+train,repeated authentication failures,all sessions,1018,198,0,0,1018,0,0,0
+train,credential-guessing followed by login,all sessions,198,198,0,0,198,0,0,0
+train,privilege-context reconnaissance,logged-in sessions,175,175,0,0,0,0,175,0
+train,credential-material access attempt,logged-in sessions,311,311,0,0,0,178,133,0
+train,download attempt,logged-in sessions,255,255,0,195,0,0,0,60
+train,download-and-execute attempt,logged-in sessions,195,195,0,195,0,0,0,0
+train,upload attempt,logged-in sessions,0,0,0,0,0,0,0,0
+train,archive-and-upload attempt,logged-in sessions,0,0,0,0,0,0,0,0
+train,anti-forensic history tampering,logged-in sessions,51,51,0,51,0,0,0,0
+train,persistence modification attempt,logged-in sessions,0,0,0,0,0,0,0,0
+train,internal network probing,logged-in sessions,242,242,80,0,0,162,0,0
+train,system discovery only,logged-in sessions,672,672,481,0,71,1,0,119
+train,insufficient evidence,logged-in sessions,127,127,0,0,127,0,0,0
+validation,repeated authentication failures,all sessions,398,79,0,0,398,0,0,0
+validation,credential-guessing followed by login,all sessions,79,79,0,0,79,0,0,0
+validation,privilege-context reconnaissance,logged-in sessions,69,69,0,0,0,0,69,0
+validation,credential-material access attempt,logged-in sessions,124,124,0,0,0,71,53,0
+validation,download attempt,logged-in sessions,92,92,0,71,0,0,0,21
+validation,download-and-execute attempt,logged-in sessions,71,71,0,71,0,0,0,0
+validation,upload attempt,logged-in sessions,0,0,0,0,0,0,0,0
+validation,archive-and-upload attempt,logged-in sessions,0,0,0,0,0,0,0,0
+validation,anti-forensic history tampering,logged-in sessions,21,21,0,21,0,0,0,0
+validation,persistence modification attempt,logged-in sessions,0,0,0,0,0,0,0,0
+validation,internal network probing,logged-in sessions,111,111,45,0,0,66,0,0
+validation,system discovery only,logged-in sessions,268,268,184,0,30,1,0,53
+validation,insufficient evidence,logged-in sessions,49,49,0,0,49,0,0,0

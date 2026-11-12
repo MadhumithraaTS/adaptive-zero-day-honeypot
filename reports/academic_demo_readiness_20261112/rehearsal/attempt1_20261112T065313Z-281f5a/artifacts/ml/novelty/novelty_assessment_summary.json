@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-12T06:53:50.181980+00:00",
+  "results_count": 1,
+  "category_counts": {
+    "Known-like": 1
+  },
+  "output_files": {
+    "csv": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T065313Z-281f5a\\ml\\novelty\\novelty_assessment_results.csv",
+    "json": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T065313Z-281f5a\\ml\\novelty\\novelty_assessment_results.json",
+    "report": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T065313Z-281f5a\\ml\\novelty\\novelty_assessment_report.md",
+    "summary": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T065313Z-281f5a\\ml\\novelty\\novelty_assessment_summary.json"
+  },
+  "status": "success",
+  "input_session_count": 1,
+  "processed_session_count": 1,
+  "thresholds": {
+    "known_threshold": 0.7,
+    "ambiguous_margin": 0.05,
+    "min_compatible_features": 1,
+    "borderline_score": 0.6
+  },
+  "held_out_ratio": 0.0,
+  "random_seed": 42,
+  "evaluation_mode": "independent",
+  "reference_session_id_count": 5,
+  "overlapping_session_count": 0,
+  "overlapping_session_ids": [],
+  "warnings": []
+}

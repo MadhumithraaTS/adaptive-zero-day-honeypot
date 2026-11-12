@@ -1,0 +1,236 @@
+{
+  "records_inspected": 5704,
+  "field_types": {
+    "abstention_reason": {
+      "str": 4211,
+      "NoneType": 1493
+    },
+    "action_indicators[]": {
+      "str": 2436
+    },
+    "authentication_status": {
+      "str": 5704
+    },
+    "behavioural_status": {
+      "str": 5704
+    },
+    "calibration.digest": {
+      "str": 5704
+    },
+    "calibration.sensor": {
+      "str": 5704
+    },
+    "calibration.version": {
+      "str": 5704
+    },
+    "catalogue_version": {
+      "str": 5704
+    },
+    "caveat_indicators[]": {
+      "str": 2411
+    },
+    "config_digest": {
+      "str": 5704
+    },
+    "context_indicators[]": {
+      "str": 10305
+    },
+    "evidence_level": {
+      "str": 5704
+    },
+    "indicators[].category": {
+      "str": 15152
+    },
+    "indicators[].caveats_on_same_lines[]": {
+      "str": 574
+    },
+    "indicators[].evidence_class": {
+      "str": 15152
+    },
+    "indicators[].id": {
+      "str": 15152
+    },
+    "indicators[].kind": {
+      "str": 15152
+    },
+    "indicators[].limitations": {
+      "str": 15152
+    },
+    "indicators[].matches[].command": {
+      "str": 19418
+    },
+    "indicators[].matches[].detail": {
+      "str": 19418
+    },
+    "indicators[].matches[].file": {
+      "str": 1011
+    },
+    "indicators[].matches[].line": {
+      "str": 19418
+    },
+    "indicators[].matches[].line_index": {
+      "int": 19418
+    },
+    "indicators[].matches[].token": {
+      "str": 19418
+    },
+    "indicators[].name": {
+      "str": 15152
+    },
+    "indicators[].outcome": {
+      "str": 2038
+    },
+    "indicators[].required_telemetry[]": {
+      "str": 18279
+    },
+    "interpretations[].evidence_level": {
+      "str": 2436
+    },
+    "interpretations[].files[]": {
+      "str": 337
+    },
+    "interpretations[].name": {
+      "str": 2436
+    },
+    "interpretations[].outcome.AUTH-2": {
+      "str": 79
+    },
+    "interpretations[].outcome.CRED-1": {
+      "str": 798
+    },
+    "interpretations[].outcome.EVADE-1": {
+      "str": 93
+    },
+    "interpretations[].outcome.EXEC-1": {
+      "str": 674
+    },
+    "interpretations[].outcome.NET-1": {
+      "str": 218
+    },
+    "interpretations[].outcome.PRIV-1": {
+      "str": 552
+    },
+    "interpretations[].outcome.XFER-1": {
+      "str": 776
+    },
+    "interpretations[].requires[]": {
+      "str": 2852
+    },
+    "interpretations[].requires_one_of[]": {
+      "str": 939
+    },
+    "interpretations[].scope": {
+      "str": 2436
+    },
+    "interpretations[].supporting_action_indicators[]": {
+      "str": 3667
+    },
+    "n_input_lines": {
+      "int": 5704
+    },
+    "session_ref": {
+      "str": 5704
+    },
+    "src_ip": {
+      "str": 5704
+    },
+    "statistical_novelty": {
+      "NoneType": 5104
+    },
+    "statistical_novelty.explanatory_caveats[]": {
+      "str": 195
+    },
+    "statistical_novelty.independent_of_behavioural_evidence": {
+      "bool": 600
+    },
+    "statistical_novelty.value.C_flag": {
+      "bool": 600
+    },
+    "statistical_novelty.value.C_input_knn": {
+      "float": 600
+    },
+    "telemetry_schema": {
+      "str": 5704
+    },
+    "timing_context.inter_input_gaps": {
+      "int": 5704
+    },
+    "timing_context.inter_input_max_s": {
+      "NoneType": 3360,
+      "float": 2344
+    },
+    "timing_context.inter_input_mean_s": {
+      "NoneType": 3360,
+      "float": 2344
+    },
+    "timing_context.session_duration_s": {
+      "float": 5704
+    }
+  },
+  "observed_values": {
+    "behavioural_status": {
+      "indeterminate": 2487,
+      "system_discovery_only": 1350,
+      "interpreted": 1493,
+      "insufficient_evidence": 374
+    },
+    "authentication_status": {
+      "indeterminate:shared_source": 4447,
+      "success_without_repeated_failures": 521,
+      "below_threshold": 338,
+      "repeated_failures": 319,
+      "repeated_failures+success": 79
+    },
+    "evidence_level": {
+      "E0": 4211,
+      "E1": 838,
+      "E2": 576,
+      "E3": 79
+    },
+    "catalogue_version": {
+      "v2-evidence-1.1": 5704
+    },
+    "telemetry_schema": {
+      "cowrie-json-2.9": 5704
+    },
+    "indicators[].outcome": {
+      "<absent>": 13114,
+      "not_observed": 1810,
+      "observed_failure:emulator_rejected": 149,
+      "observed_success": 79
+    },
+    "indicators[].kind": {
+      "context": 10305,
+      "caveat": 2411,
+      "action": 2436
+    },
+    "indicators[].evidence_class": {
+      "directly_observed": 12404,
+      "generator_dependent": 1607,
+      "emulator_dependent": 756,
+      "inferred": 337,
+      "sensor_calibration": 48
+    },
+    "abstention_reason": {
+      "authentication-only session; source attribution shared_source": 2487,
+      "context indicators only": 1350,
+      "<null>": 1493,
+      "context and/or caveat indicators only": 36,
+      "no command input": 338
+    },
+    "caveats[]": {},
+    "statistical_novelty": {
+      "null": 5104,
+      "present": 600
+    },
+    "interpretations[].evidence_level": {
+      "E1": 1205,
+      "E2": 1152,
+      "E3": 79
+    },
+    "interpretations[].scope": {
+      "session": 1959,
+      "source_window": 477
+    }
+  }
+}

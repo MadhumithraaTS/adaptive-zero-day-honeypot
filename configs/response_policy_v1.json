@@ -1,0 +1,24 @@
+{
+  "schema": "response-policy-1",
+  "config_version": "1.0.0",
+  "created": "2026-11-12",
+  "description": "Dynamic Response & Feedback policy (Task 27B). DRY-RUN ONLY: the loader refuses any document with mode other than dry_run or enforcement_activated true. Real enforcement requires D0 -> M0-M8 -> A1, P5 provisioning and a separate enforcement-activation approval.",
+  "mode": "dry_run",
+  "enforcement_activated": false,
+  "action": "restrict_new_connections",
+  "listener": "demo",
+  "max_ttl_seconds": 900,
+  "proposal_validity_seconds": 1800,
+  "clock_skew_seconds": 5,
+  "required_attribution": "attributable_via_proxy_mapping",
+  "address_safety": {
+    "path": "configs/address_safety_v1.json",
+    "config_version": "1.0.0",
+    "sha256_digest": "657aa680f6cda894f36b177566ce5d0a21374b123b1d8c67ce806a9bf40096c2"
+  },
+  "approver_registry": {
+    "status": "pending_provisioning",
+    "approvers": [],
+    "note": "Human-approval role P5 (seventh key role) is not provisioned. No approval can verify until it is, through a 2-of-2 trust-root manifest."
+  }
+}

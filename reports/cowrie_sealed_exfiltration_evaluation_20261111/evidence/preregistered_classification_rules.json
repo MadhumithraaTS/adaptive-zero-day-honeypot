@@ -1,0 +1,39 @@
+{
+  "written": "2026-11-11, during test generation, before any test feature value or score existed",
+  "purpose": "Evidence-based classification of every flagged (session, method) pair, fixed before scoring (Task 19B section 3)",
+  "evidence_per_session": {
+    "tar_failed": "terminal output of a `tar` command contains 'Cannot open' or 'Error is not recoverable', or the tar line produced cowrie.command.failed",
+    "curl_T_failed": "terminal output of a `curl -T` command contains 'option -T not recognized'",
+    "command_failed_events": "count of cowrie.command.failed events in the session (Cowrie emulation gap)",
+    "expected_files_found": "whether find '*.sql' / '*.db' printed any path, and whether `ls -la /home` / `/var/backups` listed entries other than . and ..",
+    "slow_cowrie_execution": "any command with manifest wait_s >= 5 s (Cowrie execution delay, e.g. find /)",
+    "pacing_anomaly": "any think_time_s above the training-split p99 of think times (8.672 s, from reports/dataset_v2_training_validation_20261110/evidence/train_command_log.csv)",
+    "unseen_command_names": "first tokens of the session's commands that never occur in the training command log (descriptive)"
+  },
+  "score_drivers": {
+    "A_ae_reconstruction": "share of the squared reconstruction error per scaled input",
+    "B_latent_knn": "share per scaled input of the squared difference between the session and the mean of its 5 nearest training neighbours found in the latent space",
+    "C_input_knn": "share per scaled input of the squared difference between the session and the mean of its 5 nearest training neighbours in the scaled input space",
+    "groups": {
+      "timing": ["time_to_first_input_s", "inter_input_mean_s", "inter_input_std_s"],
+      "duration": ["session_duration_s"],
+      "command_structure": ["input_line_count", "shell_operator_lines"],
+      "output_volume": ["tty_output_bytes"]
+    },
+    "dominant_group": "the group with share >= 0.5; otherwise 'mixed'"
+  },
+  "classification_rules_in_order": [
+    "3 generator pacing/timing anomaly: dominant = timing (or duration) AND pacing_anomaly AND NOT slow_cowrie_execution",
+    "2 Cowrie emulation failure/limitation: dominant = timing or duration AND slow_cowrie_execution AND NOT pacing_anomaly",
+    "2 Cowrie emulation failure/limitation: dominant = output_volume AND (tar_failed OR curl_T_failed OR command_failed_events > 0)",
+    "1 behavioural novelty supported by interaction evidence: dominant = command_structure (client-side input counts, which do not depend on Cowrie's responses); reported as unfamiliar command structure, not as demonstrated exfiltration detection",
+    "4 ambiguous / insufficient evidence: everything else (mixed drivers, conflicting evidence, duration without either explanation)"
+  ],
+  "cowrie_related_flag": "category 2",
+  "notes": [
+    "Failed-login sessions are outside the frozen novelty population (logged-in sessions) and are counted, not scored.",
+    "Sessions with Cowrie command failures are NOT removed from the primary result.",
+    "Validation reference: Task 18 seed-42 flags A 4/600, B 3/600, C 4/600 with the same thresholds.",
+    "C is the pre-declared primary method; A and B are secondary."
+  ]
+}

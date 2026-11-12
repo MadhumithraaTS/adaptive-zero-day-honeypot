@@ -1,0 +1,37 @@
+{
+  "scoring_started_utc": "2026-11-11T15:16:13Z",
+  "scoring_finished_utc": "2026-11-11T15:16:14Z",
+  "single_approved_evaluation": true,
+  "pipeline_selfcheck_on_published_validation": {
+    "A_ae_reconstruction": {
+      "scores_equal_at_stored_precision": true,
+      "flags_equal": true
+    },
+    "B_latent_knn": {
+      "scores_equal_at_stored_precision": true,
+      "flags_equal": true
+    },
+    "C_input_knn": {
+      "scores_equal_at_stored_precision": true,
+      "flags_equal": true
+    }
+  },
+  "test_rows_total": 900,
+  "scored_logged_in": 600,
+  "not_scored_failed_login_rows": 300,
+  "flagged": {
+    "A_ae_reconstruction": 5,
+    "B_latent_knn": 13,
+    "C_input_knn": 26
+  },
+  "thresholds": {
+    "A_ae_reconstruction": 1.171445,
+    "B_latent_knn": 0.72919,
+    "C_input_knn": 1.692104
+  },
+  "inference_batch_size": 256,
+  "outputs_sha256": {
+    "evidence/test_scores_core.csv": "006c13e8fc9ba9491e2a8114f26094713165055e9007d95b8e3e07e58e369f59",
+    "evidence/test_score_internals.npz": "b9381c573873418d164026ab98718002489b563857138fb3f63769502c083b44"
+  }
+}

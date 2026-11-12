@@ -1,0 +1,165 @@
+2026-11-11T17:18:43Z
+##### cowrie-demo-test-client
+[
+ {
+  "target": "172.22.0.1:2222",
+  "what": "Cowrie direct (cowrie_internal)",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "172.22.0.2:2222",
+  "what": "relay cowrie_internal addr",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "172.21.0.2:2222",
+  "what": "published listener (relay_frontend)",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "172.21.0.1:2222",
+  "what": "relay_frontend gateway",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "10.250.25.1:2222",
+  "what": "unused demo .1",
+  "result": "TimeoutError: timed out"
+ },
+ {
+  "target": "192.168.65.1:53",
+  "what": "Docker Desktop VM net",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "192.168.65.254:53",
+  "what": "Docker Desktop VM DNS",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "192.168.65.7:2375",
+  "what": "Docker Desktop VM",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "1.1.1.1:443",
+  "what": "internet",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "8.8.8.8:53",
+  "what": "internet DNS",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "10.250.25.2:22",
+  "what": "relay demo addr, non-listener port",
+  "result": "ConnectionRefusedError: [Errno 111] Connection refused"
+ },
+ {
+  "dns": "cowrie",
+  "result": "gaierror: [Errno -3] Temporary failure in name resolution"
+ },
+ {
+  "dns": "cowrie-project",
+  "result": "gaierror: [Errno -3] Temporary failure in name resolution"
+ },
+ {
+  "dns": "ssh-relay",
+  "result": "10.250.25.2"
+ },
+ {
+  "dns": "host.docker.internal",
+  "result": "gaierror: [Errno -3] Temporary failure in name resolution"
+ },
+ {
+  "dns": "gateway.docker.internal",
+  "result": "gaierror: [Errno -3] Temporary failure in name resolution"
+ },
+ {
+  "dns": "example.com",
+  "result": "gaierror: [Errno -3] Temporary failure in name resolution"
+ }
+]
+##### cowrie-demo-control-client
+[
+ {
+  "target": "172.22.0.1:2222",
+  "what": "Cowrie direct (cowrie_internal)",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "172.22.0.2:2222",
+  "what": "relay cowrie_internal addr",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "172.21.0.2:2222",
+  "what": "published listener (relay_frontend)",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "172.21.0.1:2222",
+  "what": "relay_frontend gateway",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "10.250.25.1:2222",
+  "what": "unused demo .1",
+  "result": "TimeoutError: timed out"
+ },
+ {
+  "target": "192.168.65.1:53",
+  "what": "Docker Desktop VM net",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "192.168.65.254:53",
+  "what": "Docker Desktop VM DNS",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "192.168.65.7:2375",
+  "what": "Docker Desktop VM",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "1.1.1.1:443",
+  "what": "internet",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "8.8.8.8:53",
+  "what": "internet DNS",
+  "result": "OSError: [Errno 101] Network is unreachable"
+ },
+ {
+  "target": "10.250.25.2:22",
+  "what": "relay demo addr, non-listener port",
+  "result": "ConnectionRefusedError: [Errno 111] Connection refused"
+ },
+ {
+  "dns": "cowrie",
+  "result": "gaierror: [Errno -3] Temporary failure in name resolution"
+ },
+ {
+  "dns": "cowrie-project",
+  "result": "gaierror: [Errno -3] Temporary failure in name resolution"
+ },
+ {
+  "dns": "ssh-relay",
+  "result": "10.250.25.2"
+ },
+ {
+  "dns": "host.docker.internal",
+  "result": "gaierror: [Errno -3] Temporary failure in name resolution"
+ },
+ {
+  "dns": "gateway.docker.internal",
+  "result": "gaierror: [Errno -3] Temporary failure in name resolution"
+ },
+ {
+  "dns": "example.com",
+  "result": "gaierror: [Errno -3] Temporary failure in name resolution"
+ }
+]

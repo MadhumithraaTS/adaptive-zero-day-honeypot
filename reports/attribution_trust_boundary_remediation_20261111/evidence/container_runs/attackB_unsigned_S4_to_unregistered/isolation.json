@@ -1,0 +1,14 @@
+{
+  "in_container": true,
+  "uid": 999,
+  "forbidden_paths_reachable": [],
+  "private_key_files_readable": [],
+  "network_interfaces": [
+    "lo"
+  ],
+  "scan_roots": [
+    "/opt/project",
+    "/work/input"
+  ],
+  "ok": true
+}

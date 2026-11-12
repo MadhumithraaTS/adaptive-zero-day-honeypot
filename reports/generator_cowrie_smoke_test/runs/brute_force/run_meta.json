@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-11-10T09:47:46.394164Z",
+  "host": "127.0.0.1",
+  "port": 2223,
+  "sessions_requested": 2,
+  "seed": 1,
+  "config_version": "2.1.0-docnet",
+  "include_held_out": false,
+  "container": "cowrie-project",
+  "log_baseline_lines": 95,
+  "speed": 1.0,
+  "generator_version": "2.1",
+  "config_path": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\reports\\generator_cowrie_smoke_test\\configs\\brute_force.json",
+  "pacing_seed": 1,
+  "pacing_policy": {
+    "think_median_s": 1.5,
+    "think_sigma": 0.75,
+    "think_min_s": 0.2,
+    "think_max_s": 15.0,
+    "auth_gap_min_s": 0.2,
+    "auth_gap_max_s": 0.8,
+    "speed": 1.0,
+    "think_distribution": "lognormal(ln(median), sigma) clipped to [min, max], / speed",
+    "auth_gap_distribution": "uniform(min, max) / speed"
+  },
+  "readiness_policy": {
+    "prompt_timeout_s": 20.0,
+    "exit_timeout_s": 5.0,
+    "poll_interval_s": 0.05,
+    "on_timeout": "terminate_session",
+    "prompt_regex": "[^\\s@]+@[^\\s:]+:[^\\r\\n]*[#$] $",
+    "readiness_condition": "terminal output (control sequences and CR removed) ends with the prompt"
+  },
+  "profile_delay_range": "ignored: pacing is category-independent (PacingPolicy)",
+  "inter_session_delay_s": 0.8
+}

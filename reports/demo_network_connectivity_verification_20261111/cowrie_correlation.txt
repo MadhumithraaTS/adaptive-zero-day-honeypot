@@ -1,0 +1,8 @@
+Task 25C-pre - Cowrie correlation
+=================================
+STATUS: NOT PERFORMED (no connection was made; see relay_peer_observation.txt).
+
+No new Cowrie session was created by this task, and Cowrie's live log was not read.
+The only prior relay-to-Cowrie correlation evidence is Task 25A (reports/relay_client_address_verification_20261111/),
+where cowrie.session.connect src_port (53490) equalled the relay's outbound local port, for a connection via the
+published port. Diagnostic session 99732d516898 from that task remains excluded from all datasets and evaluations.

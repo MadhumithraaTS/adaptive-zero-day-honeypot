@@ -1,0 +1,7 @@
+{
+  "ok": true,
+  "first_bad": null,
+  "reason": "chain and signatures verify",
+  "chain_head": "cbca971154842681cb8a98d12e691428795be243aa2b5bf7f131eb1b4467ba40",
+  "count": 11
+}

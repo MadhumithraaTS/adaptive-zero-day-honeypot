@@ -1,0 +1,33 @@
+## live relay, configs, base compose (Task 26D manifest)
+  ../../configs/threat_attribution_v3.json: OK
+  ../../configs/defence_policy_v2_2.json: OK
+  ../../configs/address_safety_v1.json: OK
+  ../../cowrie/docker-compose.yml: OK
+  ../../cowrie/attributing_relay/relay_config.json: OK
+  ../../cowrie/attributing_relay/relay_mapping_ed25519.pub.pem: OK
+  ../../cowrie/attributing_relay/attributing_relay.py: OK
+## gates/severity/evidence
+  ../../threat_assessment/audit.py: OK
+  ../../threat_assessment/severity.py: OK
+  ../../threat_assessment/assessment.py: OK
+  behavioural_evidence OK: 9/9
+## Task 28A artefacts (expected changes: witnessed_relay.py, framing.py)
+  ../../client_attribution/framing.py: FAILED
+  ../../client_attribution/witness.py: OK
+  ../../client_attribution/checkpoints.py: OK
+  ../../cowrie/attributing_relay/relay_gate.py: OK
+  ../../cowrie/attributing_relay/witnessed_relay.py: FAILED
+  ../../cowrie/docker-compose.witness-mock.yml: OK
+  ../../threat_assessment/config.py: OK
+  ../../threat_assessment/signed_attribution.py: OK
+  ../../tests/test_checkpoint_witness.py: OK
+  sha256sum: WARNING: 2 computed checksums did NOT match
+## relay key metadata / volumes / containers / firewall
+cowrie/attributing_relay/secrets/relay_mapping_ed25519.pem size=119 mtime=2026-11-11 22:42:34.222620100 +0530
+  no witness volumes
+relay restarts=0 started=2026-11-11T17:16:39.998671742Z
+cowrie restarts=0 started=2026-11-10T12:30:30.630598884Z
+rules mentioning demo client IPs (any table):
+(end)
+nft ruleset lines mentioning 10.250.25.3/.4: 0
+bridge rules count total filter: 51

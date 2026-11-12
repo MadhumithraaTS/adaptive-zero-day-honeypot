@@ -1,0 +1,14 @@
+{
+  "schema": "address-safety-config-1",
+  "config_version": "1.0.0",
+  "created": "2026-11-11",
+  "description": "Single authoritative list of protected, shared, enforcement-excluded and enforcement-allowlisted addresses (Task 26C, F-8). Attribution config v3 and policy 2.1+ pin this file by canonical digest and must not repeat these lists.",
+  "protected_cidrs": ["127.0.0.0/8", "::1/128", "169.254.0.0/16", "fe80::/10", "172.19.0.0/16", "172.21.0.0/16", "172.22.0.0/16",
+                      "10.250.25.1/32", "10.250.25.2/32"],
+  "protected_cidrs_note": "Loopback/link-local; cowrie_default (legacy), cowrie_relay_frontend, cowrie_cowrie_internal; demo .1 (unused) and the demo relay .2.",
+  "shared_source_cidrs": [],
+  "enforcement_excluded_sources": ["10.250.25.4/32"],
+  "enforcement_excluded_sources_note": "Demo control client: permanently excluded from any enforcement action.",
+  "enforcement_allowlist": ["10.250.25.3/32"],
+  "enforcement_allowlist_note": "The only address a future enforcement controller may target (demo test client). Not used by threat scoring."
+}

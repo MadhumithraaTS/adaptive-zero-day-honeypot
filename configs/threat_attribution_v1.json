@@ -1,0 +1,18 @@
+{
+  "schema": "threat-attribution-config-1",
+  "config_version": "1.0.0",
+  "created": "2026-11-11",
+  "deployment": "cowrie lab (Docker Desktop): cowrie-project + cowrie-ssh-relay",
+  "verified_against": "reports/threat_assessment_implementation_20261111/evidence/deployment_network_inspection.txt (docker network inspect, 2026-11-11T16:16:04Z, read-only)",
+  "source_field": "src_ip",
+  "source_field_note": "Only the Cowrie-observed TCP peer (src_ip) is used. Forwarded-for style fields are never trusted; SSH has no such header.",
+  "trusted_proxy_cidrs": ["172.22.0.2/32"],
+  "relay_addresses": ["172.22.0.2"],
+  "proxy_client_mapping": null,
+  "proxy_client_mapping_note": "No integrity-protected relay->client mapping exists in this deployment; sessions from trusted proxies are unattributable.",
+  "shared_source_cidrs": [],
+  "protected_cidrs": ["127.0.0.0/8", "::1/128", "169.254.0.0/16", "fe80::/10", "172.19.0.0/16", "172.21.0.0/16", "172.22.0.0/16"],
+  "protected_cidrs_note": "172.22.0.0/16 cowrie_cowrie_internal (Cowrie 172.22.0.1, relay 172.22.0.2); 172.21.0.0/16 cowrie_relay_frontend (relay 172.21.0.2, gateway 172.21.0.1); 172.19.0.0/16 cowrie_default (legacy network, still present).",
+  "internal_cidrs": ["172.21.0.0/16", "172.22.0.0/16"],
+  "internal_cidrs_note": "Explicit, verified deployment networks. RFC 5737 documentation ranges used by the traffic generator as stand-in 'LAN' hosts are NOT internal networks and are deliberately excluded."
+}

@@ -1,0 +1,32 @@
+   check       split  passed                                                                                        measured
+0     V1       train    True                                                           0 of 302 benign failed-guess sessions
+1     V1       train    True                                                           0 of 302 benign failed-guess sessions
+2     V2       train    True                                                                                    0 violations
+3    V2b       train    True                                                                                551 of 825 lines
+4     V3       train    True                                      80 sessions with curl -I; 0 interpreted as probing from it
+5     V4       train    True                                                               30 ART-1 sessions; identical=True
+6     V5       train    True  attempt sessions XFER-1 255, XFER-2 0; observed_success {}; download events 0, upload events 0
+7     V6       train    True                         2571 context/caveat-only sessions, 0 interpretations; 0 rule violations
+8     V7       train    True                                        3190 of 3190 authenticated/failed sessions indeterminate
+9    V7b       train    True                                                                           {"brute_force": 1018}
+10    V8       train    True                                                          437 sessions with >= 2 interpretations
+11    V1  validation    True                                                           0 of 126 benign failed-guess sessions
+12    V1  validation    True                                                           0 of 126 benign failed-guess sessions
+13    V2  validation    True                                                                                    0 violations
+14   V2b  validation    True                                                                                240 of 361 lines
+15    V3  validation    True                                      45 sessions with curl -I; 0 interpreted as probing from it
+16    V4  validation    True                                                                9 ART-1 sessions; identical=True
+17    V5  validation    True   attempt sessions XFER-1 92, XFER-2 0; observed_success {}; download events 0, upload events 0
+18    V6  validation    True                         1019 context/caveat-only sessions, 0 interpretations; 0 rule violations
+19    V7  validation    True                                        1257 of 1257 authenticated/failed sessions indeterminate
+20   V7b  validation    True                                                                            {"brute_force": 398}
+21    V8  validation    True                                                          167 sessions with >= 2 interpretations
+22    V9       train    True                                                                            sha 048e3101f83dc344
+23    V9  validation    True                                                                            sha 832b68c6282ef2d3
+24   V11  validation    True                                                             600 sessions carry novelty metadata
+                                                                                                                   measure  denominator  legacy_task20  design_prototype_task21  implementation_primary  implementation_lab_plan  implementation_oracle_auth
+0                                                         benign logged-in sessions with an attack-implying interpretation          229           79.0                       45                       0                        0                         NaN
+1                                                                  benign failed-guess sessions labelled credential attack          126          126.0                        0                       0                        0                         0.0
+2                                                                                    benign 'network probing' from curl -I          229            NaN                       45                       0                        0                         NaN
+3               sessions claiming a successful download (legacy label 'Download or payload retrieval' vs observed_success)          600           99.0                        0                       0                        0                         NaN
+4  slow-find sessions treated as novel/behavioural (legacy matcher E3 'Potentially Novel' vs ART-1 caveat changing output)            9            9.0                        0                       0                        0                         NaN

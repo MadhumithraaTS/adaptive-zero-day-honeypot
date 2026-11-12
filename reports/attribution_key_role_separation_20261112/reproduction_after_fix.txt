@@ -1,0 +1,3 @@
+K-1 relay key pinned as attribution-result key -> AssessmentConfigError: key-role separation: the attribution_result key must not be the relay record key
+K-2 corrupt attribution-result public key -> AssessmentConfigError: attribution_result public key is malformed or not a PEM public key
+live v3 config still loads: pending_provisioning relay pin a52b8c522a4bb091 result pin None

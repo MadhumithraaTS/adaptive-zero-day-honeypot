@@ -1,0 +1,4 @@
+/cowrie-project id=0bec5a78b1cb running img=sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a restarts=0 ro=true capdrop=[ALL] secopt=[no-new-privileges:true]
+/cowrie-ssh-relay id=8d3bafb35f38 running img=sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a restarts=0 ro=true capdrop=[ALL] secopt=[no-new-privileges:true]
+internal=true opts={"com.docker.network.bridge.gateway_mode_ipv4":"isolated","com.docker.network.enable_ipv4":"true","com.docker.network.enable_ipv6":"false"}
+2222/tcp -> 127.0.0.1:2223

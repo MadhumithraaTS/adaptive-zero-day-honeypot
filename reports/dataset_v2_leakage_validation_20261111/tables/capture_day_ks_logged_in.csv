@@ -1,0 +1,14 @@
+feature,train_median,validation_median,train_missing_pct,validation_missing_pct,ks_D_pooled,ks_p_pooled,ks_D_max_within_category,category_of_max_D,within_category_p_lt_0.01_count,within_category_tests
+login_success,1,1,0,0,0,1,,,0,0
+login_failed_count,0,0,0,0,0,1,,,0,0
+session_duration_s,12.2,12.6,0,0,0.042333,0.41694,0.10849,privilege_escalation,0,6
+input_line_count,5,6,0,0,0.041333,0.44716,0.13788,botnet,0,6
+input_bytes_total,65,66,0,0,0.031,0.79497,0.11899,lateral_movement,0,6
+input_line_max_bytes,26,26,6.6,6.8333,0.019735,0.99672,0.15327,botnet,0,6
+unique_command_names,5,5,0,0,0.021333,0.98806,0.14691,botnet,0,6
+shell_operator_lines,0,0,0,0,0.0063333,1,0.045497,benign,0,5
+download_command_lines,0,0,0,0,0.005,1,0.053904,benign,0,2
+time_to_first_input_s,1.663,1.6202,6.6,6.8333,0.061723,0.090472,0.1446,brute_force,0,6
+inter_input_mean_s,1.8442,1.9101,13.2,13.167,0.054359,0.2115,0.14236,privilege_escalation,0,5
+inter_input_std_s,0.9847,1.0211,13.867,13.5,0.044804,0.43157,0.11394,lateral_movement,0,5
+tty_output_bytes,1114,1168.5,0,0,0.039667,0.50002,0.19093,reconnaissance,0,6

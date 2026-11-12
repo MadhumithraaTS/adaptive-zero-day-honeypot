@@ -1,0 +1,89 @@
+[
+  {
+    "algorithm": "rsa",
+    "private_file": "cowrie/backups/pre_isolation_20261110/var/lib/cowrie/ssh_host_rsa_key",
+    "private_size": 1675,
+    "private_sha256": "0b3fec81ad7b2ecaa11aa07e2d93d9230105527756c176ca6f7758124233a269",
+    "private_sha256_matches_backup_manifest": true,
+    "private_mode_posix_view": "0o666",
+    "private_mtime": "2026-10-24T17:05:51Z",
+    "private_ctime": "2026-10-24T17:05:51Z",
+    "public_file": "cowrie/backups/pre_isolation_20261110/var/lib/cowrie/ssh_host_rsa_key.pub",
+    "public_size": 380,
+    "public_type": "ssh-rsa",
+    "public_fingerprint": {
+      "md5": "ec:64:4b:06:a9:e3:96:35:2a:61:99:12:88:ac:26:ea",
+      "sha256": "SHA256:29LQXC4gBIZ7kT/40ExyZ8b6ZFJcwwiHlwB0x6is+J4"
+    },
+    "private_pairs_with_pub": true,
+    "live_private_sha256_equal": true,
+    "live_public_fingerprint_equal": true,
+    "live": {
+      "private_size": 1675,
+      "private_mode": "0o644",
+      "uid": 999,
+      "mtime": 1792861551.9044678,
+      "pub_md5": "ec:64:4b:06:a9:e3:96:35:2a:61:99:12:88:ac:26:ea",
+      "pub_sha256": "SHA256:29LQXC4gBIZ7kT/40ExyZ8b6ZFJcwwiHlwB0x6is+J4",
+      "private_sha256": "0b3fec81ad7b2ecaa11aa07e2d93d9230105527756c176ca6f7758124233a269"
+    }
+  },
+  {
+    "algorithm": "ecdsa",
+    "private_file": "cowrie/backups/pre_isolation_20261110/var/lib/cowrie/ssh_host_ecdsa_key",
+    "private_size": 227,
+    "private_sha256": "dd8e164b2bed64d3139388d0f0ad77d6c136fa93bacace31acbf0b349535dc64",
+    "private_sha256_matches_backup_manifest": true,
+    "private_mode_posix_view": "0o666",
+    "private_mtime": "2026-10-24T17:05:51Z",
+    "private_ctime": "2026-10-24T17:05:51Z",
+    "public_file": "cowrie/backups/pre_isolation_20261110/var/lib/cowrie/ssh_host_ecdsa_key.pub",
+    "public_size": 160,
+    "public_type": "ecdsa-sha2-nistp256",
+    "public_fingerprint": {
+      "md5": "e5:c5:a4:a5:7a:0a:52:b8:99:4e:b0:31:c7:cd:a1:eb",
+      "sha256": "SHA256:gIf4j+uWxz/GZmvXt5E9Go5IR4ry7m7pibcHLb/uSds"
+    },
+    "private_pairs_with_pub": true,
+    "live_private_sha256_equal": true,
+    "live_public_fingerprint_equal": true,
+    "live": {
+      "private_size": 227,
+      "private_mode": "0o644",
+      "uid": 999,
+      "mtime": 1792861551.99665,
+      "pub_md5": "e5:c5:a4:a5:7a:0a:52:b8:99:4e:b0:31:c7:cd:a1:eb",
+      "pub_sha256": "SHA256:gIf4j+uWxz/GZmvXt5E9Go5IR4ry7m7pibcHLb/uSds",
+      "private_sha256": "dd8e164b2bed64d3139388d0f0ad77d6c136fa93bacace31acbf0b349535dc64"
+    }
+  },
+  {
+    "algorithm": "ed25519",
+    "private_file": "cowrie/backups/pre_isolation_20261110/var/lib/cowrie/ssh_host_ed25519_key",
+    "private_size": 387,
+    "private_sha256": "fb5c3f08eab8d5190f319c48a12fb133f74bbfa3c848d93d52bcbcfc261948c3",
+    "private_sha256_matches_backup_manifest": true,
+    "private_mode_posix_view": "0o666",
+    "private_mtime": "2026-10-24T17:05:51Z",
+    "private_ctime": "2026-10-24T17:05:51Z",
+    "public_file": "cowrie/backups/pre_isolation_20261110/var/lib/cowrie/ssh_host_ed25519_key.pub",
+    "public_size": 80,
+    "public_type": "ssh-ed25519",
+    "public_fingerprint": {
+      "md5": "3a:54:d6:aa:ca:d4:20:a1:58:c4:9d:5f:b3:44:7c:c2",
+      "sha256": "SHA256:FH4+yAVLrevTYlx4SZbhbVoWfgg2SyZq3CuLs9pBL+A"
+    },
+    "private_pairs_with_pub": true,
+    "live_private_sha256_equal": true,
+    "live_public_fingerprint_equal": true,
+    "live": {
+      "private_size": 387,
+      "private_mode": "0o644",
+      "uid": 999,
+      "mtime": 1792861551.9978352,
+      "pub_md5": "3a:54:d6:aa:ca:d4:20:a1:58:c4:9d:5f:b3:44:7c:c2",
+      "pub_sha256": "SHA256:FH4+yAVLrevTYlx4SZbhbVoWfgg2SyZq3CuLs9pBL+A",
+      "private_sha256": "fb5c3f08eab8d5190f319c48a12fb133f74bbfa3c848d93d52bcbcfc261948c3"
+    }
+  }
+]

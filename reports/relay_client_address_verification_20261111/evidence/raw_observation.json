@@ -1,0 +1,187 @@
+{
+  "diagnostic_only": true,
+  "purpose": "Task 25A relay peer-address verification; NOT attribution evidence",
+  "cowrie_log_lines_before": 21850,
+  "before": {
+    "relay": [
+      {
+        "table": "/proc/net/tcp",
+        "local": "127.0.0.11:43835",
+        "remote": "0.0.0.0:0",
+        "state": "LISTEN",
+        "inode": "280672"
+      },
+      {
+        "table": "/proc/net/tcp",
+        "local": "0.0.0.0:2222",
+        "remote": "0.0.0.0:0",
+        "state": "LISTEN",
+        "inode": "278845"
+      }
+    ],
+    "cowrie": [
+      {
+        "table": "/proc/net/tcp",
+        "local": "0.0.0.0:2222",
+        "remote": "0.0.0.0:0",
+        "state": "LISTEN",
+        "inode": "261087"
+      },
+      {
+        "table": "/proc/net/tcp",
+        "local": "127.0.0.11:33177",
+        "remote": "0.0.0.0:0",
+        "state": "LISTEN",
+        "inode": "266917"
+      }
+    ]
+  },
+  "client": {
+    "connected_utc": "2026-11-11T16:37:33.861183Z",
+    "client_local": "127.0.0.1:57328",
+    "client_peer": "127.0.0.1:2223",
+    "banner": "SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u3",
+    "closed_utc": "2026-11-11T16:37:38.575698Z"
+  },
+  "during": [
+    {
+      "sampled_utc": "2026-11-11T16:37:36.040866Z",
+      "relay": [
+        {
+          "table": "/proc/net/tcp",
+          "local": "127.0.0.11:43835",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "280672"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "0.0.0.0:2222",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "278845"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "172.22.0.2:53490",
+          "remote": "172.22.0.1:2222",
+          "state": "ESTABLISHED",
+          "inode": "1629319"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "172.21.0.2:2222",
+          "remote": "172.21.0.1:43452",
+          "state": "ESTABLISHED",
+          "inode": "1629318"
+        }
+      ],
+      "cowrie": [
+        {
+          "table": "/proc/net/tcp",
+          "local": "0.0.0.0:2222",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "261087"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "127.0.0.11:33177",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "266917"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "172.22.0.1:2222",
+          "remote": "172.22.0.2:53490",
+          "state": "ESTABLISHED",
+          "inode": "1620529"
+        }
+      ]
+    },
+    {
+      "sampled_utc": "2026-11-11T16:37:37.375901Z",
+      "relay": [
+        {
+          "table": "/proc/net/tcp",
+          "local": "127.0.0.11:43835",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "280672"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "0.0.0.0:2222",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "278845"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "172.22.0.2:53490",
+          "remote": "172.22.0.1:2222",
+          "state": "ESTABLISHED",
+          "inode": "1629319"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "172.21.0.2:2222",
+          "remote": "172.21.0.1:43452",
+          "state": "ESTABLISHED",
+          "inode": "1629318"
+        }
+      ],
+      "cowrie": [
+        {
+          "table": "/proc/net/tcp",
+          "local": "0.0.0.0:2222",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "261087"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "127.0.0.11:33177",
+          "remote": "0.0.0.0:0",
+          "state": "LISTEN",
+          "inode": "266917"
+        },
+        {
+          "table": "/proc/net/tcp",
+          "local": "172.22.0.1:2222",
+          "remote": "172.22.0.2:53490",
+          "state": "ESTABLISHED",
+          "inode": "1620529"
+        }
+      ]
+    }
+  ],
+  "cowrie_log_lines_after": 21852,
+  "cowrie_new_events": [
+    {
+      "eventid": "cowrie.session.connect",
+      "src_ip": "172.22.0.2",
+      "src_port": 53490,
+      "dst_ip": "172.22.0.1",
+      "dst_port": 2222,
+      "session": "99732d516898",
+      "protocol": "ssh",
+      "message": "New connection: 172.22.0.2:53490 (172.22.0.1:2222) [session: 99732d516898]",
+      "sensor": "0bec5a78b1cb",
+      "uuid": "bafc61de-32ec-11f1-a37e-46de337b5ff9",
+      "timestamp": "2026-11-11T16:37:34.938173Z"
+    },
+    {
+      "eventid": "cowrie.session.closed",
+      "duration": "3.7",
+      "message": "Connection lost after 3.7 seconds",
+      "sensor": "0bec5a78b1cb",
+      "uuid": "bafc61de-32ec-11f1-a37e-46de337b5ff9",
+      "timestamp": "2026-11-11T16:37:38.681512Z",
+      "src_ip": "172.22.0.2",
+      "session": "99732d516898",
+      "protocol": "ssh"
+    }
+  ]
+}

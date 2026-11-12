@@ -1,0 +1,375 @@
+{
+  "b_sent_hex": "50494c4f545f425f333034353765383920909090909090909020c29020c3a920ff20454e44",
+  "V0_default": {
+    "parse_logs": [
+      0,
+      []
+    ],
+    "parsed_B_input_codepoints": [
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x45",
+      "0x4e",
+      "0x44"
+    ],
+    "extract_features": [
+      0,
+      []
+    ],
+    "sbytes_by_session": {
+      "5f8f7af3f320": 281,
+      "ac9ae6e306b6": 28,
+      "852266ae5622": 111
+    },
+    "builder": [
+      0,
+      []
+    ],
+    "builder_raw_copy": {
+      "bytes>127": 0,
+      "contains_EF_BF_BD": false,
+      "contains_0x90": false,
+      "contains_3F_in_B": false
+    },
+    "builder_B_input_codepoints": [
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x45",
+      "0x4e",
+      "0x44"
+    ]
+  },
+  "V0_utf8": {
+    "parse_logs": [
+      0,
+      []
+    ],
+    "parsed_B_input_codepoints": [
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x45",
+      "0x4e",
+      "0x44"
+    ],
+    "extract_features": [
+      0,
+      []
+    ],
+    "sbytes_by_session": {
+      "5f8f7af3f320": 281,
+      "ac9ae6e306b6": 28,
+      "852266ae5622": 111
+    },
+    "builder": [
+      0,
+      []
+    ],
+    "builder_raw_copy": {
+      "bytes>127": 0,
+      "contains_EF_BF_BD": false,
+      "contains_0x90": false,
+      "contains_3F_in_B": false
+    },
+    "builder_B_input_codepoints": [
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x45",
+      "0x4e",
+      "0x44"
+    ]
+  },
+  "V1_default": {
+    "parse_logs": [
+      0,
+      []
+    ],
+    "parsed_B_input_codepoints": [
+      "0x20",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x20",
+      "0xc2",
+      "0x90",
+      "0x20",
+      "0xc3",
+      "0xa9",
+      "0x20",
+      "0xff",
+      "0x20",
+      "0x45",
+      "0x4e",
+      "0x44"
+    ],
+    "extract_features": [
+      0,
+      []
+    ],
+    "sbytes_by_session": {
+      "5f8f7af3f320": 281,
+      "ac9ae6e306b6": 54,
+      "852266ae5622": 111
+    },
+    "builder": [
+      0,
+      []
+    ],
+    "builder_raw_copy": {
+      "bytes>127": 0,
+      "contains_EF_BF_BD": false,
+      "contains_0x90": false,
+      "contains_3F_in_B": false
+    },
+    "builder_B_input_codepoints": [
+      "0x20",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x20",
+      "0xc2",
+      "0x90",
+      "0x20",
+      "0xc3",
+      "0xa9",
+      "0x20",
+      "0xff",
+      "0x20",
+      "0x45",
+      "0x4e",
+      "0x44"
+    ]
+  },
+  "V1_utf8": {
+    "parse_logs": [
+      0,
+      []
+    ],
+    "parsed_B_input_codepoints": [
+      "0x20",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x20",
+      "0xc2",
+      "0x90",
+      "0x20",
+      "0xc3",
+      "0xa9",
+      "0x20",
+      "0xff",
+      "0x20",
+      "0x45",
+      "0x4e",
+      "0x44"
+    ],
+    "extract_features": [
+      0,
+      []
+    ],
+    "sbytes_by_session": {
+      "5f8f7af3f320": 281,
+      "ac9ae6e306b6": 54,
+      "852266ae5622": 111
+    },
+    "builder": [
+      0,
+      []
+    ],
+    "builder_raw_copy": {
+      "bytes>127": 0,
+      "contains_EF_BF_BD": false,
+      "contains_0x90": false,
+      "contains_3F_in_B": false
+    },
+    "builder_B_input_codepoints": [
+      "0x20",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x20",
+      "0xc2",
+      "0x90",
+      "0x20",
+      "0xc3",
+      "0xa9",
+      "0x20",
+      "0xff",
+      "0x20",
+      "0x45",
+      "0x4e",
+      "0x44"
+    ]
+  },
+  "V2_default": {
+    "parse_logs": [
+      1,
+      [
+        "Error: Could not read C:\\Users\\madhu\\AppData\\Local\\Temp\\claude\\c--AMRITA-Final-Year-Project-zero-day-27-adaptive-zero-day-honeypot\\601b0171-9524-480b-9fb8-d783f51bad37\\scratchpad\\pilot_parser_work\\V2.json: 'charmap' codec can't decode byte 0x90 in position 1418: character maps to <undefined>"
+      ]
+    ],
+    "builder": [
+      1,
+      [
+        "UnicodeEncodeError: 'charmap' codec can't encode characters in position 9626-9633: character maps to <undefined>"
+      ]
+    ],
+    "builder_raw_copy": {
+      "bytes>127": 0,
+      "contains_EF_BF_BD": false,
+      "contains_0x90": false,
+      "contains_3F_in_B": false
+    }
+  },
+  "V2_utf8": {
+    "parse_logs": [
+      0,
+      []
+    ],
+    "parsed_B_input_codepoints": [
+      "0x20",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x20",
+      "0xc2",
+      "0x90",
+      "0x20",
+      "0xc3",
+      "0xa9",
+      "0x20",
+      "0xff",
+      "0x20",
+      "0x45",
+      "0x4e",
+      "0x44"
+    ],
+    "extract_features": [
+      0,
+      []
+    ],
+    "sbytes_by_session": {
+      "5f8f7af3f320": 281,
+      "ac9ae6e306b6": 54,
+      "852266ae5622": 111
+    },
+    "builder": [
+      0,
+      []
+    ],
+    "builder_raw_copy": {
+      "bytes>127": 26,
+      "contains_EF_BF_BD": false,
+      "contains_0x90": true,
+      "contains_3F_in_B": false
+    },
+    "builder_B_input_codepoints": [
+      "0x20",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x90",
+      "0x20",
+      "0xc2",
+      "0x90",
+      "0x20",
+      "0xc3",
+      "0xa9",
+      "0x20",
+      "0xff",
+      "0x20",
+      "0x45",
+      "0x4e",
+      "0x44"
+    ]
+  },
+  "V3_default": {
+    "parse_logs": [
+      1,
+      [
+        "Error: Could not read C:\\Users\\madhu\\AppData\\Local\\Temp\\claude\\c--AMRITA-Final-Year-Project-zero-day-27-adaptive-zero-day-honeypot\\601b0171-9524-480b-9fb8-d783f51bad37\\scratchpad\\pilot_parser_work\\V3.json: 'charmap' codec can't decode byte 0x90 in position 1405: character maps to <undefined>"
+      ]
+    ],
+    "builder": [
+      1,
+      [
+        "UnicodeEncodeError: 'charmap' codec can't encode character '\\ufffd' in position 9614: character maps to <undefined>"
+      ]
+    ],
+    "builder_raw_copy": {
+      "bytes>127": 0,
+      "contains_EF_BF_BD": false,
+      "contains_0x90": false,
+      "contains_3F_in_B": false
+    }
+  },
+  "V3_utf8": {
+    "parse_logs": [
+      1,
+      [
+        "Error: Could not read C:\\Users\\madhu\\AppData\\Local\\Temp\\claude\\c--AMRITA-Final-Year-Project-zero-day-27-adaptive-zero-day-honeypot\\601b0171-9524-480b-9fb8-d783f51bad37\\scratchpad\\pilot_parser_work\\V3.json: 'utf-8' codec can't decode byte 0x90 in position 1405: invalid start byte"
+      ]
+    ],
+    "builder": [
+      0,
+      []
+    ],
+    "builder_raw_copy": {
+      "bytes>127": 3,
+      "contains_EF_BF_BD": true,
+      "contains_0x90": false,
+      "contains_3F_in_B": false
+    },
+    "builder_B_input_codepoints": [
+      "0x39",
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x20",
+      "0x45",
+      "0x4e",
+      "0x44"
+    ]
+  }
+}

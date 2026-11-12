@@ -1,0 +1,9 @@
+,count,count,count,row_share,row_share,row_share
+col_0,0,1,2,0,1,2
+row_0,,,,,,
+benign,150,0,79,0.655,0.0,0.345
+botnet,43,0,28,0.606,0.0,0.394
+brute_force,11,65,3,0.139,0.823,0.038
+lateral_movement,61,0,17,0.782,0.0,0.218
+privilege_escalation,34,0,35,0.493,0.0,0.507
+reconnaissance,46,2,26,0.622,0.027,0.351

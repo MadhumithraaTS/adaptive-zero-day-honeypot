@@ -1,0 +1,474 @@
+{
+  "run_id": "20261112T070250Z-b1d6f6",
+  "mode": "rehearse",
+  "label": "DEMO ONLY - ephemeral in-memory key, not production trust",
+  "session_id": "1c2fbcf7f547",
+  "excluded_ids_untouched": true,
+  "ml_branch": {
+    "dec": [
+      {
+        "session_id": "1c2fbcf7f547",
+        "src_ip": "172.22.0.2",
+        "src_port": "51320",
+        "dur": "9.0",
+        "proto": "ssh",
+        "service": "ssh",
+        "spkts": "5",
+        "dpkts": "7",
+        "sbytes": "69",
+        "dbytes": "838",
+        "rate": "100.7778",
+        "sttl": "64",
+        "dttl": "64",
+        "sload": "61.3333",
+        "dload": "744.8889",
+        "sinpkt": "1.5",
+        "dinpkt": "1.493333",
+        "sjit": "0.0",
+        "djit": "2.490636",
+        "tcprtt": "0.08",
+        "synack": "0.036",
+        "ackdat": "2.5",
+        "ct_srv_src": "1",
+        "ct_state_ttl": "1",
+        "ct_dst_ltm": "1",
+        "ct_src_ltm": "1",
+        "ct_srv_dst": "1",
+        "attack_cat": "normal",
+        "label": "0",
+        "dec_cluster": "1",
+        "dec_confidence": "0.9130433",
+        "cluster_0_prob": "0.05333103",
+        "cluster_1_prob": "0.9130433",
+        "cluster_2_prob": "0.03362564"
+      }
+    ],
+    "novelty": {
+      "schema_version": "1.0",
+      "generated_at": "2026-11-12T07:03:18.826168+00:00",
+      "results_count": 1,
+      "category_counts": {
+        "Known-like": 1
+      },
+      "output_files": {
+        "csv": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\novelty\\novelty_assessment_results.csv",
+        "json": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\novelty\\novelty_assessment_results.json",
+        "report": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\novelty\\novelty_assessment_report.md",
+        "summary": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\novelty\\novelty_assessment_summary.json"
+      },
+      "status": "success",
+      "input_session_count": 1,
+      "processed_session_count": 1,
+      "thresholds": {
+        "known_threshold": 0.7,
+        "ambiguous_margin": 0.05,
+        "min_compatible_features": 1,
+        "borderline_score": 0.6
+      },
+      "held_out_ratio": 0.0,
+      "random_seed": 42,
+      "evaluation_mode": "independent",
+      "reference_session_id_count": 5,
+      "overlapping_session_count": 0,
+      "overlapping_session_ids": [],
+      "warnings": []
+    },
+    "novelty_rows": [
+      {
+        "session_id": "1c2fbcf7f547",
+        "assessment_category": "Known-like",
+        "closest_signature_id": "sig-4e22763125d03876",
+        "score": "0.785887",
+        "distance": "0.214113",
+        "evidence": "Comparable numerical features: synack, tcprtt, sload, sbytes, djit, sjit, dinpkt, dur; Observed command categories: file_system, file_transfer, networking, reconnaissance; Signature command categories: reconnaissance, file_system, file_transfer, networking, credential_attack, privilege_escalation, evasion, persistence; Session auth_success=1",
+        "reason": "The session matched the closest signature sig-4e22763125d03876 with a similarity score of 0.786, above the configured known threshold 0.70.",
+        "best_signature_label": "Mixed/Unclassified",
+        "second_score": "",
+        "comparable_feature_count": "8",
+        "contradictory_evidence": "[]"
+      }
+    ],
+    "signatures": {
+      "schema_version": "1.0",
+      "generated_at": "2026-11-12T07:03:16.525698+00:00",
+      "signature_count": 1,
+      "low_confidence_signatures": 0,
+      "output_files": {
+        "json": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\behaviour_signatures\\behaviour_signatures.json",
+        "csv": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\behaviour_signatures\\behaviour_signatures.csv",
+        "report": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\behaviour_signatures\\signature_generation_report.md",
+        "summary": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\behaviour_signatures\\signature_generation_summary.json"
+      },
+      "status": "success",
+      "warnings": [],
+      "session_count": 5,
+      "patterns_examined": 1,
+      "records_skipped": 0,
+      "output_dir": "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\behaviour_signatures"
+    }
+  },
+  "rules_branch": {
+    "assessment": {
+      "session_ref": "1c2fbcf7f547",
+      "tier": "propose",
+      "tier_reason": "all proposal conditions met; manual approval required",
+      "gates": {
+        "1_severity_S2_or_higher": true,
+        "2_interpretation_E2_or_higher_on_an_S2plus_finding": true,
+        "3_two_distinct_action_indicators": true,
+        "4_successful_login": true,
+        "5_attributable_source": true,
+        "6_not_protected_or_shared": true,
+        "7_verified_configuration_digests": true,
+        "8_no_processing_errors": true
+      },
+      "proposed_action": {
+        "execution": "not_executed",
+        "inverse": {
+          "subject": "10.250.25.3",
+          "type": "unblock_source_ip"
+        },
+        "manual_approval": "pending",
+        "mode": "dry_run",
+        "relay_connection_id": "b79d4b9e-d339-4891-920c-4b4776b1e51b",
+        "scope": "this sensor only",
+        "subject": "10.250.25.3",
+        "subject_basis": "attributable_via_proxy_mapping",
+        "ttl_seconds": 86400,
+        "type": "block_source_ip"
+      },
+      "successful_login_basis": "cowrie.login.success at 2026-11-12T07:02:20.545229Z correlated by session ID (signed result DEMO-20261112T070250Z-b1d6f6)"
+    },
+    "attribution": {
+      "state": "attributable_via_proxy_mapping",
+      "client_ip": "10.250.25.3",
+      "client_port": 35153,
+      "close_check": "consistent"
+    },
+    "proposal_id": "prop-task26c-isolated-000001",
+    "rule": {
+      "rule_id": "rule-417e243e-ae7c-4de7-b27a-f009e3e3f58b",
+      "target": "10.250.25.3/32",
+      "ttl_seconds": 600,
+      "expires_utc": "2026-11-12T07:12:51.045229Z"
+    },
+    "feedback": {
+      "proposals": 1,
+      "final_states": {
+        "rolled_back": 1
+      },
+      "response_success": 1,
+      "response_failure": 0,
+      "labels": {
+        "true_positive": 1
+      },
+      "rejected_operations": 1,
+      "note": "dry-run metrics; no real response was executed"
+    },
+    "container_opened_files": {
+      "startup": 105,
+      "isolation_scan": 63,
+      "assessment": 12
+    },
+    "container_demo_inputs_loaded": [
+      "/work/input/attribution_result_DEMO-20261112T070250Z-b1d6f6.pub.pem",
+      "/work/input/calibration_DEMO-20261112T070250Z-b1d6f6.json",
+      "/work/input/cowrie_events_DEMO-20261112T070250Z-b1d6f6.jsonl",
+      "/work/input/defence_policy_v2_2_DEMO-20261112T070250Z-b1d6f6.json",
+      "/work/input/signed_result_DEMO-20261112T070250Z-b1d6f6.json",
+      "/work/input/threat_attribution_v3_DEMO-20261112T070250Z-b1d6f6.json"
+    ],
+    "keys": {
+      "result": {
+        "role": "attribution_result (DEMO)",
+        "sha256": "331f17b687bb194b9bb27486bae59afc779a3a5a6e8a4e5a615a11b21db40447",
+        "label": "DEMO ONLY - ephemeral in-memory key, not production trust"
+      },
+      "approver": {
+        "role": "human_approval (DEMO)",
+        "sha256": "a15b49e698777570ef4095106fcffce521ab35fae946e35e9777c2d7291acb34",
+        "label": "DEMO ONLY - ephemeral in-memory key, not production trust"
+      }
+    }
+  },
+  "hashes_before": {
+    "parse_logs.py": "4987a671271450016ede8172230abd1ec49ded22a2190a71b471f577dbbaa414",
+    "extract_features.py": "6524aedf68d8aca4aacc30ab2531acdb52614ba63c9c374061fe1bd7203b653e"
+  },
+  "hashes_after": {
+    "parse_logs.py": "4987a671271450016ede8172230abd1ec49ded22a2190a71b471f577dbbaa414",
+    "extract_features.py": "6524aedf68d8aca4aacc30ab2531acdb52614ba63c9c374061fe1bd7203b653e"
+  },
+  "subprocess_commands": [
+    [
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\.venv\\Scripts\\python.exe",
+      "scripts/pipeline.py",
+      "--skip-attack",
+      "--raw-input",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\raw\\cowrie_slice.json",
+      "--output-dir",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\pipeline"
+    ],
+    [
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\.venv\\Scripts\\python.exe",
+      "scripts/behaviour_pattern_analysis.py",
+      "--dec-results",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\data\\processed\\dec_results.csv",
+      "--mapping",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\data\\processed\\session_mapping.csv",
+      "--session-details",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\data\\parsed\\session_details.json",
+      "--model-input",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\data\\processed\\model_input.csv",
+      "--output-dir",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\behaviour_analysis"
+    ],
+    [
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\.venv\\Scripts\\python.exe",
+      "scripts/behaviour_signature_generation.py",
+      "--cluster-summary",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\behaviour_analysis\\cluster_summary.csv",
+      "--feature-stats",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\behaviour_analysis\\cluster_feature_statistics.csv",
+      "--command-analysis",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\behaviour_analysis\\cluster_command_analysis.csv",
+      "--session-profiles",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\behaviour_analysis\\session_behaviour_profiles.csv",
+      "--session-details",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\data\\parsed\\session_details.json",
+      "--cluster-analysis",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\behaviour_analysis\\cluster_analysis.json",
+      "--output-dir",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\behaviour_signatures"
+    ],
+    [
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\.venv\\Scripts\\python.exe",
+      "scripts/novelty_assessment.py",
+      "--session-details",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\pipeline\\parsed\\session_details.json",
+      "--signature-file",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\behaviour_signatures\\behaviour_signatures.json",
+      "--output-dir",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\novelty"
+    ],
+    [
+      "docker",
+      "compose",
+      "-f",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\docker-compose.yml",
+      "--profile",
+      "assessment",
+      "run",
+      "--rm",
+      "-T",
+      "--entrypoint",
+      "/cowrie/cowrie-env/bin/python3",
+      "threat-assessment",
+      "/work/input/demo_container_wrapper-20261112T070250Z-b1d6f6.py",
+      "--repo-root",
+      "/opt/project",
+      "--attribution-config",
+      "/work/input/threat_attribution_v3_DEMO-20261112T070250Z-b1d6f6.json",
+      "--policy",
+      "/work/input/defence_policy_v2_2_DEMO-20261112T070250Z-b1d6f6.json",
+      "--result-public-key",
+      "/work/input/attribution_result_DEMO-20261112T070250Z-b1d6f6.pub.pem",
+      "--calibration",
+      "/work/input/calibration_DEMO-20261112T070250Z-b1d6f6.json",
+      "--cowrie-events",
+      "/work/input/cowrie_events_DEMO-20261112T070250Z-b1d6f6.jsonl",
+      "--signed-result",
+      "/work/input/signed_result_DEMO-20261112T070250Z-b1d6f6.json",
+      "--now",
+      "2026-11-12T07:02:50.045229Z",
+      "--out-dir",
+      "/work/output/demo-20261112T070250Z-b1d6f6/assessment"
+    ]
+  ],
+  "files_created": [
+    "cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\raw\\cowrie_slice.json",
+    "cowrie\\assessment_work\\input\\cowrie_events_DEMO-20261112T070250Z-b1d6f6.jsonl",
+    "cowrie\\assessment_work\\input\\address_safety_DEMO-20261112T070250Z-b1d6f6.json",
+    "cowrie\\assessment_work\\input\\threat_attribution_v3_DEMO-20261112T070250Z-b1d6f6.json",
+    "cowrie\\assessment_work\\input\\defence_policy_v2_2_DEMO-20261112T070250Z-b1d6f6.json",
+    "cowrie\\assessment_work\\input\\attribution_result_DEMO-20261112T070250Z-b1d6f6.pub.pem",
+    "cowrie\\assessment_work\\input\\calibration_DEMO-20261112T070250Z-b1d6f6.json",
+    "cowrie\\assessment_work\\input\\demo_container_wrapper-20261112T070250Z-b1d6f6.py",
+    "cowrie\\assessment_work\\input\\signed_result_DEMO-20261112T070250Z-b1d6f6.json",
+    "cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\response\\feedback.json",
+    "cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\response\\proposal.json",
+    "cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\response\\approval.json"
+  ],
+  "argv": [
+    "rehearse"
+  ],
+  "started_utc": "2026-11-12T07:02:50.045229Z",
+  "removed": [
+    "cowrie\\assessment_work\\input\\cowrie_events_DEMO-20261112T070250Z-b1d6f6.jsonl",
+    "cowrie\\assessment_work\\input\\address_safety_DEMO-20261112T070250Z-b1d6f6.json",
+    "cowrie\\assessment_work\\input\\threat_attribution_v3_DEMO-20261112T070250Z-b1d6f6.json",
+    "cowrie\\assessment_work\\input\\defence_policy_v2_2_DEMO-20261112T070250Z-b1d6f6.json",
+    "cowrie\\assessment_work\\input\\attribution_result_DEMO-20261112T070250Z-b1d6f6.pub.pem",
+    "cowrie\\assessment_work\\input\\calibration_DEMO-20261112T070250Z-b1d6f6.json",
+    "cowrie\\assessment_work\\input\\demo_container_wrapper-20261112T070250Z-b1d6f6.py",
+    "cowrie\\assessment_work\\input\\signed_result_DEMO-20261112T070250Z-b1d6f6.json",
+    "cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6/ (this run's output directory)"
+  ],
+  "checks": [
+    {
+      "check": "synthetic session ID is fresh and not excluded",
+      "pass": true,
+      "detail": "1c2fbcf7f547"
+    },
+    {
+      "check": "ML stages 2-5 (pipeline on the slice, DEC saved artifacts)",
+      "pass": true,
+      "detail": "ok"
+    },
+    {
+      "check": "ML handoff 4->5: behavior_features.csv -> DEC dec_results.csv",
+      "pass": true,
+      "detail": "cowrie\\assessment_work\\output\\demo-20261112T070250Z-b1d6f6\\ml\\pipeline\\processed\\dec_results.csv"
+    },
+    {
+      "check": "ML stage 6 pattern analysis (baseline corpus)",
+      "pass": true,
+      "detail": "ok"
+    },
+    {
+      "check": "ML stage 7 signature generation (from stage-6 outputs)",
+      "pass": true,
+      "detail": "ok"
+    },
+    {
+      "check": "ML stage 8 novelty of the fresh session vs stage-7 signatures",
+      "pass": true,
+      "detail": "ok"
+    },
+    {
+      "check": "DEMO keys are distinct from each other and from the relay key",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "signed attribution: relay chain verifies",
+      "pass": true,
+      "detail": "chain and signatures verify"
+    },
+    {
+      "check": "signed attribution: session mapped to the test client",
+      "pass": true,
+      "detail": "attributable_via_proxy_mapping -> 10.250.25.3"
+    },
+    {
+      "check": "stage 9 threat scoring ran in the isolated container",
+      "pass": true,
+      "detail": "ok"
+    },
+    {
+      "check": "container isolation self-check ok",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "container loaded no production config (assessment phase)",
+      "pass": true,
+      "detail": "loaded 6 DEMO inputs from /work/input; production: []"
+    },
+    {
+      "check": "isolation self-check scanned the repository (read-only key scan, not config loading)",
+      "pass": true,
+      "detail": "63 files scanned"
+    },
+    {
+      "check": "stage 9 tier = propose (gates unchanged)",
+      "pass": true,
+      "detail": "all proposal conditions met; manual approval required"
+    },
+    {
+      "check": "stage 9 proposal is dry-run, approval pending, not executed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "altered signed attribution is rejected",
+      "pass": true,
+      "detail": "[{'result_id': 'DEMO-20261112T070250Z-b1d6f6', 'reason': 'result_hash mismatch (result modified)'}]"
+    },
+    {
+      "check": "unsigned attribution is rejected (no proposal)",
+      "pass": true,
+      "detail": "[{'result_id': None, 'reason': 'unsigned attribution result'}]"
+    },
+    {
+      "check": "unsigned attribution cannot authorise a response proposal",
+      "pass": true,
+      "detail": "assessment is not a 'propose' tier with all gates true"
+    },
+    {
+      "check": "stage 10 intake of the container assessment",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "DEMO approval signature verified by the controller",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "response executed in DRY-RUN only (relay boundary never called)",
+      "pass": true,
+      "detail": "simulated (not enforced)"
+    },
+    {
+      "check": "enforce mode refused",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "operator verification recorded (dry-run: no real effect)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "simulated rollback verified",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "feedback linked to the response record",
+      "pass": true,
+      "detail": "proposal prop-task26c-isolated-000001"
+    },
+    {
+      "check": "response audit log verifies",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "branches independent: rules branch opened no ML-branch output (input = Cowrie events + relay records only)",
+      "pass": true,
+      "detail": "26 files opened during the rules branch, 0 under ml/"
+    },
+    {
+      "check": "no command touched the live Cowrie container in this mode",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "this process opened no production config, private key, Cowrie log, Dataset V2 or sealed data",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "parse_logs.py / extract_features.py unchanged",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "cleanup removed only this run's artifacts; scratch folders restored",
+      "pass": true,
+      "detail": "9 paths removed"
+    }
+  ]
+}

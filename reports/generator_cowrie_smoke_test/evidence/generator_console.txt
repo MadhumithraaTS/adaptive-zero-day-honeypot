@@ -1,0 +1,48 @@
+===== benign_admin 09:47:06
+Cowrie log baseline: 60 existing lines (this run's events come after).
+Writing manifest to reports/generator_cowrie_smoke_test/runs/benign_admin\manifest.jsonl
+Target: 2 sessions across 1 profiles -> 127.0.0.1:2223
+[1/2] benign_admin           ok
+[2/2] benign_admin           ok
+Done. 2/2 sessions completed cleanly.
+Manifest: reports/generator_cowrie_smoke_test/runs/benign_admin\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+===== brute_force 09:47:45
+Cowrie log baseline: 95 existing lines (this run's events come after).
+Writing manifest to reports/generator_cowrie_smoke_test/runs/brute_force\manifest.jsonl
+Target: 2 sessions across 1 profiles -> 127.0.0.1:2223
+[1/2] brute_force            ok
+[2/2] brute_force            ok
+Done. 2/2 sessions completed cleanly.
+Manifest: reports/generator_cowrie_smoke_test/runs/brute_force\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+===== botnet 09:48:10
+Cowrie log baseline: 143 existing lines (this run's events come after).
+Writing manifest to reports/generator_cowrie_smoke_test/runs/botnet\manifest.jsonl
+Target: 2 sessions across 1 profiles -> 127.0.0.1:2223
+[1/2] botnet                 ok
+[2/2] botnet                 incomplete  (command 3: timeout after 20.0 s)
+Done. 1/2 sessions completed cleanly.
+Manifest: reports/generator_cowrie_smoke_test/runs/botnet\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+===== data_exfiltration 09:49:03
+Cowrie log baseline: 183 existing lines (this run's events come after).
+Writing manifest to reports/generator_cowrie_smoke_test/runs/data_exfiltration\manifest.jsonl
+Target: 2 sessions across 1 profiles -> 127.0.0.1:2223
+[1/2] data_exfiltration      ok
+[2/2] data_exfiltration      incomplete  (command 4: timeout after 20.016 s)
+Done. 1/2 sessions completed cleanly.
+Manifest: reports/generator_cowrie_smoke_test/runs/data_exfiltration\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+===== lateral_movement 09:49:54
+Cowrie log baseline: 213 existing lines (this run's events come after).
+Writing manifest to reports/generator_cowrie_smoke_test/runs/lateral_movement\manifest.jsonl
+Target: 2 sessions across 1 profiles -> 127.0.0.1:2223
+[1/2] lateral_movement       incomplete  (command 4: timeout after 20.031 s)
+[2/2] lateral_movement       incomplete  (command 2: timeout after 20.032 s)
+Done. 0/2 sessions completed cleanly.
+Manifest: reports/generator_cowrie_smoke_test/runs/lateral_movement\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+===== done 09:51:01
+
+[exited with code 0]

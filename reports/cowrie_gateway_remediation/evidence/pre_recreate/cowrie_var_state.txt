@@ -1,0 +1,6 @@
+.gitignore 0 0 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+cowrie.json 461838 963 d59ca2d4831d2d9ce630dabbeaacaac33b6e3dac095ee570c47f8bac0e343240
+cowrie.json.2026-10-24 19465252 40190 d88daba6eba0757d7f104ffce97772f2234d0b18873bc737121aeccd27b36974
+tty files: 1741
+downloads: 127
+etc files: ['.gitignore', 'cowrie.cfg.dist', 'userdb.example', 'userdb.txt']

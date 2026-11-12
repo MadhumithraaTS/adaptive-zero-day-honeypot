@@ -1,0 +1,122 @@
+[
+    {
+        "Name": "cowrie_cowrie_internal",
+        "Id": "8de3b00259f200437a0ee94062c03f2016cd4a3859431b4c9abb9d2fc95d7c73",
+        "Created": "2026-11-10T12:25:04.564555737Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.22.0.0/16",
+                    "IPRange": "",
+                    "Gateway": ""
+                }
+            ]
+        },
+        "Internal": true,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+            "com.docker.network.bridge.gateway_mode_ipv4": "isolated",
+            "com.docker.network.enable_ipv4": "true",
+            "com.docker.network.enable_ipv6": "false"
+        },
+        "Labels": {
+            "com.docker.compose.config-hash": "fef5eaa84594f3ec3ed2b87bbc9dcaf4ada93a5bb9d03e56c3a62617ffd785b2",
+            "com.docker.compose.network": "cowrie_internal",
+            "com.docker.compose.project": "cowrie",
+            "com.docker.compose.version": "2.40.3"
+        },
+        "Containers": {
+            "0bec5a78b1cb354c89d4528a432cef9f70f9b46ce71b2f722aac680258bb4503": {
+                "Name": "cowrie-project",
+                "EndpointID": "63b30eae14ca8f8f6a6f0db87cc38cf6be52450487ecb00616ede1bd9428e45b",
+                "MacAddress": "9a:ec:a1:47:ba:dc",
+                "IPv4Address": "172.22.0.1/16",
+                "IPv6Address": ""
+            },
+            "8d3bafb35f3862445d4526713efbb569f37b9e63fd0a5082102b70d93e361d3b": {
+                "Name": "cowrie-ssh-relay",
+                "EndpointID": "a0e8d7f3f7b696a9d52563c3a0ae230c378fb017419bd37c0821a4f62ea07f13",
+                "MacAddress": "de:ee:4b:cd:e2:ad",
+                "IPv4Address": "172.22.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.22.0.0/16": {
+                        "IPsInUse": 4,
+                        "DynamicIPsAvailable": 65532
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Name": "cowrie_relay_frontend",
+        "Id": "c94e904b8861044c20d38d6d17802c677c309d4d9fd4a07d53a3707f979c5849",
+        "Created": "2026-11-10T08:23:44.950396873Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.21.0.0/16",
+                    "IPRange": "",
+                    "Gateway": "172.21.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+            "com.docker.network.enable_ipv4": "true",
+            "com.docker.network.enable_ipv6": "false"
+        },
+        "Labels": {
+            "com.docker.compose.config-hash": "edc7158e8829e56f2b6aa6aa976f5f16e7ce73ca3ab350cfbc280478b6a9895f",
+            "com.docker.compose.network": "relay_frontend",
+            "com.docker.compose.project": "cowrie",
+            "com.docker.compose.version": "2.40.3"
+        },
+        "Containers": {
+            "8d3bafb35f3862445d4526713efbb569f37b9e63fd0a5082102b70d93e361d3b": {
+                "Name": "cowrie-ssh-relay",
+                "EndpointID": "a71c5bbbd242c296568db8287d12ea1cbe5815b2795714e8f30ebb82f63dcf7d",
+                "MacAddress": "62:7a:84:74:cf:15",
+                "IPv4Address": "172.21.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.21.0.0/16": {
+                        "IPsInUse": 4,
+                        "DynamicIPsAvailable": 65532
+                    }
+                }
+            }
+        }
+    }
+]

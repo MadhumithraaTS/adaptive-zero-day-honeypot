@@ -1,0 +1,198 @@
+{
+ "rows": 1530,
+ "by_split": {
+  "train": 1260,
+  "validation": 270
+ },
+ "categories": {
+  "botnet_malware_download": {
+   "n": 199,
+   "dpkts_values": {
+    "4": 44,
+    "5": 102,
+    "6": 43,
+    "7": 9,
+    "8": 1
+   },
+   "spkts_zero": 44,
+   "dpkts4_failed_login_like": 44,
+   "dpkts4_with_dbytes_0": 44,
+   "sessions_with_inferred_failed_commands": 53,
+   "inferred_failed_commands_total": 64,
+   "logged_in_but_spkts_zero": 0,
+   "dbytes_min_max_when_dpkts_ge5": [
+    211.0,
+    1489.0
+   ],
+   "tty_size_range_in_generator": [
+    200,
+    1500
+   ],
+   "sinpkt_sjit_ackdat_all_zero_when_spkts_zero": true
+  },
+  "brute_force_only": {
+   "n": 189,
+   "dpkts_values": {
+    "4": 189
+   },
+   "spkts_zero": 189,
+   "dpkts4_failed_login_like": 189,
+   "dpkts4_with_dbytes_0": 189,
+   "sessions_with_inferred_failed_commands": 0,
+   "inferred_failed_commands_total": 0,
+   "logged_in_but_spkts_zero": 0,
+   "dbytes_min_max_when_dpkts_ge5": [
+    null,
+    null
+   ],
+   "tty_size_range_in_generator": [
+    0,
+    0
+   ],
+   "sinpkt_sjit_ackdat_all_zero_when_spkts_zero": true
+  },
+  "evasion_anti_forensics": {
+   "n": 194,
+   "dpkts_values": {
+    "4": 40,
+    "5": 102,
+    "6": 41,
+    "7": 11
+   },
+   "spkts_zero": 41,
+   "dpkts4_failed_login_like": 40,
+   "dpkts4_with_dbytes_0": 40,
+   "sessions_with_inferred_failed_commands": 52,
+   "inferred_failed_commands_total": 63,
+   "logged_in_but_spkts_zero": 1,
+   "dbytes_min_max_when_dpkts_ge5": [
+    307.0,
+    1999.0
+   ],
+   "tty_size_range_in_generator": [
+    300,
+    2000
+   ],
+   "sinpkt_sjit_ackdat_all_zero_when_spkts_zero": true
+  },
+  "privilege_escalation": {
+   "n": 181,
+   "dpkts_values": {
+    "4": 50,
+    "5": 48,
+    "6": 50,
+    "7": 29,
+    "8": 3,
+    "9": 1
+   },
+   "spkts_zero": 52,
+   "dpkts4_failed_login_like": 50,
+   "dpkts4_with_dbytes_0": 50,
+   "sessions_with_inferred_failed_commands": 83,
+   "inferred_failed_commands_total": 121,
+   "logged_in_but_spkts_zero": 2,
+   "dbytes_min_max_when_dpkts_ge5": [
+    823.0,
+    3977.0
+   ],
+   "tty_size_range_in_generator": [
+    800,
+    4000
+   ],
+   "sinpkt_sjit_ackdat_all_zero_when_spkts_zero": true
+  },
+  "reconnaissance": {
+   "n": 224,
+   "dpkts_values": {
+    "4": 66,
+    "5": 106,
+    "6": 45,
+    "7": 7
+   },
+   "spkts_zero": 66,
+   "dpkts4_failed_login_like": 66,
+   "dpkts4_with_dbytes_0": 66,
+   "sessions_with_inferred_failed_commands": 52,
+   "inferred_failed_commands_total": 59,
+   "logged_in_but_spkts_zero": 0,
+   "dbytes_min_max_when_dpkts_ge5": [
+    514.0,
+    2984.0
+   ],
+   "tty_size_range_in_generator": [
+    500,
+    3000
+   ],
+   "sinpkt_sjit_ackdat_all_zero_when_spkts_zero": true
+  },
+  "zero_day_buffer_overflow": {
+   "n": 184,
+   "dpkts_values": {
+    "4": 49,
+    "6": 135
+   },
+   "spkts_zero": 184,
+   "dpkts4_failed_login_like": 49,
+   "dpkts4_with_dbytes_0": 49,
+   "sessions_with_inferred_failed_commands": 135,
+   "inferred_failed_commands_total": 135,
+   "logged_in_but_spkts_zero": 135,
+   "dbytes_min_max_when_dpkts_ge5": [
+    0.0,
+    100.0
+   ],
+   "tty_size_range_in_generator": [
+    0,
+    100
+   ],
+   "sinpkt_sjit_ackdat_all_zero_when_spkts_zero": true
+  },
+  "zero_day_covert_tunnel": {
+   "n": 164,
+   "dpkts_values": {
+    "4": 46,
+    "5": 118
+   },
+   "spkts_zero": 46,
+   "dpkts4_failed_login_like": 46,
+   "dpkts4_with_dbytes_0": 46,
+   "sessions_with_inferred_failed_commands": 0,
+   "inferred_failed_commands_total": 0,
+   "logged_in_but_spkts_zero": 0,
+   "dbytes_min_max_when_dpkts_ge5": [
+    109.0,
+    500.0
+   ],
+   "tty_size_range_in_generator": [
+    100,
+    500
+   ],
+   "sinpkt_sjit_ackdat_all_zero_when_spkts_zero": true
+  },
+  "zero_day_obfuscated_memory_attack": {
+   "n": 195,
+   "dpkts_values": {
+    "4": 55,
+    "5": 131,
+    "6": 9
+   },
+   "spkts_zero": 55,
+   "dpkts4_failed_login_like": 55,
+   "dpkts4_with_dbytes_0": 55,
+   "sessions_with_inferred_failed_commands": 9,
+   "inferred_failed_commands_total": 9,
+   "logged_in_but_spkts_zero": 0,
+   "dbytes_min_max_when_dpkts_ge5": [
+    1512.0,
+    4988.0
+   ],
+   "tty_size_range_in_generator": [
+    1500,
+    5000
+   ],
+   "sinpkt_sjit_ackdat_all_zero_when_spkts_zero": true
+  }
+ },
+ "buffer_overflow_dur_max_s": 0.564,
+ "buffer_overflow_dbytes_le_100": true
+}

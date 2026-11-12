@@ -1,0 +1,31 @@
+## behavioural_evidence (Task 22)
+9
+## severity / audit (Task 24)
+  ../../threat_assessment/audit.py: OK
+  ../../threat_assessment/severity.py: OK
+## assessment / attribution (Task 26C)
+  ../../threat_assessment/assessment.py: OK
+  ../../threat_assessment/attribution.py: OK
+## config / verifier (Task 26D-1)
+  ../../threat_assessment/config.py: OK
+  ../../threat_assessment/signed_attribution.py: OK
+## configs, relay, compose (Task 26D)
+  ../../configs/threat_attribution_v3.json: OK
+  ../../configs/defence_policy_v2_2.json: OK
+  ../../configs/address_safety_v1.json: OK
+  ../../cowrie/docker-compose.yml: OK
+  ../../cowrie/attributing_relay/relay_config.json: OK
+  ../../cowrie/attributing_relay/relay_mapping_ed25519.pub.pem: OK
+  ../../cowrie/attributing_relay/attributing_relay.py: OK
+## frozen models (novelty freeze audit)
+16
+## firewall / containers
+rules mentioning demo client IPs (any table):
+(end)
+nft ruleset lines mentioning 10.250.25.3/.4: 0
+bridge rules count total filter: 51
+cowrie-demo-test-client Up 2 hours
+cowrie-demo-control-client Up 2 hours
+cowrie-ssh-relay Up 2 hours
+cowrie-project Up 31 hours
+relay a5e156cbca02ff9b42ddd8a5b40db1a75225848d4cc82dfd65f6289df7b934ad restarts=0 started=2026-11-11T17:16:39.998671742Z

@@ -1,0 +1,160 @@
+{
+  "features": [
+    "login_success",
+    "session_duration_s",
+    "input_line_count",
+    "shell_operator_lines",
+    "time_to_first_input_s",
+    "inter_input_mean_s",
+    "inter_input_std_s",
+    "tty_output_bytes"
+  ],
+  "log1p_features": [
+    "session_duration_s",
+    "time_to_first_input_s",
+    "inter_input_mean_s",
+    "inter_input_std_s",
+    "tty_output_bytes"
+  ],
+  "log_rule": "existing implementation: continuous time/byte features log1p (as dur/bytes/times in the 15-feature model), counts and indicators not (as spkts/dpkts)",
+  "order": [
+    "median imputation (train medians)",
+    "log1p",
+    "StandardScaler (train)"
+  ],
+  "medians_from_train_nonmissing": {
+    "login_success": 0.0,
+    "session_duration_s": 1.1,
+    "input_line_count": 0.0,
+    "shell_operator_lines": 0.0,
+    "time_to_first_input_s": 1.663026,
+    "inter_input_mean_s": 1.844205,
+    "inter_input_std_s": 0.984698,
+    "tty_output_bytes": 0.0
+  },
+  "train_valid_counts": {
+    "login_success": 3190,
+    "session_duration_s": 3190,
+    "input_line_count": 3190,
+    "shell_operator_lines": 3190,
+    "time_to_first_input_s": 1401,
+    "inter_input_mean_s": 1302,
+    "inter_input_std_s": 1292,
+    "tty_output_bytes": 3190
+  },
+  "scaler_mean": {
+    "login_success": 0.470219,
+    "session_duration_s": 1.549145,
+    "input_line_count": 2.356113,
+    "shell_operator_lines": 0.22163,
+    "time_to_first_input_s": 1.007749,
+    "inter_input_mean_s": 1.058335,
+    "inter_input_std_s": 0.705555,
+    "tty_output_bytes": 3.386378
+  },
+  "scaler_scale": {
+    "login_success": 0.499112,
+    "session_duration_s": 0.957063,
+    "input_line_count": 2.928803,
+    "shell_operator_lines": 0.464511,
+    "time_to_first_input_s": 0.295923,
+    "inter_input_mean_s": 0.171743,
+    "inter_input_std_s": 0.232954,
+    "tty_output_bytes": 3.651428
+  },
+  "imputed_counts": {
+    "train": {
+      "login_success": 0,
+      "session_duration_s": 0,
+      "input_line_count": 0,
+      "shell_operator_lines": 0,
+      "time_to_first_input_s": 1789,
+      "inter_input_mean_s": 1888,
+      "inter_input_std_s": 1898,
+      "tty_output_bytes": 0
+    },
+    "validation": {
+      "login_success": 0,
+      "session_duration_s": 0,
+      "input_line_count": 0,
+      "shell_operator_lines": 0,
+      "time_to_first_input_s": 698,
+      "inter_input_mean_s": 736,
+      "inter_input_std_s": 738,
+      "tty_output_bytes": 0
+    }
+  },
+  "imputed_by_role_train": {
+    "time_to_first_input_s": {
+      "failed_guess": 1.0,
+      "logged_in": 0.066
+    },
+    "inter_input_mean_s": {
+      "failed_guess": 1.0,
+      "logged_in": 0.132
+    },
+    "inter_input_std_s": {
+      "failed_guess": 1.0,
+      "logged_in": 0.138667
+    }
+  },
+  "imputed_by_category_train": {
+    "time_to_first_input_s": {
+      "benign": 0.349942,
+      "botnet": 0.502551,
+      "brute_force": 0.90275,
+      "lateral_movement": 0.346939,
+      "privilege_escalation": 0.329502,
+      "reconnaissance": 0.505525
+    },
+    "inter_input_mean_s": {
+      "benign": 0.349942,
+      "botnet": 0.502551,
+      "brute_force": 1.0,
+      "lateral_movement": 0.346939,
+      "privilege_escalation": 0.329502,
+      "reconnaissance": 0.505525
+    },
+    "inter_input_std_s": {
+      "benign": 0.356895,
+      "botnet": 0.502551,
+      "brute_force": 1.0,
+      "lateral_movement": 0.360544,
+      "privilege_escalation": 0.329502,
+      "reconnaissance": 0.505525
+    }
+  },
+  "rows_with_any_imputed": {
+    "train": 1898,
+    "validation": 738
+  },
+  "imputed_rows_failed_login": {
+    "train": 1690,
+    "validation": 657
+  },
+  "imputed_rows_logged_in_no_commands": {
+    "train": 99
+  },
+  "validation_scaled_mean": {
+    "login_success": 0.01424,
+    "session_duration_s": 0.018751,
+    "input_line_count": 0.03188,
+    "shell_operator_lines": 0.01783,
+    "time_to_first_input_s": -0.062397,
+    "inter_input_mean_s": 0.044068,
+    "inter_input_std_s": 0.04283,
+    "tty_output_bytes": 0.018679
+  },
+  "validation_scaled_sd": {
+    "login_success": 1.000748,
+    "session_duration_s": 1.012676,
+    "input_line_count": 1.02268,
+    "shell_operator_lines": 1.020677,
+    "time_to_first_input_s": 0.917907,
+    "inter_input_mean_s": 0.969746,
+    "inter_input_std_s": 1.004226,
+    "tty_output_bytes": 1.006244
+  },
+  "distinct_train_vectors": 1476,
+  "largest_identical_vector_group_train": 1227
+}

@@ -1,0 +1,43 @@
+# read-only inspection 2026-11-11T16:54:03Z
+## twisted portforward plugin (source read inside relay; no execution of the service)
+twisted 25.5.0
+# Copyright (c) Twisted Matrix Laboratories.
+# See LICENSE for details.
+
+"""
+Support module for making a port forwarder with twistd.
+"""
+from twisted.application import strports
+from twisted.protocols import portforward
+from twisted.python import usage
+
+
+class Options(usage.Options):
+    synopsis = "[options]"
+    longdesc = "Port Forwarder."
+    optParameters = [
+        ["port", "p", "6666", "Set the port number."],
+        ["host", "h", "localhost", "Set the host."],
+        ["dest_port", "d", 6665, "Set the destination port."],
+    ]
+
+    compData = usage.Completions(optActions={"host": usage.CompleteHostnames()})
+
+
+def makeService(config):
+    f = portforward.ProxyFactory(config["host"], int(config["dest_port"]))
+    return strports.service(config["port"], f)
+
+serverFromString parser for tcp supports interface: True
+## networks: IPAM config as created (Driver/Config) and compose labels
+cowrie_cowrie_internal ipam_driver=default ipam_config=[{"Subnet":"172.22.0.0/16","IPRange":"","Gateway":""}] labels={"com.docker.compose.config-hash":"fef5eaa84594f3ec3ed2b87bbc9dcaf4ada93a5bb9d03e56c3a62617ffd785b2","com.docker.compose.network":"cowrie_internal","com.docker.compose.project":"cowrie","com.docker.compose.version":"2.40.3"}
+cowrie_relay_frontend ipam_driver=default ipam_config=[{"Subnet":"172.21.0.0/16","IPRange":"","Gateway":"172.21.0.1"}] labels={"com.docker.compose.config-hash":"edc7158e8829e56f2b6aa6aa976f5f16e7ce73ca3ab350cfbc280478b6a9895f","com.docker.compose.network":"relay_frontend","com.docker.compose.project":"cowrie","com.docker.compose.version":"2.40.3"}
+## relay mounts / anonymous volumes
+volume 4492a68c886ee680203e4ab2fac0ef0d90687de876367d5c334d756a0c409194 -> /cowrie/cowrie-git/etc rw=true
+volume fba87a593a5f610544b165caac1e1f1a706443986bf54938555159c95f442fcc -> /cowrie/cowrie-git/var rw=true
+
+## compose / engine
+Docker Compose version v2.40.3-desktop.1
+engine=29.1.2 api=1.52
+## relay sysctls/hostconfig
+sysctls=null networkmode=cowrie_cowrie_internal restart=unless-stopped pids=64 mem=134217728 tmpfs={"/tmp":""} labels={"com.docker.compose.config-hash":"f67a87ba996fdc7946b70ef351fd3f15ce619d7f55a3e881f681e309a9a6a6c1","com.docker.compose.container-number":"1","com.docker.compose.depends_on":"cowrie:service_started:false","com.docker.compose.image":"sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a","com.docker.compose.oneoff":"False","com.docker.compose.project":"cowrie","com.docker.compose.project.config_files":"C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\docker-compose.yml","com.docker.compose.project.working_dir":"C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie","com.docker.compose.replace":"cowrie-ssh-relay","com.docker.compose.service":"ssh-relay","com.docker.compose.version":"2.40.3","org.opencontainers.image.authors":"Michel Oosterhof <michel@oosterhof.net>","org.opencontainers.image.base.name":"gcr.io/distroless/python3-debian13","org.opencontainers.image.created":"2026-04-08T01:45:21.658Z","org.opencontainers.image.description":"Cowrie SSH/Telnet Honeypot https://docs.cowrie.org/","org.opencontainers.image.documentation":"https://docs.cowrie.org","org.opencontainers.image.licenses":"NOASSERTION","org.opencontainers.image.revision":"cd0770d3df5088553fec2d7ee9002eb03f5ac087","org.opencontainers.image.source":"https://github.com/cowrie/cowrie","org.opencontainers.image.title":"cowrie","org.opencontainers.image.url":"https://github.com/cowrie/cowrie","org.opencontainers.image.vendor":"Cowrie","org.opencontainers.image.version":"main"}

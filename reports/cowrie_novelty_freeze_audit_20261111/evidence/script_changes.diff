@@ -1,0 +1,64 @@
+--- original/novelty_baseline.py
++++ task19a/novelty_baseline.py
+@@ -52,7 +52,7 @@
+ from ml.cowrie_dec_integration_skeleton.ml.cowrie_dec.model import build_encoder  # noqa: E402
+ 
+ DS = REPO / "reports" / "dataset_v2_training_validation_20261110"
+-FROZEN = REPO / "configs" / "model_features_v2_frozen.json"
++FROZEN = REPO / "configs" / "model_features_v2_frozen_v1.1.0.json"   # Task 19A: versioned path (canonical path holds 1.0.0)
+ NCFG = REPO / "configs" / "cowrie_novelty_baseline_v1.json"
+ MODELS = REPO / "models" / "cowrie_novelty_baseline_20261111"
+ OUT, FIG = HERE / "outputs", HERE / "figures"
+@@ -353,7 +353,7 @@
+ thresholds = {m: res["methods"][m]["threshold_primary"] for m in names}
+ ncfg = {"config_name": "cowrie_novelty_baseline", "config_version": "1.0.0-provisional", "status": "provisional - not frozen; freeze needs approval",
+         "date": "2026-11-11", "task": "Task 18",
+-        "relation_to_clustering_config": {"path": "configs/model_features_v2_frozen.json", "config_version": frozen["config_version"],
++        "relation_to_clustering_config": {"path": "configs/model_features_v2_frozen_v1.1.0.json", "config_version": frozen["config_version"],
+                                           "sha256": sha(FROZEN), "note": "separate configuration; the frozen 8-feature clustering configuration is not modified"},
+         "population": "logged-in Cowrie sessions (login_success = 1)", "features": FEATURES, "excluded_from_frozen_inputs": {"login_success": "constant in the logged-in population"},
+         "preprocessing": {"imputation": "median of non-missing logged-in training values", "medians": med.to_dict(), "log1p": LOG_FEATURES,
+--- original/revise_frozen_config.py
++++ task19a/revise_frozen_config.py
+@@ -1,4 +1,8 @@
+-"""Task 18 Phase 1: revise configs/model_features_v2_frozen.json 1.0.0 -> 1.1.0 (input_bytes_total -> inactive).
++"""Task 18 Phase 1: build revision 1.1.0 of the frozen model-feature configuration (input_bytes_total -> inactive).
++
++Task 19A: 1.1.0 lives at configs/model_features_v2_frozen_v1.1.0.json; configs/model_features_v2_frozen.json is the
++original 1.0.0 and is never written by this script (asserted). The original Task 18 run wrote 1.1.0 over the canonical
++path; Task 19A restored 1.0.0 there from the archive below.
+ 
+     .venv/Scripts/python.exe reports/cowrie_novelty_baseline_20261111/revise_frozen_config.py
+ 
+@@ -15,7 +19,8 @@
+ 
+ HERE = Path(__file__).resolve().parent
+ REPO = HERE.parents[1]
+-CFG = REPO / "configs" / "model_features_v2_frozen.json"
++CFG = REPO / "configs" / "model_features_v2_frozen_v1.1.0.json"
++CANONICAL_V100 = REPO / "configs" / "model_features_v2_frozen.json"
+ ARCHIVE = REPO / "reports" / "dataset_v2_feature_freeze_20261111" / "model_features_v2_frozen.json"
+ DRAFT3 = REPO / "configs" / "feature_spec_v2.json"
+ DRAFT4 = REPO / "configs" / "feature_spec_v2_draft4.json"
+@@ -97,15 +102,14 @@
+ 
+ 
+ if __name__ == "__main__":
+-    current = sha(CFG)
++    if sha(CANONICAL_V100) != V100:
++        sys.exit(f"{CANONICAL_V100} is not the original 1.0.0; refusing (it must never be overwritten)")
+     v1 = json.loads(ARCHIVE.read_text(encoding="utf-8"))
+-    if current == V100:
+-        text, c = build(v1)
++    text, c = build(v1)
++    if not CFG.exists():
+         CFG.write_text(text, encoding="utf-8", newline="\n")
+-    else:
+-        text, c = build(v1)
+-        if CFG.read_text(encoding="utf-8") != text:
+-            sys.exit(f"{CFG} is neither 1.0.0 nor the expected 1.1.0; refusing")
++    elif CFG.read_text(encoding="utf-8") != text:
++        sys.exit(f"{CFG} differs from the deterministic 1.1.0 build; refusing")
+     (HERE / "config").mkdir(exist_ok=True)
+     (HERE / "config" / "model_features_v2_frozen_v1.1.0.json").write_text(text, encoding="utf-8", newline="\n")
+     checks = validate(text, c)

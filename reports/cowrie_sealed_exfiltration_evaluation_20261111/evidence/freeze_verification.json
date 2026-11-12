@@ -1,0 +1,63 @@
+{
+  "checks": {
+    "novelty_config_hash": true,
+    "novelty_config_hash_matches_task19a_SHA256SUMS": true,
+    "clustering_configs_unchanged": true,
+    "novelty_config_records_v1_1_0": true,
+    "model_files_match_artifact_sha256": true,
+    "model_files_match_config_artefact_sha256": true,
+    "task19a_audit_all_pass": true,
+    "features_exact_order": true,
+    "medians_equal_audited_training_medians": true,
+    "scaler_training_only": true,
+    "scaler_params_equal_config": true,
+    "no_missingness_indicators": true,
+    "thresholds_equal_expected": true,
+    "predict_batch_size_256": true,
+    "k_nn_5": true,
+    "method_C_primary_A_B_secondary_documented": true
+  },
+  "all_pass": true,
+  "pre_registration": {
+    "primary_method": "C_input_knn",
+    "secondary_methods": [
+      "A_ae_reconstruction",
+      "B_latent_knn"
+    ],
+    "source": "reports/cowrie_novelty_baseline_20261111/report.md status section (Task 19A); the frozen novelty configuration has no primary field and is not modified",
+    "thresholds": {
+      "A_ae_reconstruction": 1.171445,
+      "B_latent_knn": 0.72919,
+      "C_input_knn": 1.692104
+    },
+    "inference_batch_size": 256,
+    "validation_reference_flag_rates": {
+      "A_ae_reconstruction": 0.006667,
+      "B_latent_knn": 0.005,
+      "C_input_knn": 0.006667
+    }
+  },
+  "hashes": {
+    "configs/cowrie_novelty_baseline_v1.json": "bd3a399ede44d17d31eca47d8c5aa506c2b5423c58c22db066d7c6af158ef6f3",
+    "configs/model_features_v2_frozen_v1.1.0.json": "18a4ab2be8d0d71148212e3306c9cf318075eac63c999e24cefb39564c84d299",
+    "configs/model_features_v2_frozen.json": "8ae17612eabbbc46240aa1011aff8d6e3617df85380b3daa523201675fc3c288",
+    "configs/feature_spec_v2.json": "9401b355a1bfc48a14da32efba9ad4d5992f55233da3437a0715690d76f8fb1a",
+    "configs/feature_spec_v2_draft4.json": "7f444dd1b335865ee37c0ecc25905e474c39c71aeba04e6931d4af51380aeadf",
+    "scripts/extract_features_v2.py": "c0fdc684483e9953db2b6240994daa2b712d9782275eeebff9a38d57344cd5f2",
+    "dataset_builder/generate_labelled_traffic.py": "f8c55f9d9631913598676e12cd6b24a9fa7f8707229d01fe0c512d6e578e1fa4",
+    "dataset_builder/profiles_v2_revised.json": "79d47ac48e1f4c242ffcb851c567da884df21d039cc11917dc5bf3dea761fe62",
+    "models/cowrie_novelty_baseline_20261111/autoencoder.weights.h5": "51d20fd84febbd06fffa8cfabf48f4dce23e1a4dcb8b47e4a7e23a55e4985e0c",
+    "models/cowrie_novelty_baseline_20261111/config.json": "6dac714375abe2dcdd4818c4c82706548e4c128a9b7d73d0c6e7e96e897cceb0",
+    "models/cowrie_novelty_baseline_20261111/medians.joblib": "04291d5b34d6aea25bf9e3eb55a09de2bd7fa56f2d0aeb0eacc7b6fd9df03048",
+    "models/cowrie_novelty_baseline_20261111/reference_latent_train.npy": "ec173402b0413fea585c3244820e992e2a2ab16d0b1f7a8fa26d3c0a6ee474a9",
+    "models/cowrie_novelty_baseline_20261111/reference_scaled_train.npy": "51d7eaa8030f64f01d1b9c3c4f859f840b19aca8faa579f8c7763d64cfcd4535",
+    "models/cowrie_novelty_baseline_20261111/scaler.joblib": "a57f6992d71f7d0238cfd70aa0b23d3b2bfad5866ce07b25c3f39ab571b3da7b"
+  },
+  "versions": {
+    "novelty_config": "1.0.0-provisional",
+    "clustering_config_used_by_baseline": "1.1.0",
+    "feature_spec_extractor_contract": "2.0.0-draft.3",
+    "feature_spec_eligibility": "2.0.0-draft.4",
+    "generator": "2.1"
+  }
+}

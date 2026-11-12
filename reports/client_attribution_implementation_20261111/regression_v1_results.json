@@ -1,0 +1,26 @@
+{
+  "train": {
+    "sessions": 3190,
+    "identical_after_declared_additions": 3190,
+    "differences": [],
+    "old_version": "threat-assessment-1.0.0",
+    "new_version": "threat-assessment-1.1.0",
+    "tiers": {
+      "abstain": 1817,
+      "record": 754,
+      "review": 619
+    }
+  },
+  "validation": {
+    "sessions": 1257,
+    "identical_after_declared_additions": 1257,
+    "differences": [],
+    "old_version": "threat-assessment-1.0.0",
+    "new_version": "threat-assessment-1.1.0",
+    "tiers": {
+      "abstain": 706,
+      "record": 313,
+      "review": 238
+    }
+  }
+}

@@ -1,0 +1,9 @@
+33c33
+<       - --port=tcp:2222
+---
+>       - --port=tcp:2222:interface=172.21.0.2
+59a60,63
+>     sysctls:
+>       net.ipv4.conf.all.forwarding: "0"
+>       net.ipv4.conf.default.forwarding: "0"
+>       net.ipv4.ip_forward: "0"

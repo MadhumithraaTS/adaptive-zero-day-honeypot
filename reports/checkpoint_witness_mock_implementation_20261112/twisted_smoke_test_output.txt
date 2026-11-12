@@ -1,0 +1,21 @@
+{
+ "label": "TEST/LOCAL MOCK smoke test (network none, ephemeral keys)",
+ "relay_start_confirmed_before_listen": true,
+ "echo_through_relay": true,
+ "checkpoints_before_halt": [
+  "relay_start",
+  "connection_open"
+ ],
+ "sessions_registered": 1,
+ "heartbeat_ok": false,
+ "halt_cause": "heartbeat_missing",
+ "listener_2301": "ConnectionRefusedError",
+ "listener_2302": "ConnectionRefusedError",
+ "in_progress_session": "aborted (ConnectionResetError)",
+ "sessions_left": 0,
+ "halt_marker": {
+  "cause": "heartbeat_missing",
+  "last_ack": "80a52720939a4ca01562c258cca8eca6dfc197ecd759b00cb233315d03bf8262",
+  "relay_seq": 2
+ }
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "profile": "benign_admin",
+    "interactions": 229,
+    "cowrie_sessions": 355,
+    "login_success": 229,
+    "login_failed": 126,
+    "interactions_without_login": 0,
+    "commands_planned": 1309,
+    "commands_sent": 1309,
+    "commands_recorded": 1309,
+    "timeouts": 0,
+    "not_sent": 0,
+    "clean_exit": 229,
+    "terminations": {
+      "clean_exit": 229
+    },
+    "order_mismatches": 0,
+    "download_events": 0,
+    "command_failed_events": 84,
+    "duration_median_s": 13.0
+  },
+  {
+    "profile": "botnet",
+    "interactions": 71,
+    "cowrie_sessions": 136,
+    "login_success": 71,
+    "login_failed": 65,
+    "interactions_without_login": 0,
+    "commands_planned": 506,
+    "commands_sent": 506,
+    "commands_recorded": 506,
+    "timeouts": 0,
+    "not_sent": 0,
+    "clean_exit": 71,
+    "terminations": {
+      "clean_exit": 71
+    },
+    "order_mismatches": 0,
+    "download_events": 0,
+    "command_failed_events": 62,
+    "duration_median_s": 15.5
+  },
+  {
+    "profile": "brute_force",
+    "interactions": 79,
+    "cowrie_sessions": 398,
+    "login_success": 79,
+    "login_failed": 319,
+    "interactions_without_login": 0,
+    "commands_planned": 38,
+    "commands_sent": 38,
+    "commands_recorded": 38,
+    "timeouts": 0,
+    "not_sent": 0,
+    "clean_exit": 79,
+    "terminations": {
+      "clean_exit": 79
+    },
+    "order_mismatches": 0,
+    "download_events": 0,
+    "command_failed_events": 0,
+    "duration_median_s": 2.6
+  },
+  {
+    "profile": "lateral_movement",
+    "interactions": 78,
+    "cowrie_sessions": 118,
+    "login_success": 78,
+    "login_failed": 40,
+    "interactions_without_login": 0,
+    "commands_planned": 353,
+    "commands_sent": 353,
+    "commands_recorded": 353,
+    "timeouts": 0,
+    "not_sent": 0,
+    "clean_exit": 78,
+    "terminations": {
+      "clean_exit": 78
+    },
+    "order_mismatches": 0,
+    "download_events": 0,
+    "command_failed_events": 52,
+    "duration_median_s": 10.6
+  },
+  {
+    "profile": "privilege_escalation",
+    "interactions": 69,
+    "cowrie_sessions": 99,
+    "login_success": 69,
+    "login_failed": 30,
+    "interactions_without_login": 0,
+    "commands_planned": 416,
+    "commands_sent": 416,
+    "commands_recorded": 416,
+    "timeouts": 0,
+    "not_sent": 0,
+    "clean_exit": 69,
+    "terminations": {
+      "clean_exit": 69
+    },
+    "order_mismatches": 0,
+    "download_events": 0,
+    "command_failed_events": 0,
+    "duration_median_s": 15.7
+  },
+  {
+    "profile": "reconnaissance",
+    "interactions": 74,
+    "cowrie_sessions": 151,
+    "login_success": 74,
+    "login_failed": 77,
+    "interactions_without_login": 0,
+    "commands_planned": 457,
+    "commands_sent": 457,
+    "commands_recorded": 457,
+    "timeouts": 0,
+    "not_sent": 0,
+    "clean_exit": 74,
+    "terminations": {
+      "clean_exit": 74
+    },
+    "order_mismatches": 0,
+    "download_events": 0,
+    "command_failed_events": 0,
+    "duration_median_s": 14.850000000000001
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "schema": "response-proposal-1",
+  "proposal_id": "prop-task26c-isolated-000001",
+  "created_utc": "2026-11-12T06:53:13.279705Z",
+  "expires_utc": "2026-11-12T07:23:13.279705Z",
+  "session_ref": "0ce16882846d",
+  "assessment_audit": {
+    "record_id": "task26c-isolated-000001",
+    "record_hash": "539d35040444998412cfd62a01dcc6e9419b4f7df16c463a6998c27655c6b464"
+  },
+  "attribution": {
+    "state": "attributable_via_proxy_mapping",
+    "result_id": "DEMO-20261112T065313Z-281f5a",
+    "result_hash": "a2b65fd052d3f4cb4416c6770546c402bf1022af31b8357502dcfc94c2ab229d",
+    "connection_id": "39dcd78f-26f6-4794-9bfc-035dcc543ba0",
+    "client_ip": "10.250.25.3"
+  },
+  "source_proposal": {
+    "execution": "not_executed",
+    "inverse": {
+      "subject": "10.250.25.3",
+      "type": "unblock_source_ip"
+    },
+    "manual_approval": "pending",
+    "mode": "dry_run",
+    "relay_connection_id": "39dcd78f-26f6-4794-9bfc-035dcc543ba0",
+    "scope": "this sensor only",
+    "subject": "10.250.25.3",
+    "subject_basis": "attributable_via_proxy_mapping",
+    "ttl_seconds": 86400,
+    "type": "block_source_ip"
+  },
+  "action": {
+    "type": "restrict_new_connections",
+    "target": "10.250.25.3/32",
+    "listener": "demo",
+    "max_ttl_seconds": 900
+  },
+  "fingerprints": {
+    "response_policy": "480409e9363cc65214d1b33f7c03bb5447acc97e316410f6158f95c627d19c14",
+    "address_safety": "278563bd94d1900014cbdfaa2ef76708ffeb755c687f2f10a51640872c0dbc70",
+    "defence_policy": "4cc3209a7003ada9b312da9945385e86a0f69630d3b416bbe53ccb53659051f4",
+    "attribution_config": "aebbb520f56412d8374bdffc25fe8946f1422da8518db57ef4a071693fca88c4"
+  },
+  "findings": [
+    {
+      "interpretation": "download attempt",
+      "severity": "S2",
+      "evidence_level": "E2"
+    },
+    {
+      "interpretation": "download-and-execute attempt",
+      "severity": "S3",
+      "evidence_level": "E2"
+    }
+  ],
+  "proposal_hash": "0d2f1e150bfe7a588bcf1bd0e93be37e7ef60ade063d02274f84cd1c00e14eeb"
+}

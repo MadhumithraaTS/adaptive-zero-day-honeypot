@@ -1,0 +1,37 @@
+{
+  "title": "Adaptive Honeypot Behavioural Dataset: Labelled Cowrie SSH Sessions",
+  "slug": "adaptive-honeypot-behavioural-dataset",
+  "version": "1.0.0",
+  "release_date": "2026-10-25",
+  "doi": "10.5281/zenodo.23625989",
+  "license": "CC-BY-4.0",
+  "repo_url": "https://github.com/MadhumithraaTS/adaptive-zero-day-honeypot",
+  "affiliation": "Amrita Vishwa Vidyapeetham",
+  "cowrie_image_created": "2026-04-08",
+  "cowrie_revision": "cd0770d3df5088553fec2d7ee9002eb03f5ac087",
+  "authors": [
+    "Amritha S Nidhi",
+    "Anaswara K",
+    "Madhumithraa T S",
+    "Mayuka Sri K",
+    "Vrithika K M"
+  ],
+  "supervisor": "Dr. Harini N",
+  "keywords": [
+    "honeypot",
+    "Cowrie",
+    "SSH",
+    "intrusion detection",
+    "zero-day",
+    "novelty detection",
+    "attack behaviour",
+    "labelled dataset"
+  ],
+  "splits": {
+    "train": "dataset_builder/runs/train_v1",
+    "eval": "dataset_builder/runs/eval_v1"
+  },
+  "changes": [
+    "Initial release: train split (3125 sessions, 6 categories) and eval split (1232 sessions, 7 categories including held-out exfiltration)."
+  ]
+}

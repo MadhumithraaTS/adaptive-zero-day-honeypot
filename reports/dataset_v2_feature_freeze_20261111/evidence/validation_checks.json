@@ -1,0 +1,35 @@
+{
+  "checks": {
+    "1_all_13_features_accounted_for": true,
+    "2_no_inactive_in_model_inputs": true,
+    "3_no_conditional_in_model_inputs": true,
+    "3b_model_inputs_are_exactly_eligible": true,
+    "4_order_is_specification_order": true,
+    "4b_no_duplicates": true,
+    "5_valid_json_roundtrip": true,
+    "6_reproducible_rebuild_identical": true,
+    "6b_file_on_disk_identical": true,
+    "7_spec_unchanged": true,
+    "7b_extractor_unchanged": true,
+    "7c_extractor_still_outputs_13": true,
+    "8_model_inputs_subset_of_extracted_columns": true,
+    "9_count_matches": true
+  },
+  "all_pass": true,
+  "sha256": {
+    "configs/model_features_v2_frozen.json": "8ae17612eabbbc46240aa1011aff8d6e3617df85380b3daa523201675fc3c288",
+    "copy": "8ae17612eabbbc46240aa1011aff8d6e3617df85380b3daa523201675fc3c288",
+    "feature_spec_v2.json": "9401b355a1bfc48a14da32efba9ad4d5992f55233da3437a0715690d76f8fb1a",
+    "extract_features_v2.py": "c0fdc684483e9953db2b6240994daa2b712d9782275eeebff9a38d57344cd5f2"
+  },
+  "model_input_features": [
+    "login_success",
+    "session_duration_s",
+    "input_line_count",
+    "shell_operator_lines",
+    "time_to_first_input_s",
+    "inter_input_mean_s",
+    "inter_input_std_s",
+    "tty_output_bytes"
+  ]
+}

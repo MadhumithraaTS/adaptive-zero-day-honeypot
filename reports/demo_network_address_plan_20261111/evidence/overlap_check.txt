@@ -1,0 +1,38 @@
+proposed demo_ingress 10.250.25.0/28 (16 addresses, 10.250.25.0-10.250.25.15)
+  10.250.25.1     (unassigned; former gateway slot)  in subnet=True
+  10.250.25.2     attributing relay (demo ingress)  in subnet=True
+  10.250.25.3     test client  in subnet=True
+  10.250.25.4     control client  in subnet=True
+  ok      172.17.0.0/16        docker bridge (docker0)
+  ok      172.22.0.0/16        cowrie_cowrie_internal
+  ok      172.19.0.0/16        cowrie_default
+  ok      172.21.0.0/16        cowrie_relay_frontend
+  ok      172.20.0.0/16        et-ai_default
+  ok      172.18.0.0/16        rezumy_default
+  ok      192.168.65.0/24      Docker Desktop VM network (observed 192.168.65.3/.6, Task 13)
+  ok      172.27.0.0/20        host vEthernet (WSL)
+  ok      192.168.56.0/24      host Ethernet (VirtualBox host-only)
+  ok      172.20.10.0/28       host Wi-Fi
+  ok      169.254.0.0/16       host link-local
+  ok      127.0.0.0/8          host loopback
+  ok      172.16.0.0/12        Docker default address pool (172.17-31/16)
+  ok      192.168.0.0/16       Docker default address pool (192.168/16 as /20s)
+  ok      127.0.0.0/8          attribution protected 127.0.0.0/8
+  n/a      ::1/128              attribution protected ::1/128 (IPv6)
+  ok      169.254.0.0/16       attribution protected 169.254.0.0/16
+  n/a      fe80::/10            attribution protected fe80::/10 (IPv6)
+  ok      172.19.0.0/16        attribution protected 172.19.0.0/16
+  ok      172.21.0.0/16        attribution protected 172.21.0.0/16
+  ok      172.22.0.0/16        attribution protected 172.22.0.0/16
+  ok      172.21.0.0/16        attribution internal 172.21.0.0/16
+  ok      172.22.0.0/16        attribution internal 172.22.0.0/16
+  ok      172.22.0.2/32        attribution trusted proxy 172.22.0.2/32
+  ok      127.0.0.0/8          policy v2 protected 127.0.0.0/8
+  n/a      ::1/128              policy v2 protected ::1/128 (IPv6)
+  ok      169.254.0.0/16       policy v2 protected 169.254.0.0/16
+  n/a      fe80::/10            policy v2 protected fe80::/10 (IPv6)
+  ok      172.19.0.0/16        policy v2 protected 172.19.0.0/16
+  ok      172.21.0.0/16        policy v2 protected 172.21.0.0/16
+  ok      172.22.0.0/16        policy v2 protected 172.22.0.0/16
+RESULT: no overlap
+pre-existing (not introduced by this design): host Wi-Fi 172.20.10.0/28 inside et-ai_default 172.20.0.0/16 -> True

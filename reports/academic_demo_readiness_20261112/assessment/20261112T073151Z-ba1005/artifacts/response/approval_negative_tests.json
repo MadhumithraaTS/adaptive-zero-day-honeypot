@@ -1,0 +1,224 @@
+{
+  "duration 901 s (> 15 min)": {
+    "doc": {
+      "schema": "response-approval-1",
+      "approval_id": "appr-c4682823-2720-4c31-8028-401013a5e9e5",
+      "proposal_id": "prop-task26c-isolated-000001",
+      "proposal_hash": "7b1c83073507a883a701f673327a9c43d5d5c6da072a2110602238109b1d0648",
+      "decision": "approve",
+      "reason": "",
+      "approver": {
+        "name": "DEMO APPROVER (ephemeral)",
+        "key_id": "e8ac9dc6430f0301"
+      },
+      "decided_utc": "2026-11-12T07:31:55.705876Z",
+      "rule": {
+        "rule_id": "rule-3bcd99b9-7abf-4c79-8636-2ad20a149957",
+        "action": "restrict_new_connections",
+        "target": "10.250.25.3/32",
+        "listener": "demo",
+        "ttl_seconds": 901,
+        "created_utc": "2026-11-12T07:31:55.705876Z",
+        "expires_utc": "2026-11-12T07:46:56.705876Z",
+        "fingerprints": {
+          "response_policy": "4258c6ff9ca1e60751ea70fdc752d7944fd1e5e7d2f46bcdb88ebf874d743335",
+          "address_safety": "278563bd94d1900014cbdfaa2ef76708ffeb755c687f2f10a51640872c0dbc70",
+          "defence_policy": "176164978e4f2c24094480bf20f783c5519492d44615d354015e47c7e8891d73",
+          "attribution_config": "1aa5c7d734d2c893c86f878a52c8c8a7a0d93c2d0c43ae26a0bbaec47cd367a5"
+        }
+      },
+      "approval_hash": "b43b9ee4b6aab07e64fc10758f2851f87d11d82834e7d18986552fd3301069be",
+      "signature": "48711b6e938fbed0a8f22d8269c2bf8f428f7daff1b933ad3cd49d38c88c9242c0e9441a5843caabb9c180fa02d02d0b4e9a0ae6bd0d49ed7420ad5c1a9d4f00"
+    },
+    "result": {
+      "accepted": false,
+      "state": "proposed",
+      "reason": "approved duration exceeds the proposal maximum"
+    }
+  },
+  "signed by an unregistered key": {
+    "doc": {
+      "schema": "response-approval-1",
+      "approval_id": "appr-7dde2b48-1a41-469b-bb46-817faeb5c24a",
+      "proposal_id": "prop-task26c-isolated-000001",
+      "proposal_hash": "7b1c83073507a883a701f673327a9c43d5d5c6da072a2110602238109b1d0648",
+      "decision": "approve",
+      "reason": "",
+      "approver": {
+        "name": "DEMO APPROVER (ephemeral)",
+        "key_id": "e8ac9dc6430f0301"
+      },
+      "decided_utc": "2026-11-12T07:31:55.705876Z",
+      "rule": {
+        "rule_id": "rule-69fda2c6-0129-4a2b-bf96-2b7df9eb6d6d",
+        "action": "restrict_new_connections",
+        "target": "10.250.25.3/32",
+        "listener": "demo",
+        "ttl_seconds": 600,
+        "created_utc": "2026-11-12T07:31:55.705876Z",
+        "expires_utc": "2026-11-12T07:41:55.705876Z",
+        "fingerprints": {
+          "response_policy": "4258c6ff9ca1e60751ea70fdc752d7944fd1e5e7d2f46bcdb88ebf874d743335",
+          "address_safety": "278563bd94d1900014cbdfaa2ef76708ffeb755c687f2f10a51640872c0dbc70",
+          "defence_policy": "176164978e4f2c24094480bf20f783c5519492d44615d354015e47c7e8891d73",
+          "attribution_config": "1aa5c7d734d2c893c86f878a52c8c8a7a0d93c2d0c43ae26a0bbaec47cd367a5"
+        }
+      },
+      "approval_hash": "c45886ae364aee904c487b7116ac9c5caf799e4258c3fbd0202a1e6eb4097188",
+      "signature": "271fbdd6c1facbae172c2a364f02b994e36ca073fdec02f286c3a950765cef76841334d3f9ae4cfaffca0b393c5a8b9d7124bdf39b10213ad3f707317a863b02"
+    },
+    "result": {
+      "accepted": false,
+      "state": "proposed",
+      "reason": "approval signature invalid"
+    }
+  },
+  "modified after signing (target -> control client)": {
+    "doc": {
+      "schema": "response-approval-1",
+      "approval_id": "appr-98b7008b-94ba-4509-b760-a2a3f15eaa80",
+      "proposal_id": "prop-task26c-isolated-000001",
+      "proposal_hash": "7b1c83073507a883a701f673327a9c43d5d5c6da072a2110602238109b1d0648",
+      "decision": "approve",
+      "reason": "",
+      "approver": {
+        "name": "DEMO APPROVER (ephemeral)",
+        "key_id": "e8ac9dc6430f0301"
+      },
+      "decided_utc": "2026-11-12T07:31:55.705876Z",
+      "rule": {
+        "rule_id": "rule-09d41737-4b70-4e45-ae44-7d949757dbd9",
+        "action": "restrict_new_connections",
+        "target": "10.250.25.4/32",
+        "listener": "demo",
+        "ttl_seconds": 600,
+        "created_utc": "2026-11-12T07:31:55.705876Z",
+        "expires_utc": "2026-11-12T07:41:55.705876Z",
+        "fingerprints": {
+          "response_policy": "4258c6ff9ca1e60751ea70fdc752d7944fd1e5e7d2f46bcdb88ebf874d743335",
+          "address_safety": "278563bd94d1900014cbdfaa2ef76708ffeb755c687f2f10a51640872c0dbc70",
+          "defence_policy": "176164978e4f2c24094480bf20f783c5519492d44615d354015e47c7e8891d73",
+          "attribution_config": "1aa5c7d734d2c893c86f878a52c8c8a7a0d93c2d0c43ae26a0bbaec47cd367a5"
+        }
+      },
+      "approval_hash": "ddd7b700da3c4e6682fb6c80fa81c35cb9f63890eb43c500b74892722e03e9de",
+      "signature": "6fa063dc1d3babe68f5e208b1af5fa8e768d8ed6881ae5cd1db5298f69890b64a8c2f9acd9459c680025a1e0a0d91e91cc88f8c420092bced92780455dace405"
+    },
+    "result": {
+      "accepted": false,
+      "state": "proposed",
+      "reason": "approval_hash mismatch (approval modified)"
+    }
+  },
+  "re-signed with a different target": {
+    "doc": {
+      "schema": "response-approval-1",
+      "approval_id": "appr-1d0f6382-6c04-406d-a0b9-b5920f9e929d",
+      "proposal_id": "prop-task26c-isolated-000001",
+      "proposal_hash": "7b1c83073507a883a701f673327a9c43d5d5c6da072a2110602238109b1d0648",
+      "decision": "approve",
+      "reason": "",
+      "approver": {
+        "name": "DEMO APPROVER (ephemeral)",
+        "key_id": "e8ac9dc6430f0301"
+      },
+      "decided_utc": "2026-11-12T07:31:55.705876Z",
+      "rule": {
+        "rule_id": "rule-39925463-b972-421f-984f-e743e40b5933",
+        "action": "restrict_new_connections",
+        "target": "10.250.25.4/32",
+        "listener": "demo",
+        "ttl_seconds": 600,
+        "created_utc": "2026-11-12T07:31:55.705876Z",
+        "expires_utc": "2026-11-12T07:41:55.705876Z",
+        "fingerprints": {
+          "response_policy": "4258c6ff9ca1e60751ea70fdc752d7944fd1e5e7d2f46bcdb88ebf874d743335",
+          "address_safety": "278563bd94d1900014cbdfaa2ef76708ffeb755c687f2f10a51640872c0dbc70",
+          "defence_policy": "176164978e4f2c24094480bf20f783c5519492d44615d354015e47c7e8891d73",
+          "attribution_config": "1aa5c7d734d2c893c86f878a52c8c8a7a0d93c2d0c43ae26a0bbaec47cd367a5"
+        }
+      },
+      "approval_hash": "c211355da9eb0ffbaf03d7c25c5db52a77770586f8634d628777b1e21d80d5b5",
+      "signature": "fef54a42af50d41690441b1f757c36aa6dd5f19a36fa754942755118ec7b1ad9820807b43b37cff9fef2d62598c967dda82b8470e88607e2c5199f4be06ad001"
+    },
+    "result": {
+      "accepted": false,
+      "state": "proposed",
+      "reason": "approved target differs from the proposal"
+    }
+  },
+  "refers to an altered proposal hash": {
+    "doc": {
+      "schema": "response-approval-1",
+      "approval_id": "appr-c56ec2e3-af96-4bed-aaca-6cac852d67d0",
+      "proposal_id": "prop-task26c-isolated-000001",
+      "proposal_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "decision": "approve",
+      "reason": "",
+      "approver": {
+        "name": "DEMO APPROVER (ephemeral)",
+        "key_id": "e8ac9dc6430f0301"
+      },
+      "decided_utc": "2026-11-12T07:31:55.705876Z",
+      "rule": {
+        "rule_id": "rule-cd41a06b-38c2-429d-994a-7d4ccdc0f723",
+        "action": "restrict_new_connections",
+        "target": "10.250.25.3/32",
+        "listener": "demo",
+        "ttl_seconds": 600,
+        "created_utc": "2026-11-12T07:31:55.705876Z",
+        "expires_utc": "2026-11-12T07:41:55.705876Z",
+        "fingerprints": {
+          "response_policy": "4258c6ff9ca1e60751ea70fdc752d7944fd1e5e7d2f46bcdb88ebf874d743335",
+          "address_safety": "278563bd94d1900014cbdfaa2ef76708ffeb755c687f2f10a51640872c0dbc70",
+          "defence_policy": "176164978e4f2c24094480bf20f783c5519492d44615d354015e47c7e8891d73",
+          "attribution_config": "1aa5c7d734d2c893c86f878a52c8c8a7a0d93c2d0c43ae26a0bbaec47cd367a5"
+        }
+      },
+      "approval_hash": "9377eaa985685fa96f4dda192f70072154eaf7e5d56e23a52b78b5c98ca4dea7",
+      "signature": "3c40dfb1d0b9509ab4931052415039cbcd3bce0cfc3340e50174cf15ac0a04fe9bd09e05a7a3f949addd7198c7bb06a8809854a1fdaa8f26ed341c1a40750f0c"
+    },
+    "result": {
+      "accepted": false,
+      "state": "proposed",
+      "reason": "approval does not refer to this exact proposal"
+    }
+  },
+  "decision dated in the future": {
+    "doc": {
+      "schema": "response-approval-1",
+      "approval_id": "appr-44c3b5e4-4f6b-47da-85c2-3ef09e54d126",
+      "proposal_id": "prop-task26c-isolated-000001",
+      "proposal_hash": "7b1c83073507a883a701f673327a9c43d5d5c6da072a2110602238109b1d0648",
+      "decision": "approve",
+      "reason": "",
+      "approver": {
+        "name": "DEMO APPROVER (ephemeral)",
+        "key_id": "e8ac9dc6430f0301"
+      },
+      "decided_utc": "2026-11-12T08:31:54.705876Z",
+      "rule": {
+        "rule_id": "rule-d49c8b81-b5be-45a3-9c7f-225af9da60b6",
+        "action": "restrict_new_connections",
+        "target": "10.250.25.3/32",
+        "listener": "demo",
+        "ttl_seconds": 600,
+        "created_utc": "2026-11-12T08:31:54.705876Z",
+        "expires_utc": "2026-11-12T08:41:54.705876Z",
+        "fingerprints": {
+          "response_policy": "4258c6ff9ca1e60751ea70fdc752d7944fd1e5e7d2f46bcdb88ebf874d743335",
+          "address_safety": "278563bd94d1900014cbdfaa2ef76708ffeb755c687f2f10a51640872c0dbc70",
+          "defence_policy": "176164978e4f2c24094480bf20f783c5519492d44615d354015e47c7e8891d73",
+          "attribution_config": "1aa5c7d734d2c893c86f878a52c8c8a7a0d93c2d0c43ae26a0bbaec47cd367a5"
+        }
+      },
+      "approval_hash": "55ce61fdec01e2421d51d7241b27995aa764baf658ae3d560f931e0cef44eeda",
+      "signature": "f04b017b2a82e834087195d25e71a340589c0e1f2e350e7033e0f08bf4854101d99dc9f28a2c8daa3da17160400e883093fa50fbdeaf2ef66d98bbb6224a8a0c"
+    },
+    "result": {
+      "accepted": false,
+      "state": "proposed",
+      "reason": "decision dated in the future"
+    }
+  }
+}

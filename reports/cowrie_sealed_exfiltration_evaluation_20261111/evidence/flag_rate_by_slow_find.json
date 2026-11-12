@@ -1,0 +1,26 @@
+{
+  "A_ae_reconstruction": {
+    "slow_find_sessions": 220,
+    "flagged_in_slow": 2,
+    "rate_slow": 0.00909090909090909,
+    "not_slow_sessions": 380,
+    "flagged_in_not_slow": 3,
+    "rate_not_slow": 0.007894736842105263
+  },
+  "B_latent_knn": {
+    "slow_find_sessions": 220,
+    "flagged_in_slow": 13,
+    "rate_slow": 0.05909090909090909,
+    "not_slow_sessions": 380,
+    "flagged_in_not_slow": 0,
+    "rate_not_slow": 0.0
+  },
+  "C_input_knn": {
+    "slow_find_sessions": 220,
+    "flagged_in_slow": 23,
+    "rate_slow": 0.10454545454545454,
+    "not_slow_sessions": 380,
+    "flagged_in_not_slow": 3,
+    "rate_not_slow": 0.007894736842105263
+  }
+}

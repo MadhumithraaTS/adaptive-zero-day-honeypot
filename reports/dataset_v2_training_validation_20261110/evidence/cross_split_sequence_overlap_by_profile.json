@@ -1,0 +1,28 @@
+{
+  "shared_sequence_interactions_by_profile_validation": {
+    "lateral_movement": {
+      "shared": 3,
+      "with_commands": 78
+    },
+    "reconnaissance": {
+      "shared": 0,
+      "with_commands": 74
+    },
+    "brute_force": {
+      "shared": 38,
+      "with_commands": 38
+    },
+    "benign_admin": {
+      "shared": 8,
+      "with_commands": 229
+    },
+    "botnet": {
+      "shared": 1,
+      "with_commands": 71
+    },
+    "privilege_escalation": {
+      "shared": 0,
+      "with_commands": 69
+    }
+  }
+}

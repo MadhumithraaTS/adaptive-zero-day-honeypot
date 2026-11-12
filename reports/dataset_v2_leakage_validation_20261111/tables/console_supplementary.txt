@@ -1,0 +1,32 @@
+                       epsilon2             ... missing_pct           
+split                     train validation  ...       train validation
+feature                                     ...                       
+download_command_lines    0.564      0.493  ...       0.000      0.000
+input_bytes_total         0.373      0.326  ...       0.000      0.000
+input_line_count          0.251      0.254  ...       0.000      0.000
+input_line_max_bytes      0.424      0.396  ...       0.000      0.000
+inter_input_mean_s        0.009      0.016  ...       0.000      0.000
+inter_input_std_s         0.016      0.011  ...       0.768      0.384
+login_failed_count          NaN        NaN  ...       0.000      0.000
+login_success               NaN        NaN  ...       0.000      0.000
+session_duration_s        0.095      0.080  ...       0.000      0.000
+shell_operator_lines      0.119      0.101  ...       0.000      0.000
+time_to_first_input_s     0.007      0.005  ...       0.000      0.000
+tty_output_bytes          0.152      0.166  ...       0.000      0.000
+unique_command_names      0.364      0.374  ...       0.000      0.000
+
+[13 rows x 6 columns]
+                   feature  epsilon2  single_feature_ba
+13           login_success       NaN              0.200
+14      login_failed_count       NaN              0.200
+15      session_duration_s     0.085              0.203
+16        input_line_count     0.255              0.284
+17       input_bytes_total     0.369              0.350
+18    input_line_max_bytes     0.407              0.568
+19    unique_command_names     0.368              0.338
+20    shell_operator_lines     0.082              0.200
+21  download_command_lines     0.560              0.371
+22   time_to_first_input_s     0.008              0.208
+23      inter_input_mean_s     0.004              0.199
+24       inter_input_std_s     0.011              0.209
+25        tty_output_bytes     0.154              0.338

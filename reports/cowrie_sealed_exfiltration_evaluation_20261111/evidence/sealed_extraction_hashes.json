@@ -1,0 +1,26 @@
+{
+  "sealed_utc": "2026-11-11T15:07:09Z",
+  "raw_evidence_unchanged_since_generation": {
+    "reports/cowrie_sealed_exfiltration_evaluation_20261111/raw/test/cowrie_before.json": true,
+    "reports/cowrie_sealed_exfiltration_evaluation_20261111/raw/test/cowrie_after.json": true,
+    "reports/cowrie_sealed_exfiltration_evaluation_20261111/raw/test/cowrie_slice.json": true,
+    "reports/cowrie_sealed_exfiltration_evaluation_20261111/runs/test/manifest.jsonl": true,
+    "reports/cowrie_sealed_exfiltration_evaluation_20261111/runs/test/run_meta.json": true,
+    "reports/cowrie_sealed_exfiltration_evaluation_20261111/runs/test/terminal_output.jsonl": true,
+    "reports/cowrie_sealed_exfiltration_evaluation_20261111/logs/generator_console_test.txt": true
+  },
+  "deterministic_two_runs": true,
+  "outputs_sha256": {
+    "model_features.csv": "8dbfdfa4b2ff4b39e2133cf07c411570c3e2b4e781d8f82ac28bce39fe866283",
+    "session_metadata.csv": "fc461b401d07f6aed85283ba23376682704ce3f49bea696b6a8b5a9d75ca02e1"
+  },
+  "extraction_summary_sha256": "49c8d95bfc1aca33857aec303148deeae1d05c01646f14fe5293cc5152a7d537",
+  "labels_sha256": "8c3761a6db25ee0fa413efaadeae2a664e100959f615ab62638343a63bd06709",
+  "reconciliation_sha256": "076a73cd4eff43cf0a4dd5c5f511b724a6e409bb6724fe702f74da27b70a0464",
+  "columns_exactly_spec_13": true,
+  "rows": 900,
+  "sessions_in_summary": 900,
+  "file_level_warnings": [],
+  "every_feature_row_labelled": true,
+  "note": "feature values were not read or summarised before the one-time scoring step"
+}

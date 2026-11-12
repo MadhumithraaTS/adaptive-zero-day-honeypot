@@ -1,0 +1,317 @@
+{
+  "config_name": "model_features_v2_frozen",
+  "config_version": "1.0.0",
+  "frozen": true,
+  "freeze_date": "2026-11-11",
+  "task": "Task 16 - finalise and freeze the Dataset V2 model feature set",
+  "purpose": "Model-input selection layer over the unchanged V2 feature specification. The extractor still computes and writes all 13 features; only the columns listed in model_input_features, in this order, are model inputs.",
+  "specification": {
+    "path": "configs/feature_spec_v2.json",
+    "spec_name": "cowrie_session_features",
+    "spec_version": "2.0.0-draft.3",
+    "sha256": "9401b355a1bfc48a14da32efba9ad4d5992f55233da3437a0715690d76f8fb1a",
+    "extracted_feature_count": 13,
+    "extracted_features_in_order": [
+      "login_success",
+      "login_failed_count",
+      "session_duration_s",
+      "input_line_count",
+      "input_bytes_total",
+      "input_line_max_bytes",
+      "unique_command_names",
+      "shell_operator_lines",
+      "download_command_lines",
+      "time_to_first_input_s",
+      "inter_input_mean_s",
+      "inter_input_std_s",
+      "tty_output_bytes"
+    ],
+    "note": "The specification's own 'active' flags are unchanged (all true). Its versioning policy implements deactivation by editing the spec; Task 16 forbids that, so deactivation is recorded here instead. Mirroring it into the spec (patch revision) needs separate approval."
+  },
+  "extractor": {
+    "path": "scripts/extract_features_v2.py",
+    "sha256": "c0fdc684483e9953db2b6240994daa2b712d9782275eeebff9a38d57344cd5f2"
+  },
+  "evidence": {
+    "task15_report": "reports/dataset_v2_leakage_validation_20261111/report.md",
+    "task15_feature_eligibility": {
+      "path": "reports/dataset_v2_leakage_validation_20261111/feature_eligibility.csv",
+      "sha256": "64e530041c57885424a40eee6629b579a110fc0c8c6250f58b0059c9d83b0342"
+    },
+    "task15_results": {
+      "path": "reports/dataset_v2_leakage_validation_20261111/tables/leakage_results.json",
+      "sha256": "5bc62137e8cbb018dcc174946a9e2414b81d3be2c95565b0ae5f810adb37aa1b"
+    },
+    "correlated_pairs": {
+      "path": "reports/dataset_v2_feature_freeze_20261111/evidence/correlated_pairs.json",
+      "sha256": "5a618aa35e569b6bf52b3291dd1b1cb367edbaae36d884d7e71fdab377f7f3d3"
+    },
+    "dataset": {
+      "path": "reports/dataset_v2_training_validation_20261110/",
+      "SHA256SUMS_sha256": "05e9d8381f89fa6bb7bb091cb1a49b6656123b3f01d3d6f12ac5d2bd503b9940"
+    },
+    "freeze_report": "reports/dataset_v2_feature_freeze_20261111/report.md"
+  },
+  "status_definitions": {
+    "eligible": "Passes all checks with no material concern. Model input.",
+    "eligible_with_limitations": "Passes the specification's retention evidence; remaining category information is behavioural design; limitations listed. Model input.",
+    "conditional": "Unresolved; excluded from model input until a reviewed decision.",
+    "inactive": "Fails a criterion whose specification handling is deactivation, or is the deactivated member of a redundant pair. Excluded from model input; still extracted."
+  },
+  "selection_rules": [
+    "Statuses follow the Task 15 evidence and the specification's C1-C4 retention criteria; no validation score was used to select features.",
+    "Redundant pair (Spearman >= 0.8 on both splits): retain the member with simpler provenance and interpretability and lower training-split category-leakage evidence, provided the partner's additional information is template-specific; if criteria disagree, mark conditional.",
+    "A conditional feature is never in model_input_features.",
+    "Feature order = specification order."
+  ],
+  "correlated_pairs": [
+    {
+      "pair": [
+        "input_line_count",
+        "unique_command_names"
+      ],
+      "spearman_train": 0.911,
+      "spearman_validation": 0.8978,
+      "retained": "input_line_count",
+      "deactivated": "unique_command_names"
+    },
+    {
+      "pair": [
+        "input_bytes_total",
+        "input_line_max_bytes"
+      ],
+      "spearman_train": 0.8314,
+      "spearman_validation": 0.8282,
+      "retained": null,
+      "deactivated": "input_line_max_bytes",
+      "unresolved": "input_bytes_total (conditional, excluded pending review)"
+    }
+  ],
+  "model_input_features": [
+    "login_success",
+    "session_duration_s",
+    "input_line_count",
+    "shell_operator_lines",
+    "time_to_first_input_s",
+    "inter_input_mean_s",
+    "inter_input_std_s",
+    "tty_output_bytes"
+  ],
+  "model_input_count": 8,
+  "inactive_features": [
+    "login_failed_count",
+    "input_line_max_bytes",
+    "unique_command_names",
+    "download_command_lines"
+  ],
+  "conditional_features": [
+    "input_bytes_total"
+  ],
+  "missing_value_constraints": [
+    "NaN in time_to_first_input_s, inter_input_mean_s, inter_input_std_s and session-level undefined values are structural (Task 15: 0 unexplained).",
+    "Missingness is a deterministic function of login_success and input_line_count; do not add missing-value indicator features and do not use an imputation that encodes 'no input' as a distinctive constant without review.",
+    "The imputation method itself is a Task 17 preprocessing decision, fitted on training data only."
+  ],
+  "evaluation_constraints": [
+    "Report interaction-grouped and balanced metrics; brute force contributes 32% of rows.",
+    "Report a sensitivity check with and without the 39 sessions containing the Cowrie `find / -name id_rsa` delay.",
+    "data_exfiltration is absent from train/validation; the sealed test set is untouched."
+  ],
+  "features": [
+    {
+      "spec_index": 1,
+      "name": "login_success",
+      "spec_status": "core",
+      "spec_group": null,
+      "spec_active": true,
+      "dtype": "int8",
+      "task15_status": "Eligible with limitations",
+      "final_status": "eligible_with_limitations",
+      "model_input": true,
+      "reason": "Authentication outcome; behavioural and observable in deployment. Constant within logged-in sessions; across all sessions its category information is the designed failed-guess mix, not an artefact.",
+      "evidence": "T15: logged-in constant (BA 0.167); all sessions eps2 0.159 [0.145, 0.171], BA 0.243; train/validation 0.159/0.159.",
+      "leakage_risks": "Brute force contributes 32% of rows (5.1 rows per interaction); row-level metrics are dominated by its failed-guess rows.",
+      "deployment_limitations": "High availability (Cowrie login events). Becomes a constant if a downstream model is trained on logged-in sessions only."
+    },
+    {
+      "spec_index": 2,
+      "name": "login_failed_count",
+      "spec_status": "conditional",
+      "spec_group": "C1_auth_collinearity",
+      "spec_active": true,
+      "dtype": "int32",
+      "task15_status": "Inactive - exclude from model input",
+      "final_status": "inactive",
+      "model_input": false,
+      "reason": "C1 fails: exactly 1 - login_success in every row (Spearman -1.0) and no within-session retries; no independent information.",
+      "evidence": "T15 C1: 3,190/3,190 train and 1,257/1,257 validation rows equal 1 - login_success; 0 sessions with > 1 failed login.",
+      "leakage_risks": "Pure duplicate of login_success; would double-weight authentication outcome.",
+      "deployment_limitations": "Spec: low deployment compatibility (one connection per attempt in the lab)."
+    },
+    {
+      "spec_index": 3,
+      "name": "session_duration_s",
+      "spec_status": "conditional",
+      "spec_group": "C3_session_lifecycle",
+      "spec_active": true,
+      "dtype": "float64",
+      "task15_status": "Eligible with limitations",
+      "final_status": "eligible_with_limitations",
+      "model_input": true,
+      "reason": "Passes C3 retention evidence on generator 2.1: no pre-fix 120/180 s sessions, L2 below the spec proposal, not mostly explained by category after line count. Category dependence comes from command count and from brute force.",
+      "evidence": "T15: eps2 0.393 [0.354, 0.428] (val 0.380); without brute force 0.095, BA 0.209 (chance 0.20); residual after line count 0.066 (T11 0.64); failed sessions 1.1 s in all categories.",
+      "leakage_risks": "Cowrie `find / -name id_rsa` executes ~11.6 s only in privilege_escalation (30 train / 9 validation sessions): a PE-only tail (21/30 above the non-PE p95). Category-level effect negligible (eps2 0.393 -> 0.385). Report a with/without-find sensitivity check in evaluation.",
+      "deployment_limitations": "Low (spec): lab think time is the generator's pacing policy, not attacker behaviour."
+    },
+    {
+      "spec_index": 4,
+      "name": "input_line_count",
+      "spec_status": "core",
+      "spec_group": null,
+      "spec_active": true,
+      "dtype": "int32",
+      "task15_status": "Eligible with limitations",
+      "final_status": "eligible_with_limitations",
+      "model_input": true,
+      "reason": "Retained member of the input_line_count / unique_command_names pair (Spearman 0.91): simplest provenance (count of recorded command.input lines, no tokenisation), most interpretable (activity volume), and lower category-leakage evidence than its partner.",
+      "evidence": "T15: eps2 0.516 [0.478, 0.554] (val 0.517); without brute force 0.251; lookup 0.533. Pair analysis: eps2 0.404 vs 0.493 (sessions with input), 0.251 vs 0.364 without brute force.",
+      "leakage_risks": "Brute force runs 0-1 commands (100% outside other categories' range); remaining signal is profile length. Mixes client and Cowrie-executed lines (spec limitation).",
+      "deployment_limitations": "Medium: observable for real attackers; lab counts come from templates."
+    },
+    {
+      "spec_index": 5,
+      "name": "input_bytes_total",
+      "spec_status": "core",
+      "spec_group": null,
+      "spec_active": true,
+      "dtype": "int64",
+      "task15_status": "Conditional - further evidence required",
+      "final_status": "conditional",
+      "model_input": false,
+      "reason": "Not resolved. With input_line_count retained, the information it adds is command length (bytes per line), the same template-length mechanism as input_line_max_bytes. It fails only the L2 lookup proposal (0.54 > 0.50), not L1, and command length can be behavioural in deployment. The evidence does not justify a clear choice, so it is excluded from model input pending review.",
+      "evidence": "T15: eps2 0.588 [0.554, 0.622] (rose from T11 0.483); lookup 0.540; Spearman 0.83 with max bytes. Pair analysis (train): residual after line count eps2 0.419 [0.380, 0.457]; mean bytes per line eps2 0.520; residual after max bytes 0.047 without brute force (adds almost nothing beyond max bytes).",
+      "leakage_risks": "Template string lengths (botnet and lateral download/URL lines ~15.6 bytes per line vs benign 10.8).",
+      "deployment_limitations": "Medium: available in deployment; meaning in the lab is dominated by fixed templates."
+    },
+    {
+      "spec_index": 6,
+      "name": "input_line_max_bytes",
+      "spec_status": "core",
+      "spec_group": null,
+      "spec_active": true,
+      "dtype": "float64",
+      "task15_status": "Conditional - further evidence required",
+      "final_status": "inactive",
+      "model_input": false,
+      "reason": "Strongest command-length fingerprint, failing L1 (botnet outside every other category's range in 53% of train / 58% of validation sessions) and the L2 lookup proposal (0.71), and the signal does not depend on brute force. It is the length-heavy member of the 0.83 pair and adds information beyond input_bytes_total (residual eps2 0.179).",
+      "evidence": "T15: BA 0.569 (0.574 without brute force; chance 0.20), lookup 0.708, eps2 0.530 [0.496, 0.568]. Pair analysis: residual after bytes total eps2 0.179 [0.143, 0.221].",
+      "leakage_risks": "Template line lengths (botnet median 39 bytes, PE 37, reconnaissance 20) identify categories directly.",
+      "deployment_limitations": "Medium in principle; in lab data it measures template strings."
+    },
+    {
+      "spec_index": 7,
+      "name": "unique_command_names",
+      "spec_status": "core",
+      "spec_group": null,
+      "spec_active": true,
+      "dtype": "int32",
+      "task15_status": "Eligible with limitations",
+      "final_status": "inactive",
+      "model_input": false,
+      "reason": "Deactivated member of the 0.91 pair: what it adds beyond input_line_count is template vocabulary structure (repeated command names per session: PE 1.29, reconnaissance 0.80, lateral 0.75, benign 0.11, botnet 0.07), and it carries more category information than its partner on both splits. Depends on first-token tokenisation.",
+      "evidence": "T15: eps2 0.587 [0.551, 0.622] (val 0.594); lookup 0.554. Pair analysis: residual after line count eps2 0.467 [0.426, 0.511] (val 0.480); lines-minus-unique eps2 0.391.",
+      "leakage_risks": "Profile vocabulary breadth and repetition per template.",
+      "deployment_limitations": "Medium; would need consistent tokenisation of real attacker input."
+    },
+    {
+      "spec_index": 8,
+      "name": "shell_operator_lines",
+      "spec_status": "conditional",
+      "spec_group": "C4_profile_template_content",
+      "spec_active": true,
+      "dtype": "int32",
+      "task15_status": "Eligible with limitations",
+      "final_status": "eligible_with_limitations",
+      "model_input": true,
+      "reason": "Passes C4 retention evidence after the Task 12 redesign: non-zero in 5 of 6 categories including benign, varies within categories, single-feature BA at chance, lookup below 50%.",
+      "evidence": "T15: eps2 0.215 [0.185, 0.247] (val 0.202); BA 0.167; lookup 0.374; non-zero benign 47%, botnet 47%, lateral 44%, reconnaissance 25%, PE 87%; flags 6/12 (T11 12/12).",
+      "leakage_risks": "PE enrichment (87%, `2>/dev/null` on find).",
+      "deployment_limitations": "Medium-high: pipes and redirections are common in real shells."
+    },
+    {
+      "spec_index": 9,
+      "name": "download_command_lines",
+      "spec_status": "conditional",
+      "spec_group": "C4_profile_template_content",
+      "spec_active": true,
+      "dtype": "int32",
+      "task15_status": "Inactive - exclude from model input",
+      "final_status": "inactive",
+      "model_input": false,
+      "reason": "Fails L1 (constant 1 in 100% of botnet sessions) and C4 'values vary within categories' after the vocabulary redesign; the spec's C4 handling is 'if still failing -> inactive'.",
+      "evidence": "T15: botnet modal 1 share 1.00 (unique to botnet); eps2 0.583 [0.544, 0.627]; 0.564 without brute force; non-zero benign 14%, reconnaissance 34%.",
+      "leakage_risks": "Botnet fingerprint.",
+      "deployment_limitations": "Download attempts are observable; completion impossible in the isolated lab."
+    },
+    {
+      "spec_index": 10,
+      "name": "time_to_first_input_s",
+      "spec_status": "conditional",
+      "spec_group": "C2_generator_timing",
+      "spec_active": true,
+      "dtype": "float64",
+      "task15_status": "Eligible with limitations",
+      "final_status": "eligible_with_limitations",
+      "model_input": true,
+      "reason": "Passes C2 retention evidence: category-independent pacing, fixed speed, prompt-gated, not near-constant, L6 clean. Values carry no category information; flags come only from structural missingness.",
+      "evidence": "T15: eps2 0.007 [0.002, 0.018] (val 0.005); CV 0.81; medians 1.56-1.80 s in all categories; manifest think-time eps2 0.006 (p 0.13); missingness V 0.68.",
+      "leakage_risks": "NaN when there is no login or no input (50% of brute-force logins); missingness is a deterministic function of login_success and input_line_count and must not be re-encoded by imputation or indicators.",
+      "deployment_limitations": "Low (spec): in lab data the value is a generator pacing draw."
+    },
+    {
+      "spec_index": 11,
+      "name": "inter_input_mean_s",
+      "spec_status": "conditional",
+      "spec_group": "C2_generator_timing",
+      "spec_active": true,
+      "dtype": "float64",
+      "task15_status": "Eligible with limitations",
+      "final_status": "eligible_with_limitations",
+      "model_input": true,
+      "reason": "Passes C2 on values after the generator-2.1 pacing fix (eps2 0.786 -> 0.009).",
+      "evidence": "T15: eps2 0.009 [0.003, 0.026] (val 0.016); 0.004 without find sessions; missingness V 1.00 (logged-in, brute force only).",
+      "leakage_risks": "NaN for < 2 lines (all brute-force logins) - same imputation constraint. Cowrie find delay raises PE find sessions (median 3.9 s vs 1.83 s; ranges overlap). Spearman 0.79 with inter_input_std_s (below the 0.8 redundancy flag).",
+      "deployment_limitations": "Low (spec)."
+    },
+    {
+      "spec_index": 12,
+      "name": "inter_input_std_s",
+      "spec_status": "conditional",
+      "spec_group": "C2_generator_timing",
+      "spec_active": true,
+      "dtype": "float64",
+      "task15_status": "Eligible with limitations",
+      "final_status": "eligible_with_limitations",
+      "model_input": true,
+      "reason": "Passes C2 on values (eps2 0.405 -> 0.016). Kept: its correlation with inter_input_mean_s (0.79) is below the 0.8 redundancy flag used in Tasks 11/15, so dropping it would be a discretionary choice not supported by a stated criterion.",
+      "evidence": "T15: eps2 0.016 [0.007, 0.035] (val 0.011); missingness V 0.97; NaN in 59.5% of all rows.",
+      "leakage_risks": "NaN for < 3 lines - same imputation constraint; find delay adds variance in PE find sessions.",
+      "deployment_limitations": "Low (spec)."
+    },
+    {
+      "spec_index": 13,
+      "name": "tty_output_bytes",
+      "spec_status": "core",
+      "spec_group": null,
+      "spec_active": true,
+      "dtype": "float64",
+      "task15_status": "Eligible with limitations",
+      "final_status": "eligible_with_limitations",
+      "model_input": true,
+      "reason": "Output-volume leakage fell substantially (residual beyond input 0.42 -> 0.18); remaining information is mostly 'no commands -> tiny output' (brute force). Cowrie output is also what a deployed Cowrie produces.",
+      "evidence": "T15: eps2 0.443 [0.403, 0.481] (val 0.451); without brute force 0.152; residual after input bytes 0.176; KS train vs validation p 0.50.",
+      "leakage_risks": "Cowrie-emulation dependent (per-command emulated output size; 'command not found' text from emulation gaps).",
+      "deployment_limitations": "Medium: in deployment it reflects Cowrie's emulation of real attacker commands."
+    }
+  ]
+}

@@ -1,0 +1,2428 @@
+{
+  "provenance": {
+    "training_log": "dataset_builder\\runs\\train_v1\\raw\\cowrie_thisrun.json",
+    "labels": "dataset_builder\\runs\\train_v2_corrected\\label_assignments.csv",
+    "extracted_sessions": 3199,
+    "label_rows": 3125,
+    "extracted_not_in_labels": 74,
+    "extracted_not_in_labels_note": "train_v1 raw slice includes eval_v1 sessions after its baseline; excluded",
+    "labels_not_extracted": 0,
+    "excluded_inconsistent": 2,
+    "analysed_sessions": 3123,
+    "interactions": 1500,
+    "logged_in_sessions": 1498,
+    "failed_only_sessions": 1625,
+    "sessions_per_interaction": {
+      "3": 126,
+      "1": 634,
+      "2": 532,
+      "6": 69,
+      "5": 77,
+      "4": 62
+    },
+    "logged_in_sessions_per_interaction": {
+      "1": 1498
+    },
+    "conflicting_labels_per_session": 0,
+    "conflicting_categories_per_interaction": 0,
+    "category_counts_all": {
+      "brute_force": 1047,
+      "benign": 770,
+      "botnet": 374,
+      "reconnaissance": 371,
+      "privilege_escalation": 287,
+      "lateral_movement": 274
+    },
+    "category_counts_logged_in": {
+      "benign": 535,
+      "brute_force": 208,
+      "lateral_movement": 195,
+      "privilege_escalation": 192,
+      "botnet": 187,
+      "reconnaissance": 181
+    },
+    "interactions_per_category": {
+      "benign": 535,
+      "botnet": 189,
+      "brute_force": 208,
+      "lateral_movement": 195,
+      "privilege_escalation": 192,
+      "reconnaissance": 181
+    }
+  },
+  "per_feature": {
+    "login_success": {
+      "group": "core",
+      "logged_in": {
+        "n_nonmissing": 1498,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": null,
+        "kruskal_p": null,
+        "epsilon2_ci95_group_bootstrap": [
+          null,
+          null
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.166667,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 1.0,
+          "correct_share_of_all": 0.357143,
+          "accuracy_when_covered": 0.357143
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 1.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 1.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 1.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": 1.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 1.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 1.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      },
+      "all_sessions": {
+        "n_nonmissing": 3123,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": 0.18414,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.170755,
+          0.198073
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.249357,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 1.0,
+          "correct_share_of_all": 0.439962,
+          "accuracy_when_covered": 0.439962
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 1.0,
+            "modal_share": 0.694805,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 0.0,
+            "modal_share": 0.5,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 0.0,
+            "modal_share": 0.801337,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": 1.0,
+            "modal_share": 0.711679,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 1.0,
+            "modal_share": 0.66899,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 0.0,
+            "modal_share": 0.512129,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      }
+    },
+    "login_failed_count": {
+      "group": "C1",
+      "logged_in": {
+        "n_nonmissing": 1498,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": null,
+        "kruskal_p": null,
+        "epsilon2_ci95_group_bootstrap": [
+          null,
+          null
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.166667,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 1.0,
+          "correct_share_of_all": 0.357143,
+          "accuracy_when_covered": 0.357143
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      },
+      "all_sessions": {
+        "n_nonmissing": 3123,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": 0.18414,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.171934,
+          0.199257
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.249357,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 1.0,
+          "correct_share_of_all": 0.439962,
+          "accuracy_when_covered": 0.439962
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 0.0,
+            "modal_share": 0.694805,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 0.0,
+            "modal_share": 0.5,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 1.0,
+            "modal_share": 0.801337,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": 0.0,
+            "modal_share": 0.711679,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 0.0,
+            "modal_share": 0.66899,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 1.0,
+            "modal_share": 0.512129,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      }
+    },
+    "session_duration_s": {
+      "group": "C3",
+      "logged_in": {
+        "n_nonmissing": 1498,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": 0.804472,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.781645,
+          0.82467
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.635572,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 0.991989,
+          "correct_share_of_all": 0.697597,
+          "accuracy_when_covered": 0.70323
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 2.7,
+            "modal_share": 0.057944,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 0.6,
+            "modal_share": 0.336898,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 0.2,
+            "modal_share": 0.697115,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.697115
+          },
+          "lateral_movement": {
+            "modal_value": 1.1,
+            "modal_share": 0.117949,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 2.4,
+            "modal_share": 0.088542,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.25
+          },
+          "reconnaissance": {
+            "modal_value": 1.7,
+            "modal_share": 0.121547,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      },
+      "all_sessions": {
+        "n_nonmissing": 3123,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": 0.080305,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.07018,
+          0.090549
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.378817,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 0.966058,
+          "correct_share_of_all": 0.570925,
+          "accuracy_when_covered": 0.590984
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 120.0,
+            "modal_share": 0.250649,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 120.0,
+            "modal_share": 0.409091,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 120.0,
+            "modal_share": 0.665712,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.139446
+          },
+          "lateral_movement": {
+            "modal_value": 120.0,
+            "modal_share": 0.240876,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 120.0,
+            "modal_share": 0.285714,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 120.0,
+            "modal_share": 0.433962,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      }
+    },
+    "input_line_count": {
+      "group": "core",
+      "logged_in": {
+        "n_nonmissing": 1498,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": 0.571753,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.535071,
+          0.612214
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.4272,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 1.0,
+          "correct_share_of_all": 0.572096,
+          "accuracy_when_covered": 0.572096
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 5.0,
+            "modal_share": 0.293458,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 2.0,
+            "modal_share": 0.491979,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 1.0,
+            "modal_share": 0.519231,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.480769
+          },
+          "lateral_movement": {
+            "modal_value": 4.0,
+            "modal_share": 0.420513,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 6.0,
+            "modal_share": 0.296875,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 6.0,
+            "modal_share": 0.342541,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.01105
+          }
+        }
+      },
+      "all_sessions": {
+        "n_nonmissing": 3123,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": 0.313955,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.290684,
+          0.335675
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.333302,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 1.0,
+          "correct_share_of_all": 0.543068,
+          "accuracy_when_covered": 0.543068
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 0.0,
+            "modal_share": 0.305195,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 0.0,
+            "modal_share": 0.5,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 0.0,
+            "modal_share": 0.896848,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": 4.0,
+            "modal_share": 0.29927,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 0.0,
+            "modal_share": 0.33101,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 0.0,
+            "modal_share": 0.512129,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.005391
+          }
+        }
+      }
+    },
+    "input_bytes_total": {
+      "group": "core",
+      "logged_in": {
+        "n_nonmissing": 1498,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": 0.483439,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.4419,
+          0.520687
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.402848,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 0.993324,
+          "correct_share_of_all": 0.491989,
+          "accuracy_when_covered": 0.495296
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 41.0,
+            "modal_share": 0.033645,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 47.0,
+            "modal_share": 0.117647,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 0.0,
+            "modal_share": 0.480769,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.480769
+          },
+          "lateral_movement": {
+            "modal_value": 70.0,
+            "modal_share": 0.041026,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 68.0,
+            "modal_share": 0.052083,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.015625
+          },
+          "reconnaissance": {
+            "modal_value": 36.0,
+            "modal_share": 0.055249,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      },
+      "all_sessions": {
+        "n_nonmissing": 3123,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": 0.319571,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.295593,
+          0.341322
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.326359,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 0.995517,
+          "correct_share_of_all": 0.509766,
+          "accuracy_when_covered": 0.512062
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 0.0,
+            "modal_share": 0.305195,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 0.0,
+            "modal_share": 0.5,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 0.0,
+            "modal_share": 0.896848,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": 0.0,
+            "modal_share": 0.288321,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 0.0,
+            "modal_share": 0.33101,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.010453
+          },
+          "reconnaissance": {
+            "modal_value": 0.0,
+            "modal_share": 0.512129,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      }
+    },
+    "input_line_max_bytes": {
+      "group": "core",
+      "logged_in": {
+        "n_nonmissing": 1398,
+        "missing_pct": 6.675567,
+        "kruskal_epsilon2": 0.669214,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.633497,
+          0.708535
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.771795,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 0.933244,
+          "correct_share_of_all": 0.818425,
+          "accuracy_when_covered": 0.876967
+        },
+        "missingness_vs_category": {
+          "chi2": 664.555134,
+          "p": 0.0,
+          "cramers_v": 0.666054
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 19.0,
+            "modal_share": 0.295327,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.018692
+          },
+          "botnet": {
+            "modal_value": 36.0,
+            "modal_share": 0.203209,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": null,
+            "modal_share": 0.480769,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": 22.0,
+            "modal_share": 0.338462,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.241026
+          },
+          "privilege_escalation": {
+            "modal_value": 38.0,
+            "modal_share": 0.786458,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 15.0,
+            "modal_share": 0.41989,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      },
+      "all_sessions": {
+        "n_nonmissing": 1398,
+        "missing_pct": 55.235351,
+        "kruskal_epsilon2": 0.669214,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.63429,
+          0.703566
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.499433,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 0.447646,
+          "correct_share_of_all": 0.392571,
+          "accuracy_when_covered": 0.876967
+        },
+        "missingness_vs_category": {
+          "chi2": 833.45495,
+          "p": 0.0,
+          "cramers_v": 0.516601
+        },
+        "l1": {
+          "benign": {
+            "modal_value": null,
+            "modal_share": 0.305195,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.018692
+          },
+          "botnet": {
+            "modal_value": null,
+            "modal_share": 0.5,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": null,
+            "modal_share": 0.896848,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": null,
+            "modal_share": 0.288321,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.241026
+          },
+          "privilege_escalation": {
+            "modal_value": 38.0,
+            "modal_share": 0.526132,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": null,
+            "modal_share": 0.512129,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      }
+    },
+    "unique_command_names": {
+      "group": "core",
+      "logged_in": {
+        "n_nonmissing": 1498,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": 0.570672,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.535463,
+          0.607334
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.456627,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 1.0,
+          "correct_share_of_all": 0.570093,
+          "accuracy_when_covered": 0.570093
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 5.0,
+            "modal_share": 0.317757,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 2.0,
+            "modal_share": 0.491979,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 1.0,
+            "modal_share": 0.519231,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.480769
+          },
+          "lateral_movement": {
+            "modal_value": 4.0,
+            "modal_share": 0.379487,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 5.0,
+            "modal_share": 0.484375,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 6.0,
+            "modal_share": 0.309392,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      },
+      "all_sessions": {
+        "n_nonmissing": 3123,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": 0.313182,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.292606,
+          0.334509
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.34618,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 1.0,
+          "correct_share_of_all": 0.537944,
+          "accuracy_when_covered": 0.537944
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 0.0,
+            "modal_share": 0.305195,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 0.0,
+            "modal_share": 0.5,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 0.0,
+            "modal_share": 0.896848,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": 0.0,
+            "modal_share": 0.288321,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 0.0,
+            "modal_share": 0.33101,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 0.0,
+            "modal_share": 0.512129,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      }
+    },
+    "shell_operator_lines": {
+      "group": "C4",
+      "logged_in": {
+        "n_nonmissing": 1498,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": 0.828622,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.778273,
+          0.88006
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.30816,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 1.0,
+          "correct_share_of_all": 0.465955,
+          "accuracy_when_covered": 0.465955
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 1.0,
+            "modal_share": 0.661458,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.848958
+          },
+          "reconnaissance": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      },
+      "all_sessions": {
+        "n_nonmissing": 3123,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": 0.543883,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.502061,
+          0.596121
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.261324,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 1.0,
+          "correct_share_of_all": 0.387448,
+          "accuracy_when_covered": 0.387448
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 1.0,
+            "modal_share": 0.442509,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.567944
+          },
+          "reconnaissance": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      }
+    },
+    "download_command_lines": {
+      "group": "C4",
+      "logged_in": {
+        "n_nonmissing": 1498,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": 1.0,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          1.0,
+          1.0
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.333333,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 1.0,
+          "correct_share_of_all": 0.481976,
+          "accuracy_when_covered": 0.481976
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 1.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": true,
+            "share_outside_other_categories_range": 1.0
+          },
+          "brute_force": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      },
+      "all_sessions": {
+        "n_nonmissing": 3123,
+        "missing_pct": 0.0,
+        "kruskal_epsilon2": 0.468154,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.442605,
+          0.502034
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.25,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 1.0,
+          "correct_share_of_all": 0.395133,
+          "accuracy_when_covered": 0.395133
+        },
+        "missingness_vs_category": {
+          "chi2": null,
+          "p": null,
+          "cramers_v": 0.0
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 0.0,
+            "modal_share": 0.5,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.5
+          },
+          "brute_force": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 0.0,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      }
+    },
+    "time_to_first_input_s": {
+      "group": "C2",
+      "logged_in": {
+        "n_nonmissing": 1398,
+        "missing_pct": 6.675567,
+        "kruskal_epsilon2": 0.002923,
+        "kruskal_p": 0.53739,
+        "epsilon2_ci95_group_bootstrap": [
+          0.001174,
+          0.015574
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.247762,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 0.072096,
+          "correct_share_of_all": 0.021362,
+          "accuracy_when_covered": 0.296296
+        },
+        "missingness_vs_category": {
+          "chi2": 664.555134,
+          "p": 0.0,
+          "cramers_v": 0.666054
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 0.093868,
+            "modal_share": 0.003738,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.001869
+          },
+          "botnet": {
+            "modal_value": 0.096239,
+            "modal_share": 0.010695,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": null,
+            "modal_share": 0.480769,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": 0.097524,
+            "modal_share": 0.010256,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 0.096788,
+            "modal_share": 0.010417,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 0.09634,
+            "modal_share": 0.01105,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.005525
+          }
+        }
+      },
+      "all_sessions": {
+        "n_nonmissing": 1398,
+        "missing_pct": 55.235351,
+        "kruskal_epsilon2": 0.002923,
+        "kruskal_p": 0.53739,
+        "epsilon2_ci95_group_bootstrap": [
+          0.001123,
+          0.015968
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.264843,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 0.035223,
+          "correct_share_of_all": 0.009926,
+          "accuracy_when_covered": 0.281818
+        },
+        "missingness_vs_category": {
+          "chi2": 833.45495,
+          "p": 0.0,
+          "cramers_v": 0.516601
+        },
+        "l1": {
+          "benign": {
+            "modal_value": null,
+            "modal_share": 0.305195,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.001869
+          },
+          "botnet": {
+            "modal_value": null,
+            "modal_share": 0.5,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": null,
+            "modal_share": 0.896848,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": null,
+            "modal_share": 0.288321,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": null,
+            "modal_share": 0.33101,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": null,
+            "modal_share": 0.512129,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.005525
+          }
+        }
+      }
+    },
+    "inter_input_mean_s": {
+      "group": "C2",
+      "logged_in": {
+        "n_nonmissing": 1288,
+        "missing_pct": 14.018692,
+        "kruskal_epsilon2": 0.785637,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.765064,
+          0.807169
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.659119,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 0.001335,
+          "correct_share_of_all": 0.0,
+          "accuracy_when_covered": 0.0
+        },
+        "missingness_vs_category": {
+          "chi2": 1481.577428,
+          "p": 0.0,
+          "cramers_v": 0.994503
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 0.253712,
+            "modal_share": 0.001869,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 0.012855,
+            "modal_share": 0.005348,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.919786
+          },
+          "brute_force": {
+            "modal_value": null,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": null
+          },
+          "lateral_movement": {
+            "modal_value": null,
+            "modal_share": 0.010256,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 0.163887,
+            "modal_share": 0.005208,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.140625
+          },
+          "reconnaissance": {
+            "modal_value": 0.113234,
+            "modal_share": 0.005525,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      },
+      "all_sessions": {
+        "n_nonmissing": 1288,
+        "missing_pct": 58.757605,
+        "kruskal_epsilon2": 0.785637,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.762731,
+          0.810368
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.457428,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 0.00064,
+          "correct_share_of_all": 0.0,
+          "accuracy_when_covered": 0.0
+        },
+        "missingness_vs_category": {
+          "chi2": 1183.155388,
+          "p": 0.0,
+          "cramers_v": 0.61551
+        },
+        "l1": {
+          "benign": {
+            "modal_value": null,
+            "modal_share": 0.305195,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": null,
+            "modal_share": 0.5,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.919786
+          },
+          "brute_force": {
+            "modal_value": null,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": null
+          },
+          "lateral_movement": {
+            "modal_value": null,
+            "modal_share": 0.29562,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": null,
+            "modal_share": 0.33101,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.140625
+          },
+          "reconnaissance": {
+            "modal_value": null,
+            "modal_share": 0.512129,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      }
+    },
+    "inter_input_std_s": {
+      "group": "C2",
+      "logged_in": {
+        "n_nonmissing": 1168,
+        "missing_pct": 22.029372,
+        "kruskal_epsilon2": 0.404832,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.356879,
+          0.45289
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.519233,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 0.004005,
+          "correct_share_of_all": 0.004005,
+          "accuracy_when_covered": 1.0
+        },
+        "missingness_vs_category": {
+          "chi2": 1066.250932,
+          "p": 0.0,
+          "cramers_v": 0.843672
+        },
+        "l1": {
+          "benign": {
+            "modal_value": null,
+            "modal_share": 0.013084,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": null,
+            "modal_share": 0.491979,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.031579
+          },
+          "brute_force": {
+            "modal_value": null,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": null
+          },
+          "lateral_movement": {
+            "modal_value": null,
+            "modal_share": 0.112821,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": null,
+            "modal_share": 0.005208,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.141361
+          },
+          "reconnaissance": {
+            "modal_value": 0.009031,
+            "modal_share": 0.005525,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      },
+      "all_sessions": {
+        "n_nonmissing": 1168,
+        "missing_pct": 62.600064,
+        "kruskal_epsilon2": 0.404832,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.364786,
+          0.448427
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.368374,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 0.001921,
+          "correct_share_of_all": 0.001281,
+          "accuracy_when_covered": 0.666667
+        },
+        "missingness_vs_category": {
+          "chi2": 1170.333256,
+          "p": 0.0,
+          "cramers_v": 0.612165
+        },
+        "l1": {
+          "benign": {
+            "modal_value": null,
+            "modal_share": 0.314286,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": null,
+            "modal_share": 0.745989,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.031579
+          },
+          "brute_force": {
+            "modal_value": null,
+            "modal_share": 1.0,
+            "near_constant": true,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": null
+          },
+          "lateral_movement": {
+            "modal_value": null,
+            "modal_share": 0.368613,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": null,
+            "modal_share": 0.334495,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.141361
+          },
+          "reconnaissance": {
+            "modal_value": null,
+            "modal_share": 0.512129,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          }
+        }
+      }
+    },
+    "tty_output_bytes": {
+      "group": "core",
+      "logged_in": {
+        "n_nonmissing": 1495,
+        "missing_pct": 0.200267,
+        "kruskal_epsilon2": 0.596382,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.560662,
+          0.628446
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.514323,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 0.485981,
+          "correct_share_of_all": 0.321762,
+          "accuracy_when_covered": 0.662088
+        },
+        "missingness_vs_category": {
+          "chi2": 21.07429,
+          "p": 0.000784,
+          "cramers_v": 0.11861
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 1827.0,
+            "modal_share": 0.007477,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 554.0,
+            "modal_share": 0.02139,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 314.0,
+            "modal_share": 0.144231,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.836538
+          },
+          "lateral_movement": {
+            "modal_value": 885.0,
+            "modal_share": 0.020513,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 1944.0,
+            "modal_share": 0.020833,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 1026.0,
+            "modal_share": 0.01105,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.248619
+          }
+        }
+      },
+      "all_sessions": {
+        "n_nonmissing": 3120,
+        "missing_pct": 0.096061,
+        "kruskal_epsilon2": 0.27617,
+        "kruskal_p": 0.0,
+        "epsilon2_ci95_group_bootstrap": [
+          0.258155,
+          0.297184
+        ],
+        "single_feature_balanced_accuracy_groupkfold": 0.36658,
+        "chance_balanced_accuracy": 0.166667,
+        "exact_value_lookup": {
+          "covered_share": 0.755043,
+          "correct_share_of_all": 0.42235,
+          "accuracy_when_covered": 0.559372
+        },
+        "missingness_vs_category": {
+          "chi2": 22.072005,
+          "p": 0.000507,
+          "cramers_v": 0.084069
+        },
+        "l1": {
+          "benign": {
+            "modal_value": 0.0,
+            "modal_share": 0.305195,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "botnet": {
+            "modal_value": 0.0,
+            "modal_share": 0.5,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "brute_force": {
+            "modal_value": 0.0,
+            "modal_share": 0.801337,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "lateral_movement": {
+            "modal_value": 0.0,
+            "modal_share": 0.288321,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "privilege_escalation": {
+            "modal_value": 0.0,
+            "modal_share": 0.33101,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.0
+          },
+          "reconnaissance": {
+            "modal_value": 0.0,
+            "modal_share": 0.512129,
+            "near_constant": false,
+            "modal_unique_to_category": false,
+            "share_outside_other_categories_range": 0.121294
+          }
+        }
+      }
+    }
+  },
+  "multi_feature_context": {
+    "all_13_features_rf_balanced_accuracy_logged_in": 0.970706,
+    "core_6_rf_balanced_accuracy_logged_in": 0.964868,
+    "without_C2_C3_rf_balanced_accuracy_logged_in": 0.972203,
+    "chance": 0.166667
+  },
+  "correlation_high_pairs_abs_ge_0.8": [
+    [
+      "session_duration_s",
+      "inter_input_mean_s",
+      0.864895
+    ],
+    [
+      "input_line_count",
+      "unique_command_names",
+      0.962784
+    ]
+  ],
+  "L3": {
+    "features_invariant_to_identifiers_credentials_labels": true,
+    "extractor_source_mentions": {
+      "manifest": true,
+      "terminal_output": true,
+      "attack_cat": false,
+      "label_assignments": false,
+      "profile": true
+    },
+    "reserved_test_marker_sessions": 0,
+    "session_id_used_as_feature": false,
+    "note": "extractor reads only --input logs and the specification (tests/test_extract_features_v2.py; extractor_v2 validation audit hook)"
+  },
+  "L4": {
+    "session_ids_unique": true,
+    "duplicate_records_removed_by_extractor": 0,
+    "extracted_sessions_excluded_not_in_training_labels": 74,
+    "max_sessions_per_interaction": 6,
+    "logged_in_sessions_per_interaction_max": 1,
+    "logged_in_identical_feature_vectors_share": 0.065421,
+    "logged_in_identical_recorded_input_sequence_share": 0.287717,
+    "logged_in_sequence_shared_across_categories_share": 0.0,
+    "independence_unit": "source_index (generated interaction); all CV GroupKFold by interaction"
+  },
+  "L5": {
+    "exact_input_sequence_lookup": {
+      "covered_share": 0.271028,
+      "correct_share_of_all": 0.271028,
+      "accuracy_when_covered": 1.0
+    },
+    "command_name_set_lookup": {
+      "covered_share": 0.608144,
+      "correct_share_of_all": 0.608144,
+      "accuracy_when_covered": 1.0
+    },
+    "first_command_name_lookup": {
+      "covered_share": 1.0,
+      "correct_share_of_all": 0.841789,
+      "accuracy_when_covered": 0.841789
+    },
+    "failed_sessions_per_interaction_by_category": {
+      "benign": {
+        "mean": 0.439252,
+        "min": 0,
+        "max": 1
+      },
+      "botnet": {
+        "mean": 0.989418,
+        "min": 0,
+        "max": 2
+      },
+      "brute_force": {
+        "mean": 4.033654,
+        "min": 3,
+        "max": 5
+      },
+      "lateral_movement": {
+        "mean": 0.405128,
+        "min": 0,
+        "max": 1
+      },
+      "privilege_escalation": {
+        "mean": 0.494792,
+        "min": 0,
+        "max": 1
+      },
+      "reconnaissance": {
+        "mean": 1.049724,
+        "min": 0,
+        "max": 2
+      }
+    },
+    "profile_failed_attempts_setting": {
+      "benign": [
+        0,
+        1
+      ],
+      "reconnaissance": [
+        0,
+        2
+      ],
+      "brute_force": [
+        3,
+        5
+      ],
+      "botnet": [
+        0,
+        2
+      ],
+      "privilege_escalation": [
+        0,
+        1
+      ],
+      "lateral_movement": [
+        0,
+        1
+      ],
+      "exfiltration": [
+        0,
+        1
+      ]
+    }
+  },
+  "L6": {
+    "by_category": {
+      "benign": {
+        "sessions": 535,
+        "manifest_lines": 2767,
+        "lines_missing_from_cowrie": 0,
+        "missing_share": 0.0,
+        "sessions_with_loss_share": 0.0,
+        "extra_lines": 0
+      },
+      "botnet": {
+        "sessions": 187,
+        "manifest_lines": 1101,
+        "lines_missing_from_cowrie": 482,
+        "missing_share": 0.437784,
+        "sessions_with_loss_share": 0.823529,
+        "extra_lines": 0
+      },
+      "brute_force": {
+        "sessions": 208,
+        "manifest_lines": 108,
+        "lines_missing_from_cowrie": 0,
+        "missing_share": 0.0,
+        "sessions_with_loss_share": 0.0,
+        "extra_lines": 0
+      },
+      "lateral_movement": {
+        "sessions": 195,
+        "manifest_lines": 768,
+        "lines_missing_from_cowrie": 59,
+        "missing_share": 0.076823,
+        "sessions_with_loss_share": 0.261538,
+        "extra_lines": 0
+      },
+      "privilege_escalation": {
+        "sessions": 192,
+        "manifest_lines": 1065,
+        "lines_missing_from_cowrie": 0,
+        "missing_share": 0.0,
+        "sessions_with_loss_share": 0.0,
+        "extra_lines": 0
+      },
+      "reconnaissance": {
+        "sessions": 181,
+        "manifest_lines": 1068,
+        "lines_missing_from_cowrie": 0,
+        "missing_share": 0.0,
+        "sessions_with_loss_share": 0.0,
+        "extra_lines": 0
+      }
+    },
+    "loss_vs_category_chi2_p": 0.0,
+    "loss_vs_category_cramers_v": 0.795972,
+    "tty_vs_input_bytes_spearman": 0.496706
+  },
+  "L7": {
+    "note": "No real-attacker deployment logs exist; L7 compares the training run with the generator-2.1 confirmation (14 logged-in sessions) descriptively. Not used for selection.",
+    "feature_medians": {
+      "login_success": {
+        "train_logged_in": 1.0,
+        "gen21_logged_in": 1.0,
+        "train_missing_pct": 0.0,
+        "gen21_missing_pct": 0.0
+      },
+      "login_failed_count": {
+        "train_logged_in": 0.0,
+        "gen21_logged_in": 0.0,
+        "train_missing_pct": 0.0,
+        "gen21_missing_pct": 0.0
+      },
+      "session_duration_s": {
+        "train_logged_in": 1.8,
+        "gen21_logged_in": 16.45,
+        "train_missing_pct": 0.0,
+        "gen21_missing_pct": 0.0
+      },
+      "input_line_count": {
+        "train_logged_in": 5.0,
+        "gen21_logged_in": 5.0,
+        "train_missing_pct": 0.0,
+        "gen21_missing_pct": 0.0
+      },
+      "input_bytes_total": {
+        "train_logged_in": 49.0,
+        "gen21_logged_in": 59.5,
+        "train_missing_pct": 0.0,
+        "gen21_missing_pct": 0.0
+      },
+      "input_line_max_bytes": {
+        "train_logged_in": 20.0,
+        "gen21_logged_in": 31.5,
+        "train_missing_pct": 6.675567,
+        "gen21_missing_pct": 14.285714
+      },
+      "unique_command_names": {
+        "train_logged_in": 4.0,
+        "gen21_logged_in": 4.5,
+        "train_missing_pct": 0.0,
+        "gen21_missing_pct": 0.0
+      },
+      "shell_operator_lines": {
+        "train_logged_in": 0.0,
+        "gen21_logged_in": 0.0,
+        "train_missing_pct": 0.0,
+        "gen21_missing_pct": 0.0
+      },
+      "download_command_lines": {
+        "train_logged_in": 0.0,
+        "gen21_logged_in": 0.0,
+        "train_missing_pct": 0.0,
+        "gen21_missing_pct": 0.0
+      },
+      "time_to_first_input_s": {
+        "train_logged_in": 0.099667,
+        "gen21_logged_in": 2.234554,
+        "train_missing_pct": 6.675567,
+        "gen21_missing_pct": 14.285714
+      },
+      "inter_input_mean_s": {
+        "train_logged_in": 0.383216,
+        "gen21_logged_in": 2.662353,
+        "train_missing_pct": 14.018692,
+        "gen21_missing_pct": 14.285714
+      },
+      "inter_input_std_s": {
+        "train_logged_in": 0.109211,
+        "gen21_logged_in": 1.421624,
+        "train_missing_pct": 22.029372,
+        "gen21_missing_pct": 21.428571
+      },
+      "tty_output_bytes": {
+        "train_logged_in": 1118.0,
+        "gen21_logged_in": 862.0,
+        "train_missing_pct": 0.200267,
+        "gen21_missing_pct": 0.0
+      }
+    },
+    "failed_login_duration_median": {
+      "train": 120.0,
+      "gen21": 1.1
+    },
+    "downloads": {
+      "train_url_download_events": 8,
+      "gen21_url_download_events": 0
+    }
+  },
+  "conditional_groups": {
+    "C1": {
+      "spearman_login_failed_vs_login_success_all": -1.0,
+      "login_failed_count_values_logged_in": {
+        "0": 1498
+      },
+      "login_failed_count_values_failed": {
+        "1": 1625
+      },
+      "equals_one_minus_login_success_share": 1.0
+    },
+    "C2": {
+      "time_to_first_cv_logged_in": 0.700086,
+      "time_to_first_median_by_category": {
+        "benign": 0.099482,
+        "botnet": 0.099717,
+        "brute_force": 0.099578,
+        "lateral_movement": 0.100151,
+        "privilege_escalation": 0.100258,
+        "reconnaissance": 0.099596
+      },
+      "generator20_post_shell_wait_s": 0.0625,
+      "inter_mean_vs_profile_delay_mid_spearman": 0.882232,
+      "profile_delay_range": {
+        "benign": [
+          2.0,
+          7.0
+        ],
+        "reconnaissance": [
+          0.5,
+          3.0
+        ],
+        "brute_force": [
+          0.1,
+          0.8
+        ],
+        "botnet": [
+          0.1,
+          1.0
+        ],
+        "privilege_escalation": [
+          1.0,
+          5.0
+        ],
+        "lateral_movement": [
+          1.0,
+          4.0
+        ],
+        "exfiltration": [
+          0.5,
+          3.0
+        ]
+      },
+      "inter_mean_median_by_category_x_speed8": {
+        "benign": 4.473491,
+        "botnet": 0.599566,
+        "brute_force": null,
+        "lateral_movement": 2.451614,
+        "privilege_escalation": 3.137673,
+        "reconnaissance": 1.765776
+      }
+    },
+    "C3": {
+      "share_within_1s_of_120_by_category_all": {
+        "benign": 0.266234,
+        "botnet": 0.42246,
+        "brute_force": 0.702961,
+        "lateral_movement": 0.251825,
+        "privilege_escalation": 0.303136,
+        "reconnaissance": 0.466307
+      },
+      "share_within_1s_of_180_all": 0.0,
+      "failed_session_duration_median_by_category": {
+        "benign": 120.0,
+        "botnet": 120.0,
+        "brute_force": 120.0,
+        "lateral_movement": 120.0,
+        "privilege_escalation": 120.0,
+        "reconnaissance": 120.0
+      },
+      "logged_in_duration_residual_after_line_count_epsilon2": 0.63566
+    },
+    "C4": {
+      "shell_operator_lines": {
+        "benign": 0.0,
+        "botnet": 0.0,
+        "brute_force": 0.0,
+        "lateral_movement": 0.0,
+        "privilege_escalation": 0.848958,
+        "reconnaissance": 0.0
+      },
+      "download_command_lines": {
+        "benign": 0.0,
+        "botnet": 1.0,
+        "brute_force": 0.0,
+        "lateral_movement": 0.0,
+        "privilege_escalation": 0.0,
+        "reconnaissance": 0.0
+      }
+    },
+    "tty_output_bytes": {
+      "median_by_category": {
+        "benign": 1374.0,
+        "botnet": 602.5,
+        "brute_force": 341.0,
+        "lateral_movement": 848.0,
+        "privilege_escalation": 1472.5,
+        "reconnaissance": 1739.0
+      },
+      "spearman_with_input_bytes": 0.496706,
+      "within_category_iqr": {
+        "benign": 938.5,
+        "botnet": 274.5,
+        "brute_force": 36.0,
+        "lateral_movement": 349.5,
+        "privilege_escalation": 756.25,
+        "reconnaissance": 1992.0
+      },
+      "residual_after_input_bytes_epsilon2": 0.420389
+    }
+  },
+  "timestamp_anomalies": {
+    "train_v1": {
+      "logged_in_sessions_with_input": 1537,
+      "first_input_before_login": [
+        {
+          "session": "05d209c87f5b",
+          "lag_s": -0.016739,
+          "category": "reconnaissance",
+          "first_command": "whoami"
+        },
+        {
+          "session": "9f61c9c8a900",
+          "lag_s": -0.319047,
+          "category": "benign",
+          "first_command": "who"
+        }
+      ],
+      "first_input_before_session_params": 1
+    },
+    "eval_v1_data_quality_only": {
+      "logged_in_sessions_with_input": 600,
+      "first_input_before_login": [
+        {
+          "session": "42751448ddb0",
+          "lag_s": -0.310329,
+          "category": "exfiltration",
+          "first_command": "find / -name '*.sql' 2>/dev/null"
+        },
+        {
+          "session": "cac085b9da31",
+          "lag_s": -0.015264,
+          "category": "benign",
+          "first_command": "uptime"
+        }
+      ],
+      "first_input_before_session_params": 2
+    },
+    "generator21_confirmation": {
+      "logged_in_sessions_with_input": 14,
+      "first_input_before_login": [],
+      "first_input_before_session_params": 0
+    },
+    "time_to_first_epsilon2_with_vs_without_anomalies": {
+      "with": 0.002923,
+      "without": 0.002904,
+      "excluded": 2
+    }
+  },
+  "threshold_sensitivity": {
+    "eps>=0.06|BA>=chance+0.1": {
+      "login_success": "below",
+      "login_failed_count": "below",
+      "session_duration_s": "flag",
+      "input_line_count": "flag",
+      "input_bytes_total": "flag",
+      "input_line_max_bytes": "flag",
+      "unique_command_names": "flag",
+      "shell_operator_lines": "flag",
+      "download_command_lines": "flag",
+      "time_to_first_input_s": "flag",
+      "inter_input_mean_s": "flag",
+      "inter_input_std_s": "flag",
+      "tty_output_bytes": "flag"
+    },
+    "eps>=0.06|BA>=chance+0.2": {
+      "login_success": "below",
+      "login_failed_count": "below",
+      "session_duration_s": "flag",
+      "input_line_count": "flag",
+      "input_bytes_total": "flag",
+      "input_line_max_bytes": "flag",
+      "unique_command_names": "flag",
+      "shell_operator_lines": "flag",
+      "download_command_lines": "flag",
+      "time_to_first_input_s": "flag",
+      "inter_input_mean_s": "flag",
+      "inter_input_std_s": "flag",
+      "tty_output_bytes": "flag"
+    },
+    "eps>=0.06|BA>=chance+0.35": {
+      "login_success": "below",
+      "login_failed_count": "below",
+      "session_duration_s": "flag",
+      "input_line_count": "flag",
+      "input_bytes_total": "flag",
+      "input_line_max_bytes": "flag",
+      "unique_command_names": "flag",
+      "shell_operator_lines": "flag",
+      "download_command_lines": "flag",
+      "time_to_first_input_s": "flag",
+      "inter_input_mean_s": "flag",
+      "inter_input_std_s": "flag",
+      "tty_output_bytes": "flag"
+    },
+    "eps>=0.14|BA>=chance+0.1": {
+      "login_success": "below",
+      "login_failed_count": "below",
+      "session_duration_s": "flag",
+      "input_line_count": "flag",
+      "input_bytes_total": "flag",
+      "input_line_max_bytes": "flag",
+      "unique_command_names": "flag",
+      "shell_operator_lines": "flag",
+      "download_command_lines": "flag",
+      "time_to_first_input_s": "flag",
+      "inter_input_mean_s": "flag",
+      "inter_input_std_s": "flag",
+      "tty_output_bytes": "flag"
+    },
+    "eps>=0.14|BA>=chance+0.2": {
+      "login_success": "below",
+      "login_failed_count": "below",
+      "session_duration_s": "flag",
+      "input_line_count": "flag",
+      "input_bytes_total": "flag",
+      "input_line_max_bytes": "flag",
+      "unique_command_names": "flag",
+      "shell_operator_lines": "flag",
+      "download_command_lines": "flag",
+      "time_to_first_input_s": "flag",
+      "inter_input_mean_s": "flag",
+      "inter_input_std_s": "flag",
+      "tty_output_bytes": "flag"
+    },
+    "eps>=0.14|BA>=chance+0.35": {
+      "login_success": "below",
+      "login_failed_count": "below",
+      "session_duration_s": "flag",
+      "input_line_count": "flag",
+      "input_bytes_total": "flag",
+      "input_line_max_bytes": "flag",
+      "unique_command_names": "flag",
+      "shell_operator_lines": "flag",
+      "download_command_lines": "flag",
+      "time_to_first_input_s": "flag",
+      "inter_input_mean_s": "flag",
+      "inter_input_std_s": "flag",
+      "tty_output_bytes": "flag"
+    },
+    "eps>=0.26|BA>=chance+0.1": {
+      "login_success": "below",
+      "login_failed_count": "below",
+      "session_duration_s": "flag",
+      "input_line_count": "flag",
+      "input_bytes_total": "flag",
+      "input_line_max_bytes": "flag",
+      "unique_command_names": "flag",
+      "shell_operator_lines": "flag",
+      "download_command_lines": "flag",
+      "time_to_first_input_s": "flag",
+      "inter_input_mean_s": "flag",
+      "inter_input_std_s": "flag",
+      "tty_output_bytes": "flag"
+    },
+    "eps>=0.26|BA>=chance+0.2": {
+      "login_success": "below",
+      "login_failed_count": "below",
+      "session_duration_s": "flag",
+      "input_line_count": "flag",
+      "input_bytes_total": "flag",
+      "input_line_max_bytes": "flag",
+      "unique_command_names": "flag",
+      "shell_operator_lines": "flag",
+      "download_command_lines": "flag",
+      "time_to_first_input_s": "flag",
+      "inter_input_mean_s": "flag",
+      "inter_input_std_s": "flag",
+      "tty_output_bytes": "flag"
+    },
+    "eps>=0.26|BA>=chance+0.35": {
+      "login_success": "below",
+      "login_failed_count": "below",
+      "session_duration_s": "flag",
+      "input_line_count": "flag",
+      "input_bytes_total": "flag",
+      "input_line_max_bytes": "flag",
+      "unique_command_names": "flag",
+      "shell_operator_lines": "flag",
+      "download_command_lines": "flag",
+      "time_to_first_input_s": "flag",
+      "inter_input_mean_s": "flag",
+      "inter_input_std_s": "flag",
+      "tty_output_bytes": "flag"
+    },
+    "eps>=0.5|BA>=chance+0.1": {
+      "login_success": "below",
+      "login_failed_count": "below",
+      "session_duration_s": "flag",
+      "input_line_count": "flag",
+      "input_bytes_total": "flag",
+      "input_line_max_bytes": "flag",
+      "unique_command_names": "flag",
+      "shell_operator_lines": "flag",
+      "download_command_lines": "flag",
+      "time_to_first_input_s": "flag",
+      "inter_input_mean_s": "flag",
+      "inter_input_std_s": "flag",
+      "tty_output_bytes": "flag"
+    },
+    "eps>=0.5|BA>=chance+0.2": {
+      "login_success": "below",
+      "login_failed_count": "below",
+      "session_duration_s": "flag",
+      "input_line_count": "flag",
+      "input_bytes_total": "flag",
+      "input_line_max_bytes": "flag",
+      "unique_command_names": "flag",
+      "shell_operator_lines": "flag",
+      "download_command_lines": "flag",
+      "time_to_first_input_s": "flag",
+      "inter_input_mean_s": "flag",
+      "inter_input_std_s": "flag",
+      "tty_output_bytes": "flag"
+    },
+    "eps>=0.5|BA>=chance+0.35": {
+      "login_success": "below",
+      "login_failed_count": "below",
+      "session_duration_s": "flag",
+      "input_line_count": "flag",
+      "input_bytes_total": "below",
+      "input_line_max_bytes": "flag",
+      "unique_command_names": "flag",
+      "shell_operator_lines": "flag",
+      "download_command_lines": "flag",
+      "time_to_first_input_s": "flag",
+      "inter_input_mean_s": "flag",
+      "inter_input_std_s": "flag",
+      "tty_output_bytes": "flag"
+    }
+  }
+}

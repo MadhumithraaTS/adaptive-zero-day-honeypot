@@ -1,0 +1,115 @@
+# Isolated Cowrie lab (2026-11-10). The previous file is kept in backups/pre_isolation_20261110/.
+# - cowrie: attached only to an internal network, so it has no route to the internet, the host or other networks.
+# - ssh-relay: the same pinned image running the attributing relay (Task 26A); published on 127.0.0.1 only, plus a
+#   demo listener on the isolated cowrie_demo_ingress network (backup: backups/pre_client_attribution_20261111T171555Z/).
+# Both images are pinned by digest and never pulled. See reports/cowrie_security_isolation_audit/report.md.
+
+x-cowrie-image: &cowrie_image cowrie/cowrie@sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a
+
+x-hardening: &hardening
+  pull_policy: never
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+  read_only: true
+  tmpfs: ["/tmp"]
+  restart: unless-stopped
+
+x-demo-client: &demo_client
+  <<: *hardening
+  image: *cowrie_image
+  restart: "no"
+  pids_limit: 32
+  mem_limit: 128m
+  entrypoint: ["/cowrie/cowrie-env/bin/python3"]
+  command: ["-c", "import signal, sys; signal.signal(signal.SIGTERM, lambda *a: sys.exit(0)); signal.pause()"]
+  sysctls:
+    net.ipv4.ip_forward: "0"
+    net.ipv4.conf.all.forwarding: "0"
+    net.ipv4.conf.default.forwarding: "0"
+  volumes:
+    - ./attributing_relay/demo_client.py:/opt/demo/demo_client.py:ro
+
+services:
+  cowrie:
+    <<: *hardening
+    image: *cowrie_image
+    container_name: cowrie-project
+    pids_limit: 256
+    mem_limit: 512m
+    volumes:
+      - ./userdb.txt:/cowrie/cowrie-git/etc/userdb.txt:ro
+    networks: [cowrie_internal]
+
+  ssh-relay:
+    <<: *hardening
+    image: *cowrie_image
+    container_name: cowrie-ssh-relay
+    pids_limit: 64
+    mem_limit: 128m
+    # Attributing relay (Task 26A): two explicitly bound listeners, signed relay->Cowrie mapping records.
+    # Published listener 172.21.0.2:2222 (127.0.0.1:2223, peer is the Docker proxy, never attributable);
+    # demo listener 10.250.25.2:2222 on the isolated demo ingress only. See attributing_relay/relay_config.json.
+    entrypoint: ["/cowrie/cowrie-env/bin/python3"]
+    command: ["/opt/relay/attributing_relay.py", "--config", "/opt/relay/relay_config.json"]
+    volumes:
+      - ./attributing_relay/attributing_relay.py:/opt/relay/attributing_relay.py:ro
+      - ./attributing_relay/relay_config.json:/opt/relay/relay_config.json:ro
+      - ./attributing_relay/secrets/relay_mapping_ed25519.pem:/run/relay/relay_mapping_ed25519.pem:ro
+      - ./attributing_relay/records:/var/relay_records
+    # Application-level TCP proxy only: kernel IP forwarding is not needed (was 1; Task 25C-1/25C-3).
+    # arp_ignore/arp_announce: answer ARP only for addresses on the receiving interface (weak-host hardening, Task 26A).
+    sysctls:
+      net.ipv4.ip_forward: "0"
+      net.ipv4.conf.all.forwarding: "0"
+      net.ipv4.conf.default.forwarding: "0"
+      net.ipv4.conf.all.arp_ignore: "1"
+      net.ipv4.conf.all.arp_announce: "2"
+    ports:
+      - "127.0.0.1:2223:2222"
+    networks:
+      cowrie_internal: {}
+      relay_frontend: {}
+      demo_ingress:
+        ipv4_address: 10.250.25.2
+        mac_address: "02:fa:19:00:00:02"
+    depends_on: [cowrie]
+
+  # Demo clients (Task 26A): idle containers on the demo ingress only; sessions are started with `docker exec`.
+  # They mount only demo_client.py (never the relay key). The control client is permanently excluded from enforcement.
+  demo-test-client:
+    <<: *demo_client
+    container_name: cowrie-demo-test-client
+    networks:
+      demo_ingress:
+        ipv4_address: 10.250.25.3
+        mac_address: "02:fa:19:00:00:03"
+
+  demo-control-client:
+    <<: *demo_client
+    container_name: cowrie-demo-control-client
+    networks:
+      demo_ingress:
+        ipv4_address: 10.250.25.4
+        mac_address: "02:fa:19:00:00:04"
+
+networks:
+  cowrie_internal:
+    internal: true
+    # No gateway address on the bridge, so Cowrie cannot reach Docker Desktop VM services (rpcbind 111, statd)
+    # via 172.22.0.1. Relay <-> Cowrie traffic is bridged at layer 2 and is unaffected.
+    # Engine >= 28 only; requires internal: true. See reports/cowrie_gateway_remediation/report.md.
+    driver_opts:
+      com.docker.network.bridge.gateway_mode_ipv4: isolated
+  relay_frontend: {}
+  # Isolated demo ingress (Task 25B plan): relay .2, test client .3, control client .4; .1 is never assigned.
+  # internal + isolated gateway mode: no route out, no gateway address on the bridge, no IPv6.
+  demo_ingress:
+    name: cowrie_demo_ingress
+    internal: true
+    enable_ipv6: false
+    driver_opts:
+      com.docker.network.bridge.gateway_mode_ipv4: isolated
+    ipam:
+      config:
+        - subnet: 10.250.25.0/28
+          ip_range: 10.250.25.8/29

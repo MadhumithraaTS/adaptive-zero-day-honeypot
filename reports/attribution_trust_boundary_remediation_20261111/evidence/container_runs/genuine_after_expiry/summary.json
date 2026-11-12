@@ -1,0 +1,104 @@
+{
+  "isolation": {
+    "in_container": true,
+    "uid": 999,
+    "forbidden_paths_reachable": [],
+    "private_key_files_readable": [],
+    "network_interfaces": [
+      "lo"
+    ],
+    "scan_roots": [
+      "/opt/project",
+      "/work/input"
+    ],
+    "ok": true
+  },
+  "attribution_config": "a89621dc856ea56635018f013a5b420f5f7ed481563c6b05d76f4cb5c04a58e0",
+  "attribution_schema": "threat-attribution-config-3",
+  "policy": "2.2.0-validation",
+  "policy_schema": "2.1",
+  "result_key_status": "provisioned",
+  "audit_chain": {
+    "ok": true,
+    "index": null,
+    "reason": "chain intact",
+    "entries": 5,
+    "last_hash": "fc6dda199fe5423494a16ff5deababbbc61ea11228faf0e7891cefa0eb0ffb18"
+  },
+  "sessions": {
+    "9441bcce555c": {
+      "tier": "abstain",
+      "attribution": "unattributed:result_rejected",
+      "failed_gates": [
+        "1_severity_S2_or_higher",
+        "2_interpretation_E2_or_higher_on_an_S2plus_finding",
+        "3_two_distinct_action_indicators",
+        "4_successful_login",
+        "5_attributable_source",
+        "7_verified_configuration_digests"
+      ],
+      "login_basis": null,
+      "subject": null
+    },
+    "acc2bad4a442": {
+      "tier": "abstain",
+      "attribution": "unattributed:result_rejected",
+      "failed_gates": [
+        "1_severity_S2_or_higher",
+        "2_interpretation_E2_or_higher_on_an_S2plus_finding",
+        "3_two_distinct_action_indicators",
+        "4_successful_login",
+        "5_attributable_source",
+        "7_verified_configuration_digests"
+      ],
+      "login_basis": null,
+      "subject": null
+    },
+    "d588636ce120": {
+      "tier": "abstain",
+      "attribution": "unattributed:result_rejected",
+      "failed_gates": [
+        "1_severity_S2_or_higher",
+        "2_interpretation_E2_or_higher_on_an_S2plus_finding",
+        "3_two_distinct_action_indicators",
+        "4_successful_login",
+        "5_attributable_source",
+        "7_verified_configuration_digests"
+      ],
+      "login_basis": null,
+      "subject": null
+    },
+    "3eede5e19e25": {
+      "tier": "review",
+      "attribution": "unattributed:result_rejected",
+      "failed_gates": [
+        "4_successful_login",
+        "5_attributable_source",
+        "7_verified_configuration_digests"
+      ],
+      "login_basis": null,
+      "subject": null
+    },
+    "4542a85f37ec": {
+      "tier": "review",
+      "attribution": "unattributed:result_rejected",
+      "failed_gates": [
+        "4_successful_login",
+        "5_attributable_source",
+        "7_verified_configuration_digests"
+      ],
+      "login_basis": null,
+      "subject": null
+    }
+  },
+  "attribution_results": {
+    "accepted": [],
+    "rejected": [
+      {
+        "result_id": "task26c-validation-genuine",
+        "reason": "result expired"
+      }
+    ],
+    "conflicts": []
+  }
+}

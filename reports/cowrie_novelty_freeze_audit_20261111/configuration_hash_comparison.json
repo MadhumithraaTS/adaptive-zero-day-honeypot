@@ -1,0 +1,142 @@
+{
+  "files": [
+    {
+      "path": "configs/model_features_v2_frozen.json",
+      "what": "clustering feature configuration 1.0.0 (canonical path, restored)",
+      "applies_to": "Task 16 freeze; Task 17 AE+K-Means/DEC revalidation (asserted by revalidate_v2.py, recorded in models/dataset_v2_revalidation_20261111/*/config.json); spec draft.4 'authoritative' pointer",
+      "sha256_before_task19a": "18a4ab2be8d0d71148212e3306c9cf318075eac63c999e24cefb39564c84d299",
+      "sha256_after": "8ae17612eabbbc46240aa1011aff8d6e3617df85380b3daa523201675fc3c288",
+      "version": "1.0.0",
+      "model_input_features": [
+        "login_success",
+        "session_duration_s",
+        "input_line_count",
+        "shell_operator_lines",
+        "time_to_first_input_s",
+        "inter_input_mean_s",
+        "inter_input_std_s",
+        "tty_output_bytes"
+      ]
+    },
+    {
+      "path": "configs/model_features_v2_frozen_v1.1.0.json",
+      "what": "clustering feature configuration 1.1.0 (versioned revision)",
+      "applies_to": "Task 18 novelty baseline (hash recorded in configs/cowrie_novelty_baseline_v1.json); input_bytes_total inactive; same 8 inputs",
+      "sha256_before_task19a": null,
+      "sha256_after": "18a4ab2be8d0d71148212e3306c9cf318075eac63c999e24cefb39564c84d299",
+      "version": "1.1.0",
+      "model_input_features": [
+        "login_success",
+        "session_duration_s",
+        "input_line_count",
+        "shell_operator_lines",
+        "time_to_first_input_s",
+        "inter_input_mean_s",
+        "inter_input_std_s",
+        "tty_output_bytes"
+      ]
+    },
+    {
+      "path": "reports/dataset_v2_feature_freeze_20261111/model_features_v2_frozen.json",
+      "what": "archived 1.0.0 (Task 16 copy)",
+      "applies_to": "restore source",
+      "sha256_before_task19a": "8ae17612eabbbc46240aa1011aff8d6e3617df85380b3daa523201675fc3c288",
+      "sha256_after": "8ae17612eabbbc46240aa1011aff8d6e3617df85380b3daa523201675fc3c288",
+      "version": "1.0.0",
+      "model_input_features": [
+        "login_success",
+        "session_duration_s",
+        "input_line_count",
+        "shell_operator_lines",
+        "time_to_first_input_s",
+        "inter_input_mean_s",
+        "inter_input_std_s",
+        "tty_output_bytes"
+      ]
+    },
+    {
+      "path": "reports/cowrie_novelty_baseline_20261111/config/model_features_v2_frozen_v1.1.0.json",
+      "what": "archived 1.1.0 (Task 18 copy)",
+      "applies_to": "reference copy",
+      "sha256_before_task19a": "18a4ab2be8d0d71148212e3306c9cf318075eac63c999e24cefb39564c84d299",
+      "sha256_after": "18a4ab2be8d0d71148212e3306c9cf318075eac63c999e24cefb39564c84d299",
+      "version": "1.1.0",
+      "model_input_features": [
+        "login_success",
+        "session_duration_s",
+        "input_line_count",
+        "shell_operator_lines",
+        "time_to_first_input_s",
+        "inter_input_mean_s",
+        "inter_input_std_s",
+        "tty_output_bytes"
+      ]
+    },
+    {
+      "path": "configs/cowrie_novelty_baseline_v1.json",
+      "what": "novelty configuration (provisional, separate from both)",
+      "applies_to": "Task 18; unchanged by Task 19A",
+      "sha256_before_task19a": "bd3a399ede44d17d31eca47d8c5aa506c2b5423c58c22db066d7c6af158ef6f3",
+      "sha256_after": "bd3a399ede44d17d31eca47d8c5aa506c2b5423c58c22db066d7c6af158ef6f3",
+      "version": "1.0.0-provisional",
+      "novelty_features": [
+        "session_duration_s",
+        "input_line_count",
+        "shell_operator_lines",
+        "time_to_first_input_s",
+        "inter_input_mean_s",
+        "inter_input_std_s",
+        "tty_output_bytes"
+      ]
+    },
+    {
+      "path": "configs/feature_spec_v2.json",
+      "what": "feature specification 2.0.0-draft.3",
+      "applies_to": "extractor contract; unchanged",
+      "sha256_before_task19a": "9401b355a1bfc48a14da32efba9ad4d5992f55233da3437a0715690d76f8fb1a",
+      "sha256_after": "9401b355a1bfc48a14da32efba9ad4d5992f55233da3437a0715690d76f8fb1a",
+      "version": "2.0.0-draft.3"
+    },
+    {
+      "path": "configs/feature_spec_v2_draft4.json",
+      "what": "feature specification 2.0.0-draft.4",
+      "applies_to": "eligibility revision; unchanged",
+      "sha256_before_task19a": "7f444dd1b335865ee37c0ecc25905e474c39c71aeba04e6931d4af51380aeadf",
+      "sha256_after": "7f444dd1b335865ee37c0ecc25905e474c39c71aeba04e6931d4af51380aeadf",
+      "version": "2.0.0-draft.4"
+    },
+    {
+      "path": "scripts/extract_features_v2.py",
+      "what": "feature extractor",
+      "applies_to": "unchanged",
+      "sha256_before_task19a": "c0fdc684483e9953db2b6240994daa2b712d9782275eeebff9a38d57344cd5f2",
+      "sha256_after": "c0fdc684483e9953db2b6240994daa2b712d9782275eeebff9a38d57344cd5f2"
+    }
+  ],
+  "v1_0_0_vs_v1_1_0": {
+    "model_inputs_identical_and_same_order": true,
+    "status_differences": {
+      "input_bytes_total": [
+        "conditional",
+        "inactive"
+      ]
+    },
+    "extracted_features_13": true
+  },
+  "canonical_now_equals_archived_1_0_0": true,
+  "versioned_1_1_0_equals_task18_copy": true,
+  "unchanged_by_task19a": [
+    "reports/dataset_v2_feature_freeze_20261111/model_features_v2_frozen.json",
+    "reports/cowrie_novelty_baseline_20261111/config/model_features_v2_frozen_v1.1.0.json",
+    "configs/cowrie_novelty_baseline_v1.json",
+    "configs/feature_spec_v2.json",
+    "configs/feature_spec_v2_draft4.json",
+    "scripts/extract_features_v2.py"
+  ],
+  "changed_by_task19a": [
+    "configs/model_features_v2_frozen.json"
+  ],
+  "created_by_task19a": [
+    "configs/model_features_v2_frozen_v1.1.0.json"
+  ]
+}

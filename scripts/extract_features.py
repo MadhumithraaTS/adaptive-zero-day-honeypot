@@ -47,7 +47,7 @@ def _load_sessions(input_file):
     if not os.path.isfile(input_file):
         raise FeatureExtractionError(f"{input_file} does not exist.")
     try:
-        with open(input_file, 'r') as f:
+        with open(input_file, 'r', encoding='utf-8') as f:
             sessions = json.load(f)
     except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
         raise FeatureExtractionError(f"Could not read sessions from {input_file}: {exc}") from exc
@@ -77,14 +77,14 @@ def _write_outputs(features_list, output_file, session_details, details_output):
     try:
         csv_temporary = _temporary_path(output_file)
         temporaries.append(csv_temporary)
-        with open(csv_temporary, 'w', newline='') as f:
+        with open(csv_temporary, 'w', encoding='utf-8', newline='') as f:
             dict_writer = csv.DictWriter(f, fieldnames=features_list[0].keys())
             dict_writer.writeheader()
             dict_writer.writerows(features_list)
         if details_output:
             details_temporary = _temporary_path(details_output)
             temporaries.append(details_temporary)
-            with open(details_temporary, 'w') as f:
+            with open(details_temporary, 'w', encoding='utf-8') as f:
                 json.dump(session_details, f, indent=4)
         os.replace(csv_temporary, output_file)
         if details_output:
@@ -99,7 +99,7 @@ def _write_outputs(features_list, output_file, session_details, details_output):
 
 def _validate_outputs(output_file, details_output, session_ids):
     try:
-        with open(output_file, 'r', newline='') as f:
+        with open(output_file, 'r', encoding='utf-8', newline='') as f:
             reader = csv.DictReader(f)
             header = reader.fieldnames
             csv_ids = [row['session_id'] for row in reader]
@@ -111,7 +111,7 @@ def _validate_outputs(output_file, details_output, session_ids):
         raise FeatureExtractionError(f"Written feature CSV {output_file} does not contain the {len(session_ids)} extracted sessions.")
     if details_output:
         try:
-            with open(details_output, 'r') as f:
+            with open(details_output, 'r', encoding='utf-8') as f:
                 details = json.load(f)
         except (OSError, ValueError) as exc:
             raise FeatureExtractionError(f"Written details {details_output} could not be read back: {exc}") from exc

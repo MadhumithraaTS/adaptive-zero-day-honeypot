@@ -1,0 +1,159 @@
+{
+  "authentication": {
+    "S1 published banner": "indeterminate:no_login_success_event",
+    "S2 test banner": "indeterminate:no_login_success_event",
+    "S3 control banner": "indeterminate:no_login_success_event",
+    "S4 test shell": "login_success_observed",
+    "S5 control shell": "login_success_observed"
+  },
+  "cases": {
+    "attackA_resigned_with_attacker_key": {
+      "exit": 0,
+      "isolation_ok": true,
+      "rejected": [
+        {
+          "reason": "signed by a key that is not pinned",
+          "result_id": "task26c-validation-genuine"
+        }
+      ]
+    },
+    "attackA_signed_then_altered": {
+      "exit": 0,
+      "isolation_ok": true,
+      "rejected": [
+        {
+          "reason": "result_hash mismatch (result modified)",
+          "result_id": "task26c-validation-genuine"
+        }
+      ]
+    },
+    "attackA_unsigned_S5_to_test_client": {
+      "exit": 0,
+      "isolation_ok": true,
+      "rejected": [
+        {
+          "reason": "unsigned attribution result",
+          "result_id": null
+        }
+      ]
+    },
+    "attackB_signed_then_altered": {
+      "exit": 0,
+      "isolation_ok": true,
+      "rejected": [
+        {
+          "reason": "result_hash mismatch (result modified)",
+          "result_id": "task26c-validation-genuine"
+        }
+      ]
+    },
+    "attackB_unsigned_S4_to_unregistered": {
+      "exit": 0,
+      "isolation_ok": true,
+      "rejected": [
+        {
+          "reason": "unsigned attribution result",
+          "result_id": null
+        }
+      ]
+    },
+    "deployment_config_pending_key": {
+      "exit": 0,
+      "isolation_ok": true,
+      "rejected": [
+        {
+          "reason": "no attribution result key is pinned (config schema threat-attribution-config-3, status pending_provisioning)",
+          "result_id": "task26c-validation-genuine"
+        }
+      ]
+    },
+    "genuine": {
+      "exit": 0,
+      "isolation_ok": true,
+      "rejected": []
+    },
+    "genuine_after_expiry": {
+      "exit": 0,
+      "isolation_ok": true,
+      "rejected": [
+        {
+          "reason": "result expired",
+          "result_id": "task26c-validation-genuine"
+        }
+      ]
+    },
+    "genuine_plus_forged": {
+      "exit": 0,
+      "isolation_ok": true,
+      "rejected": [
+        {
+          "reason": "unsigned attribution result",
+          "result_id": null
+        }
+      ]
+    }
+  },
+  "checked_at": "2026-11-11T17:31:00Z",
+  "checkpoint": {
+    "rejected": [],
+    "seq": 11,
+    "verified": true
+  },
+  "container_isolation_probe": {
+    "/cowrie/cowrie-git/var/log/cowrie/cowrie.json": "FileNotFoundError",
+    "/opt/relay": "FileNotFoundError",
+    "/run/docker.sock": "FileNotFoundError",
+    "/run/relay": "FileNotFoundError",
+    "/run/relay/relay_mapping_ed25519.pem": "FileNotFoundError",
+    "/var/relay_records/relay_mapping.jsonl": "FileNotFoundError",
+    "/var/run/docker.sock": "FileNotFoundError",
+    "code_writable": "OSError",
+    "interfaces": [
+      "lo"
+    ],
+    "mounts": [
+      "/work/input ro",
+      "/work/output rw",
+      "/opt/project/configs ro",
+      "/opt/project/threat_assessment ro",
+      "/opt/project/behavioural_evidence ro"
+    ],
+    "network": "OSError",
+    "private_key_files_found": [
+      "/cowrie/cowrie-env/lib/python3.13/site-packages/twisted/test/server.pem",
+      "/cowrie/cowrie-env/lib/python3.13/site-packages/twisted/test/key.pem.no_trailing_newline",
+      "/cowrie/cowrie-env/lib/python3.13/site-packages/twisted/conch/test/test_ckeygen.py",
+      "/cowrie/cowrie-env/lib/python3.13/site-packages/twisted/conch/test/keydata.py",
+      "/cowrie/cowrie-env/lib/python3.13/site-packages/twisted/conch/test/test_keys.py",
+      "/cowrie/cowrie-env/lib/python3.13/site-packages/twisted/conch/test/__pycache__/test_ckeygen.cpython-313.pyc",
+      "/cowrie/cowrie-env/lib/python3.13/site-packages/twisted/conch/test/__pycache__/test_keys.cpython-313.pyc",
+      "/cowrie/cowrie-env/lib/python3.13/site-packages/twisted/conch/test/__pycache__/keydata.cpython-313.pyc",
+      "/cowrie/cowrie-env/lib/python3.13/site-packages/twisted/conch/ssh/keys.py",
+      "/cowrie/cowrie-env/lib/python3.13/site-packages/twisted/conch/ssh/__pycache__/keys.cpython-313.pyc",
+      "/cowrie/cowrie-env/lib/python3.13/site-packages/cryptography/hazmat/primitives/serialization/ssh.py",
+      "/cowrie/cowrie-env/lib/python3.13/site-packages/cryptography/hazmat/primitives/serialization/__pycache__/ssh.cpython-313.pyc"
+    ],
+    "uid": 999
+  },
+  "ephemeral_result_key_sha256": "a21a42ccae35cb245727057b4a2466a6e3cb458da1addff8517ca3b049a05c94",
+  "evaluation_time": "2026-11-11T17:30:00+00:00",
+  "inputs_26A_hash_checked": 19,
+  "proposals": [
+    {
+      "attribution": "attributable_via_proxy_mapping",
+      "case": "genuine",
+      "failed_gates": "",
+      "login_basis": "cowrie.login.success at 2026-11-11T17:19:28.648479Z correlated by session ID (signed result task26c-validation-genuine)",
+      "session": "S4 test shell",
+      "subject": "10.250.25.3",
+      "tier": "propose"
+    }
+  ],
+  "relay_log_tail": {
+    "checkpoint_seq": 11,
+    "last_seq": 11,
+    "status": "attested"
+  },
+  "relay_log_verification": "chain and signatures verify",
+  "validation_config_digest": "a89621dc856ea56635018f013a5b420f5f7ed481563c6b05d76f4cb5c04a58e0"
+}

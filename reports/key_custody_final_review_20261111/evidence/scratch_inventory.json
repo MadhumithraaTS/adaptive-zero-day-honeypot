@@ -1,0 +1,668 @@
+[
+  {
+    "path": "cowrie/assessment_work/input/attackA_resigned_with_attacker_key_0.json",
+    "bytes": 10265,
+    "sha256": "5f479c09bd361db816eba0bd66d96c34926dc43dc6b6787add7d021c3ad2be27",
+    "copies_elsewhere": [],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/input/attackA_signed_then_altered_0.json",
+    "bytes": 10265,
+    "sha256": "318af8367db131eb47592136a855a7bdb59f931294982734e603372df546d051",
+    "copies_elsewhere": [],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/input/attackA_unsigned_S5_to_test_client_0.json",
+    "bytes": 6944,
+    "sha256": "13902d7bcada9aae4a8cee412e864d012e28338ebd7952a19047e4289a264b9b",
+    "copies_elsewhere": [],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/input/attackB_signed_then_altered_0.json",
+    "bytes": 10268,
+    "sha256": "274751589194142f97c4ae82f12363f72bf0f381390dae02d37bd18ce5e1a6ff",
+    "copies_elsewhere": [],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/input/attackB_unsigned_S4_to_unregistered_0.json",
+    "bytes": 6942,
+    "sha256": "e802e9ad663161c13963a69508e87c96de2e9b66f87d5b3c689e7c72248f2f74",
+    "copies_elsewhere": [],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/input/attribution_result_validation.pub.pem",
+    "bytes": 113,
+    "sha256": "861ff1482af9a7c48a57a6c1963f9cd097ac65345cc01d7391b6f96f21795b61",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/validation_fixtures/attribution_result_validation.pub.pem"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/input/calibration.json",
+    "bytes": 379,
+    "sha256": "c6a341b3dc3977c8dc2435938f4c888b45f3176efa0739c73f13d9e804bb0414",
+    "copies_elsewhere": [
+      "reports/behavioural_evidence_framework_implementation_20261111/config/sensor_calibration_lab_train.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/input/cowrie_events.jsonl",
+    "bytes": 12341,
+    "sha256": "5230c905fc4d440dd6185188702394946166c48647d350be33d7607b95d7d5f8",
+    "copies_elsewhere": [
+      "reports/client_attribution_implementation_20261111/evidence/cowrie_events_after_baseline.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/input/defence_policy_v2_2_validation.json",
+    "bytes": 2177,
+    "sha256": "e5649825999c5cca094ddb94b3dada57b3ad3fa012cbf110702a15a6f12f27b7",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/validation_fixtures/defence_policy_v2_2_validation.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/input/genuine_0.json",
+    "bytes": 10268,
+    "sha256": "b0ee4f96821d955e46c1dbdaf30302d732e0cb284f694abaf3dd6572af5734b9",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/signed_result_genuine.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/input/genuine_plus_forged_0.json",
+    "bytes": 10268,
+    "sha256": "b0ee4f96821d955e46c1dbdaf30302d732e0cb284f694abaf3dd6572af5734b9",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/signed_result_genuine.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/input/genuine_plus_forged_1.json",
+    "bytes": 6944,
+    "sha256": "13902d7bcada9aae4a8cee412e864d012e28338ebd7952a19047e4289a264b9b",
+    "copies_elsewhere": [],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/input/threat_attribution_v3_validation.json",
+    "bytes": 2728,
+    "sha256": "533cceda3c03ceb4e8dfce2eab85eeedcab15af532eb213e969751a35d3ec4be",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/validation_fixtures/threat_attribution_v3_validation.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_resigned_with_attacker_key/assessments.jsonl",
+    "bytes": 16567,
+    "sha256": "66db7b7746ceeb09e7bddc333dbddb081196e294d36ed72e482e4fa329c5f0cb",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/assessments.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_resigned_with_attacker_key/audit.jsonl",
+    "bytes": 10700,
+    "sha256": "73a1fe5f1c5cf4d8966f95673a4e1350233311a6ed104bb8b57dfac63ed94902",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/audit.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_resigned_with_attacker_key/evidence.jsonl",
+    "bytes": 9780,
+    "sha256": "f89319055677503d17554b07da2d6a7296013d15c85efc1c215bdcd1fdf46486",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/evidence.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_resigned_with_attacker_key/isolation.json",
+    "bytes": 227,
+    "sha256": "4ecb65e10812571711a2dbd3df77b474e5844ed3237ba3c50aadf0c0d4cfc1ee",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/isolation.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_resigned_with_attacker_key/summary.json",
+    "bytes": 2841,
+    "sha256": "51025178c5703914b14b9be909ee75cd65735e0cd6b500ce6a0f752d3ed78e1c",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/summary.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_signed_then_altered/assessments.jsonl",
+    "bytes": 16643,
+    "sha256": "465f6919b9569e703cc9147b9dd6bd40c81eb9633fac5ccb3f0c1d7f9a07b99c",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/assessments.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/assessments.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_signed_then_altered/audit.jsonl",
+    "bytes": 10720,
+    "sha256": "d5c0b7e7615fc3f868964fcdfd70aabd11a07581e1a57e26d0fe565150aeb60b",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/audit.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/audit.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_signed_then_altered/evidence.jsonl",
+    "bytes": 9780,
+    "sha256": "f89319055677503d17554b07da2d6a7296013d15c85efc1c215bdcd1fdf46486",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/evidence.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_signed_then_altered/isolation.json",
+    "bytes": 227,
+    "sha256": "4ecb65e10812571711a2dbd3df77b474e5844ed3237ba3c50aadf0c0d4cfc1ee",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/isolation.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_signed_then_altered/summary.json",
+    "bytes": 2845,
+    "sha256": "d0a9006c9a0d7dc302f3832938346385bc5b1e00e90e0d8425fa25c07212fb4c",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/summary.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/summary.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_unsigned_S5_to_test_client/assessments.jsonl",
+    "bytes": 16006,
+    "sha256": "8d9e8a757b0e784596cdb3555d9d83f0d2c9f5b7f3b5f1ff511d4d18f0421355",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/assessments.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/assessments.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_unsigned_S5_to_test_client/audit.jsonl",
+    "bytes": 10545,
+    "sha256": "d0f4a812ff79f9654949d9869d7f7c4b0430c7ad37f485aae5406f152424dc0c",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/audit.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/audit.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_unsigned_S5_to_test_client/evidence.jsonl",
+    "bytes": 9780,
+    "sha256": "f89319055677503d17554b07da2d6a7296013d15c85efc1c215bdcd1fdf46486",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/evidence.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_unsigned_S5_to_test_client/isolation.json",
+    "bytes": 227,
+    "sha256": "4ecb65e10812571711a2dbd3df77b474e5844ed3237ba3c50aadf0c0d4cfc1ee",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/isolation.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackA_unsigned_S5_to_test_client/summary.json",
+    "bytes": 2810,
+    "sha256": "b4b7001a9d4214a326c43df40ef60eab1cf01f2adbd240d05d28b40e62b31681",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/summary.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/summary.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackB_signed_then_altered/assessments.jsonl",
+    "bytes": 16643,
+    "sha256": "465f6919b9569e703cc9147b9dd6bd40c81eb9633fac5ccb3f0c1d7f9a07b99c",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/assessments.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/assessments.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackB_signed_then_altered/audit.jsonl",
+    "bytes": 10720,
+    "sha256": "d5c0b7e7615fc3f868964fcdfd70aabd11a07581e1a57e26d0fe565150aeb60b",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/audit.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/audit.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackB_signed_then_altered/evidence.jsonl",
+    "bytes": 9780,
+    "sha256": "f89319055677503d17554b07da2d6a7296013d15c85efc1c215bdcd1fdf46486",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/evidence.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackB_signed_then_altered/isolation.json",
+    "bytes": 227,
+    "sha256": "4ecb65e10812571711a2dbd3df77b474e5844ed3237ba3c50aadf0c0d4cfc1ee",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/isolation.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackB_signed_then_altered/summary.json",
+    "bytes": 2845,
+    "sha256": "d0a9006c9a0d7dc302f3832938346385bc5b1e00e90e0d8425fa25c07212fb4c",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/summary.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/summary.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackB_unsigned_S4_to_unregistered/assessments.jsonl",
+    "bytes": 16006,
+    "sha256": "8d9e8a757b0e784596cdb3555d9d83f0d2c9f5b7f3b5f1ff511d4d18f0421355",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/assessments.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/assessments.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackB_unsigned_S4_to_unregistered/audit.jsonl",
+    "bytes": 10545,
+    "sha256": "d0f4a812ff79f9654949d9869d7f7c4b0430c7ad37f485aae5406f152424dc0c",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/audit.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/audit.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackB_unsigned_S4_to_unregistered/evidence.jsonl",
+    "bytes": 9780,
+    "sha256": "f89319055677503d17554b07da2d6a7296013d15c85efc1c215bdcd1fdf46486",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/evidence.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackB_unsigned_S4_to_unregistered/isolation.json",
+    "bytes": 227,
+    "sha256": "4ecb65e10812571711a2dbd3df77b474e5844ed3237ba3c50aadf0c0d4cfc1ee",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/isolation.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/attackB_unsigned_S4_to_unregistered/summary.json",
+    "bytes": 2810,
+    "sha256": "b4b7001a9d4214a326c43df40ef60eab1cf01f2adbd240d05d28b40e62b31681",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/summary.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/summary.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/deployment_config_pending_key/assessments.jsonl",
+    "bytes": 17863,
+    "sha256": "e636bbefc276abd44b33e32d4bba3ad1cc1d70cc362700d9dc966ddfa9ec65dc",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/assessments.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/deployment_config_pending_key/audit.jsonl",
+    "bytes": 10960,
+    "sha256": "7f6837566dbab04c4a5fb82283068d8d0c110a515ee7f4ce657fc20cedf2c487",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/audit.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/deployment_config_pending_key/evidence.jsonl",
+    "bytes": 9780,
+    "sha256": "f89319055677503d17554b07da2d6a7296013d15c85efc1c215bdcd1fdf46486",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/evidence.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/deployment_config_pending_key/isolation.json",
+    "bytes": 227,
+    "sha256": "4ecb65e10812571711a2dbd3df77b474e5844ed3237ba3c50aadf0c0d4cfc1ee",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/isolation.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/deployment_config_pending_key/summary.json",
+    "bytes": 2913,
+    "sha256": "8296e83cbe1ac306d36bc5ff664fb4227781fd32e41c7ce841269fc1c4fdd209",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/summary.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine/assessments.jsonl",
+    "bytes": 23979,
+    "sha256": "b6b8113b466e2ef581b8f4901f87a32d6cf39681101ce7f1be539a6c4a73f475",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/assessments.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine/audit.jsonl",
+    "bytes": 11385,
+    "sha256": "b76048dbbefd34fb4f9154b97351329db81d0b55f2d8406213c548573566fc2b",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/audit.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine/evidence.jsonl",
+    "bytes": 9780,
+    "sha256": "f89319055677503d17554b07da2d6a7296013d15c85efc1c215bdcd1fdf46486",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/evidence.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine/isolation.json",
+    "bytes": 227,
+    "sha256": "4ecb65e10812571711a2dbd3df77b474e5844ed3237ba3c50aadf0c0d4cfc1ee",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/isolation.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine/summary.json",
+    "bytes": 2919,
+    "sha256": "81f18745e0c147217269a6af749ee4d35c5d438d36a8a7d603784db672447a72",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/summary.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine_after_expiry/assessments.jsonl",
+    "bytes": 16187,
+    "sha256": "9c87558cd1440c66f189d55f05236366f1f16515ae79560cac0d5c6ce3a54b38",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/assessments.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine_after_expiry/audit.jsonl",
+    "bytes": 10600,
+    "sha256": "848140e8c6f9dd360b4341d86b4515db6671c20ef6770652b70e863a056e4e02",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/audit.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine_after_expiry/evidence.jsonl",
+    "bytes": 9780,
+    "sha256": "f89319055677503d17554b07da2d6a7296013d15c85efc1c215bdcd1fdf46486",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/evidence.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine_after_expiry/isolation.json",
+    "bytes": 227,
+    "sha256": "4ecb65e10812571711a2dbd3df77b474e5844ed3237ba3c50aadf0c0d4cfc1ee",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/isolation.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine_after_expiry/summary.json",
+    "bytes": 2821,
+    "sha256": "aaea2286da266cd0501f92384424318f58a2de8027522fb6caf7a95659f0665b",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/summary.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine_plus_forged/assessments.jsonl",
+    "bytes": 23957,
+    "sha256": "679edd28b38dc20ba63644bdbef5b35742e342296a29d3a3b0dded3938295ba4",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/assessments.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine_plus_forged/audit.jsonl",
+    "bytes": 11323,
+    "sha256": "b431137975a20c9afe5443619e41f35676caf7fc1a0484762302d095ad2af385",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/audit.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine_plus_forged/evidence.jsonl",
+    "bytes": 9780,
+    "sha256": "f89319055677503d17554b07da2d6a7296013d15c85efc1c215bdcd1fdf46486",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/evidence.jsonl",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/evidence.jsonl"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine_plus_forged/isolation.json",
+    "bytes": 227,
+    "sha256": "4ecb65e10812571711a2dbd3df77b474e5844ed3237ba3c50aadf0c0d4cfc1ee",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_resigned_with_attacker_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackA_unsigned_S5_to_test_client/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_signed_then_altered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/attackB_unsigned_S4_to_unregistered/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/deployment_config_pending_key/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_after_expiry/isolation.json",
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/isolation.json"
+    ],
+    "private_key": false
+  },
+  {
+    "path": "cowrie/assessment_work/output/genuine_plus_forged/summary.json",
+    "bytes": 3231,
+    "sha256": "ccd4ccb434898af733d6aa550128e1c757294add217af9f479420fc7f5749f86",
+    "copies_elsewhere": [
+      "reports/attribution_trust_boundary_remediation_20261111/evidence/container_runs/genuine_plus_forged/summary.json"
+    ],
+    "private_key": false
+  }
+]

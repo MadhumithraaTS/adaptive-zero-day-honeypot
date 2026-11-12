@@ -1,0 +1,23 @@
+DIAGNOSTIC OBSERVATION - Task 25A - NOT ATTRIBUTION EVIDENCE
+==============================================================
+Cowrie TCP table DURING the connection (read-only, docker exec cowrie-project python3):
+  local 172.22.0.1:2222  <-  peer 172.22.0.2:53490   ESTABLISHED      (the relay's outbound socket)
+
+New Cowrie JSON events (live log /cowrie/cowrie-git/var/log/cowrie/cowrie.json, lines 21851-21852; 21850 before):
+{"eventid": "cowrie.session.connect", "src_ip": "172.22.0.2", "src_port": 53490, "dst_ip": "172.22.0.1", "dst_port": 2222, "session": "99732d516898", "protocol": "ssh", "message": "New connection: 172.22.0.2:53490 (172.22.0.1:2222) [session: 99732d516898]", "sensor": "0bec5a78b1cb", "uuid": "bafc61de-32ec-11f1-a37e-46de337b5ff9", "timestamp": "2026-11-11T16:37:34.938173Z"}
+{"eventid": "cowrie.session.closed", "duration": "3.7", "message": "Connection lost after 3.7 seconds", "sensor": "0bec5a78b1cb", "uuid": "bafc61de-32ec-11f1-a37e-46de337b5ff9", "timestamp": "2026-11-11T16:37:38.681512Z", "src_ip": "172.22.0.2", "session": "99732d516898", "protocol": "ssh"}
+
+Correlation
+  relay outbound local port (kernel)   53490
+  Cowrie session.connect src_port      53490          -> EXACT MATCH
+  relay outbound local IP              172.22.0.2
+  Cowrie session.connect src_ip        172.22.0.2     -> EXACT MATCH
+  timing                               client connect 16:37:33.861 -> Cowrie connect 16:37:34.938 (+1.08 s; includes the
+                                       host->Docker Desktop proxy->relay->Cowrie hops and Cowrie's own logging)
+
+Does Cowrie record the relay's outbound source port?  YES - observed, not assumed: cowrie.session.connect carries
+src_port, and it equals the relay's outbound socket's local port for this session. (cowrie.session.closed carries
+src_ip but no src_port.)
+
+Note on the live log: this diagnostic session (99732d516898, 2 events) is now in Cowrie's live log after the sealed
+test run's last line (21850). It is not part of, and must be excluded from, any dataset.

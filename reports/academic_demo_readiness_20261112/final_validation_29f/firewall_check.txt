@@ -1,0 +1,11 @@
+# Task 29F read-only host firewall check, 2026-11-12T07:40:29Z
+# namespace holder:
+dockerd
+lrwxrwxrwx    1 root     root             0 Nov 10 12:01 /proc/165/ns/net -> net:[4026532223]
+# command: iptables -t {filter,nat,mangle,raw} -S | grep 10.250.25.(3|4); nft list ruleset | grep -c; iptables -S | wc -l
+rules mentioning demo client IPs (any table):
+(end)
+nft ruleset lines mentioning 10.250.25.3/.4: 0
+bridge rules count total filter: 51
+# witness containers:
+0

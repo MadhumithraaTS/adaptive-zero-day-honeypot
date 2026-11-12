@@ -1,0 +1,1 @@
+['.gitignore', 'cowrie.json', 'cowrie.json.2026-10-24']

@@ -1,0 +1,14 @@
+scenario,src_ip,expected_state,state,expected_tier,tier,passed
+external client (documentation address),203.0.113.50,attributable,attributable,propose,propose,True
+lab relay 172.22.0.2,172.22.0.2,unattributed:trusted_proxy,unattributed:trusted_proxy,review,review,True
+Cowrie container 172.22.0.1 (protected),172.22.0.1,protected,protected,review,review,True
+relay frontend 172.21.0.2 (protected),172.21.0.2,protected,protected,review,review,True
+legacy docker 172.19.0.1 (protected),172.19.0.1,protected,protected,review,review,True
+loopback 127.0.0.1 (protected),127.0.0.1,protected,protected,review,review,True
+NAT/shared source (config variant with 198.51.100.0/24),198.51.100.7,shared_source,shared_source,review,review,True
+untrusted forwarded header (x_forwarded_for=203.0.113.50 on a relay session),172.22.0.2,unattributed:trusted_proxy,unattributed:trusted_proxy,review,review,True
+missing source address,,unattributed:no_source,unattributed:no_source,review,review,True
+incorrect evidence config digest,203.0.113.50,attributable,attributable,review,review,True
+missing evidence config digest,203.0.113.50,attributable,attributable,abstain,abstain,True
+Dataset V2 train: all sessions (lab relay topology),172.22.0.2,unattributed:trusted_proxy,"{""unattributed:trusted_proxy"": 3190}",no proposals,"{""abstain"": 1817, ""record"": 754, ""review"": 619}",True
+Dataset V2 validation: all sessions (lab relay topology),172.22.0.2,unattributed:trusted_proxy,"{""unattributed:trusted_proxy"": 1257}",no proposals,"{""review"": 238, ""abstain"": 706, ""record"": 313}",True

@@ -1,0 +1,45 @@
+{
+  "canonical_is_1_0_0": true,
+  "task16_build_freeze_in_memory_rebuild_equals_canonical": true,
+  "task16_archive_equals_canonical": true,
+  "task17_revalidate_expected_hash_matches_canonical": true,
+  "task17_saved_models_reference_canonical_1_0_0": {
+    "ae_kmeans_k3_seed42": [
+      "configs/model_features_v2_frozen.json",
+      true
+    ],
+    "ae_kmeans_k7_seed42": [
+      "configs/model_features_v2_frozen.json",
+      true
+    ],
+    "dec_k3_seed42": [
+      "configs/model_features_v2_frozen.json",
+      true
+    ],
+    "dec_k7_seed42": [
+      "configs/model_features_v2_frozen.json",
+      true
+    ]
+  },
+  "draft4_authoritative_sha_matches_canonical": true,
+  "v1_0_0_version": "1.0.0",
+  "v1_1_0_version": "1.1.0",
+  "model_inputs_identical_1_0_0_vs_1_1_0": true,
+  "model_inputs": [
+    "login_success",
+    "session_duration_s",
+    "input_line_count",
+    "shell_operator_lines",
+    "time_to_first_input_s",
+    "inter_input_mean_s",
+    "inter_input_std_s",
+    "tty_output_bytes"
+  ],
+  "status_differences_1_0_0_vs_1_1_0": {
+    "input_bytes_total": [
+      "conditional",
+      "inactive"
+    ]
+  },
+  "extracted_features_count": 13
+}

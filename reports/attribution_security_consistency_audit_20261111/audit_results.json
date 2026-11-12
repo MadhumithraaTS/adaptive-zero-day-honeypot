@@ -1,0 +1,416 @@
+{
+  "26A_manifest": {
+    "checked": 50,
+    "mismatched": []
+  },
+  "correlation_reproduced_identical": true,
+  "S4_independent_conditions": [
+    {
+      "condition": "min_finding_severity >= S2",
+      "satisfied": true,
+      "detail": "severities ['S2', 'S3']"
+    },
+    {
+      "condition": "min_interpretation_evidence_level >= E2 on an S2+ finding",
+      "satisfied": true,
+      "detail": "qualifying [('download attempt', 'S2', 'E2'), ('download-and-execute attempt', 'S3', 'E2')]"
+    },
+    {
+      "condition": "min_distinct_action_indicators >= 2",
+      "satisfied": true,
+      "detail": "['EXEC-1', 'XFER-1']"
+    },
+    {
+      "condition": "require_successful_login (implemented basis)",
+      "satisfied": true,
+      "detail": "authentication_status=indeterminate:shared_source; n_input_lines=4; basis=command input"
+    },
+    {
+      "condition": "require_successful_login (Task 23 design wording: cowrie.login.success)",
+      "satisfied": true,
+      "detail": "raw telemetry: 1 cowrie.login.success for 3eede5e19e25 at ['2026-11-11T17:19:28.648479Z']; not carried in the evidence record"
+    },
+    {
+      "condition": "require_attributable_source",
+      "satisfied": true,
+      "detail": "attributable_via_proxy_mapping -> 10.250.25.3 (test_client), close consistent"
+    },
+    {
+      "condition": "exclude_protected_and_shared_sources (+ enforcement_excluded)",
+      "satisfied": true,
+      "detail": "10.250.25.3 not in protected/shared/excluded lists"
+    },
+    {
+      "condition": "require_verified_configuration_digests",
+      "satisfied": true,
+      "detail": "evidence 95183d7fef3be9d7 (recorded expected 95183d7fef3be9d7; reference-sequence component not recomputable without Dataset V2); attribution 612d6360125ef6af pinned by policy and in correlation"
+    },
+    {
+      "condition": "require_no_processing_errors",
+      "satisfied": true,
+      "detail": "none"
+    },
+    {
+      "condition": "behavioural_status not indeterminate/insufficient",
+      "satisfied": true,
+      "detail": "interpreted"
+    }
+  ],
+  "S4_findings_independent": [
+    {
+      "interpretation": "download attempt",
+      "severity": "S2",
+      "basis": "attempted retrieval of tooling; content and outcome unknown unless a file_download event exists",
+      "level": "E2",
+      "support": [
+        "EXEC-1",
+        "XFER-1"
+      ],
+      "matches_stored": true
+    },
+    {
+      "interpretation": "download-and-execute attempt",
+      "severity": "S3",
+      "basis": "attempted execution of retrieved code",
+      "level": "E2",
+      "support": [
+        "EXEC-1",
+        "XFER-1"
+      ],
+      "matches_stored": true
+    }
+  ],
+  "S4_stored": {
+    "tier": "propose",
+    "gates": {
+      "1_severity_S2_or_higher": true,
+      "2_interpretation_E2_or_higher_on_an_S2plus_finding": true,
+      "3_two_distinct_action_indicators": true,
+      "4_successful_login": true,
+      "5_attributable_source": true,
+      "6_not_protected_or_shared": true,
+      "7_verified_configuration_digests": true,
+      "8_no_processing_errors": true
+    },
+    "proposal": {
+      "execution": "not_executed",
+      "inverse": {
+        "subject": "10.250.25.3",
+        "type": "unblock_source_ip"
+      },
+      "manual_approval": "pending",
+      "mode": "dry_run",
+      "relay_connection_id": "cbc790bd-c8a5-4a76-98a1-b2d679b4d773",
+      "scope": "this sensor only",
+      "subject": "10.250.25.3",
+      "subject_basis": "attributable_via_proxy_mapping",
+      "ttl_seconds": 86400,
+      "type": "block_source_ip"
+    },
+    "login_basis": "command input recorded (Cowrie records input only after a successful login)"
+  },
+  "evidence_rerun_without_reference_sequences": {
+    "9441bcce555c": {
+      "identical_except_config_digest": true,
+      "stored_digest": "95183d7fef3be9d7",
+      "rerun_digest": "256b03e03115e6c9"
+    },
+    "acc2bad4a442": {
+      "identical_except_config_digest": true,
+      "stored_digest": "95183d7fef3be9d7",
+      "rerun_digest": "256b03e03115e6c9"
+    },
+    "d588636ce120": {
+      "identical_except_config_digest": true,
+      "stored_digest": "95183d7fef3be9d7",
+      "rerun_digest": "256b03e03115e6c9"
+    },
+    "3eede5e19e25": {
+      "identical_except_config_digest": true,
+      "stored_digest": "95183d7fef3be9d7",
+      "rerun_digest": "256b03e03115e6c9"
+    },
+    "4542a85f37ec": {
+      "identical_except_config_digest": true,
+      "stored_digest": "95183d7fef3be9d7",
+      "rerun_digest": "256b03e03115e6c9"
+    }
+  },
+  "S4_reassessed_self_consistent_config": {
+    "tier": "propose",
+    "failed": [],
+    "subject": "10.250.25.3",
+    "findings_equal_stored": true
+  },
+  "S4_stored_record_vs_noref_config": {
+    "tier": "review",
+    "failed": [
+      "7_verified_configuration_digests"
+    ]
+  },
+  "auth_probes": [
+    {
+      "probe": "S4 as captured",
+      "authentication_status": "indeterminate:shared_source",
+      "n_input_lines": 4,
+      "gate4": true,
+      "login_basis": "command input recorded (Cowrie records input only after a successful login)",
+      "tier": "propose"
+    },
+    {
+      "probe": "S4 with n_input_lines=0 (status indeterminate)",
+      "authentication_status": "indeterminate:shared_source",
+      "n_input_lines": 0,
+      "gate4": false,
+      "login_basis": null,
+      "tier": "review"
+    },
+    {
+      "probe": "S4 with status success_without_repeated_failures, n_input_lines=0",
+      "authentication_status": "success_without_repeated_failures",
+      "n_input_lines": 0,
+      "gate4": true,
+      "login_basis": "authentication_status=success_without_repeated_failures",
+      "tier": "propose"
+    },
+    {
+      "probe": "S4 with status no_authentication_events, input kept",
+      "authentication_status": "no_authentication_events",
+      "n_input_lines": 4,
+      "gate4": true,
+      "login_basis": "command input recorded (Cowrie records input only after a successful login)",
+      "tier": "propose"
+    },
+    {
+      "probe": "S2 banner (indeterminate? no auth events)",
+      "authentication_status": "no_authentication_events",
+      "n_input_lines": 0,
+      "gate4": false,
+      "login_basis": null,
+      "tier": "abstain"
+    }
+  ],
+  "attribution_does_not_change_authentication": {
+    "record_unchanged_after_assess": true,
+    "authentication_status_with_mapping": "indeterminate:shared_source",
+    "without_mapping": "indeterminate:shared_source",
+    "login_basis_with": "command input recorded (Cowrie records input only after a successful login)",
+    "login_basis_without": "command input recorded (Cowrie records input only after a successful login)"
+  },
+  "engine_auth_status_for_relay_sessions": {
+    "9441bcce555c": "no_authentication_events",
+    "acc2bad4a442": "no_authentication_events",
+    "d588636ce120": "no_authentication_events",
+    "3eede5e19e25": "indeterminate:shared_source",
+    "4542a85f37ec": "indeterminate:shared_source"
+  },
+  "forged_correlation_result": [
+    {
+      "case": "unsigned forged result maps S5 (control) to test client",
+      "session": "4542a85f37ec",
+      "claimed_client": "10.250.25.3",
+      "attribution": "attributable_via_proxy_mapping",
+      "tier": "propose",
+      "subject": "10.250.25.3"
+    },
+    {
+      "case": "unsigned forged result maps S4 to unregistered 203.0.113.9",
+      "session": "3eede5e19e25",
+      "claimed_client": "203.0.113.9",
+      "attribution": "attributable_via_proxy_mapping",
+      "tier": "propose",
+      "subject": "203.0.113.9"
+    },
+    {
+      "case": "unsigned forged result maps S4 to control client",
+      "session": "3eede5e19e25",
+      "claimed_client": "10.250.25.4",
+      "attribution": "enforcement_excluded",
+      "tier": "review",
+      "subject": null
+    },
+    {
+      "case": "unsigned forged result maps S4 to demo relay",
+      "session": "3eede5e19e25",
+      "claimed_client": "10.250.25.2",
+      "attribution": "protected",
+      "tier": "review",
+      "subject": null
+    }
+  ],
+  "integrity": [
+    {
+      "case": "unmodified log",
+      "verifies": true,
+      "reason": "chain and signatures verify",
+      "S4": "attributable_via_proxy_mapping",
+      "S5": "attributable_via_proxy_mapping",
+      "attributed": 4
+    },
+    {
+      "case": "altered field (S4 client_port)",
+      "verifies": false,
+      "reason": "record_hash mismatch (record modified)",
+      "S4": "unattributed:mapping_untrusted",
+      "S5": "unattributed:mapping_untrusted",
+      "attributed": 0
+    },
+    {
+      "case": "altered field with record_hash recomputed (no key)",
+      "verifies": false,
+      "reason": "signature invalid",
+      "S4": "unattributed:mapping_untrusted",
+      "S5": "unattributed:mapping_untrusted",
+      "attributed": 0
+    },
+    {
+      "case": "reordered (seq 8 <-> 9)",
+      "verifies": false,
+      "reason": "sequence gap (deletion/insertion/reordering)",
+      "S4": "unattributed:mapping_untrusted",
+      "S5": "unattributed:mapping_untrusted",
+      "attributed": 0
+    },
+    {
+      "case": "duplicated record (seq 8 replayed)",
+      "verifies": false,
+      "reason": "sequence gap (deletion/insertion/reordering)",
+      "S4": "unattributed:mapping_untrusted",
+      "S5": "unattributed:mapping_untrusted",
+      "attributed": 0
+    },
+    {
+      "case": "duplicated record appended at end",
+      "verifies": false,
+      "reason": "sequence gap (deletion/insertion/reordering)",
+      "S4": "unattributed:mapping_untrusted",
+      "S5": "unattributed:mapping_untrusted",
+      "attributed": 0
+    },
+    {
+      "case": "record age > 24 h (evaluated +25 h)",
+      "verifies": true,
+      "reason": "chain and signatures verify",
+      "S4": "unattributed:mapping_expired",
+      "S5": "unattributed:mapping_expired",
+      "attributed": 0
+    },
+    {
+      "case": "record written after key validity end",
+      "verifies": false,
+      "reason": "record written outside the key validity period (expired/not yet valid)",
+      "S4": "-",
+      "S5": "-",
+      "attributed": 0
+    },
+    {
+      "case": "TAIL DELETION: last 1 record(s) removed",
+      "verifies": true,
+      "reason": "chain and signatures verify",
+      "S4": "attributable_via_proxy_mapping",
+      "S5": "unattributed:close_inconsistent",
+      "attributed": 3
+    },
+    {
+      "case": "TAIL DELETION: last 2 record(s) removed",
+      "verifies": true,
+      "reason": "chain and signatures verify",
+      "S4": "attributable_via_proxy_mapping",
+      "S5": "unattributed:mapping_missing",
+      "attributed": 3
+    },
+    {
+      "case": "TAIL DELETION: last 4 record(s) removed",
+      "verifies": true,
+      "reason": "chain and signatures verify",
+      "S4": "unattributed:mapping_missing",
+      "S5": "unattributed:mapping_missing",
+      "attributed": 2
+    },
+    {
+      "case": "TAIL DELETION: everything after S4 close removed",
+      "verifies": true,
+      "reason": "chain and signatures verify",
+      "S4": "attributable_via_proxy_mapping",
+      "S5": "unattributed:mapping_missing",
+      "attributed": 3
+    },
+    {
+      "case": "TAIL DELETION: everything after relay_start removed",
+      "verifies": true,
+      "reason": "chain and signatures verify",
+      "S4": "unattributed:mapping_missing",
+      "S5": "unattributed:mapping_missing",
+      "attributed": 0
+    }
+  ],
+  "regression": {
+    "behavioural_evidence_package_vs_task22": {
+      "checked": 9,
+      "mismatched": []
+    },
+    "threat_assessment_vs_task24": {
+      "__init__.py": false,
+      "assessment.py": false,
+      "attribution.py": false,
+      "audit.py": true,
+      "config.py": false,
+      "errors.py": true,
+      "severity.py": true
+    },
+    "v1_configs": {
+      "threat_attribution_v1.json": "46109a31e91161bc9c02163ee5cd72169a4e73ed95b636b02fc2a72fdb53fac0",
+      "defence_policy_v2.json": "24fd8cf49f6823ff2e188b9d01fab092bc42464e8c26bfb39acd869f22494cd4",
+      "defence_policy.json": "4386464c12a07da0c27f381f72954fc70b3dda57e88560f2302561fe211c84ac"
+    },
+    "regression_v1_results_26A": {
+      "train": {
+        "sessions": 3190,
+        "identical_after_declared_additions": 3190,
+        "differences": [],
+        "old_version": "threat-assessment-1.0.0",
+        "new_version": "threat-assessment-1.1.0",
+        "tiers": {
+          "abstain": 1817,
+          "record": 754,
+          "review": 619
+        }
+      },
+      "validation": {
+        "sessions": 1257,
+        "identical_after_declared_additions": 1257,
+        "differences": [],
+        "old_version": "threat-assessment-1.0.0",
+        "new_version": "threat-assessment-1.1.0",
+        "tiers": {
+          "abstain": 706,
+          "record": 313,
+          "review": 238
+        }
+      }
+    },
+    "diagnostic_in_config": [
+      "99732d516898",
+      "b806554e19b9"
+    ],
+    "diagnostic_in_demo_input": [],
+    "audit_chain_26A": {
+      "ok": true,
+      "index": null,
+      "reason": "chain intact",
+      "entries": 5,
+      "last_hash": "4aab05b1d1b68e461e1718dfa6327be5c46a548dede1ee153533855ea0d67de6"
+    },
+    "audit_execution_status": [
+      "\"not_executed\""
+    ],
+    "control_client_states": {
+      "d588636ce120": "enforcement_excluded",
+      "4542a85f37ec": "enforcement_excluded"
+    },
+    "control_client_tiers": {
+      "d588636ce120": "abstain",
+      "4542a85f37ec": "review"
+    }
+  }
+}

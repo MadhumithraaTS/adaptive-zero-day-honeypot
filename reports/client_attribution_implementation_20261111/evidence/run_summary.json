@@ -1,0 +1,31 @@
+{
+  "run_timestamp": "2026-11-11T17:30:00Z",
+  "evaluation_time": "2026-11-11T17:30:00+00:00",
+  "assessment_version": "threat-assessment-1.1.0",
+  "client_attribution_version": "client-attribution-1.0.0",
+  "attribution_config_digest": "612d6360125ef6af6afeb589609bd5149a5a8c480d052b4f3a5352e1b4d17ea1",
+  "policy_digest": "07ec577644de8eefb06cdf3c297707473519a6dd2acdb3b3d6ab13719a4debec",
+  "evidence_config_digest": "95183d7fef3be9d7",
+  "public_key_sha256": "a52b8c522a4bb0916536af2bf7d4f2f92f0cea47fe49553665e2a5b0a0d272bf",
+  "record_verification": "chain and signatures verify",
+  "record_count": 11,
+  "record_chain_head": "cbca971154842681cb8a98d12e691428795be243aa2b5bf7f131eb1b4467ba40",
+  "audit_chain": {
+    "ok": true,
+    "index": null,
+    "reason": "chain intact",
+    "entries": 5,
+    "last_hash": "4aab05b1d1b68e461e1718dfa6327be5c46a548dede1ee153533855ea0d67de6"
+  },
+  "input_sha256": {
+    "cowrie_events_after_baseline.jsonl": "5230c905fc4d440dd6185188702394946166c48647d350be33d7607b95d7d5f8",
+    "relay_mapping.jsonl": "496b5a0f2ba76781508bfd73d8714853838d4dcf3a4fed5755ec25a1be3d26ee"
+  },
+  "tiers": {
+    "9441bcce555c": "abstain",
+    "acc2bad4a442": "abstain",
+    "d588636ce120": "abstain",
+    "3eede5e19e25": "propose",
+    "4542a85f37ec": "review"
+  }
+}

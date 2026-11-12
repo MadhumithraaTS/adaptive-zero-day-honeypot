@@ -1,0 +1,48 @@
+{
+  "isolation": {
+    "in_container": true,
+    "uid": 999,
+    "forbidden_paths_reachable": [],
+    "private_key_files_readable": [],
+    "network_interfaces": [
+      "lo"
+    ],
+    "scan_roots": [
+      "/opt/project",
+      "/work/input"
+    ],
+    "ok": true
+  },
+  "attribution_config": "364709125e31333607e956e1e2f35a2b4427c6b8cb9af513be001cdde32037eb",
+  "attribution_schema": "threat-attribution-config-3",
+  "policy": "2.2.0-DEMO",
+  "policy_schema": "2.1",
+  "result_key_status": "provisioned",
+  "audit_chain": {
+    "ok": true,
+    "index": null,
+    "reason": "chain intact",
+    "entries": 1,
+    "last_hash": "e5adf50728e5f1a7a4482a02281e2183bfe8b221d79479728050d252b0b28048"
+  },
+  "sessions": {
+    "00bae095780a": {
+      "tier": "propose",
+      "attribution": "attributable_via_proxy_mapping",
+      "failed_gates": [],
+      "login_basis": "cowrie.login.success at 2026-11-12T06:54:15.556643Z correlated by session ID (signed result DEMO-20261112T065445Z-ad9e34)",
+      "subject": "10.250.25.3"
+    }
+  },
+  "attribution_results": {
+    "accepted": [
+      {
+        "result_id": "DEMO-20261112T065445Z-ad9e34",
+        "result_hash": "75c8537f3504999513520b6bf26f8560aa7773827e5973b3974239dab766b6f5",
+        "issued_utc": "2026-11-12T06:54:44.056643Z"
+      }
+    ],
+    "rejected": [],
+    "conflicts": []
+  }
+}

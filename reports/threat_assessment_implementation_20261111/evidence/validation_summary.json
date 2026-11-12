@@ -1,0 +1,46 @@
+{
+  "attribution_config_digest": "9353fbddbfbe3abaff2be71626454c19505df4e6d5bb8a7257bb8397b6611ea0",
+  "audit_checkpoints": {
+    "train": {
+      "entries": 3190,
+      "last_hash": "c7f61ac19a53321459443e53cac5bf0bf8319a1c19db7a036ca59b4a85c20a01",
+      "run_id": "task24-train"
+    },
+    "validation": {
+      "entries": 1257,
+      "last_hash": "41f82c42a22c22169ebc6bd2b10cc92208ad78991a1a45066c7c7fbbef347a42",
+      "run_id": "task24-validation"
+    }
+  },
+  "configuration_checks": {
+    "evidence_auth_rule_approved": true,
+    "evidence_internal_networks_equal_explicit_config": true,
+    "evidence_relays_cover_attribution_relays": true,
+    "policy_pins_attribution_digest": true
+  },
+  "deterministic_second_pass": {
+    "train": true,
+    "validation": true
+  },
+  "evidence_config_digest": "95183d7fef3be9d7",
+  "policy_digest": "92e334285fb50a0ea5640a6fc0ad54c07b0e4ff114c91ce2401a0c3ce3680712",
+  "proposals": {
+    "train": 0,
+    "validation": 0
+  },
+  "test_like_paths_opened": [
+    "c:/amrita/final_year_project_zero_day_27/adaptive-zero-day-honeypot/reports/threat_assessment_implementation_20261111/source_attribution_tests.csv"
+  ],
+  "tiers": {
+    "train": {
+      "abstain": 1817,
+      "record": 754,
+      "review": 619
+    },
+    "validation": {
+      "abstain": 706,
+      "record": 313,
+      "review": 238
+    }
+  }
+}

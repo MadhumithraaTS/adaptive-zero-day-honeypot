@@ -1,0 +1,26 @@
+# preflight (read-only) 2026-11-11T16:45:00Z
+## networks
+bridge 172.17.0.0/16 
+cowrie_cowrie_internal 172.22.0.0/16 
+cowrie_default 172.19.0.0/16 
+cowrie_relay_frontend 172.21.0.0/16 
+et-ai_default 172.20.0.0/16 
+host 
+none 
+rezumy_default 172.18.0.0/16 
+## images (local)
+pgvector/pgvector:pg16 sha256:1d533553fefe4f12e5d80c7b80622ba0c382abb5758856f52983d8789179f0fb 1d533553fefe 621MB
+cowrie/cowrie:latest sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a bf371c37638b 439MB
+hello-world:latest sha256:f9078146db2e05e794366b1bfe584a14ea6317f44027d10ef7dad65279026885 f9078146db2e 25.9kB
+postgres:15 sha256:dafc4d8e8369da730a5ee9a320a0f0b3c6aa516f41244689c4493a27dc84472d dafc4d8e8369 633MB
+webgoat/webgoat:latest sha256:3101bd9e7bcfe122d7ef91e690ef3720de36cc4e86b3d06763a1ddf2e2751a4b 3101bd9e7bcf 970MB
+webgoat/assignments:findthesecret sha256:3fba41f35dbfac1daf7465ce0869c076d3cdef017e710dbec6d273cc9334d4a6 3fba41f35dbf 420MB
+## relay container
+id=8d3bafb35f3862445d4526713efbb569f37b9e63fd0a5082102b70d93e361d3b image=sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a started=2026-11-10T12:30:31.406935186Z restarts=0 capadd=<no value> capdrop=[ALL] secopt=[no-new-privileges:true] ro=true user=cowrie cmd=["-n","--pidfile=","portforward","--port=tcp:2222","--host=cowrie","--dest_port=2222"] nets=cowrie_cowrie_internal=172.22.0.2,de:ee:4b:cd:e2:ad cowrie_relay_frontend=172.21.0.2,62:7a:84:74:cf:15 
+cowrie id=0bec5a78b1cb354c89d4528a432cef9f70f9b46ce71b2f722aac680258bb4503 started=2026-11-10T12:30:30.630598884Z restarts=0 nets=cowrie_cowrie_internal=172.22.0.1,9a:ec:a1:47:ba:dc 
+LISTEN /proc/net/tcp 127.0.0.11:43835
+LISTEN /proc/net/tcp 0.0.0.0:2222
+ip_forward 1
+{'CapInh': '0000000000000000', 'CapPrm': '0000000000000000', 'CapEff': '0000000000000000', 'CapBnd': '0000000000000000', 'CapAmb': '0000000000000000', 'NoNewPrivs': '1'}
+cowrie-env/bin ssh-like: ['cftp', 'conch', 'tkconch']
+paramiko False twisted.conch.client True

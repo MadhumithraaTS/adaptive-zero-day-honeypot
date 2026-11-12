@@ -1,0 +1,82 @@
+[
+  {
+    "check": "relay public key file missing (correlator given no key)",
+    "result": "0",
+    "fail_closed": true
+  },
+  {
+    "check": "relay public key replaced by another key",
+    "result": "0",
+    "fail_closed": true
+  },
+  {
+    "check": "relay log unavailable",
+    "result": "0",
+    "fail_closed": true
+  },
+  {
+    "check": "genuine relay key (control)",
+    "result": "4",
+    "fail_closed": true
+  },
+  {
+    "check": "relay restarted with a silently swapped key (correctly signed by the new key)",
+    "result": "[{'line': 11, 'seq': 12, 'reason': 'key_id 0be7b85db16e7de6 is not the pinned key a52b8c522a4bb091'}]",
+    "fail_closed": true
+  },
+  {
+    "check": "live v3 config: result key pending",
+    "result": "pending_provisioning",
+    "fail_closed": true
+  },
+  {
+    "check": "live v3 config: any signed result",
+    "result": "SignedResultError: no attribution result key is pinned (config schema threat-attribution-config-3, status pending_provisioning)",
+    "fail_closed": true
+  },
+  {
+    "check": "provisioned config, public key file missing",
+    "result": "AssessmentConfigError: provisioned attribution_result requires its public key",
+    "fail_closed": true
+  },
+  {
+    "check": "provisioned config, public key replaced",
+    "result": "AssessmentConfigError: attribution_result public key does not match the pinned sha256",
+    "fail_closed": true
+  },
+  {
+    "check": "provisioned config, corrupt public key",
+    "result": "ValueError: Unable to load PEM file. See https://cryptography.io/en/latest/faq/#why-can-t-i-import-my-pem-file for more details. MalformedFraming",
+    "fail_closed": true
+  },
+  {
+    "check": "provisioned config, malformed pin",
+    "result": "AssessmentConfigError: provisioned attribution_result needs a 64-hex public_key_sha256",
+    "fail_closed": true
+  },
+  {
+    "check": "validation config + genuine result (control)",
+    "result": "task26c-validation-genuine",
+    "fail_closed": true
+  },
+  {
+    "check": "result signed by a different (unpinned) key",
+    "result": "SignedResultError: signed by a key that is not pinned",
+    "fail_closed": true
+  },
+  {
+    "check": "policy 2.2.0 pins the live v3 digest",
+    "result": "True",
+    "fail_closed": true
+  },
+  {
+    "check": "re-pinning the result key changes the v3 digest",
+    "result": "True",
+    "fail_closed": true
+  },
+  {
+    "check": "policy 2.2.0 rejects a re-pinned v3 (digest no longer pinned)",
+    "result": "False",
+    "fail_closed": true
+  }
+]

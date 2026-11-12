@@ -1,0 +1,23 @@
+split,test,expected,result,passed,entries,last_hash,detected_at_index
+train,verify persisted chain with checkpoint,ok,ok,True,3190.0,c7f61ac19a53321459443e53cac5bf0bf8319a1c19db7a036ca59b4a85c20a01,
+train,every entry execution_status = not_executed,true,True,True,,,
+train,proposals have inverse + pending approval,all,0 proposals,True,,,
+train,tamper: modify_tier,detected,record_hash mismatch (entry modified),True,3190.0,,5.0
+train,tamper: modify_source,detected,record_hash mismatch (entry modified),True,3190.0,,7.0
+train,tamper: delete_entry,detected,"previous_hash does not link (deletion, insertion or reordering)",True,3189.0,,10.0
+train,tamper: reorder,detected,"previous_hash does not link (deletion, insertion or reordering)",True,3190.0,,3.0
+train,tamper: insert_duplicate,detected,"previous_hash does not link (deletion, insertion or reordering)",True,3191.0,,3.0
+train,tamper: truncate_tail,detected,checkpoint mismatch (truncation or extension),True,3187.0,,3187.0
+train,tamper: recompute_hash_after_edit,detected,"previous_hash does not link (deletion, insertion or reordering)",True,3190.0,,6.0
+train,tamper: mark_executed,detected,execution recorded although enforcement is disabled,True,3190.0,,0.0
+validation,verify persisted chain with checkpoint,ok,ok,True,1257.0,41f82c42a22c22169ebc6bd2b10cc92208ad78991a1a45066c7c7fbbef347a42,
+validation,every entry execution_status = not_executed,true,True,True,,,
+validation,proposals have inverse + pending approval,all,0 proposals,True,,,
+validation,tamper: modify_tier,detected,record_hash mismatch (entry modified),True,1257.0,,5.0
+validation,tamper: modify_source,detected,record_hash mismatch (entry modified),True,1257.0,,7.0
+validation,tamper: delete_entry,detected,"previous_hash does not link (deletion, insertion or reordering)",True,1256.0,,10.0
+validation,tamper: reorder,detected,"previous_hash does not link (deletion, insertion or reordering)",True,1257.0,,3.0
+validation,tamper: insert_duplicate,detected,"previous_hash does not link (deletion, insertion or reordering)",True,1258.0,,3.0
+validation,tamper: truncate_tail,detected,checkpoint mismatch (truncation or extension),True,1254.0,,1254.0
+validation,tamper: recompute_hash_after_edit,detected,"previous_hash does not link (deletion, insertion or reordering)",True,1257.0,,6.0
+validation,tamper: mark_executed,detected,execution recorded although enforcement is disabled,True,1257.0,,0.0

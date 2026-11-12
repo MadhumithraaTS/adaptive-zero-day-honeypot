@@ -1,0 +1,30 @@
+column,type,unit,derivation,status,description
+session_id,string,,Cowrie session ID,identifier,Unique Cowrie session identifier. Joins features.csv to sessions.jsonl.
+src_ip,string,,cowrie.session.connect src_ip,constant,Source address seen by Cowrie. Always 172.19.0.1 (Docker gateway) because all traffic came from one local client.
+src_port,int,,cowrie.session.connect src_port,identifier,Ephemeral client port. Not behavioural.
+dur,float,seconds,cowrie.session.closed duration (fallback: last minus first event time),measured,Session duration. Timing compressed about 8x by the collection speed factor.
+proto,string,,Cowrie protocol field,constant,Always ssh.
+service,string,,Mapped from destination port,constant,Always ssh.
+spkts,int,count,Number of cowrie.command.input events,proxy,Commands entered by the client (including exit). Not a packet count.
+dpkts,int,count,Number of server-side session events (version/kex/login/size/params/command result/log closed),proxy,Server event count. Not a packet count.
+sbytes,int,bytes,Sum of UTF-8 lengths of entered commands,proxy,Bytes of command text typed by the client. Not network bytes.
+dbytes,int,bytes,Sum of cowrie.log.closed size,proxy,Size of the TTY session recording. Not network bytes. 0 when no shell was opened.
+rate,float,bytes/s,(sbytes + dbytes) / dur,derived,Combined proxy byte rate. 0 when dur is 0.
+sttl,int,,Fixed value,constant,Always 64. Placeholder for the UNSW-NB15 field; not measured.
+dttl,int,,Fixed value,constant,Always 64. Placeholder for the UNSW-NB15 field; not measured.
+sload,float,bits/s,sbytes * 8 / dur,derived,Client proxy load.
+dload,float,bits/s,dbytes * 8 / dur,derived,Server proxy load.
+sinpkt,float,seconds,Mean interval between consecutive commands,measured,Command inter-arrival time. 0 with fewer than two commands. Timing compressed about 8x.
+dinpkt,float,seconds,Mean interval between consecutive server events,measured,Server event inter-arrival time. Timing compressed about 8x.
+sjit,float,seconds,Sample standard deviation of command intervals,measured,Command timing jitter.
+djit,float,seconds,Sample standard deviation of server event intervals,measured,Server event timing jitter.
+tcprtt,float,seconds,Time from first event to cowrie.client.kex,proxy,SSH key-exchange delay used as a round-trip proxy. Not a TCP measurement.
+synack,float,seconds,0.45 * tcprtt,heuristic,Fixed fraction of tcprtt. Carries no information beyond tcprtt.
+ackdat,float,seconds,Time from first login event to first command,measured,Delay between authentication and first command. 0 when no command was entered.
+ct_srv_src,int,count,Sessions in the same split with the same source IP and service,constant,Equals the number of sessions in the split (3125 train / 1232 eval) because there is one source IP. Differs between splits; see README.
+ct_state_ttl,int,,1 when sttl and dttl are both 64,constant,Always 1.
+ct_dst_ltm,int,count,Sessions in the same split with the same destination IP,constant,Equals the number of sessions in the split. Differs between splits.
+ct_src_ltm,int,count,Sessions in the same split with the same source IP,constant,Equals the number of sessions in the split. Differs between splits.
+ct_srv_dst,int,count,Sessions in the same split with the same destination IP and service,constant,Equals the number of sessions in the split. Differs between splits.
+attack_cat,string,,Ground truth from generation manifest,label,Behaviour category. See docs/ANNOTATION_GUIDELINES.md.
+label,int,,0 for benign and 1 otherwise,label,Binary attack label.

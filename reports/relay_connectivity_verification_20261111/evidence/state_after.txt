@@ -1,0 +1,7 @@
+# post-state 2026-11-11T17:03:43Z
+/cowrie-ssh-relay id=54b551d98e1a582ae0b50d84cea44020ad6ad5ad638d46c6f35cb8011a3d5a51 started=2026-11-11T16:59:16.172162889Z restarts=0 cmd=["-n","--pidfile=","portforward","--port=tcp:2222:interface=172.21.0.2","--host=cowrie","--dest_port=2222"] nets=cowrie_cowrie_internal=172.22.0.2 cowrie_relay_frontend=172.21.0.2 
+/cowrie-project id=0bec5a78b1cb354c89d4528a432cef9f70f9b46ce71b2f722aac680258bb4503 started=2026-11-10T12:30:30.630598884Z restarts=0 cmd=["/cowrie/cowrie-env/bin/twistd","-n","--umask=0022","--pidfile=","cowrie"] nets=cowrie_cowrie_internal=172.22.0.1 
+2222/tcp -> 127.0.0.1:2223
+903f0b953112afd47465b1c8a6d8256724cebb05dd9ab80e132416a028e931f3 *cowrie/docker-compose.yml
+46109a31e91161bc9c02163ee5cd72169a4e73ed95b636b02fc2a72fdb53fac0 *configs/threat_attribution_v1.json
+24fd8cf49f6823ff2e188b9d01fab092bc42464e8c26bfb39acd869f22494cd4 *configs/defence_policy_v2.json

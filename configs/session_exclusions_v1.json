@@ -1,0 +1,48 @@
+{
+  "schema": "session-exclusions-1",
+  "config_version": "1.0.0",
+  "created": "2026-11-11",
+  "description": "Cowrie session IDs that must never enter dataset building, feature extraction or evaluation preparation (Task 26C, F-7). Separate from model behaviour and threat scoring.",
+  "sessions": [
+    {
+      "session_id": "99732d516898",
+      "category": "diagnostic",
+      "source": "reports/relay_connectivity_verification_20261111/diagnostic_exclusion.md"
+    },
+    {
+      "session_id": "b806554e19b9",
+      "category": "diagnostic",
+      "source": "reports/relay_connectivity_verification_20261111/diagnostic_exclusion.md"
+    },
+    {
+      "session_id": "9441bcce555c",
+      "category": "demo",
+      "label": "S1 published-path banner",
+      "source": "reports/client_attribution_implementation_20261111/demo_session_exclusion.md"
+    },
+    {
+      "session_id": "acc2bad4a442",
+      "category": "demo",
+      "label": "S2 test client banner",
+      "source": "reports/client_attribution_implementation_20261111/demo_session_exclusion.md"
+    },
+    {
+      "session_id": "d588636ce120",
+      "category": "demo",
+      "label": "S3 control client banner",
+      "source": "reports/client_attribution_implementation_20261111/demo_session_exclusion.md"
+    },
+    {
+      "session_id": "3eede5e19e25",
+      "category": "demo",
+      "label": "S4 test client shell",
+      "source": "reports/client_attribution_implementation_20261111/demo_session_exclusion.md"
+    },
+    {
+      "session_id": "4542a85f37ec",
+      "category": "demo",
+      "label": "S5 control client shell",
+      "source": "reports/client_attribution_implementation_20261111/demo_session_exclusion.md"
+    }
+  ]
+}

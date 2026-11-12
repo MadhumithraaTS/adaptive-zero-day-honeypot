@@ -1,0 +1,257 @@
+{
+ "ssh": {
+  "followed": 148,
+  "next_recorded": 0,
+  "rate": 0.0
+ },
+ "scp": {
+  "followed": 32,
+  "next_recorded": 0,
+  "rate": 0.0
+ },
+ "wget": {
+  "followed": 122,
+  "next_recorded": 2,
+  "rate": 0.016
+ },
+ "./b.sh": {
+  "followed": 36,
+  "next_recorded": 9,
+  "rate": 0.25
+ },
+ "chmod": {
+  "followed": 251,
+  "next_recorded": 72,
+  "rate": 0.287
+ },
+ "./payload": {
+  "followed": 21,
+  "next_recorded": 7,
+  "rate": 0.333
+ },
+ "./malware.sh": {
+  "followed": 32,
+  "next_recorded": 11,
+  "rate": 0.344
+ },
+ "unset": {
+  "followed": 27,
+  "next_recorded": 10,
+  "rate": 0.37
+ },
+ "./update.sh": {
+  "followed": 32,
+  "next_recorded": 12,
+  "rate": 0.375
+ },
+ "sh": {
+  "followed": 130,
+  "next_recorded": 49,
+  "rate": 0.377
+ },
+ "nmap": {
+  "followed": 102,
+  "next_recorded": 41,
+  "rate": 0.402
+ },
+ "history": {
+  "followed": 41,
+  "next_recorded": 17,
+  "rate": 0.415
+ },
+ "rm": {
+  "followed": 207,
+  "next_recorded": 94,
+  "rate": 0.454
+ },
+ "curl": {
+  "followed": 157,
+  "next_recorded": 76,
+  "rate": 0.484
+ },
+ "enable": {
+  "followed": 85,
+  "next_recorded": 47,
+  "rate": 0.553
+ },
+ "system": {
+  "followed": 89,
+  "next_recorded": 51,
+  "rate": 0.573
+ },
+ "shell": {
+  "followed": 75,
+  "next_recorded": 43,
+  "rate": 0.573
+ },
+ "hostname": {
+  "followed": 128,
+  "next_recorded": 114,
+  "rate": 0.891
+ },
+ "whoami": {
+  "followed": 354,
+  "next_recorded": 345,
+  "rate": 0.975
+ },
+ "id": {
+  "followed": 279,
+  "next_recorded": 277,
+  "rate": 0.993
+ },
+ "ls": {
+  "followed": 719,
+  "next_recorded": 717,
+  "rate": 0.997
+ },
+ "pwd": {
+  "followed": 370,
+  "next_recorded": 370,
+  "rate": 1.0
+ },
+ "who": {
+  "followed": 242,
+  "next_recorded": 242,
+  "rate": 1.0
+ },
+ "date": {
+  "followed": 313,
+  "next_recorded": 313,
+  "rate": 1.0
+ },
+ "du": {
+  "followed": 374,
+  "next_recorded": 374,
+  "rate": 1.0
+ },
+ "cat": {
+  "followed": 1137,
+  "next_recorded": 1137,
+  "rate": 1.0
+ },
+ "journalctl": {
+  "followed": 190,
+  "next_recorded": 190,
+  "rate": 1.0
+ },
+ "sudo": {
+  "followed": 263,
+  "next_recorded": 263,
+  "rate": 1.0
+ },
+ "find": {
+  "followed": 362,
+  "next_recorded": 362,
+  "rate": 1.0
+ },
+ "crontab": {
+  "followed": 70,
+  "next_recorded": 70,
+  "rate": 1.0
+ },
+ "w": {
+  "followed": 245,
+  "next_recorded": 245,
+  "rate": 1.0
+ },
+ "df": {
+  "followed": 385,
+  "next_recorded": 385,
+  "rate": 1.0
+ },
+ "uname": {
+  "followed": 294,
+  "next_recorded": 294,
+  "rate": 1.0
+ },
+ "ip": {
+  "followed": 209,
+  "next_recorded": 209,
+  "rate": 1.0
+ },
+ "lscpu": {
+  "followed": 51,
+  "next_recorded": 51,
+  "rate": 1.0
+ },
+ "cd": {
+  "followed": 251,
+  "next_recorded": 251,
+  "rate": 1.0
+ },
+ "free": {
+  "followed": 252,
+  "next_recorded": 252,
+  "rate": 1.0
+ },
+ "tail": {
+  "followed": 168,
+  "next_recorded": 168,
+  "rate": 1.0
+ },
+ "uptime": {
+  "followed": 242,
+  "next_recorded": 242,
+  "rate": 1.0
+ },
+ "clear": {
+  "followed": 176,
+  "next_recorded": 176,
+  "rate": 1.0
+ },
+ "systemctl": {
+  "followed": 224,
+  "next_recorded": 224,
+  "rate": 1.0
+ },
+ "ping": {
+  "followed": 95,
+  "next_recorded": 95,
+  "rate": 1.0
+ },
+ "arp": {
+  "followed": 87,
+  "next_recorded": 87,
+  "rate": 1.0
+ },
+ "nc": {
+  "followed": 92,
+  "next_recorded": 92,
+  "rate": 1.0
+ },
+ "service": {
+  "followed": 217,
+  "next_recorded": 217,
+  "rate": 1.0
+ },
+ "nproc": {
+  "followed": 50,
+  "next_recorded": 50,
+  "rate": 1.0
+ },
+ "ss": {
+  "followed": 76,
+  "next_recorded": 76,
+  "rate": 1.0
+ },
+ "ifconfig": {
+  "followed": 58,
+  "next_recorded": 58,
+  "rate": 1.0
+ },
+ "echo": {
+  "followed": 48,
+  "next_recorded": 48,
+  "rate": 1.0
+ },
+ "ps": {
+  "followed": 66,
+  "next_recorded": 66,
+  "rate": 1.0
+ },
+ "tar": {
+  "followed": 73,
+  "next_recorded": 73,
+  "rate": 1.0
+ }
+}

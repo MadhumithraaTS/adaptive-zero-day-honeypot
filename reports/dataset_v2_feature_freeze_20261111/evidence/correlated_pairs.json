@@ -1,0 +1,407 @@
+{
+  "note": "logged-in sessions with >= 1 input line; train = evidence, validation = consistency only",
+  "splits": {
+    "train": {
+      "n_logged_in": 1500,
+      "all_categories": {
+        "n": 1401,
+        "measures": {
+          "input_line_count": {
+            "epsilon2": 0.40392316025596864,
+            "ci95": [
+              0.36074870806868703,
+              0.44619939299779615
+            ]
+          },
+          "unique_command_names": {
+            "epsilon2": 0.49276542971557546,
+            "ci95": [
+              0.4576337892411362,
+              0.5331446175529034
+            ]
+          },
+          "unique_names_residual_after_line_count": {
+            "epsilon2": 0.4673438713478506,
+            "ci95": [
+              0.4261216089124286,
+              0.5112198794320103
+            ]
+          },
+          "line_count_residual_after_unique_names": {
+            "epsilon2": 0.38156307907872905,
+            "ci95": [
+              0.3355626890214498,
+              0.42608445695871494
+            ]
+          },
+          "repeated_name_lines_(lines_minus_unique)": {
+            "epsilon2": 0.3908414315274402,
+            "ci95": [
+              0.34138214757839264,
+              0.4396749575463301
+            ]
+          },
+          "input_bytes_total": {
+            "epsilon2": 0.4965593062042294,
+            "ci95": [
+              0.4598603699943664,
+              0.5375549496426786
+            ]
+          },
+          "input_line_max_bytes": {
+            "epsilon2": 0.5297040040594301,
+            "ci95": [
+              0.4952394804514637,
+              0.5696392071099796
+            ]
+          },
+          "bytes_total_residual_after_line_count": {
+            "epsilon2": 0.41876734693012313,
+            "ci95": [
+              0.3797156095459493,
+              0.45733058203265975
+            ]
+          },
+          "max_bytes_residual_after_bytes_total": {
+            "epsilon2": 0.17911157873049946,
+            "ci95": [
+              0.14306141383331877,
+              0.22128934468110162
+            ]
+          },
+          "bytes_total_residual_after_max_bytes": {
+            "epsilon2": 0.24335248866642473,
+            "ci95": [
+              0.21010611340935018,
+              0.2867845302245094
+            ]
+          },
+          "mean_bytes_per_line_(bytes_total/line_count)": {
+            "epsilon2": 0.5195113763336259,
+            "ci95": [
+              0.48485304497999976,
+              0.5515735182945665
+            ]
+          }
+        }
+      },
+      "excluding_brute_force": {
+        "n": 1302,
+        "measures": {
+          "input_line_count": {
+            "epsilon2": 0.25123084457659933,
+            "ci95": [
+              0.21481406356566254,
+              0.2885618257020922
+            ]
+          },
+          "unique_command_names": {
+            "epsilon2": 0.3639410668645236,
+            "ci95": [
+              0.3258438811537706,
+              0.4044356088262333
+            ]
+          },
+          "unique_names_residual_after_line_count": {
+            "epsilon2": 0.4547786926311163,
+            "ci95": [
+              0.4064121512655296,
+              0.5005634410175727
+            ]
+          },
+          "line_count_residual_after_unique_names": {
+            "epsilon2": 0.2130556766047362,
+            "ci95": [
+              0.1702732075900159,
+              0.26539999203874054
+            ]
+          },
+          "repeated_name_lines_(lines_minus_unique)": {
+            "epsilon2": 0.3714018057394751,
+            "ci95": [
+              0.32571678991233377,
+              0.42617247509515394
+            ]
+          },
+          "input_bytes_total": {
+            "epsilon2": 0.37326677032364636,
+            "ci95": [
+              0.33662613204305886,
+              0.4075089365853378
+            ]
+          },
+          "input_line_max_bytes": {
+            "epsilon2": 0.42398093966441186,
+            "ci95": [
+              0.3864742755438026,
+              0.45851055386598966
+            ]
+          },
+          "bytes_total_residual_after_line_count": {
+            "epsilon2": 0.433609428467053,
+            "ci95": [
+              0.39254752660236747,
+              0.46460584623669443
+            ]
+          },
+          "max_bytes_residual_after_bytes_total": {
+            "epsilon2": 0.10724447080000553,
+            "ci95": [
+              0.08521932231273441,
+              0.1371763956127551
+            ]
+          },
+          "bytes_total_residual_after_max_bytes": {
+            "epsilon2": 0.04663002091783394,
+            "ci95": [
+              0.02694113752266041,
+              0.07314075775525333
+            ]
+          },
+          "mean_bytes_per_line_(bytes_total/line_count)": {
+            "epsilon2": 0.4433445145891157,
+            "ci95": [
+              0.4024595141403982,
+              0.4729791311604503
+            ]
+          }
+        }
+      },
+      "spearman": {
+        "input_line_count~unique_command_names": 0.911014911815121,
+        "input_bytes_total~input_line_max_bytes": 0.8314457054885421,
+        "input_line_count~input_bytes_total": 0.7804590604469237,
+        "input_line_count~input_line_max_bytes": 0.5097896659276231
+      },
+      "structure": {
+        "unique_le_lines_all": true,
+        "share_unique_equals_lines": 0.6980728051391863,
+        "lines_minus_unique_by_category_mean": {
+          "benign": 0.107,
+          "botnet": 0.067,
+          "brute_force": 0.0,
+          "lateral_movement": 0.75,
+          "privilege_escalation": 1.286,
+          "reconnaissance": 0.799
+        },
+        "mean_bytes_per_line_median_by_category": {
+          "benign": 10.8,
+          "botnet": 15.57,
+          "brute_force": 7.0,
+          "lateral_movement": 15.82,
+          "privilege_escalation": 14.2,
+          "reconnaissance": 10.0
+        },
+        "max_bytes_median_by_category": {
+          "benign": 25.0,
+          "botnet": 39.0,
+          "brute_force": 7.0,
+          "lateral_movement": 23.0,
+          "privilege_escalation": 37.0,
+          "reconnaissance": 20.0
+        }
+      }
+    },
+    "validation": {
+      "n_logged_in": 600,
+      "all_categories": {
+        "n": 559,
+        "measures": {
+          "input_line_count": {
+            "epsilon2": 0.4010317090330384,
+            "ci95": [
+              0.34056491575878,
+              0.4703607965606048
+            ]
+          },
+          "unique_command_names": {
+            "epsilon2": 0.4967940963477548,
+            "ci95": [
+              0.43811024061744647,
+              0.5709652554038747
+            ]
+          },
+          "unique_names_residual_after_line_count": {
+            "epsilon2": 0.4803682030510666,
+            "ci95": [
+              0.4313125602874581,
+              0.5550698439681829
+            ]
+          },
+          "line_count_residual_after_unique_names": {
+            "epsilon2": 0.3571480824787781,
+            "ci95": [
+              0.30015613187387397,
+              0.4298418024580916
+            ]
+          },
+          "repeated_name_lines_(lines_minus_unique)": {
+            "epsilon2": 0.38960510308051255,
+            "ci95": [
+              0.32047286385616397,
+              0.4669218365404074
+            ]
+          },
+          "input_bytes_total": {
+            "epsilon2": 0.4542659933236779,
+            "ci95": [
+              0.395466411589491,
+              0.5122850647987259
+            ]
+          },
+          "input_line_max_bytes": {
+            "epsilon2": 0.5068015877531029,
+            "ci95": [
+              0.4466111457328423,
+              0.5674900179139731
+            ]
+          },
+          "bytes_total_residual_after_line_count": {
+            "epsilon2": 0.38901446737706213,
+            "ci95": [
+              0.32867318738981527,
+              0.4565922617168223
+            ]
+          },
+          "max_bytes_residual_after_bytes_total": {
+            "epsilon2": 0.208647891646874,
+            "ci95": [
+              0.15190081451295476,
+              0.28726111105539526
+            ]
+          },
+          "bytes_total_residual_after_max_bytes": {
+            "epsilon2": 0.26011544359110694,
+            "ci95": [
+              0.2105713517565797,
+              0.3175105806029814
+            ]
+          },
+          "mean_bytes_per_line_(bytes_total/line_count)": {
+            "epsilon2": 0.4906432633318335,
+            "ci95": [
+              0.4358607026875562,
+              0.5484541657137807
+            ]
+          }
+        }
+      },
+      "excluding_brute_force": {
+        "n": 521,
+        "measures": {
+          "input_line_count": {
+            "epsilon2": 0.25378080848874396,
+            "ci95": [
+              0.20129890803277842,
+              0.3313619764427267
+            ]
+          },
+          "unique_command_names": {
+            "epsilon2": 0.3739898196662582,
+            "ci95": [
+              0.3156649938418672,
+              0.45575445772012435
+            ]
+          },
+          "unique_names_residual_after_line_count": {
+            "epsilon2": 0.4767662382870149,
+            "ci95": [
+              0.22720249967752593,
+              0.5479345890008188
+            ]
+          },
+          "line_count_residual_after_unique_names": {
+            "epsilon2": 0.20102305267682768,
+            "ci95": [
+              0.14265040636393211,
+              0.28266029802183
+            ]
+          },
+          "repeated_name_lines_(lines_minus_unique)": {
+            "epsilon2": 0.3692801521264514,
+            "ci95": [
+              0.29651048725473184,
+              0.4602231890751312
+            ]
+          },
+          "input_bytes_total": {
+            "epsilon2": 0.3262753245844353,
+            "ci95": [
+              0.27461544358824197,
+              0.3915397450513149
+            ]
+          },
+          "input_line_max_bytes": {
+            "epsilon2": 0.3963195415928533,
+            "ci95": [
+              0.3427746025040715,
+              0.4653275803491824
+            ]
+          },
+          "bytes_total_residual_after_line_count": {
+            "epsilon2": 0.4004952157578077,
+            "ci95": [
+              0.3380927826083966,
+              0.4643612223767427
+            ]
+          },
+          "max_bytes_residual_after_bytes_total": {
+            "epsilon2": 0.13934089610369713,
+            "ci95": [
+              0.10082301230404117,
+              0.19261397322689716
+            ]
+          },
+          "bytes_total_residual_after_max_bytes": {
+            "epsilon2": 0.026664217590535118,
+            "ci95": [
+              0.011496720965818445,
+              0.06557341190464337
+            ]
+          },
+          "mean_bytes_per_line_(bytes_total/line_count)": {
+            "epsilon2": 0.40770862815583647,
+            "ci95": [
+              0.35081092879596343,
+              0.47190850511576793
+            ]
+          }
+        }
+      },
+      "spearman": {
+        "input_line_count~unique_command_names": 0.8977685756561368,
+        "input_bytes_total~input_line_max_bytes": 0.8281854286713612,
+        "input_line_count~input_bytes_total": 0.7872554457402704,
+        "input_line_count~input_line_max_bytes": 0.533260498994038
+      },
+      "structure": {
+        "unique_le_lines_all": true,
+        "share_unique_equals_lines": 0.6708407871198568,
+        "lines_minus_unique_by_category_mean": {
+          "benign": 0.148,
+          "botnet": 0.056,
+          "brute_force": 0.0,
+          "lateral_movement": 0.692,
+          "privilege_escalation": 1.348,
+          "reconnaissance": 1.027
+        },
+        "mean_bytes_per_line_median_by_category": {
+          "benign": 11.0,
+          "botnet": 15.57,
+          "brute_force": 7.0,
+          "lateral_movement": 15.42,
+          "privilege_escalation": 14.0,
+          "reconnaissance": 10.18
+        },
+        "max_bytes_median_by_category": {
+          "benign": 25.0,
+          "botnet": 39.0,
+          "brute_force": 7.0,
+          "lateral_movement": 22.5,
+          "privilege_escalation": 37.0,
+          "reconnaissance": 20.0
+        }
+      }
+    }
+  }
+}

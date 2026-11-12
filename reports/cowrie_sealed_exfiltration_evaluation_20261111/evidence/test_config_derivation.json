@@ -1,0 +1,41 @@
+{
+ "written": "reports\\cowrie_sealed_exfiltration_evaluation_20261111\\config\\profiles_v2_sealed_exfiltration.json",
+ "sha256": "a6522877bda709cf8a80de440665bb45203e9b3cdcd4763abadb4ebcbc7f966a",
+ "old_pools": {
+  "ip": [
+   "192.0.2.10",
+   "198.51.100.20",
+   "203.0.113.30",
+   "192.0.2.40"
+  ],
+  "domain": [
+   "files.example",
+   "mirror.example",
+   "pkg-repo.example"
+  ]
+ },
+ "new_pools": {
+  "ip": [
+   "192.0.2.77",
+   "198.51.100.88",
+   "203.0.113.99",
+   "192.0.2.150"
+  ],
+  "domain": [
+   "archive.example",
+   "backup-store.example",
+   "upload-node.example"
+  ]
+ },
+ "occurrences_in_train_validation_commands": {
+  "192.0.2.77": 0,
+  "198.51.100.88": 0,
+  "203.0.113.99": 0,
+  "192.0.2.150": 0,
+  "archive.example": 0,
+  "backup-store.example": 0,
+  "upload-node.example": 0
+ },
+ "exfiltration_profile_identical_to_revised": true,
+ "train_validation_commands_checked": 10595
+}

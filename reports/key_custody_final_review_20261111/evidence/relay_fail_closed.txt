@@ -1,0 +1,6 @@
+### relay start with missing signing key
+RELAY REFUSED TO START: FileNotFoundError [Errno 2] No such file or directory: '/nonexistent/key.pem'
+record log created: False
+### relay start with garbage signing key
+RELAY REFUSED TO START: ValueError Unable to load PEM file. See https://cryptography.io/en/latest/faq/#why-can-t-i-import-my-pem-file for more details. Mal
+record log created: False

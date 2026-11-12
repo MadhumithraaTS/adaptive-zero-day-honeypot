@@ -1,0 +1,27 @@
+# read-only inspection 2026-11-11T16:40:44Z
+## docker networks
+bridge driver=bridge internal=false subnets=172.17.0.0/16(gw=172.17.0.1,range=invalid Prefix)  containers= opts={"com.docker.network.bridge.default_bridge":"true","com.docker.network.bridge.enable_icc":"true","com.docker.network.bridge.enable_ip_masquerade":"true","com.docker.network.bridge.host_binding_ipv4":"0.0.0.0","com.docker.network.bridge.name":"docker0","com.docker.network.driver.mtu":"1500"}
+cowrie_cowrie_internal driver=bridge internal=true subnets=172.22.0.0/16(gw=invalid IP,range=invalid Prefix)  containers=cowrie-project=172.22.0.1/16,9a:ec:a1:47:ba:dc cowrie-ssh-relay=172.22.0.2/16,de:ee:4b:cd:e2:ad  opts={"com.docker.network.bridge.gateway_mode_ipv4":"isolated","com.docker.network.enable_ipv4":"true","com.docker.network.enable_ipv6":"false"}
+cowrie_default driver=bridge internal=false subnets=172.19.0.0/16(gw=172.19.0.1,range=invalid Prefix)  containers= opts={"com.docker.network.enable_ipv4":"true","com.docker.network.enable_ipv6":"false"}
+cowrie_relay_frontend driver=bridge internal=false subnets=172.21.0.0/16(gw=172.21.0.1,range=invalid Prefix)  containers=cowrie-ssh-relay=172.21.0.2/16,62:7a:84:74:cf:15  opts={"com.docker.network.enable_ipv4":"true","com.docker.network.enable_ipv6":"false"}
+et-ai_default driver=bridge internal=false subnets=172.20.0.0/16(gw=172.20.0.1,range=invalid Prefix)  containers= opts={"com.docker.network.enable_ipv4":"true","com.docker.network.enable_ipv6":"false"}
+host driver=host internal=false subnets= containers= opts={}
+none driver=null internal=false subnets= containers= opts={}
+rezumy_default driver=bridge internal=false subnets=172.18.0.0/16(gw=172.18.0.1,range=invalid Prefix)  containers= opts={"com.docker.network.enable_ipv4":"true","com.docker.network.enable_ipv6":"false"}
+## docker info
+server=29.1.2 os=Docker Desktop (containerized) kernel=6.18.58.1-microsoft-standard-WSL2 pools=null
+engine=29.1.2 api=1.52
+## running containers
+cowrie-ssh-relay bf371c37638b Up 28 hours cowrie_cowrie_internal,cowrie_relay_frontend
+cowrie-project bf371c37638b Up 28 hours cowrie_cowrie_internal
+datacenter_kb_postgres pgvector/pgvector:pg16 Exited (0) 3 weeks ago et-ai_default
+rezumy-postgres postgres:15 Exited (0) 3 weeks ago rezumy_default
+cowrie-honeypot cowrie/cowrie Exited (255) 3 months ago bridge
+charming_sammet cowrie/cowrie Exited (255) 6 months ago bridge
+distracted_gates hello-world Exited (0) 6 months ago bridge
+distracted_chatterjee webgoat/assignments:findthesecret Exited (255) 9 months ago bridge
+interesting_bhabha webgoat/webgoat Exited (255) 9 months ago bridge
+nice_gould webgoat/webgoat Exited (255) 10 months ago bridge
+## relay/cowrie container network settings
+/cowrie-ssh-relay cowrie_cowrie_internal=172.22.0.2/16 mac=de:ee:4b:cd:e2:ad cowrie_relay_frontend=172.21.0.2/16 mac=62:7a:84:74:cf:15  sysctls=null capadd=[] capdrop=[ALL] user=cowrie
+/cowrie-project cowrie_cowrie_internal=172.22.0.1/16 mac=9a:ec:a1:47:ba:dc  sysctls=null capadd=[] capdrop=[ALL] user=cowrie

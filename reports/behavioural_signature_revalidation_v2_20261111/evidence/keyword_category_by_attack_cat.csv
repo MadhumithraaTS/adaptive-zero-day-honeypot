@@ -1,0 +1,17 @@
+split,keyword_category,logged_in_sessions_matched,share_of_logged_in,share_benign,share_botnet,share_brute_force,share_lateral_movement,share_privilege_escalation,share_reconnaissance,top_firing_keywords,hits_not_whole_word_share
+train,reconnaissance,1329,0.8860,0.9733,0.9795,0.3586,0.8698,1.0000,1.0000,w:1557; ls:657; ps:539; uname:374; id:303; pwd:230,0.3112
+train,credential_attack,675,0.4500,0.6043,0.0000,0.0000,0.7865,0.5200,0.5251,ssh:693; passwd:132; root:37,0.6891
+train,file_transfer,423,0.2820,0.1426,1.0000,0.0000,0.3958,0.0000,0.4022,curl:175; wget:160; chmod +x:96; nc:76; scp:18,0.0343
+train,file_system,1031,0.6873,0.4991,1.0000,0.1414,0.9635,0.9886,0.9497,cat :1034; ls:657; rm :218; cd :195; chmod:195; find:119,0.0437
+train,persistence,386,0.2573,0.5936,0.0000,0.0000,0.0000,0.3029,0.0000,service:227; systemctl:106; crontab:53,0.0674
+train,privilege_escalation,401,0.2673,0.0000,0.5077,0.1717,0.1042,1.0000,0.4078,su:210; sudo:175; whoami:156; chmod 777:99; /etc/shadow:83; id_rsa:30,0.3851
+train,networking,912,0.6080,0.6738,1.0000,0.0000,0.9479,0.3771,0.5084,ssh:693; curl:175; wget:160; nc:76; ping:67; ip a:29,0.3637
+train,evasion,238,0.1587,0.0000,0.7641,0.0000,0.0000,0.5086,0.0000,rm :218; history -c:30; unset histfile:21,0.3309
+validation,reconnaissance,534,0.8900,0.9607,0.9718,0.3797,0.9231,1.0000,1.0000,w:622; ls:295; ps:238; uname:153; id:142; pwd:79,0.2853
+validation,credential_attack,297,0.4950,0.6507,0.0000,0.0000,0.8205,0.6522,0.5270,ssh:302; passwd:59; root:19,0.7132
+validation,file_transfer,170,0.2833,0.1965,1.0000,0.0000,0.3718,0.0000,0.3378,curl:80; wget:57; chmod +x:35; nc:29; scp:5,0.0243
+validation,file_system,421,0.7017,0.5459,1.0000,0.1013,0.9744,1.0000,0.9730,cat :420; ls:295; rm :91; cd :71; chmod:71; find:45,0.0410
+validation,persistence,168,0.2800,0.6332,0.0000,0.0000,0.0000,0.3333,0.0000,service:103; systemctl:42; crontab:23,0.0893
+validation,privilege_escalation,171,0.2850,0.0000,0.5070,0.2025,0.2051,1.0000,0.4595,su:84; whoami:72; sudo:69; chmod 777:36; /etc/shadow:36; id_rsa:9,0.3660
+validation,networking,379,0.6317,0.7249,1.0000,0.0000,0.9744,0.4493,0.4730,ssh:302; curl:80; wget:57; nc:29; ping:29; ip a:12,0.3852
+validation,evasion,94,0.1567,0.0000,0.8169,0.0000,0.0000,0.5217,0.0000,rm :91; history -c:13; unset histfile:8,0.3214

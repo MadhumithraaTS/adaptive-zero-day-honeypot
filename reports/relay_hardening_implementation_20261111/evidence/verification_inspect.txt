@@ -1,0 +1,30 @@
+# verification 2026-11-11T16:59:47Z
+## V1/V2/V4/V6/V7 relay
+id=54b551d98e1a582ae0b50d84cea44020ad6ad5ad638d46c6f35cb8011a3d5a51 status=running started=2026-11-11T16:59:16.172162889Z restarts=0 image=sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a cmd=["-n","--pidfile=","portforward","--port=tcp:2222:interface=172.21.0.2","--host=cowrie","--dest_port=2222"] entrypoint=["/cowrie/cowrie-env/bin/twistd"] sysctls={"net.ipv4.conf.all.forwarding":"0","net.ipv4.conf.default.forwarding":"0","net.ipv4.ip_forward":"0"} capdrop=[ALL] capadd=<no value> secopt=[no-new-privileges:true] ro=true user=cowrie pids=64 mem=134217728 tmpfs={"/tmp":""} restart=unless-stopped ports={"2222/tcp":[{"HostIp":"127.0.0.1","HostPort":"2223"}]} nets=cowrie_cowrie_internal=172.22.0.2/16,netid=8de3b00259f2 cowrie_relay_frontend=172.21.0.2/16,netid=c94e904b8861 
+volume fba87a593a5f610544b165caac1e1f1a706443986bf54938555159c95f442fcc /cowrie/cowrie-git/var
+volume 4492a68c886ee680203e4ab2fac0ef0d90687de876367d5c334d756a0c409194 /cowrie/cowrie-git/etc
+
+## V8 cowrie
+id=0bec5a78b1cb354c89d4528a432cef9f70f9b46ce71b2f722aac680258bb4503 status=running started=2026-11-10T12:30:30.630598884Z restarts=0 image=sha256:bf371c37638bf8b49efed87b66f5d0bf48432a499c6b3fa3c44c03ebf02cc13a nets=cowrie_cowrie_internal=172.22.0.1 
+## V9 networks
+cowrie_cowrie_internal id=8de3b00259f2 internal=true subnet=172.22.0.0/16 gw= opts={"com.docker.network.bridge.gateway_mode_ipv4":"isolated","com.docker.network.enable_ipv4":"true","com.docker.network.enable_ipv6":"false"} members=cowrie-project=172.22.0.1/16 cowrie-ssh-relay=172.22.0.2/16 
+cowrie_relay_frontend id=c94e904b8861 internal=false subnet=172.21.0.0/16 gw=172.21.0.1 opts={"com.docker.network.enable_ipv4":"true","com.docker.network.enable_ipv6":"false"} members=cowrie-ssh-relay=172.21.0.2/16 
+bridge aa247d88ef47
+cowrie_cowrie_internal 8de3b00259f2
+cowrie_default 29dbe112c59e
+cowrie_relay_frontend c94e904b8861
+et-ai_default ace391997e9b
+host bd88fc39a1bc
+none a4d2039ab024
+rezumy_default e0f9fc878c71
+2222/tcp -> 127.0.0.1:2223
+## logs (relay)
+/cowrie/cowrie-env/lib/python3.13/site-packages/twisted/conch/ssh/transport.py:110: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  b"3des-cbc": (algorithms.TripleDES, 24, modes.CBC),
+/cowrie/cowrie-env/lib/python3.13/site-packages/twisted/conch/ssh/transport.py:117: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  b"3des-ctr": (algorithms.TripleDES, 24, modes.CTR),
+2026-11-11T16:59:17+0000 [-] Reading configuration from ['/cowrie/cowrie-git/etc/cowrie.cfg.dist']
+2026-11-11T16:59:18+0000 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 25.5.0 (/cowrie/cowrie-env/bin/python3 3.13.5) starting up.
+2026-11-11T16:59:18+0000 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.epollreactor.EPollReactor.
+2026-11-11T16:59:18+0000 [-] ProxyFactory starting on 2222
+2026-11-11T16:59:18+0000 [twisted.protocols.portforward.ProxyFactory#info] Starting factory <twisted.protocols.portforward.ProxyFactory object at 0x73d9e2e38050>

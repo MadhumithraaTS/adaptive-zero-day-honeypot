@@ -1,0 +1,486 @@
+{
+  "catalogue_version": "v2-evidence-1.1",
+  "design_version": "v2-evidence-1.0",
+  "amendments": [
+    {
+      "version": "v2-evidence-1.1",
+      "from": "v2-evidence-1.0",
+      "approved": "Task 22 (design open decisions 1-2)",
+      "changes": [
+        "NET-1 restricted to scanning tools, or probe tools aimed at qualifying internal/scan targets (FP-4).",
+        "NET-0 added (context): HTTP HEAD (curl -I/--head) and probe tools aimed at non-qualifying targets are reachability checks, never reconnaissance.",
+        "AUTH-1/AUTH-2: >= 3 distinct failures within 300 s from the same observed src_ip; relay/NAT sources and sessions without attribution are 'indeterminate'.",
+        "TIME-0 may carry an 'unusual timing' caveat from the reference timing calibration (caveat only)."
+      ]
+    }
+  ],
+  "indicators": [
+    {
+      "id": "AUTH-0",
+      "name": "authentication failure in session",
+      "category": "authentication",
+      "kind": "context",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.login.failed"
+      ],
+      "limitations": "a rejected login; says nothing about intent or other attempts",
+      "outcome_capable": false
+    },
+    {
+      "id": "AUTH-1",
+      "name": "repeated authentication failures from one source",
+      "category": "authentication",
+      "kind": "action",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.login.failed",
+        "src_ip",
+        "timestamp"
+      ],
+      "limitations": "one network source failed >= 3 times in 300 s; cannot separate actors behind shared/NAT/relay addresses",
+      "outcome_capable": false
+    },
+    {
+      "id": "AUTH-2",
+      "name": "login success after repeated failures",
+      "category": "authentication",
+      "kind": "action",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.login.failed",
+        "cowrie.login.success",
+        "src_ip",
+        "timestamp"
+      ],
+      "limitations": "does not show the credentials were guessed rather than known",
+      "outcome_capable": false
+    },
+    {
+      "id": "SHELL-1",
+      "name": "interactive command activity",
+      "category": "execution",
+      "kind": "context",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "commands were issued; not what they did",
+      "outcome_capable": false
+    },
+    {
+      "id": "DISC-1",
+      "name": "system/identity discovery command",
+      "category": "discovery",
+      "kind": "context",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "ordinary administration uses the same commands",
+      "outcome_capable": false
+    },
+    {
+      "id": "PRIV-1",
+      "name": "privilege-context probe",
+      "category": "privilege",
+      "kind": "action",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "attempted enumeration only; Cowrie output (what was found) is not logged",
+      "outcome_capable": false
+    },
+    {
+      "id": "PRIV-2",
+      "name": "command run under sudo",
+      "category": "privilege",
+      "kind": "context",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "elevation requested; success is emulated and not logged",
+      "outcome_capable": false
+    },
+    {
+      "id": "CRED-1",
+      "name": "credential-material access attempt",
+      "category": "credential_access",
+      "kind": "action",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "does not show the file existed or was read",
+      "outcome_capable": false
+    },
+    {
+      "id": "FILE-1",
+      "name": "named file search",
+      "category": "file_discovery",
+      "kind": "context",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "search issued; results not logged",
+      "outcome_capable": false
+    },
+    {
+      "id": "FILE-2",
+      "name": "filesystem size/recursive survey",
+      "category": "file_discovery",
+      "kind": "context",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "routine disk administration",
+      "outcome_capable": false
+    },
+    {
+      "id": "XFER-1",
+      "name": "download attempt",
+      "category": "transfer",
+      "kind": "action",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)",
+        "cowrie.session.file_download"
+      ],
+      "limitations": "attempt only; success requires a cowrie.session.file_download event",
+      "outcome_capable": true
+    },
+    {
+      "id": "XFER-1-OK",
+      "name": "download recorded by honeypot",
+      "category": "transfer",
+      "kind": "action",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.session.file_download"
+      ],
+      "limitations": "the honeypot stored a file; not that it ran",
+      "outcome_capable": false
+    },
+    {
+      "id": "XFER-2",
+      "name": "upload attempt",
+      "category": "transfer",
+      "kind": "action",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)",
+        "cowrie.session.file_upload"
+      ],
+      "limitations": "attempt only; success requires a cowrie.session.file_upload event",
+      "outcome_capable": true
+    },
+    {
+      "id": "XFER-2-OK",
+      "name": "upload recorded by honeypot",
+      "category": "transfer",
+      "kind": "action",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.session.file_upload"
+      ],
+      "limitations": "the honeypot received a file",
+      "outcome_capable": false
+    },
+    {
+      "id": "EXEC-1",
+      "name": "execution of a file this session tried to download",
+      "category": "execution",
+      "kind": "action",
+      "evidence_class": "inferred",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "links two typed commands; does not show the file existed or ran",
+      "outcome_capable": false
+    },
+    {
+      "id": "STAGE-1",
+      "name": "archive creation attempt",
+      "category": "staging",
+      "kind": "action",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "does not show an archive was created",
+      "outcome_capable": false
+    },
+    {
+      "id": "EVADE-1",
+      "name": "shell-history tampering",
+      "category": "defence_evasion",
+      "kind": "action",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "does not show history was unrecoverable",
+      "outcome_capable": false
+    },
+    {
+      "id": "PERS-0",
+      "name": "persistence-related read",
+      "category": "persistence",
+      "kind": "context",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "inspection only; never persistence",
+      "outcome_capable": false
+    },
+    {
+      "id": "PERS-1",
+      "name": "persistence modification attempt",
+      "category": "persistence",
+      "kind": "action",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "does not show the change persisted",
+      "outcome_capable": false
+    },
+    {
+      "id": "NET-0",
+      "name": "reachability check",
+      "category": "network",
+      "kind": "context",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "connectivity/HTTP HEAD check; not reconnaissance",
+      "outcome_capable": false
+    },
+    {
+      "id": "NET-1",
+      "name": "network probe attempt",
+      "category": "network",
+      "kind": "action",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "attempted probe; not a successful scan (lab network is isolated)",
+      "outcome_capable": false
+    },
+    {
+      "id": "CHAIN-1",
+      "name": "shell operator / chaining",
+      "category": "composition",
+      "kind": "context",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "pipelines are ubiquitous",
+      "outcome_capable": false
+    },
+    {
+      "id": "REDIR-1",
+      "name": "output redirection to a file",
+      "category": "composition",
+      "kind": "context",
+      "evidence_class": "directly_observed",
+      "telemetry": [
+        "cowrie.command.input (input)"
+      ],
+      "limitations": "file content not logged",
+      "outcome_capable": false
+    },
+    {
+      "id": "EMU-1",
+      "name": "emulator could not run a command",
+      "category": "emulator",
+      "kind": "caveat",
+      "evidence_class": "emulator_dependent",
+      "telemetry": [
+        "cowrie.command.failed"
+      ],
+      "limitations": "a property of Cowrie, not of the client",
+      "outcome_capable": false
+    },
+    {
+      "id": "ART-1",
+      "name": "known emulator latency artefact",
+      "category": "sensor",
+      "kind": "caveat",
+      "evidence_class": "sensor_calibration",
+      "telemetry": [
+        "cowrie.command.input (input)",
+        "sensor calibration slow-command list"
+      ],
+      "limitations": "timing of this session is inflated by emulator execution",
+      "outcome_capable": false
+    },
+    {
+      "id": "SEQ-1",
+      "name": "previously seen exact command sequence",
+      "category": "repetition",
+      "kind": "caveat",
+      "evidence_class": "generator_dependent",
+      "telemetry": [
+        "cowrie.command.input (input)",
+        "reference sequence store"
+      ],
+      "limitations": "templates/automation repeat; not identity",
+      "outcome_capable": false
+    },
+    {
+      "id": "TIME-0",
+      "name": "timing context",
+      "category": "timing",
+      "kind": "caveat",
+      "evidence_class": "generator_dependent",
+      "telemetry": [
+        "cowrie.command.input timestamps",
+        "cowrie.session.closed duration"
+      ],
+      "limitations": "pacing and emulator latency are not separable in Cowrie JSON",
+      "outcome_capable": false
+    }
+  ],
+  "interpretations": [
+    {
+      "name": "repeated authentication failures",
+      "all_of": [
+        "AUTH-1"
+      ],
+      "any_of": [],
+      "same_file": false,
+      "scope": "source_window",
+      "supporting": []
+    },
+    {
+      "name": "credential guessing followed by login",
+      "all_of": [
+        "AUTH-1",
+        "AUTH-2"
+      ],
+      "any_of": [],
+      "same_file": false,
+      "scope": "source_window",
+      "supporting": []
+    },
+    {
+      "name": "privilege-context reconnaissance attempt",
+      "all_of": [
+        "PRIV-1"
+      ],
+      "any_of": [
+        "CRED-1",
+        "FILE-1",
+        "DISC-1"
+      ],
+      "same_file": false,
+      "scope": "session",
+      "supporting": [
+        "CRED-1"
+      ]
+    },
+    {
+      "name": "credential-material access attempt",
+      "all_of": [
+        "CRED-1"
+      ],
+      "any_of": [],
+      "same_file": false,
+      "scope": "session",
+      "supporting": [
+        "PRIV-1"
+      ]
+    },
+    {
+      "name": "download attempt",
+      "all_of": [
+        "XFER-1"
+      ],
+      "any_of": [],
+      "same_file": false,
+      "scope": "session",
+      "supporting": [
+        "XFER-1-OK",
+        "EXEC-1"
+      ]
+    },
+    {
+      "name": "download-and-execute attempt",
+      "all_of": [
+        "XFER-1",
+        "EXEC-1"
+      ],
+      "any_of": [],
+      "same_file": true,
+      "scope": "session",
+      "supporting": [
+        "XFER-1-OK"
+      ]
+    },
+    {
+      "name": "upload attempt",
+      "all_of": [
+        "XFER-2"
+      ],
+      "any_of": [],
+      "same_file": false,
+      "scope": "session",
+      "supporting": [
+        "XFER-2-OK",
+        "STAGE-1"
+      ]
+    },
+    {
+      "name": "archive-and-upload attempt",
+      "all_of": [
+        "STAGE-1",
+        "XFER-2"
+      ],
+      "any_of": [],
+      "same_file": false,
+      "scope": "session",
+      "supporting": [
+        "XFER-2-OK"
+      ]
+    },
+    {
+      "name": "history tampering attempt",
+      "all_of": [
+        "EVADE-1"
+      ],
+      "any_of": [],
+      "same_file": false,
+      "scope": "session",
+      "supporting": []
+    },
+    {
+      "name": "persistence modification attempt",
+      "all_of": [
+        "PERS-1"
+      ],
+      "any_of": [],
+      "same_file": false,
+      "scope": "session",
+      "supporting": []
+    },
+    {
+      "name": "network probing attempt",
+      "all_of": [
+        "NET-1"
+      ],
+      "any_of": [],
+      "same_file": false,
+      "scope": "session",
+      "supporting": []
+    }
+  ]
+}

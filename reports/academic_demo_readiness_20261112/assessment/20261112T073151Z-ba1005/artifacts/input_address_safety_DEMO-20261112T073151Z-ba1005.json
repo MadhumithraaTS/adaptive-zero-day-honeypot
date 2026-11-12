@@ -1,0 +1,23 @@
+{
+  "schema": "address-safety-config-1",
+  "config_version": "1.0.0-DEMO",
+  "note": "DEMO ONLY - ephemeral in-memory key, not production trust",
+  "protected_cidrs": [
+    "127.0.0.0/8",
+    "::1/128",
+    "169.254.0.0/16",
+    "fe80::/10",
+    "172.19.0.0/16",
+    "172.21.0.0/16",
+    "172.22.0.0/16",
+    "10.250.25.1/32",
+    "10.250.25.2/32"
+  ],
+  "shared_source_cidrs": [],
+  "enforcement_excluded_sources": [
+    "10.250.25.4/32"
+  ],
+  "enforcement_allowlist": [
+    "10.250.25.3/32"
+  ]
+}

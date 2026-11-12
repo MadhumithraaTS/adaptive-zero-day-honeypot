@@ -1,0 +1,139 @@
+{
+ "note": "dry run of the proposed design on unchanged Task 22 records; lab relay => every session unattributed, so no session can reach 'propose_for_manual_approval'",
+ "severity_by_evidence_level_validation": {
+  "E0": {
+   "S0": 313,
+   "S2": 0,
+   "S3": 0,
+   "n/a": 706
+  },
+  "E1": {
+   "S0": 0,
+   "S2": 72,
+   "S3": 42,
+   "n/a": 0
+  },
+  "E2": {
+   "S0": 0,
+   "S2": 14,
+   "S3": 110,
+   "n/a": 0
+  }
+ },
+ "policy_state_validation": {
+  "abstain": 706,
+  "record": 313,
+  "review": 238
+ },
+ "policy_state_by_category_validation": {
+  "abstain": {
+   "benign": 126,
+   "botnet": 65,
+   "brute_force": 368,
+   "lateral_movement": 40,
+   "privilege_escalation": 30,
+   "reconnaissance": 77
+  },
+  "record": {
+   "benign": 229,
+   "botnet": 0,
+   "brute_force": 30,
+   "lateral_movement": 1,
+   "privilege_escalation": 0,
+   "reconnaissance": 53
+  },
+  "review": {
+   "benign": 0,
+   "botnet": 71,
+   "brute_force": 0,
+   "lateral_movement": 77,
+   "privilege_escalation": 69,
+   "reconnaissance": 21
+  }
+ },
+ "benign_review_or_propose_validation": 0,
+ "novelty_flag_sessions_validation": 4,
+ "novelty_flag_sessions_by_state": {
+  "review": 2,
+  "record": 2
+ },
+ "art1_sessions_by_state": {
+  "review": 9
+ },
+ "attribution_validation": {
+  "unattributed:trusted_proxy": 1257
+ },
+ "finding_severity_by_finding_level_validation": [
+  {
+   "interp": "credential-material access attempt",
+   "sev": "S2",
+   "lvl": "E1",
+   "n": 29
+  },
+  {
+   "interp": "credential-material access attempt",
+   "sev": "S2",
+   "lvl": "E2",
+   "n": 14
+  },
+  {
+   "interp": "credential-material access attempt",
+   "sev": "S3",
+   "lvl": "E1",
+   "n": 42
+  },
+  {
+   "interp": "credential-material access attempt",
+   "sev": "S3",
+   "lvl": "E2",
+   "n": 39
+  },
+  {
+   "interp": "download attempt",
+   "sev": "S2",
+   "lvl": "E1",
+   "n": 21
+  },
+  {
+   "interp": "download attempt",
+   "sev": "S2",
+   "lvl": "E2",
+   "n": 71
+  },
+  {
+   "interp": "download-and-execute attempt",
+   "sev": "S3",
+   "lvl": "E2",
+   "n": 71
+  },
+  {
+   "interp": "history tampering attempt",
+   "sev": "S2",
+   "lvl": "E1",
+   "n": 21
+  },
+  {
+   "interp": "network probing attempt",
+   "sev": "S2",
+   "lvl": "E1",
+   "n": 49
+  },
+  {
+   "interp": "privilege-context reconnaissance attempt",
+   "sev": "S2",
+   "lvl": "E1",
+   "n": 16
+  },
+  {
+   "interp": "privilege-context reconnaissance attempt",
+   "sev": "S2",
+   "lvl": "E2",
+   "n": 53
+  }
+ ],
+ "policy_state_train": {
+  "abstain": 1817,
+  "record": 754,
+  "review": 619
+ }
+}

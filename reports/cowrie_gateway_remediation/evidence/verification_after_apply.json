@@ -1,0 +1,21 @@
+{
+  "applied_utc": "2026-11-10T12:25:00Z..12:25:05Z",
+  "compose_actions": ["stop cowrie-ssh-relay", "stop cowrie-project", "remove network cowrie_cowrie_internal", "create network cowrie_cowrie_internal", "start cowrie-project", "start cowrie-ssh-relay"],
+  "network": {"id": "8de3b00259f2", "bridge": "br-8de3b00259f2", "internal": true, "gateway": "none (invalid IP)", "options": {"com.docker.network.bridge.gateway_mode_ipv4": "isolated"}, "bridge_ipv4": "none", "bridge_ports": ["veth882e960", "vethac65cf5"]},
+  "docker_vm": {"local_ipv4": ["127.0.0.1", "172.17.0.1", "172.18.0.1", "172.19.0.1", "172.20.0.1", "172.21.0.1", "192.168.65.3", "192.168.65.6"], "172.22.0.0/16_local_or_routed": false, "rpcbind_still_listening_0.0.0.0:111": true},
+  "containers": {
+    "cowrie-project": {"id": "2a3c9e98967e (same)", "ip": "172.22.0.1 (was 172.22.0.3)", "aliases_before": ["cowrie-project", "cowrie"], "aliases_after": [], "dnsnames_after": ["cowrie-project", "2a3c9e98967e"], "volumes": "same etc f51e84a3..., var 268411d7...", "image": "pinned bf371c37", "read_only": true, "cap_drop": "ALL", "no_new_privileges": true, "restart_count": 0, "started": "2026-11-10T12:25:04.957Z"},
+    "cowrie-ssh-relay": {"id": "884f35bbb307 (same)", "ip_internal": "172.22.0.2", "ip_frontend": "172.21.0.2", "published": "127.0.0.1:2223 only", "image": "pinned bf371c37", "read_only": true, "cap_drop": "ALL", "no_new_privileges": true, "restart_count": 0, "started": "2026-11-10T12:25:05.398Z"}
+  },
+  "checks_from_cowrie": {
+    "routes": "only 172.22.0.0/16 on eth0, no default route",
+    "1.1.1.1:53": "Network is unreachable", "8.8.8.8:443": "Network is unreachable", "185.220.101.5:80": "Network is unreachable",
+    "192.168.65.254:80 (Docker Desktop host)": "Network is unreachable", "192.168.65.3:111 (VM eth0)": "Network is unreachable",
+    "172.21.0.1:111 (frontend bridge)": "Network is unreachable", "172.17.0.1:111 (docker0)": "Network is unreachable",
+    "dns example.com/host.docker.internal/files.example": "fail",
+    "resolve 'cowrie'": "FAIL (gaierror -3)"
+  },
+  "checks_from_relay": {"resolve 'cowrie'": "FAIL (Temporary failure in name resolution)", "resolve 'cowrie-project'": "172.22.0.1", "resolve '2a3c9e98967e'": "172.22.0.1"},
+  "log": {"cowrie.json_lines": 963, "sha256": "d59ca2d4831d2d9ce630dabbeaacaac33b6e3dac095ee570c47f8bac0e343240", "rotated": false, "generator_capture_log_baseline": 963, "cowrie_startup": "Ready to accept SSH connections 12:25:06"},
+  "verdict": "STOP at Phase 3 check 5: relay forwards to host 'cowrie', which no longer resolves (Compose reconnected existing containers to the recreated network without service aliases). No SSH connection, banner check or traffic was attempted."
+}

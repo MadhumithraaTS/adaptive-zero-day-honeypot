@@ -1,0 +1,15 @@
+Task 25C-pre - relay peer observation
+=====================================
+STATUS: NOT PERFORMED.
+
+Reason: preflight checks 5 and 4b failed (preflight_checks.md), and the task requires stopping before the demo
+network is created if any check fails. No demo network, client container or connection was created, so there is no
+accepted-socket observation for a demo client.
+
+It is therefore NOT established whether a connection from 10.250.25.3 would reach the relay with that peer address.
+No workaround was attempted.
+
+Relay listeners observed during preflight (kernel TCP table, read-only, 2026-11-11T16:45:00Z):
+  LISTEN 0.0.0.0:2222        (twistd portforward; the only forwarding listener)
+  LISTEN 127.0.0.11:43835    (Docker embedded DNS)
+No ESTABLISHED connections were recorded or created.

@@ -1,0 +1,89 @@
+{
+  "version": "2.2.0-compat",
+  "description": "Labelled traffic profiles for the honeypot dataset release. Each profile mirrors the style of configs/attack_profiles.json but adds a ground-truth category/label, randomised credentials, and optional steps so sessions are not near-duplicates. Steps: a command string, a list of alternatives (one is chosen), or {\"p\": probability, \"cmd\": ...} for an optional step. {placeholders} are filled from the pools below; held_out profiles are kept out of the DEC training set to test novelty detection. Compatibility revision 2.2.0 (2026-11-10): commands that block Cowrie's emulated shell were replaced or removed for botnet, data_exfiltration and lateral_movement; see reports/cowrie_profile_compatibility_v2/report.md. delay_range is ignored by generator 2.1.",
+  "placeholders": {
+    "ip": [
+      "192.0.2.10",
+      "198.51.100.20",
+      "203.0.113.30",
+      "192.0.2.40"
+    ],
+    "lan_ip": [
+      "192.0.2.5",
+      "192.0.2.12",
+      "198.51.100.10",
+      "203.0.113.8"
+    ],
+    "domain": [
+      "files.example",
+      "mirror.example",
+      "pkg-repo.example"
+    ],
+    "bin": [
+      "b.sh",
+      "malware.sh",
+      "update.sh",
+      "payload"
+    ],
+    "user": [
+      "support",
+      "sysbackup",
+      "ftpuser"
+    ],
+    "dir": [
+      "/tmp",
+      "/var/tmp",
+      "/dev/shm"
+    ]
+  },
+  "profiles": [
+    {
+      "name": "brute_force",
+      "attack_cat": "brute_force",
+      "label": 1,
+      "held_out": false,
+      "description": "Credential guessing with several failed logins, then a short check or disconnect.",
+      "credentials": {
+        "usernames": [
+          "root",
+          "admin",
+          "pi",
+          "oracle"
+        ],
+        "passwords": [
+          "admin",
+          "raspberry",
+          "oracle",
+          "12345678"
+        ],
+        "failed_attempts": [
+          3,
+          5
+        ]
+      },
+      "delay_range": [
+        0.1,
+        0.8
+      ],
+      "steps": [
+        {
+          "p": 0.5,
+          "cmd": [
+            "uname -a",
+            "whoami",
+            "echo ok"
+          ]
+        }
+      ],
+      "noise_pool": [],
+      "noise_count": [
+        0,
+        0
+      ]
+    }
+  ],
+  "derived_from": {
+    "file": "dataset_builder/profiles_v2_isolated.json",
+    "version": "2.1.0-docnet"
+  }
+}

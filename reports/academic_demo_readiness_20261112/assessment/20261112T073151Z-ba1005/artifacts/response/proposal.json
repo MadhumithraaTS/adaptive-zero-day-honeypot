@@ -1,0 +1,58 @@
+{
+  "schema": "response-proposal-1",
+  "proposal_id": "prop-task26c-isolated-000001",
+  "created_utc": "2026-11-12T07:31:54.705876Z",
+  "expires_utc": "2026-11-12T08:01:54.705876Z",
+  "session_ref": "42ee73a7cbbd",
+  "assessment_audit": {
+    "record_id": "task26c-isolated-000001",
+    "record_hash": "a1ce3cd55b7b7b50cc26cf23724a7d705205ef67342366923ac1303ab0b6831b"
+  },
+  "attribution": {
+    "state": "attributable_via_proxy_mapping",
+    "result_id": "DEMO-20261112T073151Z-ba1005",
+    "result_hash": "6d449820a76b143af58c27da434c33b3c71b46ec908d50743363eee2b31b90d8",
+    "connection_id": "93daae7d-64df-4314-bcc9-f42f74789d27",
+    "client_ip": "10.250.25.3"
+  },
+  "source_proposal": {
+    "execution": "not_executed",
+    "inverse": {
+      "subject": "10.250.25.3",
+      "type": "unblock_source_ip"
+    },
+    "manual_approval": "pending",
+    "mode": "dry_run",
+    "relay_connection_id": "93daae7d-64df-4314-bcc9-f42f74789d27",
+    "scope": "this sensor only",
+    "subject": "10.250.25.3",
+    "subject_basis": "attributable_via_proxy_mapping",
+    "ttl_seconds": 86400,
+    "type": "block_source_ip"
+  },
+  "action": {
+    "type": "restrict_new_connections",
+    "target": "10.250.25.3/32",
+    "listener": "demo",
+    "max_ttl_seconds": 900
+  },
+  "fingerprints": {
+    "response_policy": "4258c6ff9ca1e60751ea70fdc752d7944fd1e5e7d2f46bcdb88ebf874d743335",
+    "address_safety": "278563bd94d1900014cbdfaa2ef76708ffeb755c687f2f10a51640872c0dbc70",
+    "defence_policy": "176164978e4f2c24094480bf20f783c5519492d44615d354015e47c7e8891d73",
+    "attribution_config": "1aa5c7d734d2c893c86f878a52c8c8a7a0d93c2d0c43ae26a0bbaec47cd367a5"
+  },
+  "findings": [
+    {
+      "interpretation": "download attempt",
+      "severity": "S2",
+      "evidence_level": "E2"
+    },
+    {
+      "interpretation": "download-and-execute attempt",
+      "severity": "S3",
+      "evidence_level": "E2"
+    }
+  ],
+  "proposal_hash": "7b1c83073507a883a701f673327a9c43d5d5c6da072a2110602238109b1d0648"
+}

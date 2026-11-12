@@ -1,0 +1,9 @@
+cluster_id,command_or_category,frequency,sessions_containing,percentage_of_sessions
+1,reconnaissance,16,5,22.7273
+1,file_system,8,5,22.7273
+1,file_transfer,3,3,13.6364
+1,networking,3,3,13.6364
+1,credential_attack,2,2,9.0909
+1,privilege_escalation,2,2,9.0909
+1,evasion,1,1,4.5455
+1,persistence,1,1,4.5455

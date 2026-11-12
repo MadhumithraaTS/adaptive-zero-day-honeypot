@@ -1,0 +1,2 @@
+cmd=["-n","--pidfile=","portforward","--port=tcp:2222","--host=cowrie","--dest_port=2222"] entrypoint=["/cowrie/cowrie-env/bin/twistd"] user=cowrie ro=true capdrop=[ALL] ports={"2222/tcp":[{"HostIp":"127.0.0.1","HostPort":"2223"}]}
+cmd=["/cowrie/cowrie-env/bin/twistd","-n","--umask=0022","--pidfile=","cowrie"] user=cowrie ro=true capdrop=[ALL]
